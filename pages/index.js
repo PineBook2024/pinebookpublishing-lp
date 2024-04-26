@@ -176,7 +176,7 @@ export default function Home() {
                     navigation: true,
                   },
                   "@1.00": {
-                    slidesPerView: 5,
+                    slidesPerView: 4,
                     spaceBetween: 15,
                   },
                 }}
@@ -234,7 +234,7 @@ export default function Home() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div>
+                  <div className="flex justify-center">
                     <a href="https://clutch.co/profile/pine-book-writing">
                       <Image
                         alt="LOGO"
@@ -246,7 +246,7 @@ export default function Home() {
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                {/* <SwiperSlide>
                   <div>
                     <a href="https://clutch.co/profile/pine-book-writing">
                       <Image
@@ -257,7 +257,7 @@ export default function Home() {
                       />
                     </a>
                   </div>
-                </SwiperSlide>
+                </SwiperSlide> */}
               </Swiper>
             </div>
           </div>
@@ -500,7 +500,7 @@ export default function Home() {
           </div>
 
           {/* <div className="grid grid-cols-4 gap-4  items-top"> */}
-          <div className="mt-6 grid grid-cols-1 px-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
             <div className="pack-wrap gap-8" data-aos="fade-right" data-aos-delay="200">
               <div className="pack-box flex items-center">
                 <Image src={"/images/pp1.png"} width={40} height={50}></Image>
@@ -1321,7 +1321,7 @@ export default function Home() {
         </section>
       </section>
 
-      <section className="faqs">
+      <section className="faqs width-container">
         <div className="container mx-auto m1-h">
           <h3 className="text-center pt-16 font-majallab text-5xl md:text-7xl  md:pb-4">
             Looking for Answers?
@@ -1368,7 +1368,7 @@ export default function Home() {
       <section className="btm-form overflow-hidden width-container">
         <div className="container mx-auto px-8 md:px-20">
           <div className="form-mid-wrap pt-12 bg-gray-200 connect-form-border mb-12">
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row items-end">
               <div className="basis-1/3 hidden md:block">
                 <Image
                   className="text-center pt-10"
