@@ -48,6 +48,22 @@ export default function Home() {
     }
   };
 
+  // Open Chat Click
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const handleOpenChat = () => {
+    window.zE && window.zE('webWidget', 'open');
+  };
+
   const faqQuestions = [
     "How do I self-publish my book?",
     "Is publishing a book difficult?",
@@ -148,12 +164,15 @@ export default function Home() {
 
       <section className="brnd-slider bg-black overflow-hidden" data-aos="fade-up" data-aos-delay="200">
         <div className="container grid grid-cols-1 width-container">
-          <div className="container mx-auto">
+          <div className="container mx-auto position-relative">
+            <div className="book-sell-text ">
+              <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+            </div>
             <div className="bnd-slider flex py-10 justify-center">
               <Swiper
                 className="px-20 gap-x-32"
                 spaceBetween={15}
-                slidesPerView={5}
+                slidesPerView={7}
                 loop={true}
                 autoplay={{
                   delay: 2500,
@@ -176,7 +195,7 @@ export default function Home() {
                     navigation: true,
                   },
                   "@1.00": {
-                    slidesPerView: 4,
+                    slidesPerView: 7,
                     spaceBetween: 15,
                   },
                 }}
@@ -186,9 +205,9 @@ export default function Home() {
                     <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
                       <Image
                         alt="LOGO"
-                        src={"/images/s1.png"}
-                        width={150}
-                        height={60}
+                        src={"/images/logo1.webp"}
+                        width={100}
+                        height={80}
                       />
                     </a>
                   </div>
@@ -199,9 +218,9 @@ export default function Home() {
                     <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
                       <Image
                         alt="LOGO"
-                        src={"/images/s2.png"}
-                        width={150}
-                        height={60}
+                        src={"/images/logo2.webp"}
+                        width={100}
+                        height={80}
                       />
                     </a>
                   </div>
@@ -212,9 +231,9 @@ export default function Home() {
                     <a href="https://www.trustpilot.com/review/pinebookwriting.com">
                       <Image
                         alt="LOGO"
-                        src={"/images/s3.png"}
-                        width={150}
-                        height={60}
+                        src={"/images/logo3.webp"}
+                        width={100}
+                        height={80}
                       />
                     </a>
                   </div>
@@ -225,9 +244,9 @@ export default function Home() {
                     <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
                       <Image
                         alt="LOGO"
-                        src={"/images/s4.png"}
-                        width={150}
-                        height={60}
+                        src={"/images/logo4.webp"}
+                        width={100}
+                        height={80}
                       />
                     </a>
                   </div>
@@ -238,13 +257,52 @@ export default function Home() {
                     <a href="https://clutch.co/profile/pine-book-writing">
                       <Image
                         alt="LOGO"
-                        src={"/images/s6.png"}
-                        width={150}
-                        height={60}
+                        src={"/images/logo5.webp"}
+                        width={100}
+                        height={80}
                       />
                     </a>
                   </div>
                 </SwiperSlide>
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="https://clutch.co/profile/pine-book-writing">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo6.webp"}
+                        width={100}
+                        height={80}
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="https://clutch.co/profile/pine-book-writing">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo7.webp"}
+                        width={100}
+                        height={80}
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="https://clutch.co/profile/pine-book-writing">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo8.webp"}
+                        width={100}
+                        height={80}
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
 
                 {/* <SwiperSlide>
                   <div>
@@ -612,8 +670,7 @@ export default function Home() {
                       Beginners
                       <br />
                       <button
-                        href="javascript:;"
-                        onclick="$zopim.livechat.window.toggle()"
+                        onClick={handleOpenChat}
                         type="button"
                         class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
                       >
@@ -625,8 +682,7 @@ export default function Home() {
                       Standard
                       <br />
                       <button
-                        href="javascript:;"
-                        onclick="$zopim.livechat.window.toggle()"
+                        onClick={handleOpenChat}
                         type="button"
                         class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
                       >
@@ -638,8 +694,7 @@ export default function Home() {
                       Expert
                       <br />
                       <button
-                        href="javascript:;"
-                        onclick="$zopim.livechat.window.toggle()"
+                        onClick={handleOpenChat}
                         type="button"
                         class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
                       >
@@ -651,8 +706,7 @@ export default function Home() {
                       Enterprise
                       <br />
                       <button
-                        href="javascript:;"
-                        onclick="$zopim.livechat.window.toggle()"
+                        onClick={handleOpenChat}
                         type="button"
                         class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
                       >
@@ -759,7 +813,7 @@ export default function Home() {
                       colspan="5"
                       scope="row"
                     >
-                      EDITING
+                      <span className="ml-32 md:ml-40">EDITING</span>
                     </th>
                   </tr>
                   <tr>
@@ -858,7 +912,7 @@ export default function Home() {
                       colspan="5"
                       scope="row"
                     >
-                      DESIGN
+                      <span className="ml-32 md:ml-40">DESIGN</span>
                     </th>
                   </tr>
                   <tr>
@@ -942,7 +996,7 @@ export default function Home() {
                       colspan="5"
                       scope="row"
                     >
-                      DISTRIBUTION
+                      <span className="ml-32 md:ml-40">DISTRIBUTION</span>
                     </th>
                   </tr>
                   <tr>
@@ -1034,7 +1088,7 @@ export default function Home() {
                       colspan="5"
                       scope="row"
                     >
-                      MARKETING
+                      <span className="ml-32 md:ml-40">MARKETING</span>
                     </th>
                   </tr>
                   <tr>

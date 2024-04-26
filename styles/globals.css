@@ -7,7 +7,7 @@
 }
 
 
-.width-container{
+.width-container {
   width: 85%;
   margin: 0 auto;
 }
@@ -71,7 +71,10 @@ video#vide {
 }
 
 section.brnd-slider.bg-black {
-  background: #298f80;
+  background: #fff;
+  background-image: -webkit-linear-gradient(90deg, #ededed 0, #fff 100%);
+  border-bottom: 0.1px solid #d7d7d7;
+  box-shadow: 0 7px 18.27px 2.73px rgba(0, 0, 0, .08);
 }
 
 .m1-h h3 {
@@ -420,7 +423,7 @@ video#background-video {
   border-radius: 60px;
 }
 
-.book-publishing-infograph-img{
+.book-publishing-infograph-img {
   width: 100% !important;
 }
 
@@ -443,19 +446,54 @@ footer .footer-line:before {
   right: 70%;
 }
 
-.video-info{
+.video-info {
   width: 100%;
 }
 
-.bages-pic .swiper-slide{
+.bages-pic .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.get-premium-btn {
+  background-color: #2c9384;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  transition: 0.4s ease-in-out;
+}
+
+.get-premium-btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: 0.4s ease-in-out;
+}
+
+
+.book-sell-text {
+  position: absolute;
+  left: 16px;
+  top: 32px;
+}
+
+.book-sell-text h3 {
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.book-sell-text span {
+  font-weight: bold;
+}
+
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .book-sell-text {
+    display: none;
+  }
   .bk-sil.prev {
     left: -19px;
   }
@@ -487,17 +525,20 @@ footer .footer-line:before {
   .connect-form-border {
     border-radius: 30px;
   }
-  footer .footer-line:before{
+
+  footer .footer-line:before {
     display: none;
   }
-  .payment-card{
+
+  .payment-card {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
   }
-  .width-container{
+
+  .width-container {
     width: 100% !important;
     margin: 0 auto;
   }

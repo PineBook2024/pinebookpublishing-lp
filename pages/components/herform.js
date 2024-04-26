@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
+import Image from "next/image";
+
 
 export default function HeroForm() {
   // async function handleSubmit(event) {
@@ -26,6 +28,21 @@ export default function HeroForm() {
   //     alert("Error, please try resubmitting the form");
   //   }
   // }
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const handleOpenChat = () => {
+    window.zE && window.zE('webWidget', 'open');
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -76,7 +93,7 @@ export default function HeroForm() {
 
   return (
     <div className="container mx-4 pt-20 md:mx-32">
-      <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
+      <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-start justify-between md:gap-8 md:py-36">
         <div className="mb-4">
           {/* <h2 className="text-sm md:base scroll-animation">
             <span> #1 SELF </span> PUBLISHING COMPANY
@@ -85,13 +102,56 @@ export default function HeroForm() {
             Publish Your Dreams!
           </h1>
           <p>
-          Our comprehensive{" "}
+            Our comprehensive{" "}
             <span>
               {" "}
               KDP (Kindle Direct Publishing) and Self-Publishing Services
             </span>{" "}
             transform your manuscript from editing to distribution, ensuring it is accessible to readers globally.
           </p>
+          <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button>
+          <div className="flex justify-start items-center mt-8 gap-x-8">
+            <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
+              <Image
+                alt="LOGO"
+                src={"/images/s1.png"}
+                width={130}
+                height={60}
+              />
+            </a>
+            <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
+              <Image
+                alt="LOGO"
+                src={"/images/s2.png"}
+                width={130}
+                height={60}
+              />
+            </a>
+            <a href="https://www.trustpilot.com/review/pinebookwriting.com">
+              <Image
+                alt="LOGO"
+                src={"/images/s3.png"}
+                width={130}
+                height={60}
+              />
+            </a>
+            <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
+              <Image
+                alt="LOGO"
+                src={"/images/s4.png"}
+                width={130}
+                height={60}
+              />
+            </a>
+            <a href="https://clutch.co/profile/pine-book-writing">
+              <Image
+                alt="LOGO"
+                src={"/images/s6.png"}
+                width={130}
+                height={60}
+              />
+            </a>
+          </div>
         </div>
         <div>
           <div className="w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100">

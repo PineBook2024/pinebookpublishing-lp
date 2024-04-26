@@ -1,7 +1,22 @@
+import React, {useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header(){
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
+        script.async = true;
+        document.body.appendChild(script);
+    
+        return () => {
+          document.body.removeChild(script);
+        };
+      }, []);
+    
+      const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
+      };
     return (
         <header className="container mx-auto py-2 width-container">
             <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
@@ -20,8 +35,8 @@ export default function Header(){
                 <Link className="" href={'mailto:info@pinebookpublishing.com'}>info@pinebookpublishing.com</Link>
                 </button>
 
-                <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700">
-                <Link className="" href={'javascript:;'} onclick="$zopim.livechat.window.toggle()">Talk to an Expert</Link>
+                <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
+                <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
                 </button>
             </div>
             </div>
