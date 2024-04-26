@@ -6,6 +6,12 @@
   font-size: 50px;
 }
 
+
+.width-container{
+  width: 85%;
+  margin: 0 auto;
+}
+
 .btn-a {
   background: #1a8273;
   border-radius: 50px;

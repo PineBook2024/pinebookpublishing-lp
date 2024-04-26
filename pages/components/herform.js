@@ -1,60 +1,73 @@
+import React, { useState } from "react";
 export default function HeroForm() {
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "post",
-        body: formData,
-      });
-      console.log(response);
-      console.log(formData);
-
-      // if (!response.ok) {
-      //     console.log("falling over")
-      //     throw new Error(`response status: ${response.status}`);
-      // }
-      const responseData = await response.json();
-      console.log(responseData["message"]);
-
-      alert("Message successfully sent");
-    } catch (err) {
-      console.error(err);
-      alert("Error, please try resubmitting the form");
-    }
-  }
-
   // async function handleSubmit(event) {
   //   event.preventDefault();
-
   //   const formData = new FormData(event.target);
-
   //   try {
   //     const response = await fetch("/api/contact", {
-  //       method: "POST",
+  //       method: "post",
   //       body: formData,
   //     });
-
   //     console.log(response);
+  //     console.log(formData);
 
-  //     if (!response.ok) {
-  //       console.error("Server responded with a non-2xx status: ", response.status);
-  //       throw new Error(`HTTP error! status: ${response.status}`);
-  //     }
+  //     // if (!response.ok) {
+  //     //     console.log("falling over")
+  //     //     throw new Error(`response status: ${response.status}`);
+  //     // }
   //     const responseData = await response.json();
-  //     console.log(responseData);
+  //     console.log(responseData["message"]);
 
-  //     if (responseData.message) {
-  //       console.log(responseData.message);
-  //       alert("Message successfully sent: " + responseData.message);
-  //     } else {
-  //       alert("Message sent successfully, but no message returned from server.");
-  //     }
+  //     alert("Message successfully sent");
   //   } catch (err) {
-  //     console.error("Error submitting form:", err);
+  //     console.error(err);
   //     alert("Error, please try resubmitting the form");
   //   }
   // }
+
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Form successfully submitted');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        const errorData = await response.json();
+        console.error('Form submission error:', errorData);
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
 
   return (
@@ -84,14 +97,17 @@ export default function HeroForm() {
                 <input
                   type="text"
                   name="name"
+                  value={formData.name} onChange={handleChange}
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Name"
+                  required 
                 />
               </div>
               <div class="relative">
                 <input
                   type="text"
                   name="phone"
+                  value={formData.phone} onChange={handleChange}
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Phone"
                 />
@@ -100,6 +116,7 @@ export default function HeroForm() {
                 <input
                   type="text"
                   name="email"
+                  value={formData.email} onChange={handleChange}
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Email"
                 />
@@ -108,6 +125,7 @@ export default function HeroForm() {
                 <textarea
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   rows={5}
+                  value={formData.message} onChange={handleChange}
                   placeholder="Enter your Message"
                   name="message"
                 ></textarea>

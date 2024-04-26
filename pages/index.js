@@ -147,7 +147,7 @@ export default function Home() {
       <Hero Component={HeroForm} />
 
       <section className="brnd-slider bg-black overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-        <div className="grid grid-cols-1">
+        <div className="container grid grid-cols-1 width-container">
           <div className="container mx-auto">
             <div className="bnd-slider flex py-10 justify-around">
               <Swiper
@@ -438,7 +438,7 @@ export default function Home() {
       </section>
 
       <section className="portfolio overflow-hidden	 py-14 bg-[url('/images/port-banner.png')]">
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 ">
           <div className="container mx-auto text-center">
             <div className="portfolio-h m1-h">
               <h3 className="font-majallab text-3xl md:text-7xl">
@@ -448,7 +448,7 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-4 gap-4" >
+            <div className="grid grid-cols-4 gap-4 width-container" >
               <div>
                 <Image src={"/images/bb1-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
               </div>
@@ -557,7 +557,7 @@ export default function Home() {
             Comparison Chart
           </h3>
         </div>
-        <div className="">
+        <div className="width-container">
           <div className="container mx-auto">
             <div class="check-wrap">
               <div class="check-list flex">
@@ -1341,7 +1341,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bages-pic flex flex-wrap items-center justify-around py-10">
+          <div className="bages-pic flex flex-wrap items-center justify-center py-10 gap-x-32">
             <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage13.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage3.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
@@ -1352,8 +1352,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="btm-form overflow-hidden">
-        <div className="container mx-auto px-8">
+      <section className="btm-form overflow-hidden width-container">
+        <div className="container mx-auto px-8 md:px-20">
           <div className="form-mid-wrap pt-12 bg-gray-200 connect-form-border mb-12">
             <div className="flex flex-col md:flex-row">
               <div className="basis-1/3 hidden md:block">
@@ -1423,8 +1423,8 @@ export default function Home() {
 
       <Footer />
 
-      {/* <motion.p className="font-acumin text-5xl text-center text-black leading-loose font-bold hover:text-[#EBFA0B]" ref={nodeRef} >{rounded}<Counter from={100} to={1000} val={"10"} />100</motion.p>
-       */}
+      {/* <motion.p className="font-acumin text-5xl text-center text-black leading-loose font-bold hover:text-[#EBFA0B]" ref={nodeRef} >{rounded}<Counter from={100} to={1000} val={"10"} />100</motion.p> */}
+
     </main>
   );
 }
