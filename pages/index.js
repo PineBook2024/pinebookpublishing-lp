@@ -151,7 +151,7 @@ export default function Home() {
           <div className="container mx-auto">
             <div className="bnd-slider flex py-10 justify-center">
               <Swiper
-                className="px-20"
+                className="px-20 gap-x-32"
                 spaceBetween={15}
                 slidesPerView={5}
                 loop={true}
@@ -182,7 +182,7 @@ export default function Home() {
                 }}
               >
                 <SwiperSlide className="mx-auto text-center">
-                  <div>
+                  <div className="flex justify-center">
                     <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
                       <Image
                         alt="LOGO"
@@ -195,7 +195,7 @@ export default function Home() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div>
+                  <div className="flex justify-center">
                     <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
                       <Image
                         alt="LOGO"
@@ -208,7 +208,7 @@ export default function Home() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div>
+                  <div className="flex justify-center">
                     <a href="https://www.trustpilot.com/review/pinebookwriting.com">
                       <Image
                         alt="LOGO"
@@ -221,7 +221,7 @@ export default function Home() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div>
+                  <div className="flex justify-center">
                     <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
                       <Image
                         alt="LOGO"
