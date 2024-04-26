@@ -459,7 +459,7 @@ footer .footer-line:before {
   }
 
   .main-banner-vid {
-    height: 100vh;
+    height: 120vh;
   }
 
   video#vide {
@@ -490,5 +490,9 @@ footer .footer-line:before {
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
+  }
+  .width-container{
+    width: 100% !important;
+    margin: 0 auto;
   }
 }

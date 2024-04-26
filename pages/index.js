@@ -149,7 +149,7 @@ export default function Home() {
       <section className="brnd-slider bg-black overflow-hidden" data-aos="fade-up" data-aos-delay="200">
         <div className="container grid grid-cols-1 width-container">
           <div className="container mx-auto">
-            <div className="bnd-slider flex py-10 justify-around">
+            <div className="bnd-slider flex py-10 justify-center">
               <Swiper
                 className="px-20"
                 spaceBetween={15}
@@ -181,7 +181,7 @@ export default function Home() {
                   },
                 }}
               >
-                <SwiperSlide className="mx-auto">
+                <SwiperSlide className="mx-auto text-center">
                   <div>
                     <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
                       <Image
@@ -239,6 +239,19 @@ export default function Home() {
                       <Image
                         alt="LOGO"
                         src={"/images/s6.png"}
+                        width={150}
+                        height={60}
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div>
+                    <a href="https://clutch.co/profile/pine-book-writing">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/s1.png"}
                         width={150}
                         height={60}
                       />
