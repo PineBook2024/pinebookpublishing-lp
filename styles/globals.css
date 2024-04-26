@@ -447,6 +447,12 @@ footer .footer-line:before {
   width: 100%;
 }
 
+.bages-pic .swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {

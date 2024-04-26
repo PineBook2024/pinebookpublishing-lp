@@ -1355,12 +1355,74 @@ export default function Home() {
           </div>
 
           <div className="bages-pic flex flex-wrap items-center justify-center py-10 gap-x-32">
-            <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+            <Swiper
+              className=""
+              spaceBetween={15}
+              slidesPerView={5}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={false}
+              onBeforeInit={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              modules={[Navigation, Autoplay, Pagination]}
+              breakpoints={{
+                "@0.00": {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+
+                  navigation: {
+                    enabled: false,
+                  },
+                  pagination: false,
+                  navigation: true,
+                },
+                "@1.00": {
+                  slidesPerView: 5,
+                  spaceBetween: 15,
+                },
+              }}
+            >
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex justify-between items-center">
+                  <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex flex-row justify-between items-center">
+                  <Image src={"/images/bage13.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex flex-row justify-between items-center">
+                  <Image src={"/images/bage3.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex flex-row justify-between items-center">
+                  <Image src={"/images/bage14.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex flex-row justify-between items-center">
+                  <Image src={"/images/bage4.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="mx-auto text-center">
+                <div className="flex flex-row justify-between items-center">
+                  <Image src={"/images/bage12.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+            {/* <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage13.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage3.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage14.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
             <Image src={"/images/bage4.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage12.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+            <Image src={"/images/bage12.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image> */}
           </div>
         </div>
       </section>

@@ -85,7 +85,7 @@ export default function HeroForm() {
             Publish Your Dreams!
           </h1>
           <p>
-          Our comprehensiveP{" "}
+          Our comprehensive{" "}
             <span>
               {" "}
               KDP (Kindle Direct Publishing) and Self-Publishing Services
