@@ -1283,6 +1283,7 @@ export default function Home() {
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={3}
+              loop={true}
               initialSlide={1}
               coverflowEffect={{
                 rotate: 50,
@@ -1354,6 +1355,36 @@ export default function Home() {
                 >
                   <source
                     src={"https://imperiumdesigners.com/assets/images/v5.mp4"}
+                    type="video/mp4"
+                  ></source>
+                </video>
+              </SwiperSlide>
+              <SwiperSlide>
+                <video
+                  loop=""
+                  controls="true"
+                  muted=""
+                  poster=""
+                  loading="lazy"
+                  preload=""
+                >
+                  <source
+                    src={"https://imperiumdesigners.com/assets/images/v3.mp4"}
+                    type="video/mp4"
+                  ></source>
+                </video>
+              </SwiperSlide>
+              <SwiperSlide>
+                <video
+                  loop=""
+                  controls="true"
+                  muted=""
+                  poster=""
+                  loading="lazy"
+                  preload=""
+                >
+                  <source
+                    src={"https://imperiumdesigners.com/assets/images/v4.mp4"}
                     type="video/mp4"
                   ></source>
                 </video>
