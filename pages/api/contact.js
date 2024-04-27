@@ -14,7 +14,7 @@ import nodemailer from 'nodemailer';
     let transporter = nodemailer.createTransport({
         host: 'smtp.titan.email',
         port: 587, 
-        secure: false, 
+        secure: true, 
         auth: {
             user: 'support@pinebookpublishing.com', 
             pass: 'Contact@PBP#1209**' 

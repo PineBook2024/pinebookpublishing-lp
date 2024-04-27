@@ -110,7 +110,7 @@ export default function HeroForm() {
             transform your manuscript from editing to distribution, ensuring it is accessible to readers globally.
           </p>
           <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button>
-          <div className="flex justify-start items-center mt-8 gap-x-8">
+          <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8">
             <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
               <Image
                 alt="LOGO"
