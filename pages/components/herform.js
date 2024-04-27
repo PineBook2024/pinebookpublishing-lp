@@ -173,6 +173,7 @@ export default function HeroForm() {
                   value={formData.phone} onChange={handleChange}
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Phone"
+                  required
                 />
               </div>
               <div class="relative">
@@ -182,6 +183,7 @@ export default function HeroForm() {
                   value={formData.email} onChange={handleChange}
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Email"
+                  required
                 />
               </div>
               <div class="relative">
@@ -191,6 +193,7 @@ export default function HeroForm() {
                   value={formData.message} onChange={handleChange}
                   placeholder="Enter your Message"
                   name="message"
+                  required
                 ></textarea>
                 <div
                   class="absolute inset-y-0 left-0 pl-3 pt-3 

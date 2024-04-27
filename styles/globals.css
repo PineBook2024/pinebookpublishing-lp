@@ -427,14 +427,16 @@ video#background-video {
   width: 100% !important;
 }
 
-.transition-max-height {
+.transition-all {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.max-h-40 {
-  max-height: 40rem;
+.max-h-96 {
+  max-height: 24rem;
+  opacity: 1;
 }
 
 footer .footer-line:before {
@@ -503,11 +505,11 @@ footer .footer-line:before {
   }
 
   .main-banner-vid {
-    height: 120vh;
+    height: 154vh;
   }
 
   video#vide {
-    height: 120vh;
+    height: 154vh;
   }
 
   .faqs {
