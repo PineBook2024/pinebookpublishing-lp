@@ -623,7 +623,7 @@ export default function Home() {
               </div>
 
 
-              <div className="grid grid-cols-4 gap-4 width-container hidden md:block lg:block">
+              <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 <div>
                   <Image src={"/images/bb1-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
                 </div>
@@ -776,7 +776,7 @@ export default function Home() {
                         <button
                           onClick={handleOpenChat}
                           type="button"
-                          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
+                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                         >
                           Talk to us
                         </button>
@@ -788,7 +788,7 @@ export default function Home() {
                         <button
                           onClick={handleOpenChat}
                           type="button"
-                          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
+                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                         >
                           Talk to us
                         </button>
@@ -800,7 +800,7 @@ export default function Home() {
                         <button
                           onClick={handleOpenChat}
                           type="button"
-                          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
+                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                         >
                           Talk to us
                         </button>
@@ -812,7 +812,7 @@ export default function Home() {
                         <button
                           onClick={handleOpenChat}
                           type="button"
-                          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 font-majallab"
+                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                         >
                           Talk to us
                         </button>
@@ -1265,9 +1265,10 @@ export default function Home() {
                       <td></td>
                       <td className="md:w-auto w-24">
                         <a
-                          data-src="#popup-layout"
-                          href="javascript:;"
-                          className="md:min-w-26 w-40 text-black bg-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 popup-open-layout4 attr-data md:px-5"
+                          // data-src="#popup-layout"
+                          // href="javascript:;"
+                          onClick={handleOpenChat}
+                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
                           Get a Quote
@@ -1275,9 +1276,10 @@ export default function Home() {
                       </td>
                       <td className="md:w-auto w-24">
                         <a
-                          data-src="#popup-layout"
-                          href="javascript:;"
-                          className="md:min-w-20 w-40 text-black bg-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 popup-open-layout4 attr-data md:px-5"
+                          // data-src="#popup-layout"
+                          // href="javascript:;"
+                          onClick={handleOpenChat}
+                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
                           Get a Quote
@@ -1285,9 +1287,10 @@ export default function Home() {
                       </td>
                       <td className="md:w-auto w-24">
                         <a
-                          data-src="#popup-layout"
-                          href="javascript:;"
-                          className="md:min-w-20 w-40 text-black bg-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 popup-open-layout4 attr-data md:px-5"
+                          // data-src="#popup-layout"
+                          // href="javascript:;"
+                          onClick={handleOpenChat}
+                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
                           Get a Quote
@@ -1295,9 +1298,10 @@ export default function Home() {
                       </td>
                       <td className="md:w-auto w-24">
                         <a
-                          data-src="#popup-layout"
-                          href="javascript:;"
-                          className="md:min-w-20 w-40 text-black bg-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 popup-open-layout4 attr-data md:px-5"
+                          // data-src="#popup-layout"
+                          // href="javascript:;"
+                          onClick={handleOpenChat}
+                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
                           Get a Quote

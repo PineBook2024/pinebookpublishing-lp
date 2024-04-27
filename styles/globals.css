@@ -544,4 +544,8 @@ footer .footer-line:before {
     width: 100% !important;
     margin: 0 auto;
   }
+
+  .books-collage{
+    display: none;
+  }
 }
