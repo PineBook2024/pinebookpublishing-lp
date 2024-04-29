@@ -497,6 +497,11 @@ footer .footer-line:before {
   height: 29px;
 }
 
+.table-sec svg{
+  width: 24px;
+  text-align: center;
+}
+
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {

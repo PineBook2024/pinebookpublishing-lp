@@ -767,7 +767,7 @@ export default function Home() {
                 <div class="check-list flex">
                   <span className="flex mx-5 items-center text-sm  md:text-xl font-bold pb-4">
                     Included:{" "}
-                    <FontAwesomeIcon icon={faCheckCircle} color="#2c9384" className="ms-4" />
+                    <FontAwesomeIcon icon={faCheckCircle} color="#2c9384" className="ms-4" fontSize={20} />
                     {/* <Image
                     className="ml-4"
                     src={"/images/c.png"}
