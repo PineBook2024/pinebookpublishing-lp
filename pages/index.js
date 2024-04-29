@@ -37,7 +37,54 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const { submitContactForm } = useHubspotForm();
+
 export default function Home() {
+    // Form Integration
+   
+    const [email, setEmail] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [message, setMessage] = useState("");
+    const [showSuccess, setShowSuccess] = useState(false);
+  
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      const setters = {
+        fullName: setFullName,
+        email: setEmail,
+        message: setMessage,
+        phoneNumber: setPhoneNumber,
+      };
+  
+      const setter = setters[name];
+      if (setter) {
+        setter(value);
+      }
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const response = await submitContactForm(
+        email,
+        fullName,
+        phoneNumber,
+        message
+      );
+      if (response) {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          setEmail("");
+          setFullName("");
+          setPhoneNumber("")
+          setMessage("");
+        }, 3000);
+      }
+  
+      console.log("response", response);
+    };
   const swiperRef = useRef();
   const swiperRef2 = useRef();
 
@@ -73,51 +120,7 @@ export default function Home() {
     { question: "How do you handle distribution and marketing of books?", answer: "Pine Book Publishing handles distribution and marketing for your books, ensuring they reach the widest audience possible." }
   ];
 
-  // Form Integration
-  const { submitContactForm } = useHubspotForm();
-  const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
 
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    const setters = {
-      fullName: setFullName,
-      email: setEmail,
-      message: setMessage,
-      phoneNumber: setPhoneNumber,
-    };
-
-    const setter = setters[name];
-    if (setter) {
-      setter(value);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await submitContactForm(
-      email,
-      fullName,
-      phoneNumber,
-      message
-    );
-    if (response) {
-      setShowSuccess(true);
-      setTimeout(() => {
-        setShowSuccess(false);
-        setEmail("");
-        setFullName("");
-        setPhoneNumber("")
-        setMessage("");
-      }, 3000);
-    }
-
-    console.log("response", response);
-  };
 
 
   const settings = {
@@ -182,18 +185,19 @@ export default function Home() {
       <main>
         <Header />
         <Hero Component={HeroForm} />
-        <AnimateFade type={"right"}>
-          <section className="brnd-slider bg-black overflow-hidden">
-            <div className="container grid grid-cols-1 width-container">
+
+        <section className="brnd-slider bg-black overflow-hidden">
+          <AnimateFade type={"right"}>
+            <div className="container grid grid-cols-1 width-container position-relative">
               <div className="container mx-auto position-relative">
                 <div className="book-sell-text ">
                   <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
                 </div>
-                <div className="bnd-slider flex py-10 justify-center">
+                <div className="bnd-slider flex py-7 justify-center">
                   <Swiper
                     className="px-20 gap-x-32"
                     spaceBetween={15}
-                    slidesPerView={7}
+                    slidesPerView={6}
                     loop={true}
                     autoplay={{
                       delay: 2500,
@@ -216,7 +220,7 @@ export default function Home() {
                         navigation: true,
                       },
                       "@1.00": {
-                        slidesPerView: 7,
+                        slidesPerView: 6,
                         spaceBetween: 15,
                       },
                     }}
@@ -267,7 +271,8 @@ export default function Home() {
                             alt="LOGO"
                             src={"/images/logo4.png"}
                             width={100}
-                            height={80}
+                            height={120}
+                            className="custom-logo-size"
                           />
                         </a>
                       </div>
@@ -341,8 +346,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
-        </AnimateFade>
+          </AnimateFade>
+        </section>
+
 
         <section className="about pt-14 overflow-hidden">
           <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
@@ -363,7 +369,9 @@ export default function Home() {
                 </div>
               </AnimateFade>
               <div className="abt-pic text-center">
-                <Image src={"/images/abt-pic.png"} width={500} height={570} data-aos="fade-left" data-aos-delay="200" />
+                <AnimateFade type={"left"}>
+                  <Image src={"/images/abt-pic.png"} width={500} height={570} />
+                </AnimateFade>
               </div>
             </div>
 
@@ -1655,13 +1663,14 @@ export default function Home() {
             <div className="form-mid-wrap pt-12 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
                 <div className="basis-1/3 hidden md:block">
-                  <Image
-                    className="text-center pt-10"
-                    src={"/images/boy.png"}
-                    width={550}
-                    height={250}
-                    data-aos="fade-right" data-aos-delay="200"
-                  ></Image>
+                  <AnimateFade type={"right"}>
+                    <Image
+                      className="text-center pt-10"
+                      src={"/images/boy.png"}
+                      width={550}
+                      height={250}
+                    ></Image>
+                  </AnimateFade>
                 </div>
 
                 <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>

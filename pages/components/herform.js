@@ -2,33 +2,17 @@ import useHubspotForm from "../hooks/hubspot";
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
+// import { useRouter } from 'next/router';
+const { submitContactForm } = useHubspotForm();
 
 
 export default function HeroForm() {
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-  //   const formData = new FormData(event.target);
-  //   try {
-  //     const response = await fetch("/api/contact", {
-  //       method: "post",
-  //       body: formData,
-  //     });
-  //     console.log(response);
-  //     console.log(formData);
-
-  //     // if (!response.ok) {
-  //     //     console.log("falling over")
-  //     //     throw new Error(`response status: ${response.status}`);
-  //     // }
-  //     const responseData = await response.json();
-  //     console.log(responseData["message"]);
-
-  //     alert("Message successfully sent");
-  //   } catch (err) {
-  //     console.error(err);
-  //     alert("Error, please try resubmitting the form");
-  //   }
-  // }
+  
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -45,12 +29,6 @@ export default function HeroForm() {
     window.zE && window.zE('webWidget', 'open');
   };
 
-  const { submitContactForm } = useHubspotForm();
-  const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,6 +47,7 @@ export default function HeroForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // const router = useRouter();
     const response = await submitContactForm(
       email,
       fullName,
@@ -77,6 +56,7 @@ export default function HeroForm() {
     );
     if (response) {
       setShowSuccess(true);
+      // router.push('/thank-you'); 
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");

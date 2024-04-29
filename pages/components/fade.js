@@ -43,6 +43,17 @@ export default function AnimateFade({type, children}){
                     // ref={ref}
                     initial={{opacity: 0, x: -300}}
                     animate={{opacity: 1, x: 0}}
+                    transition={{duration: 1.9, ease: "easeIn"}}
+                    >
+                        {children}
+                </motion.div>
+            );
+            case "left":
+            return (
+                <motion.div 
+                    // ref={ref}
+                    initial={{opacity: 0, x: 300}}
+                    animate={{opacity: 1, x: 0}}
                     transition={{duration: 1.8, ease: "easeIn"}}
                     >
                         {children}

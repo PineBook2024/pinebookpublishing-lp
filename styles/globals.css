@@ -478,7 +478,8 @@ footer .footer-line:before {
 .book-sell-text {
   position: absolute;
   left: 16px;
-  top: 32px;
+  /* top: 32px; */
+  margin-top: 32px;
 }
 
 .book-sell-text h3 {
@@ -490,12 +491,19 @@ footer .footer-line:before {
   font-weight: bold;
 }
 
+.custom-logo-size {
+  width: 150px;
+  object-fit: cover;
+  height: 52px;
+}
+
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
   .book-sell-text {
     display: none;
   }
+
   .bk-sil.prev {
     left: -19px;
   }
@@ -545,7 +553,7 @@ footer .footer-line:before {
     margin: 0 auto;
   }
 
-  .books-collage{
+  .books-collage {
     display: none;
   }
 }
