@@ -26,7 +26,7 @@ export default function Header() {
                     </a>
                 </div>
 
-                <div className="flex items-center justify-end flex-col md:flex-row gap-3">
+                <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse	">
                     <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
                         <Link className="" href={'tel:8668417469'}>(866)-841-7469</Link>
                     </button>

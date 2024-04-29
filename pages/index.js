@@ -1,4 +1,4 @@
-import useHubspotForm from "./hooks/hubspot";
+import useHubspotForm from "@/hooks/hubspot";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -37,11 +37,11 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const { submitContactForm } = useHubspotForm();
+
 
 export default function Home() {
     // Form Integration
-   
+    const { submitContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -233,6 +233,7 @@ export default function Home() {
                             src={"/images/logo1.png"}
                             width={100}
                             height={80}
+                            className="custom-logo-size"
                           />
                         </a>
                       </div>

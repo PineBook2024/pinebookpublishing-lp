@@ -1,13 +1,13 @@
-import useHubspotForm from "../hooks/hubspot";
+import useHubspotForm from "@/hooks/hubspot";
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
 // import { useRouter } from 'next/router';
-const { submitContactForm } = useHubspotForm();
+
 
 
 export default function HeroForm() {
-  
+  const { submitContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
