@@ -1,7 +1,8 @@
+import useHubspotForm from "../hooks/hubspot";
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
-import useHubspotForm from "../hooks/hubspot";
+
 
 export default function HeroForm() {
   // async function handleSubmit(event) {

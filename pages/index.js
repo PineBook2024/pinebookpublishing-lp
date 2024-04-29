@@ -1,3 +1,4 @@
+import useHubspotForm from "./hooks/hubspot";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -22,7 +23,6 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle }
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./components/fade";
-import useHubspotForm from "./hooks/hubspot";
 
 library.add(faArrowLeft, faArrowRight);
 import {
@@ -182,150 +182,150 @@ export default function Home() {
       <main>
         <Header />
         <Hero Component={HeroForm} />
+        <AnimateFade type={"right"}>
+          <section className="brnd-slider bg-black overflow-hidden">
+            <div className="container grid grid-cols-1 width-container">
+              <div className="container mx-auto position-relative">
+                <div className="book-sell-text ">
+                  <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+                </div>
+                <div className="bnd-slider flex py-10 justify-center">
+                  <Swiper
+                    className="px-20 gap-x-32"
+                    spaceBetween={15}
+                    slidesPerView={7}
+                    loop={true}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={false}
+                    onBeforeInit={(swiper) => {
+                      swiperRef.current = swiper;
+                    }}
+                    modules={[Navigation, Autoplay, Pagination]}
+                    breakpoints={{
+                      "@0.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
 
-        <section className="brnd-slider bg-black overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <div className="container grid grid-cols-1 width-container">
-            <div className="container mx-auto position-relative">
-              <div className="book-sell-text ">
-                <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
-              </div>
-              <div className="bnd-slider flex py-10 justify-center">
-                <Swiper
-                  className="px-20 gap-x-32"
-                  spaceBetween={15}
-                  slidesPerView={7}
-                  loop={true}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                  pagination={false}
-                  onBeforeInit={(swiper) => {
-                    swiperRef.current = swiper;
-                  }}
-                  modules={[Navigation, Autoplay, Pagination]}
-                  breakpoints={{
-                    "@0.00": {
-                      slidesPerView: 3,
-                      spaceBetween: 10,
-
-                      navigation: {
-                        enabled: false,
+                        navigation: {
+                          enabled: false,
+                        },
+                        pagination: false,
+                        navigation: true,
                       },
-                      pagination: false,
-                      navigation: true,
-                    },
-                    "@1.00": {
-                      slidesPerView: 7,
-                      spaceBetween: 15,
-                    },
-                  }}
-                >
-                  <SwiperSlide className="mx-auto text-center">
-                    <div className="flex justify-center">
-                      <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo1.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                      "@1.00": {
+                        slidesPerView: 7,
+                        spaceBetween: 15,
+                      },
+                    }}
+                  >
+                    <SwiperSlide className="mx-auto text-center">
+                      <div className="flex justify-center">
+                        <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo1.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo2.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo2.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://www.trustpilot.com/review/pinebookwriting.com">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo3.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://www.trustpilot.com/review/pinebookwriting.com">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo3.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo4.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo4.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://clutch.co/profile/pine-book-writing">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo5.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://clutch.co/profile/pine-book-writing">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo6.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://clutch.co/profile/pine-book-writing">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo5.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://clutch.co/profile/pine-book-writing">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo6.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://clutch.co/profile/pine-book-writing">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo7.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://clutch.co/profile/pine-book-writing">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo7.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <a href="https://clutch.co/profile/pine-book-writing">
-                        <Image
-                          alt="LOGO"
-                          src={"/images/logo8.webp"}
-                          width={100}
-                          height={80}
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex justify-center">
+                        <a href="https://clutch.co/profile/pine-book-writing">
+                          <Image
+                            alt="LOGO"
+                            src={"/images/logo8.png"}
+                            width={100}
+                            height={80}
+                          />
+                        </a>
+                      </div>
+                    </SwiperSlide>
 
 
-                  {/* <SwiperSlide>
+                    {/* <SwiperSlide>
                   <div>
                     <a href="https://clutch.co/profile/pine-book-writing">
                       <Image
@@ -337,11 +337,12 @@ export default function Home() {
                     </a>
                   </div>
                 </SwiperSlide> */}
-                </Swiper>
+                  </Swiper>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </AnimateFade>
 
         <section className="about pt-14 overflow-hidden">
           <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
@@ -1675,7 +1676,7 @@ export default function Home() {
                   <div className="relative mb-3">
                     <input
                       type="text"
-                      name="name"
+                      name="fullName"
                       onChange={handleChange}
                       value={fullName}
                       required
@@ -1687,7 +1688,7 @@ export default function Home() {
                   <div className="relative mb-3">
                     <input
                       type="text"
-                      name="phone"
+                      name="phoneNumber"
                       onChange={handleChange}
                       value={phoneNumber}
                       required
@@ -1699,6 +1700,7 @@ export default function Home() {
                   <div className="relative mb-3">
                     <input
                       type="text"
+                      name="email"
                       onChange={handleChange}
                       value={email}
                       required
@@ -1709,13 +1711,13 @@ export default function Home() {
 
                   <div className="relative mb-3">
                     <textarea
-                      name="message"
                       onChange={handleChange}
                       value={message}
                       required
+                      placeholder="Enter your Message"
+                      name="message"
                       className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                       rows={5}
-                      placeholder="Enter your Message"
                     ></textarea>
                     <div
                       className="absolute inset-y-0 left-0 pl-3 pt-3 
