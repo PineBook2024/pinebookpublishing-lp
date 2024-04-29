@@ -502,6 +502,7 @@ footer .footer-line:before {
 footer svg{
   width: 24px;
   text-align: center;
+  display: inline-block;
 }
 
 /* Media Query */
