@@ -76,7 +76,7 @@ export default function Home() {
     );
     if (response) {
       setShowSuccess(true);
-      router.push('/publishing-lp/thank-you') 
+      router.push('/publishing-lp/thank-you')
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");
@@ -184,6 +184,8 @@ export default function Home() {
           name="description"
           content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
         />
+        <link rel="shortcut icon" href="/images/fav.png" />
+
         {/* Google tag Manager Script */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
         <script

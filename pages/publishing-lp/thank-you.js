@@ -13,6 +13,7 @@ export default function Home() {
                     name="description"
                     content=""
                 />
+                 <link rel="shortcut icon" href="/images/fav.png" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
                 <script
                     dangerouslySetInnerHTML={{

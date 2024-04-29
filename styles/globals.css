@@ -513,11 +513,11 @@ footer .footer-line:before {
   }
 
   .main-banner-vid {
-    height: 125vh;
+    height: 140vh;
   }
 
   video#vide {
-    height: 125vh;
+    height: 140vh;
   }
 
   .faqs {
@@ -555,5 +555,9 @@ footer .footer-line:before {
 
   .books-collage {
     display: none;
+  }
+  .client-logo-sec{
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
 }
