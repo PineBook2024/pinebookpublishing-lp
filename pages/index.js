@@ -22,7 +22,7 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle }
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./components/fade";
-import useHubspotForm from "../hooks/hubspot";
+import useHubspotForm from "./hooks/hubspot";
 
 library.add(faArrowLeft, faArrowRight);
 import {

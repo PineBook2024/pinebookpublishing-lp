@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import Image from "next/image";
 import useHubspotForm from "../hooks/hubspot";
 
-
 export default function HeroForm() {
   // async function handleSubmit(event) {
   //   event.preventDefault();
