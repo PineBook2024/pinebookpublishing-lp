@@ -13,8 +13,8 @@ import nodemailer from 'nodemailer';
 
     let transporter = nodemailer.createTransport({
         host: 'smtp.titan.email',
-        port: 587, 
-        secure: true, 
+        port: 587,
+        secure: true,
         auth: {
             user: 'support@pinebookpublishing.com', 
             pass: 'Contact@PBP#1209**' 
@@ -23,7 +23,7 @@ import nodemailer from 'nodemailer';
 
     try {
         let info = await transporter.sendMail({
-            from: `"Query Form" <your-email@yourdomain.com>`, 
+            from: `"Query Form" <support@pinebookpublishing.com>`, 
             to: 'support@pinebookpublishing.com', 
             subject: 'New Contact Form Submission',
             text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,

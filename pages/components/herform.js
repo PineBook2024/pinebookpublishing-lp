@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
+import useHubspotForm from "../hooks/hubspot";
 
 
 export default function HeroForm() {
@@ -44,52 +45,49 @@ export default function HeroForm() {
     window.zE && window.zE('webWidget', 'open');
   };
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  const { submitContactForm } = useHubspotForm();
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+    const setters = {
+      fullName: setFullName,
+      email: setEmail,
+      message: setMessage,
+      phoneNumber: setPhoneNumber,
+    };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success('Form successfully submitted');
-        console.log('Form successfully submitted');
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        const errorData = await response.json();
-        console.error('Form submission error:', errorData);
-        toast.error('Form submission error:', errorData);
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
+    const setter = setters[name];
+    if (setter) {
+      setter(value);
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await submitContactForm(
+      email,
+      fullName,
+      phoneNumber,
+      message
+    );
+    if (response) {
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        setEmail("");
+        setFullName("");
+        setPhoneNumber("")
+        setMessage("");
+      }, 3000);
+    }
+
+    console.log("response", response);
+  };
 
   return (
     <div className="container mx-4 pt-20 md:mx-32">
@@ -159,50 +157,59 @@ export default function HeroForm() {
               <div class="relative">
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name} onChange={handleChange}
+                  name="fullName"
+                  onChange={handleChange}
+                  value={fullName}
+                  required
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Name"
-                  required
                 />
               </div>
               <div class="relative">
                 <input
                   type="text"
-                  name="phone"
-                  value={formData.phone} onChange={handleChange}
+                  onChange={handleChange}
+                  value={phoneNumber}
+                  name="phoneNumber"
+                  required
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Phone"
-                  required
                 />
               </div>
               <div class="relative">
                 <input
                   type="text"
                   name="email"
-                  value={formData.email} onChange={handleChange}
+                  onChange={handleChange}
+                  value={email}
+                  required
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Email"
-                  required
                 />
               </div>
               <div class="relative">
                 <textarea
                   class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   rows={5}
-                  value={formData.message} onChange={handleChange}
+                  onChange={handleChange}
+                  value={message}
+                  required
                   placeholder="Enter your Message"
                   name="message"
-                  required
                 ></textarea>
                 <div
                   class="absolute inset-y-0 left-0 pl-3 pt-3 
-                              flex items-start  
-                              pointer-events-none"
+                  flex items-start  
+                  pointer-events-none"
                 ></div>
               </div>
+              {showSuccess && (
+                <p className="px-1 py-2 text-green-700">
+                  Form submitted Successfully!
+                </p>
+              )}
               <button
-                className="p-4 w-full header-submit-btn uppercase text-white rounded font-poppins"
+                className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins"
                 type="submit"
               >
                 Submit

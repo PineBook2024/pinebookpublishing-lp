@@ -22,6 +22,7 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle }
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./components/fade";
+import useHubspotForm from "./hooks/hubspot";
 
 library.add(faArrowLeft, faArrowRight);
 import {
@@ -72,51 +73,52 @@ export default function Home() {
     { question: "How do you handle distribution and marketing of books?", answer: "Pine Book Publishing handles distribution and marketing for your books, ensuring they reach the widest audience possible." }
   ];
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  // Form Integration
+  const { submitContactForm } = useHubspotForm();
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleChange = e => {
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+    const setters = {
+      fullName: setFullName,
+      email: setEmail,
+      message: setMessage,
+      phoneNumber: setPhoneNumber,
+    };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success('Form successfully submitted');
-        console.log('Form successfully submitted');
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        const errorData = await response.json();
-        console.error('Form submission error:', errorData);
-        toast.error('Form submission error:', errorData);
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
+    const setter = setters[name];
+    if (setter) {
+      setter(value);
     }
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await submitContactForm(
+      email,
+      fullName,
+      phoneNumber,
+      message
+    );
+    if (response) {
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        setEmail("");
+        setFullName("");
+        setPhoneNumber("")
+        setMessage("");
+      }, 3000);
+    }
+
+    console.log("response", response);
+  };
+
 
   const settings = {
     // slidesPerView: 3,
@@ -1674,7 +1676,9 @@ export default function Home() {
                     <input
                       type="text"
                       name="name"
-                      value={formData.name} onChange={handleChange}
+                      onChange={handleChange}
+                      value={fullName}
+                      required
                       className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                       placeholder="Enter your Name"
                     />
@@ -1684,7 +1688,9 @@ export default function Home() {
                     <input
                       type="text"
                       name="phone"
-                      value={formData.phone} onChange={handleChange}
+                      onChange={handleChange}
+                      value={phoneNumber}
+                      required
                       className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                       placeholder="Enter your Number"
                     />
@@ -1693,8 +1699,9 @@ export default function Home() {
                   <div className="relative mb-3">
                     <input
                       type="text"
-                      name="email"
-                      value={formData.email} onChange={handleChange}
+                      onChange={handleChange}
+                      value={email}
+                      required
                       className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                       placeholder="Enter your Email"
                     />
@@ -1703,7 +1710,9 @@ export default function Home() {
                   <div className="relative mb-3">
                     <textarea
                       name="message"
-                      value={formData.message} onChange={handleChange}
+                      onChange={handleChange}
+                      value={message}
+                      required
                       className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                       rows={5}
                       placeholder="Enter your Message"
@@ -1714,7 +1723,11 @@ export default function Home() {
                               pointer-events-none"
                     ></div>
                   </div>
-
+                  {showSuccess && (
+                    <p className="px-1 py-2 text-green-700">
+                      Form submitted Successfully!
+                    </p>
+                  )}
                   <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn" type="submit">
                     Submit
                   </button>
