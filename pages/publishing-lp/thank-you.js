@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -34,7 +34,7 @@ export default function Home() {
                             </svg>
                             <h1 className="text-4xl font-bold">Thank You !</h1>
                             <p>Thank you for your interest!</p>
-                            <Link href={'/'}
+                            <Link href={'/publishing-lp/'}
                                 className="inline-flex items-center px-4 py-2 header-submit-btn border border-indigo-300 rounded rounded-full hover:text-black">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 mr-2" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
