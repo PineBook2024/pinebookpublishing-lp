@@ -2,11 +2,12 @@ import useHubspotForm from "@/hooks/hubspot";
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 
 export default function HeroForm() {
+  const router = useRouter();
   const { submitContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
@@ -47,7 +48,6 @@ export default function HeroForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const router = useRouter();
     const response = await submitContactForm(
       email,
       fullName,
@@ -57,6 +57,7 @@ export default function HeroForm() {
     if (response) {
       setShowSuccess(true);
       // router.push('/thank-you'); 
+        router.push('/thank-you')  
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");

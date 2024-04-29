@@ -4,10 +4,10 @@ import Link from "next/link";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import "swiper/css/effect-coverflow";
-import Header from "./components/header";
-import Hero from "./components/hero";
-import HeroForm from "./components/herform";
-import Footer from "./components/Footer";
+import Header from "../components/header";
+import Hero from "../components/hero";
+import HeroForm from "../components/herform";
+import Footer from "../components/Footer";
 import {
   Autoplay,
   Pagination,
@@ -22,7 +22,7 @@ import { A11y } from "swiper/modules";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AnimateFade from "./components/fade";
+import AnimateFade from "../components/fade";
 import { useRouter } from 'next/navigation';
 
 library.add(faArrowLeft, faArrowRight);

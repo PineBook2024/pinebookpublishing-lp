@@ -479,7 +479,7 @@ footer .footer-line:before {
   position: absolute;
   left: 16px;
   /* top: 32px; */
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .book-sell-text h3 {
@@ -513,11 +513,11 @@ footer .footer-line:before {
   }
 
   .main-banner-vid {
-    height: 154vh;
+    height: 125vh;
   }
 
   video#vide {
-    height: 154vh;
+    height: 125vh;
   }
 
   .faqs {
