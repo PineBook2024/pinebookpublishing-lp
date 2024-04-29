@@ -497,7 +497,9 @@ footer .footer-line:before {
   height: 29px;
 }
 
-.table-sec svg{
+.table-sec svg,
+.faqs svg,
+footer svg{
   width: 24px;
   text-align: center;
 }

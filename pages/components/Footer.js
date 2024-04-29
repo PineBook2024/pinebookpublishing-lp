@@ -30,7 +30,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:8668417469"
-                  className="text-white text-xl hover:text-white font-majallab"
+                  className="text-white text-xl hover:text-white font-majallab flex"
                 >
                   <FontAwesomeIcon icon={faPhone} className="me-3" />
                   (866) 841-7469
@@ -39,7 +39,7 @@ export default function Footer() {
               <li className="mt-3">
                 <a
                   href="mailto:info@pinebookpublishing.com"
-                  className="text-white hover:text-white font-majallab text-2xl md:text-2xl"
+                  className="text-white hover:text-white font-majallab text-2xl md:text-2xl flex"
                 >
                   <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                   {" "}
