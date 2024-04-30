@@ -91,11 +91,11 @@ export default function Home() {
   const swiperRef = useRef();
   const swiperRef2 = useRef();
 
-  const [openFAQ, setOpenFAQ] = useState(0);
+  // const [openFAQ, setOpenFAQ] = useState(0);
 
-  const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
+  // const toggleFAQ = (index) => {
+  //   setOpenFAQ(openFAQ === index ? null : index);
+  // };
 
   // Open Chat Click
   useEffect(() => {
@@ -113,6 +113,12 @@ export default function Home() {
     window.zE && window.zE('webWidget', 'open');
   };
 
+
+  const [openFAQ, setOpenFAQ] = useState(0);  // Set initial open FAQ index to 0 (first item)
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);  // Toggle FAQ or close if already open
+  };
 
   const faqData = [
     { question: "How do I self-publish my book?", answer: "Self-publishing your book with Pine Book Publishing is simple. Start by submitting your manuscript, and our team will guide you through the editing, formatting, and cover design process." },
@@ -360,7 +366,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
               <AnimateFade type={"top"}>
                 <div className="abt-txt m1-h p1">
-                  <h3 className="font-majallab text-3xl md:text-7xl" >
+                  <h3 className="font-majallab text-3xl md:text-7xl">
                     About Us<span>Pine Book Publishing</span>
                   </h3>
                   <p>

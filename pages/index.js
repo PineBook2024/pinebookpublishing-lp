@@ -25,7 +25,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./components/fade";
 import { useRouter } from 'next/navigation';
 
-
 library.add(faArrowLeft, faArrowRight);
 import {
   animate,
