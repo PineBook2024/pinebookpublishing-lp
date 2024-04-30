@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
-import ZendeskChat from "./components/Zendesk";
  
 // Font files can be colocated inside of `pages`
 const majallab = localFont({ 
@@ -28,7 +27,6 @@ export default function App({ Component, pageProps }) {
   return (
     <main className={`${poppins.variable, majallab.variable}`}>
       <Component {...pageProps} />
-      <ZendeskChat />
     </main>
   );
 }

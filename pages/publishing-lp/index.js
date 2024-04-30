@@ -37,6 +37,7 @@ import {
 } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import ZendeskChat from "../components/Zendesk";
 
 
 
@@ -207,6 +208,7 @@ export default function Home() {
         />
       </Head>
       <main>
+        <ZendeskChat />
         <Header />
         <Hero Component={HeroForm} />
 
