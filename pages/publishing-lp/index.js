@@ -92,12 +92,6 @@ export default function Home() {
   const swiperRef = useRef();
   const swiperRef2 = useRef();
 
-  // const [openFAQ, setOpenFAQ] = useState(0);
-
-  // const toggleFAQ = (index) => {
-  //   setOpenFAQ(openFAQ === index ? null : index);
-  // };
-
   // Open Chat Click
   useEffect(() => {
     const script = document.createElement('script');
@@ -1607,7 +1601,7 @@ export default function Home() {
 
         <section className="btm-form overflow-hidden width-container">
           <div className="container mx-auto px-8 md:px-20">
-            <div className="form-mid-wrap pt-12 bg-gray-200 connect-form-border mb-12">
+            <div className="form-mid-wrap pt-8 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
                 <div className="basis-1/3 hidden md:block position-relative">
                   <AnimateFade type={"right"} className="position-relative">
@@ -1686,7 +1680,7 @@ export default function Home() {
                       Form submitted Successfully!
                     </p>
                   )}
-                  <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn" type="submit">
+                  <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn mb-10" type="submit">
                     Submit
                   </button>
                 </form>

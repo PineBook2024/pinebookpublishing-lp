@@ -37,6 +37,7 @@ import {
 } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import ZendeskChat from "./components/Zendesk";
 
 
 

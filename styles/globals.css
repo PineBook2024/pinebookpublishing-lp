@@ -510,6 +510,7 @@ footer svg{
   height: 100% !important;
   position: relative;
   left: -63px;
+  top: 5px;
 }
 
 /* Media Query */
