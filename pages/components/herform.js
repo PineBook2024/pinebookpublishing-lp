@@ -1,9 +1,7 @@
 import useHubspotForm from "@/hooks/hubspot";
 import React, { useState, useEffect } from "react";
-import { toast } from 'react-toastify';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-
 
 
 export default function HeroForm() {

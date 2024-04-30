@@ -176,6 +176,7 @@ export default function Home() {
     );
   }
 
+
   return (
     <>
       <Head>
@@ -346,20 +347,6 @@ export default function Home() {
                         </a>
                       </div>
                     </SwiperSlide>
-
-
-                    {/* <SwiperSlide>
-                  <div>
-                    <a href="https://clutch.co/profile/pine-book-writing">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/s1.png"}
-                        width={150}
-                        height={60}
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide> */}
                   </Swiper>
                 </div>
               </div>
@@ -603,48 +590,48 @@ export default function Home() {
                 >
                   <SwiperSlide className="mx-auto text-center">
                     <div className="flex justify-center">
-                      <Image src={"/images/bb1-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb5-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb8-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb4-min.webp"} width={260} height={289} data-aos="fade-left" data-aos-delay="200" />
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb3-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb6-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
-                    </div>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <Image src={"/images/bb7-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb2-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} />
                     </div>
                   </SwiperSlide>
                 </Swiper>
@@ -654,28 +641,44 @@ export default function Home() {
 
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 <div>
-                  <Image src={"/images/bb1-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                  <AnimateFade type={"right"}>
+                    <Image src={"/images/bb1-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb5-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                  <AnimateFade type={"top"}>
+                    <Image src={"/images/bb5-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb8-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                  <AnimateFade type={"top"}>
+                    <Image src={"/images/bb8-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb4-min.webp"} width={260} height={289} data-aos="fade-left" data-aos-delay="200" />
+                  <AnimateFade type={"right"}>
+                    <Image src={"/images/bb4-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb3-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                  <AnimateFade type={"top"}>
+                    <Image src={"/images/bb3-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb6-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                  <AnimateFade type={"bottom"}>
+                    <Image src={"/images/bb6-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb7-min.webp"} width={260} height={289} data-aos="fade-up" data-aos-delay="200" />
+                  <AnimateFade type={"left"}>
+                    <Image src={"/images/bb7-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
                 <div>
-                  <Image src={"/images/bb2-min.webp"} width={260} height={289} data-aos="fade-right" data-aos-delay="200" />
+                  <AnimateFade type={"top"}>
+                    <Image src={"/images/bb2-min.webp"} width={260} height={289} />
+                  </AnimateFade>
                 </div>
               </div>
             </div>
@@ -692,7 +695,7 @@ export default function Home() {
 
             {/* <div className="grid grid-cols-4 gap-4  items-top"> */}
             <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
-              <div className="pack-wrap gap-8" data-aos="fade-right" data-aos-delay="200">
+              <div className="pack-wrap gap-8">
                 <div className="pack-box flex items-center">
                   <Image src={"/images/pp1.png"} width={40} height={50}></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
@@ -707,7 +710,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="pack-wrap" data-aos="fade-down" data-aos-delay="200">
+              <div className="pack-wrap">
                 <div className="pack-box flex items-center">
                   <Image src={"/images/pp2.png"} width={40} height={50}></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
@@ -722,7 +725,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="pack-wrap" data-aos="fade-up" data-aos-delay="200">
+              <div className="pack-wrap" >
                 <div className="pack-box flex items-center">
                   <Image src={"/images/pp3.png"} width={40} height={50}></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
@@ -737,7 +740,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="pack-wrap" data-aos="fade-left" data-aos-delay="200">
+              <div className="pack-wrap">
                 <div className="pack-box flex items-center">
                   <Image src={"/images/pp4.png"} width={40} height={50}></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
@@ -757,7 +760,7 @@ export default function Home() {
 
         <section className="table-sec overflow-x-scroll">
           <div className="container mx-auto m1-h mt-10">
-            <h3 className="mb-8 text-center font-majallab text-5xl md:text-7xl" data-aos="zoom-in" data-aos-delay="200">
+            <h3 className="mb-8 text-center font-majallab text-5xl md:text-7xl">
               Comparison Chart
             </h3>
           </div>
@@ -768,24 +771,10 @@ export default function Home() {
                   <span className="flex mx-5 items-center text-sm  md:text-xl font-bold pb-4">
                     Included:{" "}
                     <FontAwesomeIcon icon={faCheckCircle} color="#2c9384" className="ms-4" fontSize={20} />
-                    {/* <Image
-                    className="ml-4"
-                    src={"/images/c.png"}
-                    alt=""
-                    height={20}
-                    width={25}
-                  ></Image> */}
                   </span>
                   <span className="flex text-sm  md:text-xl font-bold pb-4 items-center">
                     Can be purchased as an add-on:{" "}
                     <FontAwesomeIcon icon={faPlusCircle} color="#2c9384" className="ms-4" />
-                    {/* <Image
-                    className="ml-4"
-                    src={"/images/plus.webp"}
-                    alt=""
-                    height={20}
-                    width={25}
-                  ></Image> */}
                   </span>
                 </div>
               </div>
@@ -861,56 +850,21 @@ export default function Home() {
                     <tr>
                       <td className="">Dedicated Project Manager</td>
                       <td>
-                        {/* <Image
-                        className=""
-                        src={"/images/c.svg"}
-                        alt=""
-                        height={20}
-                        width={25}
-                      ></Image> */}
                         <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                       </td>
                       <td>
-                        {/* <Image
-                        className=""
-                        src={"/images/c.svg"}
-                        alt=""
-                        height={20}
-                        width={25}
-                      ></Image> */}
                         <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                       </td>
                       <td>
-                        {/* <Image
-                        className=""
-                        src={"/images/c.svg"}
-                        alt=""
-                        height={20}
-                        width={25}
-                      ></Image> */}
                         <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                       </td>
                       <td>
-                        {/* <Image
-                        className=""
-                        src={"/images/c.svg"}
-                        alt=""
-                        height={20}
-                        width={25}
-                      ></Image> */}
                         <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                       </td>
                     </tr>
                     <tr>
                       <td>100% Copyright Ownership</td>
                       <td>
-                        {/* <Image
-                        className=""
-                        src={"/images/c.svg"}
-                        alt=""
-                        height={20}
-                        width={25}
-                      ></Image> */}
                         <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                       </td>
                       <td>
@@ -1359,7 +1313,7 @@ export default function Home() {
               src={"/images/processs.gif"}
               width={1280}
               height={400}
-              data-aos="fade-up" data-aos-delay="200"
+
             ></Image>
           </div>
 
@@ -1367,7 +1321,7 @@ export default function Home() {
             <div className="container mx-auto">
               {/* <div className="grid grid-cols-4 gap-4"></div> */}
               <div className="mt-6 grid grid-cols-1 px-6 gap-y-10 sm:grid-cols-2 mx-5 lg:grid-cols-4 xl:gap-x-8">
-                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                   <h2>
                     <Counter from={0} to={15} val={"+"} />
                   </h2>
@@ -1376,21 +1330,21 @@ export default function Home() {
                   </span>
                 </div>
 
-                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                   <h2>
                     <Counter from={0} to={500} val={"+"} />
                   </h2>
                   <span className="font-majallab">Published Books</span>
                 </div>
 
-                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                   <h2>
                     <Counter from={0} to={100} val={"+"} />
                   </h2>
                   <span className="font-majallab">Ongoing Clients</span>
                 </div>
 
-                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                   <h2>
                     <Counter from={0} to={99} val={"+"} />
                   </h2>
@@ -1549,33 +1503,6 @@ export default function Home() {
               Looking for Answers?
             </h3>
 
-            {/* <div className="faq-que">
-            <div className="flex flex-col md:flex-row justify-center gap-4">
-              {Array.from({ length: 2 }).map((_, colIndex) => (
-                <div key={colIndex} className="w-full max-w-screen-sm">
-                  {faqQuestions.slice(colIndex * 3, (colIndex + 1) * 3).map((question, index) => {
-                    const actualIndex = index + colIndex * 3;
-                    return (
-                      <button
-                        key={actualIndex}
-                        className="w-full border-b-2 border-gray-300 p-6 text-left group mt-0 focus:outline-none bg-slate-200 mb-4"
-                        onClick={() => toggleFAQ(actualIndex)}
-                      >
-                        <div className="text-lg font-semibold flex justify-between">
-                          {actualIndex + 1}. {question}
-                          <FontAwesomeIcon icon={openFAQ === actualIndex ? faMinusCircle : faPlusCircle} color="#2c9384" />
-                        </div>
-                        <div className={`mt-3 text-gray-700 transition-max-height duration-500 ease-in-out ${openFAQ === actualIndex ? 'max-h-40' : 'max-h-0 overflow-hidden'}`}>
-                          {faqAnswers[actualIndex]}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-          </div> */}
-
             <div className="faq-que">
               <div className="flex flex-col md:flex-row justify-center gap-4">
                 {Array.from({ length: 2 }).map((_, colIndex) => (
@@ -1637,41 +1564,35 @@ export default function Home() {
               >
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex justify-between items-center">
-                    <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage2.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage13.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage13.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage3.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage3.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage14.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage14.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage4.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage4.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage12.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
+                    <Image src={"/images/bage12.png"} width={100} height={100} ></Image>
                   </div>
                 </SwiperSlide>
               </Swiper>
-              {/* <Image src={"/images/bage2.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage13.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage3.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage14.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage4.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image>
-            <Image src={"/images/bage12.png"} width={100} height={100} data-aos="zoom-in" data-aos-delay="200"></Image> */}
             </div>
           </div>
         </section>

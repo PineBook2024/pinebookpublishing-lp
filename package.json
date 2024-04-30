@@ -22,7 +22,6 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
-    "react-toastify": "^10.0.5",
     "react-type-animation": "^3.2.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.1"
