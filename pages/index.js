@@ -76,7 +76,7 @@ export default function Home() {
     );
     if (response) {
       setShowSuccess(true);
-      router.push('/thank-you') 
+      router.push('/thankyou') 
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");

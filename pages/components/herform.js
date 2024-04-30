@@ -55,7 +55,7 @@ export default function HeroForm() {
     if (response) {
       setShowSuccess(true);
       // router.push('/thank-you'); 
-        router.push('/publishing-lp/thank-you')  
+        router.push('/thankyou')  
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");
