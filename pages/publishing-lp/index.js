@@ -115,7 +115,7 @@ export default function Home() {
   };
 
 
-  const [openFAQ, setOpenFAQ] = useState(0);  // Set initial open FAQ index to 0 (first item)
+  const [openFAQ, setOpenFAQ] = useState(null);  // Set initial open FAQ index to 0 (first item)
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);  // Toggle FAQ or close if already open

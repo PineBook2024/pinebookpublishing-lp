@@ -10,7 +10,7 @@ export default function Hero({ Component = null }) {
         controls={false}
       >
         {/* <source src="https://pinebookpublishing.com/publishing-lp/assets/images/brand-vid.mp4" /> */}
-        <source src="/images/brand-vid.mp4" />
+        <source src="https://videos.ctfassets.net/0g2c0d4v74kt/7JddRckDmiDTFoj2zkuibz/19a06bc6173d8b205ead99ba8b0a0307/brand-vid.mp4" />
 
       </video>
       {Component ? <Component /> : ''}
