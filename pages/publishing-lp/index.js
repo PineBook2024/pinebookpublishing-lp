@@ -1609,8 +1609,8 @@ export default function Home() {
           <div className="container mx-auto px-8 md:px-20">
             <div className="form-mid-wrap pt-12 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
-                <div className="basis-1/3 hidden md:block">
-                  <AnimateFade type={"right"}>
+                <div className="basis-1/3 hidden md:block position-relative">
+                  <AnimateFade type={"right"} className="position-relative">
                     <Image
                       className="text-center pt-10 contact-form-img"
                       src={"/images/contact-user.webp"}

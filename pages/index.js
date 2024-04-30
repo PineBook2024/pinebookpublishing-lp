@@ -199,6 +199,7 @@ export default function Home() {
         />
       </Head>
       <main>
+        <ZendeskChat />
         <Header />
         <Hero Component={HeroForm} />
 

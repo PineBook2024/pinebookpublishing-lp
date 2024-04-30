@@ -507,7 +507,9 @@ footer svg{
 
 
 .contact-form-img{
-  height: auto !important;
+  height: 100% !important;
+  position: relative;
+  left: -63px;
 }
 
 /* Media Query */
