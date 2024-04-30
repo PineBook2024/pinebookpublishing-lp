@@ -1604,8 +1604,8 @@ export default function Home() {
                 <div className="basis-1/3 hidden md:block">
                   <AnimateFade type={"right"}>
                     <Image
-                      className="text-center pt-10"
-                      src={"/images/boy.png"}
+                      className="text-center pt-10 contact-form-img"
+                      src={"/images/contact-user.webp"}
                       width={550}
                       height={250}
                     ></Image>

@@ -25,6 +25,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./components/fade";
 import { useRouter } from 'next/navigation';
 
+
 library.add(faArrowLeft, faArrowRight);
 import {
   animate,
@@ -185,18 +186,6 @@ export default function Home() {
           content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
         />
          <link rel="shortcut icon" href="/images/fav.png" />
-        {/* Google tag Manager Script */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'AW-16471224604');
-              `,
-          }}
-        />
       </Head>
       <main>
         <Header />
@@ -1682,7 +1671,7 @@ export default function Home() {
                 <div className="basis-1/3 hidden md:block">
                   <AnimateFade type={"right"}>
                     <Image
-                      className="text-center pt-10"
+                      className="text-center pt-10 contact-form-img"
                       src={"/images/boy.png"}
                       width={550}
                       height={250}

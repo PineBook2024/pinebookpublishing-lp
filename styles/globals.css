@@ -505,6 +505,11 @@ footer svg{
   display: inline-block;
 }
 
+
+.contact-form-img{
+  height: auto !important;
+}
+
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
