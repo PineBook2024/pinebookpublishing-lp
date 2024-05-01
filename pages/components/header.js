@@ -21,9 +21,9 @@ export default function Header() {
         <header className="container mx-auto py-2 width-container">
             <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
                 <div className="head-logo">
-                    <a className="text-center">
+                    <Link className="text-center" href="/publishing-lp">
                         <Image alt="LOGO" src={'/images/logo.gif'} width={200} height={80} />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse	">

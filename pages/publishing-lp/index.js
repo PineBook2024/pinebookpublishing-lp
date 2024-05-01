@@ -1,8 +1,9 @@
 import useHubspotForm from "@/hooks/hubspot";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import React, { useEffect, useRef, useState } from "react";
+
 import "swiper/css/effect-coverflow";
 import Header from "../components/header";
 import Hero from "../components/hero";
@@ -38,6 +39,15 @@ import {
 } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import Story from "../components/Story";
+import Chart from "../components/Chart";
+import Faq from "../components/Faq";
+
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(() => import('../components/hero'), {
+  loading: () => <p>Loading...</p>,
+});
 
 
 
@@ -53,17 +63,49 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState('');
 
-  const openModal = (service) => {
-    setSelectedService(service);
-    setModalOpen(true);
-  };
+  // Object
+  const packagesCard = [
+    {
+      id: 1,
+      image: "/images/pp1.png",
+      title: "Beginner",
+      description: "Launch your book with our Beginner Package, offering comprehensive editing, custom cover art, multi-platform formatting, Amazon optimization, 1 ISBN, and full royalties with a few paperback copies."
+    },
+    {
+      id: 2,
+      image: "/images/pp2.png",
+      title: "Standard",
+      description: "Enhance your publishing experience with our Standard Package, which ensures meticulous editing, versatile publishing options and 2 ISBNs, complete with a full suite of formats and copies for distribution."
+    },
+    {
+      id: 3,
+      image: "/images/pp3.png",
+      title: "Expert",
+      description: "Propel your project to new peaks with our Expert Package, which includes advanced editing, 3 ISBNs, a dynamic website, a video trailer, and widespread distribution, ensuring full ownership and royalties."
+    },
+    {
+      id: 4,
+      image: "/images/pp4.png",
+      title: "Enterprise",
+      description: "Embark on your authorial journey with our Enterprise Package, which encompasses detailed editing, captivating cover design, strategic marketing, 3 ISBNs, and extensive distribution to bring your book to readers worldwide."
+    }
+  ];
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // Books Object
+  const books = [
+    { src: "/images/bb1-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img ten" },
+    { src: "/images/bb5-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eleven" },
+    { src: "/images/bb8-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img twelve" },
+    { src: "/images/bb4-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img thirteen" },
+    { src: "/images/bb3-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img fifteen" },
+    { src: "/images/bb6-min.webp", width: 260, height: 289, type: "bottom", alt: "book mobile img sixteen" },
+    { src: "/images/bb7-min.webp", width: 260, height: 289, type: "left", alt: "book mobile img seventeen" },
+    { src: "/images/bb2-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eighteen" }
+  ];
+
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -109,23 +151,8 @@ export default function Home() {
 
     console.log("response", response);
   };
- 
 
-  // Open Chat Click
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
-    script.async = true;
-    document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  const handleOpenChat = () => {
-    window.zE && window.zE('webWidget', 'open');
-  };
 
 
   const [openFAQ, setOpenFAQ] = useState(null);  // Set initial open FAQ index to 0 (first item)
@@ -221,9 +248,9 @@ export default function Home() {
         />
       </Head>
       <main>
-        <Popup isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
         <Header />
-        <Hero Component={HeroForm} />
+        {/* <Hero  /> */}
+        <HeavyComponent Component={HeroForm} />
 
         <section className="brnd-slider bg-black overflow-hidden">
           <AnimateFade type={"right"}>
@@ -581,8 +608,8 @@ export default function Home() {
                     </div>
                   </SwiperSlide>
                 </Swiper>
-                <div class="bk-sil prev cursor-pointer"  onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
-                <div class="bk-sil next cursor-pointer"  onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+                <div class="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+                <div class="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
               </div>
             </div>
           </div>
@@ -683,46 +710,13 @@ export default function Home() {
 
 
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
-                <div>
-                  <AnimateFade type={"right"}>
-                    <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img ten" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"top"}>
-                    <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img eleven" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"top"}>
-                    <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img twoelve" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"right"}>
-                    <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img thirteen" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"top"}>
-                    <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img fifteen" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"bottom"}>
-                    <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img sixteen" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"left"}>
-                    <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img seventeen" />
-                  </AnimateFade>
-                </div>
-                <div>
-                  <AnimateFade type={"top"}>
-                    <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img eighteen" />
-                  </AnimateFade>
-                </div>
+                {books.map((book, index) => (
+                  <div key={index}>
+                    <AnimateFade type={book.type}>
+                      <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} />
+                    </AnimateFade>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -738,608 +732,24 @@ export default function Home() {
 
             {/* <div className="grid grid-cols-4 gap-4  items-top"> */}
             <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
-              <div className="pack-wrap gap-8">
-                <div className="pack-box flex items-center">
-                  <Image src={"/images/pp1.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
-                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
-                    Beginner
-                  </h4>
+              {packagesCard.map((pkg) => (
+                <div key={pkg.id} className="pack-wrap gap-8">
+                  <div className="pack-box flex items-center">
+                    <Image src={pkg.image} width={40} height={50} loading="lazy" alt="icon" />
+                    <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
+                      {pkg.title}
+                    </h4>
+                  </div>
+                  <p>
+                    {pkg.description}
+                  </p>
                 </div>
-                <p>
-                  Launch your book with our Beginner Package, offering
-                  comprehensive editing, custom cover art, multi-platform
-                  formatting, Amazon optimization, 1 ISBN, and full royalties with
-                  a few paperback copies.
-                </p>
-              </div>
-
-              <div className="pack-wrap">
-                <div className="pack-box flex items-center">
-                  <Image src={"/images/pp2.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
-                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
-                    Standard
-                  </h4>
-                </div>
-                <p>
-                  Enhance your publishing experience with our Standard Package,
-                  which ensures meticulous editing, versatile publishing options
-                  and 2 ISBNs, complete with a full suite of formats and copies
-                  for distribution.
-                </p>
-              </div>
-
-              <div className="pack-wrap" >
-                <div className="pack-box flex items-center">
-                  <Image src={"/images/pp3.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
-                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
-                    Expert
-                  </h4>
-                </div>
-                <p>
-                  Propel your project to new peaks with our Expert Package, which
-                  includes advanced editing, 3 ISBNs, a dynamic website, a video
-                  trailer, and widespread distribution, ensuring full ownership
-                  and royalties.
-                </p>
-              </div>
-
-              <div className="pack-wrap">
-                <div className="pack-box flex items-center">
-                  <Image src={"/images/pp4.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
-                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
-                    Enterprise
-                  </h4>
-                </div>
-                <p>
-                  Embark on your authorial journey with our Enterprise Package,
-                  which encompasses detailed editing, captivating cover design,
-                  strategic marketing, 3 ISBNs, and extensive distribution to
-                  bring your book to readers worldwide.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="table-sec overflow-x-scroll">
-          <div className="container mx-auto m1-h mt-10">
-            <h3 className="mb-8 text-center font-majallab text-5xl md:text-7xl">
-              Comparison Chart
-            </h3>
-          </div>
-          <div className="width-container">
-            <div className="container mx-auto">
-              <div class="check-wrap">
-                <div class="check-list flex">
-                  <span className="flex mx-5 items-center text-sm  md:text-xl font-bold pb-4">
-                    Included:{" "}
-                    <FontAwesomeIcon icon={faCheckCircle} color="#2c9384" className="ms-4" fontSize={20} />
-                  </span>
-                  <span className="flex text-sm  md:text-xl font-bold pb-4 items-center">
-                    Can be purchased as an add-on:{" "}
-                    <FontAwesomeIcon icon={faPlusCircle} color="#2c9384" className="ms-4" />
-                  </span>
-                </div>
-              </div>
-              <div className="md:w-full w-[500px]">
-                <table className="w-full mb-14 table-auto">
-                  <thead className="first-row">
-                    <tr>
-                      <th
-                        id="sticky-header-column-fixed"
-                        class="mainpage-regular"
-                      ></th>
-
-                      <th className="font-majallab">
-                        {" "}
-                        Beginners
-                        <br />
-                        <button
-                          onClick={handleOpenChat}
-                          type="button"
-                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                        >
-                          Talk to us
-                        </button>
-                      </th>
-
-                      <th className="font-majallab">
-                        Standard
-                        <br />
-                        <button
-                          onClick={handleOpenChat}
-                          type="button"
-                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                        >
-                          Talk to us
-                        </button>
-                      </th>
-
-                      <th className="font-majallab">
-                        Expert
-                        <br />
-                        <button
-                          onClick={handleOpenChat}
-                          type="button"
-                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                        >
-                          Talk to us
-                        </button>
-                      </th>
-
-                      <th className="font-majallab">
-                        Enterprise
-                        <br />
-                        <button
-                          onClick={handleOpenChat}
-                          type="button"
-                          class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                        >
-                          Talk to us
-                        </button>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-                    <tr>
-                      <th
-                        className="pro text-3xl md:text-5xl text-start ml-10"
-                        colspan="5"
-                        scope="row"
-                      >
-                        PROJECT MANAGEMENT AND SUPPORT
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className="">Dedicated Project Manager</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>100% Copyright Ownership</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Paperback Author Copy</td>
-                      <td>3</td>
-                      <td>5</td>
-                      <td>7</td>
-                      <td>10</td>
-                    </tr>
-                    <tr>
-                      <td>Hardcover Author Copy</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>4</td>
-                    </tr>
-
-                    <tr>
-                      <th
-                        className="pro text-3xl md:text-5xl text-start"
-                        colspan="5"
-                        scope="row"
-                      >
-                        <span className="ml-32 md:ml-40">EDITING</span>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className="">Editing &amp; Proofreading</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Typesetting &amp; Layout Adjustment</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">eBook Formatting</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">PaperBack Formatting</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Hardcover Formatting</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Publishing Platforms</td>
-                      <td>2</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td className="">Revisions Per Draft</td>
-                      <td>3 - 5</td>
-                      <td>3 - 5</td>
-                      <td>3 - 5</td>
-                      <td>3 - 5</td>
-                    </tr>
-
-                    <tr>
-                      <th
-                        className="pro text-3xl md:text-5xl text-start"
-                        colspan="5"
-                        scope="row"
-                      >
-                        <span className="ml-32 md:ml-40">DESIGN</span>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className="">Design Consultation</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Cover Design</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Interior Layout</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Revision Rounds</td>
-                      <td>3</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td className="">Black-and-White or Full-Color Interior</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Image Insertions</td>
-                      <td>10</td>
-                      <td>15</td>
-                      <td>20</td>
-                      <td>30</td>
-                    </tr>
-
-                    <tr>
-                      <th
-                        className="pro text-3xl md:text-5xl text-start"
-                        colspan="5"
-                        scope="row"
-                      >
-                        <span className="ml-32 md:ml-40">DISTRIBUTION</span>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className="">eBook Distribution</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Paperback Format Distribution</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Hardcover Format Distribution</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Print-on-Demand Availability</td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">ISBN</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>3</td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td className="">Amazon Author Central</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <th
-                        className="pro text-3xl md:text-5xl text-start"
-                        colspan="5"
-                        scope="row"
-                      >
-                        <span className="ml-32 md:ml-40">MARKETING</span>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td className="">Marketing Consultation</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Custom Marketing Strategy</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="">Author's Dynamic Website</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>4 PAGES</td>
-                      <td>6 PAGES</td>
-                    </tr>
-                    <tr>
-                      <td className="">Social Media Marketing</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>3 MONTHS</td>
-                      <td>6 MONTHS</td>
-                    </tr>
-                    <tr>
-                      <td className="">Search Engine Optimization</td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>
-                        <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
-                      </td>
-                      <td>3 MONTHS</td>
-                    </tr>
-
-                    <tr className="font-majallab">
-                      <td></td>
-                      <td className="md:w-auto w-24">
-                        <a
-                          // data-src="#popup-layout"
-                          // href="javascript:;"
-                          onClick={() => openModal('Beginners')}
-                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
-                          data-source="Beginners Bundles"
-                        >
-                          Get a Quote
-                        </a>
-                      </td>
-                      <td className="md:w-auto w-24">
-                        <a
-                          // data-src="#popup-layout"
-                          // href="javascript:;"
-                          onClick={() => openModal('Standard')}
-                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
-                          data-source="Beginners Bundles"
-                        >
-                          Get a Quote
-                        </a>
-                      </td>
-                      <td className="md:w-auto w-24">
-                        <a
-                          // data-src="#popup-layout"
-                          // href="javascript:;"
-                          onClick={() => openModal('Expert')}
-                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
-                          data-source="Beginners Bundles"
-                        >
-                          Get a Quote
-                        </a>
-                      </td>
-                      <td className="md:w-auto w-24">
-                        <a
-                          // data-src="#popup-layout"
-                          // href="javascript:;"
-                          onClick={() => openModal('Enterprise')}
-                          className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
-                          data-source="Beginners Bundles"
-                        >
-                          Get a Quote
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Chart />
 
         <section className="process pt-14">
           <div className="container mx-auto text-center m1-h ">
@@ -1399,247 +809,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="story-sec py-20">
-          <div className="container mx-auto text-center m1-h">
-            <h3 className="mb-8 text-white text-5xl md:text-7xl font-majallab">
-              Our Success Stories
-            </h3>
-            <p className="text-white">
-              Explore our Success Stories to see how Pine Book Publishing has
-              empowered authors in their self-publishing journey and stands out
-              among self-book publishers.
-            </p>
-          </div>
+        <Story />
 
-          <section className="testimonials pt-8 ">
-            <div className="container mx-auto relative  w-[80%]">
-              <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={3}
-                loop={true}
-                initialSlide={1}
-                coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: true,
-                }}
-                onBeforeInit={(swiper) => {
-                  swiperRef2.current = swiper;
-                }}
-                pagination={false}
-                modules={[EffectCoverflow, Pagination]}
-                className="mySwiper"
-                breakpoints={{
-                  "@0.00": {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: {
-                      enabled: false,
-                    },
-                    pagination: false,
-                    navigation: true,
-                  },
-                  "@1.00": {
-                    slidesPerView: 3,
-                    spaceBetween: 5,
-                  },
-                }}
-              >
-                <SwiperSlide>
-                  <video
-                    loop=""
-                    controls="true"
-                    muted=""
-                    poster=""
-                    loading="lazy"
-                    preload=""
-                  >
-                    <source
-                      src={"https://imperiumdesigners.com/assets/images/v1.mp4"}
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <video
-                    loop=""
-                    controls="true"
-                    muted=""
-                    poster=""
-                    loading="lazy"
-                    preload=""
-                  >
-                    <source
-                      src={"https://imperiumdesigners.com/assets/images/v6.mp4"}
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <video
-                    loop=""
-                    controls="true"
-                    muted=""
-                    poster=""
-                    loading="lazy"
-                    preload=""
-                  >
-                    <source
-                      src={"https://imperiumdesigners.com/assets/images/v5.mp4"}
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <video
-                    loop=""
-                    controls="true"
-                    muted=""
-                    poster=""
-                    loading="lazy"
-                    preload=""
-                  >
-                    <source
-                      src={"https://imperiumdesigners.com/assets/images/v3.mp4"}
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <video
-                    loop=""
-                    controls="true"
-                    muted=""
-                    poster=""
-                    loading="lazy"
-                    preload=""
-                  >
-                    <source
-                      src={"https://imperiumdesigners.com/assets/images/v4.mp4"}
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </SwiperSlide>
-              </Swiper>
-              <div
-                class="bk-sil2 prev"
-                onClick={() => swiperRef2.current?.slidePrev()}
-              >
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </div>
-              <div
-                class="bk-sil2 next"
-                onClick={() => swiperRef2.current?.slideNext()}
-              >
-                <FontAwesomeIcon icon={faArrowRight} />
-              </div>
-            </div>
-          </section>
-        </section>
-
-        <section className="faqs width-container">
-          <div className="container mx-auto m1-h">
-            <h3 className="text-center pt-16 font-majallab text-5xl md:text-7xl  md:pb-4">
-              Looking for Answers?
-            </h3>
-
-            <div className="faq-que">
-              <div className="flex flex-col md:flex-row justify-center gap-4">
-                {Array.from({ length: 2 }).map((_, colIndex) => (
-                  <div key={colIndex} className="w-full max-w-screen-sm">
-                    {faqData.slice(colIndex * 3, (colIndex + 1) * 3).map((faq, index) => {
-                      const actualIndex = index + colIndex * 3;
-                      return (
-                        <button
-                          key={actualIndex}
-                          className="w-full border-b-2 border-gray-300 p-6 text-left mt-0 focus:outline-none bg-slate-200 mb-4"
-                          onClick={() => toggleFAQ(actualIndex)}
-                        >
-                          <div className="text-lg font-semibold flex justify-between">
-                            {faq.question}
-                            <FontAwesomeIcon icon={openFAQ === actualIndex ? faMinusCircle : faPlusCircle} color="#2c9384" />
-                          </div>
-                          <div className={`mt-3 text-gray-700 transition-all duration-700 ease-in-out ${openFAQ === actualIndex ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                            {faq.answer}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bages-pic flex flex-wrap items-center justify-center py-10 gap-x-32">
-              <Swiper
-                className=""
-                spaceBetween={15}
-                slidesPerView={5}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={false}
-                onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                modules={[Navigation, Autoplay, Pagination]}
-                breakpoints={{
-                  "@0.00": {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-
-                    navigation: {
-                      enabled: false,
-                    },
-                    pagination: false,
-                    navigation: true,
-                  },
-                  "@1.00": {
-                    slidesPerView: 5,
-                    spaceBetween: 15,
-                  },
-                }}
-              >
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex justify-between items-center">
-                    <Image src={"/images/bage2.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage13.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage3.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage14.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage4.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage12.png"} width={100} height={100} loading="lazy"></Image>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
-        </section>
+        <Faq />
 
         <section className="btm-form overflow-hidden width-container">
           <div className="container mx-auto px-8 md:px-20">

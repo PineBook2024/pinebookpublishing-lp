@@ -11,30 +11,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useHubspotForm from "@/hooks/hubspot";
 
 export default function popup({ isOpen, onClose, service }) {
-    // const searchParams = useSearchParams();
-    // const modal = searchParams.get("modal-digital-design");
-    // const pathname = usePathname();
     const router = useRouter();
-
-    const { submitContactForm } = useHubspotForm();
+    const { submitPopupContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
-    const [fullName, setFullName] = useState("");
+    const [fulName, setFulName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
+    const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
-          router.push('/publishing-lp');
+            router.push('/publishing-lp');
         }, 3000);
-      }, [router]);
+    }, [router]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setters = {
-            fullName: setFullName,
+            fullName: setFulName,
             email: setEmail,
             message: setMessage,
+            service: setServiceState,
             phoneNumber: setPhoneNumber,
         };
 
@@ -46,10 +44,11 @@ export default function popup({ isOpen, onClose, service }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitContactForm(
+        const response = await submitPopupContactForm(
             email,
-            fullName,
+            fulName,
             phoneNumber,
+            serviceState,
             message
         );
         if (response) {
@@ -58,7 +57,7 @@ export default function popup({ isOpen, onClose, service }) {
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
-                setFullName("");
+                setFulName("");
                 setPhoneNumber("")
                 setMessage("");
             }, 3000);
@@ -70,29 +69,7 @@ export default function popup({ isOpen, onClose, service }) {
     return (
         <>
             {isOpen && (
-                //   <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-                //     <div className="bg-white p-5 rounded-lg max-w-sm w-full">
-                //       <h2 className="text-xl font-bold">Request a Quote</h2>
-                //       <p className="mb-4">You are requesting a quote for: <strong>{service}</strong></p>
-                //       <form onSubmit={(e) => {
-                //         e.preventDefault();
-                //         alert(`Submitting form for ${service}`);
-                //         onClose();
-                //       }}>
-                //         {/* Include your form fields here */}
-                //         <input type="text" placeholder="Your Name" className="border p-2 w-full mb-4"/>
-                //         <input type="email" placeholder="Your Email" className="border p-2 w-full mb-4"/>
-                //         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                //           Send Request
-                //         </button>
-                //         <button type="button" onClick={onClose} className="ml-4 bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">
-                //           Cancel
-                //         </button>
-                //       </form>
-                //     </div>
-                //   </div>
                 <section className="btm-form flex-col md:flex-row fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center w-auto">
-
                     <div className="popup-modal-wrapper">
                         <div className="form-mid-wrap bg-gray-200 connect-form-border mb-12 relative">
                             <div className="flex flex-col md:flex-row items-center justify-center relative">
@@ -117,7 +94,7 @@ export default function popup({ isOpen, onClose, service }) {
                                             type="text"
                                             name="fullName"
                                             onChange={handleChange}
-                                            value={fullName}
+                                            value={fulName}
                                             required
                                             className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                                             placeholder="Enter your Name"
@@ -135,18 +112,18 @@ export default function popup({ isOpen, onClose, service }) {
                                             placeholder="Enter your Number"
                                         />
                                     </div>
-
+                                    {/* 
                                     <div className="relative mb-3">
                                         <input
                                             type="text"
-                                            name="phoneNumber"
-                                            onChange={handleChange}
-                                            value={phoneNumber}
+                                            name="service"
+                                            value={service}
+                                            readOnly
                                             required
                                             className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab hidden"
                                             placeholder="Enter your Number"
                                         />
-                                    </div>
+                                    </div> */}
 
                                     <div className="relative mb-3">
                                         <input

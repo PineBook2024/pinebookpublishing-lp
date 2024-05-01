@@ -13,24 +13,49 @@ export default function HeroForm() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
-    script.async = true;
-    document.body.appendChild(script);
+  // Object
+  const clientLogos = [
+    {
+      href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+      src: "/images/s1.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+      src: "/images/s2.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.trustpilot.com/review/pinebookwriting.com",
+      src: "/images/s3.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+      src: "/images/s4.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://clutch.co/profile/pine-book-writing",
+      src: "/images/s6.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    }
+  ];
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  const handleOpenChat = () => {
-    window.zE && window.zE('webWidget', 'open');
-  };
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/publishing-lp'); 
+      router.push('/publishing-lp');
     }, 3000);
   }, [router]);
 
@@ -61,7 +86,7 @@ export default function HeroForm() {
     if (response) {
       setShowSuccess(true);
       // router.push('/thank-you'); 
-        router.push('/thankyou')  
+      router.push('/thankyou')
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");
@@ -84,56 +109,19 @@ export default function HeroForm() {
           <h1 className="font-majallab text-5xl md:text-8xl">
             Publish Your Dreams!
           </h1>
-          <p>
-            Our comprehensive{" "}
-            <span>
-              {" "}
-              KDP (Kindle Direct Publishing) and Self-Publishing Services
-            </span>{" "}
-            transform your manuscript from editing to distribution, ensuring it is accessible to readers globally.
-          </p>
-          <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button>
+          <p>Our comprehensive<span>KDP (Kindle Direct Publishing) and Self-Publishing Services</span>transform your manuscript from editing to distribution, ensuring it is accessible to readers globally.</p>
+          {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}
           <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
-            <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
-              <Image
-                alt="LOGO"
-                src={"/images/s1.png"}
-                width={130}
-                height={60}
-              />
-            </a>
-            <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
-              <Image
-                alt="LOGO"
-                src={"/images/s2.png"}
-                width={130}
-                height={60}
-              />
-            </a>
-            <a href="https://www.trustpilot.com/review/pinebookwriting.com">
-              <Image
-                alt="LOGO"
-                src={"/images/s3.png"}
-                width={130}
-                height={60}
-              />
-            </a>
-            <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
-              <Image
-                alt="LOGO"
-                src={"/images/s4.png"}
-                width={130}
-                height={60}
-              />
-            </a>
-            <a href="https://clutch.co/profile/pine-book-writing">
-              <Image
-                alt="LOGO"
-                src={"/images/s6.png"}
-                width={130}
-                height={60}
-              />
-            </a>
+            {clientLogos.map((logo, index) => (
+              <a key={index} href={logo.href}>
+                <Image
+                  alt={logo.alt}
+                  src={logo.src}
+                  width={logo.width}
+                  height={logo.height}
+                />
+              </a>
+            ))}
           </div>
         </div>
         <div>
