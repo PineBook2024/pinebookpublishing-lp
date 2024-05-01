@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import AnimateFade from "../components/fade";
 
 export default function About(props) {
 

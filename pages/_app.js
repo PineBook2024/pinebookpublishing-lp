@@ -4,29 +4,41 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
- 
+import Script from 'next/script';
+
 // Font files can be colocated inside of `pages`
-const majallab = localFont({ 
-    src: './majallab-webfont.woff2',
-    variable: '--font-majallab',
+const majallab = localFont({
+  src: './majallab-webfont.woff2',
+  variable: '--font-majallab',
 });
 const poppins = Poppins({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-poppins',
-    weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600'],
 });
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9X52J8V8NK');
+  }, []);
+  
+  useEffect(() => {
     AOS.init({
-      duration: 2000, 
+      duration: 2000,
     });
   }, []);
 
   return (
     <main className={`${poppins.variable, majallab.variable}`}>
       <Component {...pageProps} />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
+        strategy="afterInteractive"
+      />
     </main>
   );
 }
