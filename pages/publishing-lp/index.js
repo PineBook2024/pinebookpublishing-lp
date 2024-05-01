@@ -155,10 +155,9 @@ export default function Home() {
 
 
 
-  const [openFAQ, setOpenFAQ] = useState(null);  // Set initial open FAQ index to 0 (first item)
-
+  const [openFAQ, setOpenFAQ] = useState(null);  
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);  // Toggle FAQ or close if already open
+    setOpenFAQ(openFAQ === index ? null : index); 
   };
 
   const faqData = [
@@ -169,9 +168,6 @@ export default function Home() {
     { question: "Do you offer design services?", answer: "Yes, Pine Book Publishing offers comprehensive design services, including cover design, typesetting, and layout adjustment." },
     { question: "How do you handle distribution and marketing of books?", answer: "Pine Book Publishing handles distribution and marketing for your books, ensuring they reach the widest audience possible." }
   ];
-
-
-
 
   const settings = {
     // slidesPerView: 3,
@@ -254,7 +250,7 @@ export default function Home() {
         <HeavyComponent Component={HeroForm} />
 
         <section className="brnd-slider bg-black overflow-hidden">
-          <AnimateFade type={"right"}>
+          {/* <AnimateFade type={"right"}> */}
             <div className="container grid grid-cols-1 width-container position-relative">
               <div className="container mx-auto position-relative">
                 <div className="book-sell-text ">
@@ -400,14 +396,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </AnimateFade>
+          {/* </AnimateFade> */}
         </section>
 
 
         <section className="about pt-14 overflow-hidden">
           <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
-              <AnimateFade type={"top"}>
+              {/* <AnimateFade type={"top"}> */}
                 <div className="abt-txt m1-h p1">
                   <h3 className="font-majallab text-3xl md:text-7xl">
                     About Us<span>Pine Book Publishing</span>
@@ -421,15 +417,15 @@ export default function Home() {
                     readers and makes an everlasting impact worldwide.
                   </p>
                 </div>
-              </AnimateFade>
+              {/* </AnimateFade> */}
               <div className="abt-pic text-center">
-                <AnimateFade type={"left"}>
+                {/* <AnimateFade type={"left"}> */}
                   <Image src={"/images/abt-pic.png"} width={500} height={570}
                     layout="responsive"
                     loading="lazy"
                     alt="about img"
                   />
-                </AnimateFade>
+                {/* </AnimateFade> */}
               </div>
             </div>
 
@@ -713,9 +709,9 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 {books.map((book, index) => (
                   <div key={index}>
-                    <AnimateFade type={book.type}>
+                    {/* <AnimateFade type={book.type}> */}
                       <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} />
-                    </AnimateFade>
+                    {/* </AnimateFade> */}
                   </div>
                 ))}
               </div>
@@ -819,7 +815,7 @@ export default function Home() {
             <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
                 <div className="basis-1/3 hidden md:block position-relative">
-                  <AnimateFade type={"right"} className="position-relative">
+                  {/* <AnimateFade type={"right"} className="position-relative"> */}
                     <Image
                       className="text-center pt-10 contact-form-img"
                       src={"/images/contact-user.webp"}
@@ -828,7 +824,7 @@ export default function Home() {
                       layout="responsive"
                       loading="lazy"
                     ></Image>
-                  </AnimateFade>
+                  {/* </AnimateFade> */}
                 </div>
 
                 <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
