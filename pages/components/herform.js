@@ -28,6 +28,12 @@ export default function HeroForm() {
     window.zE && window.zE('webWidget', 'open');
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/publishing-lp'); 
+    }, 3000);
+  }, [router]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;

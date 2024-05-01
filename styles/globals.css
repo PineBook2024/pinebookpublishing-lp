@@ -435,7 +435,7 @@ video#background-video {
 }
 
 .max-h-96 {
-  max-height: 24rem;
+  max-height: 50rem; 
   opacity: 1;
 }
 
@@ -499,23 +499,51 @@ footer .footer-line:before {
 
 .table-sec svg,
 .faqs svg,
-footer svg{
+footer svg {
   width: 24px;
   text-align: center;
   display: inline-block;
 }
 
 
-.contact-form-img{
-  height: 100% !important;
+.contact-form-img {
+  height: auto !important;
   position: relative;
   left: -63px;
   top: 5px;
+  padding: 0;
 }
+
+.close-btn-modal {
+  position: absolute;
+  top: 18px;
+  background: orange;
+  right: 22px;
+}
+
+.close-btn-modal svg {
+  width: 20px;
+  object-fit: contain;
+}
+
+.popup-img-bg {
+  height: 583px !important;
+  border-top-left-radius: 52px;
+  border-bottom-left-radius: 52px;
+}
+
+.popup-modal-wrapper {
+  width: 55%;
+}
+
 
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .popup-modal-wrapper {
+    width: 81%;
+  }
+
   .book-sell-text {
     display: none;
   }
@@ -572,7 +600,8 @@ footer svg{
   .books-collage {
     display: none;
   }
-  .client-logo-sec{
+
+  .client-logo-sec {
     margin-top: 40px;
     margin-bottom: 30px;
   }

@@ -37,7 +37,6 @@ import {
 } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import ZendeskChat from "./components/Zendesk";
 
 
 
@@ -51,6 +50,11 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/'); 
+    }, 3000);
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,7 +96,7 @@ export default function Home() {
   const swiperRef = useRef();
   const swiperRef2 = useRef();
 
-  const [openFAQ, setOpenFAQ] = useState(0);
+  const [openFAQ, setOpenFAQ] = useState(null);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -200,7 +204,6 @@ export default function Home() {
         />
       </Head>
       <main>
-        <ZendeskChat />
         <Header />
         <Hero Component={HeroForm} />
 

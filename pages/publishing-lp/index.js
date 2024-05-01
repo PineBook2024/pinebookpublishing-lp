@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "swiper/css/effect-coverflow";
 import Header from "../components/header";
 import Hero from "../components/hero";
+import Popup from "../components/popup";
 import HeroForm from "../components/herform";
 import Footer from "../components/Footer";
 import {
@@ -37,12 +38,14 @@ import {
 } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import ZendeskChat from "../components/Zendesk";
 
 
 
 export default function Home() {
   const router = useRouter();
+  const swiperRef = useRef();
+  const swiperRef2 = useRef();
+  const swiperRef3 = useRef();
   // Form Integration
   const { submitContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
@@ -50,6 +53,23 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/publishing-lp');
+    }, 3000);
+  }, [router]);
 
 
   const handleChange = (e) => {
@@ -89,8 +109,7 @@ export default function Home() {
 
     console.log("response", response);
   };
-  const swiperRef = useRef();
-  const swiperRef2 = useRef();
+ 
 
   // Open Chat Click
   useEffect(() => {
@@ -202,7 +221,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        <ZendeskChat />
+        <Popup isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
         <Header />
         <Hero Component={HeroForm} />
 
@@ -236,7 +255,7 @@ export default function Home() {
                         navigation: {
                           enabled: false,
                         },
-                        pagination: false,
+                        pagination: true,
                         navigation: true,
                       },
                       "@1.00": {
@@ -377,7 +396,11 @@ export default function Home() {
               </AnimateFade>
               <div className="abt-pic text-center">
                 <AnimateFade type={"left"}>
-                  <Image src={"/images/abt-pic.png"} width={500} height={570} />
+                  <Image src={"/images/abt-pic.png"} width={500} height={570}
+                    layout="responsive"
+                    loading="lazy"
+                    alt="about img"
+                  />
                 </AnimateFade>
               </div>
             </div>
@@ -395,7 +418,7 @@ export default function Home() {
                   }}
                   pagination={false}
                   onBeforeInit={(swiper) => {
-                    swiperRef.current = swiper;
+                    swiperRef3.current = swiper;
                   }}
                   modules={[Navigation, Autoplay, Pagination]}
                   breakpoints={{
@@ -403,7 +426,7 @@ export default function Home() {
                       slidesPerView: 1,
                       spaceBetween: 10,
                       navigation: {
-                        enabled: true,
+                        enabled: false,
                       },
                       pagination: false,
                       navigation: true,
@@ -420,6 +443,8 @@ export default function Home() {
                         src={"/images/b1.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img one"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -434,6 +459,8 @@ export default function Home() {
                         src={"/images/b2.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img two"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -448,6 +475,8 @@ export default function Home() {
                         src={"/images/b3.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img three"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -462,6 +491,8 @@ export default function Home() {
                         src={"/images/b4.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img four"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -476,6 +507,8 @@ export default function Home() {
                         src={"/images/b5.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img five"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -490,6 +523,8 @@ export default function Home() {
                         src={"/images/b6.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img six"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -504,6 +539,8 @@ export default function Home() {
                         src={"/images/b7.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img seven"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -518,6 +555,8 @@ export default function Home() {
                         src={"/images/b8.png"}
                         width={100}
                         height={100}
+                        loading="lazy"
+                        alt="book img eight"
                       ></Image>
                       <p className="p-4">
                         Indulge in tales of love, passion, and heartwarming
@@ -531,6 +570,8 @@ export default function Home() {
                       <Image
                         src={"/images/b9.png"}
                         width={100}
+                        loading="lazy"
+                        alt="book img nine"
                         height={100}
                       ></Image>
                       <p className="p-4">
@@ -540,8 +581,8 @@ export default function Home() {
                     </div>
                   </SwiperSlide>
                 </Swiper>
-                <div class="bk-sil prev cursor-pointer" onClick={() => swiperRef.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
-                <div class="bk-sil next cursor-pointer" onClick={() => swiperRef.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+                <div class="bk-sil prev cursor-pointer"  onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+                <div class="bk-sil next cursor-pointer"  onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
               </div>
             </div>
           </div>
@@ -592,48 +633,48 @@ export default function Home() {
                 >
                   <SwiperSlide className="mx-auto text-center">
                     <div className="flex justify-center">
-                      <Image src={"/images/bb1-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img ten" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb5-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eleven" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb8-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img twoelve" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb4-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img thirteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb3-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img fifteen" />
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb6-min.webp"} width={260} height={289} />
-                    </div>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <Image src={"/images/bb7-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img sixteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb2-min.webp"} width={260} height={289} />
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img seventeen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eighteen" />
                     </div>
                   </SwiperSlide>
                 </Swiper>
@@ -644,42 +685,42 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 <div>
                   <AnimateFade type={"right"}>
-                    <Image src={"/images/bb1-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img ten" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb5-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img eleven" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb8-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img twoelve" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"right"}>
-                    <Image src={"/images/bb4-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img thirteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb3-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img fifteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"bottom"}>
-                    <Image src={"/images/bb6-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img sixteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"left"}>
-                    <Image src={"/images/bb7-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img seventeen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb2-min.webp"} width={260} height={289} />
+                    <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img eighteen" />
                   </AnimateFade>
                 </div>
               </div>
@@ -699,7 +740,7 @@ export default function Home() {
             <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
               <div className="pack-wrap gap-8">
                 <div className="pack-box flex items-center">
-                  <Image src={"/images/pp1.png"} width={40} height={50}></Image>
+                  <Image src={"/images/pp1.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
                     Beginner
                   </h4>
@@ -714,7 +755,7 @@ export default function Home() {
 
               <div className="pack-wrap">
                 <div className="pack-box flex items-center">
-                  <Image src={"/images/pp2.png"} width={40} height={50}></Image>
+                  <Image src={"/images/pp2.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
                     Standard
                   </h4>
@@ -729,7 +770,7 @@ export default function Home() {
 
               <div className="pack-wrap" >
                 <div className="pack-box flex items-center">
-                  <Image src={"/images/pp3.png"} width={40} height={50}></Image>
+                  <Image src={"/images/pp3.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
                     Expert
                   </h4>
@@ -744,7 +785,7 @@ export default function Home() {
 
               <div className="pack-wrap">
                 <div className="pack-box flex items-center">
-                  <Image src={"/images/pp4.png"} width={40} height={50}></Image>
+                  <Image src={"/images/pp4.png"} width={40} height={50} loading="lazy" alt="icon"></Image>
                   <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
                     Enterprise
                   </h4>
@@ -1252,7 +1293,7 @@ export default function Home() {
                         <a
                           // data-src="#popup-layout"
                           // href="javascript:;"
-                          onClick={handleOpenChat}
+                          onClick={() => openModal('Beginners')}
                           className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
@@ -1263,7 +1304,7 @@ export default function Home() {
                         <a
                           // data-src="#popup-layout"
                           // href="javascript:;"
-                          onClick={handleOpenChat}
+                          onClick={() => openModal('Standard')}
                           className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
@@ -1274,7 +1315,7 @@ export default function Home() {
                         <a
                           // data-src="#popup-layout"
                           // href="javascript:;"
-                          onClick={handleOpenChat}
+                          onClick={() => openModal('Expert')}
                           className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
@@ -1285,7 +1326,7 @@ export default function Home() {
                         <a
                           // data-src="#popup-layout"
                           // href="javascript:;"
-                          onClick={handleOpenChat}
+                          onClick={() => openModal('Enterprise')}
                           className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
                           data-source="Beginners Bundles"
                         >
@@ -1315,7 +1356,8 @@ export default function Home() {
               src={"/images/processs.gif"}
               width={1280}
               height={400}
-
+              loading="lazy"
+              alt="process"
             ></Image>
           </div>
 
@@ -1566,32 +1608,32 @@ export default function Home() {
               >
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex justify-between items-center">
-                    <Image src={"/images/bage2.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage2.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage13.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage13.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage3.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage3.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage14.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage14.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage4.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage4.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="mx-auto text-center">
                   <div className="flex flex-row justify-between items-center">
-                    <Image src={"/images/bage12.png"} width={100} height={100} ></Image>
+                    <Image src={"/images/bage12.png"} width={100} height={100} loading="lazy"></Image>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -1601,7 +1643,7 @@ export default function Home() {
 
         <section className="btm-form overflow-hidden width-container">
           <div className="container mx-auto px-8 md:px-20">
-            <div className="form-mid-wrap pt-8 bg-gray-200 connect-form-border mb-12">
+            <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
                 <div className="basis-1/3 hidden md:block position-relative">
                   <AnimateFade type={"right"} className="position-relative">
@@ -1610,6 +1652,8 @@ export default function Home() {
                       src={"/images/contact-user.webp"}
                       width={550}
                       height={250}
+                      layout="responsive"
+                      loading="lazy"
                     ></Image>
                   </AnimateFade>
                 </div>
@@ -1667,7 +1711,7 @@ export default function Home() {
                       placeholder="Enter your Message"
                       name="message"
                       className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                      rows={5}
+                      rows={3}
                     ></textarea>
                     <div
                       className="absolute inset-y-0 left-0 pl-3 pt-3 
