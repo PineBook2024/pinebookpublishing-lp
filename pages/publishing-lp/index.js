@@ -633,48 +633,48 @@ export default function Home() {
                 >
                   <SwiperSlide className="mx-auto text-center">
                     <div className="flex justify-center">
-                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" alt="book img ten" />
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img ten" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" alt="book img eleven" />
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eleven" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" alt="book img twoelve" />
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img twoelve" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" alt="book img thirteen" />
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img thirteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" alt="book img fifteen" />
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img fifteen" />
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" alt="book img sixteen" />
-                    </div>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" alt="book img seventeen" />
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img sixteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" alt="book img eighteen" />
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img seventeen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eighteen" />
                     </div>
                   </SwiperSlide>
                 </Swiper>
@@ -685,37 +685,37 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 <div>
                   <AnimateFade type={"right"}>
-                    <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img ten" />
+                    <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img ten" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img eleven" />
+                    <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img eleven" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img twoelve" />
+                    <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img twoelve" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"right"}>
-                    <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img thirteen" />
+                    <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img thirteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img fifteen" />
+                    <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img fifteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"bottom"}>
-                    <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img sixteen" />
+                    <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img sixteen" />
                   </AnimateFade>
                 </div>
                 <div>
                   <AnimateFade type={"left"}>
-                    <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img seventeen" />
+                    <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img seventeen" />
                   </AnimateFade>
                 </div>
                 <div>
