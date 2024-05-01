@@ -720,7 +720,7 @@ export default function Home() {
                 </div>
                 <div>
                   <AnimateFade type={"top"}>
-                    <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book mobile img eighteen" />
+                    <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" alt="book mobile img eighteen" />
                   </AnimateFade>
                 </div>
               </div>
