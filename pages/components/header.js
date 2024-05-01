@@ -3,16 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
-        script.async = true;
-        document.body.appendChild(script);
+    // useEffect(() => {
+    //     const script = document.createElement('script');
+    //     script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
+    //     script.async = true;
+    //     document.body.appendChild(script);
 
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
+    //     return () => {
+    //         document.body.removeChild(script);
+    //     };
+    // }, []);
 
     const handleOpenChat = () => {
         window.zE && window.zE('webWidget', 'open');
