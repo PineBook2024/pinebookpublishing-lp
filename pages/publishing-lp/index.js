@@ -633,48 +633,48 @@ export default function Home() {
                 >
                   <SwiperSlide className="mx-auto text-center">
                     <div className="flex justify-center">
-                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img ten" />
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" alt="book img ten" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eleven" />
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" alt="book img eleven" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img twoelve" />
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" alt="book img twoelve" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img thirteen" />
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" alt="book img thirteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img fifteen" />
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" alt="book img fifteen" />
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img sixteen" />
-                    </div>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img seventeen" />
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" alt="book img sixteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eighteen" />
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" alt="book img seventeen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" alt="book img eighteen" />
                     </div>
                   </SwiperSlide>
                 </Swiper>
