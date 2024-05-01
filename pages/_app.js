@@ -1,7 +1,5 @@
 import "@/styles/globals.css";
 import React, { useEffect } from 'react';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
@@ -25,12 +23,7 @@ export default function App({ Component, pageProps }) {
     gtag('js', new Date());
     gtag('config', 'G-9X52J8V8NK');
   }, []);
-  
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
+
 
   return (
     <main className={`${poppins.variable, majallab.variable}`}>
