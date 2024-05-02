@@ -719,7 +719,7 @@ export default function Home() {
                 {books.map((book, index) => (
                   <div key={index}>
                     {/* <AnimateFade type={book.type}> */}
-                      <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} />
+                      <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect" />
                     {/* </AnimateFade> */}
                   </div>
                 ))}

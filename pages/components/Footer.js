@@ -79,22 +79,22 @@ export default function Footer() {
         <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-white w-full md:text-center text-sm sm:text-left">
             Copyright © 2024
-            <a
-              href="https://pinebookpublishing.com/terms-and-conditions.php"
+            <Link
+              href="/terms-and-conditions"
               rel="noopener noreferrer"
               className="text-white ml-1"
               target="_blank"
             >
               Terms & Conditions |
-            </a>
-            <a
-              href="https://pinebookpublishing.com/privacy-policy.php"
+            </Link>
+            <Link
+              href="/privacy-policy"
               rel="noopener noreferrer"
               className="text-white ml-1"
               target="_blank"
             >
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </div>
       </div>

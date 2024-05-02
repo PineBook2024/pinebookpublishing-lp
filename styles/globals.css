@@ -435,7 +435,7 @@ video#background-video {
 }
 
 .max-h-96 {
-  max-height: 50rem; 
+  max-height: 50rem;
   opacity: 1;
 }
 
@@ -539,23 +539,25 @@ footer svg {
 
 @keyframes openAnimation {
   from {
-      max-height: 0;
-      opacity: 0;
+    max-height: 0;
+    opacity: 0;
   }
+
   to {
-      max-height: 96px; 
-      opacity: 1;
+    max-height: 96px;
+    opacity: 1;
   }
 }
 
 @keyframes closeAnimation {
   from {
-      max-height: 96px;
-      opacity: 1;
+    max-height: 96px;
+    opacity: 1;
   }
+
   to {
-      max-height: 0;
-      opacity: 0;
+    max-height: 0;
+    opacity: 0;
   }
 }
 
@@ -569,6 +571,49 @@ footer svg {
   overflow: hidden;
 }
 
+.book-zoom-effect {
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .4s ease-in-out;
+  cursor: pointer;
+}
+
+.book-zoom-effect:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.2);
+  transition: .4s ease-in-out;
+}
+
+.privacy-policy h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.privacy-policy p,
+.privacy-policy ul {
+  font-size: 19px;
+  padding-bottom: 20px;
+  color: #666;
+  list-style: inherit;
+}
+
+.privacy-policy ul li {
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.privacy-policy h1,
+.header-bg h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header-bg {
+  background-image: url(../public/images/privacy-policy.png);
+  padding: 6% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 /* Media Query */
@@ -639,19 +684,22 @@ footer svg {
     margin-top: 40px;
     margin-bottom: 30px;
   }
+
   .bk-sil2.next svg,
   .bk-sil2.prev svg,
   .bk-sil.next svg,
-  .bk-sil.prev svg{
+  .bk-sil.prev svg {
     width: 24px;
   }
+
   .bk-sil2.next,
   .bk-sil2.prev,
   .bk-sil.next,
-  .bk-sil.prev{
+  .bk-sil.prev {
     width: 61px;
   }
-  .main-banner-vid p{
+
+  .main-banner-vid p {
     font-size: 26px;
   }
 }
