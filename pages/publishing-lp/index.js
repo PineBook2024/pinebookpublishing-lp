@@ -44,6 +44,7 @@ import Chart from "../components/Chart";
 import Faq from "../components/Faq";
 
 import dynamic from 'next/dynamic';
+import Script from "next/script";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -232,8 +233,8 @@ export default function Home() {
         <link rel="shortcut icon" href="/images/fav.png" />
 
         {/* Google tag Manager Script */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -297,6 +298,7 @@ export default function Home() {
                             width={100}
                             height={80}
                             className="custom-logo-size"
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -310,6 +312,7 @@ export default function Home() {
                             src={"/images/logo2.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -323,6 +326,7 @@ export default function Home() {
                             src={"/images/logo3.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -336,6 +340,7 @@ export default function Home() {
                             src={"/images/logo4.png"}
                             width={100}
                             height={120}
+                            loading="lazy"
                             className="custom-logo-size"
                           />
                         </a>
@@ -350,6 +355,7 @@ export default function Home() {
                             src={"/images/logo5.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -362,6 +368,7 @@ export default function Home() {
                             src={"/images/logo6.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -375,6 +382,7 @@ export default function Home() {
                             src={"/images/logo7.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -388,6 +396,7 @@ export default function Home() {
                             src={"/images/logo8.png"}
                             width={100}
                             height={80}
+                            loading="lazy"
                           />
                         </a>
                       </div>
@@ -605,8 +614,8 @@ export default function Home() {
                     </div>
                   </SwiperSlide>
                 </Swiper>
-                <div class="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
-                <div class="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+                <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+                <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
               </div>
             </div>
           </div>

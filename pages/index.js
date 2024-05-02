@@ -40,6 +40,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Chart from "./components/Chart";
 import Story from "./components/Story";
 import Faq from "./components/Faq";
+import Script from "next/script";
 
 
 
@@ -229,8 +230,8 @@ export default function Home() {
       <link rel="shortcut icon" href="/images/fav.png" />
 
       {/* Google tag Manager Script */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
-      <script
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
               window.dataLayer = window.dataLayer || [];
@@ -601,8 +602,8 @@ export default function Home() {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <div class="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
-              <div class="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+              <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+              <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
             </div>
           </div>
         </div>

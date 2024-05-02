@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function Home() {
     return (
@@ -16,8 +17,8 @@ export default function Home() {
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
                 <link rel="shortcut icon" href="/images/fav.png" />
                 {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
-                <script
+                <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
+                <Script
                     dangerouslySetInnerHTML={{
                         __html: `
                 window.dataLayer = window.dataLayer || [];

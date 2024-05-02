@@ -20,19 +20,6 @@ export default function Chart() {
         setModalOpen(false);
     };
 
-
-    // Open Chat Click
-    // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = "https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973";
-    //     script.async = true;
-    //     document.body.appendChild(script);
-
-    //     return () => {
-    //         document.body.removeChild(script);
-    //     };
-    // }, []);
-
     const handleOpenChat = () => {
         window.zE && window.zE('webWidget', 'open');
     };
@@ -50,8 +37,8 @@ export default function Chart() {
                 </div>
                 <div className="width-container">
                     <div className="container mx-auto">
-                        <div class="check-wrap">
-                            <div class="check-list flex">
+                        <div className="check-wrap">
+                            <div className="check-list flex">
                                 <span className="flex mx-5 items-center text-sm  md:text-xl font-bold pb-4">
                                     Included:{" "}
                                     <FontAwesomeIcon icon={faCheckCircle} color="#2c9384" className="ms-4" fontSize={20} />
@@ -68,7 +55,7 @@ export default function Chart() {
                                     <tr>
                                         <th
                                             id="sticky-header-column-fixed"
-                                            class="mainpage-regular"
+                                            className="mainpage-regular"
                                         ></th>
 
                                         <th className="font-majallab">
@@ -78,7 +65,7 @@ export default function Chart() {
                                             <button
                                                 onClick={handleOpenChat}
                                                 type="button"
-                                                class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
+                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                                             >
                                                 Talk to us
                                             </button>
@@ -90,7 +77,7 @@ export default function Chart() {
                                             <button
                                                 onClick={handleOpenChat}
                                                 type="button"
-                                                class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
+                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                                             >
                                                 Talk to us
                                             </button>
@@ -102,7 +89,7 @@ export default function Chart() {
                                             <button
                                                 onClick={handleOpenChat}
                                                 type="button"
-                                                class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
+                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                                             >
                                                 Talk to us
                                             </button>
@@ -114,7 +101,7 @@ export default function Chart() {
                                             <button
                                                 onClick={handleOpenChat}
                                                 type="button"
-                                                class="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
+                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
                                             >
                                                 Talk to us
                                             </button>

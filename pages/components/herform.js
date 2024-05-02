@@ -1,6 +1,7 @@
 import useHubspotForm from "@/hooks/hubspot";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from 'next/navigation';
 
 
@@ -113,56 +114,56 @@ export default function HeroForm() {
           {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}
           <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
             {clientLogos.map((logo, index) => (
-              <a key={index} href={logo.href}>
+              <Link key={index} href={logo.href} >
                 <Image
                   alt={logo.alt}
                   src={logo.src}
                   width={logo.width}
                   height={logo.height}
                 />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
         <div>
           <div className="w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-              <div class="relative">
+              <div className="relative">
                 <input
                   type="text"
                   name="fullName"
                   onChange={handleChange}
                   value={fullName}
                   required
-                  class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Name"
                 />
               </div>
-              <div class="relative">
+              <div className="relative">
                 <input
                   type="text"
                   onChange={handleChange}
                   value={phoneNumber}
                   name="phoneNumber"
                   required
-                  class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Phone"
                 />
               </div>
-              <div class="relative">
+              <div className="relative">
                 <input
                   type="text"
                   name="email"
                   onChange={handleChange}
                   value={email}
                   required
-                  class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Email"
                 />
               </div>
-              <div class="relative">
+              <div className="relative">
                 <textarea
-                  class="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   rows={5}
                   onChange={handleChange}
                   value={message}
@@ -171,7 +172,7 @@ export default function HeroForm() {
                   name="message"
                 ></textarea>
                 <div
-                  class="absolute inset-y-0 left-0 pl-3 pt-3 
+                  className="absolute inset-y-0 left-0 pl-3 pt-3 
                   flex items-start  
                   pointer-events-none"
                 ></div>

@@ -28,23 +28,23 @@ export default function Footer() {
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a
+                <Link
                   href="tel:8668417469"
-                  className="text-white text-xl hover:text-white font-majallab flex"
+                  className="text-white text-xl hover:text-white font-majallab flex justify-center md:justify-start"
                 >
                   <FontAwesomeIcon icon={faPhone} className="me-3" />
                   (866) 841-7469
-                </a>
+                </Link>
               </li>
               <li className="mt-3">
-                <a
+                <Link
                   href="mailto:info@pinebookpublishing.com"
-                  className="text-white hover:text-white font-majallab text-2xl md:text-2xl flex"
+                  className="text-white hover:text-white font-majallab text-2xl md:text-2xl flex justify-center md:justify-start"
                 >
                   <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                   {" "}
                   info@pinebookpublishing.com{" "}
-                </a>
+                </Link>
               </li>
             </nav>
           </div>

@@ -639,4 +639,19 @@ footer svg {
     margin-top: 40px;
     margin-bottom: 30px;
   }
+  .bk-sil2.next svg,
+  .bk-sil2.prev svg,
+  .bk-sil.next svg,
+  .bk-sil.prev svg{
+    width: 24px;
+  }
+  .bk-sil2.next,
+  .bk-sil2.prev,
+  .bk-sil.next,
+  .bk-sil.prev{
+    width: 61px;
+  }
+  .main-banner-vid p{
+    font-size: 26px;
+  }
 }
