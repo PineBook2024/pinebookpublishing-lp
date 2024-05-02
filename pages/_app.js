@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
+import ZendeskChat from "./components/Zendesk";
 
 // Font files can be colocated inside of `pages`
 const majallab = localFont({
@@ -32,7 +33,8 @@ export default function App({ Component, pageProps }) {
         src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
         strategy="afterInteractive"
       />
-      <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"></Script>
+      {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"></Script> */}
+      <ZendeskChat zendeskKey="6ad75b0f-d085-4cae-9a7a-48abeb69b973" />
     </main>
   );
 }
