@@ -24,27 +24,27 @@ export default function Story() {
     const videoSlides = [
         {
             id: 1,
-            src: "https://imperiumdesigners.com/assets/images/v1.mp4",
+            src: "/images/v1.mp4",
             type: "video/mp4"
         },
         {
             id: 2,
-            src: "https://imperiumdesigners.com/assets/images/v6.mp4",
+            src: "/images/v6.mp4",
             type: "video/mp4"
         },
         {
             id: 3,
-            src: "https://imperiumdesigners.com/assets/images/v5.mp4",
+            src: "/images/v5.mp4",
             type: "video/mp4"
         },
         {
             id: 4,
-            src: "https://imperiumdesigners.com/assets/images/v3.mp4",
+            src: "/images/v3.mp4",
             type: "video/mp4"
         },
         {
             id: 5,
-            src: "https://imperiumdesigners.com/assets/images/v4.mp4",
+            src: "/images/v4.mp4",
             type: "video/mp4"
         }
     ];
