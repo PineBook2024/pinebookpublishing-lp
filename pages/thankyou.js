@@ -17,8 +17,8 @@ export default function Home() {
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
                 <link rel="shortcut icon" href="/images/fav.png" />
                 {/* Google tag Manager Script */}
-                <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
-                <Script
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+                <script
                     dangerouslySetInnerHTML={{
                         __html: `
                 window.dataLayer = window.dataLayer || [];

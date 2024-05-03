@@ -15,7 +15,6 @@ export default function Privacy() {
                 title="Privacy Policy"
             />
             <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-64 md:pt-96 mb-20 width-container">
-                {/* <h2 className="font-majallab">Privacy Policy</h2> */}
                 <p>
                     The categories of personal information we gather, how we use it, and who we might share it with are described in this privacy statement. It also explains your options for how your data will be used, the security measures in place to safeguard your information, how to fix informational errors, the confidentiality of the services, and the validity of the content.
                 </p>
