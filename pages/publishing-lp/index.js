@@ -44,7 +44,6 @@ import Chart from "../components/Chart";
 import Faq from "../components/Faq";
 
 import dynamic from 'next/dynamic';
-import Script from "next/script";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,

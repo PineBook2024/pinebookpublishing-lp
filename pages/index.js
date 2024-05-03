@@ -40,7 +40,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Chart from "./components/Chart";
 import Story from "./components/Story";
 import Faq from "./components/Faq";
-import Script from "next/script";
 
 
 
