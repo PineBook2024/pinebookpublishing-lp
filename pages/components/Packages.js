@@ -73,7 +73,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
 
@@ -136,7 +136,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
                                 <div className="single-packages-footer flex  w-100 justify-center">
@@ -210,7 +210,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
 
@@ -285,7 +285,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
 
@@ -387,7 +387,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
                                 <div className="single-packages-footer flex  w-100 justify-center">
@@ -491,7 +491,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                                 <div className="text-center mb-6">
                                     <button className="package-get-started-btn font-majallab text-2xl" onClick={() => openModal('Beginners')}>
-                                        STARTED PROJECT
+                                        START PROJECT
                                     </button>
                                 </div>
 
