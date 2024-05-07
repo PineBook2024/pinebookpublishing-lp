@@ -533,9 +533,9 @@ footer svg {
 
 .close-btn-modal {
   position: absolute;
-  top: 18px;
+  top: 4px;
   background: orange;
-  right: 22px;
+  right: -71px;
 }
 
 .close-btn-modal svg {
@@ -544,13 +544,13 @@ footer svg {
 }
 
 .popup-img-bg {
-  height: 673px !important;
+  height: 550px !important;
   border-top-left-radius: 52px;
   border-bottom-left-radius: 52px;
 }
 
 .popup-modal-wrapper {
-  width: 55%;
+  width: 60%;
 }
 
 

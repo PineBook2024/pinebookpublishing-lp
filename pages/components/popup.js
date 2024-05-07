@@ -87,94 +87,95 @@ export default function popup({ isOpen, onClose, service }) {
                                     <Image
                                         className="text-center hidden md:block popup-img-bg"
                                         src={"/images/popup-img.webp"}
-                                        width={590}
-                                        height={670}
+                                        width={690}
+                                        height={500}
                                         loading="lazy"
                                     ></Image>
                                 </div>
 
-                                <form className="basis-1/2 mb-5  md:ml-10 md:mr-10 pt-20" onSubmit={handleSubmit}>
+                                <form className="basis-1/2 md:ml-10 md:mr-10" onSubmit={handleSubmit}>
+                                    <div className="py-5">
+                                        <div className="relative mb-3">
+                                            <input
+                                                type="text"
+                                                name="fulName"
+                                                onChange={handleChange}
+                                                value={fulName}
+                                                required
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                                placeholder="Enter your Name"
+                                            />
+                                        </div>
 
-                                    <div className="relative mb-3">
-                                        <input
-                                            type="text"
-                                            name="fulName"
-                                            onChange={handleChange}
-                                            value={fulName}
-                                            required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                                            placeholder="Enter your Name"
-                                        />
-                                    </div>
+                                        <div className="relative mb-3">
+                                            <input
+                                                type="text"
+                                                name="phoneNumber"
+                                                onChange={handleChange}
+                                                value={phoneNumber}
+                                                required
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                                placeholder="Enter your Number"
+                                            />
+                                        </div>
 
-                                    <div className="relative mb-3">
-                                        <input
-                                            type="text"
-                                            name="phoneNumber"
-                                            onChange={handleChange}
-                                            value={phoneNumber}
-                                            required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                                            placeholder="Enter your Number"
-                                        />
-                                    </div>
+                                        <div className="relative mb-3">
+                                            <input
+                                                type="text"
+                                                name="service"
+                                                value={service}
+                                                readOnly
+                                                required
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab hidden"
+                                                placeholder="Enter your Number"
+                                            />
+                                        </div>
 
-                                    <div className="relative mb-3">
-                                        <input
-                                            type="text"
-                                            name="service"
-                                            value={service}
-                                            readOnly
-                                            required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab hidden"
-                                            placeholder="Enter your Number"
-                                        />
-                                    </div>
+                                        <div className="relative mb-3">
+                                            <input
+                                                type="text"
+                                                name="mail"
+                                                onChange={handleChange}
+                                                value={mail}
+                                                required
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                                placeholder="Enter your Email"
+                                            />
+                                        </div>
+                                        <div className="relative mb-3">
+                                            <select name="budget" value={budget} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab">
+                                                <option value="">Select Budget Range</option>
+                                                {budgetOptions.map(option => (
+                                                    <option key={option} value={option}>{option}</option>
+                                                ))}
+                                            </select>
+                                        </div>
 
-                                    <div className="relative mb-3">
-                                        <input
-                                            type="text"
-                                            name="mail"
-                                            onChange={handleChange}
-                                            value={mail}
-                                            required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                                            placeholder="Enter your Email"
-                                        />
-                                    </div>
-                                    <div className="relative mb-3">
-                                        <select name="budget" value={budget} onChange={handleChange}  className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab">
-                                            <option value="">Select Budget Range</option>
-                                            {budgetOptions.map(option => (
-                                                <option key={option} value={option}>{option}</option>
-                                            ))}
-                                        </select>
-                                    </div>
-
-                                    <div className="relative mb-3">
-                                        <textarea
-                                            onChange={handleChange}
-                                            value={message}
-                                            required
-                                            placeholder="Enter your Message"
-                                            name="message"
-                                            className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                                            rows={3}
-                                        ></textarea>
-                                        <div
-                                            className="absolute inset-y-0 left-0 pl-3 pt-3 
+                                        <div className="relative mb-3">
+                                            <textarea
+                                                onChange={handleChange}
+                                                value={message}
+                                                required
+                                                placeholder="Enter your Message"
+                                                name="message"
+                                                className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                                rows={3}
+                                            ></textarea>
+                                            <div
+                                                className="absolute inset-y-0 left-0 pl-3 pt-3 
                                 flex items-start  
                                 pointer-events-none"
-                                        ></div>
+                                            ></div>
+                                        </div>
+                                        {showSuccess && (
+                                            <p className="px-1 py-2 text-green-700">
+                                                Form submitted Successfully!
+                                            </p>
+                                        )}
+                                        <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn " type="submit">
+                                            Submit
+                                        </button>
                                     </div>
-                                    {showSuccess && (
-                                        <p className="px-1 py-2 text-green-700">
-                                            Form submitted Successfully!
-                                        </p>
-                                    )}
-                                    <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn mb-10" type="submit">
-                                        Submit
-                                    </button>
                                 </form>
                             </div>
                         </div>

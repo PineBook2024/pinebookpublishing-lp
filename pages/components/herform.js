@@ -171,8 +171,8 @@ export default function HeroForm() {
                   placeholder="Enter your Email"
                 />
               </div>
-              <div className="relative mb-3">
-                <select name="budgets" value={budgets} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab">
+              <div className="relative">
+                <select name="budgets" value={budgets} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab connect-form-input">
                   <option value="">Select Budget Range</option>
                   {budgetOptions.map(option => (
                     <option key={option} value={option}>{option}</option>
@@ -182,7 +182,7 @@ export default function HeroForm() {
               <div className="relative">
                 <textarea
                   className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
-                  rows={5}
+                  rows={3}
                   onChange={handleChange}
                   value={message}
                   required
@@ -201,7 +201,7 @@ export default function HeroForm() {
                 </p>
               )}
               <button
-                className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins"
+                className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded font-poppins"
                 type="submit"
               >
                 Submit
