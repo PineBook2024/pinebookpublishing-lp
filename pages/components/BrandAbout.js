@@ -15,7 +15,7 @@ export default function BrandAbout() {
                         <h3 className="font-majallab text-3xl md:text-7xl">
                             PUBLISHING
                         </h3>
-                        <p>
+                        <p className="font-poppins">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         </p>
                     </div>
@@ -34,7 +34,7 @@ export default function BrandAbout() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1">
-                        <p>
+                        <p className="font-poppins">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         </p>
                         <button className="brand-about-btn font-majallab">READ MORE</button>

@@ -9,6 +9,8 @@ import BrandAbout from "./components/BrandAbout";
 import BrandNavbar from "./components/BrandNavbar";
 import BrandHero from "./components/BrandHero";
 import BrandBannerLogo from "./components/BrandBannerLogo";
+import BrandCTA from "./components/BrandCTA";
+import BrandServices from "./components/BrandServices";
 
 export default function Home() {
     return (
@@ -18,6 +20,8 @@ export default function Home() {
             <BrandHero />
             <BrandBannerLogo />
             <BrandAbout />
+            <BrandServices />
+            <BrandCTA />
             <BrandFooter />
         </>
     );

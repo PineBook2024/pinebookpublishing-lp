@@ -44,6 +44,7 @@ import Chart from "../components/Chart";
 import Faq from "../components/Faq";
 
 import dynamic from 'next/dynamic';
+import Packages from "../components/Packages";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -754,7 +755,8 @@ export default function Home() {
           </div>
         </section>
 
-        <Chart />
+        {/* <Chart /> */}
+        <Packages />
 
         <section className="process pt-14">
           <div className="container mx-auto text-center m1-h ">

@@ -7,7 +7,7 @@ export default function BrandNavbar() {
 
     return (
         <>
-            <header className="bg-transparent absolute top-10 left-0 w-full flex justify-between items-center p-4 max-w-screen-xl mx-auto">
+            <header className="bg-transparent absolute top-10 left-0 w-full flex justify-between items-center p-4 max-w-screen-xl mx-auto z-10">
                 <div>
                     <Link href="/" className="text-xl font-bold text-white">
                         <Image src={'/brand-img/logo.png'} width={200} height={80} alt="brand logo" loading="lazy" />
