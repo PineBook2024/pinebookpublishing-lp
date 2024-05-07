@@ -2,18 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1b1d43; 
-  border-radius: 6px; 
-  border: 3px solid white; 
+  background-color: #1b1d43;
+  border-radius: 6px;
+  border: 3px solid white;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: white; 
+  background-color: white;
 }
 
 .mh-1 h1 {
@@ -543,7 +544,7 @@ footer svg {
 }
 
 .popup-img-bg {
-  height: 583px !important;
+  height: 673px !important;
   border-top-left-radius: 52px;
   border-bottom-left-radius: 52px;
 }
@@ -631,11 +632,11 @@ footer svg {
   background-size: cover;
 }
 
-.packages{
+.packages {
   background-color: #1b1e5b;
 }
 
-.single-packages{
+.single-packages {
   background-color: #147d6e;
   border-radius: 26px;
   color: #fff;
@@ -649,17 +650,19 @@ footer svg {
   transition: .4s ease-in-out;
 }
 
-.single-packages-content{
+.single-packages-content {
   padding: 25px;
   margin-right: 25px;
 }
 
-.single-packages .package-badge{
+.single-packages .package-badge {
   position: absolute;
   right: -24px;
   top: -17px;
-  animation: upAndDown 3s ease-in-out .6s infinite
+  animation: upAndDown 3s ease-in-out .6s infinite;
+  z-index: 1;
 }
+
 /* .single-packages:hover,
 .single-packages:hover h4{
   background-color: #bdbdbd;
@@ -672,14 +675,14 @@ footer svg {
   transition: .3s ease-in-out;
 } */
 
-.single-packages svg{
+.single-packages svg {
   width: 15px;
 }
 
-.single-packages-content{
-    height: 280px;
-    overflow: scroll;
-    overflow-x: hidden;
+.single-packages-content {
+  height: 280px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 
@@ -688,16 +691,16 @@ footer svg {
 }
 
 .single-packages-content::-webkit-scrollbar-thumb {
-  background-color: #1b1d43; 
-  border-radius: 9px; 
-  border: 1px solid white; 
+  background-color: #1b1d43;
+  border-radius: 9px;
+  border: 1px solid white;
 }
 
 .single-packages-content::-webkit-scrollbar-track {
   background-color: white;
 }
 
-.single-packages-footer{
+.single-packages-footer {
   background-color: #fff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -709,7 +712,7 @@ footer svg {
   padding: 6px 13px;
 }
 
-.single-packages-footer h5{
+.single-packages-footer h5 {
   color: #147d6e;
 }
 
@@ -718,7 +721,7 @@ footer svg {
   color: #fff; 
 } */
 
-.package-get-started-btn{
+.package-get-started-btn {
   background-color: #fff;
   color: #0d0f38;
   padding: 7px 39px;
@@ -727,13 +730,13 @@ footer svg {
   transition: .4s ease-out;
 }
 
-.package-get-started-btn:hover{
+.package-get-started-btn:hover {
   background-color: #0d0f38;
   color: #fff;
   transition: .4s ease-in;
 }
 
-.border-line{
+.border-line {
   border-right: 2px solid #1d8475;
 }
 
@@ -901,12 +904,35 @@ footer svg {
   animation: upAndDown 3s ease-in-out .6s infinite
 }
 
+.brand-choose-us-img {
+  position: absolute;
+  top: -73px;
+  left: 8px;
+}
+
 .brand-cta-vector::before {
   content: "";
   position: absolute;
   width: 514px;
   height: 540px;
   background-image: url(../public/brand-img/cta-vector.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -42px;
+  left: -76px;
+}
+
+.brand-choose-us-section {
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%) !important;
+  border-radius: 36px;
+}
+
+.brand-choose-us-vector::before {
+  content: "";
+  position: absolute;
+  width: 514px;
+  height: 540px;
+  background-image: url(../public/brand-img/why-choose-us-vector.png);
   background-size: contain;
   background-repeat: no-repeat;
   top: -42px;
@@ -1062,10 +1088,40 @@ footer svg {
   transform: scaleY(-1);
 }
 
+.right-5 {
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 90%, 50% 24%);
+  height: 81px;
+  width: 86px;
+  bottom: 22px;
+  right: -43px;
+  background: #0d0f38;
+  opacity: 0;
+  transition: .4s ease-in-out;
+  z-index: 1;
+}
+
+.bottom-5 {
+  position: absolute;
+  clip-path: polygon(14% 0, 13% 91%, 6% 100%, 6% 100%, 0 91%, 0% 0%);
+  height: 40px;
+  width: 86px;
+  top: -40px;
+  left: 50%;
+  background: #0d0f38;
+  opacity: 0;
+  transition: .4s ease-in-out;
+  z-index: 1;
+  transform: rotate(90deg);
+  transform: scaleY(-1);
+}
+
 .brand-service-card:hover .bottom,
 .brand-service-card:hover .right,
 .brand-service-card:hover .right-4,
-.brand-service-card:hover .bottom-4{
+.brand-service-card:hover .bottom-4,
+.brand-service-card:hover .right-5,
+.brand-service-card:hover .bottom-5 {
   opacity: 1;
   transition: .4s ease-in-out;
 }
@@ -1107,4 +1163,95 @@ footer svg {
 .square:hover {
   border-width: 6px;
   opacity: 1;
+}
+
+.brand-choose-us-section ul {
+  color: #fff;
+  list-style: disc;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.brand-choose-us-audio-wrapper {
+  background-color: #fff;
+  padding: 10px;
+  width: auto;
+}
+
+.brand-faq-icon {
+  width: 21px;
+}
+
+/* .brand-submit-btn {
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  color: #fff;
+  box-shadow: 0 3px 5px #777777;
+  padding: 9px 40px;
+  border-radius: 13px;
+  margin-top: 20px;
+} */
+
+.brand-submit-btn {
+  border-radius: 13px;
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  padding: 7px 40px;
+  width: 180px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.brand-submit-btn{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.brand-submit-btn:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.brand-submit-btn:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.brand-submit-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+
+/* .hover-top-vector{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24%;
+  height: 100px;
+  width: 200px;
+  background-color: #0d0f38;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+} */
+
+
+.single-packages:hover .hover-top-vector {
+  width: 80%;
+  background-color: #0d0f38;
+  /* margin: 0 auto; */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: relative;
+    left: 10%;
+    transition: .4s ease-in-out;
 }

@@ -11,6 +11,10 @@ import BrandHero from "./components/BrandHero";
 import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandCTA from "./components/BrandCTA";
 import BrandServices from "./components/BrandServices";
+import BrandChooseUs from "./components/BrandChooseUs";
+import BrandTestimonial from "./components/BrandTestimonial";
+import BrandFaqs from "./components/BrandFaqs";
+import BrandContact from "./components/BrandContactForm";
 
 export default function Home() {
     return (
@@ -22,6 +26,10 @@ export default function Home() {
             <BrandAbout />
             <BrandServices />
             <BrandCTA />
+            <BrandChooseUs />
+            <BrandTestimonial />
+            <BrandFaqs />
+            <BrandContact />
             <BrandFooter />
         </>
     );

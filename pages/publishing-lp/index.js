@@ -728,7 +728,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="package py-14 overflow-hidden">
+        {/* <section className="package py-14 overflow-hidden">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 mb-14 items-center m1-h text-center">
               <h3 className="font-majallab text-5xl md:text-7xl">
@@ -736,7 +736,6 @@ export default function Home() {
               </h3>
             </div>
 
-            {/* <div className="grid grid-cols-4 gap-4  items-top"> */}
             <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
               {packagesCard.map((pkg) => (
                 <div key={pkg.id} className="pack-wrap gap-8">
@@ -753,7 +752,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* <Chart /> */}
         <Packages />

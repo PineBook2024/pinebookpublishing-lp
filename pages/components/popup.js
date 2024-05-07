@@ -10,12 +10,19 @@ import useHubspotForm from "@/hooks/hubspot";
 export default function popup({ isOpen, onClose, service }) {
     const router = useRouter();
     const { submitPopupContactForm } = useHubspotForm();
-    const [email, setEmail] = useState("");
+    const [mail, setMail] = useState("");
     const [fulName, setFulName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [budget, setBudget] = useState("");
     const [message, setMessage] = useState("");
     const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
+
+    const budgetOptions = [
+        "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
+        "$4001 - $5000", "$5001 - $6000", "$6001 - $7000", "$7001 - $8000",
+        "$8001 - $9000", "$9001 - $10000"
+    ];
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,9 +34,10 @@ export default function popup({ isOpen, onClose, service }) {
         const { name, value } = e.target;
         const setters = {
             fulName: setFulName,
-            email: setEmail,
+            mail: setMail,
             message: setMessage,
             service: setServiceState,
+            budget: setBudget,
             phoneNumber: setPhoneNumber,
         };
 
@@ -42,10 +50,11 @@ export default function popup({ isOpen, onClose, service }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await submitPopupContactForm(
-            email,
+            mail,
             fulName,
             phoneNumber,
             service,
+            budget,
             message
         );
         if (response) {
@@ -53,10 +62,11 @@ export default function popup({ isOpen, onClose, service }) {
             router.push('/thankyou')
             setTimeout(() => {
                 setShowSuccess(false);
-                setEmail("");
+                setMail("");
                 setFulName("");
                 setPhoneNumber("")
                 setMessage("");
+                setBudget("");
             }, 3000);
         }
 
@@ -77,8 +87,8 @@ export default function popup({ isOpen, onClose, service }) {
                                     <Image
                                         className="text-center hidden md:block popup-img-bg"
                                         src={"/images/popup-img.webp"}
-                                        width={550}
-                                        height={600}
+                                        width={590}
+                                        height={670}
                                         loading="lazy"
                                     ></Image>
                                 </div>
@@ -108,7 +118,7 @@ export default function popup({ isOpen, onClose, service }) {
                                             placeholder="Enter your Number"
                                         />
                                     </div>
-                                    
+
                                     <div className="relative mb-3">
                                         <input
                                             type="text"
@@ -124,13 +134,21 @@ export default function popup({ isOpen, onClose, service }) {
                                     <div className="relative mb-3">
                                         <input
                                             type="text"
-                                            name="email"
+                                            name="mail"
                                             onChange={handleChange}
-                                            value={email}
+                                            value={mail}
                                             required
                                             className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
                                             placeholder="Enter your Email"
                                         />
+                                    </div>
+                                    <div className="relative mb-3">
+                                        <select name="budget" value={budget} onChange={handleChange}  className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab">
+                                            <option value="">Select Budget Range</option>
+                                            {budgetOptions.map(option => (
+                                                <option key={option} value={option}>{option}</option>
+                                            ))}
+                                        </select>
                                     </div>
 
                                     <div className="relative mb-3">

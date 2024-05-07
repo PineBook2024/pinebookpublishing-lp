@@ -11,8 +11,15 @@ export default function HeroForm() {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [budgets, setBudget] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const budgetOptions = [
+    "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
+    "$4001 - $5000", "$5001 - $6000", "$6001 - $7000", "$7001 - $8000",
+    "$8001 - $9000", "$9001 - $10000"
+];
 
   // Object
   const clientLogos = [
@@ -67,6 +74,7 @@ export default function HeroForm() {
       fullName: setFullName,
       email: setEmail,
       message: setMessage,
+      budgets: setBudget,
       phoneNumber: setPhoneNumber,
     };
 
@@ -82,6 +90,7 @@ export default function HeroForm() {
       email,
       fullName,
       phoneNumber,
+      budgets,
       message
     );
     if (response) {
@@ -92,7 +101,8 @@ export default function HeroForm() {
         setShowSuccess(false);
         setEmail("");
         setFullName("");
-        setPhoneNumber("")
+        setPhoneNumber("");
+        setBudget("");
         setMessage("");
       }, 3000);
     }
@@ -152,7 +162,7 @@ export default function HeroForm() {
               </div>
               <div className="relative">
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   onChange={handleChange}
                   value={email}
@@ -160,6 +170,14 @@ export default function HeroForm() {
                   className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
                   placeholder="Enter your Email"
                 />
+              </div>
+              <div className="relative mb-3">
+                <select name="budgets" value={budgets} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab">
+                  <option value="">Select Budget Range</option>
+                  {budgetOptions.map(option => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
               </div>
               <div className="relative">
                 <textarea

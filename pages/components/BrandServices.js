@@ -62,8 +62,8 @@ export default function BrandServices() {
                                 <Image src={"/brand-img/service-img3.png"} width={270} height={200}></Image>
                             </div>
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right"></span>
-                                <span className="bottom"></span>
+                            <span className="right-4"></span>
+                                <span className="bottom-4"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon3.png"} className="icon" width={50} height={50}></Image>
                                     <span className="font-majallab text-5xl">03</span>
@@ -97,8 +97,8 @@ export default function BrandServices() {
                     <div className="brand-service-content flex gap-4 mt-4">
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right"></span>
-                                <span className="bottom"></span>
+                            <span className="right-5"></span>
+                                <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon1.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-majallab text-5xl">05</span>
@@ -115,8 +115,8 @@ export default function BrandServices() {
                         </div>
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right"></span>
-                                <span className="bottom"></span>
+                            <span className="right-5"></span>
+                                <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon2.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-majallab text-5xl">06</span>
