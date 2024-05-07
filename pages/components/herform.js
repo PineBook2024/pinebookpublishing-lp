@@ -172,7 +172,7 @@ export default function HeroForm() {
                 />
               </div>
               <div className="relative">
-                <select name="budgets" value={budgets} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab connect-form-input">
+                <select name="budgets" value={budgets} onChange={handleChange} className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab header-form-input">
                   <option value="">Select Budget Range</option>
                   {budgetOptions.map(option => (
                     <option key={option} value={option}>{option}</option>

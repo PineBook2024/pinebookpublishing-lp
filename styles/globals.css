@@ -411,6 +411,13 @@ video#background-video {
   padding: 17px;
 }
 
+.header-form-input {
+  background-color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid #fff0;
+}
+
 .connect-form-input:focus-visible {
   border: 2px solid #2c9384;
 }
