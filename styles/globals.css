@@ -653,7 +653,7 @@ footer svg {
   border: 1px solid #747474;
 }
 
-.single-packages:hover{
+.single-packages:hover {
   background-color: #147d6e;
   color: #fff;
 }
@@ -699,11 +699,11 @@ footer svg {
   overflow-x: hidden;
 }
 
-.single-packages-content img{
+.single-packages-content img {
   filter: invert(1);
 }
 
-.single-packages:hover .single-packages-content img{
+.single-packages:hover .single-packages-content img {
   filter: invert(0);
 }
 
@@ -748,6 +748,43 @@ footer svg {
   color: #147d6e;
   line-height: 18px;
   font-size: 16px;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  transition: .4s ease-in;
+}
+
+.tooltip-content {
+  position: absolute;
+  font-weight: 500;
+  visibility: hidden;
+  width: 260px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 6px;
+  padding: 10px 12px;
+  z-index: 1000;
+  top: 100%;
+  right: 0;
+  margin-left: 0;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid #0d0f38;
+  text-align: left;
+  line-height: 20px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+
+}
+
+.tooltip-content ul {
+  list-style: disc;
+  margin-left: 16px;
 }
 
 /* .single-packages:hover .single-packages-footer{

@@ -282,7 +282,17 @@ export default function Packages({ isOpen, onClose, service }) {
                                 <div className="text-center mb-4">
                                     <h5 className="font-majallab text-2xl flex justify-center items-center gap-3">
                                         EASY PAYMENT PLAN
-                                        <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
+                                        <div className="tooltip">
+                                            <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
+                                            <span className="tooltip-content">
+                                                <ul>
+                                                    <li> 50% PAYMENT UPFRONT.</li>
+                                                    <li> REMAINING 50% CAN BE PAID IN 2-3 MONTHS INSTALLMENTS</li>
+                                                    OR
+                                                    <li> AFTER THE DELIVERY OF 3 CHAPTERS.</li>
+                                                </ul>
+                                            </span>
+                                        </div>
                                     </h5>
                                 </div>
                                 <div className="text-center">
@@ -384,7 +394,17 @@ export default function Packages({ isOpen, onClose, service }) {
                                 <div className="text-center">
                                     <h5 className="font-majallab text-2xl flex justify-center items-center gap-3">
                                         EASY PAYMENT PLAN
-                                        <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
+                                        <div className="tooltip">
+                                            <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
+                                            <span className="tooltip-content">
+                                                <ul>
+                                                    <li> 50% PAYMENT UPFRONT.</li>
+                                                    <li> REMAINING 50% CAN BE PAID IN 2-3 MONTHS INSTALLMENTS</li>
+                                                    OR
+                                                    <li> AFTER THE DELIVERY OF 3 CHAPTERS.</li>
+                                                </ul>
+                                            </span>
+                                        </div>
                                     </h5>
                                 </div>
                                 <div className="text-center">
@@ -490,6 +510,14 @@ export default function Packages({ isOpen, onClose, service }) {
                                         EASY PAYMENT PLAN
                                         <div className="tooltip">
                                             <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
+                                            <span className="tooltip-content">
+                                                <ul>
+                                                    <li> 50% PAYMENT UPFRONT.</li>
+                                                    <li> REMAINING 50% CAN BE PAID IN 2-3 MONTHS INSTALLMENTS</li>
+                                                    OR
+                                                    <li> AFTER THE DELIVERY OF 3 CHAPTERS.</li>
+                                                </ul>
+                                            </span>
                                         </div>
 
                                     </h5>
