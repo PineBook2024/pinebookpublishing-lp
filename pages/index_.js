@@ -15,6 +15,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandTestimonial from "./components/BrandTestimonial";
 import BrandFaqs from "./components/BrandFaqs";
 import BrandContact from "./components/BrandContactForm";
+import BrandLogo from "./components/BrandLogo";
 
 export default function Home() {
     return (
@@ -30,6 +31,7 @@ export default function Home() {
             <BrandTestimonial />
             <BrandFaqs />
             <BrandContact />
+            <BrandLogo />
             <BrandFooter />
         </>
     );

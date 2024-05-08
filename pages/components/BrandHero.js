@@ -201,7 +201,7 @@ function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email
                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                 placeholder="Enter your Name"
                             />
-                            <FontAwesomeIcon icon={faUser} color="#747474" className="absolute left-0 top-3 ml-4" />
+                            <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
                         </div>
                         <div className="relative">
                             <input
@@ -213,7 +213,7 @@ function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email
                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                 placeholder="Enter your Phone"
                             />
-                            <FontAwesomeIcon icon={faPhone} color="#747474" className="absolute left-0 top-3 ml-4" />
+                            <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
                         </div>
                         <div className="relative">
                             <input
@@ -225,7 +225,7 @@ function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email
                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                 placeholder="Enter your Email"
                             />
-                            <FontAwesomeIcon icon={faEnvelope} color="#747474" className="absolute left-0 top-3 ml-4" />
+                            <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
                         </div>
                         <div className="relative">
                             <textarea

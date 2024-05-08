@@ -7,10 +7,10 @@ export default function BrandServices() {
     return (
         <>
             <section className="brand-service-section">
-                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-32">
+                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-24">
                     <div className="text-center mb-6">
-                        <h3 className="text-3xl text-white font-poppins">Our Publishing</h3>
-                        <h2 className="font-majallab text-8xl text-white">Services</h2>
+                        <h3 className="text-2xl text-white font-poppins">Our Publishing</h3>
+                        <h2 className="font-majallab text-7xl text-white">Services</h2>
                     </div>
 
                     {/* 1 of 2 */}

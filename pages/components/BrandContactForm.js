@@ -2,6 +2,9 @@ import useHubspotForm from "@/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function BrandContact() {
     // Form Integration
@@ -62,7 +65,8 @@ export default function BrandContact() {
                 </div>
             </section> */}
 
-            <section className="btm-form overflow-hidden width-container">
+            <section className="btm-form overflow-hidden relative">
+            <div className="contact-form-bg-img"></div>
                 <div className="max-w-screen-xl mx-auto px-8 md:px-10">
                     <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
                         <div className="flex flex-col md:flex-row items-end">
@@ -71,8 +75,8 @@ export default function BrandContact() {
                                 <Image
                                     className="text-center pt-10 contact-form-img"
                                     src={"/images/contact-user.webp"}
-                                    width={550}
-                                    height={250}
+                                    width={600}
+                                    height={300}
                                     layout="responsive"
                                     loading="lazy"
                                 ></Image>
@@ -80,7 +84,7 @@ export default function BrandContact() {
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                                <h3 className="text-black leading-20 font-bold text-5xl md:text-7xl font-majallab text-start uppercase">
+                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase">
                                     Lets get in Touch
                                 </h3>
                                 <p className="text-black leading-6  pb-5 text-base">
@@ -94,9 +98,10 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={fullName}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                         placeholder="Enter your Name"
                                     />
+                                    <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
                                 </div>
 
                                 <div className="relative mb-3">
@@ -106,9 +111,10 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={phoneNumber}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                         placeholder="Enter your Number"
                                     />
+                                    <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
                                 </div>
 
                                 <div className="relative mb-3">
@@ -118,9 +124,10 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={email}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                         placeholder="Enter your Email"
                                     />
+                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-5 ml-4" />
                                 </div>
 
                                 <div className="relative mb-3">
@@ -130,9 +137,10 @@ export default function BrandContact() {
                                         required
                                         placeholder="Enter your Message"
                                         name="message"
-                                        className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
-                                        rows={3}
+                                        className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
+                                        rows={4}
                                     ></textarea>
+                                    <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" />
                                     <div
                                         className="absolute inset-y-0 left-0 pl-3 pt-3 
                               flex items-start  

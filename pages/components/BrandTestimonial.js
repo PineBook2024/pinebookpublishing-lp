@@ -11,6 +11,9 @@ export default function BrandTestimonial() {
                     <div className="text-center mb-6">
                         <h2 className="font-majallab text-5xl text-black">TESTIMONIALS</h2>
                     </div>
+                    <div className="flex">
+                        
+                    </div>
                 </div>
             </section>
         </>
