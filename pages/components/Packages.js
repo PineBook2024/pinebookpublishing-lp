@@ -38,39 +38,72 @@ export default function Packages({ isOpen, onClose, service }) {
                             <h2 className="font-majallab text-7xl text-black uppercase">Bundles</h2>
                         </div>
 
-                        <div className="packages-wrapper flex justify-center gap-12">
+                        <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
+                                    </div>
                                     <div className="flex gap-2 mb-5 items-center items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                        Developmental Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Line by Line Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Proofreading
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center">
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
+                                        Account Creation
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Kindle
+                                        Account Verification
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        eBook Format
+                                        Available on Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -94,46 +127,98 @@ export default function Packages({ isOpen, onClose, service }) {
                             <div className="single-packages relative">
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Developmental Editing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Line by Line Editing
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Proofreading
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
 
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Creative Cover Art
-
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Designing your Cover
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Amazon and Kindle (with Optimization)
-
+                                        Graphic OR Illustrated Design
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        eBook and Paperback Format
+                                        Cover Layout
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        5 Paperback Copies
+                                        Cover Formatting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Front, Back & Spine
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Creation
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Amazon & Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Paperback Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -157,57 +242,109 @@ export default function Packages({ isOpen, onClose, service }) {
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Developmental Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Line by Line Editing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Proofreading
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
-
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Designing your Cover
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
-
+                                        Graphic OR Illustrated Design
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Creative Cover Art
-
+                                        Cover Layout
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Price Encrypted Barcode
+                                        Cover Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        ISBN (International Standard Book Number)
+                                        Front, Back & Spine
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Amazon, Kindle and Barnes & Noble (with Optimization)
+                                        ISBN + Barcode (2X)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        eBook, Paperback & Hardcover Format
+                                        Account Creation
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        10 Paperback Copies
+                                        Account Verification
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        2 Hardcover Copies
+                                        Available on Amazon & Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Barnes and Noble
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Paperback Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Hardcover Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -230,53 +367,128 @@ export default function Packages({ isOpen, onClose, service }) {
                             </div>
                         </div>
 
-                        <div className="packages-wrapper flex justify-center gap-12 mt-12">
+                        <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12 mt-12">
                             <div className="single-packages relative">
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
+                                    </div>
                                     <div className="flex gap-2 mb-5 items-center items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                        Developmental Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Line by Line Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Proofreading
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Designing your Cover
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Creative Cover Art
+                                        Graphic OR Illustrated Design
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Price Encrypted Barcode
+                                        Cover Layout
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        ISBN (International Standard Book Number)
+                                        Cover Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Amazon, Kindle, Barnes & Noble and Google Books (with Optimization)
+                                        Front, Back & Spine
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        4 pages Authors Dynamic Website
+                                        ISBN + Barcode (2X)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        1 Year Domain & Hosting
+                                        Account Creation
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Amazon & Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Barnes and Noble
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Google Books
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Paperback Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Hardcover Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Online Presence
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        3 - 5 Page Authors Website
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        1 - Year Domain & Hosting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        30 - 60 Seconds Book Trailer
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center mb-4">
@@ -317,78 +529,146 @@ export default function Packages({ isOpen, onClose, service }) {
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Developmental Editing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Line by Line Editing
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Proofreading
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
 
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Creative Cover Art
-
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Designing your Cover
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Price Encrypted Barcode
-
+                                        Graphic OR Illustrated Design
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        60 - 90 Seconds Video Trailer
+                                        Cover Layout
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        ISBN (International Standard Book Number)
+                                        Cover Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Amazon, Kindle, Barnes & Noble, Google Books and Smashwords (with Optimization)
+                                        Front, Back & Spine
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        4 Pages Authors Dynamic Website
+                                        ISBN + Barcode (2X)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        1 Years Free Domain and Hosting
+                                        Account Creation
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        12 Months Brand Marketing & Advertising (SEO + Google Marketing)
+                                        Account Verification
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        12 Months Social Media Advertising (Facebook, Instagram & Linkedin)
+                                        Available on Amazon & Kindle
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        eBook, Paperback & Hardcover Format
+                                        Available on Barnes and Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        20 Paperback Copies
+                                        Available on Google Books
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        7 Hardcover Copies
+                                        Available on Smashwords
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Paperback Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Hardcover Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        12 Months Brand Marketing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Logo Design (Complimentary)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        3 - 5 Page Authors Website
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        1 - Year Domain & Hosting
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        30 - 60 Seconds Book Trailer
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Organic Google Marketing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Social Media Marketing
+                                        (Facebook, Instagram & LinkedIn)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -428,53 +708,128 @@ export default function Packages({ isOpen, onClose, service }) {
                                 <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package
                                 </h4>
                                 <div className="single-packages-content mb-5 px-10">
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Editing & Proofreading
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Preparing Your Manuscript
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Typesetting & Layout Adjustment
+                                        Developmental Editing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (for 50+ Platforms)
+                                        Line by Line Editing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Proofreading
 
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Typesetting
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Layout Adjustment
+
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Formatting (50+ Platforms)
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Multiple Revisions
-
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Designing your Cover
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        100% Royalties & Ownership Rights
-
+                                        Graphic OR Illustrated Design
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Creative Cover Art
-
+                                        Cover Layout
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Price Encrypted Barcode
+                                        Cover Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        ISBN (International Standard Book Number)
+                                        Front, Back & Spine
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Publishing on Amazon, Kindle, Barnes & Noble, Google Books and Smashwords (with Optimization)
+                                        ISBN + Barcode (2X)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Book Publishing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        4 Pages Authors Dynamic Website
+                                        Account Creation
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        2 Years Free Domain and Hosting
+                                        Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Amazon & Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Barnes and Noble
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Google Books
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Smashwords
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on Draft2Digital
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Available on ACX
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Paperback Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Hardcover Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Audiobook Format
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        24 Months Brand Marketing
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Logo Design (Complimentary)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        3 - 5 Page Authors Website
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        2 - Year Domain & Hosting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -482,11 +837,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        24 Months NYT Bestseller Advance Marketing & Advertising (SEO + Google Marketing)
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        24 Months Social Media Advertising (Facebook, Instagram, Twitter, Pinterest, Youtube & Linkedin)
+                                        Organic Google Marketing
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -494,15 +845,28 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Press Releases (100+ Platforms)
+                                        Press Releases (150+ Platforms)
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        25 Paperback Copies
+                                        Social Media Marketing
+                                        (Facebook, Instagram, Twitter)
+                                        (Pinterest, Youtube & LinkedIn)
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
+                                        Guarantees
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        10 Hardcover Copies
+                                        No Royalties Share
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Ownership Rights
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        100% Satisfaction
                                     </div>
                                 </div>
                                 <div className="text-center">

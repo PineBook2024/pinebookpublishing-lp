@@ -787,6 +787,14 @@ footer svg {
   margin-left: 16px;
 }
 
+.single-packages:hover .tooltip img {
+  filter: invert(0);
+}
+
+.tooltip img {
+  filter: invert(1);
+}
+
 /* .single-packages:hover .single-packages-footer{
   background-color: #1b1d43;
   color: #fff; 
@@ -907,6 +915,14 @@ footer svg {
 
   .main-banner-vid p {
     font-size: 26px;
+  }
+
+  .single-packages .package-badge {
+    right: -6px;
+  }
+
+  .single-packages {
+    margin: 0 auto;
   }
 }
 
