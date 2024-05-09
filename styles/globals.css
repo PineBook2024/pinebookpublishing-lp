@@ -1494,12 +1494,13 @@ footer svg {
 
 .home-popup-modal-wrapper {
   width: 80%;
+  height: 603px;
 }
 
 .form-off-badge {
   position: absolute;
   right: 5px;
-  top: -120px;
+  top: -81px;
   z-index: 1000;
 }
 
@@ -1508,6 +1509,7 @@ footer svg {
   font-size: 20px;
   border-radius: 10px;
   border: 2px solid #fff0;
+  padding: 3px 17px;
   /* padding: 17px; */
 }
 
@@ -1523,7 +1525,7 @@ footer svg {
   position: absolute;
   top: -21px;
   background: #2c9384;
-  right: -33px;
+  right: -76px;
   border-radius: 50%;
 }
 
