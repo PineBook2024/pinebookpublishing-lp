@@ -856,11 +856,11 @@ footer svg {
   }
 
   .main-banner-vid {
-    height: 140vh;
+    height: 150vh;
   }
 
   video#vide {
-    height: 140vh;
+    height: 150vh;
   }
 
   .faqs {
@@ -920,7 +920,7 @@ footer svg {
   }
 
   .main-banner-vid p {
-    font-size: 26px;
+    font-size: 19px;
   }
 
   .single-packages .package-badge {
@@ -980,6 +980,10 @@ footer svg {
 
   .home-popup-img-bg {
     display: none;
+  }
+
+  .home-close-btn-modal {
+    right: -30px !important;
   }
 }
 
@@ -1529,7 +1533,7 @@ footer svg {
   border-radius: 50%;
 }
 
-.home-close-btn-modal svg{
+.home-close-btn-modal svg {
   filter: invert(1);
 }
 
