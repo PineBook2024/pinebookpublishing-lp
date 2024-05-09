@@ -76,8 +76,8 @@ export default function popup({ isOpen, onClose, service }) {
     return (
         <>
             {isOpen && (
-                <section className="btm-form dark-form-bg flex-col md:flex-row fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center w-auto ">
-                    <div className="home-popup-modal-wrapper relative">
+                <section className="btm-form dark-form-bg flex-col md:flex-row fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center w-auto">
+                    <div className="home-popup-modal-wrapper relative my-20">
                         <Image
                             className="text-center form-off-badge"
                             src={"/images/form-badge.png"}
@@ -102,7 +102,7 @@ export default function popup({ isOpen, onClose, service }) {
 
                                 <form className="popup-form-wrapper" onSubmit={handleSubmit}>
                                     <div className="text-center">
-                                        <h2 className="font-majallab text-white text-5xl mt-6">Avail Discount</h2>
+                                        <h2 className="font-majallab text-white text-5xl mt-2">Avail Discount</h2>
                                         <p className="font-majallab text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">70% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
@@ -171,7 +171,7 @@ export default function popup({ isOpen, onClose, service }) {
                                                 placeholder="Enter your Message"
                                                 name="message"
                                                 className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab"
-                                                rows={3}
+                                                rows={2}
                                             ></textarea>
                                             <div
                                                 className="absolute inset-y-0 left-0 pl-3 pt-3 
