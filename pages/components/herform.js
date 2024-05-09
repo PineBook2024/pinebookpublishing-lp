@@ -141,12 +141,12 @@ export default function HeroForm() {
             <Image
               className="text-center header-form-off-badge"
               src={"/images/form-badge.png"}
-              width={200}
+              width={160}
               height={200}
               loading="lazy"
             ></Image>
             <div className="text-center">
-              <h4 className="font-majallab text-white text-5xl">Avail Discount</h4>
+              <h4 className="font-majallab text-white text-4xl">Avail Discount</h4>
               <h5 className="font-majallab text-white text-2xl mb-3">Exclusive Offer: Expert Book Publishing at <span className="text-blink">70% Off</span> – <br></br>Your Story Deserves to be Heard!</h5>
             </div>
             <div>

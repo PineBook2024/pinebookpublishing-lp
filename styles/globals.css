@@ -1561,7 +1561,7 @@ footer svg {
 
 .header-form-off-badge {
   position: absolute;
-  right: 141px;
-  top: -128px;
+  right: 0;
+  top: -60px;
   z-index: 1000;
 }
