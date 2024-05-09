@@ -26,12 +26,12 @@ export default function BrandFaqs() {
     };
 
     const faqData = [
-        { question: "How do I self-publish my book?", answer: "Self-publishing your book with Pine Book Publishing is simple. Start by submitting your manuscript, and our team will guide you through the editing, formatting, and cover design process." },
-        { question: "Is publishing a book difficult?", answer: "Publishing a book doesn't have to be difficult, especially with Pine Book Publishing's support." },
-        { question: "What is an ISBN and do I need one?", answer: "An ISBN (International Standard Book Number) is a unique identifier for your book used by retailers, libraries, and distributors." },
-        { question: "Will I need to have my book copyrighted?", answer: "While your book is automatically copyrighted upon creation, registering your copyright provides additional legal protection." },
-        { question: "Do you offer design services?", answer: "Yes, Pine Book Publishing offers comprehensive design services, including cover design, typesetting, and layout adjustment." },
-        { question: "How do you handle distribution and marketing of books?", answer: "Pine Book Publishing handles distribution and marketing for your books, ensuring they reach the widest audience possible." }
+        { question: "How long does the publishing process typically take?", answer: "The publishing process duration can vary depending on factors like manuscript complexity and the service package chosen. Generally, it ranges from a few months to a year." },
+        { question: "What genres of books do you specialize in publishing?", answer: "We specialize in publishing a wide range of genres, including fiction, non-fiction, memoirs, poetry, and more. Our goal is to accommodate diverse author interests and reader preferences." },
+        { question: "Do you offer editing and proofreading services as part of your publishing packages?", answer: "Yes, we offer comprehensive editing and proofreading services to ensure your manuscript meets professional standards before publication. These services are typically included in our publishing packages." },
+        { question: "Can I choose my own cover design, or do you provide options?", answer: "You have the option to choose your own cover design from our selection of pre-designed templates or work with our team to create a custom cover that reflects your book's essence and resonates with your target audience." },
+        { question: "What distribution channels do you use to get my book into readers' hands?", answer: "We utilize various distribution channels, including online retailers like Amazon, Barnes & Noble, and our own platform, to make your book available to a wide audience globally. We also offer options for print-on-demand and ebook distribution." },
+        { question: "How much control do I have over pricing and royalties for my published book?", answer: "As an author, you retain control over pricing and royalties for your book. We provide guidance and support in setting competitive prices and offer transparent royalty structures to ensure you receive fair compensation for your work." }
     ];
 
     const badges = [
@@ -49,7 +49,7 @@ export default function BrandFaqs() {
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
                         <h2 className="font-majallab text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
-                        <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3>
+                        {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">
                         <div className="flex flex-col md:flex-row justify-center gap-4">

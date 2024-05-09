@@ -14,7 +14,7 @@ export default function BrandServices() {
                     </div>
 
                     {/* 1 of 2 */}
-                    <div className="brand-service-content flex gap-4">
+                    <div className="brand-service-content flex gap-4 flex-col md:flex-row">
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
                                 <span className="right"></span>
@@ -23,14 +23,16 @@ export default function BrandServices() {
                                     <Image src={"/brand-img/service-icon1.png"} className="icon" width={50} height={50}></Image>
                                     <span className="font-majallab text-5xl">01</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed<br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">We turn your drafts into masterpieces.</p>
                                 <h4 className="mt-4 font-majallab text-3xl">EDITING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
+                                </div>
                             </div>
                         </div>
                         <div className="brand-service-card flex gap-4">
@@ -41,52 +43,58 @@ export default function BrandServices() {
                                     <Image src={"/brand-img/service-icon2.png"} className="icon" width={50} height={50}></Image>
                                     <span className="font-majallab text-5xl">02</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed<br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">Catching every typo, ensuring perfection</p>
                                 <h4 className="mt-4 font-majallab text-3xl">PROOFREADING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {/* 2 of 4 */}
-                    <div className="brand-service-content flex mt-4 gap-4">
+                    <div className="brand-service-content flex mt-4 gap-4 flex-col md:flex-row">
                         <div className="brand-service-card flex gap-4">
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img3.png"} width={270} height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img3.png"} width={270} height={200}></Image>
+                                </div>
                             </div>
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right-4"></span>
+                                <span className="right-4"></span>
                                 <span className="bottom-4"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon3.png"} className="icon" width={50} height={50}></Image>
                                     <span className="font-majallab text-5xl">03</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed <br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">Giving your words the perfect structure.</p>
                                 <h4 className="mt-4 font-majallab text-3xl">FORMATTING</h4>
                             </div>
                         </div>
                         <div className="brand-service-card flex gap-4">
                             <div className="basis-1/2 brand-service-card-img relative">
-                            <span class="square">
+                                <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img4.png"} width={250} className="icon" height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img4.png"} width={250} className="icon" height={200}></Image>
+                                </div>
                             </div>
                             <div className="brand-service-card-content gap-4 basis-1/2 relative">
-                            <span className="right-4"></span>
+                                <span className="right-4"></span>
                                 <span className="bottom-4"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon4.png"} className="icon" width={50} height={50}></Image>
                                     <span className="font-majallab text-5xl">04</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed<br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">Aligning your content with professional precision. </p>
                                 <h4 className="mt-4 font-majallab text-3xl uppercase">Typesetting & Layout adjustment</h4>
                             </div>
 
@@ -94,47 +102,51 @@ export default function BrandServices() {
                     </div>
 
                     {/* 4 of 6 */}
-                    <div className="brand-service-content flex gap-4 mt-4">
+                    <div className="brand-service-content flex gap-4 mt-4 flex-col md:flex-row">
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right-5"></span>
+                                <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon1.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-majallab text-5xl">05</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed<br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">Crafting covers that captivate at first glance.</p>
                                 <h4 className="mt-4 font-majallab text-3xl">COVER DESIGN</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
-                            <span class="square">
+                                <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
+                                </div>
                             </div>
                         </div>
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
-                            <span className="right-5"></span>
+                                <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon2.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-majallab text-5xl">06</span>
                                 </div>
-                                <p className="font-poppins">Lorem ipsum dolor sit amet, <br></br> consectetur adipiscing elit, sed<br></br> eiusmod tempor incididunt </p>
+                                <p className="font-poppins">Bringing your story to the shelves and screens of the world. </p>
                                 <h4 className="mt-4 font-majallab text-3xl">PUBLISHING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
-                            <span class="square">
+                                <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>
-                                <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="text-center">
-                        <p className="font-poppins text-white mt-6 text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                        <p className="font-poppins text-white mt-6 text-md">Discover the Difference: Our Publishing Service Puts Your Story Front and Center, <br></br> Guiding It from Conception to Bookshelf Success.</p>
                     </div>
                 </div>
             </section>

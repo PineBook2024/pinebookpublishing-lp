@@ -31,14 +31,14 @@ export default function BrandNavbar() {
                     </button>
                 </div>
                 {/* Navigation Menu */}
-                <nav className={`${isOpen ? 'block' : 'hidden'} absolute flex flex-col bg-gray-900 text-center items-center self-end py-8 mt-10 space-y-6 font-semibold w-full right-0 left-0 md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
+                <nav className={`${isOpen ? 'block' : 'hidden'} absolute flex flex-col bg-gray-900 text-center items-center self-end py-8 mt-2 space-y-6 font-semibold w-full mb-8 top-20 md:top-0 right-0 left-0 md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
                     <ul className="md:flex items-center space-x-4">
-                        <li><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
-                        <li><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
-                        <li><Link href="/services" className="text-white hover:text-gray-300">Service</Link></li>
-                        <li><Link href="/pricing" className="text-white hover:text-gray-300">Pricing</Link></li>
-                        <li><Link href="/contact" className="text-white hover:text-gray-300">Contact</Link></li>
-                        <li><Link href="/consult" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab">Talk to Expert</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/services" className="text-white hover:text-gray-300">Service</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/pricing" className="text-white hover:text-gray-300">Pricing</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/contact" className="text-white hover:text-gray-300">Contact</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/consult" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab">Talk to Expert</Link></li>
                     </ul>
                 </nav>
             </header>

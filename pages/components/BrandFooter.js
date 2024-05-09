@@ -16,7 +16,7 @@ export default function BrandFooter() {
                                 <Image src={"/images/f-logo.png"} width={250} height={200}></Image>
                             </a>
                             <p className="mt-2 text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
                             <nav className="list-none mb-10 mt-5">
                                 <li>

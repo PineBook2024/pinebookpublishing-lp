@@ -924,6 +924,42 @@ footer svg {
   .single-packages {
     margin: 0 auto;
   }
+
+  .service-card-img {
+    height: 100%;
+  }
+
+  .brand-cta-book {
+    position: relative !important;
+    top: -13px !important;
+    left: 12px !important;
+  }
+
+  .brand-cta-vector::before {
+    content: "";
+    position: absolute;
+    width: 333px !important;
+    height: 540px !important;
+    top: 76px !important;
+    left: 15px !important;
+  }
+
+  .brand-primary-header-bg {
+    padding: 41% 0 7% 0 !important;
+  }
+
+  .brand-choose-us-vector::before {
+    width: 358px !important;
+    height: 494px !important;
+    top: 232px !important;
+    left: 3px !important;
+  }
+
+  .brand-choose-us-img {
+    position: relative !important;
+    top: 6px !important;
+    left: -20px !important;
+  }
 }
 
 
@@ -1129,7 +1165,7 @@ footer svg {
   background: #0d0f38;
   opacity: 0;
   transition: .4s ease-in-out;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .bottom {
@@ -1185,7 +1221,7 @@ footer svg {
   background: #0d0f38;
   opacity: 0;
   transition: .4s ease-in-out;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .bottom-5 {
@@ -1229,7 +1265,7 @@ footer svg {
 
 .square {
   height: 100%;
-  width: 300px;
+  width: 100%;
   background: transparent;
   border: 0 solid white;
   transition: border-width 0.4s linear;
@@ -1238,23 +1274,23 @@ footer svg {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  z-index: 1000;
 }
 
 .square a {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   opacity: 0.6;
   padding: 10px 20px;
+  font-weight: bold;
 }
 
 .square:hover {
-  border-width: 6px;
   opacity: 1;
 }
 
 .brand-choose-us-section ul {
   color: #fff;
-  list-style: disc;
   font-size: 22px;
   font-weight: bold;
 }
@@ -1359,4 +1395,69 @@ footer svg {
   position: absolute;
   z-index: -1;
   bottom: -20px;
+}
+
+.brand-testimonials-card {
+  width: 100%;
+  background-color: #e8e4e4;
+  padding: 23px;
+}
+
+.brand-testimonials-card span {
+  font-weight: bold;
+}
+
+.brand-process {
+  background-color: #E6DED8;
+}
+
+.service-card-img:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 168, 157, 0.4);
+  -webkit-transition: opacity 500ms ease, visibility 500ms ease, -webkit-transform 500ms ease;
+  transition: opacity 500ms ease, visibility 500ms ease, -webkit-transform 500ms ease;
+  transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease;
+  transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease, -webkit-transform 500ms ease;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(-70%);
+  transform: translateY(-70%);
+  z-index: 1;
+}
+
+.brand-service-card:hover .service-card-img:before {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.service-card-img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+
+.brand-primary-header-bg {
+  background-image: url(../public/brand-img/banner-img.jpg);
+  padding: 14% 0 7% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brand-portfolio-books .active {
+  background-color: #05092a;
+  border: 1px solid #157d6e;
+  color: #fff;
+}
+
+.brand-portfolio-books .in-active {
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  color: #fff;
 }

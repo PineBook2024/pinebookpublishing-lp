@@ -1,8 +1,4 @@
 import React, { useEffect } from "react";
-import Footer from "./components/Footer";
-import Link from "next/link";
-import Head from "next/head";
-import Script from "next/script";
 import BrandTopBar from "./components/BrandTopBar";
 import BrandFooter from "./components/BrandFooter";
 import BrandAbout from "./components/BrandAbout";
@@ -16,6 +12,7 @@ import BrandTestimonial from "./components/BrandTestimonial";
 import BrandFaqs from "./components/BrandFaqs";
 import BrandContact from "./components/BrandContactForm";
 import BrandLogo from "./components/BrandLogo";
+import BrandProcess from "./components/BrandProcess";
 
 export default function Home() {
     return (
@@ -27,6 +24,7 @@ export default function Home() {
             <BrandAbout />
             <BrandServices />
             <BrandCTA />
+            <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
             <BrandFaqs />

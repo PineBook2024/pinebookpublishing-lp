@@ -17,7 +17,7 @@ export default function BrandBannerLogo() {
     const swiperRef = useRef();
 
     const logos = [
-        { id: 1, src: "/brand-img/banner-logo2.png", alt: "LOGO 1", width: 180, height: 180 },
+        { id: 1, src: "/brand-img/banner-logo2.png", alt: "LOGO 1", width: 190, height: 200 },
         { id: 2, src: "/images/s6.png", alt: "LOGO 2", width: 120, height: 120 },
         { id: 3, src: "/images/s4.png", alt: "LOGO 3", width: 110, height: 120 },
         { id: 4, src: "/images/s3.png", alt: "LOGO 4", width: 150, height: 120 },

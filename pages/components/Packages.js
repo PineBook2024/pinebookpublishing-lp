@@ -47,10 +47,10 @@ export default function Packages({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center items-center">
+                                    {/* <div className="flex gap-2 mb-5 items-center items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Developmental Editing
-                                    </div>
+                                    </div> */}
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Line by Line Editing

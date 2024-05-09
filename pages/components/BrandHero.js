@@ -159,13 +159,13 @@ export default function BrandHero() {
 
             <section className="overflow-hidden brand-hero-section">
                 <Slider {...settings}>
-                    <div className="bg-image-1"> 
+                    <div className="bg-image-1">
                         {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
                     </div>
-                    <div className="bg-image-2"> 
+                    <div className="bg-image-2">
                         {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
                     </div>
-                    <div className="bg-image-3"> 
+                    <div className="bg-image-3">
                         {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
                     </div>
                 </Slider>
@@ -176,16 +176,14 @@ export default function BrandHero() {
 
 function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess) {
     return (
-        <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+        <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
             <div className="mr-auto place-self-center lg:col-span-7 text-white">
                 <h3 className="text-2xl mb-4"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                <h1 className="font-majallab text-5xl md:text-8xl leading-3">
-                    Get Self-Published <br /> more Profitably
+                <h1 className="font-majallab text-5xl md:text-8xl">
+                    Your Story Matters - Let's Publish It
                 </h1>
                 <p className="text-xl font-poppins">
-                    Don’t make your manuscript wait – get <br />
-                    self-published with Pine Book Publishing <br />
-                    – It’s easy and ROI-positive.
+                    From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
                 </p>
             </div>
             <div className="lg:col-span-5  brand-hero-banner-form">
