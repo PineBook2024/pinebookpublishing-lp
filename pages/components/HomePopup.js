@@ -7,15 +7,14 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import useHubspotForm from "@/hooks/hubspot";
 
-export default function HomePopup({ onClose, service }) {
+export default function HomePopup() {
     const router = useRouter();
-    const { submitPopupContactForm } = useHubspotForm();
+    const { submitPopupContactFormScreen } = useHubspotForm();
     const [mail, setMail] = useState("");
     const [fulName, setFulName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [budget, setBudget] = useState("");
     const [message, setMessage] = useState("");
-    const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
 
     const [isOpen, setIsOpen] = useState(true);
@@ -26,11 +25,6 @@ export default function HomePopup({ onClose, service }) {
         "$8001 - $9000", "$9001 - $10000"
     ];
 
-    useEffect(() => {
-        setTimeout(() => {
-            router.push('/publishing-lp');
-        }, 3000);
-    }, [router]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,7 +32,6 @@ export default function HomePopup({ onClose, service }) {
             fulName: setFulName,
             mail: setMail,
             message: setMessage,
-            service: setServiceState,
             budget: setBudget,
             phoneNumber: setPhoneNumber,
         };
@@ -51,11 +44,10 @@ export default function HomePopup({ onClose, service }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitPopupContactForm(
+        const response = await submitPopupContactFormScreen(
             mail,
             fulName,
             phoneNumber,
-            service,
             budget,
             message
         );
@@ -133,17 +125,6 @@ export default function HomePopup({ onClose, service }) {
                                             />
                                         </div>
 
-                                        <div className="relative mb-3">
-                                            <input
-                                                type="text"
-                                                name="service"
-                                                value={service}
-                                                readOnly
-                                                required
-                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab hidden"
-                                                placeholder="Enter your Number"
-                                            />
-                                        </div>
 
                                         <div className="relative mb-3">
                                             <input
