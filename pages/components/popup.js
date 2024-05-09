@@ -81,8 +81,8 @@ export default function popup({ isOpen, onClose, service }) {
                         <Image
                             className="text-center form-off-badge"
                             src={"/images/form-badge.png"}
-                            width={150}
-                            height={150}
+                            width={130}
+                            height={130}
                             loading="lazy"
                         ></Image>
                         <div className="form-mid-wrap bg-gray-200 connect-form-border mb-12 relative transparent-connect-form-border">
@@ -102,7 +102,7 @@ export default function popup({ isOpen, onClose, service }) {
 
                                 <form className="popup-form-wrapper" onSubmit={handleSubmit}>
                                     <div className="text-center">
-                                        <h2 className="font-majallab text-white text-5xl mt-2">Avail Discount</h2>
+                                        <h2 className="font-majallab text-white text-4xl mt-2">Avail Discount</h2>
                                         <p className="font-majallab text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">70% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
