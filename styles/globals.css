@@ -418,6 +418,10 @@ video#background-video {
   border: 2px solid #fff0;
 }
 
+.header-form-input select {
+  color: grey;
+}
+
 .connect-form-input:focus-visible {
   border: 2px solid #2c9384;
 }
@@ -545,7 +549,8 @@ footer svg {
   right: -71px;
 }
 
-.close-btn-modal svg {
+.close-btn-modal svg,
+.home-close-btn-modal svg {
   width: 20px;
   object-fit: contain;
 }
@@ -826,6 +831,7 @@ footer svg {
 @keyframes blinker {
   50% {
     opacity: 0;
+    color: #147d6e;
   }
 }
 
@@ -959,6 +965,21 @@ footer svg {
     position: relative !important;
     top: 6px !important;
     left: -20px !important;
+  }
+
+  .popup-form-wrapper {
+    width: 100% !important;
+  }
+
+  .form-off-badge {
+    position: absolute;
+    right: 5px;
+    top: -128px;
+    z-index: 1000;
+  }
+
+  .home-popup-img-bg {
+    display: none;
   }
 }
 
@@ -1460,4 +1481,81 @@ footer svg {
 .brand-portfolio-books .in-active {
   background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
   color: #fff;
+}
+
+.transparent-connect-form-border {
+  background-color: #87929d6b !important;
+  backdrop-filter: blur(4px);
+}
+
+.dark-form-bg {
+  background: #433f3fe6;
+}
+
+.home-popup-modal-wrapper {
+  width: 80%;
+}
+
+.form-off-badge {
+  position: absolute;
+  right: 5px;
+  top: -120px;
+  z-index: 1000;
+}
+
+.home-connect-form-input {
+  background-color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid #fff0;
+  /* padding: 17px; */
+}
+
+.home-popup-img-bg {
+  height: 450px !important;
+}
+
+.popup-form-wrapper {
+  width: 38%;
+}
+
+.home-close-btn-modal {
+  position: absolute;
+  top: -21px;
+  background: #2c9384;
+  right: -33px;
+  border-radius: 50%;
+}
+
+.text-blink {
+  animation: 4s linear infinite key-second;
+  -webkit-animation: 4s ease-in-out infinite key-second;
+  background-color: transparent !important;
+}
+
+@-webkit-keyframes key-second {
+
+  0%,
+  100%,
+  20%,
+  40%,
+  60%,
+  80% {
+    color: #fff
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    color: #00ff51
+  }
+}
+
+.header-form-off-badge {
+  position: absolute;
+  right: 141px;
+  top: -128px;
+  z-index: 1000;
 }

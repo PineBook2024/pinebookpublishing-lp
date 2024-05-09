@@ -45,6 +45,7 @@ import Faq from "../components/Faq";
 
 import dynamic from 'next/dynamic';
 import Packages from "../components/Packages";
+import HomePopup from "../components/HomePopup";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -64,7 +65,7 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
-
+  
   // Object
   const packagesCard = [
     {
@@ -108,11 +109,11 @@ export default function Home() {
 
 
 
-  useEffect(() => {
-    setTimeout(() => {
-      router.push('/publishing-lp');
-    }, 3000);
-  }, [router]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     router.push('/publishing-lp');
+  //   }, 3000);
+  // }, [router]);
 
 
   const handleChange = (e) => {
@@ -247,6 +248,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        <HomePopup />
         {/* <Hero  /> */}
         <HeavyComponent Component={HeroForm} />
 
