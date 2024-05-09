@@ -120,7 +120,7 @@ export default function HeroForm() {
           <h1 className="font-majallab text-5xl md:text-8xl">
             Publish Your Dreams!
           </h1>
-          <p>Our comprehensive<span>KDP (Kindle Direct Publishing) and Self-Publishing Services</span>transform your manuscript from editing to distribution, ensuring it is accessible to readers globally.</p>
+          <p>Enhance your manuscript with our <span>Amazon Kindle Direct Publishing and Self Publishing Service.</span> Experience expert editing, global distribution, and a dedication to excellence that ensures your book resonates with readers everywhere.</p>
           {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}
           <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
             {clientLogos.map((logo, index) => (
