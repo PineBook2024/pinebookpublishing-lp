@@ -1527,6 +1527,10 @@ footer svg {
   border-radius: 50%;
 }
 
+.home-close-btn-modal svg{
+  filter: invert(1);
+}
+
 .text-blink {
   animation: 4s linear infinite key-second;
   -webkit-animation: 4s ease-in-out infinite key-second;
