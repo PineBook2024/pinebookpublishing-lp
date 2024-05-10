@@ -71,6 +71,11 @@ export default function Footer() {
               ></Image>
               <Image src={"/images/bage5.png"} width={100} height={200}></Image>
             </div>
+            {/* <h2 className="title-font font-medium text-white tracking-widest text-3xl mb-3 font-majallab font-bold	mt-5">
+              Brand By
+            </h2>
+            <Image src={"/images/brand-writing-logo.png"} width={200} height={200}></Image> */}
+
           </div>
         </div>
       </div>
@@ -78,7 +83,7 @@ export default function Footer() {
       <div className="copyright-sec">
         <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-white w-full md:text-center text-sm sm:text-left">
-            Copyright © 2024
+            Copyright © 2024 |
             <Link
               href="/terms-and-conditions"
               rel="noopener noreferrer"
@@ -93,9 +98,11 @@ export default function Footer() {
               className="text-white ml-1"
               target="_blank"
             >
-              Privacy Policy
+              Privacy Policy | {" "}
             </Link>
+            Powered by <span className="powered-by-text">Pine Book Writing Inc.</span>
           </p>
+
         </div>
       </div>
     </footer>

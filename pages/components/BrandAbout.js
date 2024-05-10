@@ -13,7 +13,7 @@ export default function BrandAbout(props) {
                             Who are We?
                         </h3>
                         <p className="font-poppins">
-                            Are you feeling stuck in the maze of writing and publishing your book? Do you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end?
+                            {props.subdescone}
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-end">
@@ -33,13 +33,12 @@ export default function BrandAbout(props) {
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1">
                         <p className="font-poppins">
-                            With Pine Book Publishing, we simplify the writing and publishing process, offering personalized solutions tailored to your needs. Say goodbye to the frustration of endless revisions and let us guide you towards a polished manuscript.
+                            {props.subdesctwo}
                         </p>
                         <button className="brand-about-btn font-majallab">READ MORE</button>
                     </div>
-
                 </div>
-                <p className="font-poppins mt-14">{props.desc}</p>
+                <p className="font-poppins mt-14">{props.subdescthree}</p>
             </div>
 
         </>

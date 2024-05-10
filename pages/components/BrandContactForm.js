@@ -140,7 +140,7 @@ export default function BrandContact() {
                                         className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                         rows={4}
                                     ></textarea>
-                                    <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" />
+                                    <FontAwesomeIcon icon={faPen} color="#000" className="absolute left-0 top-3 ml-4" width={14} />
                                     <div
                                         className="absolute inset-y-0 left-0 pl-3 pt-3 
                               flex items-start  

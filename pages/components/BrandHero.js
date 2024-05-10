@@ -235,7 +235,7 @@ function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email
                                 placeholder="Enter your Message"
                                 name="message"
                             ></textarea>
-                            <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" />
+                            <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" width={16} />
                         </div>
                         <button
                             className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins rounded-xl shadow-xl text-xl"
