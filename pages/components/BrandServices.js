@@ -10,7 +10,7 @@ export default function BrandServices() {
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-24">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-white font-poppins">Our Publishing</h3>
-                        <h2 className="font-majallab text-7xl text-white">Services</h2>
+                        <h2 className="font-majallab text-5xl md:text-7xl text-white">Services</h2>
                     </div>
 
                     {/* 1 of 2 */}

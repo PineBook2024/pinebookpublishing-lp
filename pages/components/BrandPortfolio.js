@@ -9,14 +9,14 @@ const GLightbox = dynamic(
     { ssr: false }
 );
 const books = [
-    { id: 1, title: 'Book One', category: 'Fiction', imageUrl: '/brand-img/book1.png' },
-    { id: 2, title: 'Book Two', category: 'Non-Fiction', imageUrl: '/brand-img/book2.png' },
-    { id: 3, title: 'Book Three', category: 'Fiction', imageUrl: '/brand-img/book3.png' },
+    { id: 1, title: 'Book One', category: 'Fiction', imageUrl: '/brand-img/book1.webp' },
+    { id: 2, title: 'Book Two', category: 'Non-Fiction', imageUrl: '/brand-img/book2.webp' },
+    { id: 3, title: 'Book Three', category: 'Fiction', imageUrl: '/brand-img/book3.webp' },
     { id: 4, title: 'Book Four', category: 'History', imageUrl: '/brand-img/book4.png' },
-    { id: 5, title: 'Book Five', category: 'Fiction', imageUrl: '/brand-img/book5.png' },
-    { id: 6, title: 'Book Six', category: 'Non-Fiction', imageUrl: '/brand-img/book6.png' },
-    { id: 7, title: 'Book Seven', category: 'History', imageUrl: '/brand-img/book7.png' },
-    { id: 8, title: 'Book Eight', category: 'Fiction', imageUrl: '/brand-img/book8.png' }
+    { id: 5, title: 'Book Five', category: 'Fiction', imageUrl: '/brand-img/book5.webp' },
+    { id: 6, title: 'Book Six', category: 'Non-Fiction', imageUrl: '/brand-img/book6.webp' },
+    { id: 7, title: 'Book Seven', category: 'History', imageUrl: '/brand-img/book7.webp' },
+    { id: 8, title: 'Book Eight', category: 'Fiction', imageUrl: '/brand-img/book8.webp' }
 ];
 
 export default function BrandPortfolio() {

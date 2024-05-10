@@ -289,7 +289,7 @@ video#background-video {
 .bk-sil.next {
   margin-top: 0px;
   position: absolute;
-  top: 43%;
+  top: 50%;
   right: -25px;
   width: 45px;
   height: 45px;
@@ -310,7 +310,7 @@ video#background-video {
 
 .bk-sil.prev {
   position: absolute;
-  top: 43%;
+  top: 50%;
   left: -31px;
   width: 45px;
   height: 45px;
@@ -1006,7 +1006,7 @@ footer svg {
 }
 
 .brand-hero-bg-img {
-  background-image: url(../public/brand-img/banner-img.jpg);
+  background-image: url(../public/brand-img/banner-img.webp);
   padding: 6% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1411,7 +1411,7 @@ footer svg {
   padding: 14px;
 }
 
-.contact-form-bg-img {
+/* .contact-form-bg-img {
   background-image: url(../public/brand-img/contact-bg-img.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1420,7 +1420,7 @@ footer svg {
   position: absolute;
   z-index: -1;
   bottom: -20px;
-}
+} */
 
 .brand-testimonials-card {
   width: 100%;
@@ -1538,11 +1538,12 @@ footer svg {
 }
 
 .text-blink,
-.powered-by-text{
+.powered-by-text {
   animation: 4s linear infinite key-second;
   -webkit-animation: 4s ease-in-out infinite key-second;
   background-color: transparent !important;
 }
+
 /* .powered-by-text {
   animation: 4s linear infinite key-third ;
   -webkit-animation: 4s ease-in-out infinite key-third ;
@@ -1596,11 +1597,11 @@ footer svg {
   z-index: 1000;
 }
 
-.powered-by-text{
+.powered-by-text {
   font-weight: bold;
 }
 
-.brand-testimonials-card:hover{
+.brand-testimonials-card:hover {
   color: #fff;
   transition: .4s ease-in-out;
 }
@@ -1615,6 +1616,7 @@ footer svg {
   z-index: 0;
   overflow: hidden;
 }
+
 .brand-testimonials-card:before {
   content: "";
   position: absolute;
@@ -1629,6 +1631,7 @@ footer svg {
   transform-origin: 50% 50%;
   transition: transform 0.25s ease-out;
 }
+
 .brand-testimonials-card:hover:before {
   transform: scale(39);
   color: #fff;

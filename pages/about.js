@@ -25,14 +25,6 @@ export default function About() {
         { question: "What pricing options are available for your services?", answer: "We offer competitive pricing packages tailored to fit your budget and project needs. Our rates are transparent, and we're happy to provide a detailed quote based on the specific services you require." }
     ];
 
-    const badges = [
-        { src: "/images/bage2.png", width: 100, height: 100 },
-        { src: "/images/bage13.png", width: 100, height: 100 },
-        { src: "/images/bage3.png", width: 100, height: 100 },
-        { src: "/images/bage14.png", width: 100, height: 100 },
-        { src: "/images/bage4.png", width: 100, height: 100 },
-        { src: "/images/bage12.png", width: 100, height: 100 }
-    ];
     return (
         <>
             <Head>

@@ -35,10 +35,11 @@ export default function BrandNavbar() {
                     <ul className="md:flex items-center space-x-4">
                         <li className="pb-5 md:pb-0"><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
                         <li className="pb-5 md:pb-0"><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
-                        <li className="pb-5 md:pb-0"><Link href="/services" className="text-white hover:text-gray-300">Service</Link></li>
-                        <li className="pb-5 md:pb-0"><Link href="/pricing" className="text-white hover:text-gray-300">Pricing</Link></li>
-                        <li className="pb-5 md:pb-0"><Link href="/contact" className="text-white hover:text-gray-300">Contact</Link></li>
-                        <li className="pb-5 md:pb-0"><Link href="/consult" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab">Talk to Expert</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/" className="text-white hover:text-gray-300">Service</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/" className="text-white hover:text-gray-300">Contact</Link></li>
+                        <li className="pb-5 md:pb-0"><Link href="/" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab">Talk to Expert</Link></li>
                     </ul>
                 </nav>
             </header>

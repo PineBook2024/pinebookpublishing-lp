@@ -5,6 +5,8 @@ import Link from "next/link";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AnimateFade from "./fade";
+
 
 export default function BrandContact() {
     // Form Integration
@@ -57,13 +59,6 @@ export default function BrandContact() {
 
     return (
         <>
-            {/* <section className="brand-testimonials-section">
-                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
-                    <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black">TESTIMONIALS</h2>
-                    </div>
-                </div>
-            </section> */}
 
             <section className="btm-form overflow-hidden relative">
             <div className="contact-form-bg-img"></div>
@@ -71,16 +66,15 @@ export default function BrandContact() {
                     <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
                         <div className="flex flex-col md:flex-row items-end">
                             <div className="basis-1/3 hidden md:block position-relative">
-                                {/* <AnimateFade type={"right"} className="position-relative"> */}
+                                <AnimateFade type={"right"} className="position-relative">
                                 <Image
                                     className="text-center pt-10 contact-form-img"
                                     src={"/images/contact-user.webp"}
                                     width={600}
                                     height={300}
-                                    layout="responsive"
                                     loading="lazy"
                                 ></Image>
-                                {/* </AnimateFade> */}
+                                </AnimateFade>
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>

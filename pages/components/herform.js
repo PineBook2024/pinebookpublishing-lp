@@ -124,7 +124,7 @@ export default function HeroForm() {
           {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}
           <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
             {clientLogos.map((logo, index) => (
-              <Link key={index} href={logo.href} >
+              <Link key={index} href={logo.href} target="_blank">
                 <Image
                   alt={logo.alt}
                   src={logo.src}

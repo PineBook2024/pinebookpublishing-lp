@@ -293,7 +293,7 @@ export default function Home() {
                   >
                     <SwiperSlide className="mx-auto text-center">
                       <div className="flex justify-center">
-                        <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo1.png"}
@@ -308,7 +308,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo2.png"}
@@ -322,7 +322,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://www.trustpilot.com/review/pinebookwriting.com">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo3.png"}
@@ -336,7 +336,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo4.png"}
@@ -351,7 +351,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://clutch.co/profile/pine-book-writing">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo5.png"}
@@ -364,7 +364,7 @@ export default function Home() {
                     </SwiperSlide>
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://clutch.co/profile/pine-book-writing">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo6.png"}
@@ -378,7 +378,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://clutch.co/profile/pine-book-writing">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo7.png"}
@@ -392,7 +392,7 @@ export default function Home() {
 
                     <SwiperSlide>
                       <div className="flex justify-center">
-                        <a href="https://clutch.co/profile/pine-book-writing">
+                        <a href="#">
                           <Image
                             alt="LOGO"
                             src={"/images/logo8.png"}
