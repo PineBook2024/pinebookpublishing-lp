@@ -1,49 +1,908 @@
-import React, { useEffect } from "react";
+import useHubspotForm from "@/hooks/hubspot";
+import Image from "next/image";
+import Link from "next/link";
 import Head from "next/head";
-import BrandTopBar from "./components/BrandTopBar";
-import BrandFooter from "./components/BrandFooter";
-import BrandAbout from "./components/BrandAbout";
-import BrandNavbar from "./components/BrandNavbar";
-import BrandHero from "./components/BrandHero";
-import BrandBannerLogo from "./components/BrandBannerLogo";
-import BrandCTA from "./components/BrandCTA";
-import BrandServices from "./components/BrandServices";
-import BrandChooseUs from "./components/BrandChooseUs";
-import BrandTestimonial from "./components/BrandTestimonial";
-import BrandFaqs from "./components/BrandFaqs";
-import BrandContact from "./components/BrandContactForm";
-import BrandLogo from "./components/BrandLogo";
-import BrandProcess from "./components/BrandProcess";
+import React, { useEffect, useRef, useState } from "react";
+import "swiper/css/effect-coverflow";
+import Header from "./components/header";
+import Hero from "./components/hero";
+import HeroForm from "./components/herform";
+import Footer from "./components/Footer";
+import {
+  Autoplay,
+  Pagination,
+  Navigation,
+  EffectCoverflow,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { A11y } from "swiper/modules";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AnimateFade from "./components/fade";
+import { useRouter } from 'next/navigation';
+
+library.add(faArrowLeft, faArrowRight);
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  nodeRef,
+  rounded,
+} from "framer-motion";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import Chart from "./components/Chart";
+import Story from "./components/Story";
+import Faq from "./components/Faq";
+
+
 
 export default function Home() {
-    return (
-        <>
-            <Head>
-                <title>Premier Book Publishing Company | Pine Book Publishing</title>
-                <meta
-                    name="description"
-                    content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!"
-                />
-                <link rel="shortcut icon" href="/images/fav.png" />
-            </Head>
-            <BrandTopBar />
-            <BrandNavbar />
-            <BrandHero />
-            <BrandBannerLogo />
-            <BrandAbout
-                subdescone="Are you feeling stuck in the maze of writing and publishing your book? Do you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end?"
-                subdesctwo="With Pine Book Publishing, we simplify the writing and publishing process, offering personalized solutions tailored to your needs. Say goodbye to the frustration of endless revisions and let us guide you towards a polished manuscript."
-                subdescthree=""
-            />
-            <BrandServices />
-            <BrandCTA />
-            <BrandProcess />
-            <BrandChooseUs />
-            <BrandTestimonial />
-            <BrandFaqs />
-            <BrandContact />
-            <BrandLogo />
-            <BrandFooter />
-        </>
+  const router = useRouter();
+  const swiperRef = useRef();
+  const swiperRef2 = useRef();
+  const swiperRef3 = useRef();
+
+  // Form Integration
+  const { submitContactForm } = useHubspotForm();
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+
+    // Object
+    const packagesCard = [
+      {
+        id: 1,
+        image: "/images/pp1.png",
+        title: "Beginner",
+        description: "Launch your book with our Beginner Package, offering comprehensive editing, custom cover art, multi-platform formatting, Amazon optimization, 1 ISBN, and full royalties with a few paperback copies."
+      },
+      {
+        id: 2,
+        image: "/images/pp2.png",
+        title: "Standard",
+        description: "Enhance your publishing experience with our Standard Package, which ensures meticulous editing, versatile publishing options and 2 ISBNs, complete with a full suite of formats and copies for distribution."
+      },
+      {
+        id: 3,
+        image: "/images/pp3.png",
+        title: "Expert",
+        description: "Propel your project to new peaks with our Expert Package, which includes advanced editing, 3 ISBNs, a dynamic website, a video trailer, and widespread distribution, ensuring full ownership and royalties."
+      },
+      {
+        id: 4,
+        image: "/images/pp4.png",
+        title: "Enterprise",
+        description: "Embark on your authorial journey with our Enterprise Package, which encompasses detailed editing, captivating cover design, strategic marketing, 3 ISBNs, and extensive distribution to bring your book to readers worldwide."
+      }
+    ];
+  
+    // Books Object
+    const books = [
+      { src: "/images/bb1-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img ten" },
+      { src: "/images/bb5-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eleven" },
+      { src: "/images/bb8-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img twelve" },
+      { src: "/images/bb4-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img thirteen" },
+      { src: "/images/bb3-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img fifteen" },
+      { src: "/images/bb6-min.webp", width: 260, height: 289, type: "bottom", alt: "book mobile img sixteen" },
+      { src: "/images/bb7-min.webp", width: 260, height: 289, type: "left", alt: "book mobile img seventeen" },
+      { src: "/images/bb2-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eighteen" }
+    ];
+  
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/');
+    }, 3000);
+  }, [router]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const setters = {
+      fullName: setFullName,
+      email: setEmail,
+      message: setMessage,
+      phoneNumber: setPhoneNumber,
+    };
+
+    const setter = setters[name];
+    if (setter) {
+      setter(value);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await submitContactForm(
+      email,
+      fullName,
+      phoneNumber,
+      message
     );
+    if (response) {
+      setShowSuccess(true);
+      router.push('/thankyou')
+      setTimeout(() => {
+        setShowSuccess(false);
+        setEmail("");
+        setFullName("");
+        setPhoneNumber("")
+        setMessage("");
+      }, 3000);
+    }
+
+    console.log("response", response);
+  };
+
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  // Open Chat Click
+
+  const handleOpenChat = () => {
+    window.zE && window.zE('webWidget', 'open');
+  };
+
+
+  const faqData = [
+    { question: "How do I self-publish my book?", answer: "Self-publishing your book with Pine Book Publishing is simple. Start by submitting your manuscript, and our team will guide you through the editing, formatting, and cover design process." },
+    { question: "Is publishing a book difficult?", answer: "Publishing a book doesn't have to be difficult, especially with Pine Book Publishing's support." },
+    { question: "What is an ISBN and do I need one?", answer: "An ISBN (International Standard Book Number) is a unique identifier for your book used by retailers, libraries, and distributors." },
+    { question: "Will I need to have my book copyrighted?", answer: "While your book is automatically copyrighted upon creation, registering your copyright provides additional legal protection." },
+    { question: "Do you offer design services?", answer: "Yes, Pine Book Publishing offers comprehensive design services, including cover design, typesetting, and layout adjustment." },
+    { question: "How do you handle distribution and marketing of books?", answer: "Pine Book Publishing handles distribution and marketing for your books, ensuring they reach the widest audience possible." }
+  ];
+
+
+
+
+  const settings = {
+    // slidesPerView: 3,
+    // speed: 500,
+    // loop: true,
+    // speed:1000,
+    // arrows:true,
+    // autoplay:true,
+    // autoplay: {
+    //   delay: 300
+    // },
+    breakpoints: {
+      414: {
+        slidesPerView: 2,
+        navigation: false,
+        Pagination: false,
+      },
+      768: {
+        slidesPerView: 2,
+        navigation: false,
+        Pagination: false,
+      },
+      1024: {
+        slidesPerView: 3,
+        autoplay: {
+          delay: 200,
+        },
+      },
+    },
+  };
+
+  function Counter({ from, to, val }) {
+    const count = useMotionValue(from);
+    const rounded = useTransform(count, (latest) => {
+      return Math.round(latest) + val;
+    });
+    const nodeRef = useRef(null);
+    const inView = useInView(nodeRef);
+
+    useEffect(() => {
+      if (inView) {
+        animate(count, to, { duration: 2 });
+      }
+    }, [count, inView, to]);
+    return (
+      <motion.p className="font-majallab text-black" ref={nodeRef}>
+        {rounded}
+      </motion.p>
+    );
+  }
+
+  return (
+    <>
+    <Head>
+      <title>Book Publishing Services | Pine Book Publishing</title>
+      <meta
+        name="description"
+        content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
+      />
+      <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+      <link rel="shortcut icon" href="/images/fav.png" />
+      <meta name="robots" content="noindex" />
+
+      {/* Google tag Manager Script */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16471224604');
+            `,
+        }}
+      />
+    </Head>
+    <main>
+      <Header />
+      <Hero  Component={HeroForm} />
+
+      <section className="brnd-slider bg-black overflow-hidden">
+        <AnimateFade type={"right"}>
+          <div className="container grid grid-cols-1 width-container position-relative">
+            <div className="container mx-auto position-relative">
+              <div className="book-sell-text ">
+                <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+              </div>
+              <div className="bnd-slider flex py-7 justify-center">
+                <Swiper
+                  className="px-20 gap-x-32"
+                  spaceBetween={15}
+                  slidesPerView={6}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={false}
+                  onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+
+                      navigation: {
+                        enabled: false,
+                      },
+                      pagination: true,
+                      navigation: true,
+                    },
+                    "@1.00": {
+                      slidesPerView: 6,
+                      spaceBetween: 15,
+                    },
+                  }}
+                >
+                  <SwiperSlide className="mx-auto text-center">
+                    <div className="flex justify-center">
+                      <a href="https://goo.gl/maps/D6kJBoXBJYwcZWkP7">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo1.png"}
+                          width={100}
+                          height={80}
+                          className="custom-logo-size"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo2.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://www.trustpilot.com/review/pinebookwriting.com">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo3.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://www.yelp.com/biz/pine-book-writing-richmond-hill">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo4.png"}
+                          width={100}
+                          height={120}
+                          className="custom-logo-size"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://clutch.co/profile/pine-book-writing">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo5.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://clutch.co/profile/pine-book-writing">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo6.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://clutch.co/profile/pine-book-writing">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo7.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="https://clutch.co/profile/pine-book-writing">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo8.png"}
+                          width={100}
+                          height={80}
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        </AnimateFade>
+      </section>
+
+
+      <section className="about pt-14 overflow-hidden">
+        <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
+            <AnimateFade type={"top"}>
+              <div className="abt-txt m1-h p1">
+                <h3 className="font-majallab text-3xl md:text-7xl">
+                  About Us<span>Pine Book Publishing</span>
+                </h3>
+                <p>
+                  Celebrate your tales with Pine Book Publishing, a book
+                  publishing company that specializes in bringing authors' visions
+                  to life through professional book publishing services. Our team
+                  of skilled professionals is committed to guide you through every
+                  step of the publishing process, ensuring your book captivates
+                  readers and makes an everlasting impact worldwide.
+                </p>
+              </div>
+            </AnimateFade>
+            <div className="abt-pic text-center">
+              <AnimateFade type={"left"}>
+                <Image src={"/images/abt-pic.png"} width={500} height={570}
+                  layout="responsive"
+                  loading="lazy"
+                  alt="about img"
+                />
+              </AnimateFade>
+            </div>
+          </div>
+
+          <div className="book-joun relative p-5 rounded-lg md:p-10 mb-9">
+            <div className="text-center">
+              <Swiper
+                className="px-20"
+                spaceBetween={15}
+                slidesPerView={3}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={false}
+                onBeforeInit={(swiper) => {
+                  swiperRef3.current = swiper;
+                }}
+                modules={[Navigation, Autoplay, Pagination]}
+                breakpoints={{
+                  "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    navigation: {
+                      enabled: false,
+                    },
+                    pagination: false,
+                    navigation: true,
+                  },
+                  "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row justify-between items-center">
+                    <Image
+                      src={"/images/b1.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img one"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b2.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img two"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b3.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img three"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b4.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img four"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b5.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img five"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b6.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img six"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b7.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img seven"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b8.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img eight"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center">
+                    <Image
+                      src={"/images/b9.png"}
+                      width={100}
+                      loading="lazy"
+                      alt="book img nine"
+                      height={100}
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming
+                      connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+              <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+              <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="portfolio overflow-hidden	 py-14 bg-[url('/images/port-banner.png')]">
+        <div className="grid grid-cols-1 ">
+          <div className="container mx-auto text-center">
+            <div className="portfolio-h m1-h">
+              <h3 className="font-majallab text-3xl md:text-7xl">
+                Unveiling Our Authors’ Creations:
+                <br />
+                <span>Book Showcase</span>
+              </h3>
+            </div>
+
+            <div className="block md:hidden lg:hidden">
+              <Swiper
+                className="px-20 gap-x-32 "
+                spaceBetween={15}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={false}
+                onBeforeInit={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
+                modules={[Navigation, Autoplay, Pagination]}
+                breakpoints={{
+                  "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+
+                    navigation: {
+                      enabled: false,
+                    },
+                    pagination: false,
+                    navigation: true,
+                  },
+                  "@1.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide className="mx-auto text-center">
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img ten" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eleven" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img twoelve" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img thirteen" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img fifteen" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img sixteen" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img seventeen" />
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eighteen" />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+
+            </div>
+
+
+            <div className="grid grid-cols-4 gap-4 width-container books-collage">
+              {books.map((book, index) => (
+                <div key={index}>
+                  <AnimateFade type={book.type}>
+                    <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} />
+                  </AnimateFade>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="package py-14 overflow-hidden">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 mb-14 items-center m1-h text-center">
+            <h3 className="font-majallab text-5xl md:text-7xl">
+              Publishing Packages
+            </h3>
+          </div>
+
+          {/* <div className="grid grid-cols-4 gap-4  items-top"> */}
+          <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
+            {packagesCard.map((pkg) => (
+              <div key={pkg.id} className="pack-wrap gap-8">
+                <div className="pack-box flex items-center">
+                  <Image src={pkg.image} width={40} height={50} loading="lazy" alt="icon" />
+                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
+                    {pkg.title}
+                  </h4>
+                </div>
+                <p>
+                  {pkg.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Chart />
+      <section className="process pt-14">
+        <div className="container mx-auto text-center m1-h ">
+          <h3 className="font-majallab text-5xl md:text-7xl">
+            Our Book Publishing Process
+          </h3>
+          <p>
+            At Pine Book Publishing, we've streamlined Our Book Publishing
+            Process to ensure authors have a seamless experience from start to
+            finish.
+          </p>
+          <Image
+            className="py-10 book-publishing-infograph-img"
+            src={"/images/processs.gif"}
+            width={1280}
+            height={400}
+            loading="lazy"
+            alt="process"
+          ></Image>
+        </div>
+
+        <div className="counter -mb-16">
+          <div className="container mx-auto">
+            {/* <div className="grid grid-cols-4 gap-4"></div> */}
+            <div className="mt-6 grid grid-cols-1 px-6 gap-y-10 sm:grid-cols-2 mx-5 lg:grid-cols-4 xl:gap-x-8">
+              <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                <h2>
+                  <Counter from={0} to={15} val={"+"} />
+                </h2>
+                <span className="font-majallab">
+                  Years of industry experience
+                </span>
+              </div>
+
+              <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                <h2>
+                  <Counter from={0} to={500} val={"+"} />
+                </h2>
+                <span className="font-majallab">Published Books</span>
+              </div>
+
+              <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                <h2>
+                  <Counter from={0} to={100} val={"+"} />
+                </h2>
+                <span className="font-majallab">Ongoing Clients</span>
+              </div>
+
+              <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                <h2>
+                  <Counter from={0} to={99} val={"+"} />
+                </h2>
+                <span className="font-majallab">Client Satisfaction Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Story />
+
+      <Faq />
+
+      <section className="btm-form overflow-hidden width-container">
+        <div className="container mx-auto px-8 md:px-20">
+          <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
+            <div className="flex flex-col md:flex-row items-end">
+              <div className="basis-1/3 hidden md:block position-relative">
+                <AnimateFade type={"right"} className="position-relative">
+                  <Image
+                    className="text-center pt-10 contact-form-img"
+                    src={"/images/contact-user.webp"}
+                    width={550}
+                    height={250}
+                    layout="responsive"
+                    loading="lazy"
+                  ></Image>
+                </AnimateFade>
+              </div>
+
+              <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
+                <h3 className="text-black leading-20 font-bold text-5xl md:text-7xl font-majallab text-start">
+                  Connect Us Now!
+                </h3>
+                <p className="text-black leading-6  pb-5 text-base">
+                  Have questions? Reach out to Pine Book Publishing for
+                  personalized assistance.
+                </p>
+
+                <div className="relative mb-3">
+                  <input
+                    type="text"
+                    name="fullName"
+                    onChange={handleChange}
+                    value={fullName}
+                    required
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    placeholder="Enter your Name"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    onChange={handleChange}
+                    value={phoneNumber}
+                    required
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    placeholder="Enter your Number"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    value={email}
+                    required
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    placeholder="Enter your Email"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <textarea
+                    onChange={handleChange}
+                    value={message}
+                    required
+                    placeholder="Enter your Message"
+                    name="message"
+                    className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    rows={3}
+                  ></textarea>
+                  <div
+                    className="absolute inset-y-0 left-0 pl-3 pt-3 
+                            flex items-start  
+                            pointer-events-none"
+                  ></div>
+                </div>
+                {showSuccess && (
+                  <p className="px-1 py-2 text-green-700">
+                    Form submitted Successfully!
+                  </p>
+                )}
+                <button className="p-4 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn mb-10" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      {/* <motion.p className="font-acumin text-5xl text-center text-black leading-loose font-bold hover:text-[#EBFA0B]" ref={nodeRef} >{rounded}<Counter from={100} to={1000} val={"10"} />100</motion.p> */}
+
+    </main>
+  </>
+  );
 }
