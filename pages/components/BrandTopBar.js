@@ -7,7 +7,7 @@ export default function BrandTopBar() {
     return (
         <>
             <div className="nav-top-bar text-center py-1">
-                <h3 className="text-white font-majallab text-xl font-thin"><b>Disclaimer:</b> Lorem Ipsum is simply dummy text </h3>
+                <h3 className="text-white font-majallab text-md md:text-xl font-thin"><b>From Manuscript to Marketplace: We Make It Happen for YOU.</b></h3>
             </div>
         </>
     );

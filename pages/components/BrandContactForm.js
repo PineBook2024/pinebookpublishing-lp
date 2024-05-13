@@ -78,7 +78,7 @@ export default function BrandContact() {
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase">
+                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase aos-init aos-animate" data-aos="zoom-out">
                                 We Are Here to Hear You!
                                 </h3>
                                 <p className="text-black leading-6  pb-5 text-base">

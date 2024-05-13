@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Font files can be colocated inside of `pages`
 const majallab = localFont({
@@ -22,6 +24,10 @@ export default function App({ Component, pageProps }) {
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-9X52J8V8NK');
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
   }, []);
 
 

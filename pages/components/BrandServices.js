@@ -6,15 +6,17 @@ export default function BrandServices() {
 
     return (
         <>
-            <section className="brand-service-section">
-                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-24">
+            <section className="brand-service-section overflow-hidden">
+                <div className="max-w-screen-xl mx-auto px-4 my-20 relative">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-white font-poppins">Our Publishing</h3>
                         <h2 className="font-majallab text-5xl md:text-7xl text-white">Services</h2>
+                        <p className="text-white">Discover the Difference: Our Publishing Service Puts Your Story Front and Center, <br></br>
+                            Guiding It from Conception to Bookshelf Success.</p>
                     </div>
 
                     {/* 1 of 2 */}
-                    <div className="brand-service-content flex gap-4 flex-col md:flex-row">
+                    <div className="brand-service-content flex gap-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
                                 <span className="right"></span>
@@ -57,7 +59,7 @@ export default function BrandServices() {
                         </div>
                     </div>
                     {/* 2 of 4 */}
-                    <div className="brand-service-content flex mt-4 gap-4 flex-col md:flex-row">
+                    <div className="brand-service-content flex mt-4 gap-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <div className="brand-service-card flex gap-4">
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
@@ -102,7 +104,7 @@ export default function BrandServices() {
                     </div>
 
                     {/* 4 of 6 */}
-                    <div className="brand-service-content flex gap-4 mt-4 flex-col md:flex-row">
+                    <div className="brand-service-content flex gap-4 mt-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
                         <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
                                 <span className="right-5"></span>
@@ -145,9 +147,9 @@ export default function BrandServices() {
                         </div>
                     </div>
 
-                    <div className="text-center">
+                    {/* <div className="text-center">
                         <p className="font-poppins text-white mt-6 text-md">Discover the Difference: Our Publishing Service Puts Your Story Front and Center, <br></br> Guiding It from Conception to Bookshelf Success.</p>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </>

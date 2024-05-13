@@ -3,6 +3,48 @@ const useHubspotForm = () => {
   const contactFormId = "c2bfbd83-91ed-45fd-9d8a-20e418611ce4";
   const contactFormId2 = "eb8f9475-6622-4c8d-b3fb-6d6af8889398";
   const contactFormId3 = "9e49a67a-75cc-4092-8879-3ec6dea29144";
+  const contactFormId4 = "6c2fb77a-99f2-4cd9-acc0-22f4af0be9d5";
+
+  const submitMainContactForm = async (full_name, email, phoneNumber, message) => {
+    try {
+      const formResponse = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId4}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            submittedAt: Date.now(),
+            fields: [
+              {
+                name: "full_name",
+                value: full_name,
+              },
+              {
+                name: "email",
+                value: email,
+              },
+              {
+                name: "phone",
+                value: phoneNumber,
+              },
+              {
+                name: "message",
+                value: message,
+              },
+            ],
+          }),
+        }
+      );
+
+      const formDataResponse = await formResponse.json();
+
+      return formDataResponse.inlineMessage;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const submitContactForm = async (full_name, email, phoneNumber, budgets, message) => {
     try {
@@ -145,6 +187,7 @@ const useHubspotForm = () => {
     submitContactForm,
     submitPopupContactForm,
     submitPopupContactFormScreen,
+    submitMainContactForm
   };
 };
 

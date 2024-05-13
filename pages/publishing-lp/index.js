@@ -59,7 +59,7 @@ export default function Home() {
   const swiperRef2 = useRef();
   const swiperRef3 = useRef();
   // Form Integration
-  const { submitContactForm } = useHubspotForm();
+  const { submitMainContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -133,7 +133,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await submitContactForm(
+    const response = await submitMainContactForm(
       email,
       fullName,
       phoneNumber,

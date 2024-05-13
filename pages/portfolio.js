@@ -14,7 +14,7 @@ import BrandCTA from "./components/BrandCTA";
 import BrandProcess from "./components/BrandProcess";
 
 export default function Portfolio() {
-    const [openFAQ, setOpenFAQ] = useState(null);
+    const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {
         setOpenFAQ(openFAQ === index ? null : index);
@@ -57,7 +57,7 @@ export default function Portfolio() {
             <BrandCTA
                 title="Hey, Wanna Talk?"
                 desc="Ready to Talk? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
-                btntext="Say a Hi"
+                btntext="Let's Talk"
             />
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">

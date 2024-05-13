@@ -73,16 +73,16 @@ export default function BrandHero() {
 
     return (
         <>
-            {/* <section class="bg-white dark:bg-gray-900 brand-hero-bg-img brand-hero-banner">
+            {/* <section class="bg-white dark:bg-gray-900 brand-hero-bg-img brand-hero-section">
                 <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
-                        <h3 className="text-white text-2xl mb-4"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                        <h1 className="font-majallab text-5xl md:text-8xl leading-3">
-                            Get Self-Published <br></br> more Profitably
+                        <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
+                        <h1 className="font-majallab text-5xl md:text-7xl text-white">
+                            Your Story Matters - Let's Publish It
                         </h1>
-                        <p className="text-white text-xl font-poppins">Don’t make your manuscript wait – get <br></br>
-                            self-published with  Pine Book Publishing <br></br>
-                            – It’s easy and ROI-positive.</p>
+                        <p className="text-xl font-poppins text-white">
+                            From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
+                        </p>
                     </div>
                     <div class="hidden lg:mt-0 lg:col-span-5 lg:flex brand-hero-banner-form">
                         <div className="w-full rounded-2xl px-8 py-8">
@@ -97,7 +97,7 @@ export default function BrandHero() {
                                         className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                         placeholder="Enter your Name"
                                     />
-                                    <FontAwesomeIcon icon={faUser} color="#747474" className="ms-4 absolute left-0 top-3" />
+                                    <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <input
@@ -109,7 +109,7 @@ export default function BrandHero() {
                                         className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                         placeholder="Enter your Phone"
                                     />
-                                    <FontAwesomeIcon icon={faPhone} color="#747474" className="ms-4 absolute left-0 top-3" />
+                                    <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <input
@@ -121,7 +121,7 @@ export default function BrandHero() {
                                         className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                         placeholder="Enter your Email"
                                     />
-                                    <FontAwesomeIcon icon={faEnvelope} color="#747474" className="ms-4 absolute left-0 top-3" />
+                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <textarea
@@ -133,7 +133,7 @@ export default function BrandHero() {
                                         placeholder="Enter your Message"
                                         name="message"
                                     ></textarea>
-                                    <FontAwesomeIcon icon={faPen} color="#747474" className="ms-4 absolute left-0 top-3" />
+                                    <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" width={16} />
                                     <div
                                         className="absolute inset-y-0 left-0 pl-3 pt-3 
                                         flex items-start  
@@ -178,8 +178,8 @@ function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email
     return (
         <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
             <div className="mr-auto place-self-center lg:col-span-7 text-white">
-                <h3 className="text-2xl mb-4"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                <h1 className="font-majallab text-5xl md:text-8xl">
+                <h3 className="text-2xl mb-4 aos-init aos-animate" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
+                <h1 className="font-majallab text-5xl md:text-6xl">
                     Your Story Matters - Let's Publish It
                 </h1>
                 <p className="text-xl font-poppins">

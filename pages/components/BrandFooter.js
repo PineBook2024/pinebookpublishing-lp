@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -5,6 +6,33 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function BrandFooter() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Function to toggle visibility based on scroll position
+    const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+    // Function to scroll to the top
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
+
 
     return (
         <>
@@ -125,6 +153,32 @@ export default function BrandFooter() {
                     </div>
                 </div>
             </footer>
+
+            <div>
+                {isVisible && (
+                    <button onClick={scrollToTop} className="responsive-back-to-top" style={{
+                        position: 'fixed',
+                        bottom: '29px',
+                        right: '150px',
+                        height: '40px',
+                        width: '40px',
+                        textAlign: 'center',
+                        backgroundColor: '#fff',
+                        color: '#000',
+                        borderRadius: '50%',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '16px',
+                        boxShadow: '0 0px 5px #191b42',
+                        border: '1px solid #288e7f'
+                    }}>
+                        <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
+                    </button>
+                )}
+            </div>
         </>
     );
 }

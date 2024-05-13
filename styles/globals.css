@@ -944,10 +944,10 @@ footer svg {
   .brand-cta-vector::before {
     content: "";
     position: absolute;
-    width: 333px !important;
-    height: 540px !important;
-    top: 76px !important;
-    left: 15px !important;
+    width: 303px !important;
+    height: 536px !important;
+    top: 27px !important;
+    left: -2px !important;
   }
 
   .brand-primary-header-bg {
@@ -985,6 +985,9 @@ footer svg {
   .home-close-btn-modal {
     right: -30px !important;
   }
+  .responsive-back-to-top{
+    left: 28px !important;
+  }
 }
 
 
@@ -1017,7 +1020,7 @@ footer svg {
   color: #fff;
   border-radius: 30px;
   padding: 8px 28px;
-  box-shadow: 0 3px 5px #191b42;
+  box-shadow: 0 1px 5px #191b42;
 }
 
 .brand-banner-slider {
@@ -1047,27 +1050,27 @@ footer svg {
 
 .brand-cta-book {
   position: absolute;
-  top: -73px;
-  left: -37px;
+  top: -29px;
+  left: 9px;
   animation: upAndDown 3s ease-in-out .6s infinite
 }
 
 .brand-choose-us-img {
   position: absolute;
-  top: -73px;
-  left: 8px;
+  top: -70px;
+  left: 22px;
 }
 
 .brand-cta-vector::before {
   content: "";
   position: absolute;
-  width: 514px;
-  height: 540px;
+  width: 398px;
+  height: 462px;
   background-image: url(../public/brand-img/cta-vector.png);
   background-size: contain;
   background-repeat: no-repeat;
   top: -42px;
-  left: -76px;
+  left: -10px;
 }
 
 .brand-choose-us-section {
@@ -1078,13 +1081,13 @@ footer svg {
 .brand-choose-us-vector::before {
   content: "";
   position: absolute;
-  width: 514px;
+  width: 469px;
   height: 540px;
   background-image: url(../public/brand-img/why-choose-us-vector.png);
   background-size: contain;
   background-repeat: no-repeat;
-  top: -42px;
-  left: -76px;
+  top: -4px;
+  left: -44px;
 }
 
 @keyframes upAndDown {
@@ -1269,10 +1272,15 @@ footer svg {
 .brand-service-card:hover .right-4,
 .brand-service-card:hover .bottom-4,
 .brand-service-card:hover .right-5,
-.brand-service-card:hover .bottom-5 {
+.brand-service-card:hover .bottom-5,
+.brand-service-card:hover .brand-service-card-img span {
   opacity: 1;
   transition: .4s ease-in-out;
 }
+
+/* .brand-service-card-content:hover .square a{
+  opacity: 1;
+} */
 
 .brand-service-card-content:hover {
   background-color: #0d0f38;
@@ -1635,4 +1643,23 @@ footer svg {
 .brand-testimonials-card:hover:before {
   transform: scale(39);
   color: #fff;
+}
+
+.service-dropdown-icon{
+  filter: invert(1);
+}
+
+.fixed-top{
+  position: fixed !important;
+  transition: .3s ease-in;
+  background-color: #0d0f38;
+  width: 100% !important;
+  top: 0 !important;
+  padding: 3px !important;
+}
+
+
+.fixed-top .brand-nav-btn{
+  background: #ffffff !important;
+  color: #000;
 }

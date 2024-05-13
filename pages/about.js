@@ -10,7 +10,7 @@ import BrandContact from "./components/BrandContactForm";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 
 export default function About() {
-    const [openFAQ, setOpenFAQ] = useState(null);
+    const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {
         setOpenFAQ(openFAQ === index ? null : index);

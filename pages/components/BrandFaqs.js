@@ -19,7 +19,7 @@ import "swiper/css/autoplay";
 export default function BrandFaqs() {
     const swiperRef = useRef();
 
-    const [openFAQ, setOpenFAQ] = useState(null);
+    const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {
         setOpenFAQ(openFAQ === index ? null : index);
@@ -45,10 +45,10 @@ export default function BrandFaqs() {
 
     return (
         <>
-            <section className="brand-testimonials-section">
-                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
+            <section className="brand-testimonials-section overflow-hidden">
+                <div className="max-w-screen-xl mx-auto px-4 my-10 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
+                        <h2 className="font-majallab text-5xl text-black uppercase mb-3 aos-init aos-animate" data-aos="zoom-out-up">Frequently Asked Questions</h2>
                         {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">
