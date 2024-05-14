@@ -249,7 +249,7 @@ export default function Home() {
       <section className="brnd-slider bg-black overflow-hidden">
         <AnimateFade type={"right"}>
           <div className="container grid grid-cols-1 width-container position-relative">
-            <div className="container mx-auto position-relative">
+            <div className="container mx-auto relative">
               <div className="book-sell-text ">
                 <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
               </div>

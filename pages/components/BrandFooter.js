@@ -159,7 +159,7 @@ export default function BrandFooter() {
                     <button onClick={scrollToTop} className="responsive-back-to-top" style={{
                         position: 'fixed',
                         bottom: '29px',
-                        right: '150px',
+                        right: '120px',
                         height: '40px',
                         width: '40px',
                         textAlign: 'center',

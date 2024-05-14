@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BrandAudioPlayer from "./BrandAudioPlayer";
 
 export default function BrandChooseUs() {
 
     return (
         <>
             <section className="overflow-hidden">
-                <div className="brand-choose-us-section max-w-screen-xl ms-auto relative left-0 md:left-12 px-12 md:px-20 mt-20 mb-8 py-24 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                <div className="brand-choose-us-section max-w-screen-xl ms-auto relative left-0 md:left-12 px-12 md:px-20 mt-20 mb-8 py-10 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                     <div className="flex items-center flex-col md:flex-row">
                         <div className="basis-1/3 brand-choose-us-vector aos-init aos-animate">
                             <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
@@ -27,6 +28,7 @@ export default function BrandChooseUs() {
                                     <li className="font-majallab flex items-center gap-3"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li>
                                 </ul>
                             </div>
+                            <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />
                         </div>
                     </div>
                 </div>

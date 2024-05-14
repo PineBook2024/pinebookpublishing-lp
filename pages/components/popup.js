@@ -24,11 +24,11 @@ export default function popup({ isOpen, onClose, service }) {
         "$8001 - $9000", "$9001 - $10000"
     ];
 
-    useEffect(() => {
-        setTimeout(() => {
-            router.push('/publishing-lp');
-        }, 3000);
-    }, [router]);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         router.push('/publishing-lp');
+    //     }, 3000);
+    // }, [router]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

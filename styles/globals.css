@@ -839,6 +839,10 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .fixed-top {
+    padding: 3px 10px !important;
+  }
+
   .popup-modal-wrapper {
     width: 81%;
   }
@@ -856,11 +860,11 @@ footer svg {
   }
 
   .main-banner-vid {
-    height: 150vh;
+    height: 352vw;
   }
 
   video#vide {
-    height: 150vh;
+    height: 352vw;
   }
 
   .faqs {
@@ -924,7 +928,8 @@ footer svg {
   }
 
   .single-packages .package-badge {
-    right: -6px;
+    right: 8px;
+    width: 68px;
   }
 
   .single-packages {
@@ -985,8 +990,13 @@ footer svg {
   .home-close-btn-modal {
     right: -30px !important;
   }
-  .responsive-back-to-top{
+
+  .responsive-back-to-top {
     left: 28px !important;
+  }
+
+  .brand-main-contact-wrapper {
+    width: 100% !important;
   }
 }
 
@@ -1578,26 +1588,6 @@ footer svg {
   }
 }
 
-/* @-webkit-keyframes key-third {
-
-  0%,
-  100%,
-  20%,
-  40%,
-  60%,
-  80% {
-    color: #fff
-  }
-
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    color: #0d0f38
-  }
-} */
-
 .header-form-off-badge {
   position: absolute;
   right: 0;
@@ -1645,11 +1635,11 @@ footer svg {
   color: #fff;
 }
 
-.service-dropdown-icon{
+.service-dropdown-icon {
   filter: invert(1);
 }
 
-.fixed-top{
+.fixed-top {
   position: fixed !important;
   transition: .3s ease-in;
   background-color: #0d0f38;
@@ -1659,7 +1649,40 @@ footer svg {
 }
 
 
-.fixed-top .brand-nav-btn{
+.fixed-top .brand-nav-btn {
   background: #ffffff !important;
   color: #000;
+}
+
+.audioPlayer {
+  background: #fff;
+  padding: 10px;
+  border-radius: 22px;
+  display: inline-block;
+}
+
+
+.brand-main-contact-wrapper {
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+  border-radius: 40px;
+  width: 70%;
+}
+
+.brand-main-contact-form {
+  background-color: #e9e9e9;
+  border-radius: 40px;
+}
+
+
+audio::-webkit-media-controls-mute-button {
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #167e6e64;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+  background-color: rgba(177, 212, 224, .7);
 }

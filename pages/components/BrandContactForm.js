@@ -6,11 +6,13 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./fade";
+import { useRouter } from 'next/navigation';
 
 
 export default function BrandContact() {
+    const router = useRouter();
     // Form Integration
-    const { submitContactForm } = useHubspotForm();
+    const { submitBrandMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -34,7 +36,7 @@ export default function BrandContact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitContactForm(
+        const response = await submitBrandMainContactForm(
             email,
             fullName,
             phoneNumber,
@@ -61,28 +63,28 @@ export default function BrandContact() {
         <>
 
             <section className="btm-form overflow-hidden relative">
-            <div className="contact-form-bg-img"></div>
+                <div className="contact-form-bg-img"></div>
                 <div className="max-w-screen-xl mx-auto px-8 md:px-10">
                     <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
                         <div className="flex flex-col md:flex-row items-end">
                             <div className="basis-1/3 hidden md:block position-relative">
                                 <AnimateFade type={"right"} className="position-relative">
-                                <Image
-                                    className="text-center pt-10 contact-form-img"
-                                    src={"/images/contact-user.webp"}
-                                    width={600}
-                                    height={300}
-                                    loading="lazy"
-                                ></Image>
+                                    <Image
+                                        className="text-center pt-10 contact-form-img"
+                                        src={"/images/contact-user.webp"}
+                                        width={600}
+                                        height={300}
+                                        loading="lazy"
+                                    ></Image>
                                 </AnimateFade>
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
                                 <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase aos-init aos-animate" data-aos="zoom-out">
-                                We Are Here to Hear You!
+                                    We Are Here to Hear You!
                                 </h3>
                                 <p className="text-black leading-6  pb-5 text-base">
-                                Got questions? Let's find the answers together - shoot us a message!
+                                    Got questions? Let's find the answers together - shoot us a message!
                                 </p>
 
                                 <div className="relative mb-3">

@@ -12,12 +12,54 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function BrandHero() {
     const router = useRouter();
-    const { submitContactForm } = useHubspotForm();
+    // Form Integration
+    const { submitBrandMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
+
+    // Object
+    const clientLogos = [
+        {
+            href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+            src: "/brand-img/banner-logo2.png",
+            alt: "LOGO",
+            width: 180,
+            height: 120
+        },
+        {
+            href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+            src: "/images/s2.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://www.trustpilot.com/review/pinebookwriting.com",
+            src: "/images/s3.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+            src: "/images/s4.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://clutch.co/profile/pine-book-writing",
+            src: "/images/s6.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        }
+    ];
+
+
 
 
     const handleChange = (e) => {
@@ -37,7 +79,7 @@ export default function BrandHero() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitContactForm(
+        const response = await submitBrandMainContactForm(
             email,
             fullName,
             phoneNumber,
@@ -45,7 +87,6 @@ export default function BrandHero() {
         );
         if (response) {
             setShowSuccess(true);
-            // router.push('/thank-you'); 
             router.push('/thankyou')
             setTimeout(() => {
                 setShowSuccess(false);
@@ -60,21 +101,21 @@ export default function BrandHero() {
     };
 
     const settings = {
-        dots: true, // Enable pagination dots
-        infinite: true, // Infinite looping
-        speed: 500, // Speed of the transition
-        slidesToShow: 1, // Show one slide at a time
-        slidesToScroll: 1, // Scroll one slide at a time
-        autoplay: true, // Enable autoplay
-        autoplaySpeed: 2000, // Delay between each auto transition
-        fade: true, // Fade transition instead of slide
-        cssEase: 'linear' // Type of easing to use
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        fade: true,
+        cssEase: 'linear'
     };
 
     return (
         <>
-            {/* <section class="bg-white dark:bg-gray-900 brand-hero-bg-img brand-hero-section">
-                <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+            <section class="bg-white dark:bg-gray-900 brand-hero-bg-img brand-hero-section">
+                <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
                         <h1 className="font-majallab text-5xl md:text-7xl text-white">
@@ -83,6 +124,18 @@ export default function BrandHero() {
                         <p className="text-xl font-poppins text-white">
                             From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
                         </p>
+                        <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
+                            {clientLogos.map((logo, index) => (
+                                <Link key={index} href={logo.href} target="_blank">
+                                    <Image
+                                        alt={logo.alt}
+                                        src={logo.src}
+                                        width={logo.width}
+                                        height={logo.height}
+                                    />
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                     <div class="hidden lg:mt-0 lg:col-span-5 lg:flex brand-hero-banner-form">
                         <div className="w-full rounded-2xl px-8 py-8">
@@ -155,9 +208,9 @@ export default function BrandHero() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            <section className="overflow-hidden brand-hero-section">
+            {/* <section className="overflow-hidden brand-hero-section">
                 <Slider {...settings}>
                     <div className="bg-image-1">
                         {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
@@ -169,83 +222,83 @@ export default function BrandHero() {
                         {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
                     </div>
                 </Slider>
-            </section>
+            </section> */}
         </>
     );
 }
 
-function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess) {
-    return (
-        <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
-            <div className="mr-auto place-self-center lg:col-span-7 text-white">
-                <h3 className="text-2xl mb-4 aos-init aos-animate" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                <h1 className="font-majallab text-5xl md:text-6xl">
-                    Your Story Matters - Let's Publish It
-                </h1>
-                <p className="text-xl font-poppins">
-                    From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
-                </p>
-            </div>
-            <div className="lg:col-span-5  brand-hero-banner-form">
-                <div className="w-full rounded-2xl px-8 py-8">
-                    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-                        <div className="relative">
-                            <input
-                                type="text"
-                                name="fullName"
-                                onChange={handleChange}
-                                value={fullName}
-                                required
-                                className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
-                                placeholder="Enter your Name"
-                            />
-                            <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
-                        </div>
-                        <div className="relative">
-                            <input
-                                type="text"
-                                name="phoneNumber"
-                                onChange={handleChange}
-                                value={phoneNumber}
-                                required
-                                className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
-                                placeholder="Enter your Phone"
-                            />
-                            <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
-                        </div>
-                        <div className="relative">
-                            <input
-                                type="text"
-                                name="email"
-                                onChange={handleChange}
-                                value={email}
-                                required
-                                className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
-                                placeholder="Enter your Email"
-                            />
-                            <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
-                        </div>
-                        <div className="relative">
-                            <textarea
-                                className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
-                                rows={5}
-                                onChange={handleChange}
-                                value={message}
-                                required
-                                placeholder="Enter your Message"
-                                name="message"
-                            ></textarea>
-                            <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" width={16} />
-                        </div>
-                        <button
-                            className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins rounded-xl shadow-xl text-xl"
-                            type="submit"
-                        >
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    );
-}
+// function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess) {
+//     return (
+//         <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+//             <div className="mr-auto place-self-center lg:col-span-7 text-white">
+//                 <h3 className="text-2xl mb-4 aos-init aos-animate" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
+//                 <h1 className="font-majallab text-5xl md:text-6xl">
+//                     Your Story Matters - Let's Publish It
+//                 </h1>
+//                 <p className="text-xl font-poppins">
+//                     From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
+//                 </p>
+//             </div>
+//             <div className="lg:col-span-5  brand-hero-banner-form">
+//                 <div className="w-full rounded-2xl px-8 py-8">
+//                     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+//                         <div className="relative">
+//                             <input
+//                                 type="text"
+//                                 name="fullName"
+//                                 onChange={handleChange}
+//                                 value={fullName}
+//                                 required
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 placeholder="Enter your Name"
+//                             />
+//                             <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
+//                         </div>
+//                         <div className="relative">
+//                             <input
+//                                 type="text"
+//                                 name="phoneNumber"
+//                                 onChange={handleChange}
+//                                 value={phoneNumber}
+//                                 required
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 placeholder="Enter your Phone"
+//                             />
+//                             <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
+//                         </div>
+//                         <div className="relative">
+//                             <input
+//                                 type="text"
+//                                 name="email"
+//                                 onChange={handleChange}
+//                                 value={email}
+//                                 required
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 placeholder="Enter your Email"
+//                             />
+//                             <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+//                         </div>
+//                         <div className="relative">
+//                             <textarea
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 rows={5}
+//                                 onChange={handleChange}
+//                                 value={message}
+//                                 required
+//                                 placeholder="Enter your Message"
+//                                 name="message"
+//                             ></textarea>
+//                             <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" width={16} />
+//                         </div>
+//                         <button
+//                             className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins rounded-xl shadow-xl text-xl"
+//                             type="submit"
+//                         >
+//                             Submit
+//                         </button>
+//                     </form>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }

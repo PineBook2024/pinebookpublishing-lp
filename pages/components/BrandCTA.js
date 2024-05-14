@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function BrandCTA(props) {
+    const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
+    };
 
     return (
         <>
@@ -14,7 +17,7 @@ export default function BrandCTA(props) {
                     <div className="basis-1/2 md:ml-20">
                         <h2 className="text-white font-majallab text-5xl md:text-6xl aos-init aos-animate" data-aos="flip-down">{props.title}</h2>
                         <p className="text-white text-xl font-poppins mt-10">{props.desc}</p>
-                        <button className="brand-nav-btn shadow-xl mt-10 cursor-pointer"><Link href="#">{props.btntext}</Link></button>
+                        <button className="brand-nav-btn shadow-xl mt-10 cursor-pointer" onClick={handleOpenChat}><Link href={'javascript:;'}>{props.btntext}</Link></button>
                     </div>
                 </div>
             </section>

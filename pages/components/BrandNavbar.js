@@ -33,6 +33,10 @@ export default function BrandNavbar() {
         };
     }, []);
 
+    const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
+    };
+
     return (
         <>
             <header id="navbar" className="bg-transparent absolute top-10 left-0 flex justify-between items-center p-4 z-10">
@@ -81,7 +85,7 @@ export default function BrandNavbar() {
                             <li><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
                             {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li>
                             <li><Link href="/" className="text-white hover:text-gray-300">Contact</Link></li> */}
-                            <li><Link href="/" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab">Talk to Expert</Link></li>
+                            <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab" onClick={handleOpenChat}>Talk to Expert</Link></li>
                         </ul>
                     </nav>
                 </div>
