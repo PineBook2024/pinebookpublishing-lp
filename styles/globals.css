@@ -928,7 +928,7 @@ footer svg {
   }
 
   .single-packages .package-badge {
-    right: 8px;
+    right: 1px;
     width: 68px;
   }
 
@@ -997,6 +997,12 @@ footer svg {
 
   .brand-main-contact-wrapper {
     width: 100% !important;
+  }
+  .single-packages-footer{
+    width: 342px;
+  }
+  .single-packages{
+    width: 342px;
   }
 }
 
