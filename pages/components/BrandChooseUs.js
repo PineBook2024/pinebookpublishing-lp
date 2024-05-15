@@ -8,13 +8,13 @@ export default function BrandChooseUs() {
     return (
         <>
             <section className="overflow-hidden">
-                <div className="brand-choose-us-section max-w-screen-xl ms-auto relative left-0 md:left-12 px-12 md:px-20 mt-20 mb-8 py-10 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                <div className="brand-choose-us-section max-w-screen-xl ms-auto relative left-0 md:left-12 px-12 md:px-20 mt-20 mb-8 py-10" data-aos="fade-right" data-aos-delay="30" data-aos-duration="500">
                     <div className="flex items-center flex-col md:flex-row">
                         <div className="basis-1/3 brand-choose-us-vector aos-init aos-animate">
                             <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
                         </div>
                         <div className="basis-1/2 md:ml-20">
-                            <h2 className="text-white font-majallab text-5xl md:text-6xl uppercase mt-20 md:mt-0 aos-init aos-animate" data-aos="zoom-in-left">Why Choose Us</h2>
+                            <h2 className="text-white font-majallab text-5xl md:text-6xl uppercase mt-20 md:mt-0" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
                             <p className="text-white text-xl font-poppins mt-2">Because at Pine Book Publishing, your success is our priority, and we're committed to helping you achieve your literary goals with confidence and ease. With us, you get: </p>
                             <div className="flex gap-10 mt-6">
                                 <ul>

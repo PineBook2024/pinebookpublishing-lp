@@ -10,14 +10,14 @@ export default function BrandProcess() {
                 <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
-                        <h2 className="font-majallab text-5xl md:text-7xl text-black aos-init aos-animate" data-aos="zoom-out-down">OUR PROCESS</h2>
+                        <h2 className="font-majallab text-5xl md:text-7xl text-black " data-aos="zoom-out-down">OUR PROCESS</h2>
                     </div>
-                    <Image src={"/brand-img/process-1.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
-                    <Image src={"/brand-img/process-2.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
-                    <Image src={"/brand-img/process-3.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
-                    <Image src={"/brand-img/process-4.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
-                    <Image src={"/brand-img/process-5.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
-                    <Image src={"/brand-img/process-6.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-1.png"} width={700} height={200} className=" pb-10" data-aos="fade-left" data-aos-delay="30" data-aos-duration="500"></Image>
+                    <Image src={"/brand-img/process-2.png"} width={700} height={200} className=" pb-10" data-aos="fade-right" data-aos-delay="30" data-aos-duration="500"></Image>
+                    <Image src={"/brand-img/process-3.png"} width={700} height={200} className=" pb-10" data-aos="fade-left" data-aos-delay="30" data-aos-duration="500"></Image>
+                    <Image src={"/brand-img/process-4.png"} width={700} height={200} className=" pb-10" data-aos="fade-right" data-aos-delay="30" data-aos-duration="500"></Image>
+                    <Image src={"/brand-img/process-5.png"} width={700} height={200} className=" pb-10" data-aos="fade-left" data-aos-delay="30" data-aos-duration="500"></Image>
+                    <Image src={"/brand-img/process-6.png"} width={700} height={200} className=" pb-10" data-aos="fade-right" data-aos-delay="30" data-aos-duration="500"></Image>
                 </div>
             </section>
         </>
