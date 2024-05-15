@@ -962,8 +962,8 @@ footer svg {
   .brand-choose-us-vector::before {
     width: 358px !important;
     height: 467px !important;
-    top: 103px !important;
-    left: 3px !important;
+    top: 65px !important;
+    left: -41px !important;
   }
 
   .brand-choose-us-img {
@@ -1014,10 +1014,12 @@ footer svg {
   .brand-main-banner-video {
     height: 310vw !important;
   }
-  .break-words{
+
+  .break-words {
     line-break: anywhere;
   }
-  .brand-testimonials-card{
+
+  .brand-testimonials-card {
     margin: 0 !important;
   }
 }
@@ -1727,7 +1729,7 @@ video#brandVideo {
 
 }
 
-.brand-portfolio-books img{
+.brand-portfolio-books img {
   height: 100%;
 }
 

@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
       duration: 400, 
       easing: 'ease', 
       mirror: false, 
-      anchorPlacement: 'top', 
+      anchorPlacement: 'top-bottom', 
   });
   }, []);
 

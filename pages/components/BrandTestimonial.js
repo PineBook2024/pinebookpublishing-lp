@@ -59,7 +59,7 @@ export default function BrandTestimonial() {
                         </div>
                     </div>
                     <div className="flex justify-center gap-5 mt-5 flex-col md:flex-row">
-                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-up" data-aos-delay="30" data-aos-duration="500">
+                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-up" data-aos-delay="0" data-aos-duration="500">
                             <Link href={"https://www.trustpilot.com/users/64ed33d046ee6200126f1c6c"} target="_blank">
                                 <div className="flex justify-between items-center mb-5">
                                     <Image src={"/brand-img/stars.png"} width={140} height={100}></Image>
@@ -73,7 +73,7 @@ export default function BrandTestimonial() {
                                 <span className="absolute bottom-0 mb-2">Katie Loftis, Dec 7, 2023</span>
                             </Link>
                         </div>
-                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-right"  data-aos-easing="ease-out-cubic" data-aos-delay="30" data-aos-duration="500">
+                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-right"  data-aos-easing="ease-out-cubic" data-aos-delay="0" data-aos-duration="500">
                             <Link href={"https://www.trustpilot.com/users/655d16952309f20012b30090"} target="_blank">
                                 <div className="flex justify-between items-center mb-5">
                                     <Image src={"/brand-img/stars.png"} width={140} height={100}></Image>
@@ -87,7 +87,7 @@ export default function BrandTestimonial() {
                                 <span className="absolute bottom-0 mb-2">Stacey, Nov 21, 2023</span>
                             </Link>
                         </div>
-                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-down" data-aos-delay="30" data-aos-duration="500">
+                        <div className="brand-testimonials-card relative aos-animate" data-aos="flip-down" data-aos-delay="0" data-aos-duration="500">
                             <Link href={"https://www.trustpilot.com/reviews/65046b6a51ad4908c7039d10"} target="_blank">
                                 <div className="flex justify-between items-center mb-5">
                                     <Image src={"/brand-img/stars.png"} width={140} height={100}></Image>
