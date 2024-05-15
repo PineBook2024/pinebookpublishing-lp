@@ -1089,8 +1089,8 @@ footer svg {
 
 .brand-choose-us-img {
   position: absolute;
-  top: -70px;
-  left: 22px;
+  top: -87px;
+  left: -9px;
 }
 
 .brand-cta-vector::before {
@@ -1118,8 +1118,8 @@ footer svg {
   background-image: url(../public/brand-img/why-choose-us-vector.png);
   background-size: contain;
   background-repeat: no-repeat;
-  top: -4px;
-  left: -44px;
+  top: -24px;
+  left: -78px;
 }
 
 @keyframes upAndDown {
