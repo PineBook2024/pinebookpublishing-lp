@@ -28,12 +28,12 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     AOS.init({
-      offset: 120, 
+      offset: 0, 
       delay: 0, 
       duration: 400, 
       easing: 'ease', 
       mirror: false, 
-      anchorPlacement: 'top-bottom', 
+      anchorPlacement: 'top', 
   });
   }, []);
 

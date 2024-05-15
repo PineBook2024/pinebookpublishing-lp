@@ -1730,3 +1730,7 @@ video#brandVideo {
 .brand-portfolio-books img{
   height: 100%;
 }
+
+[data-aos] {
+  will-change: transform, opacity;
+}
