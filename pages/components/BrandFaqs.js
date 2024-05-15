@@ -48,7 +48,7 @@ export default function BrandFaqs() {
             <section className="brand-testimonials-section overflow-hidden">
                 <div className="max-w-screen-xl mx-auto px-4 my-10 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black uppercase mb-3 aos-init aos-animate" data-aos="fade-left" data-aos-delay="30" data-aos-duration="500">Frequently Asked Questions</h2>
+                        <h2 className="font-majallab text-5xl text-black uppercase mb-3 aos-init aos-animate" data-aos="fade-left">Frequently Asked Questions</h2>
                         {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">
