@@ -12,7 +12,12 @@ export default function BrandProcess() {
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
                         <h2 className="font-majallab text-5xl md:text-7xl text-black aos-init aos-animate" data-aos="zoom-out-down">OUR PROCESS</h2>
                     </div>
-                    <Image src={"/brand-img/process-img.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-1.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-2.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-3.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-4.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-5.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-left" data-aos-duration="1000"></Image>
+                    <Image src={"/brand-img/process-6.png"} width={700} height={200} className="aos-init aos-animate pb-10" data-aos="fade-right" data-aos-duration="1000"></Image>
                 </div>
             </section>
         </>

@@ -83,19 +83,21 @@ export default function BrandFooter() {
                                         About Us
                                     </Link>
                                 </li>
-                                <li className="mt-3">
+                                {/* <li className="mt-3">
                                     Services
-                                </li>
+                                </li> */}
                                 <li className="mt-3">
                                     <Link href="/portfolio">
                                         Portfolio
                                     </Link>
                                 </li>
-                                <li className="mt-3">
+                                {/* <li className="mt-3">
                                     Testimonials
-                                </li>
+                                </li> */}
                                 <li className="mt-3">
-                                    Contact Us
+                                    <Link href="/contact-us">
+                                        Contact Us
+                                    </Link>
                                 </li>
                             </nav>
                         </div>

@@ -248,7 +248,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        {/* <HomePopup /> */}
+        <HomePopup />
         {/* <Hero  /> */}
         <HeavyComponent Component={HeroForm} />
 

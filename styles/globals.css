@@ -961,15 +961,15 @@ footer svg {
 
   .brand-choose-us-vector::before {
     width: 358px !important;
-    height: 494px !important;
-    top: 232px !important;
+    height: 467px !important;
+    top: 103px !important;
     left: 3px !important;
   }
 
   .brand-choose-us-img {
     position: relative !important;
-    top: 6px !important;
-    left: -20px !important;
+    top: -4px !important;
+    left: -1px !important;
   }
 
   .popup-form-wrapper {
@@ -998,11 +998,27 @@ footer svg {
   .brand-main-contact-wrapper {
     width: 100% !important;
   }
-  .single-packages-footer{
+
+  .single-packages-footer {
     width: 342px;
   }
-  .single-packages{
+
+  .single-packages {
     width: 342px;
+  }
+
+  video#brandVideo {
+    height: 290vw !important;
+  }
+
+  .brand-main-banner-video {
+    height: 290vw !important;
+  }
+  .break-words{
+    line-break: anywhere;
+  }
+  .brand-testimonials-card{
+    margin: 0 !important;
   }
 }
 
@@ -1691,4 +1707,26 @@ audio::-webkit-media-controls-panel {
 
 audio::-webkit-media-controls-play-button:hover {
   background-color: rgba(177, 212, 224, .7);
+}
+
+.brand-main-banner-video {
+  height: 100vh;
+  background: #0000009e;
+}
+
+.brand-video {
+  height: 100vh;
+}
+
+video#brandVideo {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.brand-portfolio-books img{
+  height: 100%;
 }

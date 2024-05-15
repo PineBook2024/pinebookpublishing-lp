@@ -15,7 +15,7 @@ export default function BrandHero() {
     // Form Integration
     const { submitBrandMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
-    const [fullName, setFullName] = useState("");
+    const [username, setUsername] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
@@ -59,13 +59,10 @@ export default function BrandHero() {
         }
     ];
 
-
-
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setters = {
-            fullName: setFullName,
+            username: setUsername,
             email: setEmail,
             message: setMessage,
             phoneNumber: setPhoneNumber,
@@ -81,17 +78,17 @@ export default function BrandHero() {
         e.preventDefault();
         const response = await submitBrandMainContactForm(
             email,
-            fullName,
+            username,
             phoneNumber,
             message
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou')
+            router.push('/thank-you')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
-                setFullName("");
+                setUsername("");
                 setPhoneNumber("")
                 setMessage("");
             }, 3000);
@@ -114,7 +111,7 @@ export default function BrandHero() {
 
     return (
         <>
-            <section class="bg-white dark:bg-gray-900 brand-hero-bg-img brand-hero-section">
+            <section class="brand-hero-section">
                 <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
@@ -137,15 +134,15 @@ export default function BrandHero() {
                             ))}
                         </div>
                     </div>
-                    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex brand-hero-banner-form">
+                    <div class="lg:mt-0 lg:col-span-5 lg:flex brand-hero-banner-form">
                         <div className="w-full rounded-2xl px-8 py-8">
                             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                                 <div className="relative">
                                     <input
                                         type="text"
-                                        name="fullName"
+                                        name="username"
                                         onChange={handleChange}
-                                        value={fullName}
+                                        value={username}
                                         required
                                         className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
                                         placeholder="Enter your Name"
@@ -213,13 +210,13 @@ export default function BrandHero() {
             {/* <section className="overflow-hidden brand-hero-section">
                 <Slider {...settings}>
                     <div className="bg-image-1">
-                        {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
+                        {contentSection(handleSubmit, handleChange, username, phoneNumber, email, message, showSuccess)}
                     </div>
                     <div className="bg-image-2">
-                        {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
+                        {contentSection(handleSubmit, handleChange, username, phoneNumber, email, message, showSuccess)}
                     </div>
                     <div className="bg-image-3">
-                        {contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess)}
+                        {contentSection(handleSubmit, handleChange, username, phoneNumber, email, message, showSuccess)}
                     </div>
                 </Slider>
             </section> */}
@@ -227,7 +224,7 @@ export default function BrandHero() {
     );
 }
 
-// function contentSection(handleSubmit, handleChange, fullName, phoneNumber, email, message, showSuccess) {
+// function contentSection(handleSubmit, handleChange, username, phoneNumber, email, message, showSuccess) {
 //     return (
 //         <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
 //             <div className="mr-auto place-self-center lg:col-span-7 text-white">
@@ -245,9 +242,9 @@ export default function BrandHero() {
 //                         <div className="relative">
 //                             <input
 //                                 type="text"
-//                                 name="fullName"
+//                                 name="username"
 //                                 onChange={handleChange}
-//                                 value={fullName}
+//                                 value={username}
 //                                 required
 //                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
 //                                 placeholder="Enter your Name"

@@ -14,7 +14,7 @@ export default function BrandContact() {
     // Form Integration
     const { submitBrandMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
-    const [fullName, setFullName] = useState("");
+    const [username, setUsername] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
@@ -22,7 +22,7 @@ export default function BrandContact() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setters = {
-            fullName: setFullName,
+            username: setUsername,
             email: setEmail,
             message: setMessage,
             phoneNumber: setPhoneNumber,
@@ -38,17 +38,17 @@ export default function BrandContact() {
         e.preventDefault();
         const response = await submitBrandMainContactForm(
             email,
-            fullName,
+            username,
             phoneNumber,
             message
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou')
+            router.push('/thank-you')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
-                setFullName("");
+                setUsername("");
                 setPhoneNumber("")
                 setMessage("");
             }, 3000);
@@ -68,19 +68,20 @@ export default function BrandContact() {
                     <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
                         <div className="flex flex-col md:flex-row items-end">
                             <div className="basis-1/3 hidden md:block position-relative">
-                                <AnimateFade type={"right"} className="position-relative">
+                                {/* <AnimateFade type={"right"} className="position-relative"> */}
                                     <Image
-                                        className="text-center pt-10 contact-form-img"
+                                        className="text-center pt-10 contact-form-img aos-init aos-animate"
                                         src={"/images/contact-user.webp"}
                                         width={600}
                                         height={300}
                                         loading="lazy"
+                                        data-aos="fade-right"
                                     ></Image>
-                                </AnimateFade>
+                                {/* </AnimateFade> */}
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase aos-init aos-animate" data-aos="zoom-out">
+                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase">
                                     We Are Here to Hear You!
                                 </h3>
                                 <p className="text-black leading-6  pb-5 text-base">
@@ -90,9 +91,9 @@ export default function BrandContact() {
                                 <div className="relative mb-3">
                                     <input
                                         type="text"
-                                        name="fullName"
+                                        name="username"
                                         onChange={handleChange}
-                                        value={fullName}
+                                        value={username}
                                         required
                                         className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                         placeholder="Enter your Name"

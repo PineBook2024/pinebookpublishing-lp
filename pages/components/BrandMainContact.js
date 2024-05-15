@@ -6,12 +6,14 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateFade from "./fade";
+import { useRouter } from 'next/navigation';
 
 export default function BrandMainContact() {
+    const router = useRouter();
     // Form Integration
     const { submitBrandMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
-    const [fullName, setFullName] = useState("");
+    const [username, setUsername] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
@@ -19,7 +21,7 @@ export default function BrandMainContact() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setters = {
-            fullName: setFullName,
+            username: setUsername,
             email: setEmail,
             message: setMessage,
             phoneNumber: setPhoneNumber,
@@ -35,17 +37,17 @@ export default function BrandMainContact() {
         e.preventDefault();
         const response = await submitBrandMainContactForm(
             email,
-            fullName,
+            username,
             phoneNumber,
             message
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou')
+            router.push('/thank-you')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
-                setFullName("");
+                setUsername("");
                 setPhoneNumber("")
                 setMessage("");
             }, 3000);
@@ -58,42 +60,43 @@ export default function BrandMainContact() {
     return (
         <>
             <section className="">
-                <div className="flex brand-main-contact-wrapper max-w-screen-xl mx-auto mt-20 mb-8 p-1">
+                <div className="flex flex-col md:flex-row brand-main-contact-wrapper max-w-screen-xl mx-auto mt-20 mb-8 p-1">
                     <div className="basis-1/3 px-10 py-16">
                         <h3 className="text-white leading-20 font-bold text-2xl md:text-4xl font-majallab text-start uppercase mb-5">
                             CONTACT INFO
                         </h3>
-                        <h4 className="text-white leading-20 font-bold text-xl md:text-3xl font-majallab text-start uppercase">
-                            ADDRESS:
+                        <h4 className="text-white leading-20 font-bold text-xl md:text-2xl font-majallab text-start uppercase">
+                            Canada Address:
                         </h4>
-                        <p className="text-white mb-5"> R-10225 Yonge St Suite #250
-                            Richmond Hill, ON L4C 3B2
-                            211 E 43rd St, 7th Floor Suite #424
-                            New York City, NY 10017</p>
-                        <h4 className="text-white leading-20 font-bold text-xl md:text-3xl font-majallab text-start uppercase">
+                        <p className="text-white mb-5"> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
+                        <h4 className="text-white leading-20 font-bold text-xl md:text-2xl font-majallab text-start uppercase">
+                            USA Address:
+                        </h4>
+                        <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
+                        <h4 className="text-white leading-20 font-bold text-xl md:text-2xl font-majallab text-start uppercase">
                             PHONE NO:
                         </h4>
-                        <p className="text-white mb-5">(866) 841-7463</p>
-                        <h4 className="text-white leading-20 font-bold text-xl md:text-3xl font-majallab text-start uppercase">
+                        <p className="text-white mb-5"><Link href="tel:(866) 841-7469">(866) 841-7469</Link></p>
+                        <h4 className="text-white leading-20 font-bold text-xl md:text-2xl font-majallab text-start uppercase">
                             EMAIL ADDRESS:
                         </h4>
-                        <p className="text-white ">info@pinebookwriting.com</p>
+                        <p className="text-white "><Link href={"mailto:support@pinebookpublishing.com"}>support@pinebookpublishing.com</Link></p>
                     </div>
                     <div className="basis-full brand-main-contact-form">
                         <form className="px-10 md:px-20 py-12" onSubmit={handleSubmit}>
                             <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase aos-init aos-animate" data-aos="zoom-out">
-                                We Are Here to Hear You!
+                                Let's Publish Your First Book!
                             </h3>
                             <p className="text-black leading-6  pb-5 text-base">
-                                Got questions? Let's find the answers together - shoot us a message!
+                                Make your dream book a literary success with our dedicated publishing assistance. Initiate the process with this form:
                             </p>
 
                             <div className="relative mb-3">
                                 <input
                                     type="text"
-                                    name="fullName"
+                                    name="username"
                                     onChange={handleChange}
-                                    value={fullName}
+                                    value={username}
                                     required
                                     className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
                                     placeholder="Enter your Name"
@@ -153,6 +156,32 @@ export default function BrandMainContact() {
                                 Submit
                             </button>
                         </form>
+                    </div>
+                </div>
+            </section>
+
+            <section className="max-w-screen-xl mx-auto mt-20 mb-8">
+                <div className="flex justify-center gap-32 flex-col md:flex-row">
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                        <Image src={"/brand-img/team-1.webp"} width={250} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-majallab uppercase">Damon Peters</h3>
+                        <h4 className="text-black font-bold text-xl font-majallab">Head of Operations</h4>
+                        <p className="text-black font-bold text-xl font-majallab">damon@pinebookpublishing.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl font-majallab uppercase">289-809-7465</p>
+                    </div>
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                        <Image src={"/brand-img/team-2.webp"} width={250} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-majallab uppercase">Steve Hayes</h3>
+                        <h4 className="text-black font-bold text-xl font-majallab">Senior Project Consultant</h4>
+                        <p className="text-black font-bold text-xl font-majallab">steve@pinebookpublishing.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl font-majallab uppercase">289-809-6209</p>
+                    </div>
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                        <Image src={"/brand-img/team-3.webp"} width={250} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-majallab uppercase">Ryan Peters</h3>
+                        <h4 className="text-black font-bold text-xl font-majallab">Publishing Consultant</h4>
+                        <p className="text-black font-bold text-xl font-majallab">ryan@pinebookpublishing.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl font-majallab uppercase">289-809-5612</p>
                     </div>
                 </div>
             </section>

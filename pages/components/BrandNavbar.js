@@ -63,8 +63,8 @@ export default function BrandNavbar() {
                     </div>
                     <nav className={`${isOpen ? 'block' : 'hidden'} absolute flex flex-col bg-gray-900 text-center items-center self-end py-8 mt-2 space-y-6 font-semibold w-full mb-8 top-20 md:top-0 right-0 left-0 md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
                         <ul className="md:flex items-center space-x-4">
-                            <li><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
-                            <li><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
                             {/* <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
                                 <Link href={"#"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
@@ -82,9 +82,9 @@ export default function BrandNavbar() {
                                 </div>
                             )}
                             </li> */}
-                            <li><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
-                            {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li>
-                            <li><Link href="/" className="text-white hover:text-gray-300">Contact</Link></li> */}
+                            <li className='mb-3 md:mb-0'><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
+                            {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li> */}
+                            <li className='mb-3 md:mb-0'><Link href="/contact-us" className="text-white hover:text-gray-300">Contact</Link></li>
                             <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab" onClick={handleOpenChat}>Talk to Expert</Link></li>
                         </ul>
                     </nav>

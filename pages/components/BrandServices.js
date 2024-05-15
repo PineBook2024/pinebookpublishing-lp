@@ -46,7 +46,7 @@ export default function BrandServices() {
                                     <span className="font-majallab text-5xl">02</span>
                                 </div>
                                 <p className="font-poppins">Catching every typo, ensuring perfection</p>
-                                <h4 className="mt-4 font-majallab text-3xl">PROOFREADING</h4>
+                                <h4 className="mt-4 font-majallab text-3xl break-words">PROOFREADING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">

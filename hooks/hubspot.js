@@ -187,7 +187,7 @@ const useHubspotForm = () => {
 
 
   // Brand Forms
-  const submitBrandMainContactForm = async (full_name, email, phoneNumber, message) => {
+  const submitBrandMainContactForm = async (username, email, phoneNumber, message) => {
     try {
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId5}`,
@@ -200,8 +200,8 @@ const useHubspotForm = () => {
             submittedAt: Date.now(),
             fields: [
               {
-                name: "full_name",
-                value: full_name,
+                name: "username",
+                value: username,
               },
               {
                 name: "email",
