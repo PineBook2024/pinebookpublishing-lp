@@ -170,14 +170,14 @@ export default function BrandMainContact() {
                         <p className="text-black leading-20 font-bold text-xl md:text-4xl font-majallab uppercase">289-809-7465</p>
                     </div>
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                        <Image src={"/brand-img/team-2.webp"} width={250} height={200} className="mb-5" />
+                        <Image src={"/brand-img/team-3.webp"} width={250} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-majallab uppercase">Steve Hayes</h3>
                         <h4 className="text-black font-bold text-xl font-majallab">Senior Project Consultant</h4>
                         <p className="text-black font-bold text-xl font-majallab">steve@pinebookpublishing.com</p>
                         <p className="text-black leading-20 font-bold text-xl md:text-4xl font-majallab uppercase">289-809-6209</p>
                     </div>
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                        <Image src={"/brand-img/team-3.webp"} width={250} height={200} className="mb-5" />
+                        <Image src={"/brand-img/team-2.webp"} width={250} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-majallab uppercase">Ryan Peters</h3>
                         <h4 className="text-black font-bold text-xl font-majallab">Publishing Consultant</h4>
                         <p className="text-black font-bold text-xl font-majallab">ryan@pinebookpublishing.com</p>
