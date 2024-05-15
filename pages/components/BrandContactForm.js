@@ -68,16 +68,15 @@ export default function BrandContact() {
                     <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
                         <div className="flex flex-col md:flex-row items-end">
                             <div className="basis-1/3 hidden md:block position-relative">
-                                {/* <AnimateFade type={"right"} className="position-relative"> */}
+                                <AnimateFade type={"right"} className="position-relative">
                                     <Image
-                                        className="text-center pt-10 contact-form-img aos-init aos-animate"
+                                        className="text-center pt-10 contact-form-img"
                                         src={"/images/contact-user.webp"}
                                         width={600}
                                         height={300}
                                         loading="lazy"
-                                        data-aos="fade-right"
                                     ></Image>
-                                {/* </AnimateFade> */}
+                                </AnimateFade>
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
