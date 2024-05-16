@@ -25,7 +25,7 @@ export default function Portfolio() {
         { question: "Can I request to see specific examples of works in a certain genre or style?", answer: "Absolutely! We understand the importance of finding examples that resonate with your interests. Whether you're interested in fiction, non-fiction, or a specific genre, we're happy to provide relevant examples from our portfolio." },
         { question: "Do you provide author testimonials or reader feedback for the books featured in your portfolio?", answer: "Yes, we often include author testimonials and reader feedback alongside the books featured in our portfolio. These testimonials offer valuable insights into the collaborative process and the impact of each published work." },
         { question: "Can I learn more about the publishing process behind the books showcased in your portfolio?", answer: "Certainly! For each book featured in our portfolio, we provide a brief overview of the publishing journey, from manuscript submission to final publication. We're committed to transparency and happy to share insights into our process." },
-        { question: "Can I contact you to discuss publishing my book or to inquire about specific titles in your portfolio?", answer: "Absolutely! Whether you're an aspiring author interested in publishing your book or a reader curious about the titles in our portfolio, we welcome inquiries and are here to assist you. Feel free to reach out to us via email or phone, and we'll be happy to help." },
+        { question: "Can I contact you to discuss publishing my book or to inquire about specific titles in your portfolio?", answer: "Absolutely! Whether you're an aspiring author interested in self-publishing your book or a reader curious about the titles in our portfolio, we welcome inquiries and are here to assist you. Feel free to reach out to us via email or phone, and we'll be happy to help." },
     ];
 
     const badges = [
@@ -42,7 +42,7 @@ export default function Portfolio() {
                 <title>Our Shelf-Worthy Portfolio | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Immerse in Pine Book Publishing's showcase of literary artistry. Where each book is a masterpiece of meticulous crafting, editing, and publishing."
+                    content="Dive into Pine Book Publishing's showcase of literary artistry. We take pride in each book that goes through the process of meticulous crafting, editing, and publishing."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

@@ -42,10 +42,9 @@ export default function About() {
             />
             <BrandBannerLogo />
             <BrandAbout
-                subdescone="Feeling overwhelmed by the daunting task of writing and publishing your book? Do you find yourself grappling with your amazing ideas, only to hit a roadblock every time you try to put them down on paper? It's a frustrating maze, but fear not – Pine Book Publishing is here to lead you through it with ease."
-                subdesctwo="We specialize in simplifying the entire writing and publishing process, offering customized solutions tailored specifically to your needs. Say goodbye to the endless cycle of revisions and hello to a polished manuscript that truly reflects your vision."
-                subdescthree="Our experienced team is not just here to assist you; we're here to walk alongside you every step of the way. Whether you're struggling with plot development, in need of meticulous editing, or feeling lost in the labyrinth of the publishing world, Pine Book has your back.
-                Think of us as your trusted companion, ready to offer support, guidance, and expertise whenever you need it. Together, we'll transform your literary dreams into a reality that captivates readers' hearts and minds."
+                subdescone="Are you feeling stuck in the maze of writing and publishing your book? Do you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end? "
+                subdesctwo="With Pine Book Publishing, we simplify the writing and publishing process, offering personalized solutions tailored to your needs. Say goodbye to the frustration of endless revisions and let us guide you towards a polished manuscript. "
+                subdescthree="Our experienced team is here to provide the support and expertise you need to succeed. Whether it's plot development, editing, or navigating the publishing world, Pine Book Publishing has got you covered. With Pine Book Publishing, it's like having a trusted friend by your side, helping you turn your literary dreams into reality. So, why wait? Let's embark on this exciting journey together. Reach out to Pine Book Publishing today, and let's turn your ideas into captivating stories that readers will love!"
             />
             <BrandChooseUs />
             <section className="brand-testimonials-section">
