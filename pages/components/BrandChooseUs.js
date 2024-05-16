@@ -15,7 +15,7 @@ export default function BrandChooseUs() {
                         </div>
                         <div className="basis-1/2 md:ml-20">
                             <h2 className="text-white font-majallab text-5xl md:text-6xl uppercase mt-20 md:mt-0" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
-                            <p className="text-white text-xl font-poppins mt-2">Because at Pine Book Publishing, your success is our priority, and we're committed to helping you achieve your literary goals with confidence and ease. With us, you get: </p>
+                            <p className="text-white text-xl font-poppins mt-2">Tired of trying out the same old book publishing companies? At Pine Book Publishing, your success is our priority, and we're committed to help you achieve your literary goals with confidence and ease, which other self publishing companies might not offer. With us, you get:  </p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-majallab flex items-center gap-3"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Affordable Price</li>

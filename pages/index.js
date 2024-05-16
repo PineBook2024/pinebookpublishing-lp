@@ -33,8 +33,8 @@ export default function Home() {
             <BrandBannerVideo Component={BrandHero} />
             <BrandBannerLogo />
             <BrandAbout
-                subdescone="Feeling overwhelmed by the daunting task of writing and publishing your book? Do you find yourself grappling with your amazing ideas, only to hit a roadblock every time you try to put them down on paper? It's a frustrating maze, but fear not – Pine Book Publishing is here to lead you through it with ease."
-                subdesctwo="We specialize in simplifying the entire writing and publishing process, offering customized solutions tailored specifically to your needs. Say goodbye to the endless cycle of revisions and hello to a polished manuscript that truly reflects your vision."
+                subdescone="Do you often feel lost in the maze of publishing and wonder how can I publish my book? Or, you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end? Writing and self publishing a book can feel like climbing a towering mountain."
+                subdesctwo="With Pine Book Publishing, we simplify the writing and self-publishing process, offering personalized solutions suited to your needs. Say goodbye to the frustration of endless revisions and let us help you create a flawless manuscript."
                 subdescthree=""
             />
             <BrandServices />

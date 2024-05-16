@@ -11,8 +11,7 @@ export default function BrandServices() {
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-white font-poppins">Our Publishing</h3>
                         <h2 className="font-majallab text-5xl md:text-7xl text-white">Services</h2>
-                        <p className="text-white">Discover the Difference: Our Publishing Service Puts Your Story Front and Center, <br></br>
-                            Guiding It from Conception to Bookshelf Success.</p>
+                        <p className="text-white">Discover the Difference: Our Publishing Services Puts Your Story Front and Center, Guiding It from Conception to Bookshelf Success.<br></br> Whether you want Amazon Publishing Services, lulu self publishing, or want to get your book published on any other retailer. We have covered all your needs. </p>
                     </div>
 
                     {/* 1 of 2 */}
@@ -66,7 +65,7 @@ export default function BrandServices() {
                                     <Link href="#">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
-                                    <Image src={"/brand-img/service-img3.png"} width={270} height={200}></Image>
+                                    <Image src={"/brand-img/service-img3.webp"} width={270} height={200}></Image>
                                 </div>
                             </div>
                             <div className="brand-service-card-content basis-1/2 relative">
@@ -86,7 +85,7 @@ export default function BrandServices() {
                                     <Link href="#">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
-                                    <Image src={"/brand-img/service-img4.png"} width={250} className="icon" height={200}></Image>
+                                    <Image src={"/brand-img/service-img4.webp"} width={250} className="icon" height={200}></Image>
                                 </div>
                             </div>
                             <div className="brand-service-card-content gap-4 basis-1/2 relative">
@@ -121,7 +120,7 @@ export default function BrandServices() {
                                     <Link href="#">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
-                                    <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
+                                    <Image src={"/brand-img/service-img5.webp"} width={250} height={200}></Image>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +140,7 @@ export default function BrandServices() {
                                     <Link href="#">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
-                                    <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
+                                    <Image src={"/brand-img/service-img6.webp"} width={250} height={200}></Image>
                                 </div>
                             </div>
                         </div>

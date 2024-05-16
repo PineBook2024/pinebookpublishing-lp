@@ -116,10 +116,10 @@ export default function BrandHero() {
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
                         <h1 className="font-majallab text-5xl md:text-7xl text-white">
-                            Your Story Matters - Let's Publish It
+                            Looking to Publish Your Own Book
                         </h1>
                         <p className="text-xl font-poppins text-white">
-                            From concept to completion, Pine Book Publishing provides a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, publishing, and promotion, ensuring your story receives the attention it deserves.
+                            Are you planning to publish your own book and want complete control over the process? From concept to completion, we at Pine Book Publishing provide a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, self-publishing, and promotion, ensuring your story receives the attention it deserves.
                         </p>
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                             {clientLogos.map((logo, index) => (
