@@ -83,7 +83,7 @@ export default function BrandNavbar() {
                                 )}
                             </li> */}
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
-                            <li className='mb-3 md:mb-0'><Link href="/bundles" className="text-white hover:text-gray-300">Bundles</Link></li>
+                            {/* <li className='mb-3 md:mb-0'><Link href="/bundles" className="text-white hover:text-gray-300">Bundles</Link></li> */}
                             {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li> */}
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" className="text-white hover:text-gray-300">Contact</Link></li>
                             <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab" onClick={handleOpenChat}>Talk to Expert</Link></li>
