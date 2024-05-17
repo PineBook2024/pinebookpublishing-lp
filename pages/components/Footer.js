@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -45,6 +45,18 @@ export default function Footer() {
                   {" "}
                   info@pinebookpublishing.com{" "}
                 </Link>
+              </li>
+              <li className="flex items-center justify-center md:justify-start mt-3">
+                <FontAwesomeIcon icon={faMapLocation} className="me-3" />
+                <div>
+                  <p className="text-white"><b>CANADA ADDRESS: </b> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
+                </div>
+              </li>
+              <li className="flex items-center justify-center md:justify-start mt-3">
+                <FontAwesomeIcon icon={faMapLocation} className="me-3" />
+                <div>
+                  <p className="text-white"><b>USA ADDRESS: </b>211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
+                </div>
               </li>
             </nav>
           </div>

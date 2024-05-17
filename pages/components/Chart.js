@@ -29,13 +29,13 @@ export default function Chart() {
         <>
             <Popup isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
 
-            <section className="table-sec overflow-x-scroll">
+            <section className="table-sec overflow-x-scroll max-w-screen-xl mx-auto">
                 <div className="container mx-auto m1-h mt-10">
                     <h3 className="mb-8 text-center font-majallab text-5xl md:text-7xl">
                         Comparison Chart
                     </h3>
                 </div>
-                <div className="width-container">
+                <div className="">
                     <div className="container mx-auto">
                         <div className="check-wrap">
                             <div className="check-list flex">
@@ -59,52 +59,19 @@ export default function Chart() {
                                         ></th>
 
                                         <th className="font-majallab">
-                                            {" "}
-                                            Beginners
-                                            <br />
-                                            <button
-                                                onClick={handleOpenChat}
-                                                type="button"
-                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                                            >
-                                                Talk to us
-                                            </button>
-                                        </th>
-
-                                        <th className="font-majallab">
                                             Standard
-                                            <br />
-                                            <button
-                                                onClick={handleOpenChat}
-                                                type="button"
-                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                                            >
-                                                Talk to us
-                                            </button>
+                                        </th >
+
+                                        <th className="font-majallab">
+                                            Professional
                                         </th>
 
                                         <th className="font-majallab">
-                                            Expert
-                                            <br />
-                                            <button
-                                                onClick={handleOpenChat}
-                                                type="button"
-                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                                            >
-                                                Talk to us
-                                            </button>
+                                            Al-Inclusive
                                         </th>
 
                                         <th className="font-majallab">
-                                            Enterprise
-                                            <br />
-                                            <button
-                                                onClick={handleOpenChat}
-                                                type="button"
-                                                className="text-black bg-white border border-gray-300 focus:outline-none font-lg rounded-full text-sm px-2 md:px-5 py-2.5 me-2 mb-2 font-majallab"
-                                            >
-                                                Talk to us
-                                            </button>
+                                            Traditional
                                         </th>
                                     </tr>
                                 </thead>
@@ -119,7 +86,7 @@ export default function Chart() {
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td className="">Dedicated Project Manager</td>
+                                        <td className="border-left-radius-table">Dedicated Project Manager</td>
                                         <td>
                                             <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                                         </td>
@@ -129,7 +96,7 @@ export default function Chart() {
                                         <td>
                                             <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                                         </td>
-                                        <td>
+                                        <td className="border-top-right-radius-table">
                                             <FontAwesomeIcon icon={faCheckCircle} color="#fff" />
                                         </td>
                                     </tr>
@@ -164,8 +131,92 @@ export default function Chart() {
                                         <td>2</td>
                                         <td>4</td>
                                     </tr>
-
                                     <tr>
+                                        <td>Hardcover Author Copy</td>
+                                        <td>
+                                            <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
+                                        </td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hardcover Author Copy</td>
+                                        <td>
+                                            <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
+                                        </td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hardcover Author Copy</td>
+                                        <td>
+                                            <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
+                                        </td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hardcover Author Copy</td>
+                                        <td>
+                                            <FontAwesomeIcon icon={faPlusCircle} color="#fff" />
+                                        </td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                    </tr>
+
+                                    <tr className="font-majallab">
+                                        <td className="border-bottom-left-radius-table"></td>
+                                        <td className="md:w-auto w-24">
+                                            <a
+                                                // data-src="#popup-layout"
+                                                // href="javascript:;"
+                                                onClick={() => openModal('Beginners')}
+                                                className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
+                                                data-source="Beginners Bundles"
+                                            >
+                                                Get a Quote
+                                            </a>
+                                        </td>
+                                        <td className="md:w-auto w-24">
+                                            <a
+                                                // data-src="#popup-layout"
+                                                // href="javascript:;"
+                                                onClick={() => openModal('Standard')}
+                                                className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
+                                                data-source="Beginners Bundles"
+                                            >
+                                                Get a Quote
+                                            </a>
+                                        </td>
+                                        <td className="md:w-auto w-24">
+                                            <a
+                                                // data-src="#popup-layout"
+                                                // href="javascript:;"
+                                                onClick={() => openModal('Expert')}
+                                                className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
+                                                data-source="Beginners Bundles"
+                                            >
+                                                Get a Quote
+                                            </a>
+                                        </td>
+                                        <td className="md:w-auto w-24 border-bottom-right-radius-table">
+                                            <a
+                                                // data-src="#popup-layout"
+                                                // href="javascript:;"
+                                                onClick={() => openModal('Enterprise')}
+                                                className="cursor-pointer md:min-w-26 w-40 text-black bg-white focus:outline-none font-medium rounded-full text-sm px-2 py-2.5 me-2 mb-2 md:px-5"
+                                                data-source="Beginners Bundles"
+                                            >
+                                                Get a Quote
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    {/* <tr>
                                         <th
                                             className="pro text-3xl md:text-5xl text-start"
                                             colspan="5"
@@ -561,7 +612,7 @@ export default function Chart() {
                                                 Get a Quote
                                             </a>
                                         </td>
-                                    </tr>
+                                    </tr> */}
                                 </tbody>
                             </table>
                         </div>

@@ -103,7 +103,7 @@ export default function popup({ isOpen, onClose, service }) {
                                 <form className="popup-form-wrapper" onSubmit={handleSubmit}>
                                     <div className="text-center">
                                         <h2 className="font-majallab text-white text-4xl mt-2">Avail Discount</h2>
-                                        <p className="font-majallab text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">70% Off</span> – Your Story Deserves to be Heard!</p>
+                                        <p className="font-majallab text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
                                     <div className="py-5">

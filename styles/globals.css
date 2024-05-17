@@ -127,20 +127,30 @@ section.brnd-slider.bg-black {
   /* line-height: 1.2; */
 }
 
-.pack-wrap {
+.pack-wrap,
+.brand-bundle-pack-wrap {
   border-radius: 20px;
   border-radius: 27px;
   background-image: -moz-linear-gradient(90deg, rgb(19, 124, 109) 0%, #157d6e 100%);
   background-image: -webkit-linear-gradient(90deg, rgb(19, 124, 109) 0%, rgb(48, 150, 135) 100%);
   background-image: -ms-linear-gradient(90deg, rgb(19, 124, 109) 0%, rgb(48, 150, 135) 100%);
   padding: 15px;
+  cursor: pointer;
+  transition: .4s ease-in-out;
 }
 
-.pack-wrap p {
+.brand-bundle-pack-wrap:hover {
+  background-image: -moz-linear-gradient(90deg, #0f113d 0%, #0f113d 100%);
+  background-image: -webkit-linear-gradient(90deg, #0f113d 0%, #0f113d 100%);
+  transition: .4s ease-in-out;
+}
+
+.pack-wrap p,
+.brand-bundle-pack-wrap p {
   line-height: 1.5;
   font-weight: 400;
   color: #fff;
-  padding: 15px;
+  padding: 14px 2px;
   font-size: 14px;
 }
 
@@ -231,8 +241,35 @@ thead.first-row tr>th {
   text-align: center;
 }
 
-table.w-full.mb-14 {
+thead.first-row tr>th:nth-child(1) {
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+thead.first-row tr>th:nth-last-child(1) {
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+table.w-full.mb-14 td {
   background: #2c9384;
+}
+
+table.w-full.mb-14 .border-left-radius-table {
+  border-top-left-radius: 18px;
+  /* border-bottom-left-radius: 20px; */
+}
+
+table.w-full.mb-14 .border-bottom-left-radius-table {
+  border-bottom-left-radius: 20px;
+}
+
+.border-bottom-right-radius-table {
+  border-bottom-right-radius: 20px;
+}
+
+.border-top-right-radius-table {
+  border-top-right-radius: 20px;
 }
 
 
@@ -1631,7 +1668,7 @@ footer svg {
 .brand-testimonials-card {
   display: block;
   position: relative;
-  background-color: #f2f8f9;
+  background-color: #e8e4e4;
   border-radius: 4px;
   margin: 12px;
   text-decoration: none;
@@ -1735,4 +1772,8 @@ video#brandVideo {
 
 [data-aos] {
   will-change: transform, opacity;
+}
+
+.brand-story-slider{
+  border: 20px solid #fff;
 }

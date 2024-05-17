@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -44,7 +44,7 @@ export default function BrandFooter() {
                                 <Image src={"/images/f-logo.png"} width={250} height={200}></Image>
                             </a>
                             <p className="mt-2 text-sm text-white">
-                            Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
+                                Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
@@ -66,6 +66,7 @@ export default function BrandFooter() {
                                         info@pinebookpublishing.com{" "}
                                     </Link>
                                 </li>
+
                             </nav>
                         </div>
                         <div className="lg:w-1/4 md:w-1/4 w-full px-4">
@@ -108,50 +109,56 @@ export default function BrandFooter() {
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
-                                    Editing
+                                    Book Editing
                                 </li>
                                 <li className="mt-3">
                                     Proofreading
                                 </li>
                                 <li className="mt-3">
-                                    Formatting
+                                    Book Formatting
                                 </li>
                                 <li className="mt-3">
-                                    Typesetting & Layout adjustment
+                                    Typesetting & Layout
                                 </li>
                                 <li className="mt-3">
-                                    Cover Design
+                                    Book Publishing
                                 </li>
                                 <li className="mt-3">
-                                    Publishing
+                                    Audio Book
+                                </li>
+                                <li className="mt-3">
+                                    Document Processing
+                                </li>
+                                <li className="mt-3">
+                                    Print on Demand
                                 </li>
                             </nav>
                         </div>
                     </div>
                 </div>
-
                 <div className="copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                        <p className="text-white w-full md:text-start text-sm sm:text-left md:ml-36">
-                            <Link
-                                href="/privacy-policy"
-                                rel="noopener noreferrer"
-                                className="text-white ml-1"
-                                target="_blank"
-                            >
-                                <b>Privacy Policy</b>
-                            </Link>
-                            {" "}
-                            /
+                        <p className="text-white w-full md:text-center text-sm sm:text-left">
+                            Copyright © 2024 |
                             <Link
                                 href="/terms-and-conditions"
                                 rel="noopener noreferrer"
                                 className="text-white ml-1"
                                 target="_blank"
                             >
-                                <b>Terms & Conditions</b>
+                                Terms & Conditions |
                             </Link>
+                            <Link
+                                href="/privacy-policy"
+                                rel="noopener noreferrer"
+                                className="text-white ml-1"
+                                target="_blank"
+                            >
+                                Privacy Policy | {" "}
+                            </Link>
+                            Powered by <span className="powered-by-text">Pine Book Writing Inc.</span>
                         </p>
+
                     </div>
                 </div>
             </footer>

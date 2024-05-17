@@ -147,7 +147,7 @@ export default function HeroForm() {
             ></Image>
             <div className="text-center">
               <h4 className="font-majallab text-white text-2xl md:text-4xl">Avail Discount</h4>
-              <h5 className="font-majallab text-white text-2xl mb-3">Exclusive Offer: Expert Book Publishing at <span className="text-blink">70% Off</span> – <br></br>Your Story Deserves to be Heard!</h5>
+              <h5 className="font-majallab text-white text-2xl mb-3">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – <br></br>Your Story Deserves to be Heard!</h5>
             </div>
             <div>
 

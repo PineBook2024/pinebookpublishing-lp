@@ -66,23 +66,24 @@ export default function BrandNavbar() {
                             <li className='mb-3 md:mb-0'><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
                             {/* <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
-                                <Link href={"#"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
+                                <Link href={"/services"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
                                 </Link>
                                 {serviceDropdown && (
-                                <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg">
-                                    <ul className="py-1 text-start px-4 py-2">
-                                        <li className='mb-2'><Link href="#">Editing</Link></li>
-                                        <li className='mb-2'><Link href="#">Proofreading</Link></li>
-                                        <li className='mb-2'><Link href="#">Formatting</Link></li>
-                                        <li className='mb-2'><Link href="#">Typesetting & Layout adjustment</Link></li>
-                                        <li className='mb-2'><Link href="#">Cover Design</Link></li>
-                                        <li className='mb-2'><Link href="#">Publishing</Link></li>
-                                    </ul>
-                                </div>
-                            )}
+                                    <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg">
+                                        <ul className="py-1 text-start px-4 py-2">
+                                            <li className='mb-2'><Link href="#">Editing</Link></li>
+                                            <li className='mb-2'><Link href="#">Proofreading</Link></li>
+                                            <li className='mb-2'><Link href="#">Formatting</Link></li>
+                                            <li className='mb-2'><Link href="#">Typesetting & Layout adjustment</Link></li>
+                                            <li className='mb-2'><Link href="#">Cover Design</Link></li>
+                                            <li className='mb-2'><Link href="#">Publishing</Link></li>
+                                        </ul>
+                                    </div>
+                                )}
                             </li> */}
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/bundles" className="text-white hover:text-gray-300">Bundles</Link></li>
                             {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li> */}
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" className="text-white hover:text-gray-300">Contact</Link></li>
                             <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-majallab" onClick={handleOpenChat}>Talk to Expert</Link></li>
