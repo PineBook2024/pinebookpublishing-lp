@@ -1777,3 +1777,22 @@ video#brandVideo {
 .brand-story-slider{
   border: 20px solid #fff;
 }
+
+.brand-process-content{
+  position: absolute;
+  top: 25px;
+  left: 165px;
+}
+
+.brand-process-content p,
+.brand-process-content-right p{
+  text-wrap: balance;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.brand-process-content-right{
+  position: absolute;
+  top: 25px;
+  right: 163px;
+}

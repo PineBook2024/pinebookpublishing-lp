@@ -41,7 +41,7 @@ export default function Home() {
             <BrandCTA
             title="Hey, Wanna Talk?"
             desc="Ready to Chat? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
-            btntext="Let's Talk"
+            btntext="Speak to our Consultant"
             />
             <BrandProcess />
             <BrandChooseUs />

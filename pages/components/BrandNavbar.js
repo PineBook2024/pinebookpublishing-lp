@@ -90,7 +90,6 @@ export default function BrandNavbar() {
                         </ul>
                     </nav>
                 </div>
-
             </header>
         </>
     );
