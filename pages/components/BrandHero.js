@@ -115,10 +115,10 @@ export default function BrandHero() {
                 <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                        <h1 className="font-majallab text-5xl md:text-7xl text-white">
+                        <h1 className="font-poppins text-3xl md:text-6xl text-white">
                             Looking to Publish <br></br> Your Own Book
                         </h1>
-                        <p className="text-xl font-poppins text-white">
+                        <p className="text-xl text-white pt-4">
                             Are you planning to publish your own book and want complete control over the process? From concept to completion, we at Pine Book Publishing provide a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, self-publishing, and promotion, ensuring your story receives the attention it deserves.
                         </p>
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
@@ -144,10 +144,10 @@ export default function BrandHero() {
                                         onChange={handleChange}
                                         value={username}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
                                         placeholder="Enter your Name"
                                     />
-                                    <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
+                                    <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-3 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <input
@@ -156,10 +156,10 @@ export default function BrandHero() {
                                         value={phoneNumber}
                                         name="phoneNumber"
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
                                         placeholder="Enter your Phone"
                                     />
-                                    <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
+                                    <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-3 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <input
@@ -168,14 +168,14 @@ export default function BrandHero() {
                                         onChange={handleChange}
                                         value={email}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
                                         placeholder="Enter your Email"
                                     />
-                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-3 ml-4" />
                                 </div>
                                 <div className="relative">
                                     <textarea
-                                        className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
                                         rows={5}
                                         onChange={handleChange}
                                         value={message}
@@ -196,7 +196,7 @@ export default function BrandHero() {
                                     </p>
                                 )}
                                 <button
-                                    className="w-full p-4 text-white uppercase header-submit-btn rounded font-poppins rounded-xl shadow-xl text-xl"
+                                    className="w-full p-4 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
                                     type="submit"
                                 >
                                     Submit
@@ -229,7 +229,7 @@ export default function BrandHero() {
 //         <div className="grid max-w-screen-xl px-4 pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
 //             <div className="mr-auto place-self-center lg:col-span-7 text-white">
 //                 <h3 className="text-2xl mb-4 aos-init aos-animate" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-//                 <h1 className="font-majallab text-5xl md:text-6xl">
+//                 <h1 className="font-poppins text-5xl md:text-6xl">
 //                     Your Story Matters - Let's Publish It
 //                 </h1>
 //                 <p className="text-xl font-poppins">
@@ -246,7 +246,7 @@ export default function BrandHero() {
 //                                 onChange={handleChange}
 //                                 value={username}
 //                                 required
-//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-poppins text-xl shadow-xl"
 //                                 placeholder="Enter your Name"
 //                             />
 //                             <Image src={"/brand-img/user-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
@@ -258,7 +258,7 @@ export default function BrandHero() {
 //                                 onChange={handleChange}
 //                                 value={phoneNumber}
 //                                 required
-//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-poppins text-xl shadow-xl"
 //                                 placeholder="Enter your Phone"
 //                             />
 //                             <Image src={"/brand-img/phone-icon.png"} width={14} height={14} className="absolute left-0 top-4 ml-4" />
@@ -270,14 +270,14 @@ export default function BrandHero() {
 //                                 onChange={handleChange}
 //                                 value={email}
 //                                 required
-//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-poppins text-xl shadow-xl"
 //                                 placeholder="Enter your Email"
 //                             />
 //                             <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
 //                         </div>
 //                         <div className="relative">
 //                             <textarea
-//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-majallab text-xl shadow-xl"
+//                                 className="pl-4 pr-4 py-2 border rounded-xl w-full font-poppins text-xl shadow-xl"
 //                                 rows={5}
 //                                 onChange={handleChange}
 //                                 value={message}

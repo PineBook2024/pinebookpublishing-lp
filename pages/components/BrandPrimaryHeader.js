@@ -10,9 +10,9 @@ export default function BrandPrimaryHeader(props) {
                 <div class="container max-w-screen-xl mx-auto">
                     <div class="row py-5">
                         <div class="col-12 px-5 w-100 md:w-3/5">
-                            <h3 class="text-5xl text-white  font-majallab">
+                            <h3 class="text-4xl text-white  font-poppins">
                                 {props.title}</h3>
-                            <p class="text-xl text-white  font-poppins ">{props.desc}</p>
+                            <p class="text-xl text-white pt-2">{props.desc}</p>
                         </div>
                     </div>
                 </div>

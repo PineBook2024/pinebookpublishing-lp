@@ -10,7 +10,7 @@ export default function About(props) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
                 <AnimateFade type={"top"}>
                     <div className="abt-txt m1-h p1">
-                        <h3 className="font-majallab text-3xl md:text-7xl">
+                        <h3 className="font-poppins text-3xl md:text-7xl">
                             About Us<span>Pine Book Publishing</span>
                         </h3>
                         <p>

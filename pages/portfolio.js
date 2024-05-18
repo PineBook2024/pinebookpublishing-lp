@@ -57,12 +57,12 @@ export default function Portfolio() {
             <BrandCTA
                 title="Hey, Wanna Talk?"
                 desc="Ready to Talk? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
-                btntext="Let's Talk"
+                btntext="Speak to our Consultant"
             />
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
+                        <h2 className="font-poppins text-4xl text-black uppercase mb-3">Frequently Asked Questions</h2>
                     </div>
                     <div className="faq-que">
                         <div className="flex flex-col md:flex-row justify-center gap-4">

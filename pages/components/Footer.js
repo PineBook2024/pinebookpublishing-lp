@@ -12,7 +12,7 @@ export default function Footer() {
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
             <Image src={"/images/f-logo.png"} width={250} height={200}></Image>
           </a>
-          <p className="mt-2 text-sm text-white">
+          <p className="mt-2 text-sm text-white leading-7">
             Pine Book Publishing is a team of passionate book publishers that
             believe in the power of storytelling and the importance of writers'
             ability to tell their tales. Our streamlined process and dedicated
@@ -23,14 +23,14 @@ export default function Footer() {
 
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/2 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-white tracking-widest text-2xl md:text-3xl mb-3 font-majallab font-bold	">
+            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
               Contact Info
             </h2>
             <nav className="list-none mb-10">
               <li>
                 <Link
                   href="tel:8668417469"
-                  className="text-white text-xl hover:text-white font-majallab flex justify-center md:justify-start"
+                  className="text-white text-md hover:text-white flex justify-center md:justify-start"
                 >
                   <FontAwesomeIcon icon={faPhone} className="me-3" />
                   (866) 841-7469
@@ -39,30 +39,30 @@ export default function Footer() {
               <li className="mt-3">
                 <Link
                   href="mailto:info@pinebookpublishing.com"
-                  className="text-white hover:text-white font-majallab text-2xl md:text-2xl flex justify-center md:justify-start"
+                  className="text-white hover:text-white text-md flex justify-center md:justify-start"
                 >
                   <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                   {" "}
                   info@pinebookpublishing.com{" "}
                 </Link>
               </li>
-              <li className="flex items-center justify-center md:justify-start mt-3">
+              <li className="flex items-center justify-center md:justify-start mt-3 text-md">
                 <FontAwesomeIcon icon={faMapLocation} className="me-3" />
                 <div>
-                  <p className="text-white"><b>CANADA ADDRESS: </b> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
+                  <p className="text-white text-md"><b>CANADA ADDRESS: </b> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
                 </div>
               </li>
-              <li className="flex items-center justify-center md:justify-start mt-3">
+              <li className="flex items-center justify-center md:justify-start mt-3 text-md">
                 <FontAwesomeIcon icon={faMapLocation} className="me-3" />
                 <div>
-                  <p className="text-white"><b>USA ADDRESS: </b>211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
+                  <p className="text-white text-md"><b>USA ADDRESS: </b>211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
                 </div>
               </li>
             </nav>
           </div>
 
           <div className="lg:w-1/2 md:w-1/2 w-full px-4 payment-card">
-            <h2 className="title-font font-medium text-white tracking-widest text-3xl mb-3 font-majallab font-bold	">
+            <h2 className="title-font font-medium text-white tracking-widest text-2xl mb-3 font-poppins font-bold	">
               Accepted Payment Methods
             </h2>
             <nav className="list-none mb-10">
@@ -83,7 +83,7 @@ export default function Footer() {
               ></Image>
               <Image src={"/images/bage5.png"} width={100} height={200}></Image>
             </div>
-            {/* <h2 className="title-font font-medium text-white tracking-widest text-3xl mb-3 font-majallab font-bold	mt-5">
+            {/* <h2 className="title-font font-medium text-white tracking-widest text-3xl mb-3 font-poppins font-bold	mt-5">
               Brand By
             </h2>
             <Image src={"/images/brand-writing-logo.png"} width={200} height={200}></Image> */}

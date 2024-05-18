@@ -62,7 +62,7 @@ export default function BrandPortfolio() {
             <section className="max-w-screen-xl mx-auto brand-portfolio-books py-12">
                 <div className="text-center mb-6">
                     {/* <h3 className="text-2xl text-black font-poppins">Get your Book</h3> */}
-                    <h2 className="font-majallab text-5xl text-black uppercase">Presenting the Shelf-Worthy <br></br> Collection</h2>
+                    <h2 className=" text-4xl text-black uppercase">Presenting the Shelf-Worthy <br></br> Collection</h2>
                 </div>
                 <div className="flex space-x-4 justify-center mb-12">
                     {['Fiction', 'Non-Fiction'].map(category => (

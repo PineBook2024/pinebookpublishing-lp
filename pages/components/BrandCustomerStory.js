@@ -80,14 +80,14 @@ export default function BrandCustomerStory() {
                             effect={"coverflow"}
                             grabCursor={true}
                             centeredSlides={true}
-                            slidesPerView={5}
+                            slidesPerView={4}
                             loop={true}
                             coverflowEffect={{
-                                rotate: 30,
+                                rotate: 20, // Set to 0 to keep slides straight
                                 stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                                slideShadows: true,
+                                depth: 100, // Increase depth for better 3D effect
+                                modifier: 1, // Adjust modifier for a more pronounced effect
+                                slideShadows: true, // Optionally set to false if shadows are no
                             }}
                             onBeforeInit={(swiper) => {
                                 swiperRef2.current = swiper;
@@ -101,8 +101,8 @@ export default function BrandCustomerStory() {
                                     navigation: true,
                                 },
                                 "@1.00": {
-                                    slidesPerView: 4,
-                                    spaceBetween: 10,
+                                    slidesPerView: 3,
+                                    spaceBetween: 30,
                                 },
                             }}
                         >

@@ -34,15 +34,15 @@ export default function Packages({ isOpen, onClose, service }) {
                 <div className="width-container">
                     <div className="container mx-auto">
                         <div className="text-center mb-6">
-                            <h3 className="text-3xl text-black font-poppins uppercase">Publishing</h3>
-                            <h2 className="font-majallab text-7xl text-black uppercase">Bundles</h2>
+                            <h3 className="text-2xl text-black font-poppins uppercase">Publishing</h3>
+                            <h2 className="font-poppins text-4xl text-black uppercase">Bundles</h2>
                         </div>
 
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package</h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -107,7 +107,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-7" onClick={() => openModal('Basic')}>
+                                    <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Basic')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -125,7 +125,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                             </div>
                             <div className="single-packages relative">
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package</h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -222,7 +222,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-7" onClick={() => openModal('Start up')}>
+                                    <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Start up')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -240,7 +240,7 @@ export default function Packages({ isOpen, onClose, service }) {
                             </div>
                             <div className="single-packages relative">
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package</h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -348,7 +348,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-7" onClick={() => openModal('Standard')}>
+                                    <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Standard')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -369,7 +369,7 @@ export default function Packages({ isOpen, onClose, service }) {
 
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12 mt-12">
                             <div className="single-packages relative">
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package</h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -492,7 +492,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center mb-4">
-                                    <h5 className="font-majallab text-2xl flex justify-center items-center gap-3">
+                                    <h5 className="font-poppins text-xl flex justify-center items-center gap-3">
                                         EASY PAYMENT PLAN
                                         <div className="tooltip">
                                             <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
@@ -508,7 +508,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </h5>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-3" onClick={() => openModal('Expert')}>
+                                    <button className="package-get-started-btn text-md mt-5" onClick={() => openModal('Expert')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -527,7 +527,7 @@ export default function Packages({ isOpen, onClose, service }) {
                             </div>
                             <div className="single-packages relative">
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package</h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package</h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -672,7 +672,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h5 className="font-majallab text-2xl flex justify-center items-center gap-3">
+                                    <h5 className="font-poppins text-xl flex justify-center items-center gap-3">
                                         EASY PAYMENT PLAN
                                         <div className="tooltip">
                                             <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
@@ -688,7 +688,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </h5>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-7" onClick={() => openModal('Premium')}>
+                                    <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Premium')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -705,7 +705,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                 </div>
                             </div>
                             <div className="single-packages relative">
-                                <h4 className="text-4xl font-majallab mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package
                                 </h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
@@ -870,7 +870,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h5 className="font-majallab text-2xl flex justify-center items-center gap-3">
+                                    <h5 className="font-poppins text-xl flex justify-center items-center gap-3">
                                         EASY PAYMENT PLAN
                                         <div className="tooltip">
                                             <Image src={"/images/question-icon.png"} className="icon" width={20} height={20}></Image>
@@ -887,7 +887,7 @@ export default function Packages({ isOpen, onClose, service }) {
                                     </h5>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-majallab text-2xl mt-7" onClick={() => openModal('Enterprise')}>
+                                    <button className="package-get-started-btn font-poppins text-md mt-8" onClick={() => openModal('Enterprise')}>
                                         GET A QUOTE
                                     </button>
                                 </div>

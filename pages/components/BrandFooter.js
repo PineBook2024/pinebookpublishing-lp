@@ -41,16 +41,16 @@ export default function BrandFooter() {
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-center">
                         <div className="lg:w-1/3 md:w-1/4 w-full px-4">
                             <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                                <Image src={"/images/f-logo.png"} width={250} height={200}></Image>
+                                <Image src={"/brand-img/logo.png"} width={250} height={200}></Image>
                             </a>
-                            <p className="mt-2 text-sm text-white">
+                            <p className="mt-2 text-sm text-white leading-7">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
                                     <Link
                                         href="tel:8668417469"
-                                        className="text-white text-xl hover:text-white font-majallab flex justify-center md:justify-start"
+                                        className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faPhone} className="me-3" />
                                         (866) 841-7469
@@ -59,7 +59,7 @@ export default function BrandFooter() {
                                 <li className="mt-3">
                                     <Link
                                         href="mailto:info@pinebookpublishing.com"
-                                        className="text-white hover:text-white font-majallab text-2xl md:text-2xl flex justify-center md:justify-start"
+                                        className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                                         {" "}
@@ -70,7 +70,7 @@ export default function BrandFooter() {
                             </nav>
                         </div>
                         <div className="lg:w-1/4 md:w-1/4 w-full px-4">
-                            <h2 className="title-font text-white tracking-widest text-2xl md:text-3xl mb-3 font-majallab font-bold	">
+                            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
                                 Pages
                             </h2>
                             <nav className="list-none mb-10 mt-5">
@@ -104,7 +104,7 @@ export default function BrandFooter() {
                         </div>
 
                         <div className="lg:w-1/3 md:w-1/4 w-full px-4">
-                            <h2 className="title-font text-white tracking-widest text-2xl md:text-3xl mb-3 font-majallab font-bold	">
+                            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
                                 Services
                             </h2>
                             <nav className="list-none mb-10 mt-5">

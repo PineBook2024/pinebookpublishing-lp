@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('../pages/Lucida\ Bright\ Regular.ttf') format('ttf');
+  /* font-weight: normal;
+  font-style: normal; */
+}
+
+body {
+  font-family: 'Lucida Bright Regular', sans-serif;
+}
+p{
+  font-size: 17px !important;
+}
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -105,7 +118,7 @@ section.brnd-slider.bg-black {
   color: #000;
   /* font-size: 70px; */
   /* line-height: 111px; */
-  font-weight: 600;
+  /* font-weight: 600; */
   text-transform: uppercase;
   display: block;
 }
@@ -158,14 +171,14 @@ section.process {
   background: #d6d6d6;
 }
 
-.conter-box h2 {
-  font-size: 60px;
+.conter-box p {
+  font-size: 35px !important;
   font-weight: 700;
   line-height: 1.5;
 }
 
 .conter-box span {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -442,7 +455,7 @@ video#background-video {
 
 .connect-form-input {
   background-color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 10px;
   border: 2px solid #fff0;
   padding: 17px;
@@ -450,7 +463,7 @@ video#background-video {
 
 .header-form-input {
   background-color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 10px;
   border: 2px solid #fff0;
 }
@@ -507,10 +520,10 @@ video#background-video {
 footer .footer-line:before {
   content: '';
   background-color: #fff;
-  height: 270px;
+  height: 402px;
   width: 2px;
   position: absolute;
-  right: 70%;
+  right: 68%;
 }
 
 .video-info {
@@ -816,7 +829,7 @@ footer svg {
   right: 0;
   margin-left: 0;
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border: 1px solid #0d0f38;
   text-align: left;
   line-height: 20px;
@@ -1059,6 +1072,12 @@ footer svg {
   .brand-testimonials-card {
     margin: 0 !important;
   }
+  .responsive-not-process{
+    display: none;
+  }
+  .single-packages-footer h5 {
+    font-size: 15px;
+}
 }
 
 
@@ -1589,7 +1608,7 @@ footer svg {
 
 .home-connect-form-input {
   background-color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   border-radius: 10px;
   border: 2px solid #fff0;
   padding: 3px 17px;
@@ -1692,7 +1711,7 @@ footer svg {
 }
 
 .brand-testimonials-card:hover:before {
-  transform: scale(39);
+  transform: scale(45);
   color: #fff;
 }
 
@@ -1780,19 +1799,19 @@ video#brandVideo {
 
 .brand-process-content{
   position: absolute;
-  top: 25px;
+  top: 29px;
   left: 165px;
 }
 
 .brand-process-content p,
 .brand-process-content-right p{
   text-wrap: balance;
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 17px;
 }
 
 .brand-process-content-right{
   position: absolute;
-  top: 25px;
+  top: 29px;
   right: 163px;
 }

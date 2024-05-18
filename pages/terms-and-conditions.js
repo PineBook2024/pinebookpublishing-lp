@@ -16,59 +16,59 @@ export default function Privacy() {
                 title="Terms and Conditions"
             />
             <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-64 md:pt-96 mb-20 width-container">
-                {/* <h1 className="font-majallab">Terms and Conditions</h1> */}
-                <h2 className="font-majallab">Acceptance of Terms</h2>
+                {/* <h1 className="font-poppins">Terms and Conditions</h1> */}
+                <h2 className="font-poppins">Acceptance of Terms</h2>
                 <p>
                     By using the Pine Book Publishing website, you agree to be bound by these Terms and Conditions. If you do not agree to these Terms and Conditions, you are not authorized to use the website.
                 </p>
-                <h2 className="font-majallab">Intellectual Property Rights</h2>
+                <h2 className="font-poppins">Intellectual Property Rights</h2>
                 <p>
                     All content on the website, including but not limited to text, images, and videos, is the property of Pine Book Publishing or its licensors. You may not use any of the content on the website without the express permission of Pine Book Publishing.
                 </p>
 
-                <h2 className="font-majallab">Indemnification</h2>
+                <h2 className="font-poppins">Indemnification</h2>
                 <p>
                     You agree to indemnify and hold Pine Book Publishing harmless from any and all claims, losses, damages, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the website.
                 </p>
 
-                <h2 className="font-majallab">Limitation of Liability</h2>
+                <h2 className="font-poppins">Limitation of Liability</h2>
                 <p>
                     Pine Book Publishing is not liable for any damages, including but not limited to direct, indirect, incidental, consequential, or punitive damages, arising out of or in connection with your use of the website.
                 </p>
 
-                <h2 className="font-majallab">Severability</h2>
+                <h2 className="font-poppins">Severability</h2>
                 <p>
                     If any provision of these Terms and Conditions is held to be invalid or unenforceable, such provision will be struck from these Terms and Conditions and the remaining provisions will remain in full force and effect.
                 </p>
 
-                <h2 className="font-majallab">Governing Law</h2>
+                <h2 className="font-poppins">Governing Law</h2>
                 <p>
                     These Terms and Conditions will be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of the law provisions.
                 </p>
 
-                <h2 className="font-majallab">Modification to Terms:</h2>
+                <h2 className="font-poppins">Modification to Terms:</h2>
                 <p>
                     Pine Book Publishing reserves the right to modify, amend, or update these Terms and Conditions at any time without notice. It is your responsibility to regularly review and stay informed of changes. By continuing to use the website after modifications to these Terms and Conditions, you indicate your acceptance of the updated terms.
                 </p>
 
-                <h2 className="font-majallab">Entire Agreement</h2>
+                <h2 className="font-poppins">Entire Agreement</h2>
                 <p>
                     These Terms and Conditions constitute the entire agreement between you and Pine Book Publishing with respect to your use of the website, and supersede all prior or contemporaneous communications, representations, or agreements, whether oral or written.
                 </p>
 
-                <h1 className="font-majallab mb-4">BOOK WRITING T&CS:</h1>
+                <h1 className="font-poppins mb-4">BOOK WRITING T&CS:</h1>
 
-                <h2 className="font-majallab">Manifesto/Project Proposal,</h2>
+                <h2 className="font-poppins">Manifesto/Project Proposal,</h2>
                 <p>
                     Pine Book Publishing offers a personalized and customized environment for users to submit their project requirements through the convenient "Talk to Us" page. We provide various online and offline contact resources to ensure easy and authentic communication with our support team.
                 </p>
 
-                <h2 className="font-majallab">Data Loss and Backup</h2>
+                <h2 className="font-poppins">Data Loss and Backup</h2>
                 <p>
                     Users must acknowledge that they use the Pine Book Publishing website at their own risk. Pine Book Publishing does not guarantee the prevention of data loss. Users are fully responsible for their use of the website and any associated consequences.
                 </p>
 
-                <h2 className="font-majallab">SMS Terms and Conditions</h2>
+                <h2 className="font-poppins">SMS Terms and Conditions</h2>
                 <p>
                     By subscribing to text marketing notifications, users agree to receive recurring marketing messages and shopping cart reminder messages. To unsubscribe, users can reply "STOP" at any time. Message and data rates may apply, and message frequency varies.
                 </p>
@@ -79,7 +79,7 @@ export default function Privacy() {
                 <p>*Message and data rates may apply.</p>
                 <p>*Message frequency varies</p>
 
-                <h2 className="font-majallab">Endorsement</h2>
+                <h2 className="font-poppins">Endorsement</h2>
                 <p>
                     By using this website, users agree to defend Pine Book Publishing and its directors, officers, managers, employees, and representatives against any loss, damage, or expense arising from third-party claims related to their name or its use. Pine Book Publishing does not claim ownership of user-provided content.
                 </p>
@@ -87,7 +87,7 @@ export default function Privacy() {
                     If users share their website with Pine Book Publishing for project proposals or work activities, all elements on their website are considered their own publications. Pine Book Publishing assumes no liability for user-posted content on their own domains.
                 </p>
                 <p>Users retain full ownership of their trademarks, brand names, logos, graphics, design themes, content, words, pictures, images, ideas, visuals, and illustrations. Pine Book Publishing does not claim ownership of these elements.</p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Accountability
                 </h2>
                 <p>
@@ -98,7 +98,7 @@ export default function Privacy() {
                     Pine Book Publishing also does not accept any responsibility for any loss or damage caused by someone else using or abusing the primary information provided by users. Pine Book Publishing does not accept any responsibility for any errors, omissions, or misstatements in any information or service provided hereunder. Pine Book Publishing does not accept any responsibility for the deletion or non-storage of email messages. Pine Book Publishing does not accept any responsibility for a user's inability to use our mail service. Pine Book Publishing does not accept any responsibility for any loss or damage that you might suffer as a result of the websites and our processing of your application for our services.
                 </p>
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Denial
                 </h2>
                 <p>
@@ -111,7 +111,7 @@ export default function Privacy() {
                     All prior proposals, agreements, or other communications made to users of Pine Book Publishing's website are superseded by and are governed by this statement of agreement.
                 </p>
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Trademarks and Copyrights
                 </h2>
                 <p>
@@ -122,9 +122,9 @@ export default function Privacy() {
                     Users consent to indemnify and hold Pine Book Publishing harmless from any and all claims resulting from the customer's failure to first secure all necessary copyright and/or other permissions or grants.
                 </p>
 
-                <h1 className="font-majallab mb-4">Cancellation and Refund Policy</h1>
+                <h1 className="font-poppins mb-4">Cancellation and Refund Policy</h1>
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Refund Policy
                 </h2>
                 <p>
@@ -137,7 +137,7 @@ export default function Privacy() {
                 </p>
 
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Chargebacks and Disputes Policy
                 </h2>
                 <p>
@@ -150,14 +150,14 @@ export default function Privacy() {
 
                 </p>
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Supersedence of Agreements
                 </h2>
                 <p>
                     Any and all prior oral or written agreements and understandings, as well as any and all contemporaneous oral agreements and understandings between the Users and Pine Book Publishing regarding the subject matter of this statement of use of website terms and conditions, are superseded by the provisions of this statement of website terms and conditions, and the understanding between Pine Book Publishing and the Users therein. Pine Book Publishing reserves the right to modify, amend, or update these Terms and Conditions at any time without notice. You are responsible for regularly reviewing these Terms and Conditions to stay informed of any changes. Your continued use of the website after any changes to these Terms and Conditions will constitute your acceptance of those changes.
                 </p>
 
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     Contact Information
                 </h2>
                 <p>

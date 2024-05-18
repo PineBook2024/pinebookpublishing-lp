@@ -117,7 +117,7 @@ export default function HeroForm() {
           {/* <h2 className="text-sm md:base scroll-animation">
             <span> #1 SELF </span> PUBLISHING COMPANY
           </h2> */}
-          <h1 className="font-majallab text-5xl md:text-8xl">
+          <h1 className="font-poppins text-5xl md:text-6xl">
             Publish Your Dreams!
           </h1>
           <p>Elevate your writing journey with our premier <span>Amazon Kindle Direct Publishing and Self Publishing Service.</span> Dive into a world where your words are treated with the utmost care, polished by expert editors who refine each sentence to perfection. Embrace the thrill of global distribution, where your story finds its way into the hands of eager readers across continents.</p>
@@ -146,8 +146,8 @@ export default function HeroForm() {
               loading="lazy"
             ></Image>
             <div className="text-center">
-              <h4 className="font-majallab text-white text-2xl md:text-4xl">Avail Discount</h4>
-              <h5 className="font-majallab text-white text-2xl mb-3">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – <br></br>Your Story Deserves to be Heard!</h5>
+              <h4 className="font-poppins text-white text-2xl md:text-2xl">Avail Discount</h4>
+              <h5 className="font-poppins text-white text-lg mb-3">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – <br></br>Your Story Deserves to be Heard!</h5>
             </div>
             <div>
 
@@ -160,7 +160,7 @@ export default function HeroForm() {
                   onChange={handleChange}
                   value={fullName}
                   required
-                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Name"
                 />
               </div>
@@ -171,7 +171,7 @@ export default function HeroForm() {
                   value={phoneNumber}
                   name="phoneNumber"
                   required
-                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Phone"
                 />
               </div>
@@ -182,13 +182,13 @@ export default function HeroForm() {
                   onChange={handleChange}
                   value={email}
                   required
-                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Email"
                 />
               </div>
               <div className="relative">
-                <select name="budgets" value={budgets} onChange={handleChange} className="text-grey outline-0 pl-4 pr-4 py-2 border rounded-lg w-full font-majallab header-form-input">
-                  <option value="">Select Budget Range</option>
+                <select name="budgets" value={budgets} onChange={handleChange} className="text-grey outline-0 pl-4 pr-4 py-2 border text-md rounded-lg w-full header-form-input">
+                  <option value="" className="text-md">Select Budget Range</option>
                   {budgetOptions.map(option => (
                     <option key={option} value={option}>{option}</option>
                   ))}
@@ -196,7 +196,7 @@ export default function HeroForm() {
               </div>
               <div className="relative">
                 <textarea
-                  className="pl-4 pr-4 py-2 border rounded-lg w-full font-majallab text-xl"
+                  className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   rows={3}
                   onChange={handleChange}
                   value={message}

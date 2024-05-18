@@ -54,12 +54,12 @@ export default function Story() {
         <>
             <section className="story-sec py-20">
                 <div className="container mx-auto text-center m1-h">
-                    <h3 className="mb-8 text-white text-5xl md:text-7xl font-majallab">
+                    <h3 className="mb-4 text-white text-4xl md:text-5xl font-poppins mt-5">
                         Our Success Stories
                     </h3>
                     <p className="text-white">
                         Explore our Success Stories to see how Pine Book Publishing has
-                        empowered authors in their self-publishing journey and stands out
+                        empowered authors <br></br> in their self-publishing journey and stands out
                         among self-book publishers.
                     </p>
                 </div>

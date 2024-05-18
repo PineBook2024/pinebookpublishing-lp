@@ -45,7 +45,7 @@ export default function Bundles() {
             <section className="package py-14">
                 <div className="container mx-auto max-w-screen-xl">
                     <div className="grid items-center grid-cols-1 text-center mb-14 m1-h">
-                        <h3 className="text-5xl font-majallab md:text-7xl">
+                        <h3 className="text-5xl font-poppins md:text-7xl">
                             Publishing Packages
                         </h3>
                     </div>
@@ -55,7 +55,7 @@ export default function Bundles() {
                         <div className="gap-8 brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp1.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-majallab md:text-3xl">
+                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
                                     Standard
                                 </h4>
                             </div>
@@ -67,7 +67,7 @@ export default function Bundles() {
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp2.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-majallab md:text-3xl">
+                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
                                     Professional
                                 </h4>
                             </div>
@@ -79,7 +79,7 @@ export default function Bundles() {
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp3.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-majallab md:text-3xl">
+                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
                                     All-Inclusive
                                 </h4>
                             </div>
@@ -91,7 +91,7 @@ export default function Bundles() {
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp4.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-majallab md:text-3xl">
+                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
                                     Traditional
                                 </h4>
                             </div>
@@ -108,7 +108,7 @@ export default function Bundles() {
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
+                        <h2 className="font-poppins text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
                         {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">

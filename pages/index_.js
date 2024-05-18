@@ -211,7 +211,7 @@ export default function Home() {
       }
     }, [count, inView, to]);
     return (
-      <motion.p className="font-majallab text-black" ref={nodeRef}>
+      <motion.p className="font-poppins text-black" ref={nodeRef}>
         {rounded}
       </motion.p>
     );
@@ -250,7 +250,7 @@ export default function Home() {
           <div className="container grid grid-cols-1 width-container position-relative">
             <div className="container mx-auto relative">
               <div className="book-sell-text ">
-                <h3 className="font-majallab text-xl md:text-2xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+                <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
               </div>
               <div className="bnd-slider flex py-7 justify-center">
                 <Swiper
@@ -401,7 +401,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
             <AnimateFade type={"top"}>
               <div className="abt-txt m1-h p1">
-                <h3 className="font-majallab text-3xl md:text-7xl">
+                <h3 className="font-poppins text-3xl md:text-7xl">
                   About Us<span>Pine Book Publishing</span>
                 </h3>
                 <p>
@@ -612,7 +612,7 @@ export default function Home() {
         <div className="grid grid-cols-1 ">
           <div className="container mx-auto text-center">
             <div className="portfolio-h m1-h">
-              <h3 className="font-majallab text-3xl md:text-7xl">
+              <h3 className="font-poppins text-3xl md:text-7xl">
                 Unveiling Our Authors’ Creations:
                 <br />
                 <span>Book Showcase</span>
@@ -718,7 +718,7 @@ export default function Home() {
       <section className="package py-14 overflow-hidden">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 mb-14 items-center m1-h text-center">
-            <h3 className="font-majallab text-5xl md:text-7xl">
+            <h3 className="font-poppins text-5xl md:text-7xl">
               Publishing Packages
             </h3>
           </div>
@@ -729,7 +729,7 @@ export default function Home() {
               <div key={pkg.id} className="pack-wrap gap-8">
                 <div className="pack-box flex items-center">
                   <Image src={pkg.image} width={40} height={50} loading="lazy" alt="icon" />
-                  <h4 className="pl-2 font-majallab text-2xl md:text-3xl">
+                  <h4 className="pl-2 font-poppins text-2xl md:text-3xl">
                     {pkg.title}
                   </h4>
                 </div>
@@ -745,7 +745,7 @@ export default function Home() {
       <Chart />
       <section className="process pt-14">
         <div className="container mx-auto text-center m1-h ">
-          <h3 className="font-majallab text-5xl md:text-7xl">
+          <h3 className="font-poppins text-5xl md:text-7xl">
             Our Book Publishing Process
           </h3>
           <p>
@@ -771,7 +771,7 @@ export default function Home() {
                 <h2>
                   <Counter from={0} to={15} val={"+"} />
                 </h2>
-                <span className="font-majallab">
+                <span className="font-poppins">
                   Years of industry experience
                 </span>
               </div>
@@ -780,21 +780,21 @@ export default function Home() {
                 <h2>
                   <Counter from={0} to={500} val={"+"} />
                 </h2>
-                <span className="font-majallab">Published Books</span>
+                <span className="font-poppins">Published Books</span>
               </div>
 
               <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                 <h2>
                   <Counter from={0} to={100} val={"+"} />
                 </h2>
-                <span className="font-majallab">Ongoing Clients</span>
+                <span className="font-poppins">Ongoing Clients</span>
               </div>
 
               <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                 <h2>
                   <Counter from={0} to={99} val={"+"} />
                 </h2>
-                <span className="font-majallab">Client Satisfaction Rate</span>
+                <span className="font-poppins">Client Satisfaction Rate</span>
               </div>
             </div>
           </div>
@@ -823,7 +823,7 @@ export default function Home() {
               </div>
 
               <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                <h3 className="text-black leading-20 font-bold text-5xl md:text-7xl font-majallab text-start">
+                <h3 className="text-black leading-20 font-bold text-5xl md:text-7xl font-poppins text-start">
                   Connect Us Now!
                 </h3>
                 <p className="text-black leading-6  pb-5 text-base">
@@ -838,7 +838,7 @@ export default function Home() {
                     onChange={handleChange}
                     value={fullName}
                     required
-                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-poppins"
                     placeholder="Enter your Name"
                   />
                 </div>
@@ -850,7 +850,7 @@ export default function Home() {
                     onChange={handleChange}
                     value={phoneNumber}
                     required
-                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-poppins"
                     placeholder="Enter your Number"
                   />
                 </div>
@@ -862,7 +862,7 @@ export default function Home() {
                     onChange={handleChange}
                     value={email}
                     required
-                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-poppins"
                     placeholder="Enter your Email"
                   />
                 </div>
@@ -874,7 +874,7 @@ export default function Home() {
                     required
                     placeholder="Enter your Message"
                     name="message"
-                    className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-majallab"
+                    className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input font-poppins"
                     rows={3}
                   ></textarea>
                   <div

@@ -18,7 +18,7 @@ export default function Privacy() {
                 <p>
                     The categories of personal information we gather, how we use it, and who we might share it with are described in this privacy statement. It also explains your options for how your data will be used, the security measures in place to safeguard your information, how to fix informational errors, the confidentiality of the services, and the validity of the content.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     1. Information Gathering and Utilization
                 </h2>
                 <p>
@@ -39,7 +39,7 @@ export default function Privacy() {
                     <li>Get in touch with you to get your thoughts on our services.</li>
                     <li>Make the website your own by adding your interests.</li>
                 </ul>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     2. Your Information Control and Access Rights
                 </h2>
                 <p>
@@ -54,7 +54,7 @@ export default function Privacy() {
                 <p>
                     To exercise these rights, kindly get in touch with us at the phone number or email address listed on our website.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     3. Security
                 </h2>
                 <p>
@@ -69,13 +69,13 @@ export default function Privacy() {
                 <p>
                     3.4 Despite the precautions we take to safeguard your personal information, you should be aware that no method of transmission over the Internet or method of electronic storage is 100 percent secure. Your personal information's complete security is not something we can guarantee.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     4. Payment
                 </h2>
                 <p>
                     4.1 We may need to gather personal data about you in order to process your order, including your billing address, phone number, name, and email address. Only our third-party credit card provider handles the credit card data. At the appropriate time, we will give our customer any additional pertinent information.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     5. IP Address and Cookies
                 </h2>
                 <p>
@@ -90,25 +90,25 @@ export default function Privacy() {
                 <p>
                     5.4 Third parties do not have access to information about the types of browsers used, access times, URLs used to access our site, or URLs that visitors view while on it, unless it is combined with other information.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     6. Details about Our Products and Services
                 </h2>
                 <p>
                     6.1 We make every effort to provide the most accurate descriptions of the services and goods available on our website. Please email or call us right away if you believe the service you received from us differs from the descriptions on this website.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     7. Ownership and discretion
                 </h2>
                 <p>
                     7.1 Despite the fact that some services may need rewards for sales or recognition, our service is completely confidential. Under no circumstances will any communication or content that has been reviewed or created with the intention of collaborating be disclosed to any other party. Regarding the goods and services, we offer you, we make no reservations. Everything we write or edit is regarded as the client's exclusive property. If you come into contact with us, you will only be acknowledged as the material's owner or author.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     8. Originality
                 </h2>
                 <p>
                     8.1 For a client, we ghostwrite all of the original, plagiarism-free content that is not taken verbatim from any other source. To guarantee the material's originality, authenticity, and dependability, all information provided to a client that was drawn from or researched from any other source will be rephrased and properly cited.
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     9. Sharing with Third Parties
                 </h2>
                 <p>
@@ -123,7 +123,7 @@ export default function Privacy() {
                 <p>
                     9.4 "INFORMATION COLLECTED VIA SMS OPT-IN WILL NOT BE SOLD, RENTED OR SHARED"
                 </p>
-                <h2 className="font-majallab">
+                <h2 className="font-poppins">
                     10. Contact Us
                 </h2>
                 <p>

@@ -80,10 +80,10 @@ export default function BrandContact() {
                             </div>
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                                <h3 className="text-black leading-20 font-bold text-5xl md:text-6xl font-majallab text-start uppercase">
+                                <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-poppins text-start uppercase">
                                     We Are Here to Hear You!
                                 </h3>
-                                <p className="text-black leading-6  pb-5 text-base">
+                                <p className="text-black leading-6  pb-5 text-base pt-4">
                                     Got questions? Let's find the answers together - shoot us a message!
                                 </p>
 
@@ -94,7 +94,7 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={username}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
                                         placeholder="Enter your Name"
                                     />
                                     <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
@@ -107,7 +107,7 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={phoneNumber}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
                                         placeholder="Enter your Number"
                                     />
                                     <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
@@ -120,7 +120,7 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={email}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
+                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
                                         placeholder="Enter your Email"
                                     />
                                     <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-5 ml-4" />
@@ -133,7 +133,7 @@ export default function BrandContact() {
                                         required
                                         placeholder="Enter your Message"
                                         name="message"
-                                        className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-majallab shadow-xl"
+                                        className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
                                         rows={4}
                                     ></textarea>
                                     <FontAwesomeIcon icon={faPen} color="#000" className="absolute left-0 top-3 ml-4" width={14} />
@@ -148,7 +148,7 @@ export default function BrandContact() {
                                         Form submitted Successfully!
                                     </p>
                                 )}
-                                <button className="p-4 bg-green-500 uppercase text-white rounded font-poppins brand-submit-btn mb-10" type="submit">
+                                <button className="p-4 bg-green-500 uppercase text-white rounded brand-submit-btn mb-10" type="submit">
                                     Submit
                                 </button>
                             </form>

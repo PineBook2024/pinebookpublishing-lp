@@ -7,16 +7,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 // Font files can be colocated inside of `pages`
-const majallab = localFont({
-  src: './majallab-webfont.woff2',
-  variable: '--font-majallab',
-});
+// const majallab = localFont({
+//   src: './majallab-webfont.woff2',
+//   variable: '--font-majallab',
+// });
+
 const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
   weight: ['400', '500', '600'],
 });
+
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function App({ Component, pageProps }) {
 
 
   return (
-    <main className={`${poppins.variable, majallab.variable}`}>
+    <main className={`${poppins.variable}`}>
       <Component {...pageProps} />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
