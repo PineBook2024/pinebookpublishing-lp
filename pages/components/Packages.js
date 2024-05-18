@@ -35,7 +35,7 @@ export default function Packages({ isOpen, onClose, service }) {
                     <div className="container mx-auto">
                         <div className="text-center mb-6">
                             <h3 className="text-2xl text-black font-poppins uppercase">Publishing</h3>
-                            <h2 className="font-poppins text-4xl text-black uppercase">Bundles</h2>
+                            <h2 className="font-poppins text-4xl font-bold text-black uppercase">Bundles</h2>
                         </div>
 
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">

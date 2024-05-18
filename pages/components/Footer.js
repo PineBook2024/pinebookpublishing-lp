@@ -23,7 +23,7 @@ export default function Footer() {
 
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/2 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
+            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins">
               Contact Info
             </h2>
             <nav className="list-none mb-10">
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:w-1/2 md:w-1/2 w-full px-4 payment-card">
-            <h2 className="title-font font-medium text-white tracking-widest text-2xl mb-3 font-poppins font-bold	">
+            <h2 className="text-white tracking-widest text-2xl mb-3 font-poppins">
               Accepted Payment Methods
             </h2>
             <nav className="list-none mb-10">
