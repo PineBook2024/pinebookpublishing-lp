@@ -65,7 +65,7 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
-  
+
   // Object
   const packagesCard = [
     {
@@ -157,9 +157,9 @@ export default function Home() {
 
 
 
-  const [openFAQ, setOpenFAQ] = useState(null);  
+  const [openFAQ, setOpenFAQ] = useState(null);
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index); 
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const faqData = [
@@ -254,159 +254,159 @@ export default function Home() {
 
         <section className="brnd-slider bg-black overflow-hidden">
           {/* <AnimateFade type={"right"}> */}
-            <div className="container grid grid-cols-1 width-container position-relative">
-              <div className="container mx-auto position-relative">
-                <div className="book-sell-text ">
-                  <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
-                </div>
-                <div className="bnd-slider flex py-7 justify-center">
-                  <Swiper
-                    className="px-20 gap-x-32"
-                    spaceBetween={15}
-                    slidesPerView={6}
-                    loop={true}
-                    autoplay={{
-                      delay: 2500,
-                      disableOnInteraction: false,
-                    }}
-                    pagination={false}
-                    onBeforeInit={(swiper) => {
-                      swiperRef.current = swiper;
-                    }}
-                    modules={[Navigation, Autoplay, Pagination]}
-                    breakpoints={{
-                      "@0.00": {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
+          <div className="container grid grid-cols-1 width-container position-relative">
+            <div className="container mx-auto position-relative">
+              <div className="book-sell-text ">
+                <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+              </div>
+              <div className="bnd-slider flex py-7 justify-center">
+                <Swiper
+                  className="px-20 gap-x-32"
+                  spaceBetween={15}
+                  slidesPerView={6}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={false}
+                  onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
 
-                        navigation: {
-                          enabled: false,
-                        },
-                        pagination: true,
-                        navigation: true,
+                      navigation: {
+                        enabled: false,
                       },
-                      "@1.00": {
-                        slidesPerView: 6,
-                        spaceBetween: 15,
-                      },
-                    }}
-                  >
-                    <SwiperSlide className="mx-auto text-center">
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo1.png"}
-                            width={100}
-                            height={80}
-                            className="custom-logo-size"
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                      pagination: true,
+                      navigation: true,
+                    },
+                    "@1.00": {
+                      slidesPerView: 6,
+                      spaceBetween: 15,
+                    },
+                  }}
+                >
+                  <SwiperSlide className="mx-auto text-center">
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo1.png"}
+                          width={100}
+                          height={80}
+                          className="custom-logo-size"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo2.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo2.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo3.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo3.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo4.png"}
-                            width={100}
-                            height={120}
-                            loading="lazy"
-                            className="custom-logo-size"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo4.png"}
+                          width={100}
+                          height={120}
+                          loading="lazy"
+                          className="custom-logo-size"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo5.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo6.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo5.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo6.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo7.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo7.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <div className="flex justify-center">
-                        <a href="#">
-                          <Image
-                            alt="LOGO"
-                            src={"/images/logo8.png"}
-                            width={100}
-                            height={80}
-                            loading="lazy"
-                          />
-                        </a>
-                      </div>
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo8.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
+          </div>
           {/* </AnimateFade> */}
         </section>
 
@@ -415,27 +415,27 @@ export default function Home() {
           <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
               {/* <AnimateFade type={"top"}> */}
-                <div className="abt-txt m1-h p1">
-                  <h3 className="font-poppins text-3xl md:text-5xl">
-                    About Us<span>Pine Book Publishing</span>
-                  </h3>
-                  <p className="pt-3">
-                    Celebrate your tales with Pine Book Publishing, a book
-                    publishing company that specializes in bringing authors' visions
-                    to life through professional book publishing services. Our team
-                    of skilled professionals is committed to guide you through every
-                    step of the publishing process, ensuring your book captivates
-                    readers and makes an everlasting impact worldwide.
-                  </p>
-                </div>
+              <div className="abt-txt m1-h p1">
+                <h3 className="font-poppins text-3xl md:text-5xl">
+                  About Us<span>Pine Book Publishing</span>
+                </h3>
+                <p className="pt-3">
+                  Celebrate your tales with Pine Book Publishing, a book
+                  publishing company that specializes in bringing authors' visions
+                  to life through professional book publishing services. Our team
+                  of skilled professionals is committed to guide you through every
+                  step of the publishing process, ensuring your book captivates
+                  readers and makes an everlasting impact worldwide.
+                </p>
+              </div>
               {/* </AnimateFade> */}
               <div className="abt-pic text-center">
                 {/* <AnimateFade type={"left"}> */}
-                  <Image src={"/images/abt-pic.png"} width={500} height={570}
-                    layout="responsive"
-                    loading="lazy"
-                    alt="about img"
-                  />
+                <Image src={"/images/abt-pic.png"} width={500} height={570}
+                  layout="responsive"
+                  loading="lazy"
+                  alt="about img"
+                />
                 {/* </AnimateFade> */}
               </div>
             </div>
@@ -482,8 +482,7 @@ export default function Home() {
                         alt="book img one"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Explore worlds of knowledge and discovery.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -498,8 +497,7 @@ export default function Home() {
                         alt="book img two"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Journey through the lives and experiences of others.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -514,8 +512,7 @@ export default function Home() {
                         alt="book img three"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Get lost in imaginary worlds and captivating narratives.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -530,8 +527,7 @@ export default function Home() {
                         alt="book img four"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Discover the truth and reality behind fascinating topics.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -546,8 +542,7 @@ export default function Home() {
                         alt="book img five"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Dive into the personal stories and reflections of individuals.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -562,8 +557,7 @@ export default function Home() {
                         alt="book img six"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Learn about the lives and achievements of remarkable figures.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -578,8 +572,7 @@ export default function Home() {
                         alt="book img seven"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Embark on thrilling quests and adrenaline-pumping escapades.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -594,8 +587,7 @@ export default function Home() {
                         alt="book img eight"
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Indulge in tales of love, passion, and heartwarming connections.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -610,8 +602,7 @@ export default function Home() {
                         height={100}
                       ></Image>
                       <p className="p-4">
-                        Indulge in tales of love, passion, and heartwarming
-                        connections.
+                        Experience a collection of diverse stories and perspectives.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -721,7 +712,7 @@ export default function Home() {
                 {books.map((book, index) => (
                   <div key={index}>
                     {/* <AnimateFade type={book.type}> */}
-                      <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect" />
+                    <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect" />
                     {/* </AnimateFade> */}
                   </div>
                 ))}
@@ -827,14 +818,14 @@ export default function Home() {
               <div className="flex flex-col md:flex-row items-end">
                 <div className="basis-1/3 hidden md:block position-relative">
                   {/* <AnimateFade type={"right"} className="position-relative"> */}
-                    <Image
-                      className="text-center pt-10 contact-form-img"
-                      src={"/images/contact-user.webp"}
-                      width={550}
-                      height={250}
-                      layout="responsive"
-                      loading="lazy"
-                    ></Image>
+                  <Image
+                    className="text-center pt-10 contact-form-img"
+                    src={"/images/contact-user.webp"}
+                    width={550}
+                    height={250}
+                    layout="responsive"
+                    loading="lazy"
+                  ></Image>
                   {/* </AnimateFade> */}
                 </div>
 
