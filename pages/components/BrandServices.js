@@ -10,7 +10,7 @@ export default function BrandServices() {
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative">
                     <div className="text-center mb-6">
                         <h3 className="text-xl text-white font-poppins">Our Publishing</h3>
-                        <h2 className="font-poppins text-5xl md:text-5xl text-white">Services</h2>
+                        <h2 className="font-poppins text-5xl md:text-5xl text-white font-bold">Services</h2>
                         <p className="text-white pt-3">Discover the Difference: Our Publishing Services Puts Your Story Front and Center, Guiding It from Conception to Bookshelf Success.<br></br> Whether you want Amazon Publishing Services, lulu self publishing, or want to get your book published on any other retailer. We have covered all your needs. </p>
                     </div>
 

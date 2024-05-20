@@ -44,10 +44,10 @@ export default function Services() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-majallab text-3xl md:text-4xl uppercase">
+                        <h3 className="font-poppins text-3xl md:text-4xl uppercase">
                             Typesetting & Layout
                         </h3>
-                        <h2 className="font-majallab text-5xl md:text-6xl uppercase">adjustment</h2>
+                        <h2 className="font-poppins text-5xl md:text-6xl uppercase">adjustment</h2>
                         <p className="font-poppins text-xl text-justify	">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
                         </p>
@@ -70,7 +70,7 @@ export default function Services() {
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-majallab text-5xl text-black uppercase mb-3">Frequently Asked Questions</h2>
+                        <h2 className="font-poppins text-5xl text-black uppercase mb-3 font-bold">Frequently Asked Questions</h2>
                         {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">

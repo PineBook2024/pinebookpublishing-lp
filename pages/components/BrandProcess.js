@@ -10,7 +10,7 @@ export default function BrandProcess() {
                 <div className="max-w-screen-xl responsive-not-process">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">OUR PROCESS</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">OUR PROCESS</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>

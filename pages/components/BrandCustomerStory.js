@@ -64,7 +64,7 @@ export default function BrandCustomerStory() {
         <>
             <section className="story-sec py-20">
                 <div className="container mx-auto text-center m1-h">
-                    <h3 className="mb-8 text-white text-5xl md:text-7xl font-majallab">
+                    <h3 className="mb-8 text-white text-3xl md:text-4xl font-poppins font-bold">
                         Our Success Stories
                     </h3>
                     <p className="text-white">
@@ -83,11 +83,11 @@ export default function BrandCustomerStory() {
                             slidesPerView={4}
                             loop={true}
                             coverflowEffect={{
-                                rotate: 20, // Set to 0 to keep slides straight
+                                rotate: 20, 
                                 stretch: 0,
-                                depth: 100, // Increase depth for better 3D effect
-                                modifier: 1, // Adjust modifier for a more pronounced effect
-                                slideShadows: true, // Optionally set to false if shadows are no
+                                depth: 100, 
+                                modifier: 1, 
+                                slideShadows: true, 
                             }}
                             onBeforeInit={(swiper) => {
                                 swiperRef2.current = swiper;

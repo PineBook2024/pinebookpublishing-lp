@@ -122,6 +122,9 @@ section.brnd-slider.bg-black {
   text-transform: uppercase;
   display: block;
 }
+.portfolio{
+  background-color: #1a1d5a;
+}
 
 .portfolio-h h3,
 .portfolio-h h3 span {
@@ -520,10 +523,12 @@ video#background-video {
 footer .footer-line:before {
   content: '';
   background-color: #fff;
-  height: 402px;
+  height: 307px;
   width: 2px;
   position: absolute;
-  right: 68%;
+  right: -33px;
+  /* bottom: 102%; */
+  top: -18px;
 }
 
 .video-info {

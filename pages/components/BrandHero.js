@@ -114,7 +114,7 @@ export default function BrandHero() {
             <section class="brand-hero-section">
                 <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
-                        <h3 className="text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
+                        <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
                         <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
                             Looking to Publish <br></br> Your Own Book
                         </h1>

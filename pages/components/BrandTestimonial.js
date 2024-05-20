@@ -12,7 +12,7 @@ export default function BrandTestimonial() {
             <section className="brand-testimonials-section overflow-hidden">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-poppins text-4xl text-black">TESTIMONIALS</h2>
+                        <h2 className="font-poppins text-4xl text-black font-bold">TESTIMONIALS</h2>
                     </div>
                     <div className="flex justify-center gap-5 flex-col md:flex-row">
                         <div className="brand-testimonials-card relative aos-init aos-animate" data-aos="flip-left">

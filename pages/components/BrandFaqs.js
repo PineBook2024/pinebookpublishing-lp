@@ -26,21 +26,12 @@ export default function BrandFaqs() {
     };
 
     const faqData = [
-        { question: "How long does the Ebook publishing process typically take?", answer: "Whether you choose Amazon kindle publishing or want to get your book on any other online retailer. The publishing process for lulu self publishing may take a few months to a year. It depends on factors like manuscript complexity and the service package chosen. " },
+        { question: "How long does the book publishing process typically take?", answer: "Whether you choose Amazon kindle publishing or want to get your book on any other online retailer. The publishing process may take a few weeks to months. It depends on factors like manuscript complexity and the service package chosen. " },
         { question: "What genres of books do you specialize in publishing?", answer: "We specialize in publishing a wide range of genres, including fiction, non-fiction, memoirs, poetry, and more on a variety of platforms, such as kindle and lulu self publishing, etc. Our goal is to accommodate diverse author interests and reader preferences." },
         { question: "Do you offer editing and proofreading services as part of your publishing packages?", answer: "Yes, we offer comprehensive editing and proofreading services to ensure your manuscript meets professional standards before publication. These services are typically included in our publishing packages." },
         { question: "Can I choose my own cover design, or do you provide options?", answer: "You have the option to choose your own cover design from our selection of pre-designed templates or work with our team to create a custom cover that reflects your book's essence and resonates with your target audience." },
-        { question: "What distribution channels do you use to get my book into readers' hands?", answer: "We utilize various distribution channels, including online retailers like Amazon book publishing, lulu publishing, Barnes & Noble, and our own platform, to make your book available to a wide audience globally. We also offer options for print-on-demand and ebook distribution." },
+        { question: "What distribution channels do you use to get my book into readers' hands?", answer: "We utilize various distribution channels, including online retailers like Amazon, Kindle, Lulu, Barnes & Noble, Kobo and our own platform, to make your book available to a wide audience globally. We also offer options for print-on-demand and eBook distribution." },
         { question: "How much control do I have over pricing and royalties for my published book?", answer: "As an author, you retain control over pricing and royalties for your book. We provide guidance and support in setting competitive prices and offer transparent royalty structures to ensure you receive fair compensation for your work." }
-    ];
-
-    const badges = [
-        { src: "/images/bage2.png", width: 100, height: 100 },
-        { src: "/images/bage13.png", width: 100, height: 100 },
-        { src: "/images/bage3.png", width: 100, height: 100 },
-        { src: "/images/bage14.png", width: 100, height: 100 },
-        { src: "/images/bage4.png", width: 100, height: 100 },
-        { src: "/images/bage12.png", width: 100, height: 100 }
     ];
 
     return (
@@ -48,7 +39,7 @@ export default function BrandFaqs() {
             <section className="brand-testimonials-section overflow-hidden">
                 <div className="max-w-screen-xl mx-auto px-4 my-10 relative py-22">
                     <div className="text-center mb-6">
-                        <h2 className="font-poppins text-4xl text-black uppercase mb-3" >Frequently Asked Questions</h2>
+                        <h2 className="font-poppins text-4xl text-black uppercase mb-3 font-bold" >Frequently Asked Questions</h2>
                         {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
                     </div>
                     <div className="faq-que">

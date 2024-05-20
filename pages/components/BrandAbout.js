@@ -13,10 +13,10 @@ export default function BrandAbout(props) {
             <div className="container mx-auto max-w-screen-xl overflow-hidden">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-3xl md:text-5xl">
+                        <h4 className="font-poppins text-3xl md:text-5xl font-bold">
                            About Us
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-5xl uppercase">Pine Book Publishing</h2>
+                        </h4>
+                        <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">Pine Book Publishing</h2>
                         <p className="font-poppins text-xl pt-4">
                             {props.subdescone}
                         </p>

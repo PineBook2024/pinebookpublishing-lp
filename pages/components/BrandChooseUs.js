@@ -14,7 +14,7 @@ export default function BrandChooseUs() {
                             <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
                         </div>
                         <div className="basis-1/3 md:ml-20">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
                             <p className="text-white mt-2">Tired of trying out the same old book publishing companies? At Pine Book Publishing, your success is our priority, and we're committed to help you achieve your literary goals with confidence and ease, which other self publishing companies might not offer. With us, you get:  </p>
                             <div className="flex gap-10 mt-6">
                                 <ul>

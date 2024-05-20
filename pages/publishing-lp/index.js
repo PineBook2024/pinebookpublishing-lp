@@ -614,7 +614,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="portfolio overflow-hidden	 py-14 bg-[url('/images/port-banner.png')]">
+        <section className="portfolio overflow-hidden	 py-14">
           <div className="grid grid-cols-1 ">
             <div className="container mx-auto text-center">
               <div className="portfolio-h m1-h">
