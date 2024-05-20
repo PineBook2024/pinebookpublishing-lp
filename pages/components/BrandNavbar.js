@@ -65,6 +65,7 @@ export default function BrandNavbar() {
                         <ul className="md:flex items-center space-x-4">
                             <li className='mb-3 md:mb-0'><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/services" className="text-white hover:text-gray-300">Services</Link></li>
                             {/* <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
                                 <Link href={"/services"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
