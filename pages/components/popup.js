@@ -50,8 +50,8 @@ export default function popup({ isOpen, onClose, service }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await submitPopupContactForm(
-            mail,
             fulName,
+            mail,
             phoneNumber,
             service,
             budget,
