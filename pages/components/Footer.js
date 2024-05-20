@@ -60,7 +60,6 @@ export default function Footer() {
               </li>
             </nav>
           </div>
-
           <div className="lg:w-1/2 md:w-1/2 w-full px-4 payment-card">
             <h2 className="text-white tracking-widest text-2xl mb-3 font-poppins">
               Accepted Payment Methods
