@@ -134,8 +134,8 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await submitMainContactForm(
-      email,
       fullName,
+      email,
       phoneNumber,
       message
     );

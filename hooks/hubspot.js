@@ -47,7 +47,7 @@ const useHubspotForm = () => {
     }
   };
 
-  const submitContactForm = async (full_name, email, phoneNumber, budgets, message) => {
+  const submitContactForm = async (firstName, email, phone, budgets, message) => {
     try {
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId}`,
@@ -60,8 +60,8 @@ const useHubspotForm = () => {
             submittedAt: Date.now(),
             fields: [
               {
-                name: "full_name",
-                value: full_name,
+                name: "firstName",
+                value: firstName,
               },
               {
                 name: "email",
@@ -69,7 +69,7 @@ const useHubspotForm = () => {
               },
               {
                 name: "phone",
-                value: phoneNumber,
+                value: phone,
               },
               {
                 name: "budgets",

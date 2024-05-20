@@ -9,8 +9,8 @@ export default function HeroForm() {
   const router = useRouter();
   const { submitContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phone, setPhone] = useState("");
   const [budgets, setBudget] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
@@ -71,12 +71,14 @@ export default function HeroForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const setters = {
-      fullName: setFullName,
+      firstName: setFirstName,
       email: setEmail,
       message: setMessage,
       budgets: setBudget,
-      phoneNumber: setPhoneNumber,
+      phone: setPhone,
     };
+
+    console.log(value);
 
     const setter = setters[name];
     if (setter) {
@@ -87,9 +89,9 @@ export default function HeroForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await submitContactForm(
+      firstName,
       email,
-      fullName,
-      phoneNumber,
+      phone,
       budgets,
       message
     );
@@ -100,8 +102,8 @@ export default function HeroForm() {
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");
-        setFullName("");
-        setPhoneNumber("");
+        setFirstName("");
+        setPhone("");
         setBudget("");
         setMessage("");
       }, 3000);
@@ -156,9 +158,9 @@ export default function HeroForm() {
               <div className="relative">
                 <input
                   type="text"
-                  name="fullName"
+                  name="firstName"
                   onChange={handleChange}
-                  value={fullName}
+                  value={firstName}
                   required
                   className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Name"
@@ -168,8 +170,8 @@ export default function HeroForm() {
                 <input
                   type="text"
                   onChange={handleChange}
-                  value={phoneNumber}
-                  name="phoneNumber"
+                  value={phone}
+                  name="phone"
                   required
                   className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Phone"
@@ -177,7 +179,7 @@ export default function HeroForm() {
               </div>
               <div className="relative">
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   onChange={handleChange}
                   value={email}
