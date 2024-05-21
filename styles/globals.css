@@ -12,7 +12,8 @@
 body {
   font-family: 'Lucida Bright Regular', sans-serif;
 }
-p{
+
+p {
   font-size: 17px !important;
 }
 
@@ -122,7 +123,8 @@ section.brnd-slider.bg-black {
   text-transform: uppercase;
   display: block;
 }
-.portfolio{
+
+.portfolio {
   background-color: #1a1d5a;
 }
 
@@ -1077,12 +1079,14 @@ footer svg {
   .brand-testimonials-card {
     margin: 0 !important;
   }
-  .responsive-not-process{
+
+  .responsive-not-process {
     display: none;
   }
+
   .single-packages-footer h5 {
     font-size: 15px;
-}
+  }
 }
 
 
@@ -1798,25 +1802,125 @@ video#brandVideo {
   will-change: transform, opacity;
 }
 
-.brand-story-slider{
+.brand-story-slider {
   border: 20px solid #fff;
 }
 
-.brand-process-content{
+.brand-process-content {
   position: absolute;
   top: 29px;
   left: 165px;
 }
 
 .brand-process-content p,
-.brand-process-content-right p{
+.brand-process-content-right p {
   text-wrap: balance;
   font-size: 14px !important;
   line-height: 17px;
 }
 
-.brand-process-content-right{
+.brand-process-content-right {
   position: absolute;
   top: 29px;
   right: 163px;
+}
+
+.brand-bundle-packages-wrapper button {
+  border-radius: 15px;
+  text-align: center;
+}
+
+.brand-bundle-packages-wrapper .active {
+  background: linear-gradient(90deg, rgba(13, 15, 56, 1) 0%, rgba(27, 30, 93, 1) 100%);
+  width: 116%;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  transition: .3s ease-in-out;
+}
+
+.brand-bundle-packages-wrapper .in-active {
+  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  transition: .3s ease-in-out;
+}
+
+.brand-bundle-packages-content {
+  background: linear-gradient(264deg, rgba(13, 15, 56, 1) 0%, rgba(27, 30, 93, 1) 100%);
+  border-radius: 15px;
+  /* width: 58%; */
+}
+
+.brand-bundle-packages-content ul {
+  margin-left: 0px;
+  line-height: 33px;
+}
+
+.brand-bundle-packages-wrapper {
+  width: 66%;
+}
+
+.brand-bundle-packages-wrapper .brand-bundle-packages-tabs {
+  width: 54%;
+}
+
+.brand-bundle-packages-content .price {
+  font-size: 21px !important;
+}
+
+.slideContent {
+  position: relative;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 20px;
+  left: 21px;
+  background-color:rgb(255 255 255 / 58%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 0;
+  width: 89%;
+  text-align: left;
+}
+
+.imageOverlay p{
+  color: #573f3b;
+  font-weight: bold;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.brand-story-sec .bk-sil2.prev{
+  top: 50% !important;
+  left: -36px !important;
+  z-index: 99999;
+}
+
+.bk-sil2.next {
+  position: absolute;
+  top: 50% !important;
+  right: -34px !important;
+  z-index: 99999;
+}
+
+.brand-story-sec::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  /* top: 0; */
+  width: 100%;
+  height: 57%;
+  background-image: url(../public/brand-img/story-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 0;
 }

@@ -4,13 +4,12 @@ import Image from "next/image";
 import BrandFooter from "./components/BrandFooter";
 import BrandNavbar from "./components/BrandNavbar";
 import BrandBannerLogo from "./components/BrandBannerLogo";
-import BrandChooseUs from "./components/BrandChooseUs";
 import BrandContact from "./components/BrandContactForm";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
-import BrandProcess from "./components/BrandProcess";
-import Chart from "./components/Chart";
+import BrandCTA from "./components/BrandCTA";
+import BrandBundlePackages from "./components/BrandBundlePackages";
 
-export default function Bundles() {
+export default function Packages() {
     const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {
@@ -29,7 +28,7 @@ export default function Bundles() {
     return (
         <>
             <Head>
-                <title>Bundles the Company | Pine Book Publishing</title>
+                <title>Services the Company | Pine Book Publishing</title>
                 <meta
                     name="description"
                     content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
@@ -42,69 +41,15 @@ export default function Bundles() {
                 desc="Let Pine Book Publishing be the compass for your narrative journey, steering you toward literary success with every stroke of the pen."
             />
             <BrandBannerLogo />
-            <section className="package py-14">
-                <div className="container mx-auto max-w-screen-xl">
-                    <div className="grid items-center grid-cols-1 text-center mb-14 m1-h">
-                        <h3 className="text-5xl font-poppins md:text-7xl">
-                            Publishing Packages
-                        </h3>
-                    </div>
 
-                    {/* <div className="grid grid-cols-4 gap-4 items-top"> */}
-                    <div className="grid grid-cols-1 px-6 mt-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        <div className="gap-8 brand-bundle-pack-wrap">
-                            <div className="flex items-center pack-box">
-                                <Image src={"/images/pp1.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
-                                    Standard
-                                </h4>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            </p>
-                        </div>
+            <BrandBundlePackages />
 
-                        <div className="brand-bundle-pack-wrap">
-                            <div className="flex items-center pack-box">
-                                <Image src={"/images/pp2.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
-                                    Professional
-                                </h4>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            </p>
-                        </div>
-
-                        <div className="brand-bundle-pack-wrap">
-                            <div className="flex items-center pack-box">
-                                <Image src={"/images/pp3.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
-                                    All-Inclusive
-                                </h4>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            </p>
-                        </div>
-
-                        <div className="brand-bundle-pack-wrap">
-                            <div className="flex items-center pack-box">
-                                <Image src={"/images/pp4.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
-                                    Traditional
-                                </h4>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <Chart />
-            <BrandProcess />
-            <BrandChooseUs />
+            <BrandCTA
+              title="Hey, Wanna Talk?"
+              desc="Ready to Talk? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
+              btntext="Speak to our Consultant"
+            />
+            
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">

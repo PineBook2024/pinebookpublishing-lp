@@ -127,10 +127,10 @@ export default function BrandFooter() {
                                     Audio Book
                                 </li>
                                 <li className="mt-3">
-                                    Document Processing
+                                    Print on Demand
                                 </li>
                                 <li className="mt-3">
-                                    Print on Demand
+                                    Document Processing
                                 </li>
                             </nav>
                         </div>

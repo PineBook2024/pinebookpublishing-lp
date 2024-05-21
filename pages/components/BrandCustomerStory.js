@@ -7,16 +7,16 @@ import {
     Pagination,
     Navigation,
     EffectCoverflow,
-  } from "swiper/modules";
-  import "swiper/css";
-  import "swiper/css/navigation";
-  import "swiper/css/pagination";
-  import "swiper/css/autoplay";
-  import { A11y } from "swiper/modules";
-  import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
-  import { library } from "@fortawesome/fontawesome-svg-core";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import { Swiper, SwiperSlide } from "swiper/react";
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { A11y } from "swiper/modules";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function BrandCustomerStory() {
     const swiperRef2 = useRef(null);
@@ -62,55 +62,61 @@ export default function BrandCustomerStory() {
 
     return (
         <>
-            <section className="story-sec py-20">
+            <section className="story-sec brand-story-sec py-28 relative">
                 <div className="container mx-auto text-center m1-h">
                     <h3 className="mb-8 text-white text-3xl md:text-4xl font-poppins font-bold">
                         Our Success Stories
                     </h3>
                     <p className="text-white">
                         Explore our Success Stories to see how Pine Book Publishing has
-                        empowered authors in their self-publishing journey and stands out
+                        empowered authors in their <br></br> self-publishing journey and stands out
                         among self-book publishers.
                     </p>
                 </div>
 
                 <section className="testimonials pt-8">
                     <div className="container mx-auto relative w-[80%]">
-                        <Swiper
-                            effect={"coverflow"}
-                            grabCursor={true}
-                            centeredSlides={true}
-                            slidesPerView={4}
-                            loop={true}
-                            coverflowEffect={{
-                                rotate: 20, 
-                                stretch: 0,
-                                depth: 100, 
-                                modifier: 1, 
-                                slideShadows: true, 
-                            }}
-                            onBeforeInit={(swiper) => {
-                                swiperRef2.current = swiper;
-                            }}
-                            modules={[EffectCoverflow, Pagination]}
-                            className="mySwiper"
-                            breakpoints={{
-                                "@0.00": {
-                                    slidesPerView: 1,
-                                    spaceBetween: 10,
-                                    navigation: true,
-                                },
-                                "@1.00": {
-                                    slidesPerView: 3,
-                                    spaceBetween: 30,
-                                },
-                            }}
-                        >
+                    <Swiper
+                        effect={"coverflow"}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={4}
+                        loop={true}
+                        coverflowEffect={{
+                            rotate: -10,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: true,
+                        }}
+                        onBeforeInit={(swiper) => {
+                            swiperRef2.current = swiper;
+                        }}
+                        modules={[EffectCoverflow, Pagination, Navigation]}
+                        className="mySwiper"
+                        breakpoints={{
+                            "@0.00": {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                                navigation: true,
+                            },
+                            "@1.00": {
+                                slidesPerView: 3,
+                                spaceBetween: 10,
+                            },
+                        }}
+                    >
                             {videoSlides.map((video) => (
                                 <SwiperSlide key={video.id}>
-                                    <video loop controls muted loading="lazy" className="brand-story-slider">
-                                        <source src={video.src} type={video.type} />
-                                    </video>
+
+                                    {/* <div className="slideContent"> */}
+                                        <video loop controls muted loading="lazy" className="brand-story-slider">
+                                            <source src={video.src} type={video.type} />
+                                        </video>
+                                        {/* <div className="imageOverlay">
+                                            <p>Hello World</p>
+                                        </div>
+                                    </div> */}
                                 </SwiperSlide>
                             ))}
                         </Swiper>

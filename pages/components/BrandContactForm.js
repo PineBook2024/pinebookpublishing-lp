@@ -37,8 +37,8 @@ export default function BrandContact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await submitBrandMainContactForm(
-            email,
             username,
+            email,
             phoneNumber,
             message
         );
