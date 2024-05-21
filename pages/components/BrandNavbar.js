@@ -67,18 +67,20 @@ export default function BrandNavbar() {
                             <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/services" className="text-white hover:text-gray-300">Services</Link></li>
                             {/* <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
-                                <Link href={"/services"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
+                                <Link href={"/"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
                                 </Link>
                                 {serviceDropdown && (
                                     <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg">
                                         <ul className="py-1 text-start px-4 py-2">
-                                            <li className='mb-2'><Link href="#">Editing</Link></li>
+                                            <li className='mb-2'><Link href="#">Book Editing</Link></li>
                                             <li className='mb-2'><Link href="#">Proofreading</Link></li>
-                                            <li className='mb-2'><Link href="#">Formatting</Link></li>
-                                            <li className='mb-2'><Link href="#">Typesetting & Layout adjustment</Link></li>
-                                            <li className='mb-2'><Link href="#">Cover Design</Link></li>
-                                            <li className='mb-2'><Link href="#">Publishing</Link></li>
+                                            <li className='mb-2'><Link href="#">Book Formatting</Link></li>
+                                            <li className='mb-2'><Link href="#">Typesetting & Layout</Link></li>
+                                            <li className='mb-2'><Link href="#">Book Publishing</Link></li>
+                                            <li className='mb-2'><Link href="#">Audio Book</Link></li>
+                                            <li className='mb-2'><Link href="#">Print On Demand</Link></li>
+                                            <li className='mb-2'><Link href="#">Document Processing</Link></li>
                                         </ul>
                                     </div>
                                 )}

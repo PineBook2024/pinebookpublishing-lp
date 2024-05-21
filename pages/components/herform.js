@@ -11,7 +11,7 @@ export default function HeroForm() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
-  const [budgets, setBudget] = useState("");
+  // const [budgets, setBudget] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -74,7 +74,7 @@ export default function HeroForm() {
       firstName: setFirstName,
       email: setEmail,
       message: setMessage,
-      budgets: setBudget,
+      // budgets: setBudget,
       phone: setPhone,
     };
 
@@ -92,7 +92,7 @@ export default function HeroForm() {
       firstName,
       email,
       phone,
-      budgets,
+      // budgets,
       message
     );
     if (response) {
@@ -104,7 +104,7 @@ export default function HeroForm() {
         setEmail("");
         setFirstName("");
         setPhone("");
-        setBudget("");
+        // setBudget("");
         setMessage("");
       }, 3000);
     }
@@ -188,14 +188,14 @@ export default function HeroForm() {
                   placeholder="Enter your Email"
                 />
               </div>
-              <div className="relative">
+              {/* <div className="relative">
                 <select name="budgets" value={budgets} onChange={handleChange} className="text-grey outline-0 pl-4 pr-4 py-2 border text-md rounded-lg w-full header-form-input">
                   <option value="" className="text-md">Select Budget Range</option>
                   {budgetOptions.map(option => (
                     <option key={option} value={option}>{option}</option>
                   ))}
                 </select>
-              </div>
+              </div> */}
               <div className="relative">
                 <textarea
                   className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"

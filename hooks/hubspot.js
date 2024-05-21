@@ -47,7 +47,7 @@ const useHubspotForm = () => {
     }
   };
 
-  const submitContactForm = async (firstName, email, phone, budgets, message) => {
+  const submitContactForm = async (firstName, email, phone, message) => {
     try {
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId}`,
@@ -71,10 +71,10 @@ const useHubspotForm = () => {
                 name: "phone",
                 value: phone,
               },
-              {
-                name: "budgets",
-                value: budgets,
-              },
+              // {
+              //   name: "budgets",
+              //   value: budgets,
+              // },
               {
                 name: "message",
                 value: message,
@@ -92,7 +92,7 @@ const useHubspotForm = () => {
     }
   };
 
-  const submitPopupContactForm = async (ful_name, mail, phoneNumber, service, budget, message) => {
+  const submitPopupContactForm = async (ful_name, mail, phoneNumber, service, message) => {
     try {
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId2}`,
@@ -119,10 +119,6 @@ const useHubspotForm = () => {
               {
                 name: "service",
                 value: service,
-              },
-              {
-                name: "budget",
-                value: budget,
               },
               {
                 name: "message",
