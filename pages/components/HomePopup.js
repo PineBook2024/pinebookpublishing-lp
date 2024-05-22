@@ -96,8 +96,8 @@ export default function HomePopup() {
 
                                 <form className="popup-form-wrapper" onSubmit={handleSubmit}>
                                     <div className="text-center">
-                                        <h2 className="font-majallab text-white text-4xl mt-2">Avail Discount</h2>
-                                        <p className="font-majallab text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
+                                        <h2 className="font-poppins text-white text-4xl mt-2">Avail Discount</h2>
+                                        <p className="font-poppins text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
                                     <div className="py-5">
@@ -108,7 +108,7 @@ export default function HomePopup() {
                                                 onChange={handleChange}
                                                 value={fulName}
                                                 required
-                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab"
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins"
                                                 placeholder="Enter your Name"
                                             />
                                         </div>
@@ -120,7 +120,7 @@ export default function HomePopup() {
                                                 onChange={handleChange}
                                                 value={phoneNumber}
                                                 required
-                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab"
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins"
                                                 placeholder="Enter your Number"
                                             />
                                         </div>
@@ -133,12 +133,12 @@ export default function HomePopup() {
                                                 onChange={handleChange}
                                                 value={mail}
                                                 required
-                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab"
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins"
                                                 placeholder="Enter your Email"
                                             />
                                         </div>
                                         <div className="relative mb-3">
-                                            <select name="budget" value={budget} onChange={handleChange} className="text-grey-400 pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab">
+                                            <select name="budget" value={budget} onChange={handleChange} className="text-grey-400 pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins">
                                                 <option value="">Select Budget Range</option>
                                                 {budgetOptions.map(option => (
                                                     <option key={option} value={option}>{option}</option>
@@ -153,7 +153,7 @@ export default function HomePopup() {
                                                 required
                                                 placeholder="Enter your Message"
                                                 name="message"
-                                                className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-majallab"
+                                                className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins"
                                                 rows={2}
                                             ></textarea>
                                             <div

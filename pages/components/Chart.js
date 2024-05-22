@@ -31,7 +31,7 @@ export default function Chart() {
 
             <section className="table-sec overflow-x-scroll max-w-screen-xl mx-auto">
                 <div className="container mx-auto m1-h mt-10">
-                    <h3 className="mb-8 text-center font-majallab text-5xl md:text-7xl">
+                    <h3 className="mb-8 text-center font-poppins text-5xl md:text-7xl">
                         Comparison Chart
                     </h3>
                 </div>
@@ -58,19 +58,19 @@ export default function Chart() {
                                             className="mainpage-regular"
                                         ></th>
 
-                                        <th className="font-majallab">
+                                        <th className="font-poppins">
                                             Standard
                                         </th >
 
-                                        <th className="font-majallab">
+                                        <th className="font-poppins">
                                             Professional
                                         </th>
 
-                                        <th className="font-majallab">
+                                        <th className="font-poppins">
                                             Al-Inclusive
                                         </th>
 
-                                        <th className="font-majallab">
+                                        <th className="font-poppins">
                                             Traditional
                                         </th>
                                     </tr>
@@ -168,7 +168,7 @@ export default function Chart() {
                                         <td>4</td>
                                     </tr>
 
-                                    <tr className="font-majallab">
+                                    <tr className="font-poppins">
                                         <td className="border-bottom-left-radius-table"></td>
                                         <td className="md:w-auto w-24">
                                             <a
@@ -566,7 +566,7 @@ export default function Chart() {
                                         <td>3 MONTHS</td>
                                     </tr>
 
-                                    <tr className="font-majallab">
+                                    <tr className="font-poppins">
                                         <td></td>
                                         <td className="md:w-auto w-24">
                                             <a

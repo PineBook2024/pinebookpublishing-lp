@@ -30,6 +30,7 @@ const books = [
     { id: 18, title: 'Book Twenty', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-8.png' },
     { id: 19, title: 'Book TwentyOne', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-9.png' },
     { id: 20, title: 'Book TwentyTwo', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-10.jpg' },
+
 ];
 
 export default function BrandPortfolio() {

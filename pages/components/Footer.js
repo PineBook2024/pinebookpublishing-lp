@@ -86,7 +86,6 @@ export default function Footer() {
               Brand By
             </h2>
             <Image src={"/images/brand-writing-logo.png"} width={200} height={200}></Image> */}
-
           </div>
         </div>
       </div>

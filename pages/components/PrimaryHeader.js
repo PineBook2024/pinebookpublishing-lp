@@ -5,7 +5,7 @@ export default function PrimaryHeader(props) {
                 <div class="container">
                     <div class="row py-5">
                         <div class="col-12">
-                            <h3 class="fs-0 text-gradient ps-10 md:ps-64 font-majallab">
+                            <h3 class="fs-0 text-gradient ps-10 md:ps-64 font-poppins">
                                 {props.title}</h3>
                         </div>
                     </div>

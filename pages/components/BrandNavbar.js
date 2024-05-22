@@ -65,26 +65,26 @@ export default function BrandNavbar() {
                         <ul className="md:flex items-center space-x-4">
                             <li className='mb-3 md:mb-0'><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
-                            <li className='mb-3 md:mb-0'><Link href="/services" className="text-white hover:text-gray-300">Services</Link></li>
-                            {/* <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
+                            {/* <li className='mb-3 md:mb-0'><Link href="/services" className="text-white hover:text-gray-300">Services</Link></li> */}
+                            <li onMouseEnter={() => setServiceDropdown(true)} onMouseLeave={() => setServiceDropdown(false)}>
                                 <Link href={"/"} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
                                 </Link>
                                 {serviceDropdown && (
-                                    <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg">
+                                    <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg brand-custom-dropdown-menu">
                                         <ul className="py-1 text-start px-4 py-2">
-                                            <li className='mb-2'><Link href="#">Book Editing</Link></li>
-                                            <li className='mb-2'><Link href="#">Proofreading</Link></li>
-                                            <li className='mb-2'><Link href="#">Book Formatting</Link></li>
-                                            <li className='mb-2'><Link href="#">Typesetting & Layout</Link></li>
-                                            <li className='mb-2'><Link href="#">Book Publishing</Link></li>
-                                            <li className='mb-2'><Link href="#">Audio Book</Link></li>
-                                            <li className='mb-2'><Link href="#">Print On Demand</Link></li>
-                                            <li className='mb-2'><Link href="#">Document Processing</Link></li>
+                                            <li className='mb-2'><Link href="/book-editing">Book Editing</Link></li>
+                                            <li className='mb-2'><Link href="/proofreading">Proofreading</Link></li>
+                                            <li className='mb-2'><Link href="/book-formatting">Book Formatting</Link></li>
+                                            <li className='mb-2'><Link href="/typesetting-layout-adjustment">Typesetting & Layout</Link></li>
+                                            <li className='mb-2'><Link href="/book-publishing">Book Publishing</Link></li>
+                                            <li className='mb-2'><Link href="/audio-book">Audio Book</Link></li>
+                                            <li className='mb-2'><Link href="/print-on-demand">Print On Demand</Link></li>
+                                            <li className='mb-2'><Link href="/document-processing">Document Processing</Link></li>
                                         </ul>
                                     </div>
                                 )}
-                            </li> */}
+                            </li>
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
                             {/* <li className='mb-3 md:mb-0'><Link href="/bundles" className="text-white hover:text-gray-300">Bundles</Link></li> */}
                             {/* <li><Link href="/" className="text-white hover:text-gray-300">Pricing</Link></li> */}
