@@ -241,7 +241,7 @@ export default function Lp() {
                         <Link className="text-white flex" href={'tel:8668417469'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(866)-841-7469</span></Link>
 
                         <button className="items-center md:py-2 py-4 px-3 get-started">
-                            <Link className="font-poppins" href={'javascript:;'} onClick={() => setIsOpen(true)}>Talk to an Expert</Link>
+                            <Link className="font-poppins" href={'javascript:;'} onClick={handleOpenChat}>Talk to an Expert</Link>
                         </button>
                     </div>
                 </div>
