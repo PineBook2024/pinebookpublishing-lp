@@ -40,7 +40,7 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou')
+            router.push('/thank-you-page')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");

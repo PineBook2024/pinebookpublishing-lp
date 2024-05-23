@@ -97,7 +97,7 @@ export default function Lp() {
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou')
+            router.push('/thank-you-page')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
