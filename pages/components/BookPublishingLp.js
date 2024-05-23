@@ -66,7 +66,7 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
                                 </button>
                                 <form onSubmit={handleSubmit}>
                                     <div className="text-start">
-                                        <h2 className="font-poppins text-black text-xl mt-2 font-bold coupon-text">ACTIVATE YOUR GHOSTWRITING <br></br> COUPON TO AVAIL 50% DISCOUNT!</h2>
+                                        <h2 className="font-poppins text-black text-xl mt-2 font-bold coupon-text">ACTIVATE YOUR PINE BOOK PUBLISHING <br></br> COUPON TO AVAIL 50% DISCOUNT!</h2>
                                         <h3 className="font-poppins mt-2 text-2xl coupon-text-2 font-bold">LAST 9 COUPONS LEFT</h3>
                                     </div>
 
