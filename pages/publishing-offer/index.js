@@ -97,6 +97,7 @@ export default function Lp() {
         );
         if (response) {
             setShowSuccess(true);
+            router.push('/thankyou')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
@@ -156,16 +157,69 @@ export default function Lp() {
         },
     ];
 
+    // Object
+    const aboutLogos = [
+        {
+            href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+            src: "/images/s1.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+            src: "/images/s2.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://www.trustpilot.com/review/pinebookwriting.com",
+            src: "/images/s3.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+            src: "/images/s4.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        },
+        {
+            href: "https://clutch.co/profile/pine-book-writing",
+            src: "/images/s6.png",
+            alt: "LOGO",
+            width: 130,
+            height: 60
+        }
+    ];
+
 
     return (
         <>
             <Head>
-                <title>Our Shelf-Worthy Portfolio | Pine Book Publishing</title>
+                <title>Book Publishing Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Dive into Pine Book Publishing's showcase of literary artistry. We take pride in each book that goes through the process of meticulous crafting, editing, and publishing."
+                    content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
                 />
+                <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
                 <link rel="shortcut icon" href="/images/fav.png" />
+
+                {/* Google tag Manager Script */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-16471224604');
+              `,
+                    }}
+                />
             </Head>
             <BookPublishingLp isOpen={isOpen} setIsOpen={setIsOpen} />
             <header className="py-2 new-lp-header">
@@ -198,7 +252,7 @@ export default function Lp() {
                         <div className="mb-4">
                             <CountDown initialHours={0} initialMinutes={34} initialSeconds={6} />
                             <h1 className="font-poppins text-4xl md:text-5xl font-bold">
-                            PUBLISH YOUR BOOK AND GET NOTICED!
+                                PUBLISH YOUR BOOK AND GET NOTICED!
                             </h1>
                             <h2 className="font-poppins text-xl md:text-2xl font-bold mt-3">Hire Experts from Pine Book Publishing at 50% Discount.</h2>
                             <ul className="banner-features flex flex-col lg:flex-row mt-8 gap-6 justify-center">
@@ -318,6 +372,19 @@ export default function Lp() {
                         <li><i class="fa fa-check" aria-hidden="true"></i> Anthology</li>
                         <li class="last"><i class="fa fa-check" aria-hidden="true"></i> Romance</li>
                     </ul>
+
+                    <div className="flex justify-center items-center mt-8 gap-2 md:gap-x-8 logos">
+                        {aboutLogos.map((logo, index) => (
+                            <Link key={index} href="#">
+                                <Image
+                                    alt={logo.alt}
+                                    src={logo.src}
+                                    width={logo.width}
+                                    height={logo.height}
+                                />
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 

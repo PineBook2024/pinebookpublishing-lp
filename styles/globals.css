@@ -2340,6 +2340,13 @@ video#brandVideo {
   background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgb(7 84 72) 100%) !important;
 }
 
-.new-lp-footer-logo  img{
+.new-lp-footer-logo img {
   width: 121px !important;
+}
+
+
+.new-lp-about-book .logos {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 47px;
 }
