@@ -375,7 +375,7 @@ export default function Lp() {
 
                     <div className="flex justify-center items-center mt-8 gap-2 md:gap-x-8 logos">
                         {aboutLogos.map((logo, index) => (
-                            <Link key={index} href="#">
+                            <Link key={index} href={logo.href} target="_blank">
                                 <Image
                                     alt={logo.alt}
                                     src={logo.src}
