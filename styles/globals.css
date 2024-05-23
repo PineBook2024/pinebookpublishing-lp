@@ -657,14 +657,16 @@ footer svg {
   overflow: hidden;
 }
 
-.book-zoom-effect {
+.book-zoom-effect,
+.new-lp-about-book .logos img {
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .4s ease-in-out;
   cursor: pointer;
 }
 
-.book-zoom-effect:hover {
+.book-zoom-effect:hover,
+.new-lp-about-book .logos img:hover  {
   -webkit-transform: scale(1.3);
   transform: scale(1.2);
   transition: .4s ease-in-out;
