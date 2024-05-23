@@ -342,11 +342,11 @@ export default function Lp() {
                     <h6>Affordable Prices</h6>
                 </div>
                 <div className="basis-1/2 box box-2 flex items-center justify-center gap-4">
-                    <Image alt="LOGO" src={'/images/dollar.png'} width={40} height={80} loading="lazy" />
+                    <Image alt="LOGO" src={'/images/count.png'} width={40} height={80} loading="lazy" />
                     <h6>Quickest Turnaround Time </h6>
                 </div>
                 <div className="basis-1/2 box box-3 flex items-center justify-center gap-4">
-                    <Image alt="LOGO" src={'/images/dollar.png'} width={40} height={80} loading="lazy" />
+                    <Image alt="LOGO" src={'/images/phone.png'} width={40} height={80} loading="lazy" />
                     <h6 className="">24/7 Professional Support</h6>
                 </div>
             </section>
