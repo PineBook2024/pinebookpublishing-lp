@@ -109,28 +109,44 @@ export default function BrandFooter() {
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
-                                    Book Editing
+                                    <Link href="/book-editing">
+                                        Book Editing
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Proofreading
+                                    <Link href="/proofreading">
+                                        Proofreading
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Book Formatting
+                                    <Link href="/book-formatting">
+                                        Book Formatting
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Typesetting & Layout
+                                    <Link href="/typesetting-layout-adjustment">
+                                        Typesetting & Layout
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Book Publishing
+                                    <Link href="/book-publishing">
+                                        Book Publishing
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Audio Book
+                                    <Link href="/audio-book">
+                                        Audio Book
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Print on Demand
+                                    <Link href="/print-on-demand">
+                                        Print on Demand
+                                    </Link>
                                 </li>
                                 <li className="mt-3">
-                                    Document Processing
+                                    <Link href="/document-processing">
+                                        Document Processing
+                                    </Link>
                                 </li>
                             </nav>
                         </div>
@@ -182,7 +198,7 @@ export default function BrandFooter() {
                         justifyContent: 'center',
                         fontSize: '16px',
                         boxShadow: '0 0px 5px #191b42',
-                        border: '1px solid #288e7f'
+                        border: '1px solid #288e7f',
                     }}>
                         <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
                     </button>

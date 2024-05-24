@@ -8,7 +8,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 
-export default function TypeSetting() {
+export default function PrintDemand() {
     const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {

@@ -112,7 +112,7 @@ section.brnd-slider.bg-black {
   color: #000;
   /* font-size: 70px; */
   /* line-height: 1; */
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 .m1-h h3 span {
@@ -169,7 +169,7 @@ section.brnd-slider.bg-black {
   font-weight: 400;
   color: #fff;
   padding: 14px 2px;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 section.process {
@@ -1559,6 +1559,10 @@ footer svg {
   font-weight: bold;
 }
 
+.brand-testimonials-card p{
+  font-size: 16px !important;
+}
+
 .brand-process {
   background-color: #E6DED8;
 }
@@ -1950,14 +1954,25 @@ video#brandVideo {
 }
 
 .brand-custom-dropdown-menu {
-  width: 100%;
+  width: 236px;
   left: 0;
   right: 0;
   top: 31px;
 }
 
+.brand-custom-dropdown-menu ul li a:hover{
+  padding-left: 8px;
+  transition: .3s ease-in-out;
+  color: #258c7d;
+  font-weight: bold;
+}
+
+.brand-custom-dropdown-menu ul li a{
+  transition: .3s ease-in-out;
+}
+
 .new-lp-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url(../public/images/new-lp-banner.jpg) no-repeat left top #081036;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url(../public/images/new-lp-banner.webp) no-repeat left top #081036;
   background-size: cover;
   text-align: center;
   padding: 190px 0 70px;
@@ -2222,7 +2237,8 @@ video#brandVideo {
   background: #2b2a2a;
 }
 
-.new-lp-copyright-sec .powered-by-text {
+.new-lp-copyright-sec .powered-by-text,
+.new-lp-banner .powered-by-text {
   animation: 4s linear infinite key-third;
   -webkit-animation: 4s ease-in-out infinite key-third;
   background-color: transparent !important;
@@ -2351,4 +2367,34 @@ video#brandVideo {
   background-color: #333;
   padding: 20px;
   border-radius: 47px;
+}
+
+
+.responsive-back-to-top{
+  animation: waveBtn 2s infinite;
+}
+
+@keyframes waveBtn {
+  0% {
+    box-shadow: 0 0 0 0 rgb(0, 167, 157)
+  }
+
+  50% {
+    box-shadow: 0 0 0 40px transparent
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 transparent
+  }
+}
+
+
+.time-wrapper{
+  color: #fff;
+  font-size: 12px;
+}
+
+.time-wrapper .time{
+  font-size: 23px;
+  font-weight: bold;
 }

@@ -1,89 +1,108 @@
 import { useEffect, useState } from 'react';
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-export default function CountDown({ initialHours = 0, initialMinutes = 0, initialSeconds = 0 }) {
-  const [time, setTime] = useState({
-    hours: initialHours,
-    minutes: initialMinutes,
-    seconds: initialSeconds,
-  });
+const minuteSeconds = 60;
+const hourSeconds = 3600;
+const daySeconds = 86400;
+
+const timerProps = {
+  isPlaying: true,
+  size: 100,
+  strokeWidth: 14
+};
+
+const renderTime = (dimension, time) => {
+  return (
+    <div className="time-wrapper">
+      <div className="time">{time}</div>
+      <div>{dimension}</div>
+    </div>
+  );
+};
+
+const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
+const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
+const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
+const getTimeDays = (time) => (time / daySeconds) | 0;
+
+const totalDuration = 6 * hourSeconds + 35 * minuteSeconds; // 3 hours, 35 minutes
+
+export default function CountDown() {
+  const [remainingTime, setRemainingTime] = useState(totalDuration);
 
   useEffect(() => {
-    const timerId = setInterval(() => {
-      if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
-        clearInterval(timerId);
-      } else if (time.minutes === 0 && time.seconds === 0) {
-        setTime({
-          hours: time.hours - 1,
-          minutes: 59,
-          seconds: 59,
-        });
-      } else if (time.seconds === 0) {
-        setTime({
-          hours: time.hours,
-          minutes: time.minutes - 1,
-          seconds: 59,
-        });
-      } else {
-        setTime({
-          hours: time.hours,
-          minutes: time.minutes,
-          seconds: time.seconds - 1,
-        });
-      }
+    const storedStartTime = localStorage.getItem('countdownStartTime');
+    let startTime;
+
+    if (storedStartTime) {
+      startTime = parseFloat(storedStartTime);
+    } else {
+      startTime = Date.now() / 1000;
+      localStorage.setItem('countdownStartTime', startTime);
+    }
+
+    const calculateRemainingTime = () => {
+      const currentTime = Date.now() / 1000;
+      const elapsedTime = currentTime - startTime;
+      return Math.max(totalDuration - elapsedTime, 0);
+    };
+
+    setRemainingTime(calculateRemainingTime());
+
+    const interval = setInterval(() => {
+      setRemainingTime(calculateRemainingTime());
     }, 1000);
 
-    return () => clearInterval(timerId);
-  }, [time]);
-
-  const getStrokeDashoffset = (value, max) => {
-    const circumference = 2 * Math.PI * 45;
-    return circumference - (value / max) * circumference;
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="new-lp-counter-container mb-8">
-      <div className="circleContainer">
-        <svg className="svg">
-          <circle className="circleBackground" cx="50" cy="50" r="45" />
-          <circle
-            className="circleForeground hours"
-            cx="50"
-            cy="50"
-            r="45"
-            style={{ strokeDashoffset: getStrokeDashoffset(time.hours, 24) }}
-          />
-        </svg>
-        <div className="timeLabel">Hours</div>
-        <div className="timeValue">{time.hours}</div>
-      </div>
-      <div className="circleContainer">
-        <svg className="svg">
-          <circle className="circleBackground" cx="50" cy="50" r="45" />
-          <circle
-            className="circleForeground minutes"
-            cx="50"
-            cy="50"
-            r="45"
-            style={{ strokeDashoffset: getStrokeDashoffset(time.minutes, 60) }}
-          />
-        </svg>
-        <div className="timeLabel">Minutes</div>
-        <div className="timeValue">{time.minutes}</div>
-      </div>
-      <div className="circleContainer">
-        <svg className="svg">
-          <circle className="circleBackground" cx="50" cy="50" r="45" />
-          <circle
-            className="circleForeground seconds"
-            cx="50"
-            cy="50"
-            r="45"
-            style={{ strokeDashoffset: getStrokeDashoffset(time.seconds, 60) }}
-          />
-        </svg>
-        <div className="timeLabel">Seconds</div>
-        <div className="timeValue">{time.seconds}</div>
-      </div>
+    <div className="flex justify-center gap-5 mb-10 flex-col lg:flex-row items-center">
+      <CountdownCircleTimer
+        {...timerProps}
+        colors="#99ccff"
+        duration={daySeconds}
+        initialRemainingTime={remainingTime % daySeconds}
+        onComplete={(totalElapsedTime) => ({
+          shouldRepeat: remainingTime - totalElapsedTime > hourSeconds
+        })}
+      >
+        {({ elapsedTime, color }) => (
+          <span style={{ color }}>
+            {renderTime("hours", getTimeHours(daySeconds - elapsedTime))}
+          </span>
+        )}
+      </CountdownCircleTimer>
+      <CountdownCircleTimer
+        {...timerProps}
+        colors="#bbffbb"
+        duration={hourSeconds}
+        initialRemainingTime={remainingTime % hourSeconds}
+        onComplete={(totalElapsedTime) => ({
+          shouldRepeat: remainingTime - totalElapsedTime > minuteSeconds
+        })}
+      >
+        {({ elapsedTime, color }) => (
+          <span style={{ color }}>
+            {renderTime("minutes", getTimeMinutes(hourSeconds - elapsedTime))}
+          </span>
+        )}
+      </CountdownCircleTimer>
+      <CountdownCircleTimer
+        {...timerProps}
+        colors="#ff9999"
+        duration={minuteSeconds}
+        initialRemainingTime={remainingTime % minuteSeconds}
+        onComplete={(totalElapsedTime) => ({
+          shouldRepeat: remainingTime - totalElapsedTime > 0
+        })}
+      >
+        {({ elapsedTime, color }) => (
+          <span style={{ color }}>
+            {renderTime("seconds", getTimeSeconds(elapsedTime))}
+          </span>
+        )}
+      </CountdownCircleTimer>
     </div>
   );
 }

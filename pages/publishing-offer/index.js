@@ -23,6 +23,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from 'next/navigation';
 import BookPublishingLp from "../components/BookPublishingLp";
 import Packages from "../components/Packages";
+import PublishingOfferPackages from "../components/PublishingOfferPackages";
 
 
 const GLightbox = dynamic(
@@ -31,30 +32,30 @@ const GLightbox = dynamic(
 );
 const books = [
     // { id: 1, title: 'Book One', category: 'Fiction', imageUrl: '/brand-img/fiction-1.png' },
-    { id: 1, title: 'Book Two', category: 'Fiction', imageUrl: '/brand-img/fiction-2.png' },
-    { id: 2, title: 'Book Three', category: 'Fiction', imageUrl: '/brand-img/fiction-3.png' },
-    { id: 3, title: 'Book Four', category: 'Fiction', imageUrl: '/brand-img/fiction-4.png' },
-    { id: 4, title: 'Book Five', category: 'Fiction', imageUrl: '/brand-img/fiction-5.png' },
-    { id: 5, title: 'Book Six', category: 'Fiction', imageUrl: '/brand-img/fiction-6.png' },
-    { id: 6, title: 'Book Seven', category: 'Fiction', imageUrl: '/brand-img/fiction-7.png' },
-    { id: 7, title: 'Book Eight', category: 'Fiction', imageUrl: '/brand-img/fiction-8.png' },
-    { id: 8, title: 'Book Nine', category: 'Fiction', imageUrl: '/brand-img/fiction-9.png' },
-    { id: 9, title: 'Book Ten', category: 'Fiction', imageUrl: '/brand-img/fiction-10.png' },
-    { id: 10, title: 'Book Eleven', category: 'Fiction', imageUrl: '/brand-img/fiction-11.jpg' },
-    { id: 11, title: 'Book Thirdteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-1.png' },
-    { id: 12, title: 'Book Fourteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-2.png' },
-    { id: 13, title: 'Book Fifteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-3.png' },
-    { id: 14, title: 'Book Sixteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-4.png' },
-    { id: 15, title: 'Book Seventeen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-5.png' },
-    { id: 16, title: 'Book Eighteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-6.png' },
-    { id: 17, title: 'Book Nineteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-7.png' },
-    { id: 18, title: 'Book Twenty', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-8.png' },
-    { id: 19, title: 'Book TwentyOne', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-9.png' },
-    { id: 20, title: 'Book TwentyTwo', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-10.jpg' },
-    { id: 21, title: 'Book TwentyThree', category: 'Fiction', imageUrl: '/brand-img/fiction-12.png' },
-    { id: 22, title: 'Book TwentyFour', category: 'Fiction', imageUrl: '/brand-img/fiction-13.png' },
-    { id: 23, title: 'Book TwentyFive', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-11.png' },
-    { id: 24, title: 'Book TwentySix', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-12.png' },
+    { id: 1, title: 'Book Two', category: 'Fiction', imageUrl: '/brand-img/fiction-2.webp' },
+    { id: 2, title: 'Book Three', category: 'Fiction', imageUrl: '/brand-img/fiction-3.webp' },
+    { id: 3, title: 'Book Four', category: 'Fiction', imageUrl: '/brand-img/fiction-4.webp' },
+    { id: 4, title: 'Book Five', category: 'Fiction', imageUrl: '/brand-img/fiction-5.webp' },
+    { id: 5, title: 'Book Six', category: 'Fiction', imageUrl: '/brand-img/fiction-6.webp' },
+    { id: 6, title: 'Book Seven', category: 'Fiction', imageUrl: '/brand-img/fiction-7.webp' },
+    { id: 7, title: 'Book Eight', category: 'Fiction', imageUrl: '/brand-img/fiction-8.webp' },
+    { id: 8, title: 'Book Nine', category: 'Fiction', imageUrl: '/brand-img/fiction-9.webp' },
+    { id: 9, title: 'Book Ten', category: 'Fiction', imageUrl: '/brand-img/fiction-10.webp' },
+    { id: 10, title: 'Book Eleven', category: 'Fiction', imageUrl: '/brand-img/fiction-11.webp' },
+    { id: 11, title: 'Book Thirdteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-1.webp' },
+    { id: 12, title: 'Book Fourteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-2.webp' },
+    { id: 13, title: 'Book Fifteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-3.webp' },
+    { id: 14, title: 'Book Sixteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-4.webp' },
+    { id: 15, title: 'Book Seventeen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-5.webp' },
+    { id: 16, title: 'Book Eighteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-6.webp' },
+    { id: 17, title: 'Book Nineteen', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-7.webp' },
+    { id: 18, title: 'Book Twenty', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-8.webp' },
+    { id: 19, title: 'Book TwentyOne', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-9.webp' },
+    { id: 20, title: 'Book TwentyTwo', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-10.webp' },
+    { id: 21, title: 'Book TwentyThree', category: 'Fiction', imageUrl: '/brand-img/fiction-12.webp' },
+    { id: 22, title: 'Book TwentyFour', category: 'Fiction', imageUrl: '/brand-img/fiction-13.webp' },
+    { id: 23, title: 'Book TwentyFive', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-11.webp' },
+    { id: 24, title: 'Book TwentySix', category: 'Non-Fiction', imageUrl: '/brand-img/non-fiction-12.webp' },
 ];
 
 export default function Lp() {
@@ -67,6 +68,9 @@ export default function Lp() {
     const [phone, setPhone] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 2); 
 
     const handleOpenChat = () => {
         window.zE && window.zE('webWidget', 'open');
@@ -226,7 +230,7 @@ export default function Lp() {
                 <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat max-w-screen-xl mx-auto">
                     <div className="head-logo">
                         <Link className="text-center" href="/publishing-lp">
-                            <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
+                            <Image alt="LOGO" src={'/brand-img/logo.webp'} width={200} height={80} loading="lazy" />
                         </Link>
                     </div>
 
@@ -250,11 +254,11 @@ export default function Lp() {
                 <div className="max-w-screen-xl mx-auto pt-20">
                     <div>
                         <div className="mb-4">
-                            <CountDown initialHours={0} initialMinutes={34} initialSeconds={6} />
+                            <CountDown />
                             <h1 className="font-poppins text-4xl md:text-5xl font-bold">
                                 PUBLISH YOUR BOOK AND GET NOTICED!
                             </h1>
-                            <h2 className="font-poppins text-xl md:text-2xl font-bold mt-3">Hire Experts from Pine Book Publishing at 50% Discount.</h2>
+                            <h2 className="font-poppins text-xl md:text-2xl font-bold mt-3">Hire Experts from Pine Book Publishing at <span className="powered-by-text">50% Discount.</span></h2>
                             <ul className="banner-features flex flex-col lg:flex-row mt-8 gap-6 justify-center">
                                 <li className="first"><i className="fa fa-check" aria-hidden="true"></i>93% Client Retention Rate</li>
                                 <li><i className="fa fa-check" aria-hidden="true"></i>2.5K+ books published</li>
@@ -263,8 +267,8 @@ export default function Lp() {
                             </ul>
                         </div>
                         <div className="flex gap-5 justify-center mt-5">
-                            <Link href="#" className="new-lp-banner-btn font-poppins" onClick={() => setIsOpen(true)}>ACTIVATE YOUR COUPON</Link>
-                            <Link href="#" className="new-lp-banner-btn new-lp-banner-btn-chat font-poppins" onClick={handleOpenChat}>CHAT NOW TO GET 50% OFF</Link>
+                            <Link href={'javascript:;'} className="new-lp-banner-btn font-poppins" onClick={() => setIsOpen(true)}>ACTIVATE YOUR COUPON</Link>
+                            <Link href={'javascript:;'} className="new-lp-banner-btn new-lp-banner-btn-chat font-poppins" onClick={handleOpenChat}>CHAT NOW TO GET 50% OFF</Link>
                         </div>
                         <div className="new-lp-banner-form-wrapper">
                             <form className="flex justify-center flex-col lg:flex-row new-lp-banner-form gap-4" onSubmit={handleSubmit}>
@@ -321,7 +325,7 @@ export default function Lp() {
                         <div>
                             <div className="flex justify-center items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                                 {clientLogos.map((logo, index) => (
-                                    <Link key={index} href="#">
+                                    <Link key={index} href={'javascript:;'}>
                                         <Image
                                             alt={logo.alt}
                                             src={logo.src}
@@ -357,9 +361,9 @@ export default function Lp() {
                     <h3 className="font-poppins text-3xl md:text-4xl font-bold mb-4">PEOPLE OF THE WORLD ARE EAGER TO READ YOUR BOOK</h3>
                     <p className="mb-4">As said, every significant advancement begins with a fascinating work of imagination, at Pine Book Publishing, we will do that for you: we will take that step forward. There is no story that should go unnoticed. Therefore, we offer you a range of services of the most skilled and innovative writers, editors & publishers in the industry, all in a single place.</p>
                     <p>We have published thousands of successful books – from writing, editing, design, and production. Most of the books we have published for our clients have grabbed a lot of attention in the sphere of literature and are among the best sellers. Through Pine Book Publishing, your ideas will be put on paper by none other than the best. Our team can assist you in writing & publishing your story, be it in the fiction or nonfiction genre.</p>
-                    <Link href="#" className="btn mt-6 font-poppins" onClick={() => setIsOpen(true)}>LET'S GET STARTED</Link>
+                    <Link href={'javascript:;'} className="btn mt-6 font-poppins" onClick={() => setIsOpen(true)}>LET'S GET STARTED</Link>
                 </div>
-                <div className="basis-1/2">
+                <div className="basis-1/2 mt-24">
                     <ul>
                         <li class="first"><i class="fa fa-check" aria-hidden="true"></i> Fiction</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Non-Fiction</li>
@@ -418,7 +422,7 @@ export default function Lp() {
                 </div>
             </section>
 
-            <Packages />
+            <PublishingOfferPackages />
 
             <section className="py-12 overflow-hidden">
                 <div className="max-w-screen-xl mx-auto ">
@@ -448,7 +452,7 @@ export default function Lp() {
                                 <Link href="maito:info@pinebookpublishing.com">info@pinebookpublishing.com</Link>
                             </div>
                         </div>
-                        <Link href="#" className="new-lp-banner-btn new-lp-banner-btn-chat font-poppins" onClick={() => setIsOpen(true)}>ACTIVATE COUPON NOW</Link>
+                        <Link href={'javascript:;'} className="new-lp-banner-btn new-lp-banner-btn-chat font-poppins" onClick={() => setIsOpen(true)}>ACTIVATE COUPON NOW</Link>
                     </div>
                 </div>
             </section>
@@ -462,7 +466,7 @@ export default function Lp() {
                         // className="px-20 gap-x-32"
                         spaceBetween={15}
                         slidesPerView={1}
-                        loop={false}
+                        loop={true}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,

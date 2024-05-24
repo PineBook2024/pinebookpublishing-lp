@@ -22,7 +22,7 @@ export default function Header() {
             <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
                 <div className="head-logo">
                     <Link className="text-center" href="/publishing-lp">
-                        <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
+                        <Image alt="LOGO" src={'/brand-img/logo.webp'} width={200} height={80} loading="lazy" />
                     </Link>
                 </div>
 

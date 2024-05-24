@@ -43,11 +43,11 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-3xl md:text-4xl uppercase">
+                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
                             Typesetting & Layout
                         </h3>
-                        <h2 className="font-poppins text-5xl md:text-6xl uppercase">adjustment</h2>
-                        <p className="font-poppins text-xl text-justify	">
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">adjustment</h2>
+                        <p className="font-poppins text-xl text-justify	pt-3">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
                         </p>
                     </div>
@@ -55,7 +55,7 @@ export default function BookFormatting() {
                         <Image src={"/brand-img/service-page-img.jpg"} width={310} height={300}
                             loading="lazy"
                             alt="about img"
-                            className="pt-12 aos-init aos-animate"
+                            className="aos-init aos-animate"
                             data-aos="fade-left" data-aos-duration="1000"
                         />
                     </div>

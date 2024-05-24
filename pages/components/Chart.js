@@ -31,7 +31,7 @@ export default function Chart() {
 
             <section className="table-sec overflow-x-scroll max-w-screen-xl mx-auto">
                 <div className="container mx-auto m1-h mt-10">
-                    <h3 className="mb-8 text-center font-poppins text-5xl md:text-7xl">
+                    <h3 className="mb-8 text-center font-poppins text-3xl md:text-4xl font-bold">
                         Comparison Chart
                     </h3>
                 </div>
@@ -78,7 +78,7 @@ export default function Chart() {
                                 <tbody className="text-center">
                                     <tr>
                                         <th
-                                            className="pro text-3xl md:text-5xl text-start ml-10"
+                                            className="pro text-2xl md:text-3xl text-start ml-10"
                                             colspan="5"
                                             scope="row"
                                         >

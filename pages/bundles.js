@@ -45,7 +45,7 @@ export default function Bundles() {
             <section className="package py-14">
                 <div className="container mx-auto max-w-screen-xl">
                     <div className="grid items-center grid-cols-1 text-center mb-14 m1-h">
-                        <h3 className="text-5xl font-poppins md:text-7xl">
+                        <h3 className="text-3xl font-poppins md:text-4xl font-bold">
                             Publishing Packages
                         </h3>
                     </div>
@@ -55,7 +55,7 @@ export default function Bundles() {
                         <div className="gap-8 brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp1.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
                                     Standard
                                 </h4>
                             </div>
@@ -63,11 +63,10 @@ export default function Bundles() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             </p>
                         </div>
-
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp2.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
                                     Professional
                                 </h4>
                             </div>
@@ -75,11 +74,10 @@ export default function Bundles() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             </p>
                         </div>
-
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp3.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
                                     All-Inclusive
                                 </h4>
                             </div>
@@ -87,11 +85,10 @@ export default function Bundles() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             </p>
                         </div>
-
                         <div className="brand-bundle-pack-wrap">
                             <div className="flex items-center pack-box">
                                 <Image src={"/images/pp4.png"} width={40} height={50}></Image>
-                                <h4 className="pl-2 text-2xl font-poppins md:text-3xl">
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
                                     Traditional
                                 </h4>
                             </div>
