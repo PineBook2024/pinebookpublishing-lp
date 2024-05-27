@@ -1,6 +1,8 @@
 import { motion, Variants } from "framer-motion";
+import PropTypes from 'prop-types';
 
-const WavyText = ({ text, delay = 0, duration = 0.05, replay, style, className }) => {
+
+const WavyText = ({ text = "", delay = 0, duration = 0.05, replay, style, className }) => {
     const lines = text.split('\n');
 
     const container = {
