@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WavyText from "./WavyText";
 
 export default function BrandHero() {
     const router = useRouter();
@@ -115,9 +116,10 @@ export default function BrandHero() {
                 <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 pt-28">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                        <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
+                        {/* <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
                             Looking to Publish <br></br> Your Own Book
-                        </h1>
+                        </h1> */}
+                        <WavyText text="Looking to Publish Your Own Book" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-6xl text-white font-bold" />
                         <p className="text-xl text-white pt-4">
                             Are you planning to publish your own book and want complete control over the process? From concept to completion, we at Pine Book Publishing provide a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, self-publishing, and promotion, ensuring your story receives the attention it deserves.
                         </p>

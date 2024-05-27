@@ -13,7 +13,7 @@ const timerProps = {
 
 const renderTime = (dimension, time) => {
   return (
-    <div className="time-wrapper">
+    <div className="time-wrapper shadow-lg">
       <div className="time">{time}</div>
       <div>{dimension}</div>
     </div>
@@ -60,7 +60,7 @@ export default function CountDown() {
     <div className="flex justify-center gap-5 mb-10 flex-col lg:flex-row items-center">
       <CountdownCircleTimer
         {...timerProps}
-        colors="#99ccff"
+        colors="#075448"
         duration={daySeconds}
         initialRemainingTime={remainingTime % daySeconds}
         onComplete={(totalElapsedTime) => ({
@@ -75,7 +75,7 @@ export default function CountDown() {
       </CountdownCircleTimer>
       <CountdownCircleTimer
         {...timerProps}
-        colors="#bbffbb"
+        colors="#333"
         duration={hourSeconds}
         initialRemainingTime={remainingTime % hourSeconds}
         onComplete={(totalElapsedTime) => ({

@@ -35,7 +35,6 @@ p {
   font-size: 50px;
 }
 
-
 .width-container {
   width: 85%;
   margin: 0 auto;
@@ -1954,7 +1953,7 @@ video#brandVideo {
 }
 
 .brand-custom-dropdown-menu {
-  width: 236px;
+  width: 100%;
   left: 0;
   right: 0;
   top: 31px;
@@ -2397,4 +2396,9 @@ video#brandVideo {
 .time-wrapper .time{
   font-size: 23px;
   font-weight: bold;
+}
+
+.nav-link-hover-img{
+  width: 100% !important;
+  height: 100% !important;
 }

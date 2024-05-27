@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
+const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
 export default function BrandAbout(props) {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isInView, setIsInView] = useState(false);
     const router = useRouter();
     const isHomePage = router.pathname === "/";
 
@@ -14,7 +19,7 @@ export default function BrandAbout(props) {
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h4 className="font-poppins text-3xl md:text-5xl font-bold">
-                           About Us
+                            About Us
                         </h4>
                         <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">Pine Book Publishing</h2>
                         <p className="font-poppins text-xl pt-4">
@@ -22,24 +27,55 @@ export default function BrandAbout(props) {
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-end">
-                        <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
+                        {/* <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
                             loading="lazy"
                             alt="about img"
                             className="pt-12 aos-init aos-animate"
                             data-aos="fade-left" data-aos-duration="1000"
-                        />
+                        /> */}
+                        <motion.div
+                            initial={false}
+                            animate={
+                                isLoaded && isInView
+                                    ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
+                                    : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+                            }
+                            transition={{ duration: 1, delay: 0 }}
+                            viewport={{ once: true }}
+                            onViewportEnter={() => setIsInView(true)}
+                        >
+                            <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
+                                loading="lazy"
+                                alt="about img"
+                                className="pt-12"
+                                onLoad={() => setIsLoaded(true)}
+                            />
+                        </motion.div>
                     </div>
                 </div>
                 <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row px-10 md:px-0">
                     <div className="basis-1/2 abt-pic text-center justify-center md:justify-start mt-12 md:mt-12">
-                        <Image src={"/brand-img/about-img-2.webp"} width={400} height={470}
-                            loading="lazy"
-                            alt="about img"
-                            data-aos="zoom-in-left" data-aos-duration="1000"
-                            className="aos-init aos-animate"
-                        />
+                        <motion.div
+                            initial={false}
+                            animate={
+                                isLoaded && isInView
+                                    ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
+                                    : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+                            }
+                            transition={{ duration: 1, delay: 0 }}
+                            viewport={{ once: true }}
+                            onViewportEnter={() => setIsInView(true)}
+                        >
+                            <Image src={"/brand-img/about-img-2.webp"} width={400} height={470}
+                                loading="lazy"
+                                alt="about img"
+                                data-aos="zoom-in-left" data-aos-duration="1000"
+                                className="aos-init aos-animate"
+                                onLoad={() => setIsLoaded(true)}
+                            />
+                        </motion.div>
                     </div>
-                    <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate"  data-aos="fade-left" data-aos-duration="1000">
+                    <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
                         <p className="font-poppins text-xl mb-8 pt-20">
                             {props.subdesctwo}
                         </p>

@@ -70,7 +70,7 @@ export default function Lp() {
     const [isOpen, setIsOpen] = useState(false);
 
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 2); 
+    targetDate.setDate(targetDate.getDate() + 2);
 
     const handleOpenChat = () => {
         window.zE && window.zE('webWidget', 'open');
@@ -229,7 +229,7 @@ export default function Lp() {
             <header className="py-2 new-lp-header">
                 <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat max-w-screen-xl mx-auto">
                     <div className="head-logo">
-                        <Link className="text-center" href="/publishing-lp">
+                        <Link className="text-center" href="/publishing-offer">
                             <Image alt="LOGO" src={'/brand-img/logo.webp'} width={200} height={80} loading="lazy" />
                         </Link>
                     </div>
@@ -377,7 +377,7 @@ export default function Lp() {
                         <li class="last"><i class="fa fa-check" aria-hidden="true"></i> Romance</li>
                     </ul>
 
-                    <div className="flex justify-center items-center mt-8 gap-2 md:gap-x-8 logos">
+                    <div className="flex justify-center items-center mt-28 gap-2 md:gap-x-8 logos">
                         {aboutLogos.map((logo, index) => (
                             <Link key={index} href={logo.href} target="_blank">
                                 <Image

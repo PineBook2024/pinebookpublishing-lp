@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function BrandNavbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [serviceDropdown, setServiceDropdown] = useState(false);
+    const [hoveredService, setHoveredService] = useState(1);
+
+    const services = [
+        { name: 'Book Editing', href: '/book-editing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img1.webp' },
+        { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp' },
+        { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp' },
+        { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp' },
+        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img5.webp' },
+        { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/service-img1.webp' },
+        { name: 'Print On Demand', href: '/print-on-demand', icon: faArrowRight, image: '/brand-img/service-img2.webp' },
+        { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
+    ];
 
     // Function to handle the service dropdown toggle
     const toggleServiceDropdown = () => {
@@ -20,6 +32,7 @@ export default function BrandNavbar() {
 
     const closeServiceDropdown = () => {
         setServiceDropdown(false);
+        setHoveredService(null);
     };
 
     useEffect(() => {
@@ -78,30 +91,47 @@ export default function BrandNavbar() {
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
                                 onClick={toggleServiceDropdown}
-                                className="relative"
+                                // className="relative"
                             >
                                 <Link href={'javascript:;'} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                     Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
                                 </Link>
                                 {serviceDropdown && (
-                                    <div className="absolute mt-1 w-40 bg-white text-black rounded shadow-lg brand-custom-dropdown-menu">
+                                    <div className="absolute mt-1 w-full bg-white text-black rounded shadow-lg brand-custom-dropdown-menu flex justify-between">
                                         <ul className="py-1 text-start px-4 py-2">
-                                            <li className='mb-2'><Link href="/book-editing">Book Editing</Link></li>
-                                            <li className='mb-2'><Link href="/proofreading">Proofreading</Link></li>
-                                            <li className='mb-2'><Link href="/book-formatting">Book Formatting</Link></li>
-                                            <li className='mb-2'><Link href="/typesetting-layout-adjustment">Typesetting & Layout</Link></li>
-                                            <li className='mb-2'><Link href="/book-publishing">Book Publishing</Link></li>
-                                            <li className='mb-2'><Link href="/audio-book">Audio Book</Link></li>
-                                            <li className='mb-2'><Link href="/print-on-demand">Print On Demand</Link></li>
-                                            <li className='mb-2'><Link href="/document-processing">Document Processing</Link></li>
+                                            {services.map((service, index) => (
+                                                <li
+                                                    key={index}
+                                                    className='mb-3 flex items-center'
+                                                    onMouseEnter={() => setHoveredService(index)}
+                                                    onMouseLeave={() => setHoveredService(null)}
+                                                >
+                                                    <Link href={service.href} className='flex items-center w-full'>
+                                                        {typeof service.icon === 'string' ? (
+                                                            <Image src={service.icon} className="me-3" width={16} height={16} alt={service.name} />
+                                                        ) : (
+                                                            <FontAwesomeIcon icon={service.icon} className="me-3" width={12} />
+                                                        )}
+                                                        {service.name}
+                                                    </Link>
+                                                </li>
+                                            ))}
                                         </ul>
+                                        <div className="flex-shrink-0">
+                                            {hoveredService !== null && (
+                                                <Image
+                                                    src={services[hoveredService].image}
+                                                    alt={services[hoveredService].name}
+                                                    className='h-full w-full object-cover nav-link-hover-img rounded shadow-lg'
+                                                    width={160}
+                                                    height={160}
+                                                />
+                                            )}
+                                        </div>
                                     </div>
                                 )}
                             </li> */}
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li>
-                            {/* <li className='mb-3 md:mb-0'><Link href="/bundles" className="text-white hover:text-gray-300">Bundles</Link></li> */}
-                            {/* <li><Link href="/packages" className="text-white hover:text-gray-300">Packages</Link></li>
-                            <li><Link href="/portfolio" className="text-white hover:text-gray-300">Portfolio</Link></li> */}
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" className="text-white hover:text-gray-300">Contact</Link></li>
                             <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-poppins text-sm" onClick={handleOpenChat}>Talk to Expert</Link></li>
                         </ul>
