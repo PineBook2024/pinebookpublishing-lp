@@ -33,6 +33,7 @@ export default function Proofreading() {
                     content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
+                <meta name="robots" content="noindex" />
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
@@ -52,7 +53,7 @@ export default function Proofreading() {
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/service-page-img.jpg"} width={310} height={300}
+                        <Image src={"/brand-img/Proofreading.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"

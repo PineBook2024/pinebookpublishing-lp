@@ -10,6 +10,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WavyText from "./WavyText";
+import FadeIn from "./FadeIn";
 
 export default function BrandHero() {
     const router = useRouter();
@@ -98,17 +99,17 @@ export default function BrandHero() {
         console.log("response", response);
     };
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        fade: true,
-        cssEase: 'linear'
-    };
+    // const settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     fade: true,
+    //     cssEase: 'linear'
+    // };
 
     return (
         <>
@@ -119,10 +120,12 @@ export default function BrandHero() {
                         {/* <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
                             Looking to Publish <br></br> Your Own Book
                         </h1> */}
-                        <WavyText text="Looking to Publish Your Own Book" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-6xl text-white font-bold" />
-                        <p className="text-xl text-white pt-4">
-                            Are you planning to publish your own book and want complete control over the process? From concept to completion, we at Pine Book Publishing provide a supportive ecosystem for authors, offering comprehensive assistance in manuscript development, self-publishing, and promotion, ensuring your story receives the attention it deserves.
-                        </p>
+                        <WavyText text="Do you Have a Great Story? Let's Publish It" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-6xl text-white font-bold" />
+                        <FadeIn>
+                            <p className="text-xl text-white pt-4">
+                                Have you started penning your story idea, but got stuck on your story’s next chapter? Nevermind! Self publishing a book can be sometimes a nightmare even for some great writers. However, Pine Book Publishing is your creative partner, offering hands-on support from the first word to the final cover.
+                            </p>
+                        </FadeIn>
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                             {clientLogos.map((logo, index) => (
                                 <Link key={index} href={logo.href} target="_blank">

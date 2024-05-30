@@ -1,0 +1,71 @@
+User-Agent: *
+Allow: /
+Disallow:
+
+User-agent: Googlebot
+Allow: /
+Disallow:
+
+User-agent: Googlebot-image
+Allow: /
+Disallow:
+
+User-agent: Googlebot-Video
+Allow: /
+Disallow:
+
+User-agent: Googlebot-mobile
+Allow: /
+Disallow:
+
+User-agent: Googlebot-News
+Allow: /
+Disallow:
+
+User-agent: Google-InspectionTool
+Allow: /
+Disallow:
+
+User-agent: Slurp
+Allow: /
+Disallow:
+
+User-agent: bingbot
+Allow: /
+Disallow:
+
+User-agent: bing
+Allow: /
+Disallow:
+
+User-agent: AhrefsBot
+Allow: /
+Disallow:
+
+User-agent: SiteAuditBot
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-BA
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-SI
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-CT
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-COUB
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-BM
+Allow: /
+Disallow:
+
+User-agent: SemrushBot-SWA
+Allow: /
+Disallow:

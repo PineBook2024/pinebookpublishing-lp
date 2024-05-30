@@ -37,26 +37,26 @@ const WavyText = ({ text = "", delay = 0, duration = 0.05, replay, style, classN
     };
 
     return (
-        <motion.div
-            style={{ display: "flex", flexDirection: "column", overflow: "hidden", ...style }}
-            className={className}
-            variants={container}
-            initial="hidden"
-            animate={replay ? "visible" : "hidden"}
-        >
-            {lines.map((line, lineIndex) => (
-                <motion.h1
-                    key={lineIndex}
-                    style={{ display: "flex", flexWrap: 'wrap' }}
-                >
-                    {Array.from(line).map((letter, letterIndex) => (
-                        <motion.span key={letterIndex} variants={child}>
-                            {letter === " " ? "\u00A0" : letter}
-                        </motion.span>
-                    ))}
-                </motion.h1>
-            ))}
-        </motion.div>
+            <motion.div
+                style={{ display: "flex", flexDirection: "column", overflow: "hidden", ...style }}
+                className={className}
+                variants={container}
+                initial="hidden"
+                animate={replay ? "visible" : "hidden"}
+            >
+                {lines.map((line, lineIndex) => (
+                    <motion.h1
+                        key={lineIndex}
+                        style={{ display: "flex", flexWrap: 'wrap', letterSpacing: '3px' }}
+                    >
+                        {Array.from(line).map((letter, letterIndex) => (
+                            <motion.span key={letterIndex} variants={child}>
+                                {letter === " " ? "\u00A0" : letter}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
+                ))}
+            </motion.div>
     );
 };
 

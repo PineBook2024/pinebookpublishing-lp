@@ -81,10 +81,10 @@ export default function BrandContact() {
 
                             <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
                                 <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-poppins text-start uppercase">
-                                    We Are Here to Hear You!
+                                    Let’s Get in Touch
                                 </h3>
                                 <p className="text-black leading-6  pb-5 text-base pt-4">
-                                    Got questions? Let's find the answers together - shoot us a message!
+                                    Are you still hesitant about self book publishing and don’t know where to start? Just submit your query and let us guide you.
                                 </p>
 
                                 <div className="relative mb-3">

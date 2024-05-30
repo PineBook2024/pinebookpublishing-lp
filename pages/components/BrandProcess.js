@@ -23,7 +23,7 @@ export default function BrandProcess() {
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
-                            <p className="">Our formatting service makes sure your <br></br>book is dressed to impress. From font <br></br>choice to margins, we cover it all.</p>
+                            <p className="">From font choice to margins, our <br></br>formatting service makes sure your<br></br> book is dressed to impress.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">

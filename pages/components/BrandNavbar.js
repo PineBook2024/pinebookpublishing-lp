@@ -16,7 +16,7 @@ export default function BrandNavbar() {
         { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp' },
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp' },
         { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img5.webp' },
-        { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/service-img1.webp' },
+        { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
         { name: 'Print On Demand', href: '/print-on-demand', icon: faArrowRight, image: '/brand-img/service-img2.webp' },
         { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
     ];

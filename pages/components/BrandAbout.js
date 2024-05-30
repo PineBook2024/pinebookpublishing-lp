@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import FadeIn from "./FadeIn";
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
@@ -22,9 +23,11 @@ export default function BrandAbout(props) {
                             About Us
                         </h4>
                         <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">Pine Book Publishing</h2>
-                        <p className="font-poppins text-xl pt-4">
-                            {props.subdescone}
-                        </p>
+                        <FadeIn>
+                            <p className="font-poppins text-xl pt-4">
+                                {props.subdescone}
+                            </p>
+                        </FadeIn>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-end">
                         {/* <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
@@ -55,25 +58,12 @@ export default function BrandAbout(props) {
                 </div>
                 <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row px-10 md:px-0">
                     <div className="basis-1/2 abt-pic text-center justify-center md:justify-start mt-12 md:mt-12">
-                        <motion.div
-                            initial={false}
-                            animate={
-                                isLoaded && isInView
-                                    ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
-                                    : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
-                            }
-                            transition={{ duration: 1, delay: 0 }}
-                            viewport={{ once: true }}
-                            onViewportEnter={() => setIsInView(true)}
-                        >
+                        <FadeIn>
                             <Image src={"/brand-img/about-img-2.webp"} width={400} height={470}
                                 loading="lazy"
                                 alt="about img"
-                                data-aos="zoom-in-left" data-aos-duration="1000"
-                                className="aos-init aos-animate"
-                                onLoad={() => setIsLoaded(true)}
                             />
-                        </motion.div>
+                        </FadeIn>
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
                         <p className="font-poppins text-xl mb-8 pt-20">

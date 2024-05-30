@@ -37,14 +37,14 @@ export default function About() {
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Ready To Write Your Next Chapter?"
-                desc="Let Pine Book Publishing be the compass for your narrative journey, steering you toward literary success with every stroke of the pen."
+                title="Ready To Write Your Next Chapter? "
+                desc="Let Pine Book Publishing be your guide throughout this self-publishing journey. We believe in your story and want the world to read your narrative."
             />
             <BrandBannerLogo />
             <BrandAbout
-                subdescone="Are you feeling stuck in the maze of writing and publishing your book? Do you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end? "
-                subdesctwo="With Pine Book Publishing, we simplify the writing and publishing process, offering personalized solutions tailored to your needs. Say goodbye to the frustration of endless revisions and let us guide you towards a polished manuscript. "
-                subdescthree="Our experienced team is here to provide the support and expertise you need to succeed. Whether it's plot development, editing, or navigating the publishing world, Pine Book Publishing has got you covered. With Pine Book Publishing, it's like having a trusted friend by your side, helping you turn your literary dreams into reality. So, why wait? Let's embark on this exciting journey together. Reach out to Pine Book Publishing today, and let's turn your ideas into captivating stories that readers will love!"
+                subdescone="Have you ever tried publishing a book, but don’t know where to start from? Did you ever plan to consult a book publishing company? We get it – there are more book publishing companies out there than stars in the sky (okay, maybe not that many, but you get the idea). "
+                subdesctwo="Don’t feel overwhelmed, Pine Book Publishing is here to your rescue. Established on February 22, 2023, we understand the difficulties faced by authors worldwide. We know how frustrating the writing journey can be and so we are here to simplify the entire writing and publishing process, offering customized book publishing solutions considering your needs. "
+                subdescthree="Whether you need help with book publishing, editing, or marketing, Pine Book Publishing is here to guide you through it with ease. Our experienced team is not just here to assist you; we're here to walk alongside you every step of the way. So, don't let this chance slip away. Connect with us, share your story idea, and let's transform it into a masterpiece together. We'll ensure that your book successfully makes its way to Amazon, Kindle, Lulu, and other publishing platforms."
             />
             <BrandChooseUs />
             <section className="brand-testimonials-section">

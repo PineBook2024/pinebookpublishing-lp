@@ -33,15 +33,15 @@ export default function Home() {
             <BrandBannerVideo Component={BrandHero} />
             <BrandBannerLogo />
             <BrandAbout
-                subdescone="Do you often feel lost in the maze of publishing and wonder how can I publish my book? Or, you have this amazing idea but every time you try to put it on paper, it feels like hitting a dead end? Writing and self publishing a book can feel like climbing a towering mountain."
-                subdesctwo="With Pine Book Publishing, we simplify the writing and self-publishing process, offering personalized solutions suited to your needs. Say goodbye to the frustration of endless revisions and let us help you create a flawless manuscript."
+                subdescone="Have you ever tried publishing a book, but don’t know where to start from? Did you ever plan to consult a book publishing company? We get it – there are more book publishing companies out there than stars in the sky (okay, maybe not that many, but you get the idea)."
+                subdesctwo="Don’t feel overwhelmed, Pine Book Publishing is here to your rescue. Established on February 22, 2023, we understand the difficulties faced by authors worldwide. We know how frustrating the writing journey can be and so we are here to simplify the entire writing and publishing process, offering customized solutions specifically to your needs."
                 subdescthree=""
             />
             <BrandServices />
             <BrandCTA
-            title="Hey, Wanna Talk?"
-            desc="Ready to Chat? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
-            btntext="Speak to our Consultant"
+                title="Do You Have Concerns? "
+                desc="It’s okay to have questions since we understand that your book is close to your heart. Why not just get into a quick discussion?"
+                btntext="Speak to our Consultant"
             />
             <BrandProcess />
             <BrandChooseUs />
