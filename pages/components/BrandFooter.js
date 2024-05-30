@@ -58,12 +58,12 @@ export default function BrandFooter() {
                                 </li>
                                 <li className="mt-3">
                                     <Link
-                                        href="mailto:info@pinebookpublishing.com"
+                                        href="mailto:support@pinebookpublishing.com"
                                         className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                                         {" "}
-                                        info@pinebookpublishing.com{" "}
+                                        support@pinebookpublishing.com{" "}
                                     </Link>
                                 </li>
 

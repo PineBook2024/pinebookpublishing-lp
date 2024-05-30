@@ -449,7 +449,7 @@ export default function Lp() {
                                 <p>
                                     DISCUSS YOUR IDEAS
                                 </p>
-                                <Link href="maito:info@pinebookpublishing.com">info@pinebookpublishing.com</Link>
+                                <Link href="maito:support@pinebookpublishing.com">support@pinebookpublishing.com</Link>
                             </div>
                         </div>
                         <Link href={'javascript:;'} className="new-lp-banner-btn new-lp-banner-btn-chat font-poppins" onClick={() => setIsOpen(true)}>ACTIVATE COUPON NOW</Link>
@@ -627,12 +627,12 @@ export default function Lp() {
                                 </li>
                                 <li className="mt-8">
                                     <Link
-                                        href="mailto:info@pinebookpublishing.com"
+                                        href="mailto:support@pinebookpublishing.com"
                                         className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faEnvelope} className="me-3" color="#1e8677" />
                                         {" "}
-                                        info@pinebookpublishing.com{" "}
+                                        support@pinebookpublishing.com{" "}
                                     </Link>
                                 </li>
                                 <li className="flex items-center justify-center md:justify-start mt-8 text-md ">
