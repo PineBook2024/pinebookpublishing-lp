@@ -109,42 +109,42 @@ export default function BrandFooter() {
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
-                                    <Link href="/book-editing">
+                                    <Link href="#">
                                         Book Editing
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/proofreading">
+                                    <Link href="#">
                                         Proofreading
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/book-formatting">
+                                    <Link href="#">
                                         Book Formatting
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/typesetting-layout-adjustment">
+                                    <Link href="#">
                                         Typesetting & Layout
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/book-publishing">
+                                    <Link href="#">
                                         Book Publishing
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/audio-book">
+                                    <Link href="#">
                                         Audio Book
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/print-on-demand">
+                                    <Link href="#">
                                         Print on Demand
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/document-processing">
+                                    <Link href="#">
                                         Document Processing
                                     </Link>
                                 </li>

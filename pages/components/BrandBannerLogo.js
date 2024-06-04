@@ -61,8 +61,8 @@ export default function BrandBannerLogo() {
                                         <a href="#">
                                             <Image
                                                 alt="LOGO"
-                                                src={"/images/logo1.png"}
-                                                width={100}
+                                                src={"/images/Smashwords.png"}
+                                                width={110}
                                                 height={80}
                                                 className="custom-logo-size"
                                                 loading="lazy"
@@ -76,7 +76,21 @@ export default function BrandBannerLogo() {
                                         <a href="#">
                                             <Image
                                                 alt="LOGO"
-                                                src={"/images/logo2.png"}
+                                                src={"/images/Barnes-and-Noble.png"}
+                                                width={70}
+                                                height={80}
+                                                loading="lazy"
+                                            />
+                                        </a>
+                                    </div>
+                                </SwiperSlide>
+
+                                <SwiperSlide>
+                                    <div className="flex justify-center">
+                                        <a href="#">
+                                            <Image
+                                                alt="LOGO"
+                                                src={"/images/Google-Books.png"}
                                                 width={100}
                                                 height={80}
                                                 loading="lazy"
@@ -90,21 +104,7 @@ export default function BrandBannerLogo() {
                                         <a href="#">
                                             <Image
                                                 alt="LOGO"
-                                                src={"/images/logo3.png"}
-                                                width={100}
-                                                height={80}
-                                                loading="lazy"
-                                            />
-                                        </a>
-                                    </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className="flex justify-center">
-                                        <a href="#">
-                                            <Image
-                                                alt="LOGO"
-                                                src={"/images/logo4.png"}
+                                                src={"/images/Draft2digital.png"}
                                                 width={100}
                                                 height={120}
                                                 loading="lazy"

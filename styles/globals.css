@@ -576,9 +576,10 @@ footer .footer-line:before {
 }
 
 .custom-logo-size {
-  width: 150px;
+  width: 100%;
   object-fit: cover;
-  height: 29px;
+  padding-top: 8px;
+  /* height: 29px; */
 }
 
 .table-sec svg,
