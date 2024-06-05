@@ -81,7 +81,7 @@ section.main-banner-vid h2 span,
 
 .main-banner-vid p span {
   background: #299081;
-  padding: 0px 10px;
+  padding: 0px 2px;
   height: 100vh;
   font-weight: bold;
 }
@@ -2412,4 +2412,5 @@ video#brandVideo {
 
 .banner-text-custom{
   font-size: 2.1rem !important;
+  text-wrap: nowrap !important;
 }
