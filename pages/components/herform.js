@@ -115,7 +115,7 @@ export default function HeroForm() {
           {/* <h2 className="text-sm md:base scroll-animation">
             <span> #1 SELF </span> PUBLISHING COMPANY
           </h2> */}
-          <h1 className="font-poppins text-4xl md:text-4xl mb-7">
+          <h1 className="font-poppins text-4xl md:text-4xl mb-7 banner-text-custom">
             Have you finished writing your book and are ready to self-publish?
           </h1>
           <p>Do not overwhelm yourself! Pine Book Publishing offers premium <span>Amazon Kindle Direct Publishing and Self-Publishing Services</span> with hands-on support from polishing your manuscript to printing and distributing your book worldwide. Our team can ensure your book is available on all major online retailers, including Amazon, Barnes & Noble, Google Books and more.</p>
