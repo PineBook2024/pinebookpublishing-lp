@@ -50,7 +50,7 @@ export default function HeroForm() {
     {
       src: "/images/l1_w.png",
       alt: "LOGO",
-      width: 130,
+      width: 120,
       height: 60
     },
   ];
