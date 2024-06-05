@@ -107,6 +107,44 @@ export default function Home() {
   ];
 
 
+  // Object
+  const clientLogos = [
+    {
+      href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+      src: "/images/s1.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+      src: "/images/s2.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.trustpilot.com/review/pinebookwriting.com",
+      src: "/images/s3.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+      src: "/images/s4.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    },
+    {
+      href: "https://clutch.co/profile/pine-book-writing",
+      src: "/images/s6.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    }
+  ];
 
 
   // useEffect(() => {
@@ -416,17 +454,26 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
               {/* <AnimateFade type={"top"}> */}
               <div className="abt-txt m1-h p1">
-                <h3 className="font-poppins text-3xl md:text-5xl">
-                  About Us<span>Pine Book Publishing</span>
+                <h3 className="font-poppins text-3xl md:text-5xl font-bold">
+                  About<span>Pine Book Publishing</span>
                 </h3>
                 <p className="pt-3">
-                  Celebrate your tales with Pine Book Publishing, a book
-                  publishing company that specializes in bringing authors' visions
-                  to life through professional book publishing services. Our team
-                  of skilled professionals is committed to guide you through every
-                  step of the publishing process, ensuring your book captivates
-                  readers and makes an everlasting impact worldwide.
+                  Pine Book Publishing was founded on February 22, 2023, with the mission of providing quality editing and publishing services for the authors worldwide.<br></br>
+                  Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
+                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book in known to the world.
                 </p>
+                <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
+                  {clientLogos.map((logo, index) => (
+                    <Link key={index} href={logo.href} target="_blank">
+                      <Image
+                        alt={logo.alt}
+                        src={logo.src}
+                        width={logo.width}
+                        height={logo.height}
+                      />
+                    </Link>
+                  ))}
+                </div>
               </div>
               {/* </AnimateFade> */}
               <div className="abt-pic text-center">

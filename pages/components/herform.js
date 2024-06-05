@@ -24,41 +24,37 @@ export default function HeroForm() {
   // Object
   const clientLogos = [
     {
-      href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
-      src: "/images/s1.png",
+      src: "/images/logo-img1.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
-      href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
-      src: "/images/s2.png",
+      src: "/images/logo-img2.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
-      href: "https://www.trustpilot.com/review/pinebookwriting.com",
-      src: "/images/s3.png",
+      src: "/images/logo-img3.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
-      href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
-      src: "/images/s4.png",
+      src: "/images/logo-img4.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
-      href: "https://clutch.co/profile/pine-book-writing",
-      src: "/images/s6.png",
+      src: "/images/l1_w.png",
       alt: "LOGO",
       width: 130,
       height: 60
-    }
+    },
   ];
+
 
 
   // useEffect(() => {
@@ -119,14 +115,26 @@ export default function HeroForm() {
           {/* <h2 className="text-sm md:base scroll-animation">
             <span> #1 SELF </span> PUBLISHING COMPANY
           </h2> */}
-          <h1 className="font-poppins text-5xl md:text-6xl">
-            Publish Your Dreams!
+          <h1 className="font-poppins text-4xl md:text-5xl mb-3">
+            Have you finished writing your book and are ready to self-publish?
           </h1>
-          <p>Elevate your writing journey with our premier <span>Amazon Kindle Direct Publishing and Self Publishing Service.</span> Dive into a world where your words are treated with the utmost care, polished by expert editors who refine each sentence to perfection. Embrace the thrill of global distribution, where your story finds its way into the hands of eager readers across continents.</p>
+          <p>Do not overwhelm yourself! Pine Book Publishing offers premium <span>Amazon Kindle Direct Publishing and Self-Publishing Services</span> with hands-on support from polishing your manuscript to printing and distributing your book worldwide. Our team can ensure your book is available on all major online retailers, including Amazon, Barnes & Noble, Google Books and more.</p>
           {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}
-          <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
+          {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
             {clientLogos.map((logo, index) => (
               <Link key={index} href={logo.href} target="_blank">
+                <Image
+                  alt={logo.alt}
+                  src={logo.src}
+                  width={logo.width}
+                  height={logo.height}
+                />
+              </Link>
+            ))}
+          </div> */}
+          <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
+            {clientLogos.map((logo, index) => (
+              <Link key={index} href={'javascript:;'}>
                 <Image
                   alt={logo.alt}
                   src={logo.src}

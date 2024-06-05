@@ -2403,3 +2403,9 @@ video#brandVideo {
   width: 100% !important;
   height: 100% !important;
 }
+
+.about-logos-sec {
+  background-color: #1a8273;
+  padding: 20px;
+  border-radius: 10px;
+}
