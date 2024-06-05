@@ -26,33 +26,33 @@ export default function HeroForm() {
     {
       src: "/images/logo-img1.png",
       alt: "LOGO",
-      width: 130,
+      width: 150,
       height: 60
     },
     {
       src: "/images/logo-img2.png",
       alt: "LOGO",
-      width: 130,
+      width: 150,
       height: 60
     },
     {
       src: "/images/logo-img3.png",
       alt: "LOGO",
-      width: 130,
+      width: 150,
       height: 60
     },
     {
       src: "/images/logo-img4.png",
       alt: "LOGO",
-      width: 130,
+      width: 150,
       height: 60
     },
-    {
-      src: "/images/l1_w.png",
-      alt: "LOGO",
-      width: 120,
-      height: 60
-    },
+    // {
+    //   src: "/images/l1_w.png",
+    //   alt: "LOGO",
+    //   width: 120,
+    //   height: 60
+    // },
   ];
 
 
@@ -115,7 +115,7 @@ export default function HeroForm() {
           {/* <h2 className="text-sm md:base scroll-animation">
             <span> #1 SELF </span> PUBLISHING COMPANY
           </h2> */}
-          <h1 className="font-poppins text-4xl md:text-5xl mb-3">
+          <h1 className="font-poppins text-4xl md:text-4xl mb-7">
             Have you finished writing your book and are ready to self-publish?
           </h1>
           <p>Do not overwhelm yourself! Pine Book Publishing offers premium <span>Amazon Kindle Direct Publishing and Self-Publishing Services</span> with hands-on support from polishing your manuscript to printing and distributing your book worldwide. Our team can ensure your book is available on all major online retailers, including Amazon, Barnes & Noble, Google Books and more.</p>
