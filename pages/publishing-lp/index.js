@@ -111,35 +111,35 @@ export default function Home() {
   const clientLogos = [
     {
       href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
-      src: "/images/s1.png",
+      src: "/images/Google Partner.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
       href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
-      src: "/images/s2.png",
+      src: "/images/BBB.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
       href: "https://www.trustpilot.com/review/pinebookwriting.com",
-      src: "/images/s3.png",
+      src: "/images/Trustpilot.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
       href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
-      src: "/images/s4.png",
+      src: "/images/Yelp.png",
       alt: "LOGO",
       width: 130,
       height: 60
     },
     {
       href: "https://clutch.co/profile/pine-book-writing",
-      src: "/images/s6.png",
+      src: "/images/Clutch.png",
       alt: "LOGO",
       width: 130,
       height: 60
@@ -520,7 +520,7 @@ export default function Home() {
                   }}
                 >
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row justify-between items-center">
+                    <div className="bg-white rounded-xl flex flex-row justify-between items-center border-about-card">
                       <Image
                         src={"/images/b1.png"}
                         width={100}
@@ -535,7 +535,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b2.png"}
                         width={100}
@@ -550,7 +550,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b3.png"}
                         width={100}
@@ -565,7 +565,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b4.png"}
                         width={100}
@@ -580,7 +580,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b5.png"}
                         width={100}
@@ -595,7 +595,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b6.png"}
                         width={100}
@@ -610,7 +610,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b7.png"}
                         width={100}
@@ -625,7 +625,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b8.png"}
                         width={100}
@@ -640,7 +640,7 @@ export default function Home() {
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="bg-white rounded-xl flex flex-row items-center">
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
                       <Image
                         src={"/images/b9.png"}
                         width={100}

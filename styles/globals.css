@@ -132,8 +132,12 @@ section.brnd-slider.bg-black {
   color: #fff;
 }
 
-.book-joun {
+/* .book-joun {
   background: #1a8273;
+} */
+
+.border-about-card{
+  border: 1px solid #919090;
 }
 
 .pack-box h4 {
@@ -2405,8 +2409,8 @@ video#brandVideo {
 }
 
 .about-logos-sec {
-  background-color: #1a8273;
-  padding: 20px;
+  /* background-color: #1a8273; */
+  /* padding: 20px; */
   border-radius: 10px;
 }
 
