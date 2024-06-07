@@ -123,8 +123,14 @@ section.brnd-slider.bg-black {
   display: block;
 }
 
-.portfolio {
-  background-color: #1a1d5a;
+/* .portfolio {
+  background-color: #9b9b9b;
+} */
+
+.portfolio{
+  /* background-image: url(../public/images/port-banner_.png);
+  background-size: cover; */
+  background: #147d6e;
 }
 
 .portfolio-h h3,
@@ -350,14 +356,14 @@ video#background-video {
   top: 50%;
   right: -25px;
   width: 45px;
-  height: 45px;
+  height: 35px;
   transform: translateY(-50%);
   background: #0d0f38;
   border: none;
   padding: 10px 18px;
   color: #fff;
   border-radius: 10px;
-  width: 5%;
+  width: 3.5%;
   font-size: 24px;
   line-height: 0.5;
   display: flex;
@@ -371,7 +377,7 @@ video#background-video {
   top: 50%;
   left: -31px;
   width: 45px;
-  height: 45px;
+  height: 35px;
   transform: translateY(-50%);
   margin-top: 0px;
   background: #0d0f38;
@@ -379,7 +385,7 @@ video#background-video {
   padding: 10px 18px;
   color: #fff;
   border-radius: 10px;
-  width: 5%;
+  width: 3.5%;
   font-size: 24px;
   line-height: 0.5;
   display: flex;
@@ -414,14 +420,14 @@ video#background-video {
   top: 43%;
   right: -36px;
   width: 45px;
-  height: 45px;
+  height: 35px;
   transform: translateY(-50%);
   background: #0d0f38;
   border: none;
   padding: 10px 18px;
   color: #fff;
   border-radius: 10px;
-  width: 5%;
+  width: 3.5%;
   font-size: 24px;
   line-height: 0.5;
   display: flex;
@@ -436,7 +442,7 @@ video#background-video {
   top: 43%;
   left: -45px;
   width: 45px;
-  height: 45px;
+  height: 35px;
   transform: translateY(-50%);
   margin-top: 0px;
   background: #0d0f38;
@@ -444,7 +450,7 @@ video#background-video {
   padding: 10px 18px;
   color: #fff;
   border-radius: 10px;
-  width: 5%;
+  width: 3.5%;
   font-size: 24px;
   line-height: 0.5;
   display: flex;
@@ -1180,8 +1186,9 @@ footer svg {
 
 .brand-choose-us-img {
   position: absolute;
-  top: -87px;
-  left: -9px;
+  left: -23px;
+  width: 376px;
+  bottom: -69px;
 }
 
 .brand-cta-vector::before {
@@ -1201,17 +1208,17 @@ footer svg {
   border-radius: 36px;
 }
 
-.brand-choose-us-vector::before {
+/* .brand-choose-us-vector::before {
   content: "";
   position: absolute;
-  width: 469px;
+  width: 412px;
   height: 540px;
   background-image: url(../public/brand-img/why-choose-us-vector.png);
   background-size: contain;
   background-repeat: no-repeat;
   top: -24px;
   left: -78px;
-}
+} */
 
 @keyframes upAndDown {
 

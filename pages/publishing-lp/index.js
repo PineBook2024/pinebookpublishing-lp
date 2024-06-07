@@ -42,15 +42,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Story from "../components/Story";
 import Chart from "../components/Chart";
 import Faq from "../components/Faq";
-
 import dynamic from 'next/dynamic';
 import Packages from "../components/Packages";
 import HomePopup from "../components/HomePopup";
+import 'glightbox/dist/css/glightbox.min.css';
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
 });
 
+const GLightbox = dynamic(
+  () => import('glightbox').then((glightboxModule) => glightboxModule.default),
+  { ssr: false }
+);
 
 
 export default function Home() {
@@ -65,6 +69,24 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const lightboxRef = useRef(null);
+  useEffect(() => {
+    if (typeof window !== "undefined" && !lightboxRef.current) {
+        import('glightbox').then((GLightboxModule) => {
+            const GLightbox = GLightboxModule.default;
+            lightboxRef.current = GLightbox({
+                selector: '.glightbox'
+            });
+        });
+    }
+
+    return () => {
+        if (lightboxRef.current) {
+            lightboxRef.current.destroy();
+        }
+    };
+}, []);
 
   // Object
   const packagesCard = [
@@ -96,14 +118,14 @@ export default function Home() {
 
   // Books Object
   const books = [
-    { src: "/images/bb1-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img ten" },
-    { src: "/images/bb5-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eleven" },
-    { src: "/images/bb8-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img twelve" },
-    { src: "/images/bb4-min.webp", width: 260, height: 289, type: "right", alt: "book mobile img thirteen" },
-    { src: "/images/bb3-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img fifteen" },
-    { src: "/images/bb6-min.webp", width: 260, height: 289, type: "bottom", alt: "book mobile img sixteen" },
-    { src: "/images/bb7-min.webp", width: 260, height: 289, type: "left", alt: "book mobile img seventeen" },
-    { src: "/images/bb2-min.webp", width: 260, height: 289, type: "top", alt: "book mobile img eighteen" }
+    { src: "/images/bb-01.png", width: 260, height: 700, type: "right", alt: "book mobile img ten" },
+    { src: "/images/bb-02.png", width: 260, height: 700, type: "top", alt: "book mobile img eleven" },
+    { src: "/images/bb-03.png", width: 260, height: 700, type: "top", alt: "book mobile img twelve" },
+    { src: "/images/bb-04.png", width: 260, height: 500, type: "right", alt: "book mobile img thirteen" },
+    { src: "/images/bb-05.png", width: 260, height: 289, type: "top", alt: "book mobile img fifteen" },
+    { src: "/images/bb-06.png", width: 260, height: 289, type: "bottom", alt: "book mobile img sixteen" },
+    { src: "/images/bb-07.png", width: 260, height: 289, type: "left", alt: "book mobile img seventeen" },
+    { src: "/images/bb-08.png", width: 260, height: 289, type: "top", alt: "book mobile img eighteen" }
   ];
 
 
@@ -478,7 +500,7 @@ export default function Home() {
               {/* </AnimateFade> */}
               <div className="abt-pic text-center">
                 {/* <AnimateFade type={"left"}> */}
-                <Image src={"/images/abt-pic.png"} width={500} height={570}
+                <Image src={"/images/About-us-img.png"} width={500} height={570}
                   layout="responsive"
                   loading="lazy"
                   alt="about img"
@@ -706,48 +728,48 @@ export default function Home() {
                 >
                   <SwiperSlide className="mx-auto text-center">
                     <div className="flex justify-center">
-                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img ten" />
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img ten" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eleven" />
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img eleven" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img twoelve" />
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img twoelve" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img thirteen" />
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img thirteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img fifteen" />
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img fifteen" />
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img sixteen" />
-                    </div>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                    <div className="flex justify-center">
-                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img seventeen" />
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img sixteen" />
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
                     <div className="flex justify-center">
-                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" layout="responsive" alt="book img eighteen" />
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img seventeen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img eighteen" />
                     </div>
                   </SwiperSlide>
                 </Swiper>
@@ -759,7 +781,7 @@ export default function Home() {
                 {books.map((book, index) => (
                   <div key={index}>
                     {/* <AnimateFade type={book.type}> */}
-                    <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect" />
+                    <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect glightbox" />
                     {/* </AnimateFade> */}
                   </div>
                 ))}
