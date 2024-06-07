@@ -908,6 +908,9 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .banner-text-custom{
+    text-wrap: wrap !important;
+  }
   .fixed-top {
     padding: 3px 10px !important;
   }
