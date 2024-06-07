@@ -910,6 +910,7 @@ footer svg {
 @media (min-width: 300px) and (max-width: 680px) {
   .banner-text-custom{
     text-wrap: wrap !important;
+    font-size: 1.8rem !important;
   }
   .fixed-top {
     padding: 3px 10px !important;
@@ -2426,5 +2427,5 @@ video#brandVideo {
 
 .banner-text-custom{
   font-size: 2.1rem !important;
-  text-wrap: nowrap !important;
+  text-wrap: nowrap;
 }
