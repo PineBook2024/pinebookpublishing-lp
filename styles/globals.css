@@ -1718,9 +1718,10 @@ footer svg {
 
 .header-form-off-badge {
   position: absolute;
-  right: 0;
-  top: -60px;
+  right: -29px;
+  top: -40px;
   z-index: 1000;
+  width: 130px;
 }
 
 .powered-by-text {
