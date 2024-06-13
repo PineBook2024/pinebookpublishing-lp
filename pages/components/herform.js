@@ -109,7 +109,7 @@ export default function HeroForm() {
   };
 
   return (
-    <div className="container mx-4 pt-20 md:mx-32">
+    <div className="container mx-4 pt-20 md:mx-32 tablet-margin-banner">
       <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
         <div className="mb-4">
           {/* <h2 className="text-sm md:base scroll-animation">

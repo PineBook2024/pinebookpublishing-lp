@@ -127,7 +127,7 @@ section.brnd-slider.bg-black {
   background-color: #9b9b9b;
 } */
 
-.portfolio{
+.portfolio {
   /* background-image: url(../public/images/port-banner_.png);
   background-size: cover; */
   background: #147d6e;
@@ -142,7 +142,7 @@ section.brnd-slider.bg-black {
   background: #1a8273;
 } */
 
-.border-about-card{
+.border-about-card {
   border: 1px solid #919090;
 }
 
@@ -676,7 +676,7 @@ footer svg {
 }
 
 .book-zoom-effect:hover,
-.new-lp-about-book .logos img:hover  {
+.new-lp-about-book .logos img:hover {
   -webkit-transform: scale(1.3);
   transform: scale(1.2);
   transition: .4s ease-in-out;
@@ -908,10 +908,11 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
-  .banner-text-custom{
+  .banner-text-custom {
     text-wrap: wrap !important;
     font-size: 1.8rem !important;
   }
+
   .fixed-top {
     padding: 3px 10px !important;
   }
@@ -1001,7 +1002,7 @@ footer svg {
   }
 
   .single-packages .package-badge {
-    right: 1px;
+    right: -9px;
     width: 68px;
   }
 
@@ -1121,8 +1122,21 @@ footer svg {
   .new-lp-banner-btn {
     font-size: 11px !important;
   }
+
+  .header-form-off-badge {
+    right: -9px !important;
+    top: -44px !important;
+    z-index: 1000 !important;
+    width: 115px !important;
+  }
 }
 
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .tablet-margin-banner {
+    margin: 0px !important;
+  }
+}
 
 
 /* Brand Layout CSS */
@@ -1574,7 +1588,7 @@ footer svg {
   font-weight: bold;
 }
 
-.brand-testimonials-card p{
+.brand-testimonials-card p {
   font-size: 16px !important;
 }
 
@@ -1949,7 +1963,7 @@ video#brandVideo {
   position: absolute;
   top: 50% !important;
   right: -34px !important;
-  z-index: 99999;
+  /* z-index: 99999; */
 }
 
 .brand-story-sec::after {
@@ -1976,14 +1990,14 @@ video#brandVideo {
   top: 31px;
 }
 
-.brand-custom-dropdown-menu ul li a:hover{
+.brand-custom-dropdown-menu ul li a:hover {
   padding-left: 8px;
   transition: .3s ease-in-out;
   color: #258c7d;
   font-weight: bold;
 }
 
-.brand-custom-dropdown-menu ul li a{
+.brand-custom-dropdown-menu ul li a {
   transition: .3s ease-in-out;
 }
 
@@ -2386,7 +2400,7 @@ video#brandVideo {
 }
 
 
-.responsive-back-to-top{
+.responsive-back-to-top {
   animation: waveBtn 2s infinite;
 }
 
@@ -2405,17 +2419,17 @@ video#brandVideo {
 }
 
 
-.time-wrapper{
+.time-wrapper {
   color: #fff;
   font-size: 12px;
 }
 
-.time-wrapper .time{
+.time-wrapper .time {
   font-size: 23px;
   font-weight: bold;
 }
 
-.nav-link-hover-img{
+.nav-link-hover-img {
   width: 100% !important;
   height: 100% !important;
 }
@@ -2426,7 +2440,16 @@ video#brandVideo {
   border-radius: 10px;
 }
 
-.banner-text-custom{
+.banner-text-custom {
   font-size: 2.1rem !important;
   text-wrap: nowrap;
 }
+
+/* @-webkit-keyframes brightness {
+  0%, 100%  { -webkit-filter: brightness(none); }
+  50% { -webkit-filter: brightness(0.7); }
+}
+
+.abt-pic img {
+  -webkit-animation: brightness 3s infinite;
+} */

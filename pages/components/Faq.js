@@ -49,7 +49,7 @@ export default function Faq() {
         <>
             <section className="faqs width-container">
                 <div className="container mx-auto m1-h">
-                    <h3 className="text-center pt-16 font-poppins text-3xl md:text-4xl  md:pb-4">
+                    <h3 className="text-center pt-16 font-poppins text-3xl md:text-4xl  md:pb-4 font-bold mb-4">
                         Looking for Answers?
                     </h3>
 
