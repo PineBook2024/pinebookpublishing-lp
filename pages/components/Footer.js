@@ -108,9 +108,9 @@ export default function Footer() {
               className="text-white ml-1"
               target="_blank"
             >
-              Privacy Policy | {" "}
+              Privacy Policy {" "}
             </Link>
-            Powered by <span className="powered-by-text">Pine Book Writing Inc.</span>
+            {/* Powered by <span className="powered-by-text">Pine Book Writing Inc.</span> */}
           </p>
 
         </div>
