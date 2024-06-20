@@ -121,11 +121,11 @@ export default function BrandHero() {
                             Looking to Publish <br></br> Your Own Book
                         </h1> */}
                         <WavyText text="Do you Have a Great Story? Let's Publish It" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-6xl text-white font-bold" />
-                        <FadeIn>
+                        {/* <FadeIn> */}
                             <p className="text-xl text-white pt-4">
                                 Have you started penning your story idea, but got stuck on your story’s next chapter? Nevermind! Self publishing a book can be sometimes a nightmare even for some great writers. However, Pine Book Publishing is your creative partner, offering hands-on support from the first word to the final cover.
                             </p>
-                        </FadeIn>
+                        {/* </FadeIn> */}
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                             {clientLogos.map((logo, index) => (
                                 <Link key={index} href={logo.href} target="_blank">
