@@ -103,8 +103,8 @@ export default function BrandHero() {
         <>
 
 
-            <section class="brand-hero-section">
-                <div className="container mx-4 pt-20 md:mx-32 tablet-margin-banner max-w-screen-xl">
+            {/* <section class=""> */}
+                <div className="container mx-4 pt-20 md:mx-32 tablet-margin-banner max-w-screen-xl brand-hero-section">
                     <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
                         <div className="mb-4">
                             <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
@@ -217,7 +217,7 @@ export default function BrandHero() {
                         </div>
                     </div>
                 </div>
-            </section>
+            {/* </section> */}
 
         </>
     );
