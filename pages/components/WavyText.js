@@ -47,7 +47,7 @@ const WavyText = ({ text = "", delay = 0, duration = 0.05, replay, style, classN
                 {lines.map((line, lineIndex) => (
                     <motion.h1
                         key={lineIndex}
-                        style={{ display: "flex", flexWrap: 'wrap', letterSpacing: '3px' }}
+                        style={{ display: "flex", flexWrap: 'wrap', letterSpacing: '1px', lineHeight: '55px' }}
                     >
                         {Array.from(line).map((letter, letterIndex) => (
                             <motion.span key={letterIndex} variants={child}>
