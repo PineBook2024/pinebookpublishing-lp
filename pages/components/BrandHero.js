@@ -187,7 +187,7 @@ export default function BrandHero() {
                                     <div className="relative">
                                         <textarea
                                             className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                                            rows={5}
+                                            rows={3}
                                             onChange={handleChange}
                                             value={message}
                                             required
@@ -197,17 +197,17 @@ export default function BrandHero() {
                                         {/* <FontAwesomeIcon icon={faPen} color="#747474" className="absolute left-0 top-3 ml-4" width={16} /> */}
                                         <div
                                             className="absolute inset-y-0 left-0 pl-3 pt-3 
-                                        flex items-start  
-                                        pointer-events-none"
+                                            flex items-start  
+                                            pointer-events-none"
                                         ></div>
                                     </div>
                                     {showSuccess && (
-                                        <p className="px-1 py-2 text-green-700">
+                                        <p className="px-1 py-1 text-green-700">
                                             Form submitted Successfully!
                                         </p>
                                     )}
                                     <button
-                                        className="w-full p-4 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
+                                        className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
                                         type="submit"
                                     >
                                         Submit
