@@ -671,7 +671,7 @@ export default function LpNew() {
                 <div className="text-center mb-6 new-lp3-why-choose-us-title">
                     <h2 className="text-4xl text-black uppercase font-bold">Our Process: From Concept to Perfection</h2>
                 </div>
-                <div className="new-lp3-process-wrapper">
+                <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
                     {steps.map((step, index) => (
                         <div key={index} className={`process-item ${index === activeIndex ? 'active' : ''}`}>
                             <h3>{step.title}</h3>
