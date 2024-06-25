@@ -2622,7 +2622,7 @@ video#brandVideo {
 
 .new-lp3-footer{
   background-image: url('../public/images/footer-newlp-3.webp');
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
     background-size: cover;
     background-position: center;
 }
