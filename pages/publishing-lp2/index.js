@@ -9,6 +9,7 @@ import 'glightbox/dist/css/glightbox.min.css';
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faLocationDot, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Script from 'next/script';
 import {
     animate,
     motion,
@@ -87,7 +88,7 @@ const steps = [
     { title: "Publishing", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Publishing.png" },
     // ... Add other steps similarly
 ];
-export default function LpNew() {
+export default function PublishingLpNew() {
     const [activeTab, setActiveTab] = useState(0);
     const [activeCategory, setActiveCategory] = useState('Fiction');
     const swiperRef = useRef();
@@ -255,6 +256,8 @@ export default function LpNew() {
               `,
                     }}
                 />
+
+                <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script>
             </Head>
             <BookPublishingLp isOpen={isOpen} setIsOpen={setIsOpen} />
             <header className="py-2 new-lp-header">
@@ -276,7 +279,7 @@ export default function LpNew() {
                         <Link className="text-white flex" href={'tel:8668417469'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(866)-841-7469</span></Link>
 
                         <button className="items-center md:py-2 py-4 px-3 get-started">
-                            <Link className="font-poppins" href={'javascript:;'}>Talk to an Expert</Link>
+                            <Link className="font-poppins" href="#">Talk to an Expert</Link>
                         </button>
                     </div>
                 </div>
@@ -363,7 +366,7 @@ export default function LpNew() {
                         <div>
                             <div className="flex justify-center items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                                 {clientLogos.map((logo, index) => (
-                                    <Link key={index} href={'javascript:;'}>
+                                    <Link key={index} href="#">
                                         <Image
                                             alt={logo.alt}
                                             src={logo.src}
