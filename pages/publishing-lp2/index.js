@@ -876,7 +876,7 @@ export default function LpNew() {
             <footer className="text-white body-font new-lp3-footer pt-12 pb-4">
                 <div className="container px-5 pt-10 pb-10 md:pt-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col position-relative">
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-center">
-                        <div className="lg:w-1/2 md:w-1/2 w-full px-4">
+                        <div className="lg:w-1/2 md:w-1/3 w-full px-4">
                             <h3 className="mb-6">We Would Love To Hear From You
                             </h3>
                             <div className="">

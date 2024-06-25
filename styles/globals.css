@@ -2011,7 +2011,7 @@ video#brandVideo {
 }
 
 .new-lp3-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url(../public/images/banner-lp3.jpg) no-repeat left top #081036;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url('../public/images/banner-lp3.jpg') no-repeat left top #081036;
   background-size: cover;
   text-align: center;
   padding: 190px 0 70px;
@@ -2621,7 +2621,7 @@ video#brandVideo {
 }
 
 .new-lp3-footer{
-  background-image: url(../public/images/footer-newlp-3.webp);
+  background-image: url('../public/images/footer-newlp-3.webp');
   background-attachment: fixed;
     background-size: cover;
     background-position: center;
