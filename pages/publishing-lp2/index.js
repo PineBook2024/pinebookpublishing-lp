@@ -281,7 +281,7 @@ export default function LpNew() {
                     </div>
                 </div>
             </header>
-            <section className="new-lp3-banner relative">
+            <section className="new-lp3-banner-section relative">
                 <Image alt="LOGO" src={'/brand-img/book1.webp'} className="lp3-banner-left-side-book" width={200} height={80} loading="lazy" />
                 <Image alt="LOGO" src={'/brand-img/book2.webp'} className="lp3-banner-right-side-book" width={200} height={80} loading="lazy" />
                 <div className="max-w-screen-xl mx-auto pt-20">
