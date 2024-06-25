@@ -142,7 +142,7 @@ export default function PublishingLpNew() {
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thank-you-page')
+            router.push('/thank-u')
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
@@ -257,7 +257,6 @@ export default function PublishingLpNew() {
                     }}
                 />
 
-                <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script>
             </Head>
             <BookPublishingLp isOpen={isOpen} setIsOpen={setIsOpen} />
             <header className="py-2 new-lp-header">
@@ -278,8 +277,8 @@ export default function PublishingLpNew() {
                         </button> */}
                         <Link className="text-white flex" href={'tel:8668417469'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(866)-841-7469</span></Link>
 
-                        <button className="items-center md:py-2 py-4 px-3 get-started">
-                            <Link className="font-poppins" href="#">Talk to an Expert</Link>
+                        <button className="items-center md:py-2 py-4 px-3 get-started" onClick={handleOpenChat}>
+                            <Link className="font-poppins" href="#" >Talk to an Expert</Link>
                         </button>
                     </div>
                 </div>

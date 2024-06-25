@@ -2642,7 +2642,7 @@ video#brandVideo {
 }
 
 .new-lp3-process-wrapper .process-item {
-  width: 180px;
+  width: 145px;
   padding: 140px 0;
   position: relative;
   transition: .5s
@@ -2661,7 +2661,7 @@ video#brandVideo {
 
 .new-lp3-process-wrapper .process-item:nth-child(odd) .p-img {
   top: -12px;
-  right: -57px
+  right: -40px;
 }
 
 .new-lp3-process-wrapper .process-item .p-img {
@@ -2675,8 +2675,8 @@ video#brandVideo {
 }
 
 .new-lp3-process-wrapper .process-item:nth-child(2n) .p-img {
-  bottom: -12px;
-  right: -63px;
+  bottom: -16px;
+  right: -40px;
 }
 
 .new-lp3-process-wrapper .process-item:hover div::after {
