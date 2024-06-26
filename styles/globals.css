@@ -1155,6 +1155,9 @@ footer svg {
     width: 100% !important;
     margin-bottom: 20px;
   }
+  .head-logo{
+    width: 172px !important;
+  }
 }
 
 
