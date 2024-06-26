@@ -1145,6 +1145,12 @@ footer svg {
   .new-lp3-tabs-section .tab-btn{
     margin-top: 10px;
   }
+  .new-lp3-why-choose-us-title {
+    margin-bottom: 25px;
+  }
+  .new-lp3-cta-sec{
+    margin: 16px;
+  }
 }
 
 
@@ -2588,6 +2594,7 @@ video#brandVideo {
   width: 100%;
   padding: 37px 25px;
   transition: 0.4s ease-in-out;
+  height: 200px;
 }
 
 .new-lp3-tabs-section .active {
@@ -2597,6 +2604,7 @@ video#brandVideo {
   width: 100%;
   padding: 37px 25px;
   transition: 0.4s ease-in-out;
+  height: 200px;
 }
 
 .new-lp3-tabs-section .active img {

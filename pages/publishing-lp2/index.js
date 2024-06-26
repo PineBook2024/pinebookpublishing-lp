@@ -426,9 +426,9 @@ export default function PublishingLpNew() {
                     </h2>
                     <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse provides an extensive array of book publishing options.With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.</p>
                 </div>
-                <div className="flex flex-col items-center p-8 tabs">
-                    <div className="flex flex-col lg:flex-row md:flex-row items-center justify-center space-x-4 mb-6">
-                        {tabs.map((tab, index) => (
+                <div className=" p-8 tabs">
+                    <div className="">
+                        {/* {tabs.map((tab, index) => (
                             <button
                                 key={index}
                                 className={`tab-btn px-4 py-2 rounded flex flex-col items-center space-x-2 space-y-2 ${activeTab === index ? 'active' : 'in-active'}`}
@@ -437,8 +437,49 @@ export default function PublishingLpNew() {
                                 <Image src={tab.icon} alt="icons" width={70} height={70} />
                                 <span>{tab.name}</span>
                             </button>
-                        ))}
+                        ))} */}
+                        <Swiper
+                className=""
+                spaceBetween={15}
+                slidesPerView={6}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                modules={[Navigation, Autoplay, Pagination]}
+                breakpoints={{
+                    "@0.00": {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        navigation: false,
+                        pagination: false
+                    },
+                    "@1.00": {
+                        slidesPerView: 6,
+                        spaceBetween: 15,
+                    },
+                }}
+            >
+                {tabs.map((tab, index) => (
+                    <SwiperSlide key={index}>
+                        <button
+                            className={`tab-btn px-4 py-2 rounded flex flex-col items-center space-x-2 space-y-2 ${activeTab === index ? 'active' : 'in-active'}`}
+                            onClick={() => setActiveTab(index)}
+                        >
+                            <Image src={tab.icon} alt="icons" width={70} height={70} />
+                            <span>{tab.name}</span>
+                        </button>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
                     </div>
+                    
+
+                   
 
                     {activeTab === 0 && (
                         <div className="flex flex-col lg:flex-row md:flex-row mt-10">
