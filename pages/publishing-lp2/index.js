@@ -925,7 +925,7 @@ export default function PublishingLpNew() {
                         <div className="">
                             <h3 className="mb-6">We Would Love To Hear From You
                             </h3>
-                            <div className="">
+                            <div className="flex justify-center">
                                 <form className="flex justify-center flex-col new-lp-banner-form gap-4" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                         <input
