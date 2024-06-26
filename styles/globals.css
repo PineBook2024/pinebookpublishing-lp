@@ -1151,6 +1151,10 @@ footer svg {
   .new-lp3-cta-sec {
     margin: 16px;
   }
+  .new-lp-header-submit-btn{
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
 }
 
 
