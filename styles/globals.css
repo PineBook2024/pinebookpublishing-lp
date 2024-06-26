@@ -1130,33 +1130,46 @@ footer svg {
     z-index: 1000 !important;
     width: 115px !important;
   }
-  .lp3-banner-left-side-book{
+
+  .lp3-banner-left-side-book {
     display: none;
   }
-  .lp3-banner-right-side-book{
+
+  .lp3-banner-right-side-book {
     display: none;
   }
-  .get-quote-btn{
+
+  .get-quote-btn {
     margin-top: 24px;
   }
-  .new-lp3-footer .content{
+
+  .new-lp3-footer .content {
     text-align: start;
   }
-  .new-lp3-tabs-section .tab-btn{
+
+  .new-lp3-tabs-section .tab-btn {
     margin-top: 10px;
   }
+
   .new-lp3-why-choose-us-title {
     margin-bottom: 25px;
   }
+
   .new-lp3-cta-sec {
     margin: 16px;
   }
-  .new-lp-header-submit-btn{
+
+  .new-lp-header-submit-btn {
     width: 100% !important;
     margin-bottom: 20px;
   }
-  .head-logo{
+
+  .head-logo {
     width: 172px !important;
+  }
+
+  .new-lp3-cta-sec .content {
+    text-align: center;
   }
 }
 
