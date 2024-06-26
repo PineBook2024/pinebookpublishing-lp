@@ -426,12 +426,12 @@ export default function PublishingLpNew() {
                     </h2>
                     <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse provides an extensive array of book publishing options.With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.</p>
                 </div>
-                <div className="flex flex-col items-start p-8 tabs">
-                    <div className="flex space-x-4 mb-6">
+                <div className="flex flex-col items-center p-8 tabs">
+                    <div className="flex flex-col lg:flex-row md:flex-row items-center justify-center space-x-4 mb-6">
                         {tabs.map((tab, index) => (
                             <button
                                 key={index}
-                                className={`tab-btn px-4 py-2 rounded flex flex-col items-center space-x-2 ${activeTab === index ? 'active' : 'in-active'}`}
+                                className={`tab-btn px-4 py-2 rounded flex flex-col items-center space-x-2 space-y-2 ${activeTab === index ? 'active' : 'in-active'}`}
                                 onClick={() => setActiveTab(index)}
                             >
                                 <Image src={tab.icon} alt="icons" width={70} height={70} />
@@ -441,7 +441,7 @@ export default function PublishingLpNew() {
                     </div>
 
                     {activeTab === 0 && (
-                        <div className="flex mt-10">
+                        <div className="flex flex-col lg:flex-row md:flex-row mt-10">
                             <div className="basis-1/2">
                                 <Image src={"/images/About-us-img.png"} width={500} height={570}
                                     loading="lazy"
@@ -468,8 +468,8 @@ export default function PublishingLpNew() {
                                         <li className="last">Author Assistance
                                         </li>
                                     </ul>
-                                    <section className="tab-one-content flex flex-col lg:flex-row justify-between items-center max-w-screen-xl mx-auto">
-                                        <div className="flex items-center justify-center gap-4">
+                                    <section className="tab-one-content flex flex-col lg:flex-row justify-between items-start max-w-screen-xl mx-auto">
+                                        <div className="flex items-start justify-center gap-4">
                                             <div className="icon">
                                                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22Z" stroke="#fff" stroke-width="1.7" />
@@ -673,19 +673,22 @@ export default function PublishingLpNew() {
                 <div className="text-center mb-6 new-lp3-why-choose-us-title">
                     <h2 className="text-4xl text-black uppercase font-bold">Our Process: From Concept to Perfection</h2>
                 </div>
-                <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
-                    {steps.map((step, index) => (
-                        <div key={index} className={`process-item ${index === activeIndex ? 'active' : ''}`}>
-                            <h3>{step.title}</h3>
-                            <div>
-                                <Image src={step.icon} width={40} height={40} alt="icon" />
-                                <Image className="p-img" src={index % 2 === 0 ? step.imgTop : step.imgBottom} width={130} height={130} alt="process" />
-                                <Image src={step.img} width={130} height={130} alt="process" />
-                                <Image src={step.img1} width={130} height={130} alt="process" />
+                <div className="lg:block md:block hidden">
+                    <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
+                        {steps.map((step, index) => (
+                            <div key={index} className={`process-item ${index === activeIndex ? 'active' : ''}`}>
+                                <h3>{step.title}</h3>
+                                <div>
+                                    <Image src={step.icon} width={40} height={40} alt="icon" />
+                                    <Image className="p-img" src={index % 2 === 0 ? step.imgTop : step.imgBottom} width={130} height={130} alt="process" />
+                                    <Image src={step.img} width={130} height={130} alt="process" />
+                                    <Image src={step.img1} width={130} height={130} alt="process" />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
             </section>
 
             {/* Why choose Us */}
@@ -1008,7 +1011,7 @@ export default function PublishingLpNew() {
                             >
                                 Privacy Policy {" "}
                             </Link>
-                           
+
                         </p>
 
                     </div>

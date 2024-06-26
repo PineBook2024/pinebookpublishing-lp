@@ -1,8 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 @font-face {
   font-family: 'Cinzel Decorative';
   src: url('../pages/Lucida\ Bright\ Regular.ttf') format('ttf');
@@ -1130,6 +1130,21 @@ footer svg {
     z-index: 1000 !important;
     width: 115px !important;
   }
+  .lp3-banner-left-side-book{
+    display: none;
+  }
+  .lp3-banner-right-side-book{
+    display: none;
+  }
+  .get-quote-btn{
+    margin-top: 24px;
+  }
+  .new-lp3-footer .content{
+    text-align: start;
+  }
+  .new-lp3-tabs-section .tab-btn{
+    margin-top: 10px;
+  }
 }
 
 
@@ -2011,7 +2026,7 @@ video#brandVideo {
 }
 
 .new-lp3-banner-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url('../public/images/banner-lp3.jpg') no-repeat left top #081036;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(19, 124, 109, 0.4)), url('../public/images/banner-lp3.webp') no-repeat left top #081036;
   background-size: cover;
   text-align: center;
   padding: 190px 0 70px;
@@ -2522,7 +2537,7 @@ video#brandVideo {
 
 .new-lp3-cta-sec .icon,
 .tab-one-content .icon,
-.new-lp3-footer  .icon{
+.new-lp3-footer .icon {
   width: 40px;
   height: 40px;
   padding: 12px;
@@ -2535,14 +2550,14 @@ video#brandVideo {
 
 .new-lp3-cta-sec .icon svg,
 .tab-one-content .icon svg,
-.new-lp3-footer .icon svg{
+.new-lp3-footer .icon svg {
   font-size: 20px;
   width: 20px;
 }
 
 .new-lp3-cta-sec .content h3,
 .tab-one-content .content h3,
-.new-lp3-footer  .content h3{
+.new-lp3-footer .content h3 {
   font-size: 17px;
   font-weight: bold;
   color: #1e8677;
@@ -2604,30 +2619,31 @@ video#brandVideo {
   padding: 40px;
 }
 
-.new-lp3-testimonials h3{
+.new-lp3-testimonials h3 {
   font-family: Merriweather, serif;
   font-weight: bold;
   color: #fff;
   font-size: 15px;
 }
-.new-lp3-testimonials .bk-sil.prev{
+
+.new-lp3-testimonials .bk-sil.prev {
   z-index: 99999999999;
   left: -2px;
 }
 
-.new-lp3-testimonials .bk-sil.next{
+.new-lp3-testimonials .bk-sil.next {
   z-index: 99999999999;
   right: -5px;
 }
 
-.new-lp3-footer{
+.new-lp3-footer {
   background-image: url('../public/images/footer-newlp-3.webp');
-  /* background-attachment: fixed; */
-    background-size: cover;
-    background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
-.new-lp3-footer h3{
+.new-lp3-footer h3 {
   font-family: Merriweather, serif;
   font-weight: bold;
   color: #fff;
@@ -2755,7 +2771,8 @@ video#brandVideo {
   position: relative
 }
 
-.new-lp3-process-wrapper .process-item.active,.new-lp3-process-wrapper .process-item:hover {
+.new-lp3-process-wrapper .process-item.active,
+.new-lp3-process-wrapper .process-item:hover {
   transform: translateY(-10px)
 }
 
@@ -2763,13 +2780,15 @@ video#brandVideo {
   filter: brightness(0.23);
 }
 
-.new-lp3-process-wrapper .process-item.active h3::before,.new-lp3-process-wrapper .process-item:hover h3::before {
-  color:  rgb(30 134 119);
+.new-lp3-process-wrapper .process-item.active h3::before,
+.new-lp3-process-wrapper .process-item:hover h3::before {
+  color: rgb(30 134 119);
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color:  rgb(30 134 119);
+  -webkit-text-stroke-color: rgb(30 134 119);
 }
 
-.new-lp3-process-wrapper .process-item img:nth-child(3),.new-lp3-process-wrapper .process-item img:nth-child(4) {
+.new-lp3-process-wrapper .process-item img:nth-child(3),
+.new-lp3-process-wrapper .process-item img:nth-child(4) {
   position: absolute;
   width: 100%;
   height: 100%;
