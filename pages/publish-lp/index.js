@@ -88,6 +88,17 @@ const steps = [
     { title: "Publishing", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Publishing.png" },
     // ... Add other steps similarly
 ];
+
+const processItems = [
+    { icon: '/images/Editing.png', text: 'Editing' },
+    { icon: '/images/Proofreading.png', text: 'Proofreading' },
+    { icon: '/images/Typesetting & Layout adjustment.png', text: 'TypeSetting' },
+    { icon: '/images/Typesetting & Layout adjustment.png', text: 'Layout Adjustment' },
+    { icon: '/images/Formatting.png', text: 'Formatting' },
+    { icon: '/images/Cover Design.png', text: 'Cover Designing' },
+    { icon: '/images/Cover Design.png', text: 'Adjustment' },
+    { icon: '/images/Publishing.png', text: 'Publishing' },
+];
 export default function PublishingLpNew() {
     const [activeTab, setActiveTab] = useState(0);
     const [activeCategory, setActiveCategory] = useState('Fiction');
@@ -714,7 +725,7 @@ export default function PublishingLpNew() {
 
             <section className="my-7 py-20 overflow-hidden">
                 <div className="text-center mb-6 new-lp3-why-choose-us-title">
-                    <h2 className="text-4xl text-black uppercase font-bold">Our Process: From Concept to Perfection</h2>
+                    <h2 className="text-3xl text-black uppercase font-bold">Our Process: From Concept to Perfection</h2>
                 </div>
                 <div className="lg:block md:block hidden">
                     <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
@@ -732,49 +743,32 @@ export default function PublishingLpNew() {
                     </div>
                 </div>
 
-                {/* <div className="lg:hidden md:hidden block">
-                    <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto flex-col">
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
-                        <div className='process-item-mob'>
-                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
-                            <h3 className="text-black text-2xl mt-3">Editing</h3>
-                        </div>
+                <div className="lg:hidden md:hidden block">
+                    <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            pagination={{ clickable: true }}
+                            loop={true}
+                        >
+                            {processItems.map((item, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className='process-item-mob'>
+                                        <img src={item.icon} height={40} width={40} alt="icon" />
+                                        <h3 className="text-black text-2xl mt-3">{item.text}</h3>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
-                </div> */}
+                </div>
 
             </section>
 
             {/* Why choose Us */}
             <section className="my-7">
                 <div className="text-center mb-6 new-lp3-why-choose-us-title">
-                    <h2 className=" text-4xl text-black uppercase font-bold">Why Opt for Us?
+                    <h2 className=" text-3xl text-black uppercase font-bold">Why Opt for Us?
                     </h2>
                     <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse providesan extensive array of book publishing options.<br></br> With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.
                     </p>
