@@ -732,6 +732,43 @@ export default function PublishingLpNew() {
                     </div>
                 </div>
 
+                {/* <div className="lg:hidden md:hidden block">
+                    <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto flex-col">
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                        <div className='process-item-mob'>
+                            <Image src={"/images/Editing.png"} height={40} width={40} alt="icon" />
+                            <h3 className="text-black text-2xl mt-3">Editing</h3>
+                        </div>
+                    </div>
+                </div> */}
+
             </section>
 
             {/* Why choose Us */}
@@ -932,7 +969,7 @@ export default function PublishingLpNew() {
                             </h3>
                             <div className="flex justify-center">
                                 <form className="flex justify-center flex-col new-lp-banner-form gap-4" onSubmit={handleSubmit}>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-0 lg:mb-4">
                                         <input
                                             type="text"
                                             name="firstName"

@@ -2833,6 +2833,33 @@ video#brandVideo {
   opacity: 1;
 }
 
+.process-item-mob{
+  background-color: #f6fffd;
+  width: auto;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin: 20px;
+  flex-direction: column;
+  border: 5px solid rgb(30 134 119);
+}
+
+.process-item-mob h3::before{
+font-size: 18px;
+font-weight: 500;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+margin-bottom: 0;
+counter-increment: chapter;
+display: flex;
+white-space: nowrap;
+justify-content: center;
+align-items: center;
+}
 /* @-webkit-keyframes brightness {
   0%, 100%  { -webkit-filter: brightness(none); }
   50% { -webkit-filter: brightness(0.7); }
