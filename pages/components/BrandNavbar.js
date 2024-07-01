@@ -86,7 +86,7 @@ export default function BrandNavbar() {
                         <ul className="md:flex items-center space-x-4">
                             <li className='mb-3 md:mb-0'><Link href="/" className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" className="text-white hover:text-gray-300">About Us</Link></li>
-                            <li className='mb-3 md:mb-0'><Link href="/services" className="text-white hover:text-gray-300">Services</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/publishing-services" className="text-white hover:text-gray-300">Services</Link></li>
                             {/* <li
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
