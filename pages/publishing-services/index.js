@@ -273,7 +273,7 @@ export default function PublishingLpNew() {
             <header className="py-2 new-lp-header">
                 <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat max-w-screen-xl mx-auto">
                     <div className="head-logo">
-                        <Link className="text-center" href="/publishing-offer">
+                        <Link className="text-center" href="/publishing-services">
                             <Image alt="LOGO" src={'/brand-img/logo.webp'} width={200} height={80} loading="lazy" />
                         </Link>
                     </div>
