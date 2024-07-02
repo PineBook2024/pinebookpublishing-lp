@@ -73,7 +73,7 @@ export default function BookPublishing() {
 
             {/* <BrandProcess /> */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
-                <div className="max-w-screen-xl responsive-not-process">
+                <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">How Your Journey Looks With Us?</h2>
@@ -82,28 +82,28 @@ export default function BookPublishing() {
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Review:</h2>
-                            <p className="">First up, our team of experts will take a<br></br> close look at your manuscript. They’ll<br></br> give you detailed feedback on how to improve<br></br> its structure, content, and overall quality.</p>
+                            <p className="para">First up, our team of experts will take a<br></br> close look at your manuscript. They’ll<br></br> give you detailed feedback on how to improve<br></br> its structure, content, and overall quality.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Editing & Proofreading:</h2>
-                            <p className="">Next, our skilled editors will work closely <br></br> with you to polish your manuscript. They’ll<br></br> make sure it’s free of errors and ready to shine.</p>
+                            <p className="para">Next, our skilled editors will work closely <br></br> with you to polish your manuscript. They’ll<br></br> make sure it’s free of errors and ready to shine.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Cover Design:</h2>
-                            <p className="">Now, it’s time to get creative! We’ll team <br></br> up with you to design a cover that<br></br> captures the essence of your book. </p>
+                            <p className="para">Now, it’s time to get creative! We’ll team <br></br> up with you to design a cover that<br></br> captures the essence of your book. </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
-                            <p className="">We’ll take care of all the technical stuff, like<br></br> formatting your manuscript to meet industry<br></br> standards. Whether it’s for digital e-book stores<br></br> or print, we’ll make sure it’s ready to hit the shelves.</p>
+                            <p className="para">We’ll take care of all the technical stuff, like<br></br> formatting your manuscript to meet industry<br></br> standards. Whether it’s for digital e-book stores<br></br> or print, we’ll make sure it’s ready to hit the shelves.</p>
                         </div>
                     </div>
 
@@ -111,19 +111,19 @@ export default function BookPublishing() {
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Getting an ISBN:</h2>
-                            <p className="">Every book needs its ID, right? Our team<br></br> will assign your book a unique ISBN. Think<br></br> of it as its passport for proper identification<br></br> and distribution.</p>
+                            <p className="para">Every book needs its ID, right? Our team<br></br> will assign your book a unique ISBN. Think<br></br> of it as its passport for proper identification<br></br> and distribution.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Book Publishing:</h2>
-                            <p className="">Last but not least, our publisher will work<br></br> with you to make your book available on<br></br> the leading publishing platforms like Amazon<br></br> Kindle Publishing. </p>
+                            <p className="para">Last but not least, our publisher will work<br></br> with you to make your book available on<br></br> the leading publishing platforms like Amazon<br></br> Kindle Publishing. </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="max-w-screen-xl d-block md:hidden">
+                {/* <div className="max-w-screen-xl d-block md:hidden">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">How Your Journey Looks With Us?</h2>
@@ -147,7 +147,7 @@ export default function BookPublishing() {
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-6.webp"} width={700} height={200} className=" pb-10"></Image>
                     </div>
-                </div>
+                </div> */}
             </section>
             <section className="overflow-hidden" >
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8 py-10 " >

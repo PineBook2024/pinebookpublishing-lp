@@ -71,7 +71,7 @@ export default function BookEditing() {
             </div>
             {/* <BrandProcess /> */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
-                <div className="max-w-screen-xl responsive-not-process">
+                <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">How Your Journey Looks With Us?</h2>
@@ -80,28 +80,28 @@ export default function BookEditing() {
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Consultation:</h2>
-                            <p className="">Once you send us your manuscript, we'll <br></br> get in touch with you to understand your<br></br> editing needs, goals and your vision.</p>
+                            <p className="para">Once you send us your manuscript, we'll <br></br> get in touch with you to understand your<br></br> editing needs, goals and your vision.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Manuscript Review:</h2>
-                            <p className="">Our team will analyze your writing, giving<br></br> you feedback on structure, plot, character<br></br> development, and pacing. We’ll point out what’s <br></br>working and what might need a bit of tweaking. </p>
+                            <p className="para">Our team will analyze your writing, giving<br></br> you feedback on structure, plot, character<br></br> development, and pacing. We’ll point out what’s <br></br>working and what might need a bit of tweaking. </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Editing:</h2>
-                            <p className="">Next, we'll roll up our sleeves and get to<br></br> work. We’ll handle line editing OR copy<br></br> editing to make sure your writing is free of errors.</p>
+                            <p className="para">Next, we'll roll up our sleeves and get to<br></br> work. We’ll handle line editing OR copy<br></br> editing to make sure your writing is free of errors.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Revisions:</h2>
-                            <p className="">Our experts will be ready to make multiple<br></br> revisions based on your feedback,<br></br> ensuring your final copy reflects your<br></br> vision perfectly.</p>
+                            <p className="para">Our experts will be ready to make multiple<br></br> revisions based on your feedback,<br></br> ensuring your final copy reflects your<br></br> vision perfectly.</p>
                         </div>
                     </div>
 
@@ -109,19 +109,19 @@ export default function BookEditing() {
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Quality Assurance:</h2>
-                            <p className="">Before we wrap things up, our editors will<br></br> do a final quality check to make sure your<br></br> manuscript is completely ready for publication.</p>
+                            <p className="para">Before we wrap things up, our editors will<br></br> do a final quality check to make sure your<br></br> manuscript is completely ready for publication.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Delivery:</h2>
-                            <p className="">Finally, we'll send your edited manuscript <br></br>back to you in your desired format, all set<br></br> and ready for you to share your story with<br></br> the world.</p>
+                            <p className="para">Finally, we'll send your edited manuscript <br></br>back to you in your desired format, all set<br></br> and ready for you to share your story with<br></br> the world.</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="max-w-screen-xl d-block md:hidden">
+                {/* <div className="max-w-screen-xl d-block md:hidden">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">OUR PROCESS</h2>
@@ -145,7 +145,7 @@ export default function BookEditing() {
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-6.webp"} width={700} height={200} className=" pb-10"></Image>
                     </div>
-                </div>
+                </div> */}
             </section>
             <section className="overflow-hidden" >
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8 py-10 " >
