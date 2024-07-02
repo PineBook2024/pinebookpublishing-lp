@@ -26,6 +26,20 @@ export default function Home() {
                     content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!"
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
+                <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+                {/* Google tag Manager Script */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-9X52J8V8NK');
+              `,
+                    }}
+                />
             </Head>
             <BrandTopBar />
             <BrandNavbar />

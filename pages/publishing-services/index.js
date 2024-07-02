@@ -252,22 +252,22 @@ export default function PublishingLpNew() {
                     name="description"
                     content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
                 />
-                <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+               <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
                 <link rel="shortcut icon" href="/images/fav.png" />
 
                 {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'AW-16471224604');
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-9X52J8V8NK');
               `,
                     }}
                 />
-
             </Head>
             <BookPublishingLp isOpen={isOpen} setIsOpen={setIsOpen} />
             <header className="py-2 new-lp-header">

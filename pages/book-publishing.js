@@ -103,7 +103,7 @@ export default function BookPublishing() {
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
-                            <p className="">We’ll take care of all the technical stuff,<br></br> like formatting your manuscript to meet<br></br> industry standards. Whether it’s for digital<br></br> e-book stores or print, we’ll make sure<br></br> it’s ready to hit the shelves.</p>
+                            <p className="">We’ll take care of all the technical stuff, like<br></br> formatting your manuscript to meet industry<br></br> standards. Whether it’s for digital e-book stores<br></br> or print, we’ll make sure it’s ready to hit the shelves.</p>
                         </div>
                     </div>
 

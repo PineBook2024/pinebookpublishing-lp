@@ -109,16 +109,16 @@ export default function BrandFooter() {
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
-                                    <Link href={'javascript:;'}>
+                                    <Link href="/book-editing">
                                         Book Editing
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href={'javascript:;'}>
+                                    <Link href="/proofreading">
                                         Proofreading
                                     </Link>
                                 </li>
-                                <li className="mt-3">
+                                {/* <li className="mt-3">
                                     <Link href={'javascript:;'}>
                                         Book Formatting
                                     </Link>
@@ -127,13 +127,13 @@ export default function BrandFooter() {
                                     <Link href={'javascript:;'}>
                                         Typesetting & Layout
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li className="mt-3">
-                                    <Link href={'javascript:;'}>
+                                    <Link href="/book-publishing">
                                         Book Publishing
                                     </Link>
                                 </li>
-                                <li className="mt-3">
+                                {/* <li className="mt-3">
                                     <Link href={'javascript:;'}>
                                         Audio Book
                                     </Link>
@@ -147,7 +147,7 @@ export default function BrandFooter() {
                                     <Link href={'javascript:;'}>
                                         Document Processing
                                     </Link>
-                                </li>
+                                </li> */}
                             </nav>
                         </div>
                     </div>

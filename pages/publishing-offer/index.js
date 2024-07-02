@@ -213,14 +213,15 @@ export default function Lp() {
                 <link rel="shortcut icon" href="/images/fav.png" />
 
                 {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'AW-16471224604');
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-9X52J8V8NK');
               `,
                     }}
                 />
