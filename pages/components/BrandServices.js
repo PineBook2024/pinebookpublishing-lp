@@ -109,7 +109,7 @@ export default function BrandServices() {
                                 <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
-                                    <Image src={"/brand-img/service-icon1.png"} width={50} className="icon" height={50}></Image>
+                                    <Image src={"/brand-img/service-icon5.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-poppins text-4xl">05</span>
                                 </div>
                                 <p >Crafting covers that captivate at first glance.</p>
@@ -129,7 +129,7 @@ export default function BrandServices() {
                                 <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
-                                    <Image src={"/brand-img/service-icon2.png"} width={50} className="icon" height={50}></Image>
+                                    <Image src={"/brand-img/service-icon6.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-poppins text-4xl">06</span>
                                 </div>
                                 <p >Bringing your story to the shelves and screens of the world.</p>
