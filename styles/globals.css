@@ -2886,6 +2886,10 @@ video#brandVideo {
   align-items: center;
 }
 
+.border-dashed {
+  border-style: dashed;
+}
+
 /* @-webkit-keyframes brightness {
   0%, 100%  { -webkit-filter: brightness(none); }
   50% { -webkit-filter: brightness(0.7); }

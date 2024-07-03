@@ -62,7 +62,7 @@ export default function BookPublishing() {
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
-                            data-aos="fade-left" data-aos-duration="1000"
+                            data-aos="fade-left" data-aos-duration="1000" 
                         />
                     </div>
                 </div>
