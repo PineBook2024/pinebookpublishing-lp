@@ -75,7 +75,7 @@ export default function BrandLogo() {
                                     <h2 className="text-black title-font text-xs">{badge.desc}</h2>
                                 </div>
                             </div>
-                        ))}
+                        ))} 
                     </div>
                 </div>
             </section>

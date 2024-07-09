@@ -27,7 +27,7 @@ export default function BrandServices() {
                                 <p >We turn your drafts into masterpieces.</p>
                                 <h4 className="mt-4 font-poppins text-2xl">EDITING</h4>
                             </div>
-                            <div className="basis-1/2 brand-service-card-img relative">
+                            <div className="basis-1/2 brand-service-card-img relative"> 
                                 <span class="square">
                                     <Link href="#">Read More</Link>
                                 </span>

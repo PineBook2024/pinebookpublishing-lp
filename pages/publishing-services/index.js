@@ -35,6 +35,7 @@ import BookPublishingLp from "../components/BookPublishingLp";
 import Packages from "../components/Packages";
 import PublishingOfferPackages from "../components/PublishingOfferPackages";
 import Story from "../components/Story";
+import BookPublishingLpService from "../components/BookPublishingLpService";
 
 const GLightbox = dynamic(
     () => import('glightbox').then((glightboxModule) => glightboxModule.default),
@@ -269,7 +270,7 @@ export default function PublishingLpNew() {
                     }}
                 />
             </Head>
-            <BookPublishingLp isOpen={isOpen} setIsOpen={setIsOpen} />
+            <BookPublishingLpService isOpen={isOpen} setIsOpen={setIsOpen}/>
             <header className="py-2 new-lp-header">
                 <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat max-w-screen-xl mx-auto">
                     <div className="head-logo">
