@@ -17,6 +17,7 @@ export default function PublishingOfferPopup({ isOpen, onClose, service }) {
     const [message, setMessage] = useState("");
     const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     const budgetOptions = [
         "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
@@ -43,12 +44,26 @@ export default function PublishingOfferPopup({ isOpen, onClose, service }) {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phoneNumber') {
+                const phoneRegex = /^\d{0,10}$/;
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+        }
         const response = await submitPopupContactForm(
             fulName,
             mail,

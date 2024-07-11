@@ -69,6 +69,7 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   const lightboxRef = useRef(null);
   useEffect(() => {
@@ -187,12 +188,26 @@ export default function Home() {
 
     const setter = setters[name];
     if (setter) {
-      setter(value);
+      if (name === 'phoneNumber') {
+        const phoneRegex = /^\d{0,10}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          setPhoneError("");
+        } else {
+          setPhoneError("Phone number must be exactly 10 digits");
+        }
+      } else {
+        setter(value);
+      }
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (phoneNumber.length !== 10) {
+      setPhoneError("Phone number must be exactly 10 digits");
+      return;
+    }
     const response = await submitMainContactForm(
       fullName,
       email,
@@ -930,11 +945,14 @@ export default function Home() {
                       className="pl-4 pr-4 py-2 border rounded-lg w-full connect-form-input"
                       placeholder="Enter your Number"
                     />
+                    {phoneError && (
+                      <span className="text-red-500 text-md mt-1">{phoneError}</span>
+                    )}
                   </div>
 
                   <div className="relative mb-3">
                     <input
-                      type="text"
+                      type="text" 
                       name="email"
                       onChange={handleChange}
                       value={email}

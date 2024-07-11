@@ -62,12 +62,13 @@ export default function Lp() {
     const [activeCategory, setActiveCategory] = useState('Fiction');
     const swiperRef = useRef();
     const router = useRouter();
-    const { submitBookPublishingHeaderForm } = useHubspotForm();
+    const { submitBookPublishingServiceForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [phone, setPhone] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 2);
@@ -88,13 +89,27 @@ export default function Lp() {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phone') {
+                const phoneRegex = /^\d{0,10}$/;
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitBookPublishingHeaderForm(
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+          }
+        const response = await submitBookPublishingServiceForm(
             firstName,
             email,
             phone,

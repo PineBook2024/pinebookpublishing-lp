@@ -10,13 +10,15 @@ import useHubspotForm from "@/hooks/hubspot";
 export default function popup({ isOpen, onClose, service }) {
     const router = useRouter();
     const { submitPopupContactForm } = useHubspotForm();
-    const [mail, setMail] = useState("");
+    const [email, setEmail] = useState("");
     const [fulName, setFulName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     // const [budget, setBudget] = useState("");
     const [message, setMessage] = useState("");
     const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
+
 
     const budgetOptions = [
         "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
@@ -34,7 +36,7 @@ export default function popup({ isOpen, onClose, service }) {
         const { name, value } = e.target;
         const setters = {
             fulName: setFulName,
-            mail: setMail,
+            email: setEmail,
             message: setMessage,
             service: setServiceState,
             // budget: setBudget,
@@ -43,15 +45,29 @@ export default function popup({ isOpen, onClose, service }) {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phoneNumber') {
+                const phoneRegex = /^\d{0,10}$/;
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+        }
         const response = await submitPopupContactForm(
             fulName,
-            mail,
+            email,
             phoneNumber,
             service,
             // budget,
@@ -62,7 +78,7 @@ export default function popup({ isOpen, onClose, service }) {
             router.push('/thankyou')
             setTimeout(() => {
                 setShowSuccess(false);
-                setMail("");
+                setEmail("");
                 setFulName("");
                 setPhoneNumber("")
                 setMessage("");
@@ -129,6 +145,9 @@ export default function popup({ isOpen, onClose, service }) {
                                                 className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input"
                                                 placeholder="Enter your Number"
                                             />
+                                            {phoneError && (
+                                                <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                                            )}
                                         </div>
 
                                         <div className="relative mb-3">
@@ -146,9 +165,9 @@ export default function popup({ isOpen, onClose, service }) {
                                         <div className="relative mb-3">
                                             <input
                                                 type="text"
-                                                name="mail"
+                                                name="email"
                                                 onChange={handleChange}
-                                                value={mail}
+                                                value={email}
                                                 required
                                                 className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input"
                                                 placeholder="Enter your Email"

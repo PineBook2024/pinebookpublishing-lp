@@ -7,13 +7,14 @@ import { useRouter } from 'next/navigation';
 
 export default function HeroForm() {
   const router = useRouter();
-  const { submitContactForm } = useHubspotForm();
+  const { submitMainContactForm } = useHubspotForm();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
   // const [budgets, setBudget] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   const budgetOptions = [
     "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
@@ -78,13 +79,27 @@ export default function HeroForm() {
 
     const setter = setters[name];
     if (setter) {
-      setter(value);
+      if (name === 'phone') {
+        const phoneRegex = /^\d{0,10}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          setPhoneError("");
+        } else {
+          setPhoneError("Phone number must be exactly 10 digits");
+        }
+      } else {
+        setter(value);
+      }
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await submitContactForm(
+    if (phoneNumber.length !== 10) {
+      setPhoneError("Phone number must be exactly 10 digits");
+      return;
+    }
+    const response = await submitMainContactForm(
       firstName,
       email,
       phone,
@@ -184,6 +199,9 @@ export default function HeroForm() {
                   className="pl-4 pr-4 py-2 border rounded-lg w-full text-md"
                   placeholder="Enter your Phone"
                 />
+                {phoneError && (
+                  <span className="text-red-500 text-md mt-1">{phoneError}</span>
+                )}
               </div>
               <div className="relative">
                 <input

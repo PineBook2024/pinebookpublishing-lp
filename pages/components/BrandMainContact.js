@@ -11,17 +11,19 @@ import { useRouter } from 'next/navigation';
 export default function BrandMainContact() {
     const router = useRouter();
     // Form Integration
-    const { submitBrandMainContactForm } = useHubspotForm();
+    const { submitMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
+    const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setters = {
-            username: setUsername,
+            fullName: setFullName,
             email: setEmail,
             message: setMessage,
             phoneNumber: setPhoneNumber,
@@ -29,14 +31,28 @@ export default function BrandMainContact() {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phoneNumber') {
+                const phoneRegex = /^\d{0,10}$/; 
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitBrandMainContactForm(
-            username,
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+        }
+        const response = await submitMainContactForm(
+            fullName,
             email,
             phoneNumber,
             message
@@ -47,7 +63,7 @@ export default function BrandMainContact() {
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
-                setUsername("");
+                setFullName("");
                 setPhoneNumber("")
                 setMessage("");
             }, 3000);
@@ -55,7 +71,6 @@ export default function BrandMainContact() {
 
         console.log("response", response);
     };
-
 
     return (
         <>
@@ -94,9 +109,9 @@ export default function BrandMainContact() {
                             <div className="relative mb-3">
                                 <input
                                     type="text"
-                                    name="username"
+                                    name="fullName"
                                     onChange={handleChange}
-                                    value={username}
+                                    value={fullName}
                                     required
                                     className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input font-poppins shadow-xl"
                                     placeholder="Enter your Name"
@@ -115,8 +130,10 @@ export default function BrandMainContact() {
                                     placeholder="Enter your Number"
                                 />
                                 <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                {phoneError && (
+                                    <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                                )}
                             </div>
-
                             <div className="relative mb-3">
                                 <input
                                     type="text"

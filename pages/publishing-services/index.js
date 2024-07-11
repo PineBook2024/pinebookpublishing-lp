@@ -106,12 +106,13 @@ export default function PublishingLpNew() {
     const swiperRef = useRef();
     const swiperRef3 = useRef();
     const router = useRouter();
-    const { submitBookPublishingHeaderForm } = useHubspotForm();
+    const { submitBookPublishingServiceForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [phone, setPhone] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 2);
@@ -141,13 +142,27 @@ export default function PublishingLpNew() {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phone') {
+                const phoneRegex = /^\d{0,10}$/;
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitBookPublishingHeaderForm(
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+        }
+        const response = await submitBookPublishingServiceForm(
             firstName,
             email,
             phone,
@@ -253,9 +268,9 @@ export default function PublishingLpNew() {
                     name="description"
                     content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
                 />
-               <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+                <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
                 <link rel="shortcut icon" href="/images/fav.png" />
-
+                <meta name="robots" content="noindex,nofollow" />
                 {/* Google tag Manager Script */}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
                 <script
@@ -270,7 +285,7 @@ export default function PublishingLpNew() {
                     }}
                 />
             </Head>
-            <BookPublishingLpService isOpen={isOpen} setIsOpen={setIsOpen}/>
+            <BookPublishingLpService isOpen={isOpen} setIsOpen={setIsOpen} />
             <header className="py-2 new-lp-header">
                 <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat max-w-screen-xl mx-auto">
                     <div className="head-logo">

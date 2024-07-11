@@ -8,12 +8,13 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 function BookPublishingLpService({ isOpen, setIsOpen }) {
     const router = useRouter();
-    const { submitBookPublishingPopupForm } = useHubspotForm();
+    const { submitMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,13 +27,27 @@ function BookPublishingLpService({ isOpen, setIsOpen }) {
 
         const setter = setters[name];
         if (setter) {
-            setter(value);
+            if (name === 'phoneNumber') {
+                const phoneRegex = /^\d{0,10}$/; 
+                if (phoneRegex.test(value)) {
+                    setter(value);
+                    setPhoneError("");
+                } else {
+                    setPhoneError("Phone number must be exactly 10 digits");
+                }
+            } else {
+                setter(value);
+            }
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await submitBookPublishingPopupForm(
+        if (phoneNumber.length !== 10) {
+            setPhoneError("Phone number must be exactly 10 digits");
+            return;
+        }
+        const response = await submitMainContactForm(
             fullName,
             email,
             phoneNumber,
