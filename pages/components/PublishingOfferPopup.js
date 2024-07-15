@@ -45,12 +45,16 @@ export default function PublishingOfferPopup({ isOpen, onClose, service }) {
         const setter = setters[name];
         if (setter) {
             if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/;
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -60,8 +64,8 @@ export default function PublishingOfferPopup({ isOpen, onClose, service }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
         const response = await submitPopupContactForm(
@@ -144,6 +148,9 @@ export default function PublishingOfferPopup({ isOpen, onClose, service }) {
                                                 className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input"
                                                 placeholder="Enter your Number"
                                             />
+                                            {phoneError && (
+                                                <span className="text-red-500 text-md mt-1">{phoneError}</span>
+                                            )}
                                         </div>
 
                                         <div className="relative mb-3">

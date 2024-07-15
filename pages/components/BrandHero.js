@@ -75,12 +75,16 @@ export default function BrandHero() {
         const setter = setters[name];
         if (setter) {
             if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/; 
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -90,8 +94,8 @@ export default function BrandHero() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
         const response = await submitMainContactForm(

@@ -79,26 +79,30 @@ export default function HeroForm() {
 
     const setter = setters[name];
     if (setter) {
-      if (name === 'phone') {
-        const phoneRegex = /^\d{0,10}$/;
-        if (phoneRegex.test(value)) {
-          setter(value);
-          setPhoneError("");
+        if (name === 'phone') {
+            const phoneRegex = /^\d{0,}$/;
+            if (phoneRegex.test(value)) {
+                setter(value);
+                if (value.length < 9) {
+                    setPhoneError("Phone number must be at least 9 digits");
+                } else {
+                    setPhoneError("");
+                }
+            } else {
+                setPhoneError("Invalid phone number format");
+            }
         } else {
-          setPhoneError("Phone number must be exactly 10 digits");
+            setter(value);
         }
-      } else {
-        setter(value);
-      }
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (phone.length !== 10) {
-      setPhoneError("Phone number must be exactly 10 digits");
+    if (phone.length < 9) {
+      setPhoneError("Phone number must be at least 9 digits");
       return;
-    }
+  }
     const response = await submitMainContactForm(
       firstName,
       email,

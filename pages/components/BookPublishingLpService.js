@@ -28,12 +28,16 @@ function BookPublishingLpService({ isOpen, setIsOpen }) {
         const setter = setters[name];
         if (setter) {
             if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/; 
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -43,8 +47,8 @@ function BookPublishingLpService({ isOpen, setIsOpen }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
         const response = await submitMainContactForm(
@@ -112,7 +116,7 @@ function BookPublishingLpService({ isOpen, setIsOpen }) {
                                                 />
                                                 <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-3" />
                                             </div>
-                                            <div className="relative mb-3">
+                                            <div className="relative mb-3 flex flex-col">
                                                 <input
                                                     type="text"
                                                     name="phoneNumber"
@@ -123,6 +127,9 @@ function BookPublishingLpService({ isOpen, setIsOpen }) {
                                                     placeholder="Phone No. *"
                                                 />
                                                 <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-3 ml-3" />
+                                                {phoneError && (
+                                                    <span className="text-red-500 text-md mt-1">{phoneError}</span>
+                                                )}
                                             </div>
                                         </div>
 

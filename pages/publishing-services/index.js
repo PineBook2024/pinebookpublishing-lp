@@ -143,12 +143,16 @@ export default function PublishingLpNew() {
         const setter = setters[name];
         if (setter) {
             if (name === 'phone') {
-                const phoneRegex = /^\d{0,10}$/;
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -158,8 +162,8 @@ export default function PublishingLpNew() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phone.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phone.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
         const response = await submitBookPublishingServiceForm(
@@ -361,7 +365,7 @@ export default function PublishingLpNew() {
                                         placeholder="Enter your Email"
                                     />
                                 </div>
-                                <div className="relative">
+                                <div className="relative flex flex-col">
                                     <input
                                         type="text"
                                         name="phone"
@@ -371,6 +375,9 @@ export default function PublishingLpNew() {
                                         className="pl-4 pr-4 py-2 border rounded-lg w-full text-md text-black"
                                         placeholder="Enter your Phone"
                                     />
+                                    {phoneError && (
+                                        <span className="text-red-500 text-md mt-1">{phoneError}</span>
+                                    )}
                                 </div>
 
                                 <button
