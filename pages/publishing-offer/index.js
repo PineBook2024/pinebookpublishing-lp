@@ -105,7 +105,7 @@ export default function Lp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
+        if (phone.length !== 10) {
             setPhoneError("Phone number must be exactly 10 digits");
             return;
           }
