@@ -578,7 +578,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>Multiple</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
+                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
                                                         colspan="4"
                                                         scope="row">Book Publishing</td>
                                                 </tr>
@@ -696,7 +696,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>✔️</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-24"
+                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
                                                         colspan="4"
                                                         scope="row">Guarantees</td>
                                                 </tr>
@@ -1376,7 +1376,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>Multiple</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
                                             colspan="4"
                                             scope="row">Book Publishing</td>
                                     </tr>
@@ -1483,7 +1483,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-10" 
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8" 
                                             colspan="4"
                                             scope="row">Designing your Cover</td>
                                     </tr>
@@ -1569,7 +1569,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr> */}
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-14"
                                             colspan="4"
                                             scope="row">Online Presence</td>
                                     </tr>
@@ -1598,7 +1598,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-10"
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8"
                                             colspan="4"
                                             scope="row">Marketing & Branding</td>
                                     </tr>
@@ -1663,7 +1663,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-24"
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
                                             colspan="4"
                                             scope="row">Guarantees</td>
                                     </tr>
