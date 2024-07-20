@@ -59,7 +59,7 @@ export default function BrandAbout(props) {
                 <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row px-10 md:px-0">
                     <div className="basis-1/2 abt-pic text-center justify-center md:justify-start mt-12 md:mt-12">
                         <FadeIn>
-                            <Image src={"/brand-img/about-img-2.webp"} width={400} height={470}
+                            <Image src={"/brand-img/happy-professional-multiethnic-business-team.png"} width={400} height={470}
                                 loading="lazy"
                                 alt="about img"
                             />

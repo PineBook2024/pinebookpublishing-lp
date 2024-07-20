@@ -86,7 +86,7 @@ export default function BrandContact() {
                                 <AnimateFade type={"right"} className="position-relative">
                                     <Image
                                         className="text-center pt-10 contact-form-img"
-                                        src={"/images/contact-user.webp"}
+                                        src={"/brand-img/cheerful-smiling-female-professional-posing-near-office.png"}
                                         width={600}
                                         height={300}
                                         loading="lazy"

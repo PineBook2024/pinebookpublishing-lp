@@ -88,6 +88,11 @@ export default function BrandFooter() {
                                     Services
                                 </li> */}
                                 <li className="mt-3">
+                                    <Link href="/packages">
+                                        Packages
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
                                     <Link href="/portfolio">
                                         Portfolio
                                     </Link>
