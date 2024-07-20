@@ -696,7 +696,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>✔️</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
+                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
                                                         colspan="4"
                                                         scope="row">Guarantees</td>
                                                 </tr>
@@ -1663,7 +1663,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
                                             colspan="4"
                                             scope="row">Guarantees</td>
                                     </tr>
