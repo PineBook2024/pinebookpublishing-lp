@@ -202,7 +202,7 @@ export default function BrandMainContact() {
                     </div>
                 </div>
                 <div className="flex justify-center gap-32 flex-col md:flex-row">
-                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center mt-10 lg:mt-0 md:mt-0">
                         <Image src={"/brand-img/team-2.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Ryan Peters</h3>
                         <h4 className="text-black text-xl font-poppins">Publishing Consultant</h4>
