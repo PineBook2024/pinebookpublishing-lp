@@ -188,7 +188,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        2 Revisions Per Draft
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Book Publishing
@@ -275,7 +275,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        3 Revisions Per Draft
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
@@ -390,7 +390,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        5 Revisions Per Draft
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Designing your Cover
@@ -581,12 +581,12 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>50+ Platforms</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Revisions</td>
+                                                    <td>Revisions Per Draft</td>
                                                     <td>
-                                                        Multiple
+                                                        2
                                                     </td>
-                                                    <td>Multiple</td>
-                                                    <td>Multiple</td>
+                                                    <td>3</td>
+                                                    <td>5</td>
                                                 </tr>
                                                 <tr className="m-4">
                                                     <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
@@ -781,7 +781,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        5 Revisions Per Draft
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Designing your Cover
@@ -943,7 +943,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        5 Revisions Per Draft
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
@@ -1121,7 +1121,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Multiple Revisions
+                                        5 Revisions Per Draft
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Designing your Cover
@@ -1385,12 +1385,12 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>50+ Platforms</td>
                                     </tr>
                                     <tr>
-                                        <td>Revisions</td>
+                                        <td>Revisions Per Draft</td>
                                         <td>
-                                            Multiple
+                                            5
                                         </td>
-                                        <td>Multiple</td>
-                                        <td>Multiple</td>
+                                        <td>5</td>
+                                        <td>5</td>
                                     </tr>
                                     <tr className="m-4">
                                         <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"

@@ -56,7 +56,7 @@ export default function Privacy() {
                     These Terms and Conditions constitute the entire agreement between you and Pine Book Publishing with respect to your use of the website, and supersede all prior or contemporaneous communications, representations, or agreements, whether oral or written.
                 </p>
 
-                <h1 className="font-poppins mb-4">BOOK WRITING T&CS:</h1>
+                <h1 className="font-poppins mb-4">BOOK EDITING & PUBLISHING T&CS:</h1>
 
                 <h2 className="font-poppins">Manifesto/Project Proposal,</h2>
                 <p>
@@ -76,8 +76,8 @@ export default function Privacy() {
                 <p>For Help: (866) 841-7469 or support@pinebookpublishing.com </p>
                 <p>To unsubscribe from the program, reply "STOP" at any time.</p>
 
-                <p>*Message and data rates may apply.</p>
-                <p>*Message frequency varies</p>
+                <p><b>*Message and data rates may apply.</b></p>
+                <p><b>*Message frequency varies.</b></p>
 
                 <h2 className="font-poppins">Endorsement</h2>
                 <p>
