@@ -2964,6 +2964,22 @@ video#brandVideo {
   color: #0d0f38;
   border: 1px solid #0d0f38;
   font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+.compare-now-btn:hover{
+  background-color: #147d6e;
+  transition: 0.4s ease-in-out;
+  color: #fff;
+}
+
+.compare-now-btn svg{
+  width: 14px !important;
+}
+
+.compare-now-btn:hover svg{
+  fill: #fff;
+  color: #fff;
 }
 
 .container-compare {

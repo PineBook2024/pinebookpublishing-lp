@@ -12,7 +12,7 @@ import Popup from "./components/popup";
 import BrandProcess from "./components/BrandProcess";
 import Chart from "./components/Chart";
 import Packages from "./components/Packages";
-import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopupBundle from "./components/PopupBundle";
@@ -21,14 +21,19 @@ export default function Bundle({ isOpen, onClose, service }) {
     const [openFAQ, setOpenFAQ] = useState(0);
     const [showPackages, setShowPackages] = useState(false);
     const [showPackages2, setShowPackages2] = useState(false);
+    const [collapseOpen1, setCollapseOpen1] = useState(false);
+    const [collapseOpen2, setCollapseOpen2] = useState(false);
+
     const contentRef = useRef(null);
 
     const togglePackages2 = () => {
         setShowPackages2(!showPackages2);
+        setCollapseOpen2(!collapseOpen2);
     };
 
     const togglePackages = () => {
         setShowPackages(!showPackages);
+        setCollapseOpen1(!collapseOpen1);
     };
 
     const toggleFAQ = (index) => {
@@ -75,7 +80,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
             {/* <Popup isOpen={isModalOpen} onClose={closeModal} service={selectedService} /> */}
-            <PopupBundle isOpen={isModalOpen} onClose={closeModal} service={selectedService}/>
+            <PopupBundle isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Want to publish your book in affordable price?"
@@ -482,10 +487,16 @@ export default function Bundle({ isOpen, onClose, service }) {
                                 {/* <h3 className="mb-8 text-center font-poppins text-3xl md:text-4xl font-bold">
                         
                                 </h3> */}
-                                <button className="compare-now-btn mb-10 mt-5" onClick={togglePackages2}>Comparison</button>
+                                <button className="compare-now-btn mb-10 mt-5" onClick={togglePackages2}>Comparison
+                                    <FontAwesomeIcon
+                                        className="ml-2"
+                                        icon={collapseOpen2 ? faArrowUp : faArrowDown}
+                                        color="#0d0f38"
+                                    />
+                                </button>
                             </div>
                             <div className="">
-                                <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`}  ref={contentRef}>
+                                <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
                                     <div className="md:w-full w-[500px]">
                                         <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
                                             <thead className="chart-header-custom">
@@ -518,13 +529,13 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 <tr>
                                                     <td>Line by Line Editing</td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -533,10 +544,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                         ❌
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -548,7 +559,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 <tr>
                                                     <td>Typesetting</td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>✔️</td>
                                                     <td>✔️</td>
@@ -556,7 +567,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 <tr>
                                                     <td>Layout Adjustment</td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>✔️</td>
                                                     <td>✔️</td>
@@ -585,25 +596,25 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 <tr>
                                                     <td>Account Creation</td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Account Verification</td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                     <td>
-                                                    ✔️
+                                                        ✔️
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -615,7 +626,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 <tr>
                                                     <td>eBook Format</td>
                                                     <td>
-                                                        ❌
+                                                        ✔️
                                                     </td>
                                                     <td>✔️</td>
                                                     <td>✔️</td>
@@ -1281,10 +1292,16 @@ export default function Bundle({ isOpen, onClose, service }) {
 
             <section className="table-sec overflow-x-scroll max-w-screen-xl mx-auto">
                 <div className="container mx-auto m1-h mt-10 text-center">
-                    <button className="compare-now-btn mb-10 mt-5" onClick={togglePackages}>Comparison</button>
+                    <button className="compare-now-btn mb-10 mt-5" onClick={togglePackages}>Comparison
+                        <FontAwesomeIcon
+                            className="ml-2"
+                            icon={collapseOpen1 ? faArrowUp : faArrowDown}
+                            color="#0d0f38"
+                        />
+                    </button>
                 </div>
                 <div className="">
-                    <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}  ref={contentRef}>
+                    <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`} ref={contentRef}>
                         <div className="md:w-full w-[500px]">
                             <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
                                 <thead className="chart-header-custom">
@@ -1328,7 +1345,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <tr>
                                         <td>Developmental Editing</td>
                                         <td>
-                                            ❌
+                                            ✔️
                                         </td>
                                         <td>
                                             ✔️
@@ -1479,11 +1496,11 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>
                                             ❌
                                         </td>
-                                        <td>✔️</td>
+                                        <td>❌</td>
                                         <td>✔️</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8" 
+                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8"
                                             colspan="4"
                                             scope="row">Designing your Cover</td>
                                     </tr>
@@ -1594,7 +1611,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                             1 Year
                                         </td>
                                         <td>
-                                            1 Year
+                                            2 Year
                                         </td>
                                     </tr>
                                     <tr className="m-4">
@@ -1668,7 +1685,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                             scope="row">Guarantees</td>
                                     </tr>
                                     <tr>
-                                        <td>No Royalties Share</td>
+                                        <td>100% Royalties</td>
                                         <td>
                                             ✔️
                                         </td>
@@ -1691,7 +1708,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                             ✔️
                                         </td>
                                     </tr>
-                                    <tr>
+                                    {/* <tr>
                                         <td>100% Satisfaction</td>
                                         <td>
                                             ✔️
@@ -1702,7 +1719,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>
                                             ✔️
                                         </td>
-                                    </tr>
+                                    </tr> */}
                                 </tbody>
                             </table>
                         </div>
