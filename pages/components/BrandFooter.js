@@ -80,7 +80,7 @@ export default function BrandFooter() {
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/about">
+                                    <Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }}>
                                         About Us
                                     </Link>
                                 </li>
@@ -88,12 +88,12 @@ export default function BrandFooter() {
                                     Services
                                 </li> */}
                                 <li className="mt-3">
-                                    <Link href="/packages">
+                                    <Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/packages"; }}>
                                         Packages
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/portfolio">
+                                    <Link href="/portfolio" onClick={(e) => { e.preventDefault(); window.location.href = "/portfolio"; }}>
                                         Portfolio
                                     </Link>
                                 </li>
@@ -101,7 +101,7 @@ export default function BrandFooter() {
                                     Testimonials
                                 </li> */}
                                 <li className="mt-3">
-                                    <Link href="/contact-us">
+                                    <Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }}>
                                         Contact Us
                                     </Link>
                                 </li>
@@ -114,12 +114,12 @@ export default function BrandFooter() {
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
-                                    <Link href="/book-editing">
+                                    <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
                                         Book Editing
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                    <Link href="/proofreading">
+                                    <Link href="/proofreading" onClick={(e) => { e.preventDefault(); window.location.href = "/proofreading"; }}>
                                         Proofreading
                                     </Link>
                                 </li>
@@ -134,7 +134,7 @@ export default function BrandFooter() {
                                     </Link>
                                 </li> */}
                                 <li className="mt-3">
-                                    <Link href="/book-publishing">
+                                    <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
                                         Book Publishing
                                     </Link>
                                 </li>

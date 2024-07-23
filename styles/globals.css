@@ -2956,6 +2956,11 @@ video#brandVideo {
   border: 1px solid #147d6e54;
 }
 
+.bundle-comparison-chart tbody tr:hover{
+  box-shadow: 6px 5px 15px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  margin-top: 6px;
+}
 
 .compare-now-btn{
   background-color: transparent;
