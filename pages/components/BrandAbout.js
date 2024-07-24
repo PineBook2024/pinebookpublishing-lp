@@ -30,9 +30,9 @@ export default function BrandAbout(props) {
                         <p className="font-poppins text-xl mb-8">
                             {props.subdesctwo}
                         </p>
-                        {/* <p className="font-poppins text-xl mb-8">
+                        <p className="font-poppins text-xl mb-8">
                             {props.subdescthree}
-                        </p> */}
+                        </p>
                         {isHomePage && (
                             <Link href="/about" className="brand-about-btn font-poppins">READ MORE</Link>
                         )}
@@ -83,7 +83,7 @@ export default function BrandAbout(props) {
                         )}
                     </div>
                 </div> */}
-                <p className="font-poppins mt-14 text-xl w-4/5 mx-auto text-center mb-6">{props.subdescthree}</p>
+                {/* <p className="font-poppins mt-14 text-xl w-4/5 mx-auto text-center mb-6">{props.subdescthree}</p> */}
             </div>
         </>
     );
