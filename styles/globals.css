@@ -1083,11 +1083,11 @@ footer svg {
   }
 
   video#brandVideo {
-    height: 310vw !important;
+    height: 333vw !important;
   }
 
   .brand-main-banner-video {
-    height: 310vw !important;
+    height: 333vw !important;
   }
 
   .break-words {
@@ -1197,6 +1197,21 @@ footer svg {
     line-height: 13px !important;
     padding-bottom: -51px;
   }
+  .expanded{
+    max-height: 100% !important;
+  }
+  .chart-header-custom .heading{
+    font-size: 15px;
+  }
+  .container-compare .responsive-width{
+    width: 100%;
+  }
+  .bundle-comparison-chart tbody td{
+    font-size: 14px;
+  }
+  .bundle-comparison-chart .chart-header-custom th{
+    line-height: 1.5 !important;
+  }
 }
 
 
@@ -1290,7 +1305,7 @@ footer svg {
 }
 
 .brand-choose-us-section {
-  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%) !important;
+  background: #1e8677 !important;
   border-radius: 36px;
 }
 
@@ -3001,3 +3016,7 @@ video#brandVideo {
   max-height: 2400px; /* A large value to ensure full expansion */
   transition: 0.8s ease-in-out;
 }
+/* .brand-about-img{
+  position: relative;
+  top: 43px;
+} */

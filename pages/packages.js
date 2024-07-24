@@ -497,7 +497,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             </div>
                             <div className="">
                                 <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
-                                    <div className="md:w-full w-[500px]">
+                                    <div className="md:w-full w-[500px] responsive-width">
                                         <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
                                             <thead className="chart-header-custom">
                                                 <tr>
@@ -511,20 +511,24 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                         </div>
                                                     </th >
 
-                                                    <th className="font-poppins">
-                                                        Start Up Package
+                                                    <th className="font-poppins heading">
+                                                        <div className="heading">
+                                                            Start Up Package
+                                                        </div>
                                                     </th>
 
-                                                    <th className="font-poppins">
-                                                        Standard Package
+                                                    <th className="font-poppins heading">
+                                                        <div className="heading">
+                                                            Standard Package
+                                                        </div>
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody className="text-center">
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold"
                                                         colspan="4"
-                                                        scope="row">Preparing Your Manuscript</td>
+                                                        scope="row">Preparing Your Manuscript</th>
                                                 </tr>
                                                 <tr>
                                                     <td>Line by Line Editing</td>
@@ -589,9 +593,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>5</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
                                                         colspan="4"
-                                                        scope="row">Book Publishing</td>
+                                                        scope="row">Book Publishing</th>
                                                 </tr>
                                                 <tr>
                                                     <td>Account Creation</td>
@@ -656,9 +660,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>✔️</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-10"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-10 md:pl-10"
                                                         colspan="4"
-                                                        scope="row">Designing your Cover</td>
+                                                        scope="row">Designing your Cover</th>
                                                 </tr>
                                                 <tr>
                                                     <td>Graphic OR Illustrated Design</td>
@@ -707,9 +711,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>✔️</td>
                                                 </tr>
                                                 <tr className="m-4">
-                                                    <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
                                                         colspan="4"
-                                                        scope="row">Guarantees</td>
+                                                        scope="row">Guarantees</th>
                                                 </tr>
                                                 <tr>
                                                     <td>No Royalties Share</td>
@@ -1302,7 +1306,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                 </div>
                 <div className="">
                     <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`} ref={contentRef}>
-                        <div className="md:w-full w-[500px]">
+                        <div className="md:w-full w-[500px] responsive-width">
                             <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
                                 <thead className="chart-header-custom">
                                     <tr>
@@ -1316,19 +1320,23 @@ export default function Bundle({ isOpen, onClose, service }) {
                                             </div>
                                         </th >
                                         <th className="font-poppins">
-                                            Premium Package
+                                            <div className="heading">
+                                                Premium Package
+                                            </div>
                                         </th>
 
                                         <th className="font-poppins">
-                                            Enterprise Package
+                                            <div className="heading">
+                                                Enterprise Package
+                                            </div>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-center">
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold"
                                             colspan="4"
-                                            scope="row">Preparing Your Manuscript</td>
+                                            scope="row">Preparing Your Manuscript</th>
                                     </tr>
                                     <tr>
                                         <td>Line by Line Editing</td>
@@ -1393,9 +1401,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>5</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-16"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
                                             colspan="4"
-                                            scope="row">Book Publishing</td>
+                                            scope="row">Book Publishing</th>
                                     </tr>
                                     <tr>
                                         <td>Account Creation</td>
@@ -1500,9 +1508,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
                                             colspan="4"
-                                            scope="row">Designing your Cover</td>
+                                            scope="row">Designing your Cover</th>
                                     </tr>
                                     <tr>
                                         <td>Graphic OR Illustrated Design</td>
@@ -1586,9 +1594,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr> */}
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-14"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-14 md:pl-14"
                                             colspan="4"
-                                            scope="row">Online Presence</td>
+                                            scope="row">Online Presence</th>
                                     </tr>
                                     <tr>
                                         <td>Authors Website</td>
@@ -1615,9 +1623,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-8"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
                                             colspan="4"
-                                            scope="row">Marketing & Branding</td>
+                                            scope="row">Marketing & Branding</th>
                                     </tr>
                                     <tr>
                                         <td>Book Trailer</td>
@@ -1680,9 +1688,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <td className="text-2xl md:text-2xl text-start p-3 font-bold pl-20"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
                                             colspan="4"
-                                            scope="row">Guarantees</td>
+                                            scope="row">Guarantees</th>
                                     </tr>
                                     <tr>
                                         <td>100% Royalties</td>

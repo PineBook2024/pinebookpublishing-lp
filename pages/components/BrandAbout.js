@@ -16,26 +16,29 @@ export default function BrandAbout(props) {
 
     return (
         <>
-            <div className="container mx-auto max-w-screen-xl overflow-hidden">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden pt-20 pb-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h4 className="font-poppins text-3xl md:text-5xl font-bold">
                             About Us
                         </h4>
                         <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">Pine Book Publishing</h2>
-                        <FadeIn>
-                            <p className="font-poppins text-xl pt-4">
-                                {props.subdescone}
-                            </p>
-                        </FadeIn>
+                        {/* <FadeIn> */}
+                        <p className="font-poppins text-xl pt-4">
+                            {props.subdescone}
+                        </p>
+                        <p className="font-poppins text-xl mb-8">
+                            {props.subdesctwo}
+                        </p>
+                        {/* <p className="font-poppins text-xl mb-8">
+                            {props.subdescthree}
+                        </p> */}
+                        {isHomePage && (
+                            <Link href="/about" className="brand-about-btn font-poppins">READ MORE</Link>
+                        )}
+                        {/* </FadeIn> */}
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-end">
-                        {/* <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
-                            loading="lazy"
-                            alt="about img"
-                            className="pt-12 aos-init aos-animate"
-                            data-aos="fade-left" data-aos-duration="1000"
-                        /> */}
                         <motion.div
                             initial={false}
                             animate={
@@ -47,16 +50,22 @@ export default function BrandAbout(props) {
                             viewport={{ once: true }}
                             onViewportEnter={() => setIsInView(true)}
                         >
-                            <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
+                            {/* <Image src={"/brand-img/about-img-1.webp"} width={400} height={470}
                                 loading="lazy"
                                 alt="about img"
                                 className="pt-12"
+                                onLoad={() => setIsLoaded(true)}
+                            /> */}
+                            <Image src={"/images/About-us-img.png"} width={500} height={570}
+                                layout="responsive"
+                                loading="lazy"
+                                alt="about img"
                                 onLoad={() => setIsLoaded(true)}
                             />
                         </motion.div>
                     </div>
                 </div>
-                <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row px-10 md:px-0">
+                {/* <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row px-10 md:px-0">
                     <div className="basis-1/2 abt-pic text-center justify-center md:justify-start mt-12 md:mt-12">
                         <FadeIn>
                             <Image src={"/brand-img/happy-professional-multiethnic-business-team.png"} width={400} height={470}
@@ -73,7 +82,7 @@ export default function BrandAbout(props) {
                             <Link href="/about" className="brand-about-btn font-poppins">READ MORE</Link>
                         )}
                     </div>
-                </div>
+                </div> */}
                 <p className="font-poppins mt-14 text-xl w-4/5 mx-auto text-center mb-6">{props.subdescthree}</p>
             </div>
         </>
