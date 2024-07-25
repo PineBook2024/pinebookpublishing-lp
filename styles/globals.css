@@ -1919,7 +1919,7 @@ audio::-webkit-media-controls-play-button:hover {
 }
 
 .brand-main-banner-video {
-  height: 100vh;
+  height: 120vh;
   background: #0000009e;
 }
 
@@ -1930,7 +1930,7 @@ audio::-webkit-media-controls-play-button:hover {
 video#brandVideo {
   position: absolute;
   z-index: -1;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   object-fit: cover;
 
