@@ -136,7 +136,7 @@ export default function BrandHero() {
                         {/* <WavyText text="DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-5xl text-white font-bold" /> */}
                         {/* <FadeIn> */}
                         <p className="text-xl text-white pt-4">
-                            Pine Book Publishing has made it so much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, editing, Formatting, Book Cover Design and print-on-demand through a vast network of global outlets.
+                            Pine Book Publishing has made it much more easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design and print-on-demand through a vast network of global outlets.
                         </p>
                         <h4 className="font-poppins text-2xl mt-8 text-white uppercase font-bold">Our Credibility</h4>
                         {/* </FadeIn> */}
