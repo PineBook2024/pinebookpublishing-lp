@@ -123,7 +123,7 @@ export default function BrandFooter() {
                                         Proofreading
                                     </Link>
                                 </li>
-                                {/* <li className="mt-3">
+                                <li className="mt-3">
                                     <Link href={'javascript:;'}>
                                         Book Formatting
                                     </Link>
@@ -132,13 +132,13 @@ export default function BrandFooter() {
                                     <Link href={'javascript:;'}>
                                         Typesetting & Layout
                                     </Link>
-                                </li> */}
+                                </li>
                                 <li className="mt-3">
                                     <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
                                         Book Publishing
                                     </Link>
                                 </li>
-                                {/* <li className="mt-3">
+                                <li className="mt-3">
                                     <Link href={'javascript:;'}>
                                         Audio Book
                                     </Link>
@@ -152,7 +152,7 @@ export default function BrandFooter() {
                                     <Link href={'javascript:;'}>
                                         Document Processing
                                     </Link>
-                                </li> */}
+                                </li>
                             </nav>
                         </div>
                     </div>
