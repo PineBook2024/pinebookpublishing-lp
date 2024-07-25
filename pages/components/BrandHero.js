@@ -136,7 +136,7 @@ export default function BrandHero() {
                         <p className="text-xl text-white pt-4">
                             Pine Book Publishing has made it so much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, editing, Formatting, Book Cover Design and print-on-demand through a vast network of global outlets.
                         </p>
-                        <h4 className="font-poppins text-2xl mt-10 text-white uppercase font-bold">Our Credibility</h4>
+                        <h4 className="font-poppins text-2xl mt-8 text-white uppercase font-bold">Our Credibility</h4>
                         {/* </FadeIn> */}
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                             {clientLogos.map((logo, index) => (
