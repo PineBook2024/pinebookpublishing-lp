@@ -127,11 +127,13 @@ export default function BrandHero() {
             <div className="container mx-4 pt-20 md:mx-32 tablet-margin-banner max-w-screen-xl brand-hero-section">
                 <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
                     <div className="mb-4">
-                        <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white" data-aos="zoom-in-left"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
-                        {/* <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
-                            Looking to Publish <br></br> Your Own Book
-                        </h1> */}
-                        <WavyText text="DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-5xl text-white font-bold" />
+                        <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white"><span className="px-2 py-0">#1 Self</span> Publishing Company</h3>
+                        <FadeIn>
+                        <h1 className="font-poppins text-3xl md:text-5xl text-white font-bold">
+                            DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
+                        </h1>
+                        </FadeIn>
+                        {/* <WavyText text="DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-5xl text-white font-bold" /> */}
                         {/* <FadeIn> */}
                         <p className="text-xl text-white pt-4">
                             Pine Book Publishing has made it so much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, editing, Formatting, Book Cover Design and print-on-demand through a vast network of global outlets.
