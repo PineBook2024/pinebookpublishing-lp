@@ -131,11 +131,12 @@ export default function BrandHero() {
                         {/* <h1 className="font-poppins text-3xl md:text-6xl text-white font-bold">
                             Looking to Publish <br></br> Your Own Book
                         </h1> */}
-                        <WavyText text="Do you Have a Great Story? Let's Publish It" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-5xl text-white font-bold" />
+                        <WavyText text="DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?" replay={true} style={{ color: 'white' }} className="font-poppins text-3xl md:text-5xl text-white font-bold" />
                         {/* <FadeIn> */}
                         <p className="text-xl text-white pt-4">
-                            Have you started penning your story idea, but got stuck on your story’s next chapter? Nevermind! Self publishing a book can be sometimes a nightmare even for some great writers. However, Pine Book Publishing is your creative partner, offering hands-on support from the first word to the final cover.
+                            Pine Book Publishing has made it so much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, editing, Formatting, Book Cover Design and print-on-demand through a vast network of global outlets.
                         </p>
+                        <h4 className="font-poppins text-2xl mt-10 text-white uppercase font-bold">Our Credibility</h4>
                         {/* </FadeIn> */}
                         <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
                             {clientLogos.map((logo, index) => (

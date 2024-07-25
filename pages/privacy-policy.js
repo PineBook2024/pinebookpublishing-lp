@@ -1,3 +1,4 @@
+import BrandFooter from "./components/BrandFooter";
 import Footer from "./components/Footer";
 import PrimaryHeader from "./components/PrimaryHeader";
 import Header from "./components/header";
@@ -131,7 +132,8 @@ export default function Privacy() {
                 </p>
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
+            <BrandFooter />
         </>
     );
 }

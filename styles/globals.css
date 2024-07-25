@@ -1225,9 +1225,14 @@ footer svg {
 /* Brand Layout CSS */
 
 .nav-top-bar {
-  background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+  /* background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%); */
+  position: absolute;
+  width: 100%;
 }
 
+/* .nav-top-bar svg{
+  width: 17px;
+} */
 .brand-about-btn {
   background: #15184c;
   color: #fff;

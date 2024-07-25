@@ -3,6 +3,7 @@ import PrimaryHeader from "./components/PrimaryHeader";
 import Header from "./components/header";
 import Link from "next/link";
 import Head from "next/head";
+import BrandFooter from "./components/BrandFooter";
 
 export default function Privacy() {
 
@@ -167,7 +168,8 @@ export default function Privacy() {
 
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
+            <BrandFooter />
         </>
     );
 }
