@@ -4,7 +4,6 @@ import Image from "next/image";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function BrandFooter() {
     const [isVisible, setIsVisible] = useState(false);
@@ -37,17 +36,17 @@ export default function BrandFooter() {
 
     return (
         <>
-            <footer className="text-white body-font brand-footer">
+            <footer className="text-white body-font">
                 <div className="container px-5 pt-10 pb-10 md:pt-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col position-relative">
-                    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-evenly py-10">
-                        <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-1 relative">
+                    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-center">
+                        <div className="lg:w-1/3 md:w-1/4 w-full px-4">
                             <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
                                 <Image src={"/brand-img/logo.png"} width={250} height={200}></Image>
                             </a>
                             <p className="mt-2 text-sm text-white leading-7">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
-                            {/* <nav className="list-none mb-10 mt-5">
+                            <nav className="list-none mb-10 mt-5">
                                 <li>
                                     <Link
                                         href="tel:8668417469"
@@ -67,11 +66,12 @@ export default function BrandFooter() {
                                         support@pinebookpublishing.com{" "}
                                     </Link>
                                 </li>
-                            </nav> */}
+
+                            </nav>
                         </div>
-                        <div className="lg:w-1/4 md:w-1/4 w-full px-4 widget-2 relative">
+                        <div className="lg:w-1/4 md:w-1/4 w-full px-4">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
-                                Quick Links
+                                Pages
                             </h2>
                             <nav className="list-none mb-10 mt-5">
                                 <li>
@@ -108,41 +108,11 @@ export default function BrandFooter() {
                             </nav>
                         </div>
 
-                        <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-3 relative">
+                        <div className="lg:w-1/3 md:w-1/4 w-full px-4">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
-                                Contact Info
+                                Services
                             </h2>
-                            <Link
-                                href="tel:8668417469"
-                                className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
-                            >
-                                <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                (866) 841-7469
-                            </Link>
-                            <Link
-                                href="mailto:support@pinebookpublishing.com"
-                                className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start mb-5"
-                            >
-                                <FontAwesomeIcon icon={faEnvelope} className="me-3" />
-                                {" "}
-                                support@pinebookpublishing.com{" "}
-                            </Link>
-                            <h4 className="text-white leading-20 font-bold text-xl md:text-md font-poppins text-center lg:text-start uppercase">
-                                Canada Address:
-                            </h4>
-                            <p className="text-white mb-5"> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
-                            <h4 className="text-white leading-20 font-bold text-xl md:text-md font-poppins text-center lg:text-start uppercase">
-                                USA Address:
-                            </h4>
-                            <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
-                            <div>
-                                <FontAwesomeIcon icon={faFacebook} className="me-3" />
-                                <FontAwesomeIcon icon={faLinkedin} className="me-3" />
-                                <FontAwesomeIcon icon={faInstagram} className="me-3" />
-                                <FontAwesomeIcon icon={faXTwitter} className="me-3" />
-                                <FontAwesomeIcon icon={faYoutube} className="me-3" />
-                            </div>
-                            {/* <nav className="list-none mb-10 mt-5">
+                            <nav className="list-none mb-10 mt-5">
                                 <li>
                                     <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
                                         Book Editing
@@ -183,10 +153,9 @@ export default function BrandFooter() {
                                         Document Processing
                                     </Link>
                                 </li>
-                            </nav> */}
+                            </nav>
                         </div>
                     </div>
-
                 </div>
                 <div className="copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
