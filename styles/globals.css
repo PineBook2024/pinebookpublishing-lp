@@ -1199,22 +1199,28 @@ footer svg {
     line-height: 13px !important;
     padding-bottom: -51px;
   }
-  .expanded{
+
+  .expanded {
     max-height: 100% !important;
   }
-  .chart-header-custom .heading{
+
+  .chart-header-custom .heading {
     font-size: 15px;
   }
-  .container-compare .responsive-width{
+
+  .container-compare .responsive-width {
     width: 100%;
   }
-  .bundle-comparison-chart tbody td{
+
+  .bundle-comparison-chart tbody td {
     font-size: 14px;
   }
-  .bundle-comparison-chart .chart-header-custom th{
+
+  .bundle-comparison-chart .chart-header-custom th {
     line-height: 1.5 !important;
   }
-  .brand-footer .widget-2:before{
+
+  .brand-footer .widget-2:before {
     display: none;
   }
 }
@@ -2952,7 +2958,7 @@ video#brandVideo {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   transition: 0.4s ease-in-out;
-  box-shadow: 6px 5px 15px 8px rgba(0,0,0,0.1);
+  box-shadow: 6px 5px 15px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* .bundle-comparison-chart .chart-header-custom th:hover:nth-child(2){
@@ -2962,7 +2968,7 @@ video#brandVideo {
 } */
 
 .bundle-comparison-chart .chart-header-custom th:nth-child(3) {
-  box-shadow: 6px 5px 15px 8px rgba(0,0,0,0.1);
+  box-shadow: 6px 5px 15px 8px rgba(0, 0, 0, 0.1);
   background-color: #0d0f38;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -2974,20 +2980,20 @@ video#brandVideo {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   transition: 0.4s ease-in-out;
-  box-shadow: 6px 5px 15px 8px rgba(0,0,0,0.1);
+  box-shadow: 6px 5px 15px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bundle-comparison-chart tbody td {
   border: 1px solid #147d6e54;
 }
 
-.bundle-comparison-chart tbody tr:hover{
-  box-shadow: 6px 5px 15px 8px rgba(0,0,0,0.1);
+.bundle-comparison-chart tbody tr:hover {
+  box-shadow: 6px 5px 15px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin-top: 6px;
 }
 
-.compare-now-btn{
+.compare-now-btn {
   background-color: transparent;
   padding: 10px 30px;
   border-radius: 30px;
@@ -2997,17 +3003,17 @@ video#brandVideo {
   transition: 0.4s ease-in-out;
 }
 
-.compare-now-btn:hover{
+.compare-now-btn:hover {
   background-color: #147d6e;
   transition: 0.4s ease-in-out;
   color: #fff;
 }
 
-.compare-now-btn svg{
+.compare-now-btn svg {
   width: 14px !important;
 }
 
-.compare-now-btn:hover svg{
+.compare-now-btn:hover svg {
   fill: #fff;
   color: #fff;
 }
@@ -3023,9 +3029,11 @@ video#brandVideo {
 }
 
 .expanded {
-  max-height: 2400px; /* A large value to ensure full expansion */
+  max-height: 2400px;
+  /* A large value to ensure full expansion */
   transition: 0.8s ease-in-out;
 }
+
 /* .brand-about-img{
   position: relative;
   top: 43px;
@@ -3053,11 +3061,10 @@ video#brandVideo {
   top: 0;
 }
 
-.brand-footer p{
+.brand-footer p {
   font-size: 15px !important;
 }
 
-.brand-footer svg{
+.brand-footer svg {
   width: 16px;
 }
-
