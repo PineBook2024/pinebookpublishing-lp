@@ -665,7 +665,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>❌</td>
                                                     <td>✔️</td>
                                                 </tr>
-                                                
+
                                                 <tr className="m-4">
                                                     <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-10 md:pl-10"
                                                         colspan="4"
@@ -1443,11 +1443,11 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr>
                                     <tr>
-                                                    <td>Amazon</td>
-                                                    <td>✔️</td>
-                                                    <td>✔️</td>
-                                                    <td>✔️</td>
-                                                </tr>
+                                        <td>Amazon</td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                    </tr>
                                     <tr>
                                         <td>Barnes and Noble</td>
                                         <td>
@@ -1458,9 +1458,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </tr>
                                     <tr>
                                         <td>Google Books</td>
-                                        <td>
-                                            ✔️
-                                        </td>
+                                        <td>✔️</td>
                                         <td>✔️</td>
                                         <td>✔️</td>
                                     </tr>
@@ -1522,8 +1520,8 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </tr>
                                     <tr className="m-4">
                                         <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
-                                            colspan="4"
-                                            scope="row">Designing your Cover</th>
+                                        colspan="4"
+                                        scope="row">Designing your Cover</th>
                                     </tr>
                                     <tr>
                                         <td>Graphic OR Illustrated Design</td>
