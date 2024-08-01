@@ -74,6 +74,7 @@ export default function App({ Component, pageProps }) {
         />
       </noscript>
       {/* End Meta Pixel Code */}
+      <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
     </main>
   );
 }
