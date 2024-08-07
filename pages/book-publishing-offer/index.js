@@ -47,6 +47,7 @@ import Packages from "../components/Packages";
 import HomePopup from "../components/HomePopup";
 import 'glightbox/dist/css/glightbox.min.css';
 import BrandCTA from "../components/BrandCTA";
+import HeroFormBookOffer from "../components/HerformBookOffer";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -217,7 +218,7 @@ export default function Home() {
     );
     if (response) {
       setShowSuccess(true);
-      router.push('/thankyou')
+      router.push('/thankyou-offer')
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");
@@ -330,7 +331,8 @@ export default function Home() {
         <Header />
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
-        <HeavyComponent Component={HeroForm} />
+        <HeavyComponent Component={HeroFormBookOffer} />
+        {/* <HeroFormBookOffer /> */}
 
         <section className="brnd-slider bg-black overflow-hidden">
           {/* <AnimateFade type={"right"}> */}
