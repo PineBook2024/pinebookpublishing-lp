@@ -915,7 +915,7 @@ export default function Home() {
               </p>
               <div className="flex gap-6">
                 <button className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
-                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href="tel:(866)-841-7469">(866)-841-7469</Link></button>
+                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></button>
               </div>
             </div>
           </div>
