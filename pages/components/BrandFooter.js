@@ -136,11 +136,21 @@ export default function BrandFooter() {
                             </h4>
                             <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
                             <div>
-                                <FontAwesomeIcon icon={faFacebook} className="me-3" />
-                                <FontAwesomeIcon icon={faLinkedin} className="me-3" />
-                                <FontAwesomeIcon icon={faInstagram} className="me-3" />
-                                <FontAwesomeIcon icon={faXTwitter} className="me-3" />
-                                <FontAwesomeIcon icon={faYoutube} className="me-3" />
+                                <Link href="">
+                                    <FontAwesomeIcon icon={faFacebook} className="me-3" />
+                                </Link>
+                                <Link href="">
+                                    <FontAwesomeIcon icon={faLinkedin} className="me-3" />
+                                </Link>
+                                <Link href="">
+                                    <FontAwesomeIcon icon={faInstagram} className="me-3" />
+                                </Link>
+                                <Link href="">
+                                    <FontAwesomeIcon icon={faXTwitter} className="me-3" />
+                                </Link>
+                                <Link href="">
+                                    <FontAwesomeIcon icon={faYoutube} className="me-3" />
+                                </Link>
                             </div>
                             {/* <nav className="list-none mb-10 mt-5">
                                 <li>
