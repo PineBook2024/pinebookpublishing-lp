@@ -110,7 +110,7 @@ export default function Footer() {
             >
               Privacy Policy {" "}
             </Link>
-            {/* Powered by <span className="powered-by-text">Pine Book Writing Inc.</span> */}
+            Powered by <span className="powered-by-text">Pine Book Writing Inc.</span>
           </p>
 
         </div>
