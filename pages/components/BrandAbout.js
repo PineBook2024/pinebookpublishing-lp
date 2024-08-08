@@ -16,7 +16,7 @@ export default function BrandAbout(props) {
 
     return (
         <>
-            <div className="container mx-auto max-w-screen-md overflow-hidden pt-20 pb-10">
+            <div className="container mx-auto max-w-screen-lg overflow-hidden pt-20 pb-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h4 className="font-poppins text-3xl md:text-5xl font-bold">
