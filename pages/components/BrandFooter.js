@@ -218,7 +218,7 @@ export default function BrandFooter() {
                             >
                                 Privacy Policy | {" "}
                             </Link>
-                            Powered by <span className="powered-by-text">Pine Book Writing Inc.</span>
+                            Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
                         </p>
 
                     </div>
