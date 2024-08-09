@@ -91,6 +91,40 @@ export default function Home() {
     };
   }, []);
 
+  const steps = [
+    { title: "Editing", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Editing.png" },
+    { title: "Proofreading", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Proofreading.png" },
+    { title: "TypeSetting", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Typesetting & Layout adjustment.png" },
+    { title: "Layout Adjustment", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Typesetting & Layout adjustment.png" },
+    { title: "Formatting", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Formatting.png" },
+    { title: "Cover Designing", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Cover Design.png" },
+    { title: "Adjustment", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Cover Design.png" },
+    { title: "Publishing", imgTop: "/images/p-img-top.webp", imgBottom: "/images/p-img-bottom.webp", img: "/images/p-img.webp", img1: "/images/p-img1.webp", icon: "/images/Publishing.png" },
+    // ... Add other steps similarly
+  ];
+
+
+  const processItems = [
+    { icon: '/images/Editing.png', text: 'Editing' },
+    { icon: '/images/Proofreading.png', text: 'Proofreading' },
+    { icon: '/images/Typesetting & Layout adjustment.png', text: 'TypeSetting' },
+    { icon: '/images/Typesetting & Layout adjustment.png', text: 'Layout Adjustment' },
+    { icon: '/images/Formatting.png', text: 'Formatting' },
+    { icon: '/images/Cover Design.png', text: 'Cover Designing' },
+    { icon: '/images/Cover Design.png', text: 'Adjustment' },
+    { icon: '/images/Publishing.png', text: 'Publishing' },
+  ];
+
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(prevIndex => (prevIndex + 1) % steps.length);
+    }, 3000); // Change step every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   // Object
   const packagesCard = [
     {
@@ -506,7 +540,11 @@ export default function Home() {
                   Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
                   We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book in known to the world.
                 </p>
-                <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
+                <div className="flex gap-6">
+                  <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
+                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></button>
+                </div>
+                {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
                   {clientLogos.map((logo, index) => (
                     <Link key={index} href={logo.href} target="_blank">
                       <Image
@@ -517,7 +555,7 @@ export default function Home() {
                       />
                     </Link>
                   ))}
-                </div>
+                </div> */}
               </div>
               {/* </AnimateFade> */}
               <div className="abt-pic text-center">
@@ -843,7 +881,7 @@ export default function Home() {
 
 
 
-        <section className="process pt-14">
+        {/* <section className="process pt-14">
           <div className="container mx-auto text-center m1-h ">
             <h3 className="font-poppins text-3xl md:text-4xl">
               Our Book Publishing Process
@@ -865,7 +903,7 @@ export default function Home() {
 
           <div className="counter -mb-16">
             <div className="container mx-auto">
-              {/* <div className="grid grid-cols-4 gap-4"></div> */}
+     
               <div className="mt-6 grid grid-cols-1 px-6 gap-y-10 sm:grid-cols-2 mx-5 lg:grid-cols-4 xl:gap-x-8">
                 <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
                   <h2 className="text-xl">
@@ -899,6 +937,48 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section> */}
+
+        <section className="my-7 py-20 overflow-hidden">
+          <div className="text-center mb-6 new-lp3-why-choose-us-title">
+            <h2 className="text-3xl text-black uppercase font-bold">Our Process: From Concept to Perfection</h2>
+          </div>
+          <div className="lg:block md:block hidden">
+            <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
+              {steps.map((step, index) => (
+                <div key={index} className={`process-item ${index === activeIndex ? 'active' : ''}`}>
+                  <h3>{step.title}</h3>
+                  <div>
+                    <Image src={step.icon} width={40} height={40} alt="icon" />
+                    <Image className="p-img" src={index % 2 === 0 ? step.imgTop : step.imgBottom} width={130} height={130} alt="process" />
+                    <Image src={step.img} width={130} height={130} alt="process" />
+                    <Image src={step.img1} width={130} height={130} alt="process" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:hidden md:hidden block">
+            <div className="new-lp3-process-wrapper max-w-screen-xl mx-auto">
+              <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                loop={true}
+              >
+                {processItems.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className='process-item-mob'>
+                      <img src={item.icon} height={40} width={40} alt="icon" />
+                      <h3 className="text-black text-2xl mt-3">{item.text}</h3>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+
         </section>
 
         <Story />

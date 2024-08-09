@@ -23,39 +23,71 @@ export default function HeroFormBookOffer() {
   ];
 
   // Object
+  // const clientLogos = [
+  //   {
+  //     src: "/images/logo-img1.png",
+  //     alt: "LOGO",
+  //     width: 150,
+  //     height: 60
+  //   },
+  //   {
+  //     src: "/images/logo-img2.png",
+  //     alt: "LOGO",
+  //     width: 150,
+  //     height: 60
+  //   },
+  //   {
+  //     src: "/images/logo-img3.png",
+  //     alt: "LOGO",
+  //     width: 150,
+  //     height: 60
+  //   },
+  //   {
+  //     src: "/images/logo-img4.png",
+  //     alt: "LOGO",
+  //     width: 150,
+  //     height: 60
+  //   },
+  // ];
+
+
   const clientLogos = [
     {
-      src: "/images/logo-img1.png",
+      href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+      src: "/images/Google Partner.png",
       alt: "LOGO",
-      width: 150,
+      width: 130,
       height: 60
     },
     {
-      src: "/images/logo-img2.png",
+      href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+      src: "/images/BBB.png",
       alt: "LOGO",
-      width: 150,
+      width: 130,
       height: 60
     },
     {
-      src: "/images/logo-img3.png",
+      href: "https://www.trustpilot.com/review/pinebookwriting.com",
+      src: "/images/s3.png",
       alt: "LOGO",
-      width: 150,
+      width: 130,
       height: 60
     },
     {
-      src: "/images/logo-img4.png",
+      href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+      src: "/images/s4.png",
       alt: "LOGO",
-      width: 150,
+      width: 130,
       height: 60
     },
-    // {
-    //   src: "/images/l1_w.png",
-    //   alt: "LOGO",
-    //   width: 120,
-    //   height: 60
-    // },
+    {
+      href: "https://clutch.co/profile/pine-book-writing",
+      src: "/images/s6.png",
+      alt: "LOGO",
+      width: 130,
+      height: 60
+    }
   ];
-
 
 
   // useEffect(() => {
@@ -79,21 +111,21 @@ export default function HeroFormBookOffer() {
 
     const setter = setters[name];
     if (setter) {
-        if (name === 'phone') {
-            const phoneRegex = /^\d{0,}$/;
-            if (phoneRegex.test(value)) {
-                setter(value);
-                if (value.length < 9) {
-                    setPhoneError("Phone number must be at least 9 digits");
-                } else {
-                    setPhoneError("");
-                }
-            } else {
-                setPhoneError("Invalid phone number format");
-            }
+      if (name === 'phone') {
+        const phoneRegex = /^\d{0,}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          if (value.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
+          } else {
+            setPhoneError("");
+          }
         } else {
-            setter(value);
+          setPhoneError("Invalid phone number format");
         }
+      } else {
+        setter(value);
+      }
     }
   };
 
@@ -102,7 +134,7 @@ export default function HeroFormBookOffer() {
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
       return;
-  }
+    }
     const response = await submitMainContactForm(
       firstName,
       email,
@@ -151,9 +183,9 @@ export default function HeroFormBookOffer() {
               </Link>
             ))}
           </div> */}
-          <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec">
+          <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
             {clientLogos.map((logo, index) => (
-              <Link key={index} href={'javascript:;'}>
+              <Link key={index} href={logo.href} target="_blank">
                 <Image
                   alt={logo.alt}
                   src={logo.src}

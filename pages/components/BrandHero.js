@@ -28,9 +28,9 @@ export default function BrandHero() {
     const clientLogos = [
         {
             href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
-            src: "/brand-img/banner-logo2.png",
+            src: "/images/Google Partner.png",
             alt: "LOGO",
-            width: 180,
+            width: 150,
             height: 120
         },
         {
