@@ -460,7 +460,7 @@ export default function PublishingLpNew() {
                     </h2>
                     <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse provides an extensive array of book publishing options.With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.</p>
                 </div>
-                <div className=" p-8 tabs">
+                <div className="p-8 tabs">
                     <div className="">
                         {/* {tabs.map((tab, index) => (
                             <button

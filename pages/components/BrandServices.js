@@ -104,33 +104,13 @@ export default function BrandServices() {
 
                     {/* 4 of 6 */}
                     <div className="brand-service-content flex gap-4 mt-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
-                        <div className="brand-service-card flex gap-4">
-                            <div className="brand-service-card-content basis-1/2 relative">
-                                <span className="right-5"></span>
-                                <span className="bottom-5"></span>
-                                <div className="flex justify-between mb-12">
-                                    <Image src={"/brand-img/service-icon5.png"} width={50} className="icon" height={50}></Image>
-                                    <span className="font-poppins text-4xl">05</span>
-                                </div>
-                                <p >Crafting covers that captivate at first glance.</p>
-                                <h4 className="mt-4 font-poppins text-2xl">COVER DESIGN</h4>
-                            </div>
-                            <div className="basis-1/2 brand-service-card-img relative">
-                                <span class="square">
-                                    <Link href="#">Read More</Link>
-                                </span>
-                                <div className="service-card-img">
-                                    <Image src={"/brand-img/service-img5.webp"} width={250} height={200}></Image>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="brand-service-card flex gap-4">
+                    <div className="brand-service-card flex gap-4">
                             <div className="brand-service-card-content basis-1/2 relative">
                                 <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
                                     <Image src={"/brand-img/service-icon6.png"} width={50} className="icon" height={50}></Image>
-                                    <span className="font-poppins text-4xl">06</span>
+                                    <span className="font-poppins text-4xl">05</span>
                                 </div>
                                 <p >Bringing your story to the shelves and screens of the world.</p>
                                 <h4 className="mt-4 font-poppins text-2xl">PUBLISHING</h4>
@@ -141,6 +121,26 @@ export default function BrandServices() {
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img6.webp"} width={250} height={200}></Image>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="brand-service-card flex gap-4">
+                            <div className="brand-service-card-content basis-1/2 relative">
+                                <span className="right-5"></span>
+                                <span className="bottom-5"></span>
+                                <div className="flex justify-between mb-12">
+                                    <Image src={"/brand-img/Audio-Book-Icon.png"} width={50} className="icon" height={50}></Image>
+                                    <span className="font-poppins text-4xl">06</span>
+                                </div>
+                                <p>Crafting Professional Audiobooks for a delightful book listening experience.</p>
+                                <h4 className="mt-4 font-poppins text-2xl uppercase">AudioBooks</h4>
+                            </div>
+                            <div className="basis-1/2 brand-service-card-img relative">
+                                <span class="square">
+                                    <Link href="#">Read More</Link>
+                                </span>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/Audio-Book.jpg"} width={250} height={200}></Image>
                                 </div>
                             </div>
                         </div>
