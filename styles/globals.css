@@ -3096,7 +3096,30 @@ video#brandVideo {
   box-shadow: 0 1px 5px #191b42;
 }
 
-.book-publishing-cta-img{
+.book-publishing-cta-img {
   position: relative;
   bottom: 54px;
+}
+
+.tag-50-per-off {
+  background-color: #147d6e;
+  color: #fff;
+  padding: 7px 30px;
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+}
+
+.single-packages:hover .tag-50-per-off {
+  background-color: #d6d6d6;
+  transition: 0.4s ease-in-out;
+  color: #147d6e;
+}
+
+.single-packages .hover-top-vector span{
+  color: #137c6d;
+  font-weight: 800;
+}
+
+.bottom-5, .bottom-4, .bottom{
+  display: none;
 }
