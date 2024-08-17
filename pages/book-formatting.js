@@ -7,6 +7,7 @@ import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
+import BrandAudioPlayer from "./components/BrandAudioPlayer";
 
 export default function BookFormatting() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -16,12 +17,12 @@ export default function BookFormatting() {
     };
 
     const faqData = [
-        { question: "What genres does Pine Book Publishing specialize in?", answer: "We pride ourselves on our versatility and can assist with a wide range of genres, including fiction, non-fiction, memoirs, and more." },
-        { question: "How does the publishing process work with Pine Book Publishing?", answer: "Our process begins with an initial consultation to discuss your project's goals and requirements. From there, we'll work closely with you every step of the way, from manuscript development to final publication." },
-        { question: "What level of involvement will I have in the editing process?", answer: "Your level of involvement is entirely up to you. We offer collaborative editing services, where you'll have the opportunity to provide feedback and input throughout the editing process." },
-        { question: "How long does it typically take to publish a book with Pine Book Publishing?", answer: "The timeline can vary depending on the scope of your project and our current workload. However, we strive to work efficiently without compromising quality, aiming to deliver your finished product within a reasonable timeframe." },
-        { question: "What sets Pine Book Publishing apart from other publishing services?", answer: "At Pine Book Publishing, we prioritize personalized attention, expert guidance, and transparent communication. Our goal is not just to publish your book but to ensure it's the best it can be, tailored to your unique vision and goals." },
-        { question: "What pricing options are available for your services?", answer: "We offer competitive pricing packages tailored to fit your budget and project needs. Our rates are transparent, and we're happy to provide a detailed quote based on the specific services you require." }
+        { question: "What is book formatting and why is it important?", answer: "Book formatting is the method of converting your manuscript into a fascinating and readable book. We work closely on all aspects, like font styling, chapter layouts, and line spacing. A well-formatted book looks professional and takes the reader to its last page." },
+        { question: "How long does the book formatting process take?", answer: "The exact duration of the book formatting completely depends on your book's length, complexity, and other preferences. However, it usually takes anywhere from 4 to 7 working days. We always strive to deliver your project within the promised timeline." },
+        { question: "How much does e-book and print book formatting cost?", answer: "The pricing of book formatting completely depends on your specific needs and requirements. We consider multiple factors like book length, genre, complexity, as well as the desired timeline to decide the exact cost. However, we offer transparent yet competitive pricing to cater to the formatting needs of every level." },
+        { question: "Do you offer book formatting software or templates?", answer: "No, we do not offer any book formatting software. However, our team of experts leverages advanced tools to achieve top-notch outcomes. We also do not provide any book formatting templates, as every book has different attributes and requires a unique formatting method." },
+        { question: "Why do I need to have my book professionally formatted?", answer: "Your book's story might be fascinating, but nobody would want to read it if it is represented poorly. Book formatting is a complete skill required to set a book right according to the standard formatting guidelines, make your book readable and look professional, and get publication success on different popular platforms." },
+        { question: "Can you help with book cover design in addition to formatting?", answer: "Absolutely! As an expert book publishing company, we work on various aspects that come under the publishing process. We have a dedicated team of book cover designers onboard who can craft stunning book covers that can turn your audience's head within a second." }
     ];
 
     return (
@@ -37,20 +38,22 @@ export default function BookFormatting() {
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Ready To Write Your Next Chapter?"
-                desc="Let Pine Book Publishing be the compass for your narrative journey, steering you toward literary success with every stroke of the pen."
+                subtitle="Enhance Your Book's Readability With"
+                title="Professional Book Formatting Services"
+                desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Typesetting & Layout
+                            Pine Book Publishing –
                         </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">adjustment</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">A leading Book Formatting Company</h2>
                         <p className="font-poppins text-xl text-justify	pt-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                            If you have finished your manuscript and are tired of looking at the screen for many hours, struggling to bring your manuscript in a professional format that meets industry standards, hiring a professional book formatting company is the only option you should choose. We at Pine Book Publishing are your trusted book formatting partner. With intense familiarity with publishing industry standards, we offer you comprehensive book formatting solutions for various popular publishing platforms.
                         </p>
+                        <p className="font-poppins text-xl text-justify	pt-3">Our team of expert professionals works together to craft flawless layouts, accurate typography, and consistent formatting to help enhance your book's visual appeal. They deal with every aspect carefully, including specific table of contents, word length, number of pages, fonts, line spacing, and everything that affects the visual appearance of the book. We take pride in delivering top-notch results that always exceed our clients' expectations.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Formatting.png"} width={470} height={300}
@@ -62,11 +65,119 @@ export default function BookFormatting() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    Whether you're a first-time author, a professional writer, or a self-publishing freak, we've all-inclusive solutions for all your formatting needs.
                 </p>
             </div>
-            <BrandProcess />
-            <BrandChooseUs />
+
+
+            <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
+                <div className="max-w-screen-xl responsive-not-process">
+                    <div className="text-center mb-6">
+                        <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
+                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br> Book Formatting Services</h2>
+                    </div>
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <div className="brand-process-content text-left">
+                            <h2 className="font-poppins text-2xl">Assessment:</h2>
+                            <p className="">We begin with thoroughly analyzing your<br></br> manuscript. Understand its specific style,<br></br> and choose the best formatting approach<br></br> that matches your vision.</p>
+                        </div>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <div className="brand-process-content-right text-right">
+                            <h2 className="font-poppins text-2xl">Formatting Design:</h2>
+                            <p className="">Then, our expert designers get to work<br></br> and craft a stunning layout that matches<br></br> your book's content and genre and <br></br> meets industry standards.</p>
+                        </div>
+                    </div>
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
+                        <div className="brand-process-content text-left">
+                            <h2 className="font-poppins text-2xl">Customization:</h2>
+                            <p className="">After the design, we adjust your book's <br></br> format to your specific preferences. This<br></br> includes font styles, chapter headings,<br></br> and page numbers.</p>
+                        </div>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <div className="brand-process-content-right text-right">
+                            <h2 className="font-poppins text-2xl">Content Organization:</h2>
+                            <p className="">In this step, we carefully structure your<br></br> book's entire content, Including your book's<br></br> chapters, sections, and headings for<br></br> excellent readability and flow.</p>
+                        </div>
+                    </div>
+
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
+                        <div className="brand-process-content text-left">
+                            <h2 className="font-poppins text-2xl">Quality Check:</h2>
+                            <p className="">Then, our quality assurance team gets into<br></br> action. Your book goes through the keen<br></br> eyes of experts to ensure flawless formatting,<br></br> typography, and adherence to industry standards.</p>
+                        </div>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
+                        <div className="brand-process-content-right text-right">
+                            <h2 className="font-poppins text-2xl">Delivery:</h2>
+                            <p className="">In the last step, we deliver your perfectly<br></br> formatted book in your preferred format,<br></br> including print-ready options to satisfy<br></br> your publishing needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="max-w-screen-xl d-block md:hidden">
+                    <div className="text-center mb-6">
+                        <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
+                        <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">6-Step Process of Our Book Formatting Services</h2>
+                    </div>
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-1.webp"} width={700} height={200} className=" pb-10" ></Image>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-2.webp"} width={700} height={200} className=" pb-10" ></Image>
+                    </div>
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-3.webp"} width={700} height={200} className=" pb-10"></Image>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-4.webp"} width={700} height={200} className=" pb-10" ></Image>
+                    </div>
+
+                    <div className="relative" data-aos="fade-left">
+                        <Image src={"/brand-img/process-5.webp"} width={700} height={200} className=" pb-10"></Image>
+                    </div>
+                    <div className="relative" data-aos="fade-right">
+                        <Image src={"/brand-img/process-6.webp"} width={700} height={200} className=" pb-10"></Image>
+                    </div>
+                </div>
+            </section>
+            <section className="overflow-hidden" >
+                <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-16 mt-20 mb-8 " >
+                    <div className="flex items-center flex-col md:flex-row" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">
+                        <div className="basis-1/3 brand-choose-us-vector">
+                            {/* <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image> */}
+                            <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
+                                loading="lazy"
+                                alt="about img"
+                                className="brand-about-img"
+                            />
+                        </div>
+                        <div className="basis-1/3 md:ml-20 py-8">
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Formatting Service?</h2>
+                            <p className="text-white mt-2">At Pine Book Publishing, we're passionate about what we do. Our steadfast team of professionals works tirelessly to deliver accuracy, speed, and premium quality work. </p>
+                            <div className="flex gap-10 mt-6">
+                                <ul>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />A Team of Experts</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />On-time Delivery</li>
+                                    {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Craftsmanship</li> */}
+                                </ul>
+                                <ul>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Multiple Formats</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Author-focus Approach</li>
+                                    {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
+                                </ul>
+                            </div>
+                            <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">

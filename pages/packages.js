@@ -157,7 +157,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>($1,000)</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>$1,000 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -240,7 +240,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                 </div>
                             </div>
                             <div className="single-packages relative">
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package<br></br><span>($2,000)</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package<br></br><span>$2,000 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -355,7 +355,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             </div>
                             <div className="single-packages relative">
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package <br></br><span>($3,000)</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package <br></br><span>$3,000 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -761,7 +761,7 @@ export default function Bundle({ isOpen, onClose, service }) {
 
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12 mt-0">
                             <div className="single-packages relative">
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package<br></br><span>($7,000)</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package<br></br><span>$7,000 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -919,7 +919,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             </div>
                             <div className="single-packages relative">
                                 <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package <br></br><span>($15,000)</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package <br></br><span>$15,000 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -1097,7 +1097,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                 </div>
                             </div>
                             <div className="single-packages relative">
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package <br></br><span>($25,000)</span>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package <br></br><span>$25,000 USD</span>
                                 </h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
