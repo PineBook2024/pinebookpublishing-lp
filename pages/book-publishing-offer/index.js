@@ -1047,7 +1047,7 @@ export default function Home() {
                   <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package
                     <br></br>
                     <div className="flex justify-center">
-                      <button className="tag-50-per-off"><del className="text-red italic">$700</del> | $349: <span className="blink_me">50% OFF</span></button>
+                      <button className="tag-50-per-off"><del className="text-red italic">$700</del> | <span className="blink_me">$349 USD</span></button>
                     </div>
                   </h4>
                   {/* <div className="flex justify-center">
@@ -1138,7 +1138,7 @@ export default function Home() {
                   <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package
                     <br></br>
                     <div className="flex justify-center">
-                      <button className="tag-50-per-off"><del className="text-red italic">$2,000</del> | $999: <span className="blink_me">50% OFF</span></button>
+                      <button className="tag-50-per-off"><del className="text-red italic">$2,000</del> | <span className="blink_me">$999 USD</span></button>
                     </div>
                   </h4>
                   {/* <div className="flex justify-center">
