@@ -3102,9 +3102,9 @@ video#brandVideo {
 }
 
 .tag-50-per-off {
-  background-color: #147d6e;
-  color: #fff;
-  padding: 7px 30px;
+  background-color: #d6d6d6;
+  color: #000;
+  padding: 2px 30px;
   border-radius: 10px;
   transition: 0.4s ease-in-out;
 }
@@ -3112,14 +3112,18 @@ video#brandVideo {
 .single-packages:hover .tag-50-per-off {
   background-color: #d6d6d6;
   transition: 0.4s ease-in-out;
-  color: #147d6e;
+  /* color: #147d6e; */
 }
 
 .single-packages .hover-top-vector span{
-  color: #137c6d;
+  color: #147d6e;
   font-weight: 800;
 }
 
 .bottom-5, .bottom-4, .bottom{
   display: none;
+}
+
+.tag-50-per-off del{
+  text-decoration: line-through red;
 }

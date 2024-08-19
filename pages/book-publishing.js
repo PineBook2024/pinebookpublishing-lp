@@ -39,34 +39,34 @@ export default function BookPublishing() {
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Publishing With A Personal Touch"
-                desc="Whether you are a beginner or a professional writer, Pine Book Publishing can help you fine-tune your book publishing process and make sure that you have one less thing to worry about. "
+                title="Quality. Creativity. Passion – Our Book Publishing Service Has It All!"
+                desc="Whether you are a beginner or a professional book author, Pine Book Publishing can help you every step of the way of book publishing.  We can help you fine-streamline the publishing process with our immense passion for providing creative and quality services and enabling you to focus on your main core."
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Our Book Publishing
+                            Unveil Your Story with An Expert
                         </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Services</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Book Publishing Company</h2>
                         <p className="font-poppins text-xl text-justify	pt-3">
-                            Have you ever felt like running in circles about self-publishing your book? Pine Book Publishing is here to guide you through the twists and turns of the book publishing process with professionalism and expertise.<br></br>
-                            Our professional online book publishing services avail your works for self-publishing on various platforms. As professional book publishers, Pine Book Publishing will work closely with you to ensure your book meets the industry standards and will make it easy for you to self-publish a book on Amazon.<br></br>
-                            But our support doesn’t end there. We will help you with everything that has to do with ISBNs, and indeed the overall publishing. We also provide the distribution and marketing services to get your book noticed by the right audience.
+                            Have you ever felt like running in circles about self-publishing your book? Pine Book Publishing is here to guide you through the twists and turns of the book publishing process with professionalism and expertise.
                         </p>
+                        <p className="font-poppins text-xl text-justify	pt-3">Our professional online book publishing services make your works available for self-publishing on all popular platforms. As professional book publishers, Pine Book Publishing will work together with you to be sure your book meets industry standards and will make it easy for you to self-publish a book on Amazon.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Publishing.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
-                            data-aos="fade-left" data-aos-duration="1000" 
+                            data-aos="fade-left" data-aos-duration="1000"
                         />
                     </div>
                 </div>
                 <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
-                    When you have Pine Book Publishing on your corner you can be confident your book will find the right audience and create the stir it deserves in the world of readers. So, are you ready to team up with us and get your book published?
+                    Our services are not limited to publishing, but we help you with everything related to ISBN registration. We also provide online and traditional book distribution and marketing services to get your book to the right audience.<br></br>
+                    So, if you are looking for an expert book publishing company that can help you exhibit your book to your potential readers, Pine Book Publishing is your destination. Don't wait anymore! Contact us to get a free quote!
                 </p>
             </div>
 
@@ -74,52 +74,52 @@ export default function BookPublishing() {
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
                 <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
-                        <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">How Your Journey Looks With Us?</h2>
+                        <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
+                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br>Book Publishing Services</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
-                            <h2 className="font-poppins text-2xl">Review:</h2>
-                            <p className="para">First up, our team of experts will take a<br></br> close look at your manuscript. They’ll<br></br> give you detailed feedback on how to improve<br></br> its structure, content, and overall quality.</p>
+                            <h2 className="font-poppins text-2xl">Manuscript Review:</h2>
+                            <p className="para">We begin our process by reviewing your<br></br> manuscript. We provide feedback on areas<br></br> to improve, such as design, content, and structure. </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
-                            <h2 className="font-poppins text-2xl">Editing & Proofreading:</h2>
-                            <p className="para">Next, our skilled editors will work closely <br></br> with you to polish your manuscript. They’ll<br></br> make sure it’s free of errors and ready to shine.</p>
+                            <h2 className="font-poppins text-2xl">Manuscript Refining:</h2>
+                            <p className="para">Then, our seasoned editors and proofreaders take their eyes on the manuscript and make the necessary changes/edits to ensure your draft has no grammatical or structural flaws.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Cover Design:</h2>
-                            <p className="para">Now, it’s time to get creative! We’ll team <br></br> up with you to design a cover that<br></br> captures the essence of your book. </p>
+                            <p className="para">We don't neglect the importance of an attention-grabbing book cover. Our team of designers gets to work and design an eye-catching cover that can draw your readers' attention very quickly.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
-                            <p className="para">We’ll take care of all the technical stuff, like<br></br> formatting your manuscript to meet industry<br></br> standards. Whether it’s for digital e-book stores<br></br> or print, we’ll make sure it’s ready to hit the shelves.</p>
+                            <p className="para">In this phase, your book is required to be formatted. We handle everything related to formatting, from typesetting and interior designing to suitable chapter alignment, making your book compatible with your chosen publishing platform.</p>
                         </div>
                     </div>
 
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
-                            <h2 className="font-poppins text-2xl">Getting an ISBN:</h2>
-                            <p className="para">Every book needs its ID, right? Our team<br></br> will assign your book a unique ISBN. Think<br></br> of it as its passport for proper identification<br></br> and distribution.</p>
+                            <h2 className="font-poppins text-2xl">Final Delivery:</h2>
+                            <p className="para">Now, your book is in perfect shape and format. We also help you get your book's identity by assigning a unique ISBN to make it easily trackable among thousands of others quickly.</p>
                         </div>
                     </div>
-                    <div className="relative" data-aos="fade-right">
+                    {/* <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Book Publishing:</h2>
                             <p className="para">Last but not least, our publisher will work<br></br> with you to make your book available on<br></br> the leading publishing platforms like Amazon<br></br> Kindle Publishing. </p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* <div className="max-w-screen-xl d-block md:hidden">
@@ -155,13 +155,13 @@ export default function BookPublishing() {
                             <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
                         </div>
                         <div className="basis-1/3 md:ml-20">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
-                            <p className="text-white mt-2">There are many self-publishing companies and services out there, but the following are the things that make us different from others:  </p>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Publishing Services?</h2>
+                            <p className="text-white mt-2">There are many self-publishing companies and services out there, but the following are the things that make us different from others:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Personalized Approach </li>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Guidance </li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Quality Assurance </li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Quality Assurance</li>
                                 </ul>
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Timely Delivery</li>

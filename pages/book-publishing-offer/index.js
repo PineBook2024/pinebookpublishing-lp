@@ -977,8 +977,9 @@ export default function Home() {
           <div className="container mx-auto max-w-screen-xl">
             <div className="grid items-center grid-cols-1 text-center m1-h">
               <h3 className="text-3xl font-poppins md:text-4xl font-bold">
-                Packages
+                Book Publishing Bundles
               </h3>
+              <h4 className="text-xl font-poppins md:text-xl font-bold mt-4">Limited Time Offer - Save <span className="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
             </div>
 
             {/* <div className="grid grid-cols-4 gap-4 items-top"> */}
@@ -1043,12 +1044,16 @@ export default function Home() {
                 <div className="single-packages relative">
                   {/* <span className="hover-top-vector"></span> */}
 
-                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package</h4>
+                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$700</del> | $349: <span className="blink_me">50% OFF</span></button>
+                    </div>
+                  </h4>
                   {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
                   </div> */}
                   <div className="single-packages-content mb-5 px-10">
-
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Preparing Your Manuscript
                     </div>
@@ -1130,7 +1135,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="single-packages relative">
-                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package</h4>
+                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$2,000</del> | $999: <span className="blink_me">50% OFF</span></button>
+                    </div>
+                  </h4>
                   {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
                   </div> */}
@@ -1248,9 +1258,14 @@ export default function Home() {
                 </div>
                 <div className="single-packages relative">
                   <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package</h4>
+                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$3,000</del> | <span className="blink_me">$1,499 USD</span></button>
+                    </div>
+                  </h4>
                   {/* <div className="flex justify-center">
-                    <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
+                    <button className="tag-50-per-off">$1000 | $499: <span className="blink_me">50% OFF</span></button>
                   </div> */}
                   <div className="single-packages-content mb-5 px-10">
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
@@ -1657,7 +1672,12 @@ export default function Home() {
 
               <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12 mt-0">
                 <div className="single-packages relative">
-                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package</h4>
+                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$7,000</del> | <span className="blink_me">$3,499 USD</span></button>
+                    </div>
+                  </h4>
                   {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
                   </div> */}
@@ -1818,7 +1838,12 @@ export default function Home() {
                 </div>
                 <div className="single-packages relative">
                   <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
-                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package</h4>
+                  <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$15,000</del> | <span className="blink_me">$7,499 USD</span></button>
+                    </div>
+                  </h4>
                   {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
                   </div> */}
@@ -2000,6 +2025,10 @@ export default function Home() {
                 </div>
                 <div className="single-packages relative">
                   <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package
+                    <br></br>
+                    <div className="flex justify-center">
+                      <button className="tag-50-per-off"><del className="text-red italic">$25,000</del> | <span className="blink_me">$12,499 USD</span></button>
+                    </div>
                   </h4>
                   {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>

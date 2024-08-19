@@ -20,9 +20,9 @@ export default function TypeSetting() {
         { question: "What is typesetting and why is it important?", answer: "Typesetting is a crucial part of book formatting. It involves arranging text, headings, and images to design an appealing layout. Professional typesetting and layout design can enhance your book's readability, consistency, and overall visual internal appearance." },
         { question: "Do you use book typesetting software?", answer: "Yes, we leverage the most advanced book typesetting software to maintain accuracy and efficiency. Our team of designers equally utilizes their creative skills and software expertise to craft an appealing layout for your book." },
         { question: "How long does your typesetting and layout design process take?", answer: "The duration of the typesetting and layout designing process totally depends on the length and complexity of your book. However, we usually take 3 to 4 – 7 business days. We always prioritize the quality of work without exceeding the promised timeline. " },
-        { question: "How long does it typically take to publish a book with Pine Book Publishing?", answer: "The timeline can vary depending on the scope of your project and our current workload. However, we strive to work efficiently without compromising quality, aiming to deliver your finished product within a reasonable timeframe." },
-        { question: "What sets Pine Book Publishing apart from other publishing services?", answer: "At Pine Book Publishing, we prioritize personalized attention, expert guidance, and transparent communication. Our goal is not just to publish your book but to ensure it's the best it can be, tailored to your unique vision and goals." },
-        { question: "What pricing options are available for your services?", answer: "We offer competitive pricing packages tailored to fit your budget and project needs. Our rates are transparent, and we're happy to provide a detailed quote based on the specific services you require." }
+        { question: "Will typesetting mean my book will be thoroughly edited too?", answer: "While we focus on adjusting the book page layout and arrangement of text, headings, and paragraphs in book typesetting, we perform basic-level proofreading for apparent mistakes. However, if you require comprehensive editing and proofreading, you may hire our professional proofreading service prior to book typesetting." },
+        { question: "How do I Get Started?", answer: "Our project signup process is very easy. Click on the Talk to an Expert button on the right top of the current web page or visit our Contact page and fill out a quick form with basic information. One of our customer service representatives will contact you shortly and guide you ahead." },
+        // { question: "What pricing options are available for your services?", answer: "We offer competitive pricing packages tailored to fit your budget and project needs. Our rates are transparent, and we're happy to provide a detailed quote based on the specific services you require." }
     ];
 
     return (
@@ -72,7 +72,7 @@ export default function TypeSetting() {
             </div>
             {/* Process */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
-                <div className="max-w-screen-xl responsive-not-process">
+                <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Typesetting <br></br> & Layout Adjustment Services</h2>
@@ -81,28 +81,28 @@ export default function TypeSetting() {
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Define Book's Dimensions:</h2>
-                            <p className="">We begin by setting up the perfect size and<br></br> shape for your book. We determine the<br></br> appropriate trim size and set ideal margins<br></br> for a delightful reading experience.</p>
+                            <p className="para">We begin by setting up the perfect size and<br></br> shape for your book. We determine the<br></br> appropriate trim size and set ideal margins<br></br> for a delightful reading experience.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Text Styling:</h2>
-                            <p className="">Then, we carefully determine and apply<br></br> text styles throughout your manuscript. This <br></br>includes chapter headings, subheadings, body <br></br>text, and other text-based elements.</p>
+                            <p className="para">Then, we carefully determine and apply<br></br> text styles throughout your manuscript. This <br></br>includes chapter headings, subheadings, body <br></br>text, and other text-based elements.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Chapter Organization:</h2>
-                            <p className="">In this step, we organize and format your <br></br> chapters for clarity and flow. We work on<br></br> headings, subheadings, and chapter breaks <br></br> to improve readability.</p>
+                            <p className="para">In this step, we organize and format your <br></br> chapters for clarity and flow. We work on<br></br> headings, subheadings, and chapter breaks <br></br> to improve readability.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Front Matter Design:</h2>
-                            <p className="">We give creative touches to the book's<br></br> front matter, making it eye-pleasing. This<br></br> includes the title page, copyright information,<br></br> dedication, and acknowledgments.</p>
+                            <p className="para">We give creative touches to the book's<br></br> front matter, making it eye-pleasing. This<br></br> includes the title page, copyright information,<br></br> dedication, and acknowledgments.</p>
                         </div>
                     </div>
 
@@ -110,19 +110,19 @@ export default function TypeSetting() {
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-xl">Add Essential Page Elements:</h2>
-                            <p className="">We incorporate page numbers and headers<br></br> to provide readers with a clear navigation<br></br> and polished look.</p>
+                            <p className="para">We incorporate page numbers and headers<br></br> to provide readers with a clear navigation<br></br> and polished look.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-xl">Advanced Formatting & Delivery:</h2>
-                            <p className="">Lastly, we add chapter title pages and images <br></br> and create a table of contents for better<br></br> reader engagement. We also proofread and deliver<br></br> your book in high-quality, print-ready format.</p>
+                            <p className="para">Lastly, we add chapter title pages and images <br></br> and create a table of contents for better<br></br> reader engagement. We also proofread and deliver<br></br> your book in high-quality, print-ready format.</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="max-w-screen-xl d-block md:hidden">
+                {/* <div className="max-w-screen-xl d-block md:hidden">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">6-Step Process of Typesetting & Layout Adjustment Services</h2>
@@ -146,7 +146,7 @@ export default function TypeSetting() {
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-6.webp"} width={700} height={200} className=" pb-10"></Image>
                     </div>
-                </div>
+                </div> */}
             </section>
             {/* <BrandChooseUs /> */}
             <section className="overflow-hidden" >

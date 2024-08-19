@@ -71,7 +71,7 @@ export default function BookFormatting() {
 
 
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
-                <div className="max-w-screen-xl responsive-not-process">
+                <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
                         <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br> Book Formatting Services</h2>
@@ -80,28 +80,28 @@ export default function BookFormatting() {
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Assessment:</h2>
-                            <p className="">We begin with thoroughly analyzing your<br></br> manuscript. Understand its specific style,<br></br> and choose the best formatting approach<br></br> that matches your vision.</p>
+                            <p className="para">We begin with thoroughly analyzing your<br></br> manuscript. Understand its specific style,<br></br> and choose the best formatting approach<br></br> that matches your vision.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting Design:</h2>
-                            <p className="">Then, our expert designers get to work<br></br> and craft a stunning layout that matches<br></br> your book's content and genre and <br></br> meets industry standards.</p>
+                            <p className="para">Then, our expert designers get to work<br></br> and craft a stunning layout that matches<br></br> your book's content and genre and <br></br> meets industry standards.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Customization:</h2>
-                            <p className="">After the design, we adjust your book's <br></br> format to your specific preferences. This<br></br> includes font styles, chapter headings,<br></br> and page numbers.</p>
+                            <p className="para">After the design, we adjust your book's <br></br> format to your specific preferences. This<br></br> includes font styles, chapter headings,<br></br> and page numbers.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Content Organization:</h2>
-                            <p className="">In this step, we carefully structure your<br></br> book's entire content, Including your book's<br></br> chapters, sections, and headings for<br></br> excellent readability and flow.</p>
+                            <p className="para">In this step, we carefully structure your<br></br> book's entire content, Including your book's<br></br> chapters, sections, and headings for<br></br> excellent readability and flow.</p>
                         </div>
                     </div>
 
@@ -109,43 +109,18 @@ export default function BookFormatting() {
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Quality Check:</h2>
-                            <p className="">Then, our quality assurance team gets into<br></br> action. Your book goes through the keen<br></br> eyes of experts to ensure flawless formatting,<br></br> typography, and adherence to industry standards.</p>
+                            <p className="para">Then, our quality assurance team gets into<br></br> action. Your book goes through the keen<br></br> eyes of experts to ensure flawless formatting,<br></br> typography, and adherence to industry standards.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Delivery:</h2>
-                            <p className="">In the last step, we deliver your perfectly<br></br> formatted book in your preferred format,<br></br> including print-ready options to satisfy<br></br> your publishing needs.</p>
+                            <p className="para">In the last step, we deliver your perfectly<br></br> formatted book in your preferred format,<br></br> including print-ready options to satisfy<br></br> your publishing needs.</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="max-w-screen-xl d-block md:hidden">
-                    <div className="text-center mb-6">
-                        <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl text-black " data-aos="zoom-out-down">6-Step Process of Our Book Formatting Services</h2>
-                    </div>
-                    <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-1.webp"} width={700} height={200} className=" pb-10" ></Image>
-                    </div>
-                    <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-2.webp"} width={700} height={200} className=" pb-10" ></Image>
-                    </div>
-                    <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-3.webp"} width={700} height={200} className=" pb-10"></Image>
-                    </div>
-                    <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-4.webp"} width={700} height={200} className=" pb-10" ></Image>
-                    </div>
-
-                    <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-5.webp"} width={700} height={200} className=" pb-10"></Image>
-                    </div>
-                    <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-6.webp"} width={700} height={200} className=" pb-10"></Image>
-                    </div>
-                </div>
             </section>
             <section className="overflow-hidden" >
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-16 mt-20 mb-8 " >
