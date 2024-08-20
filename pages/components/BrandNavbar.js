@@ -15,9 +15,9 @@ export default function BrandNavbar() {
         { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp' },
         { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp' },
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp' },
-        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img5.webp' },
+        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon6.png', image: '/brand-img/service-img6.webp' },
         // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
-        { name: 'Print On Demand', href: '/print-on-demand', icon: faArrowRight, image: '/brand-img/service-img2.webp' },
+        { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg' },
         // { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
     ];
 
@@ -95,7 +95,7 @@ export default function BrandNavbar() {
                             >
                                 <div className='flex items-center gap-2'>
                                     <Link href="/services" className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
-                                        Services  
+                                        Services
                                     </Link>
                                     <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon cursor-pointer' width={10} height={10} />
                                 </div>
@@ -135,6 +135,7 @@ export default function BrandNavbar() {
                                     </div>
                                 )}
                             </li>
+                            <li className='mb-3 md:mb-0'><Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/testimonials"; }} className="text-white hover:text-gray-300">Testimonials</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/packages"; }} className="text-white hover:text-gray-300">Packages</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" onClick={(e) => { e.preventDefault(); window.location.href = "/portfolio"; }} className="text-white hover:text-gray-300">Portfolio</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }} className="text-white hover:text-gray-300">Contact</Link></li>

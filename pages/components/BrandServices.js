@@ -29,7 +29,7 @@ export default function BrandServices() {
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative"> 
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/book-editing">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img1.png"} width={250} height={200}></Image>
@@ -49,7 +49,7 @@ export default function BrandServices() {
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/proofreading">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img2.png"} width={250} height={200}></Image>
@@ -62,7 +62,7 @@ export default function BrandServices() {
                         <div className="brand-service-card flex gap-4">
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/book-formatting">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img3.webp"} width={270} height={200}></Image>
@@ -82,7 +82,7 @@ export default function BrandServices() {
                         <div className="brand-service-card flex gap-4">
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/typesetting-layout-adjustment">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img4.webp"} width={250} className="icon" height={200}></Image>
@@ -117,7 +117,7 @@ export default function BrandServices() {
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/book-publishing">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
                                     <Image src={"/brand-img/service-img6.webp"} width={250} height={200}></Image>
@@ -129,18 +129,18 @@ export default function BrandServices() {
                                 <span className="right-5"></span>
                                 <span className="bottom-5"></span>
                                 <div className="flex justify-between mb-12">
-                                    <Image src={"/brand-img/Audio-Book-Icon.png"} width={50} className="icon" height={50}></Image>
+                                    <Image src={"/brand-img/Printing Icon.png"} width={50} className="icon" height={50}></Image>
                                     <span className="font-poppins text-4xl">06</span>
                                 </div>
-                                <p>Crafting Professional Audiobooks for a delightful book listening experience.</p>
-                                <h4 className="mt-4 font-poppins text-2xl uppercase">AudioBooks</h4>
+                                <p>Streamline your book printing process with our expert Print-On-Demand Services</p>
+                                <h4 className="mt-4 font-poppins text-2xl uppercase">Print On Demand</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">
-                                    <Link href="#">Read More</Link>
+                                    <Link href="/print-on-demand">Read More</Link>
                                 </span>
                                 <div className="service-card-img">
-                                    <Image src={"/brand-img/Audio-Book.jpg"} width={250} height={200}></Image>
+                                    <Image src={"/brand-img/Print on Demand.jpg"} width={250} height={200}></Image>
                                 </div>
                             </div>
                         </div>
