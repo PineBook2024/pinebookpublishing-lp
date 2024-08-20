@@ -16,9 +16,9 @@ export default function BrandNavbar() {
         { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp' },
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp' },
         { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img5.webp' },
-        { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
+        // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
         { name: 'Print On Demand', href: '/print-on-demand', icon: faArrowRight, image: '/brand-img/service-img2.webp' },
-        { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
+        // { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
     ];
 
     // Function to handle the service dropdown toggle
@@ -86,16 +86,20 @@ export default function BrandNavbar() {
                         <ul className="md:flex items-center space-x-4">
                             <li className='mb-3 md:mb-0'><Link href="/" onClick={(e) => { e.preventDefault(); window.location.href = "/"; }} className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }} className="text-white hover:text-gray-300">About Us</Link></li>
-                            <li className='mb-3 md:mb-0'><Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="text-white hover:text-gray-300">Services</Link></li>
-                            {/* <li
+                            {/* <li className='mb-3 md:mb-0'><Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="text-white hover:text-gray-300">Services</Link></li> */}
+                            <li
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
                                 onClick={toggleServiceDropdown}
-                                // className="relative"
+                            // className="relative"
                             >
-                                <Link href={'javascript:;'} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
-                                    Services  <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon' width={10} height={10} />
-                                </Link>
+                                <div className='flex items-center gap-2'>
+                                    <Link href="/services" className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
+                                        Services  
+                                    </Link>
+                                    <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon cursor-pointer' width={10} height={10} />
+                                </div>
+
                                 {serviceDropdown && (
                                     <div className="absolute mt-1 w-full bg-white text-black rounded shadow-lg brand-custom-dropdown-menu flex justify-between">
                                         <ul className="py-1 text-start px-4 py-2">
@@ -130,7 +134,7 @@ export default function BrandNavbar() {
                                         </div>
                                     </div>
                                 )}
-                            </li> */}
+                            </li>
                             <li className='mb-3 md:mb-0'><Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/packages"; }} className="text-white hover:text-gray-300">Packages</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" onClick={(e) => { e.preventDefault(); window.location.href = "/portfolio"; }} className="text-white hover:text-gray-300">Portfolio</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }} className="text-white hover:text-gray-300">Contact</Link></li>
