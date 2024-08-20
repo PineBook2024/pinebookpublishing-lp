@@ -124,7 +124,7 @@ const BrandTesti = () => {
                     {videoClient.map((videoClient) => (
                         <Link href={videoClient.src} className="glightbox block">
                             <div className='' key={videoClient.id}>
-                                {/* <h2 className="font-bold text-xl text-black" >{videoClient.clientname}</h2> */}
+                                <h2 className="font-bold text-xl text-black" >{videoClient.clientname}</h2>
                                 {/* <video height={400} width={400} controls loading="lazy" className="brand-story py-4">
                     <source src={videoClient.src} type={videoClient.type} />
                 </video> */}
