@@ -395,7 +395,30 @@ export default function Home() {
         />
       </Head>
       <main>
-        <Header />
+        {/* <Header /> */}
+        <header className="container mx-auto py-2 width-container">
+          <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
+            <div className="head-logo">
+              <Link className="text-center" href="/book-publishing-offer">
+                <Image alt="LOGO" src={'/brand-img/logo.webp'} width={200} height={80} loading="lazy" />
+              </Link>
+            </div>
+
+            <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
+              <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
+                <Link className="" href={'tel:8668417469'}>(866)-841-7469</Link>
+              </button>
+
+              <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
+                <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
+              </button>
+
+              <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
+                <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
+              </button>
+            </div>
+          </div>
+        </header>
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
         <HeavyComponent Component={HeroFormBookOffer} />
@@ -1118,7 +1141,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Basic')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
 
@@ -1241,7 +1264,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Start up')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
                   <div className="single-packages-footer flex  w-100 justify-center">
@@ -1375,7 +1398,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn text-md mt-7" onClick={() => openModal('Standard')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
 
@@ -1820,7 +1843,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn text-md mt-5" onClick={() => openModal('Expert')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
 
@@ -2008,7 +2031,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Premium')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
                   <div className="single-packages-footer flex  w-100 justify-center">
@@ -2214,7 +2237,7 @@ export default function Home() {
                   </div>
                   <div className="text-center">
                     <button className="package-get-started-btn font-poppins text-md mt-8" onClick={() => openModal('Enterprise')}>
-                      GET A QUOTE
+                      START PROJECT
                     </button>
                   </div>
 

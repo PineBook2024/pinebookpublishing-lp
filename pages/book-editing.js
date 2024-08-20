@@ -23,8 +23,8 @@ export default function BookEditing() {
         { question: "Can I speak with my editor?", answer: "Absolutely! you can talk. However, it depends on the severity of the project and the editor's availability." },
         { question: "How long will the editor take to review my manuscript?", answer: "It may take around 1-2 weeks to get you the editorial report, but it also depends on the length and the genre of your book." },
         { question: "Can I see a before and after sample?", answer: "Yes, you can. You can simply ask our consultant to show you the before and after samples, and he/she will be more than happy to provide them to you." },
-        { question: "Who will be editing my manuscript? And how qualified are they?", answer: "We have a team of qualified professional who will be editing your manuscript. Some of them are either PhD holder and some of them are retired professors." },
-        { question: "Is my manuscript secure?", answer: "Yes, Pine Book Publishing respects your manuscript by handling it under high confidentiality. We ensure that we have NDAs with each and every client that engage with us. Any information that you provide will only be accessed by your manuscript editor and the specific project manager working on your order." },
+        { question: "Who will be editing my manuscript? And how qualified are they?", answer: "We have a team of qualified professionals who will be editing your manuscript. Some of them are PhD holders, and some of them are retired professors." },
+        { question: "Is my manuscript secure?", answer: "Yes, Pine Book Publishing respects your manuscript by handling it under high confidentiality. We ensure that we have NDAs with each and every client that engages with us. Any information that you provide will only be accessed by your manuscript editor and the specific project manager working on your order." },
     ];
 
     return (

@@ -81,28 +81,32 @@ export default function BookPublishing() {
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Manuscript Review:</h2>
-                            <p className="para">We begin our process by reviewing your<br></br> manuscript. We provide feedback on areas<br></br> to improve, such as design, content, and structure. </p>
+                            <p className="para">Our process starts by reviewing your<br></br> manuscript and providing feedback on the<br></br> design layout, content, and structure.
+                            </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Manuscript Refining:</h2>
-                            <p className="para">Then, our seasoned editors and proofreaders take their eyes on the manuscript and make the necessary changes/edits to ensure your draft has no grammatical or structural flaws.</p>
+                            <p className="para">Then, our skilled editors make the necessary<br></br> changes/edits to ensure your draft<br></br> has no grammatical or structural flaws.
+                            </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Cover Design:</h2>
-                            <p className="para">We don't neglect the importance of an attention-grabbing book cover. Our team of designers gets to work and design an eye-catching cover that can draw your readers' attention very quickly.</p>
+                            <p className="para">In this phase, our team of graphic designers<br></br> crafts an eye-catching cover that can draw<br></br> your readers' attention quickly.
+                            </p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
-                            <p className="para">In this phase, your book is required to be formatted. We handle everything related to formatting, from typesetting and interior designing to suitable chapter alignment, making your book compatible with your chosen publishing platform.</p>
+                            <p className="para">Now, it’s time to format your book. We<br></br> handle everything, from typesetting and<br></br> interior designing to chapter alignment.
+                            </p>
                         </div>
                     </div>
 
@@ -110,7 +114,7 @@ export default function BookPublishing() {
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Final Delivery:</h2>
-                            <p className="para">Now, your book is in perfect shape and format. We also help you get your book's identity by assigning a unique ISBN to make it easily trackable among thousands of others quickly.</p>
+                            <p className="para">Lastly, we help you get your book's identity<br></br> by registering a unique ISBN to make it<br></br> easily accessible among many others.</p>
                         </div>
                     </div>
                     {/* <div className="relative" data-aos="fade-right">

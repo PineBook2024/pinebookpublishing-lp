@@ -20,9 +20,9 @@ export default function Proofreading() {
         { question: "What is the difference between book editing and book proofreading?", answer: "Book editing and book proofreading are two different phases of book production. Book Editing entails a critical evaluation of your book by professional editors, though the main concern is the arrangement and presentation of the book. On the other hand, book proofreading is the last stage and includes checking for grammar, punctuation or spelling mistakes before going to the publishing house." },
         { question: "Which software will you use to proofread my book?", answer: "When it comes to such kind of work, our proofreaders do not need to use special software. They go through it to ensure that the various points raised in the manuscript have been appropriately formatted." },
         { question: "Do I need a proofreading service if I’ve already signed up for editing?", answer: "Yes! Nevertheless, proofreading is vital even when the document has been edited. It checks for remaining errors and makes the final product as perfect as possible." },
-        { question: "Can I proofread my book by myself?", answer: "While self-proofreading is indeed possible, it could sometimes result in missing some errors, given that the person is already familiar with the text. A professional proofreading service can offer detailed feedback and extensive error detection." },
+        { question: "Can I proofread my book by myself?", answer: "While self-proofreading is indeed possible, it could sometimes result in missing some errors, given that the person is already familiar with the text. Professional proofreading services can offer detailed feedback and extensive error detection." },
         { question: "How quickly can I get my book to be proofread?", answer: "Our professionals take a few days or weeks to proofread a book. However, the exact time depends on the length and complexity of your manuscript.	" },
-        { question: "Are your proofreading services confidential?", answer: "Yes, Pine Book Publishing respects your manuscript by handling it under high confidentiality. We ensure that we have NDAs with every client who engages with us. Any information you provide will only be accessed by your proofreader and the specific project manager working on your order." }
+        { question: "Are your Proofreading Services confidential?", answer: "Yes, Pine Book Publishing respects your manuscript by handling it under high confidentiality. We ensure that we have NDAs with every client who engages with us. Any information you provide will only be accessed by your proofreader and the specific project manager working on your order." }
     ];
 
     return (
@@ -37,20 +37,19 @@ export default function Proofreading() {
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="We find and correct mistakes, You receive flawless texts"
-                desc="Often, one cannot help but be distracted by even the smallest error. Let me help you identify the issues that cause your book to have a bumpy ride and ensure its maximum readability. No matter what you have to say, you can rely on us to help you communicate it clearly."
+                title="Your Words, Our Expertise – Expert Book proofreading services"
+                desc="Your reader might be distracted by even the slightest spelling error. To prevent this problem, you need to hire a professional proofreading service to help you identify the issues that cause your book to have a bumpy ride and ensure its maximum readability. You can count on us to make your manuscript flawless."
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Our Proofreading Services
+                        Perfect Your Manuscript with Flawless  
                         </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">adjustment</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Grammar & Zero Typos</h2>
                         <p className="font-poppins text-xl text-justify	pt-3">
-                            Have you ever been reading a book and come across a typo or a clumsy construction that jolted you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material.
-                            Writing a book is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
+                        Have you ever been reading a book and come across a typo or an awkward construction that bumped you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material. Writing a book is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -63,59 +62,58 @@ export default function Proofreading() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
-                    Choosing our Book Proofreading Service is a smart investment in your book. Let us take care of the fine details to present your book in a manner that it sdeserves. It is our mission to assist you in creating a book that people are going to read over and over and recommend to their friends.
-                </p>
+                Choosing our Book proofreading service is a smart investment in your book. Let us take care of the fine details to present your book in the manner that it deserves. It is our mission to assist you in creating a book that people are going to read over and over and recommend to their friends.                </p>
             </div>
             {/* <BrandProcess /> */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
                 <div className="max-w-screen-xl">
                     <div className="text-center mb-6">
-                        <h3 className="text-2xl text-black font-poppins">HOW WE WORK</h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">How Your Journey Looks With Us?</h2>
+                        <h3 className="text-2xl text-black font-poppins">Our Service Workflow</h3>
+                        <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our<br></br> Book Proofreading Services</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content text-left">
-                            <h2 className="font-poppins text-2xl">Submission:</h2>
-                            <p className="para">Share your document with us, and we'll<br></br> match it with one of our expert<br></br> proofreaders for a thorough review and<br></br> constructive feedback.</p>
+                            <h2 className="font-poppins text-2xl">Manuscript Submission:</h2>
+                            <p className="para">Share your document with us, and we'll match<br></br> it with one of our expert proofreaders for a<br></br> thorough review and constructive feedback.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Assessment:</h2>
-                            <p className="para">Our proofreaders will analyze your <br></br>document, identifying its strengths and <br></br>areas for improvement while examining its<br></br> structure, flow, and clarity.</p>
+                            <p className="para">Our proofreaders will analyze your document,<br></br> identifying its strengths and areas for improvement<br></br> while examining its structure, flow, and clarity.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Revisions:</h2>
-                            <p className="para">Post-assessment, we'll refine your document,<br></br> correcting any spelling, grammar,<br></br> punctuation, or syntax issues, and ensuring<br></br> everything is consistent and cohesive.</p>
+                            <p className="para">Post-assessment, we'll refine your document,<br></br> correcting any spelling, grammar, punctuation,<br></br> or syntax issues, and ensuring everything is<br></br> consistent and cohesive.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Quality Check:</h2>
-                            <p className="para">The team conducts a quality check,<br></br> reviewing your document with fresh eyes<br></br> to ensure it meets the highest standards<br></br> of accuracy and excellence.</p>
+                            <p className="para">The team conducts a quality check, reviewing<br></br> your document with fresh eyes to ensure<br></br> it meets the highest standards of accuracy<br></br> and excellence.</p>
                         </div>
                     </div>
 
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
-                            <h2 className="font-poppins text-2xl">Feedback:</h2>
-                            <p className="para">Before we wrap things up, our editors will<br></br> do a final quality check to make sure your<br></br> manuscript is completely ready for publication.</p>
+                            <h2 className="font-poppins text-2xl">Final Check & Delivery:</h2>
+                            <p className="para">Before we wrap things up, our editors<br></br> will do a final quality check to make sure<br></br> your manuscript is completely ready for<br></br> publication.</p>
                         </div>
                     </div>
-                    <div className="relative" data-aos="fade-right">
+                    {/* <div className="relative" data-aos="fade-right">
                         <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Delivery:</h2>
                             <p className="para">Finally, we perform a last review to ensure<br></br> your document is error-free and perfectly<br></br> polished, ready for publication.</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* <div className="max-w-screen-xl d-block md:hidden">
@@ -151,17 +149,17 @@ export default function Proofreading() {
                             <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
                         </div>
                         <div className="basis-1/3 md:ml-20">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
-                            <p className="text-white mt-2">Our expert team of editors will certainly give that professional touch to your book to make it both absolutely clear and of the highest impact. Precisely, you get:</p>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Proofreading Services?</h2>
+                            <p className="text-white mt-2">Our expert team of proofreaders will certainly give that professional touch to your book to make it both absolutely error-less and of the highest impact. Precisely, you get:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Proofreaders</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Proofreaders & Editors</li>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Timely Turnaround</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Personalized Feedback</li>
                                 </ul>
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Personalized Feedback</li>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Rigorous Quality Checks</li>
-                                    {/* <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Creative Collaboration</li> */}
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />24/7 Customer Support</li>
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>

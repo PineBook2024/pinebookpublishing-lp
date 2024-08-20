@@ -157,7 +157,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>$1,000 USD</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>$700 USD</span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
