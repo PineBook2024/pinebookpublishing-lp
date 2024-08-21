@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +10,7 @@ const GLightbox = dynamic(
     () => import('glightbox').then((glightboxModule) => glightboxModule.default),
     { ssr: false }
 );
+
 const books = [
     // { id: 1, title: 'Book One', category: 'Fiction', imageUrl: '/brand-img/fiction-1.png' },
     { id: 1, title: 'Book Two', category: 'Fiction', imageUrl: '/brand-img/fiction-2.png' },
@@ -35,13 +38,14 @@ const books = [
 
 export default function BrandPortfolio() {
     const [activeCategory, setActiveCategory] = useState('Fiction');
-
     const filteredBooks = books.filter(book => book.category === activeCategory);
-
     const lightboxRef = useRef(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined" && !lightboxRef.current) {
+        if (typeof window !== "undefined") {
+            if (lightboxRef.current) {
+                lightboxRef.current.destroy();
+            }
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
@@ -55,8 +59,7 @@ export default function BrandPortfolio() {
                 lightboxRef.current.destroy();
             }
         };
-    }, []);
-
+    }, [filteredBooks]);
 
     return (
         <>

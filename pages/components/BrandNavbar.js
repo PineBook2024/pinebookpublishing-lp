@@ -11,13 +11,13 @@ export default function BrandNavbar() {
     const [hoveredService, setHoveredService] = useState(1);
 
     const services = [
-        { name: 'Book Editing', href: '/book-editing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img1.webp' },
-        { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp' },
-        { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp' },
-        { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp' },
-        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon6.png', image: '/brand-img/service-img6.webp' },
+        { name: 'Book Editing', href: '/book-editing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img1.webp', desc: 'We turn your drafts into masterpieces.' },
+        { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp', desc: 'Catching every typo, ensuring perfection.' },
+        { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp', desc: 'Giving your words the perfect structure.' },
+        { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp', desc: 'Aligning your content with professional precision.' },
+        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon6.png', image: '/brand-img/service-img6.webp', desc: 'Bringing your story to the shelves and screens of the world.' },
         // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
-        { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg' },
+        { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg', desc: 'Streamline your book printing process with our expert Print-On-Demand Services' },
         // { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
     ];
 
@@ -101,12 +101,12 @@ export default function BrandNavbar() {
                                 </div>
 
                                 {serviceDropdown && (
-                                    <div className="absolute mt-1 w-full bg-white text-black rounded shadow-lg brand-custom-dropdown-menu flex justify-between">
-                                        <ul className="py-1 text-start px-4 py-2">
+                                    <div className="absolute mt-1 bg-white text-black rounded shadow-lg brand-custom-dropdown-menu flex justify-around">
+                                        <ul className="py-1 text-start px-4 py-4">
                                             {services.map((service, index) => (
                                                 <li
                                                     key={index}
-                                                    className='mb-3 flex items-center'
+                                                    className='mb-3 flex items-center py-4'
                                                     onMouseEnter={() => setHoveredService(index)}
                                                     onMouseLeave={() => setHoveredService(null)}
                                                 >
@@ -116,12 +116,51 @@ export default function BrandNavbar() {
                                                         ) : (
                                                             <FontAwesomeIcon icon={service.icon} className="me-3" width={12} />
                                                         )}
-                                                        {service.name}
+                                                        <div>
+                                                            <h3>{service.name}</h3>
+                                                            <p>{service.desc}</p>
+                                                        </div>
                                                     </Link>
                                                 </li>
                                             ))}
                                         </ul>
-                                        <div className="flex-shrink-0">
+                                        <div className='p-5'>
+                                            <h2 className='my-4 text-start'>OUR EXPERTS</h2>
+                                            <div className='flex gap-4 mt-4 justify-center'>
+                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-1.webp"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Damon Peters</h3>
+                                                </div>
+                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-4.webp"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">AMARA JOHNSON
+                                                    </h3>
+                                                </div>
+                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-3.webp"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Steve Hayes
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className='flex gap-4 mt-4 justify-center'>
+                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-2.webp"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Ryan Peters
+                                                    </h3>
+                                                </div>
+                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-5.webp"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Lia Sinclair
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className='mt-4'>
+                                                <h2 className='text-start'>TALK TO AN EXPERTS NOW!</h2>
+                                                <p className='mb-3 text-start pt-4'>Ready to bring your book to life? Schedule a call with one of our experts now to unlock your book's potential. Your customized solution awaits—don't miss out!</p>
+                                                <Link href={'javascript:;'} className="main-button font-poppins mb-5 uppercase" onClick={handleOpenChat}>schedule a call</Link>
+                                            </div>
+                                        </div>
+                                        {/* <div className="flex-shrink-0">
                                             {hoveredService !== null && (
                                                 <Image
                                                     src={services[hoveredService].image}
@@ -131,7 +170,7 @@ export default function BrandNavbar() {
                                                     height={160}
                                                 />
                                             )}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 )}
                             </li>
