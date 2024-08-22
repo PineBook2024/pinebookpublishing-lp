@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,8 @@ export default function BrandNavbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [serviceDropdown, setServiceDropdown] = useState(false);
     const [hoveredService, setHoveredService] = useState(1);
+    const dropdownRef = useRef(null); // Create a ref for the dropdown
+
 
     const services = [
         { name: 'Book Editing', href: '/book-editing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img1.webp', desc: 'We turn your drafts into masterpieces.' },
@@ -54,6 +56,20 @@ export default function BrandNavbar() {
         };
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                closeServiceDropdown();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [dropdownRef]);
+
     const handleOpenChat = () => {
         window.zE && window.zE('webWidget', 'open');
     };
@@ -88,12 +104,14 @@ export default function BrandNavbar() {
                             <li className='mb-3 md:mb-0'><Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }} className="text-white hover:text-gray-300">About Us</Link></li>
                             {/* <li className='mb-3 md:mb-0'><Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="text-white hover:text-gray-300">Services</Link></li> */}
                             <li
+                            class="mb-3 md:mb-0"
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
                                 onClick={toggleServiceDropdown}
+                                ref={dropdownRef}
                             // className="relative"
                             >
-                                <div className='flex items-center gap-2'>
+                                <div className='flex items-center justify-center gap-2'>
                                     <Link href="/services" className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                         Services
                                     </Link>
@@ -124,7 +142,7 @@ export default function BrandNavbar() {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <div className='p-5'>
+                                        <div className='p-5 hidden md:block lg:block'>
                                             <h2 className='my-4 text-start'>OUR EXPERTS</h2>
                                             <div className='flex gap-4 mt-4 justify-center'>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
