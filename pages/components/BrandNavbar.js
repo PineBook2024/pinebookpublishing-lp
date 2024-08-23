@@ -13,11 +13,11 @@ export default function BrandNavbar() {
 
 
     const services = [
+        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon6.png', image: '/brand-img/service-img6.webp', desc: 'Bringing your story to the shelves and screens of the world.' },
         { name: 'Book Editing', href: '/book-editing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img1.webp', desc: 'We turn your drafts into masterpieces.' },
         { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp', desc: 'Catching every typo, ensuring perfection.' },
         { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp', desc: 'Giving your words the perfect structure.' },
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp', desc: 'Aligning your content with professional precision.' },
-        { name: 'Book Publishing', href: '/book-publishing', icon: '/brand-img/service-icon6.png', image: '/brand-img/service-img6.webp', desc: 'Bringing your story to the shelves and screens of the world.' },
         // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
         { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg', desc: 'Streamline your book printing process with our expert Print-On-Demand Services' },
         // { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },

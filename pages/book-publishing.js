@@ -43,7 +43,7 @@ export default function BookPublishing() {
                 desc="Whether you are a beginner or a professional book author, Pine Book Publishing can help you every step of the way of book publishing.  We can help you fine-streamline the publishing process with our immense passion for providing creative and quality services and enabling you to focus on your main core."
             />
             <BrandBannerLogo />
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">

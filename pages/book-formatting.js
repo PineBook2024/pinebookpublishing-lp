@@ -43,7 +43,7 @@ export default function BookFormatting() {
                 desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
             />
             <BrandBannerLogo />
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">

@@ -43,7 +43,7 @@ export default function TypeSetting() {
                 desc="Are you struggling with adjusting your manuscript's headings, texts, and spacing according to the layout and making your book's internal design according to the standards of printed or digital information resources? We're here to help! We offer expert typesetting and layout services to help you turn your manuscript into a visually engaging and perfect readable book. Contact us and get a free quote now!"
             />
             <BrandBannerLogo />
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">
@@ -66,7 +66,7 @@ export default function TypeSetting() {
                         />
                     </div>
                 </div>
-                <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
+                <p className="font-poppins text-xl text-justify	px-10 md:px-0 pt-6" data-aos="fade-right">
                     At Pine Book Publishing, we understand that every book is different. So, our expertise tailors your book's design to perfection. Our team of skilled professionals brings years of experience working for various genres and ensures that every line of each chapter of your book is aligned with the specific requirements. Whether you are creating an engaging fiction novel, a research paper, or a children's book, we have you covered!
                 </p>
             </div>

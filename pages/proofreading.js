@@ -41,7 +41,7 @@ export default function Proofreading() {
                 desc="Your reader might be distracted by even the slightest spelling error. To prevent this problem, you need to hire a professional proofreading service to help you identify the issues that cause your book to have a bumpy ride and ensure its maximum readability. You can count on us to make your manuscript flawless."
             />
             <BrandBannerLogo />
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h3 className="font-poppins text-2xl md:text-3xl uppercase">

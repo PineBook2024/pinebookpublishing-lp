@@ -118,7 +118,12 @@ export default function BrandFooter() {
                                 Services
                             </h2>
                             <nav className="list-none mb-10 mt-5">
-                                <li>
+                            <li >
+                                    <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
+                                        Book Publishing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
                                 <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
                                         Book Editing
                                     </Link>
@@ -141,11 +146,7 @@ export default function BrandFooter() {
                                         Typesetting & Layout
                                     </Link>
                                 </li>
-                                <li className="mt-3">
-                                    <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
-                                        Book Publishing
-                                    </Link>
-                                </li>
+                              
                                 {/* <li className="mt-3">
                                     Testimonials
                                 </li> */}
