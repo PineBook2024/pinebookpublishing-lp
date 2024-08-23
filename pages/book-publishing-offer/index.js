@@ -2751,7 +2751,7 @@ export default function Home() {
         <section className="book-publishing-cta-section mx-auto px-6 py-10 md:py-0 relative">
           <div className="container flex items-center flex-col md:flex-row max-w-screen-xl mx-auto">
             <div className="basis-1/2 text-center flex justify-end">
-              <Image src={"/images/book-image-big.png"} width={400} height={200} className="aos-init aos-animate book-publishing-cta-img" data-aos="fade-right" data-aos-duration="1000"></Image>
+              <Image src={"/images/book-image-big.png"} width={400} height={200} className="aos-init aos-animate book-publishing-cta-img" ></Image>
             </div>
             <div className="basis-1/2 md:ml-20">
               <h2 className="text-white font-poppins text-3xl md:text-5xl aos-init aos-animate font-bold" data-aos="flip-down">Let's Tell Your Story to the World!
