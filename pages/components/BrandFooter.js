@@ -5,6 +5,7 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import WhatsAppChat from "./WhatsAppChat";
 
 export default function BrandFooter() {
     const [isVisible, setIsVisible] = useState(false);
@@ -39,12 +40,12 @@ export default function BrandFooter() {
         <>
             <footer className="text-white body-font brand-footer">
                 <div className="container px-5 pt-10 pb-10 md:pt-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col position-relative">
-                    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-evenly py-10">
-                        <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-1 relative">
+                    <div className="flex-grow flex flex-wrap -mb-10 md:mt-0 mt-10 md:text-left text-center justify-evenly py-10">
+                        <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-2 relative">
                             <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
                                 <Image src={"/brand-img/logo.png"} width={250} height={200}></Image>
                             </a>
-                            <p className="mt-2 text-sm text-white leading-7">
+                            <p className="mt-2 text-sm text-white leading-7 px-4">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
                             {/* <nav className="list-none mb-10 mt-5">
@@ -69,7 +70,7 @@ export default function BrandFooter() {
                                 </li>
                             </nav> */}
                         </div>
-                        <div className="lg:w-1/4 md:w-1/4 w-full px-4 widget-2 relative">
+                        <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
                                 Quick Links
                             </h2>
@@ -112,8 +113,52 @@ export default function BrandFooter() {
                                 </li>
                             </nav>
                         </div>
+                        <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
+                            <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
+                                Services
+                            </h2>
+                            <nav className="list-none mb-10 mt-5">
+                                <li>
+                                <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
+                                        Book Editing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/proofreading" onClick={(e) => { e.preventDefault(); window.location.href = "/proofreading"; }}>
+                                        Proofreading
+                                    </Link>
+                                </li>
+                                {/* <li className="mt-3">
+                                    Services
+                                </li> */}
+                                <li className="mt-3">
+                                    <Link href="/book-formatting" onClick={(e) => { e.preventDefault(); window.location.href = "/book-formatting"; }}>
+                                        Book Formatting
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/typesetting-layout-adjustment" onClick={(e) => { e.preventDefault(); window.location.href = "/typesetting-layout-adjustment"; }}>
+                                        Typesetting & Layout
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
+                                        Book Publishing
+                                    </Link>
+                                </li>
+                                {/* <li className="mt-3">
+                                    Testimonials
+                                </li> */}
+                                <li className="mt-3">
+                                    <Link href="/print-on-demand" onClick={(e) => { e.preventDefault(); window.location.href = "/print-on-demand"; }}>
+                                        Print On Demand
+                                    </Link>
+                                </li>
+                            </nav>
+                        </div>
 
-                        <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-3 relative">
+
+                        <div className="lg:w-1/4 md:w-1/4 w-full px-4 widget-3 relative">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
                                 Contact Info
                             </h2>
@@ -255,6 +300,7 @@ export default function BrandFooter() {
                     </button>
                 )}
             </div>
+            {/* <WhatsAppChat /> */}
         </>
     );
 }

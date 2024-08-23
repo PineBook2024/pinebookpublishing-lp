@@ -50,6 +50,7 @@ import BrandCTA from "../components/BrandCTA";
 import HeroFormBookOffer from "../components/HerformBookOffer";
 import PopupBundle from "../components/PopupBundle";
 import PopupBundleBookPublish from "../components/PopupBundleBookPublish";
+import BrandFooter from "../components/BrandFooter";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -2862,7 +2863,8 @@ export default function Home() {
           </div>
         </section>
 
-        <Footer />
+        {/* <Footer /> */}
+        <BrandFooter />
 
         {/* <motion.p className="font-acumin text-5xl text-center text-black leading-loose font-bold hover:text-[#EBFA0B]" ref={nodeRef} >{rounded}<Counter from={100} to={1000} val={"10"} />100</motion.p> */}
 
