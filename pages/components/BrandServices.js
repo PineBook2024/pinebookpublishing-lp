@@ -25,7 +25,7 @@ export default function BrandServices() {
                                     <span className="font-poppins text-4xl">01</span>
                                 </div>
                                 <p >We turn your drafts into masterpieces.</p>
-                                <h4 className="mt-4 font-poppins text-2xl">EDITING</h4>
+                                <h4 className="mt-4 font-poppins text-2xl">BOOK EDITING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative"> 
                                 <span class="square">
@@ -76,7 +76,7 @@ export default function BrandServices() {
                                     <span className="font-poppins text-4xl">03</span>
                                 </div>
                                 <p >Giving your words the perfect structure.</p>
-                                <h4 className="mt-4 font-poppins text-2xl">FORMATTING</h4>
+                                <h4 className="mt-4 font-poppins text-2xl">BOOK FORMATTING</h4>
                             </div>
                         </div>
                         <div className="brand-service-card flex gap-4">
@@ -113,7 +113,7 @@ export default function BrandServices() {
                                     <span className="font-poppins text-4xl">05</span>
                                 </div>
                                 <p >Bringing your story to the shelves and screens of the world.</p>
-                                <h4 className="mt-4 font-poppins text-2xl">PUBLISHING</h4>
+                                <h4 className="mt-4 font-poppins text-2xl">BOOK PUBLISHING</h4>
                             </div>
                             <div className="basis-1/2 brand-service-card-img relative">
                                 <span class="square">

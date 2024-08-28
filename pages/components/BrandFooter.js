@@ -118,13 +118,13 @@ export default function BrandFooter() {
                                 Services
                             </h2>
                             <nav className="list-none mb-10 mt-5">
-                            <li >
+                                <li>
                                     <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
                                         Book Publishing
                                     </Link>
                                 </li>
                                 <li className="mt-3">
-                                <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
+                                    <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
                                         Book Editing
                                     </Link>
                                 </li>
@@ -146,7 +146,7 @@ export default function BrandFooter() {
                                         Typesetting & Layout
                                     </Link>
                                 </li>
-                              
+
                                 {/* <li className="mt-3">
                                     Testimonials
                                 </li> */}
@@ -271,7 +271,6 @@ export default function BrandFooter() {
                             </Link>
                             Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
                         </p>
-
                     </div>
                 </div>
             </footer>
