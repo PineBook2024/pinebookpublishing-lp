@@ -187,19 +187,19 @@ export default function BrandFooter() {
                             </h4>
                             <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
                             <div>
-                                <Link href="">
+                                <Link href="https://www.facebook.com/pinebookwriting0" target="_blank">
                                     <FontAwesomeIcon icon={faFacebook} className="me-3" />
                                 </Link>
-                                <Link href="">
+                                {/* <Link href="">
                                     <FontAwesomeIcon icon={faLinkedin} className="me-3" />
-                                </Link>
-                                <Link href="">
+                                </Link> */}
+                                <Link href="https://www.instagram.com/pinebookwriting/" target="_blank">
                                     <FontAwesomeIcon icon={faInstagram} className="me-3" />
                                 </Link>
-                                <Link href="">
+                                <Link href="https://x.com/pinebookwriting" target="_blank">
                                     <FontAwesomeIcon icon={faXTwitter} className="me-3" />
                                 </Link>
-                                <Link href="">
+                                <Link href="https://www.youtube.com/@Pinebookwriting" target="_blank">
                                     <FontAwesomeIcon icon={faYoutube} className="me-3" />
                                 </Link>
                             </div>
