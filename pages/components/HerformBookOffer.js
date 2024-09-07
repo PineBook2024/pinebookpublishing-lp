@@ -146,7 +146,8 @@ export default function HeroFormBookOffer() {
     if (response) {
       setShowSuccess(true);
       // router.push('/thank-you'); 
-      router.push('/thankyou-offer')
+      // router.push('/thankyou-offer')
+      window.location.href = "thankyou-offer";
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");

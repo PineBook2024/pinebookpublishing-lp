@@ -287,7 +287,8 @@ export default function Home() {
     );
     if (response) {
       setShowSuccess(true);
-      router.push('/thankyou-offer')
+      // router.push('/thankyou-offer')
+      window.location.href = "thankyou-offer";
       setTimeout(() => {
         setShowSuccess(false);
         setEmail("");

@@ -75,7 +75,8 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
         );
         if (response) {
             setShowSuccess(true);
-            router.push('/thankyou-offer')
+            // router.push('/thankyou-offer')
+            window.location.href = "thankyou-offer";
             setTimeout(() => {
                 setShowSuccess(false);
                 setEmail("");
