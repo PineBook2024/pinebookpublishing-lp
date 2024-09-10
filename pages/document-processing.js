@@ -37,23 +37,62 @@ export default function DocumentProcessing() {
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Ready To Write Your Next Chapter?"
-                desc="Let Pine Book Publishing be the compass for your narrative journey, steering you toward literary success with every stroke of the pen."
+                title="Your Documents, Perfected - Expert Document Processing Services"
+                desc="Pine Book Publishing is your reliable resource for document management. We offer a range of document processing services, from rapid document printing to multi-type folding and envelop insertion. Have questions? Contact us now!"
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+                <div className="text-center">
+                    <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Professional Document Processing Services</h2>
+                    <p className="font-poppins text-xl text-center	pt-3">
+                        Being a leading name in the publishing and printing industry, we understand how important high-quality document printing and processing are. At Pine Book Publishing, we are familiar with all the perspectives of document management, from printing and folding to perfectly inserting documents in no time.
+                    </p>
+                </div>
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
+                    <div className="text-center flex justify-center md:justify-center">
+
+                        <Image src={"/brand-img/doc-processing-bg-img.png"} width={670} height={500}
+                            loading="lazy"
+                            alt="about img"
+                            className="aos-init aos-animate mt-10"
+                            data-aos="fade-left" data-aos-duration="1000"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:pb-20">
+                <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
+                    <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
+                        <Image src={"/brand-img/doc-01.png"} width={470} height={300}
+                            loading="lazy"
+                            alt="about img"
+                            className="aos-init aos-animate"
+                            data-aos="fade-left" data-aos-duration="1000"
+                        />
+                    </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Typesetting & Layout
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">adjustment</h2>
-                        <p className="font-poppins text-xl text-justify	pt-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Printing</h2>
+                        <p className="font-poppins text-xl	pt-3">
+                            Do you need high-quality and speedy document print? We deliver exceptional results by providing our professional document printing services. We handle different paper sizes and quantities. Whether you require a letter (8.5 x11"), Legal (8.5 x 14"), or Tabloid (11 x 17"), we're here to serve!
                         </p>
                     </div>
+                </div>
+            </div>
+            <div className="container mx-auto max-w-screen-xl overflow-hidden mb-8">
+                <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
+                    <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Folding:</h2>
+                        <p className="font-poppins text-xl	pt-3 mb-4">
+                            Choose the fold that works best for you, and we'll do the rest. Our folding options are the following:
+                        </p>
+                        <ul>
+                            <li className="mb-4"><b>C Fold:</b> An ideal folding type for brochures and letters.</li>
+                            <li className="mb-4"><b>Z Fold:</b> Ideal for neat and well-organized presentations and marketing stuff.</li>
+                            <li className="mb-4"><b>Bi-Fold:</b> A multipurpose and timeless choice. Suitable for a wide range of documents.</li>
+                        </ul>
+                    </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/Document Processing.png"} width={470} height={300}
+                        <Image src={"/brand-img/doc-02.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -61,12 +100,31 @@ export default function DocumentProcessing() {
                         />
                     </div>
                 </div>
-                <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                </p>
             </div>
-            <BrandProcess />
-            <BrandChooseUs />
+            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+                <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
+                    <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
+                        <Image src={"/brand-img/doc-03.png"} width={470} height={300}
+                            loading="lazy"
+                            alt="about img"
+                            className="aos-init aos-animate"
+                            data-aos="fade-left" data-aos-duration="1000"
+                        />
+                    </div>
+                    <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Insertion</h2>
+                        <p className="font-poppins text-xl	pt-3">
+                            Document insertion requires diligence and efficiency. Our team of active document handlers works together to deliver fast and accurate results. Here is the process we follow:
+                        </p>
+                        <p className="font-poppins text-xl	pt-3 mb-3">
+                            <b>Insertion:</b> Once you choose the envelope type, whether it is (#10, 6x9, 12x9, or 8.5x11), we begin the document insertion process with a thorough attention to detail.</p>
+                        <p className="font-poppins text-xl	pt-3"><b>Sealing:</b> Our second unit, the sealing unit, works along and ensures that all your documents are carefully sealed and ready for distribution.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* <BrandProcess /> */}
+            {/* <BrandChooseUs /> */}
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
