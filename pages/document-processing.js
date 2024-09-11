@@ -41,7 +41,7 @@ export default function DocumentProcessing() {
                 desc="Pine Book Publishing is your reliable resource for document management. We offer a range of document processing services, from rapid document printing to multi-type folding and envelop insertion. Have questions? Contact us now!"
             />
             <BrandBannerLogo />
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden pt-10 md:py-20">
                 <div className="text-center">
                     <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Professional Document Processing Services</h2>
                     <p className="font-poppins text-xl text-center	pt-3">
@@ -60,7 +60,7 @@ export default function DocumentProcessing() {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:pb-20">
+            <div className="container mx-auto max-w-screen-xl overflow-hidden pb-10 md:pb-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/doc-01.png"} width={470} height={300}
@@ -71,7 +71,7 @@ export default function DocumentProcessing() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Printing</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold mt-8 md:mt-0">Document Printing</h2>
                         <p className="font-poppins text-xl	pt-3">
                             Do you need high-quality and speedy document print? We deliver exceptional results by providing our professional document printing services. We handle different paper sizes and quantities. Whether you require a letter (8.5 x11"), Legal (8.5 x 14"), or Tabloid (11 x 17"), we're here to serve!
                         </p>
@@ -79,7 +79,7 @@ export default function DocumentProcessing() {
                 </div>
             </div>
             <div className="container mx-auto max-w-screen-xl overflow-hidden mb-8">
-                <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
+                <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
                         <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Folding:</h2>
                         <p className="font-poppins text-xl	pt-3 mb-4">
@@ -112,7 +112,7 @@ export default function DocumentProcessing() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Document Insertion</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold mt-8 md:mt-0">Document Insertion</h2>
                         <p className="font-poppins text-xl	pt-3">
                             Document insertion requires diligence and efficiency. Our team of active document handlers works together to deliver fast and accurate results. Here is the process we follow:
                         </p>

@@ -48,7 +48,7 @@ export default function Proofreading() {
                         Perfect Your Manuscript with Flawless  
                         </h3>
                         <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Grammar & Zero Typos</h2>
-                        <p className="font-poppins text-xl text-justify	pt-3">
+                        <p className="font-poppins text-xl	pt-3">
                         Have you ever been reading a book and come across a typo or an awkward construction that bumped you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material. Writing a book is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
                         </p>
                     </div>
@@ -61,7 +61,7 @@ export default function Proofreading() {
                         />
                     </div>
                 </div>
-                <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
+                <p className="font-poppins text-xl	px-10 md:px-0" data-aos="fade-right">
                 Choosing our Book proofreading service is a smart investment in your book. Let us take care of the fine details to present your book in the manner that it deserves. It is our mission to assist you in creating a book that people are going to read over and over and recommend to their friends.                </p>
             </div>
             {/* <BrandProcess /> */}

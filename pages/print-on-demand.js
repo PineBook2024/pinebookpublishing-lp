@@ -49,7 +49,7 @@ export default function PrintDemand() {
                             Hassle-Free Print-On-Demand
                         </h3>
                         <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Services</h2>
-                        <p className="font-poppins text-xl text-justify	pt-3">
+                        <p className="font-poppins text-xl pt-3">
                             Print On Demand (POD) is specially designed for self-published authors who want to avoid seeing their readers long-awaited for the next stock in bulk and want to stock a huge quantity of books every once. At Pine Book Publishing, we offer fast and efficient Print-On-Demand services to help authors focus on their writing and increase their profitability without any hassle.
                         </p>
                     </div>

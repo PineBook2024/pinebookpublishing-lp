@@ -50,10 +50,10 @@ export default function BookEditing() {
                             Pine Book Publishing - A Leading
                         </h3>
                         <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Book Editing Company</h2>
-                        <p className="font-poppins text-xl text-justify	pt-3">
+                        <p className="font-poppins text-xl	pt-3">
                             At Pine Book Publishing, we understand how valuable professional editing is. Mistakes and style issues can slip through the cracks, and a skilled editor can catch these, making your work more readable and impactful.
                         </p>
-                        <p className="font-poppins text-xl text-justify	pt-3">We at Pine Book Publishing offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
+                        <p className="font-poppins text-xl	pt-3">We at Pine Book Publishing offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Editing.png"} width={470} height={300}
@@ -64,7 +64,7 @@ export default function BookEditing() {
                         />
                     </div>
                 </div>
-                <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
+                <p className="font-poppins text-xl	px-10 md:px-0" data-aos="fade-right">
                     Working with a professional editor also gives authors the chance to learn and grow, preparing them for future literary projects. At Pine Book Publishing, we support this learning process, helping authors develop their skills and reach their full potential.
                 </p>
             </div>

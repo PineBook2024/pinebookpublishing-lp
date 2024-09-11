@@ -50,10 +50,10 @@ export default function BookFormatting() {
                             Pine Book Publishing –
                         </h3>
                         <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">A leading Book Formatting Company</h2>
-                        <p className="font-poppins text-xl text-justify	pt-3">
+                        <p className="font-poppins text-xl	pt-3">
                             If you have finished your manuscript and are tired of looking at the screen for many hours, struggling to bring your manuscript in a professional format that meets industry standards, hiring a professional book formatting company is the only option you should choose. We at Pine Book Publishing are your trusted book formatting partner. With intense familiarity with publishing industry standards, we offer you comprehensive book formatting solutions for various popular publishing platforms.
                         </p>
-                        <p className="font-poppins text-xl text-justify	pt-3">Our team of expert professionals works together to craft flawless layouts, accurate typography, and consistent formatting to help enhance your book's visual appeal. They deal with every aspect carefully, including specific table of contents, word length, number of pages, fonts, line spacing, and everything that affects the visual appearance of the book. We take pride in delivering top-notch results that always exceed our clients' expectations.</p>
+                        <p className="font-poppins text-xl	pt-3">Our team of expert professionals works together to craft flawless layouts, accurate typography, and consistent formatting to help enhance your book's visual appeal. They deal with every aspect carefully, including specific table of contents, word length, number of pages, fonts, line spacing, and everything that affects the visual appearance of the book. We take pride in delivering top-notch results that always exceed our clients' expectations.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Formatting.png"} width={470} height={300}
@@ -64,7 +64,7 @@ export default function BookFormatting() {
                         />
                     </div>
                 </div>
-                <p className="font-poppins text-xl text-justify	px-10 md:px-0" data-aos="fade-right">
+                <p className="font-poppins text-xl px-10 md:px-0" data-aos="fade-right">
                     Whether you're a first-time author, a professional writer, or a self-publishing freak, we've all-inclusive solutions for all your formatting needs.
                 </p>
             </div>
