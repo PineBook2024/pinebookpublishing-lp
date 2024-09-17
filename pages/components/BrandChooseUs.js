@@ -33,7 +33,8 @@ export default function BrandChooseUs() {
                                     <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li>
                                 </ul>
                             </div>
-                            <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />
+                            {/* <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" /> */}
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3"><Link href='tel:(866) 841-7469'>Call Now</Link></button>
                         </div>
                     </div>
                 </div>

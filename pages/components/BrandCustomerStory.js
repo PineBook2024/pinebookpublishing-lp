@@ -64,9 +64,9 @@ export default function BrandCustomerStory() {
         <>
             <section className="story-sec brand-story-sec py-28 relative">
                 <div className="container mx-auto text-center m1-h">
-                    <h3 className="mb-8 text-white text-3xl md:text-4xl font-poppins font-bold">
+                    {/* <h3 className="mb-8 text-white text-3xl md:text-4xl font-poppins font-bold">
                         Our Success Stories
-                    </h3>
+                    </h3> */}
                     <p className="text-white">
                         Explore our Success Stories to see how Pine Book Publishing has
                         empowered authors in their <br></br> self-publishing journey and stands out
