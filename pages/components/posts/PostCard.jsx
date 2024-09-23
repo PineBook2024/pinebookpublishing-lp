@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
           </div>
           <h3 className='text-xl mb-1 leading-snug font-bold'>{title}</h3>
           <p className='text-base mb-4'>{excerpt}</p>
-          <Avatar name={author.fields.name} picture={author.fields.picture} />
+          {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
         </div>
       </Link>
     </li>
