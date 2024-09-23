@@ -1,5 +1,3 @@
-import { client, previewClient } from '../../lib/contentful/client';
-
 const contentful = require('contentful')
 
 export const client = contentful.createClient({
