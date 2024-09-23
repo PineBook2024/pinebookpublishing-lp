@@ -7,6 +7,7 @@ import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
+import BrandContact from "./components/BrandContactForm";
 
 export default function DocumentProcessing() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -125,46 +126,7 @@ export default function DocumentProcessing() {
 
             {/* <BrandProcess /> */}
             {/* <BrandChooseUs /> */}
-            <section className="brand-testimonials-section">
-                <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
-                    <div className="text-center mb-6">
-                        <h2 className="font-poppins text-4xl text-black uppercase mb-3 font-bold">Frequently Asked Questions</h2>
-                        {/* <h3 className="text-xl text-black font-poppins uppercase font-bold">each Out to Us for Further Assistance.</h3> */}
-                    </div>
-                    <div className="faq-que">
-                        <div className="flex flex-col md:flex-row justify-center gap-4">
-                            {Array.from({ length: 2 }).map((_, colIndex) => (
-                                <div key={colIndex} className="w-full max-w-screen-sm">
-                                    {faqData.slice(colIndex * 3, (colIndex + 1) * 3).map((faq, index) => {
-                                        const actualIndex = index + colIndex * 3;
-                                        return (
-                                            <button
-                                                key={actualIndex}
-                                                className="w-full border-b-2 border-gray-300 p-6 text-left mt-0 focus:outline-none bg-slate-200 mb-4 rounded-2xl"
-                                                onClick={() => toggleFAQ(actualIndex)}
-                                            >
-                                                <div className={`text-lg font-semibold flex justify-between ${openFAQ === actualIndex ? 'border-b border-gray-300' : 'border-0'}`}>
-                                                    {faq.question}
-                                                    <div onClick={() => toggleFAQ()}>
-                                                        {openFAQ === actualIndex ? (
-                                                            <Image src="/brand-img/up-arrow.png" alt="Close" className="brand-faq-icon" width={50} height={20} />
-                                                        ) : (
-                                                            <Image src="/brand-img/down-arrow.png" alt="Open" className="brand-faq-icon" width={50} height={20} />
-                                                        )}
-                                                    </div>
-                                                </div>
-                                                <div className={`mt-3  text-gray-700 ${openFAQ === actualIndex ? 'faq-content-open' : 'faq-content-close'}`}>
-                                                    {faq.answer}
-                                                </div>
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+           <BrandContact />
             <BrandFooter />
         </>
     );

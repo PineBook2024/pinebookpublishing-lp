@@ -20,7 +20,7 @@ export default function BrandNavbar() {
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp', desc: 'Aligning your content with professional precision.' },
         // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
         { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg', desc: 'Streamline your book printing process with our expert Print-On-Demand Services' },
-        // { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp' },
+        { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp', desc: 'Giving your words the perfect structure.' },
     ];
 
     // Function to handle the service dropdown toggle

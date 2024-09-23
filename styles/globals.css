@@ -662,7 +662,7 @@ footer svg {
 
 .faq-content-open {
   animation: openAnimation 0.7s forwards;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .faq-content-close {
