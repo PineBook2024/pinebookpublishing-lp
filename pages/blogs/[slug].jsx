@@ -4,22 +4,22 @@ import PostBody from '../components/posts/PostBody'
 import PostHeader from '../components/posts/PostHeader'
 // import PreviewAlert from '../components/ui/PreviewAlert'
 // import Skeleton from '../components/ui/Skeleton'
-import { client, previewClient } from '../lib/contentful/client'
+import { client } from '../lib/contentful/client' // Removed previewClient import
 import { useRouter } from 'next/router'
 
-const Post = ({ post, preview }) => {
+const Post = ({ post }) => {
   const router = useRouter()
 
   return (
     <>
-     <BrandNavbar />
+      <BrandNavbar />
       <BrandPrimaryHeader
         subtitle="Enhance Your Book's Readability With"
         title="Blogs"
         desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
       />
       <section className='overflow-hidden'>
-        {preview && <PreviewAlert />}
+        {/* Removed PreviewAlert condition */}
         <div className='max-w-screen-xl mx-auto px-4 my-20 relative py-22'>
           <article className='prose mx-auto'>
             {router.isFallback ? (
@@ -34,15 +34,12 @@ const Post = ({ post, preview }) => {
         </div>
       </section>
     </>
-
   )
 }
 
-export const getStaticProps = async ({ params, preview = false }) => {
-  const cfClient = preview ? previewClient : client
-
+export const getStaticProps = async ({ params }) => {
   const { slug } = params
-  const response = await cfClient.getEntries({
+  const response = await client.getEntries({
     content_type: 'post',
     'fields.slug': slug
   })
@@ -59,7 +56,6 @@ export const getStaticProps = async ({ params, preview = false }) => {
   return {
     props: {
       post: response?.items?.[0],
-      preview,
       revalidate: 60
     }
   }
