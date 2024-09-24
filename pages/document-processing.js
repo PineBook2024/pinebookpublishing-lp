@@ -28,13 +28,12 @@ export default function DocumentProcessing() {
     return (
         <>
             <Head>
-                <title>Typesetting & Layout Adjustment | Pine Book Publishing</title>
+                <title>Document Processing Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Transform your business with our premium document processing services. From printing to seamless envelope insertion, we've got your needs covered."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
-                <meta name="robots" content="noindex" />
             </Head>
             <BrandNavbar />
             <BrandPrimaryHeader

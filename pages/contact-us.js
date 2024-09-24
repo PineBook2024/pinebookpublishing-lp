@@ -16,7 +16,7 @@ export default function Contact() {
                 <title>Contact Us | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Ready to publish your book? Get in touch with our publishing experts at Pine Book Publishing. Our team is here to assist you every step of the way."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

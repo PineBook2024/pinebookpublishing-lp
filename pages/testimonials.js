@@ -32,7 +32,7 @@ export default function Services() {
                 <title>Client Testimonials | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="At Pine Book Publishing, customer success is our priority. Discover what our clients have to say about their experiences us."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

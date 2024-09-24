@@ -29,10 +29,10 @@ export default function ISBN() {
     return (
         <>
             <Head>
-                <title>ISBN & Barcode | Pine Book Publishing</title>
+                <title>ISBN and Barcode Generation | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Need ISBN and Barcode for your book? Pine Book Publishing got you covered. Get the ISBN for your book right now in an affordable price with us."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
 
@@ -54,7 +54,7 @@ export default function ISBN() {
                             If you are a self-published author or a publishing company, you need an ISBN (International Standard Book Number) and barcode (derived from ISBN) to classify your book and simplify its distribution. These identifiers are crucial for bookstores, libraries, and online retailers to properly track and manage your book.
                         </p>
                         <p className="font-poppins text-xl	pt-3">
-                            Pine Book Publishing takes pride in offering reliable and fast IBAN & barcode generation to help individual authors and publishing firms worldwide. Whether your book is in paperback, Hardcover, or eBook format and whether you require a single ISBN & barcode image or in bulk, we're here to help. Our experienced professionals will guide you through every step of the way and ensure that your book precisely acquires a unique identity and is ready for publication on many popular publishing platforms, such as Amazon, Barnes & Noble, Lulu, IngramSpark, and others. We maintain our result-driven approach and commitment to customer satisfaction to make our services hassle-free for everyone. Contact Pine Book Publishing to learn more about our services.                         </p>
+                            Pine Book Publishing takes pride in offering reliable and fast ISBN & barcode generation to help individual authors and publishing firms worldwide. Whether your book is in paperback, Hardcover, or eBook format and whether you require a single ISBN & barcode image or in bulk, we're here to help. Our experienced professionals will guide you through every step of the way and ensure that your book precisely acquires a unique identity and is ready for publication on many popular publishing platforms, such as Amazon, Barnes & Noble, Lulu, IngramSpark, and others. We maintain our result-driven approach and commitment to customer satisfaction to make our services hassle-free for everyone. Contact Pine Book Publishing to learn more about our services.                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/isbn-img.png"} width={470} height={300}

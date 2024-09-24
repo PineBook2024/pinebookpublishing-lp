@@ -42,7 +42,7 @@ export default function Portfolio() {
                 <title>Our Shelf-Worthy Portfolio | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Dive into Pine Book Publishing's showcase of literary artistry. We take pride in each book that goes through the process of meticulous crafting, editing, and publishing."
+                    content="Featuring the succesful books that Pine Book Publishing has published for the authors. Let us also help you to take your book to the world!"
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

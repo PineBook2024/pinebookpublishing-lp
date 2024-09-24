@@ -162,6 +162,51 @@ export default function BrandServices() {
                         </div>
                     </div>
 
+                    {/* 7 of 8 */}
+                    <div className="brand-service-content flex mt-4 gap-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                        <div className="brand-service-card flex gap-4">
+                            <div className="basis-1/2 brand-service-card-img relative">
+                                <span class="square">
+                                    <Link href="/audio-book">Read More</Link>
+                                </span>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/Audiobook-imge.webp"} width={270} height={200}></Image>
+                                </div>
+                            </div>
+                            <div className="brand-service-card-content basis-1/2 relative">
+                                <span className="right-4"></span>
+                                <span className="bottom-4"></span>
+                                <div className="flex justify-between mb-12">
+                                    <Image src={"/brand-img/Audiobook.png"} className="icon" width={50} height={50}></Image>
+                                    <span className="font-poppins text-4xl">07</span>
+                                </div>
+                                <p >Turn your written words into lively audio experiences.</p>
+                                <h4 className="mt-4 font-poppins text-2xl">Audio Book</h4>
+                            </div>
+                        </div>
+                        <div className="brand-service-card flex gap-4">
+                            <div className="basis-1/2 brand-service-card-img relative">
+                                <span class="square">
+                                    <Link href="/isbn-and-barcode">Read More</Link>
+                                </span>
+                                <div className="service-card-img">
+                                    <Image src={"/brand-img/ISBN-Barcode-imge.webp"} width={250} className="icon" height={200}></Image>
+                                </div>
+                            </div>
+                            <div className="brand-service-card-content gap-4 basis-1/2 relative">
+                                <span className="right-4"></span>
+                                <span className="bottom-4"></span>
+                                <div className="flex justify-between mb-12">
+                                    <Image src={"/brand-img/ISBN Barcode.png"} className="icon" width={50} height={50}></Image>
+                                    <span className="font-poppins text-4xl">08</span>
+                                </div>
+                                <p >Secure your book's identity with our ISBN registration services.</p>
+                                <h4 className="mt-4 font-poppins text-2xl uppercase">ISBN & Barcode</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
                     {/* <div className="text-center">
                         <p className="font-poppins text-white mt-6 text-md">Discover the Difference: Our Publishing Service Puts Your Story Front and Center, <br></br> Guiding It from Conception to Bookshelf Success.</p>
                     </div> */}
@@ -348,6 +393,54 @@ export default function BrandServices() {
                                         <div className="service-card-img">
                                             <Image src={"/brand-img/Print on Demand.jpg"} width={250} height={200}></Image>
                                         </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        </div>
+
+                        {/* 7 of 8 */}
+                        <div className="brand-service-content flex mt-4 gap-4 flex-col md:flex-row aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                            <SwiperSlide>
+                                <div className="brand-service-card flex gap-4">
+                                    <div className="basis-1/2 brand-service-card-img relative">
+                                        <span class="square">
+                                            <Link href="/audio-book">Read More</Link>
+                                        </span>
+                                        <div className="service-card-img">
+                                            <Image src={"/brand-img/Audiobook-imge.webp"} width={270} height={200}></Image>
+                                        </div>
+                                    </div>
+                                    <div className="brand-service-card-content basis-1/2 relative">
+                                        <span className="right-4"></span>
+                                        <span className="bottom-4"></span>
+                                        <div className="flex justify-between mb-12">
+                                            <Image src={"/brand-img/Audiobook.png"} className="icon" width={50} height={50}></Image>
+                                            <span className="font-poppins text-4xl">07</span>
+                                        </div>
+                                        <p >Turn your written words into lively audio experiences.</p>
+                                        <h4 className="mt-4 font-poppins text-2xl">Audio Book</h4>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="brand-service-card flex gap-4">
+                                    <div className="basis-1/2 brand-service-card-img relative">
+                                        <span class="square">
+                                            <Link href="/isbn-and-barcode">Read More</Link>
+                                        </span>
+                                        <div className="service-card-img">
+                                            <Image src={"/brand-img/ISBN-Barcode-imge.webp"} width={250} className="icon" height={200}></Image>
+                                        </div>
+                                    </div>
+                                    <div className="brand-service-card-content gap-4 basis-1/2 relative">
+                                        <span className="right-4"></span>
+                                        <span className="bottom-4"></span>
+                                        <div className="flex justify-between mb-12">
+                                            <Image src={"/brand-img/ISBN Barcode.png"} className="icon" width={50} height={50}></Image>
+                                            <span className="font-poppins text-4xl">08</span>
+                                        </div>
+                                        <p >Secure your book's identity with our ISBN registration services.</p>
+                                        <h4 className="mt-4 font-poppins text-2xl uppercase">ISBN & Barcode</h4>
                                     </div>
                                 </div>
                             </SwiperSlide>

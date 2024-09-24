@@ -17,10 +17,10 @@ export default function Services() {
     return (
         <>
             <Head>
-                <title>Service | Pine Book Publishing</title>
+                <title>Publishing Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Explore our complete range of Book Publishing Services at Pine Book Publishing. From editing to Publishing and Audiobook, we offer everything."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

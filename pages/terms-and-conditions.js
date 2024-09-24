@@ -11,6 +11,10 @@ export default function Privacy() {
         <>
             <Head>
                 <title>Terms and Conditions | Pine Book Publishing</title>
+                <meta
+                    name="description"
+                    content="Explore the whole set of terms and conditions that Pine Book Publishing has to offer. Use our carefully considered rules to ensure protection and compliance."
+                />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
             <PrimaryHeader

@@ -28,10 +28,10 @@ export default function BookFormatting() {
     return (
         <>
             <Head>
-                <title>Book Formatting | Pine Book Publishing</title>
+                <title>Book Formatting Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Get Custom Book Formatting Services from Pine Book Publishing to ensure your book meets all the publishing standards. Fast, reliable, and affordable."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

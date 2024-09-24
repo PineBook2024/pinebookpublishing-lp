@@ -31,7 +31,7 @@ export default function TypeSetting() {
                 <title>Typesetting & Layout Adjustment | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Professional Book Typesetting and Layout Adjustment Service by Pine Book Publishing is here to ensure your book is ready for Publishing."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

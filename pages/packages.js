@@ -72,10 +72,10 @@ export default function Bundle({ isOpen, onClose, service }) {
     return (
         <>
             <Head>
-                <title>Bundles the Company | Pine Book Publishing</title>
+                <title>Affordable Book Publishing Packages | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Looking to get your book published in an afforadable cost? Our packages are designed to help your publish your book with breaking the bank."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

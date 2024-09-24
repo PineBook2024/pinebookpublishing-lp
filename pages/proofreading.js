@@ -28,10 +28,10 @@ export default function Proofreading() {
     return (
         <>
             <Head>
-                <title>Proofreading | Pine Book Publishing</title>
+                <title>Reliable Proofreading Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+                    content="Trustworthy and Reliable Proofreading Services to enhance the quality of your writing. Let our experts refine your work today."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

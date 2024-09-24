@@ -155,6 +155,21 @@ export default function BrandFooter() {
                                         Print On Demand
                                     </Link>
                                 </li>
+                                <li className="mt-3">
+                                    <Link href="/document-processing" onClick={(e) => { e.preventDefault(); window.location.href = "/document-processing"; }}>
+                                        Document Processing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/audio-book" onClick={(e) => { e.preventDefault(); window.location.href = "/audio-book"; }}>
+                                        Audio Book
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/isbn-and-barcode" onClick={(e) => { e.preventDefault(); window.location.href = "/isbn-and-barcode"; }}>
+                                        ISBN & Barcode
+                                    </Link>
+                                </li>
                             </nav>
                         </div>
 

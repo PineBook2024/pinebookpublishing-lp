@@ -9,7 +9,7 @@ export default function BrandNavbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [serviceDropdown, setServiceDropdown] = useState(false);
     const [hoveredService, setHoveredService] = useState(1);
-    const dropdownRef = useRef(null); // Create a ref for the dropdown
+    const dropdownRef = useRef(null);
 
 
     const services = [
@@ -18,9 +18,10 @@ export default function BrandNavbar() {
         { name: 'Proofreading', href: '/proofreading', icon: '/brand-img/service-icon2.png', image: '/brand-img/service-img2.webp', desc: 'Catching every typo, ensuring perfection.' },
         { name: 'Book Formatting', href: '/book-formatting', icon: '/brand-img/service-icon3.png', image: '/brand-img/service-img3.webp', desc: 'Giving your words the perfect structure.' },
         { name: 'Typesetting & Layout', href: '/typesetting-layout-adjustment', icon: '/brand-img/service-icon4.png', image: '/brand-img/service-img4.webp', desc: 'Aligning your content with professional precision.' },
-        // { name: 'Audio Book', href: '/audio-book', icon: faArrowRight, image: '/brand-img/audio-book-icon.webp' },
+        { name: 'Audio Book', href: '/audio-book', icon: '/brand-img/Audiobook.png', image: '/brand-img/Audiobook.webp', desc: 'Turn your written words into lively audio experiences.' },
         { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg', desc: 'Streamline your book printing process with our expert Print-On-Demand Services' },
-        { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/service-icon1.png', image: '/brand-img/service-img6.webp', desc: 'Giving your words the perfect structure.' },
+        { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/Document Processing-icon.png', image: '/brand-img/service-img6.webp', desc: 'Simplify your workflows with expert document processing.' },
+        { name: 'ISBN & Barcode', href: '/isbn-and-barcode', icon: '/brand-img/ISBN Barcode.png', image: '/brand-img/service-img6.webp', desc: "Secure your book's identity with our ISBN registration services." },
     ];
 
     // Function to handle the service dropdown toggle
