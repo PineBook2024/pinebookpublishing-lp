@@ -57,7 +57,7 @@ export default function ISBN() {
                             Pine Book Publishing takes pride in offering reliable and fast IBAN & barcode generation to help individual authors and publishing firms worldwide. Whether your book is in paperback, Hardcover, or eBook format and whether you require a single ISBN & barcode image or in bulk, we're here to help. Our experienced professionals will guide you through every step of the way and ensure that your book precisely acquires a unique identity and is ready for publication on many popular publishing platforms, such as Amazon, Barnes & Noble, Lulu, IngramSpark, and others. We maintain our result-driven approach and commitment to customer satisfaction to make our services hassle-free for everyone. Contact Pine Book Publishing to learn more about our services.                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/Audio Book.png"} width={470} height={300}
+                        <Image src={"/brand-img/isbn-img.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -65,7 +65,6 @@ export default function ISBN() {
                         />
                     </div>
                 </div>
-                
             </div>
             {/* <BrandProcess /> */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
