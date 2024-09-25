@@ -113,7 +113,7 @@ export default function BrandNavbar() {
                             // className="relative"
                             >
                                 <div className='flex items-center justify-center gap-2'>
-                                    <Link href="/services" className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
+                                    <Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="cursor-pointer text-white hover:text-gray-300 flex items-center gap-2">
                                         Services
                                     </Link>
                                     <Image src="/brand-img/down-arrow.png" alt="Open" className='service-dropdown-icon cursor-pointer' width={10} height={10} />
@@ -129,7 +129,7 @@ export default function BrandNavbar() {
                                                     onMouseEnter={() => setHoveredService(index)}
                                                     onMouseLeave={() => setHoveredService(null)}
                                                 >
-                                                    <Link href={service.href} className='flex items-center w-full'>
+                                                    <Link href={service.href} className='flex items-center w-full' onClick={(e) => { e.preventDefault(); window.location.href = service.href; }}>
                                                         {typeof service.icon === 'string' ? (
                                                             <Image src={service.icon} className="me-3" width={16} height={16} alt={service.name} />
                                                         ) : (

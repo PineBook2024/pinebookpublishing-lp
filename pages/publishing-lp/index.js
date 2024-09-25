@@ -306,6 +306,7 @@ export default function Home() {
           content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
         />
         <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+        <meta name="robots" content="noindex" />
         <link rel="shortcut icon" href="/images/fav.png" />
 
         {/* Google tag Manager Script */}
