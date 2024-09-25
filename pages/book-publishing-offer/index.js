@@ -381,6 +381,7 @@ export default function Home() {
         />
         <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
         <link rel="shortcut icon" href="/images/fav.png" />
+        <meta name="robots" content="noindex" />
 
         {/* Google tag Manager Script */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>

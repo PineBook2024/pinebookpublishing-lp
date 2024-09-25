@@ -4,6 +4,9 @@ import Image from "next/image";
 import BrandAudioPlayer from "./BrandAudioPlayer";
 
 export default function BrandChooseUs() {
+    const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
+    };
 
     return (
         <>
@@ -34,6 +37,7 @@ export default function BrandChooseUs() {
                                 </ul>
                             </div>
                             {/* <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" /> */}
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3" onClick={handleOpenChat}><Link href={'javascript:;'}>Speak to our Consultant</Link></button>
                             <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3"><Link href='tel:(866) 841-7469'>Call Now</Link></button>
                         </div>
                     </div>

@@ -153,10 +153,14 @@ export default function BookPublishing() {
                 </div> */}
             </section>
             <section className="overflow-hidden" >
-                <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8 py-10 " >
+                <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8  " >
                     <div className="flex items-center flex-col md:flex-row" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">
                         <div className="basis-1/3 brand-choose-us-vector">
-                            <Image src={"/brand-img/why-choose-us-img.webp"} width={350} height={200} className="brand-choose-us-img"></Image>
+                        <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
+                                loading="lazy"
+                                alt="about img"
+                                className="brand-about-img"
+                            />
                         </div>
                         <div className="basis-1/3 md:ml-20">
                             <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Publishing Services?</h2>
@@ -173,7 +177,7 @@ export default function BookPublishing() {
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>
-                            <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />
+                            {/* <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" /> */}
                         </div>
                     </div>
                 </div>
