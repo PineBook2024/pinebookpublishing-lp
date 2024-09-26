@@ -8,12 +8,17 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
+import Link from "next/link";
 
 export default function BookPublishing() {
     const [openFAQ, setOpenFAQ] = useState(0);
 
     const toggleFAQ = (index) => {
         setOpenFAQ(openFAQ === index ? null : index);
+    };
+
+    const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
     };
 
     const faqData = [
@@ -177,7 +182,8 @@ export default function BookPublishing() {
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>
-                            {/* <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" /> */}
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3" onClick={handleOpenChat}><Link href={'javascript:;'}>Speak to our Consultant</Link></button>
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3"><Link href='tel:(866) 841-7469'>Call Now</Link></button>
                         </div>
                     </div>
                 </div>

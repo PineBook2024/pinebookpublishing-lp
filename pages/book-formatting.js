@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import BrandFooter from "./components/BrandFooter";
 import BrandNavbar from "./components/BrandNavbar";
 import BrandBannerLogo from "./components/BrandBannerLogo";
@@ -14,6 +15,9 @@ export default function BookFormatting() {
 
     const toggleFAQ = (index) => {
         setOpenFAQ(openFAQ === index ? null : index);
+    };
+    const handleOpenChat = () => {
+        window.zE && window.zE('webWidget', 'open');
     };
 
     const faqData = [
@@ -147,7 +151,9 @@ export default function BookFormatting() {
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>
-                            <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />
+                            {/* <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" /> */}
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3" onClick={handleOpenChat}><Link href={'javascript:;'}>Speak to our Consultant</Link></button>
+                            <button className="brand-nav-btn-white bg-white shadow-xl md:mt-10 mt-4 cursor-pointer ml-2 md:ml-3"><Link href='tel:(866) 841-7469'>Call Now</Link></button>
                         </div>
                     </div>
                 </div>

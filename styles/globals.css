@@ -1280,9 +1280,25 @@ footer svg {
   box-shadow: 0 1px 5px #191b42;
 }
 
+.brand-nav-btn:hover{
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+  padding: 8px 28px;
+  box-shadow: 0 1px 5px #191b42;
+}
+
 .brand-nav-btn-white {
   background: #fff;
   color: #000;
+  border-radius: 30px;
+  padding: 8px 28px;
+  box-shadow: 0 1px 5px #191b42;
+}
+
+.brand-nav-btn-white:hover {
+  background: #191b42;
+  color: #fff;
   border-radius: 30px;
   padding: 8px 28px;
   box-shadow: 0 1px 5px #191b42;
