@@ -5,6 +5,7 @@ import { Poppins } from 'next/font/google';
 import Script from 'next/script';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Head from "next/head";
 
 // Font files can be colocated inside of `pages`
 // const majallab = localFont({
@@ -42,7 +43,136 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
+      <Head>
+        <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
+        <meta property="og:title" content="Premier Book Publishing Company | Pine Book Publishing" />
+        <meta property="og:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
+        <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
+        <meta property="og:url" content="https://pinebookpublishing.com/" />
+
+
+        <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
+        <meta name="twitter:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
+        <meta name="twitter:site" content="@pinebookwriting" />
+        <meta name="twitter:url" content="https://pinebookpublishing.com/" />
+        <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Pine Book Publishing",
+              "url": "https://pinebookpublishing.com/",
+              "logo": "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75",
+              "alternateName": "Pine Book Publishing",
+              "sameAs": [
+                "https://www.facebook.com/pinebookwriting0",
+                "https://www.instagram.com/pinebookwriting/",
+                "https://twitter.com/pinebookwriting",
+                "https://www.youtube.com/@Pinebookwriting"
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                  ],
+                  "opens": "11:00",
+                  "closes": "20:00"
+                }
+              ],
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "R-10225, Yonge St, Suite #250",
+                "addressLocality": "Richmond Hill",
+                "addressRegion": "ON",
+                "postalCode": "L4C 3B2",
+                "addressCountry": "CA"
+              },
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (866) 841 7463",
+                  "contactType": "customer service",
+                  "email": "support@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-7465",
+                  "contactType": "sales",
+                  "email": "damon@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-6209",
+                  "contactType": "sales",
+                  "email": "steve@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                }
+              ]
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "About Pine Book Publishing",
+                  "item": "https://pinebookpublishing.com/about"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Publishing Services",
+                  "item": "https://pinebookpublishing.com/services"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Success Stories",
+                  "item": "https://pinebookpublishing.com/testimonials"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Book Publishing Packages",
+                  "item": "https://pinebookpublishing.com/packages"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "name": "Shelf-Worthy Portfolio",
+                  "item": "https://pinebookpublishing.com/portfolio"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "name": "Get in Touch",
+                  "item": "https://pinebookpublishing.com/contact-us"
+                }
+              ]
+            }),
+          }}
+        />
+      </Head>
       <main className={`${poppins.variable}`}>
         <Component {...pageProps} />
         <Script
@@ -77,6 +207,8 @@ export default function App({ Component, pageProps }) {
           />
         </noscript>
         {/* End Meta Pixel Code */}
+
+
 
       </main>
     </>

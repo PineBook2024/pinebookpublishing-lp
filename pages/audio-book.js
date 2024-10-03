@@ -76,7 +76,7 @@ export default function AudioBook() {
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br>Audiobook Production Services</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" alt="process-one" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Project Discussion:</h2>
                             <p className="para">Our process begins with discussing your<br></br> requirements, including your goals, your<br></br> target audience, and your specific style.
@@ -84,21 +84,21 @@ export default function AudioBook() {
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" alt="process-two"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Manuscript Preparation:</h2>
                             <p className="para">We'll get to your manuscript to review<br></br> the whole content's consistency, clarity,<br></br> and format to prepare it for production.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10" alt="process-three"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Manuscript Finalization:</h2>
                             <p className="para">After the review, we'll suggest if there are<br></br> any changes required to improve its overall<br></br> compatibility with audio narration.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" alt="process-four"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Chapter-Wise Narration:</h2>
                             <p className="para">Then, our narrators will collectively <br></br>produce and send your work chapter-<br></br>by-chapter and make edits based on your feedback.</p>
@@ -106,14 +106,14 @@ export default function AudioBook() {
                     </div>
 
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10" alt="process-five"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Audio Refinement:</h2>
                             <p className="para">After the narration, we'll edit and refine<br></br> the recorded audio, remove noise, and adjust<br></br> levels to make it a polished version.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10" alt="process-six"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Publishing:</h2>
                             <p className="para">In the last step, we'll handle everything<br></br> regarding audiobook distribution and<br></br> publication on the most popular platforms.</p>
@@ -139,14 +139,14 @@ export default function AudioBook() {
                             <p className="text-white mt-2">At Pine Book Publishing, we believe that audiobooks are not just about listening to a book but about how one can dive into the world of imagination and emotions. We offer affordable audiobook creation services for numerous genres, from heartwarming romances to attention-grabbing children's stories.</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />100% Original Audio</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Narrators</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Multiple Revisions</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />100% Original Audio</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Expert Narrators</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Multiple Revisions</li>
                                 </ul>
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Global Distribution</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Affordable Pricing</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Efficient Process</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Global Distribution</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Affordable Pricing</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Efficient Process</li>
                                 </ul>
                             </div>
                             <BrandAudioPlayer src="/brand-img/why-choose-us-voice.wav" />

@@ -12,6 +12,11 @@ import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandPortfolio from "./components/BrandPortfolio";
 import BrandCTA from "./components/BrandCTA";
 import BrandProcess from "./components/BrandProcess";
+import PortfolioSlider1 from "./components/PortfolioSlider1";
+import PortfolioSlider2 from "./components/PortfolioSlider2";
+import PortfolioSlider3 from "./components/PortfolioSlider3";
+import PortfolioSlider4 from "./components/PortfolioSlider4";
+import PortfolioSlider5 from "./components/PortfolioSlider5";
 
 export default function Portfolio() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -52,14 +57,19 @@ export default function Portfolio() {
                 desc="Take a closer look at the hard work and dedication that lie behind each of our proud achievements."
             />
             <BrandBannerLogo />
-            <BrandPortfolio />
-            <BrandProcess />
-            <BrandCTA
+            <PortfolioSlider4 />
+            <PortfolioSlider1 />
+            <PortfolioSlider2 />
+            <PortfolioSlider3 />
+            <PortfolioSlider5 />
+            {/* <BrandPortfolio /> */}
+            {/* <BrandProcess /> */}
+            {/* <BrandCTA
                 title="Hey, Wanna Talk?"
                 desc="Ready to Talk? Reach out with your ideas or inquiries – we’re excited to listen and engage. Your message is the highlight of our day!"
                 btntext="Speak to our Consultant"
-            />
-            <section className="brand-testimonials-section">
+            /> */}
+            {/* <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
                         <h2 className="font-poppins text-4xl text-black uppercase mb-3">Frequently Asked Questions</h2>
@@ -97,7 +107,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <BrandContact />
             <BrandFooter />
         </>

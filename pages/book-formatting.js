@@ -80,28 +80,28 @@ export default function BookFormatting() {
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br> Book Formatting Services</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" alt="process one" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Assessment:</h2>
                             <p className="para">We begin with thoroughly analyzing your<br></br> manuscript. Understand its specific style,<br></br> and choose the best formatting approach<br></br> that matches your vision.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" alt="process two" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting Design:</h2>
                             <p className="para">Then, our expert designers get to work<br></br> and craft a stunning layout that matches<br></br> your book's content and genre and <br></br> meets industry standards.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10" alt="process three" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Customization:</h2>
                             <p className="para">After the design, we adjust your book's <br></br> format to your specific preferences. This<br></br> includes font styles, chapter headings,<br></br> and page numbers.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" alt="process four" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Content Organization:</h2>
                             <p className="para">In this step, we carefully structure your<br></br> book's entire content, Including your book's<br></br> chapters, sections, and headings for<br></br> excellent readability and flow.</p>
@@ -109,14 +109,14 @@ export default function BookFormatting() {
                     </div>
 
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10" alt="process five" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Quality Check:</h2>
                             <p className="para">Then, our quality assurance team gets into<br></br> action. Your book goes through the keen<br></br> eyes of experts to ensure flawless formatting,<br></br> typography, and adherence to industry standards.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10" alt="process six" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Delivery:</h2>
                             <p className="para">In the last step, we deliver your perfectly<br></br> formatted book in your preferred format,<br></br> including print-ready options to satisfy<br></br> your publishing needs.</p>
@@ -141,13 +141,13 @@ export default function BookFormatting() {
                             <p className="text-white mt-2">At Pine Book Publishing, we're passionate about what we do. Our steadfast team of professionals works tirelessly to deliver accuracy, speed, and premium quality work. </p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />A Team of Experts</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />On-time Delivery</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" alt="check icon" width={13} height={13} />A Team of Experts</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" alt="check icon" width={13} height={13} />On-time Delivery</li>
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Craftsmanship</li> */}
                                 </ul>
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Multiple Formats</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Author-focus Approach</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" alt="check icon" width={13} height={13} />Multiple Formats</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" alt="check icon" width={13} height={13} />Author-focus Approach</li>
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>

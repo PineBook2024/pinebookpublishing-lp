@@ -83,7 +83,7 @@ export default function BookPublishing() {
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br>Book Publishing Services</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" alt="process one" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Manuscript Review:</h2>
                             <p className="para">Our process starts by reviewing your<br></br> manuscript and providing feedback on the<br></br> design layout, content, and structure.
@@ -91,7 +91,7 @@ export default function BookPublishing() {
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" alt="process two" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Manuscript Refining:</h2>
                             <p className="para">Then, our skilled editors make the necessary<br></br> changes/edits to ensure your draft<br></br> has no grammatical or structural flaws.
@@ -99,7 +99,7 @@ export default function BookPublishing() {
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10" alt="process three"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Cover Design:</h2>
                             <p className="para">In this phase, our team of graphic designers<br></br> crafts an eye-catching cover that can draw<br></br> your readers' attention quickly.
@@ -107,7 +107,7 @@ export default function BookPublishing() {
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" alt="process four" ></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Formatting:</h2>
                             <p className="para">Now, it’s time to format your book. We<br></br> handle everything, from typesetting and<br></br> interior designing to chapter alignment.
@@ -116,7 +116,7 @@ export default function BookPublishing() {
                     </div>
 
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10" alt="process five" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Final Delivery:</h2>
                             <p className="para">Lastly, we help you get your book's identity<br></br> by registering a unique ISBN to make it<br></br> easily accessible among many others.</p>
@@ -172,13 +172,13 @@ export default function BookPublishing() {
                             <p className="text-white mt-2">There are many self-publishing companies and services out there, but the following are the things that make us different from others:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Personalized Approach </li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Guidance </li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Quality Assurance</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} alt="check icon" className="icon" width={13} height={13} />Personalized Approach </li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} alt="check icon" className="icon" width={13} height={13} />Expert Guidance </li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} alt="check icon" className="icon" width={13} height={13} />Quality Assurance</li>
                                 </ul>
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Timely Delivery</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Creative Collaboration</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} alt="check icon" className="icon" width={13} height={13} />Timely Delivery</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} alt="check icon" className="icon" width={13} height={13} />Creative Collaboration</li>
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>

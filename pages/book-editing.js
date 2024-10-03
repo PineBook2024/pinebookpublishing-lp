@@ -81,28 +81,28 @@ export default function BookEditing() {
                         <h2 className="font-poppins text-3xl md:text-4xl text-black font-bold" data-aos="zoom-out-down">6-Step Process of Our <br></br>Book Editing Service</h2>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img1.png"} width={700} height={200} className=" pb-10" alt="process one" ></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Consultation:</h2>
                             <p className="para">Once you send us your manuscript, we'll<br></br> get in touch with you to understand your<br></br> editing needs, goals, and your vision.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img2.png"} width={700} height={200} className=" pb-10" alt="process two"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Manuscript Review:</h2>
                             <p className="para">Our team will analyze your manuscript<br></br> and provide feedback on all aspects.<br></br> We'll address where the edits are required.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img3.png"} width={700} height={200} className=" pb-10" alt="process three"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Editing:</h2>
                             <p className="para">Next, our expert editors roll up their sleeves<br></br> and get to work. They handle line editing OR<br></br> copy editing to make sure your writing is free<br></br> of errors.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" ></Image>
+                        <Image src={"/brand-img/process-img4.png"} width={700} height={200} className=" pb-10" alt="process four"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Revisions:</h2>
                             <p className="para">Our experts will be ready to make multiple<br></br> revisions based on your feedback, ensuring<br></br> your final copy reflects your vision perfectly.</p>
@@ -110,14 +110,14 @@ export default function BookEditing() {
                     </div>
 
                     <div className="relative" data-aos="fade-left">
-                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10" alt="process five"></Image>
                         <div className="brand-process-content text-left">
                             <h2 className="font-poppins text-2xl">Quality Assurance:</h2>
                             <p className="para">Before we wrap things up, our editors will<br></br> do a final quality check to make sure your<br></br> manuscript is completely ready for publication.</p>
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-right">
-                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10"></Image>
+                        <Image src={"/brand-img/process-img6.png"} width={700} height={200} className=" pb-10" alt="process six"></Image>
                         <div className="brand-process-content-right text-right">
                             <h2 className="font-poppins text-2xl">Delivery:</h2>
                             <p className="para">Finally, we'll send your edited manuscript<br></br> back to you in your desired format, all set<br></br> and ready for you to share your story with<br></br> the world.</p>
@@ -166,13 +166,13 @@ export default function BookEditing() {
                             <p className="text-white mt-2">Our commitment to the client lies in the quality we deliver in our affordable book editing services. By joining hands with Pine Book Publishing, you will have the following:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Personalized Approach</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Guidance </li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Quality Assurance </li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Personalized Approach</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Expert Guidance </li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Quality Assurance </li>
                                 </ul>
                                 <ul>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Timely Delivery</li>
-                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Creative Collaboration</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Timely Delivery</li>
+                                    <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} alt="check icon" />Creative Collaboration</li>
                                     {/* <li className="font-poppins flex items-center gap-3 text-sm"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Pristine Publication</li> */}
                                 </ul>
                             </div>
