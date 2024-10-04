@@ -66,7 +66,7 @@ export default function PortfolioSlider1() {
         },
         {
             id: 5,
-            src: "/brand-img/Katie Loftis (Book 2) PB.png",
+            src: "/brand-img/Katie Loftis (Book 2) PB 2.png",
         },
         {
             id: 6,
@@ -151,6 +151,7 @@ export default function PortfolioSlider1() {
                 {/* Swiper Slider */}
                 <Swiper
                     spaceBetween={30}
+                    loop={true}
                     slidesPerView={3}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     modules={[Navigation]}

@@ -146,6 +146,7 @@ export default function PortfolioSlider2() {
                 <Swiper
                     spaceBetween={30}
                     slidesPerView={3}
+                    loop={true}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     modules={[Navigation]}
                     className="mySwiper"

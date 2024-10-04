@@ -115,6 +115,7 @@ export default function PortfolioSlider5() {
                 <Swiper
                     spaceBetween={30}
                     slidesPerView={2}
+                    loop={true}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     className="mySwiper"
                     breakpoints={{
