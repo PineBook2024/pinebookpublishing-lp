@@ -69,7 +69,7 @@ export default function PortfolioSlider4() {
     return (
         <>
             <div className="w-full max-w-6xl mx-auto py-10 relative">
-                <h1 className="text-5xl font-bold mb-20 text-center">Browse our design portfolio</h1>
+                <h1 className="text-4xl font-bold mb-20 text-center">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
                 <h2 className="text-3xl font-medium mb-5">Editing, Formatting & Proofreading</h2>
                 {/* Custom Previous Button */}
                 <div

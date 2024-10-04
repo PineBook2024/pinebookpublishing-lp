@@ -48,37 +48,41 @@ export default function PortfolioSlider1() {
         };
     }, []);
     const ImageSlides = [
+        // {
+        //     id: 1,
+        //     src: "/brand-img/1 PAPERBACK_8.500x8.500_25_PREMIUM_WHITE_en_US.png",
+        // },
         {
             id: 1,
-            src: "/brand-img/1 PAPERBACK_8.500x8.500_25_PREMIUM_WHITE_en_US.png",
-        },
-        {
-            id: 2,
             src: "/brand-img/Chhavyvann So 2-01.png",
         },
         {
-            id: 3,
-            src: "/brand-img/full cover-01.png",
+            id: 2,
+            src: "/brand-img/full cover-01 (1).png",
         },
         {
-            id: 4,
+            id: 3,
             src: "/brand-img/Hardcover lulu.png",
         },
         {
-            id: 5,
+            id: 4,
             src: "/brand-img/Katie Loftis (Book 2) PB 2.png",
         },
         {
-            id: 6,
+            id: 5,
             src: "/brand-img/PAPERBACK-01.png",
         },
         {
-            id: 7,
+            id: 6,
             src: "/brand-img/PAPERBACK-4 compressed.png",
         },
         {
-            id: 8,
+            id: 7,
             src: "/brand-img/Vikki LeBeau PB 3.png",
+        },
+        {
+            id: 8,
+            src: "/brand-img/Jean Bosco N. Ruhashya Full cover.png",
         },
     ];
 
