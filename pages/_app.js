@@ -181,6 +181,10 @@ export default function App({ Component, pageProps }) {
         />
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
+
+        {/* <!-- Start of HubSpot Embed Code --> */}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46998691.js"></script>
+        {/* <!-- End of HubSpot Embed Code --> */}
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
