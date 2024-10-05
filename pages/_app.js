@@ -181,27 +181,23 @@ export default function App({ Component, pageProps }) {
         />
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
-
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+'https://pinebookpublishing.ladesk.com/scripts/track.js',
+function(e){ LiveAgent.createButton('u5215piz', e); });
+          `,
+          }}
+        />
         {/* LiveAgent integration script */}
-        <Script id="liveagent-integration" strategy="lazyOnload">
-          {`
-          (function(d, src, c) { 
-            var t = d.scripts[d.scripts.length - 1], 
-                s = d.createElement('script');
-            s.id = 'la_x2s6df8d';
-            s.defer = true;
-            s.src = src;
-            s.onload = s.onreadystatechange = function() {
-              var rs = this.readyState;
-              if (rs && (rs != 'complete') && (rs != 'loaded')) {
-                return;
-              }
-              c(this);
-            };
-            t.parentElement.insertBefore(s, t.nextSibling);
-          })(document, 'https://pinebookpublishing.ladesk.com/scripts/track.js', function(e) { });
-        `}
-        </Script>
+        {/* <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,'https://pinebookpublishing.ladesk.com/scripts/track.js',function(e){  });
+          `,
+          }}
+        /> */}
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
