@@ -182,47 +182,24 @@ export default function App({ Component, pageProps }) {
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
 
-        <Script
-          strategy="lazyOnload"
-          src="https://cdn.reamaze.com/assets/reamaze-loader.js"
-        />
-
-        {/* Inline script for Re:amaze configuration */}
-        <Script id="reamaze-config" strategy="lazyOnload">
+        {/* LiveAgent integration script */}
+        <Script id="liveagent-integration" strategy="lazyOnload">
           {`
-          var _support = _support || { 'ui': {}, 'user': {} };
-          _support['account'] = 'pine-book-publishing';
-          _support['ui']['contactMode'] = 'mixed';
-          _support['ui']['enableKb'] = 'true';
-          _support['ui']['styles'] = {
-            widgetColor: 'rgba(16, 162, 197, 1)',
-            gradient: true,
-          };
-          _support['ui']['shoutboxFacesMode'] = 'default';
-          _support['ui']['shoutboxHeaderLogo'] = true;
-          _support['ui']['widget'] = {
-            displayOn: 'all',
-            fontSize: 'default',
-            allowBotProcessing: true,
-            slug: 'pine-book-publishing-chat-slash-contact-form-shoutbox',
-            label: {
-              text: 'Let us know if you have any questions! 😊',
-              mode: "notification",
-              delay: 3,
-              duration: 30,
-              primary: 'I have a question',
-              secondary: 'No, thanks',
-              sound: true,
-            },
-            position: 'bottom-right',
-            mobilePosition: 'bottom-right'
-          };
-          _support['apps'] = {
-            faq: {"enabled": true},
-            recentConversations: {},
-            orders: {},
-            shopper: {}
-          };
+          (function(d, src, c) { 
+            var t = d.scripts[d.scripts.length - 1], 
+                s = d.createElement('script');
+            s.id = 'la_x2s6df8d';
+            s.defer = true;
+            s.src = src;
+            s.onload = s.onreadystatechange = function() {
+              var rs = this.readyState;
+              if (rs && (rs != 'complete') && (rs != 'loaded')) {
+                return;
+              }
+              c(this);
+            };
+            t.parentElement.insertBefore(s, t.nextSibling);
+          })(document, 'https://pinebookpublishing.ladesk.com/scripts/track.js', function(e) { });
         `}
         </Script>
         {/* Meta Pixel Code */}
