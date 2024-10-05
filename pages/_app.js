@@ -182,9 +182,49 @@ export default function App({ Component, pageProps }) {
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
 
-        {/* <!-- Start of HubSpot Embed Code --> */}
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46998691.js"></script>
-        {/* <!-- End of HubSpot Embed Code --> */}
+        <Script
+          strategy="lazyOnload"
+          src="https://cdn.reamaze.com/assets/reamaze-loader.js"
+        />
+
+        {/* Inline script for Re:amaze configuration */}
+        <Script id="reamaze-config" strategy="lazyOnload">
+          {`
+          var _support = _support || { 'ui': {}, 'user': {} };
+          _support['account'] = 'pine-book-publishing';
+          _support['ui']['contactMode'] = 'mixed';
+          _support['ui']['enableKb'] = 'true';
+          _support['ui']['styles'] = {
+            widgetColor: 'rgba(16, 162, 197, 1)',
+            gradient: true,
+          };
+          _support['ui']['shoutboxFacesMode'] = 'default';
+          _support['ui']['shoutboxHeaderLogo'] = true;
+          _support['ui']['widget'] = {
+            displayOn: 'all',
+            fontSize: 'default',
+            allowBotProcessing: true,
+            slug: 'pine-book-publishing-chat-slash-contact-form-shoutbox',
+            label: {
+              text: 'Let us know if you have any questions! 😊',
+              mode: "notification",
+              delay: 3,
+              duration: 30,
+              primary: 'I have a question',
+              secondary: 'No, thanks',
+              sound: true,
+            },
+            position: 'bottom-right',
+            mobilePosition: 'bottom-right'
+          };
+          _support['apps'] = {
+            faq: {"enabled": true},
+            recentConversations: {},
+            orders: {},
+            shopper: {}
+          };
+        `}
+        </Script>
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
