@@ -184,14 +184,9 @@ export default function App({ Component, pageProps }) {
         <Script
           dangerouslySetInnerHTML={{
             __html: `
-              var _smartsupp = _smartsupp || {};
-_smartsupp.key = '644026c9e1fcd5a151df69c1d27d0123a38ef35b';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
+(function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+'https://pinebookpublishing.ladesk.com/scripts/track.js',
+function(e){ LiveAgent.createButton('u5215piz', e); });
           `,
           }}
         />
