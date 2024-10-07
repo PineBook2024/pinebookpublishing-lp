@@ -184,9 +184,7 @@ export default function App({ Component, pageProps }) {
         <Script
           dangerouslySetInnerHTML={{
             __html: `
-      (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-'https://pinebookpublishing.ladesk.com/scripts/track.js',
-function(e){ LiveAgent.createButton('u5215piz', e); });
+              window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '9f7fa31b-8662-4c17-a806-6c681bf5c009', f: true }); done = true; } }; })();
           `,
           }}
         />
