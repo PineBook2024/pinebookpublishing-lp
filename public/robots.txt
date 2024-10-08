@@ -1,6 +1,7 @@
 User-Agent: *
 Allow: /
 Disallow:
+Sitemap: https://seoprohub.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

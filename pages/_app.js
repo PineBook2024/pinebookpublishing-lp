@@ -73,21 +73,6 @@ export default function App({ Component, pageProps }) {
                 "https://twitter.com/pinebookwriting",
                 "https://www.youtube.com/@Pinebookwriting"
               ],
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday"
-                  ],
-                  "opens": "11:00",
-                  "closes": "20:00"
-                }
-              ],
-              "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "R-10225, Yonge St, Suite #250",
