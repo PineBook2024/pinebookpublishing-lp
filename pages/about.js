@@ -8,6 +8,7 @@ import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandContact from "./components/BrandContactForm";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function About() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -35,6 +36,7 @@ export default function About() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Ready To Write Your Next Chapter? "

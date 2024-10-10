@@ -35,7 +35,7 @@ export default function PortfolioSlider3() {
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
-                    selector: '.glightbox'
+                    selector: '.glightbox3'
                 });
             });
         }
@@ -51,17 +51,25 @@ export default function PortfolioSlider3() {
             id: 1,
             src: "/brand-img/foamy and F-01 (1).png",
         },
+        // {
+        //     id: 2,
+        //     src: "/brand-img/im a boy-01 (1).png",
+        // },
         {
             id: 2,
-            src: "/brand-img/im a boy-01 (1).png",
-        },
-        {
-            id: 3,
             src: "/brand-img/im a girl-01 (1).png",
         },
         {
-            id: 4,
+            id: 3,
             src: "/brand-img/Untitled-1-01 (2).png",
+        },
+        {
+            id: 4,
+            src: "/brand-img/the phonics-01.png",
+        },
+        {
+            id: 5,
+            src: "/brand-img/robert-01.png",
         },
 
     ];
@@ -104,7 +112,7 @@ export default function PortfolioSlider3() {
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className="h-100 w-auto object-contain glightbox cursor-pointer"
+                                    className="h-100 w-auto object-contain glightbox3 cursor-pointer"
                                 />
                             </div>
                         </SwiperSlide>

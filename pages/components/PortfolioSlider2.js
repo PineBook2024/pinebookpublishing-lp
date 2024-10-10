@@ -35,7 +35,7 @@ export default function PortfolioSlider2() {
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
-                    selector: '.glightbox'
+                    selector: '.glightbox2'
                 });
             });
         }
@@ -168,7 +168,7 @@ export default function PortfolioSlider2() {
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className=" w-auto object-contain h-100 w-100 glightbox cursor-pointer"
+                                    className=" w-auto object-contain h-100 w-100 glightbox2 cursor-pointer"
                                 />
                             </div>
                         </SwiperSlide>

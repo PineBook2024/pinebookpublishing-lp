@@ -17,6 +17,7 @@ import PortfolioSlider2 from "./components/PortfolioSlider2";
 import PortfolioSlider3 from "./components/PortfolioSlider3";
 import PortfolioSlider4 from "./components/PortfolioSlider4";
 import PortfolioSlider5 from "./components/PortfolioSlider5";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Portfolio() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -51,6 +52,7 @@ export default function Portfolio() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Peek Behind the Curtains to Our Proud Achievements"

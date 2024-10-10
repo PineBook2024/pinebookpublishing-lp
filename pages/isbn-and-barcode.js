@@ -9,6 +9,7 @@ import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function ISBN() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -37,6 +38,7 @@ export default function ISBN() {
                 <link rel="shortcut icon" href="/images/fav.png" />
 
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Identify Your Book with an Expert ISBN & Barcode Registration Services"

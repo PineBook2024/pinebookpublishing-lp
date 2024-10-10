@@ -8,6 +8,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandContact from "./components/BrandContactForm";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function DocumentProcessing() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -35,6 +36,7 @@ export default function DocumentProcessing() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Your Documents, Perfected - Expert Document Processing Services"

@@ -58,58 +58,58 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
 
         <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Pine Book Publishing",
-            "url": "https://pinebookpublishing.com/",
-            "logo": "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75",
-            "alternateName": "Pine Book Publishing",
-            "sameAs": [
-              "https://www.facebook.com/pinebookwriting0",
-              "https://www.instagram.com/pinebookwriting/",
-              "https://twitter.com/pinebookwriting",
-              "https://www.youtube.com/@Pinebookwriting"
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "R-10225, Yonge St, Suite #250",
-              "addressLocality": "Richmond Hill",
-              "addressRegion": "ON",
-              "postalCode": "L4C 3B2",
-              "addressCountry": "CA"
-            },
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (866) 841 7463",
-                "contactType": "customer service",
-                "email": "support@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Pine Book Publishing",
+              "url": "https://pinebookpublishing.com/",
+              "logo": "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75",
+              "alternateName": "Pine Book Publishing",
+              "sameAs": [
+                "https://www.facebook.com/pinebookwriting0",
+                "https://www.instagram.com/pinebookwriting/",
+                "https://twitter.com/pinebookwriting",
+                "https://www.youtube.com/@Pinebookwriting"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "R-10225, Yonge St, Suite #250",
+                "addressLocality": "Richmond Hill",
+                "addressRegion": "ON",
+                "postalCode": "L4C 3B2",
+                "addressCountry": "CA"
               },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (289) 809-7465",
-                "contactType": "sales",
-                "email": "damon@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (289) 809-6209",
-                "contactType": "sales",
-                "email": "steve@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
-              }
-            ]
-          })
-        }}
-      />
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (866) 841 7463",
+                  "contactType": "customer service",
+                  "email": "support@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-7465",
+                  "contactType": "sales",
+                  "email": "damon@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-6209",
+                  "contactType": "sales",
+                  "email": "steve@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                }
+              ]
+            })
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

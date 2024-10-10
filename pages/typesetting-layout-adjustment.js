@@ -9,6 +9,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function TypeSetting() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -39,6 +40,7 @@ export default function TypeSetting() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 subtitle="Enhance Your Book's Readability With"

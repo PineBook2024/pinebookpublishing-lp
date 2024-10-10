@@ -26,7 +26,7 @@ export default function PortfolioSlider5() {
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
-                    selector: '.glightbox'
+                    selector: '.glightbox5'
                 });
             });
         }

@@ -9,6 +9,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function BookEditing() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -42,6 +43,7 @@ export default function BookEditing() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Fix the Writing Flaws with Our Expert Book Editing Services!"

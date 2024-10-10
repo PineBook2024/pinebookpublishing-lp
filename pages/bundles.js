@@ -9,6 +9,7 @@ import BrandContact from "./components/BrandContactForm";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import Chart from "./components/Chart";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Bundles() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -36,6 +37,7 @@ export default function Bundles() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Ready To Write Your Next Chapter?"

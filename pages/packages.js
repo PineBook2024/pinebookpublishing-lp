@@ -16,6 +16,7 @@ import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopupBundle from "./components/PopupBundle";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Bundle({ isOpen, onClose, service }) {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -81,6 +82,7 @@ export default function Bundle({ isOpen, onClose, service }) {
             </Head>
             {/* <Popup isOpen={isModalOpen} onClose={closeModal} service={selectedService} /> */}
             <PopupBundle isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Want to publish your book in affordable price?"
@@ -204,6 +206,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Available on Kindle
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        eBook Format
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Guarantees

@@ -9,6 +9,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Proofreading() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -40,6 +41,7 @@ export default function Proofreading() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Your Words, Our Expertise – Expert Book proofreading services"

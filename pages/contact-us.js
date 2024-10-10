@@ -5,6 +5,7 @@ import BrandMainContact from "./components/BrandMainContact";
 import BrandFooter from "./components/BrandFooter";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandNavbar from "./components/BrandNavbar";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Contact() {
 
@@ -20,6 +21,7 @@ export default function Contact() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader 
               title="Connect with Publishing Experts Now!"

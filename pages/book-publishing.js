@@ -9,6 +9,7 @@ import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
 import Link from "next/link";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function BookPublishing() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -42,6 +43,7 @@ export default function BookPublishing() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Quality. Creativity. Passion – Our Book Publishing Service Has It All!"

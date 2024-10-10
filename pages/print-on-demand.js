@@ -8,6 +8,7 @@ import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function PrintDemand() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -35,6 +36,7 @@ export default function PrintDemand() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Maximize Your Book Sales with Expert Print On-Demand Services"

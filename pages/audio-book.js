@@ -9,6 +9,7 @@ import BrandBannerLogo from "./components/BrandBannerLogo";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandProcess from "./components/BrandProcess";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function AudioBook() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -37,6 +38,7 @@ export default function AudioBook() {
                 <link rel="shortcut icon" href="/images/fav.png" />
 
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Reach Maximum Audience with Professional Audiobook Production Services"

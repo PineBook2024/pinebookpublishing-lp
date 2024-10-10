@@ -10,6 +10,7 @@ import BrandContact from "./components/BrandContactForm";
 import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandServices from "./components/BrandServices";
 import BrandTestimonial from "./components/BrandTestimonial";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Services() {
 
@@ -24,6 +25,7 @@ export default function Services() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Start Your Publishing Journey Now"

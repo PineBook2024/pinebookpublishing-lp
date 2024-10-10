@@ -9,6 +9,7 @@ import BrandTestimonial from "./components/BrandTestimonial";
 import BrandCTA from "./components/BrandCTA";
 import BrandCustomerStory from "./components/BrandCustomerStory";
 import BrandTesti from "./components/BrandTesti";
+import BrandTopBar from "./components/BrandTopBar";
 
 export default function Services() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -36,6 +37,7 @@ export default function Services() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
+            <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Ready To Write Your Next Chapter?"
