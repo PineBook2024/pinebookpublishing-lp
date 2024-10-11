@@ -51,6 +51,10 @@ import HeroFormBookOffer from "../components/HerformBookOffer";
 import PopupBundle from "../components/PopupBundle";
 import PopupBundleBookPublish from "../components/PopupBundleBookPublish";
 import BrandFooter from "../components/BrandFooter";
+import PortfolioSlider1 from "../components/PortfolioSlider1";
+import PortfolioSlider2 from "../components/PortfolioSlider2";
+import PortfolioSlider3 from "../components/PortfolioSlider3";
+import PortfolioSlider4 from "../components/PortfolioSlider4";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -803,7 +807,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="portfolio overflow-hidden	 py-14">
+        {/* <section className="portfolio overflow-hidden	 py-14">
           <div className="grid grid-cols-1 ">
             <div className="container mx-auto text-center">
               <div className="portfolio-h m1-h">
@@ -900,15 +904,20 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-4 width-container books-collage">
                 {books.map((book, index) => (
                   <div key={index}>
-                    {/* <AnimateFade type={book.type}> */}
                     <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect glightbox" />
-                    {/* </AnimateFade> */}
                   </div>
                 ))}
               </div>
             </div>
           </div>
+        </section> */}
+        <section>
+          <PortfolioSlider4 />
+          <PortfolioSlider1 />
+          <PortfolioSlider3 />
         </section>
+
+
 
         {/* <section className="package py-14 overflow-hidden">
           <div className="container mx-auto">
