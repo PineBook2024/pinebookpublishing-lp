@@ -168,7 +168,7 @@ export default function PortfolioSlider2() {
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className=" w-auto object-contain h-100 w-100 glightbox2 cursor-pointer"
+                                    className=" w-auto object-contain h-100 w-100 glightbox2 cursor-pointer border border-slate-500"
                                 />
                             </div>
                         </SwiperSlide>
