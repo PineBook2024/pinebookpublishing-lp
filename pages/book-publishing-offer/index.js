@@ -55,6 +55,9 @@ import PortfolioSlider1 from "../components/PortfolioSlider1";
 import PortfolioSlider2 from "../components/PortfolioSlider2";
 import PortfolioSlider3 from "../components/PortfolioSlider3";
 import PortfolioSlider4 from "../components/PortfolioSlider4";
+import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
+import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
+import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -911,10 +914,11 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        <section>
-          <PortfolioSlider4 />
-          <PortfolioSlider1 />
-          <PortfolioSlider3 />
+        <section className="portfolio-book-publishing-offer-bg">
+          <PortfolioSlider3LP />
+          <PortfolioSlider1LP />
+          <PortfolioSlider2LP />
+
         </section>
 
 
