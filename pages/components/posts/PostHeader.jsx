@@ -4,6 +4,9 @@ import DateComponent from '../ui/DateComponent'
 
 const PostHeader = ({ post }) => {
   const { title, coverImage, author, date } = post.fields
+  if (!post || !post.fields) {
+    return <p>Loading...</p>; // You can replace this with a loader or a fallback UI
+  }
 
   return (
     <>

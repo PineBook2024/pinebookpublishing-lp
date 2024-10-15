@@ -3,7 +3,7 @@ import BrandPrimaryHeader from '../components/BrandPrimaryHeader'
 import PostBody from '../components/posts/PostBody'
 import PostHeader from '../components/posts/PostHeader'
 // import PreviewAlert from '../components/ui/PreviewAlert'
-// import Skeleton from '../components/ui/Skeleton'
+import Skeleton from '../components/ui/Skeleton'
 import { client } from '../../lib/contentful/client' // Removed previewClient import
 import { useRouter } from 'next/router'
 
