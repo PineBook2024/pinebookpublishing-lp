@@ -58,6 +58,7 @@ import PortfolioSlider4 from "../components/PortfolioSlider4";
 import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
 import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
 import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
+import BrandFooterBook from "../components/BrandFooterBook";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -2879,7 +2880,8 @@ export default function Home() {
         </section>
 
         {/* <Footer /> */}
-        <BrandFooter />
+        {/* <BrandFooter /> */}
+        <BrandFooterBook />
 
         {/* <motion.p className="font-acumin text-5xl text-center text-black leading-loose font-bold hover:text-[#EBFA0B]" ref={nodeRef} >{rounded}<Counter from={100} to={1000} val={"10"} />100</motion.p> */}
 
