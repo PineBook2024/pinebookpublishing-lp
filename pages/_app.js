@@ -183,6 +183,7 @@ export default function App({ Component, pageProps }) {
   `,
           }}
         />
+        <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
