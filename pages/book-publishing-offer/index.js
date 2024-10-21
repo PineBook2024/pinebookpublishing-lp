@@ -417,7 +417,7 @@ export default function Home() {
 
             <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
               <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
-                <Link className="" href={'tel:8668417469'}>(866)-841-7469</Link>
+                <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
               </button>
 
               <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
@@ -610,7 +610,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-6">
                   <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
-                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></button>
+                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
                 </div>
                 {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
                   {clientLogos.map((logo, index) => (
@@ -1165,7 +1165,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -1287,7 +1287,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -1422,7 +1422,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -1867,7 +1867,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -2054,7 +2054,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -2261,7 +2261,7 @@ export default function Home() {
                   <div className="single-packages-footer flex  w-100 justify-center">
                     <div >
                       <h5 className="text-xl">Share your idea!</h5>
-                      <p className="text-md text-black"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></p>
+                      <p className="text-md text-black"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                     </div>
                     <span className="border-line mx-8"></span>
                     <div>
@@ -2776,7 +2776,7 @@ export default function Home() {
               </p>
               <div className="flex gap-6">
                 <button className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
-                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(866)-841-7469">(866)-841-7469</Link></button>
+                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
               </div>
             </div>
           </div>

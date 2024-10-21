@@ -263,7 +263,7 @@ export default function Lp() {
                         <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
                             <Link className="" href={'mailto:info@pinebookpublishing.com'}>info@pinebookpublishing.com</Link>
                         </button> */}
-                        <Link className="text-white flex" href={'tel:8668417469'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(866)-841-7469</span></Link>
+                        <Link className="text-white flex" href={'tel:(888) 786-7135'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(888) 786-7135</span></Link>
 
                         <button className="items-center md:py-2 py-4 px-3 get-started">
                             <Link className="font-poppins" href={'javascript:;'} onClick={handleOpenChat}>Talk to an Expert</Link>
@@ -642,7 +642,7 @@ export default function Lp() {
                             <nav className="list-none mb-10 mt-8">
                                 <li>
                                     <Link
-                                        href="tel:8668417469"
+                                        href="tel:(888) 786-7135"
                                         className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faPhone} className="me-3" color="#1e8677" />

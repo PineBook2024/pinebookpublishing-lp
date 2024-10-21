@@ -300,13 +300,13 @@ export default function PublishingLpNew() {
 
                     <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
                         {/* <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
-                            <Link className="" href={'tel:8668417469'}>(866)-841-7469</Link>
+                            <Link className="" href={'tel:(888) 786-7135'}>(888) 786-7135</Link>
                         </button>
 
                         <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
                             <Link className="" href={'mailto:info@pinebookpublishing.com'}>info@pinebookpublishing.com</Link>
                         </button> */}
-                        <Link className="text-white flex" href={'tel:8668417469'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(866)-841-7469</span></Link>
+                        <Link className="text-white flex" href={'tel:(888) 786-7135'}><FontAwesomeIcon icon={faPhone} className="me-3" color="#fff" width={20} /><span>(888) 786-7135</span></Link>
 
                         <button className="items-center md:py-2 py-4 px-3 get-started" onClick={handleOpenChat}>
                             <Link className="font-poppins" href="#" >Talk to an Expert</Link>
@@ -563,7 +563,7 @@ export default function PublishingLpNew() {
                                             </div>
                                             <div className="content">
                                                 <h3>Call Now</h3>
-                                                <p>(866)-841-7469</p>
+                                                <p>(888) 786-7135</p>
                                             </div>
                                         </div>
                                         <div className="get-quote-btn">
@@ -655,7 +655,7 @@ export default function PublishingLpNew() {
                         </div>
                         <div className="content">
                             <h3>Call Now</h3>
-                            <p><Link className="" href={'tel:8668417469'}>(866)-841-7469</Link></p>
+                            <p><Link className="" href={'tel:(888) 786-7135'}>(888) 786-7135</Link></p>
                         </div>
                     </div>
                 </div>
@@ -900,7 +900,7 @@ export default function PublishingLpNew() {
                         </div>
                         <div className="content">
                             <h3>Call Now</h3>
-                            <p><Link className="" href={'tel:8668417469'}>(866)-841-7469</Link></p>
+                            <p><Link className="" href={'tel:(888) 786-7135'}>(888) 786-7135</Link></p>
                         </div>
                     </div>
                 </div>
@@ -1046,7 +1046,7 @@ export default function PublishingLpNew() {
                                     <h3>Call Now</h3>
                                     <p className="mt-2">
                                         <Link
-                                            href="tel:8668417469"
+                                            href="tel:(888) 786-7135"
                                             className="text-white text-md hover:text-white flex justify-center md:justify-start"
                                         >
                                             (888) 786-7135
