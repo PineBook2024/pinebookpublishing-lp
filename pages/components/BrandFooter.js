@@ -179,11 +179,11 @@ export default function BrandFooter() {
                                 Contact Info
                             </h2>
                             <Link
-                                href="tel:8668417469"
+                                href="tel:8887867135"
                                 className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
                             >
                                 <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                (866) 841-7469
+                                (888) 786-7135
                             </Link>
                             <Link
                                 href="mailto:support@pinebookpublishing.com"

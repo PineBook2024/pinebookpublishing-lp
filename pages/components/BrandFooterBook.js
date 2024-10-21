@@ -178,13 +178,13 @@ export default function BrandFooterBook() {
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
                                 Contact Info
                             </h2>
-                            <Link
+                            {/* <Link
                                 href="tel:8668417469"
                                 className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
                             >
                                 <FontAwesomeIcon icon={faPhone} className="me-3" />
                                 (866) 841-7469
-                            </Link>
+                            </Link> */}
                             <Link
                                 href="tel:8887867135"
                                 className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
