@@ -2,6 +2,7 @@ import BrandNavbar from '../components/BrandNavbar'
 import BrandPrimaryHeader from '../components/BrandPrimaryHeader'
 import PostBody from '../components/posts/PostBody'
 import PostHeader from '../components/posts/PostHeader'
+import Head from "next/head";
 // import PreviewAlert from '../components/ui/PreviewAlert'
 import Skeleton from '../components/ui/Skeleton'
 import { client } from '../../lib/contentful/client' // Removed previewClient import
@@ -12,6 +13,15 @@ const Post = ({ post }) => {
 
   return (
     <>
+    <Head>
+        {/* <title>Blogs | Pine Book Publishing</title> */}
+        {/* <meta
+          name="description"
+          content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+        /> */}
+        <link rel="shortcut icon" href="/images/fav.png" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <BrandNavbar />
       <BrandPrimaryHeader
         subtitle="Enhance Your Book's Readability With"
