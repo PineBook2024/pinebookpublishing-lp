@@ -55,7 +55,7 @@ export default function BrandFooterBook() {
                                         className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                        (866) 841-7469
+                                        (888) 786-7135
                                     </Link>
                                 </li>
                                 <li className="mt-3">
@@ -183,7 +183,7 @@ export default function BrandFooterBook() {
                                 className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
                             >
                                 <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                (866) 841-7469
+                                (888) 786-7135
                             </Link> */}
                             <Link
                                 href="tel:8887867135"

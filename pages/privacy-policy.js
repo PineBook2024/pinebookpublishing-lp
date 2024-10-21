@@ -1,4 +1,6 @@
 import BrandFooter from "./components/BrandFooter";
+import BrandNavbar from "./components/BrandNavbar";
+import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import Footer from "./components/Footer";
 import PrimaryHeader from "./components/PrimaryHeader";
 import Header from "./components/header";
@@ -16,10 +18,13 @@ export default function Privacy() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
-            <PrimaryHeader
+            <BrandNavbar />
+            <BrandPrimaryHeader
+                // subtitle="Enhance Your Book's Readability With"
                 title="Privacy Policy"
+                // desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
             />
-            <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-64 md:pt-96 mb-20 width-container">
+            <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-10 md:pt-24 mb-20 width-container">
                 <p>
                     The categories of personal information we gather, how we use it, and who we might share it with are described in this privacy statement. It also explains your options for how your data will be used, the security measures in place to safeguard your information, how to fix informational errors, the confidentiality of the services, and the validity of the content.
                 </p>

@@ -91,7 +91,7 @@ export default function BrandMainContact() {
                         <h4 className="text-white leading-20 font-bold text-xl md:text-xl font-poppins text-start uppercase">
                             PHONE NO:
                         </h4>
-                        <p className="text-white mb-5"><Link href="tel:(866) 841-7469">(866) 841-7469</Link></p>
+                        <p className="text-white mb-5"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></p>
                         <h4 className="text-white leading-20 font-bold text-xl md:text-xl font-poppins text-start uppercase">
                             EMAIL ADDRESS:
                         </h4>

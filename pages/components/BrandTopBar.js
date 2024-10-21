@@ -13,11 +13,11 @@ export default function BrandTopBar() {
                 {/* <h3 className="text-white font-poppins text-md md:text-xl font-thin"><b>From Manuscript to Marketplace: We Make It Happen for YOU.</b></h3> */}
                 <div className="max-w-screen-xl flex md:flex-row flex-col justify-center md:justify-end gap-0 lg:gap-6 mx-auto items-center">
                     <Link
-                        href="tel:8668417469"
+                        href="tel:8887867135"
                         className="text-white text-sm hover:text-white font-poppins flex justify-center items-center font-bold"
                     >
                         <FontAwesomeIcon icon={faPhone} className="me-3" width={16} />
-                        (866) 841-7469
+                        (888) 786-7135
                     </Link>
                     <Link
                         href="mailto:support@pinebookpublishing.com"

@@ -646,7 +646,7 @@ export default function Lp() {
                                         className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
                                     >
                                         <FontAwesomeIcon icon={faPhone} className="me-3" color="#1e8677" />
-                                        (866) 841-7469
+                                        (888) 786-7135
                                     </Link>
                                 </li>
                                 <li className="mt-8">

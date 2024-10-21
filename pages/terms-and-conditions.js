@@ -4,6 +4,8 @@ import Header from "./components/header";
 import Link from "next/link";
 import Head from "next/head";
 import BrandFooter from "./components/BrandFooter";
+import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
+import BrandNavbar from "./components/BrandNavbar";
 
 export default function Privacy() {
 
@@ -17,10 +19,14 @@ export default function Privacy() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
-            <PrimaryHeader
-                title="Terms and Conditions"
+           
+             <BrandNavbar />
+            <BrandPrimaryHeader
+                // subtitle="Enhance Your Book's Readability With"
+               title="Terms and Conditions"
+                // desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
             />
-            <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-64 md:pt-96 mb-20 width-container">
+            <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-10 md:pt-24 mb-20 width-container">
                 {/* <h1 className="font-poppins">Terms and Conditions</h1> */}
                 <h2 className="font-poppins">Acceptance of Terms</h2>
                 <p>
@@ -78,7 +84,7 @@ export default function Privacy() {
                     By subscribing to text marketing notifications, users agree to receive recurring marketing messages and shopping cart reminder messages. To unsubscribe, users can reply "STOP" at any time. Message and data rates may apply, and message frequency varies.
                 </p>
 
-                <p>For Help: (866) 841-7469 or support@pinebookpublishing.com </p>
+                <p>For Help: (888) 786-7135 or support@pinebookpublishing.com </p>
                 <p>To unsubscribe from the program, reply "STOP" at any time.</p>
 
                 <p><b>*Message and data rates may apply.</b></p>

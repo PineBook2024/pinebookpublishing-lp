@@ -33,7 +33,7 @@ export default function Footer() {
                   className="text-white text-md hover:text-white flex justify-center md:justify-start"
                 >
                   <FontAwesomeIcon icon={faPhone} className="me-3" />
-                  (866) 841-7469
+                  (888) 786-7135
                 </Link>
               </li>
               <li className="mt-3">

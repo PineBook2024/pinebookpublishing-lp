@@ -1049,7 +1049,7 @@ export default function PublishingLpNew() {
                                             href="tel:8668417469"
                                             className="text-white text-md hover:text-white flex justify-center md:justify-start"
                                         >
-                                            (866) 841-7469
+                                            (888) 786-7135
                                         </Link>
                                     </p>
                                 </div>
