@@ -40,7 +40,7 @@ const Post = ({ post, recentPosts }) => {
           </article>
 
           {/* Recent Posts Column */}
-          <aside className='w-full lg:w-1/3 lg:pl-8'>
+          {/* <aside className='w-full lg:w-1/3 lg:pl-8'>
             <div className='bg-gray-100 p-6 rounded-lg'>
               <h3 className='text-xl font-semibold mb-4'>Recent Blogs</h3>
               <hr className='mb-3'></hr>
@@ -66,7 +66,7 @@ const Post = ({ post, recentPosts }) => {
                 ))}
               </ul>
             </div>
-          </aside>
+          </aside> */}
         </div>
       </section>
       <BrandFooter />
@@ -84,12 +84,12 @@ export const getStaticProps = async ({ params }) => {
   })
 
   // Fetch recent posts
-  const recentPostsResponse = await client.getEntries({
-    content_type: 'post',
-    select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt', // Adjusted to include coverImage
-    limit: 5, // Adjust the number of recent blogs shown
-    order: '-sys.createdAt' // Sorting by the most recent
-  })
+  // const recentPostsResponse = await client.getEntries({
+  //   content_type: 'post',
+  //   select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt', // Adjusted to include coverImage
+  //   limit: 5, // Adjust the number of recent blogs shown
+  //   order: '-sys.createdAt' // Sorting by the most recent
+  // })
 
   if (!postResponse?.items?.length) {
     return {
