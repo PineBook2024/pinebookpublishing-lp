@@ -109,16 +109,16 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export const getStaticPaths = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
-  const paths = response.items.map(item => ({
-    params: { slug: item.fields.slug }
-  }))
+// export const getStaticPaths = async () => {
+//   const response = await client.getEntries({ content_type: 'post' })
+//   const paths = response.items.map(item => ({
+//     params: { slug: item.fields.slug }
+//   }))
 
-  return {
-    paths,
-    fallback: true
-  }
-}
+//   return {
+//     paths,
+//     fallback: true
+//   }
+// }
 
 export default Post
