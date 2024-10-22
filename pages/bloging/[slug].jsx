@@ -74,27 +74,19 @@ const Post = ({ post, recentPosts }) => {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
-  const { slug } = params
+export const getStaticProps = async ({ params, preview = false }) => {
+  const cfClient = preview ? previewClient : client
 
-  // Fetch current post
-  const postResponse = await client.getEntries({
+  const { slug } = params
+  const response = await cfClient.getEntries({
     content_type: 'post',
     'fields.slug': slug
   })
 
-  // Fetch recent posts
-  // const recentPostsResponse = await client.getEntries({
-  //   content_type: 'post',
-  //   select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt', // Adjusted to include coverImage
-  //   limit: 5, // Adjust the number of recent blogs shown
-  //   order: '-sys.createdAt' // Sorting by the most recent
-  // })
-
-  if (!postResponse?.items?.length) {
+  if (!response?.items?.length) {
     return {
       redirect: {
-        destination: '/blog',
+        destination: '/bloging',
         permanent: false
       }
     }
@@ -102,23 +94,23 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: postResponse?.items?.[0],
-      recentPosts: recentPostsResponse.items,
+      post: response?.items?.[0],
+      preview,
       revalidate: 60
     }
   }
 }
 
-// export const getStaticPaths = async () => {
-//   const response = await client.getEntries({ content_type: 'post' })
-//   const paths = response.items.map(item => ({
-//     params: { slug: item.fields.slug }
-//   }))
+export const getStaticPaths = async () => {
+  const response = await client.getEntries({ content_type: 'post' })
+  const paths = response.items.map(item => ({
+    params: { slug: item.fields.slug }
+  }))
 
-//   return {
-//     paths,
-//     fallback: true
-//   }
-// }
+  return {
+    paths,
+    fallback: true
+  }
+}
 
 export default Post
