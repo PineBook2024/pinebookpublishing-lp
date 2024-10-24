@@ -183,7 +183,14 @@ export default function BrandFooter() {
                                 className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
                             >
                                 <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                (888) 786-7135
+                                Sales: (888) 786-7135
+                            </Link>
+                            <Link
+                                href="tel:(866) 841-7469"
+                                className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
+                            >
+                                <FontAwesomeIcon icon={faPhone} className="me-3" />
+                                Support: (866) 841-7469
                             </Link>
                             <Link
                                 href="mailto:support@pinebookpublishing.com"

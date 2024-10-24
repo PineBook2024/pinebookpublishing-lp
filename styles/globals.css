@@ -3773,3 +3773,7 @@ a.close-chat:hover {
 .portfolio-book-publishing-offer-bg{
   background-color: #054F44;
 }
+
+.small-text{
+  font-size: 15px !important;
+}
