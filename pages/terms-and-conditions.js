@@ -84,7 +84,7 @@ export default function Privacy() {
                     By subscribing to text marketing notifications, users agree to receive recurring marketing messages and shopping cart reminder messages. To unsubscribe, users can reply "STOP" at any time. Message and data rates may apply, and message frequency varies.
                 </p>
 
-                <p>For Help: <Link href="tel:(888) 786-7135">(888) 786-7135</Link> or <Link href='mailto:support@pinebookpublishing.com'>support@pinebookpublishing.com </Link></p>
+                <p>For Help: <Link href="tel:(866) 841-7469">(866) 841-7469</Link> or <Link href='mailto:support@pinebookpublishing.com'>support@pinebookpublishing.com </Link></p>
                 <p>To unsubscribe from the program, reply "STOP" at any time.</p>
 
                 <p className="small-text"><b>*Message and data rates may apply.</b></p>
