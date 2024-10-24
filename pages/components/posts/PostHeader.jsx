@@ -8,7 +8,7 @@ const PostHeader = ({ post }) => {
 
   return (
     <>
-      <h2 className='text-3xl font-bold mb-10'>{title}</h2>
+      <h1 className='text-3xl font-bold mb-10'>{title}</h1>
       <div className='hidden md:flex md:justify-between md:items-center md:mb-10'>
         {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
         <DateComponent dateString={date} className='text-sm text-gray-400' />

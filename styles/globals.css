@@ -3777,3 +3777,17 @@ a.close-chat:hover {
 .small-text{
   font-size: 15px !important;
 }
+
+.prose h2{
+  font-size: 22px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h3{
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
