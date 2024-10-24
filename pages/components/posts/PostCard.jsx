@@ -10,7 +10,7 @@ export default function PostCard ({ post }) {
 
   return (
     <li className='rounded-md overflow-hidden shadow-md'>
-      <Link href={`/bloging/${slug}`} aria-label={title}>
+      <Link href={`/blog/${slug}`} aria-label={title}>
         <div className='mb-2'>
           <ContentfulImage
             alt={`Cover Image for ${title}`}

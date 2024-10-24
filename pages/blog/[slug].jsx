@@ -86,7 +86,7 @@ export const getStaticProps = async ({ params, preview = false }) => {
   if (!response?.items?.length) {
     return {
       redirect: {
-        destination: '/bloging',
+        destination: '/blog',
         permanent: false
       }
     }
