@@ -38,35 +38,38 @@ const Post = ({ post, recentPosts }) => {
               </>
             )}
           </article>
-
-          {/* Recent Posts Column */}
           <aside className='w-full lg:w-1/3 lg:pl-8'>
             <div className='bg-gray-100 p-6 rounded-lg'>
               <h3 className='text-xl font-semibold mb-4'>Recent Blogs</h3>
               <hr className='mb-3'></hr>
               <ul>
-                {recentPosts.map((recentPost) => (
-                  <li key={recentPost.sys.id} className='mb-4 '>
-                    <a href={`/blog/${recentPost.fields.slug}`} className='text-black hover:underline'>
-                      <div className='flex items-center'>
-                        <ContentfulImage
-                          alt={`Cover Image for ${recentPost.fields.title}`}
-                          src={recentPost.fields.coverImage.fields.file.url}
-                          width={recentPost.fields.coverImage.fields.file.details.image.width}
-                          height={recentPost.fields.coverImage.fields.file.details.image.height}
-                          className='w-24 h-16 object-cover mr-4 rounded-lg'
-                        />
-                        <h2 className='font-bold'>
-                          {recentPost.fields.title}
-                        </h2>
-                      </div>
-                      <p className='mt-3'>{recentPost.fields.excerpt}</p>
-                    </a>
-                  </li>
-                ))}
+                {recentPosts && recentPosts.length > 0 ? (
+                  recentPosts.map((recentPost) => (
+                    <li key={recentPost.sys.id} className='mb-4 '>
+                      <a href={`/blog/${recentPost.fields.slug}`} className='text-black hover:underline'>
+                        <div className='flex items-center'>
+                          <ContentfulImage
+                            alt={`Cover Image for ${recentPost.fields.title}`}
+                            src={recentPost.fields.coverImage.fields.file.url}
+                            width={recentPost.fields.coverImage.fields.file.details.image.width}
+                            height={recentPost.fields.coverImage.fields.file.details.image.height}
+                            className='w-24 h-16 object-cover mr-4 rounded-lg'
+                          />
+                          <h2 className='font-bold'>
+                            {recentPost.fields.title}
+                          </h2>
+                        </div>
+                        <p className='mt-3'>{recentPost.fields.excerpt}</p>
+                      </a>
+                    </li>
+                  ))
+                ) : (
+                  <p>No recent posts available.</p>
+                )}
               </ul>
             </div>
           </aside>
+
         </div>
       </section>
       <BrandFooter />
@@ -86,8 +89,8 @@ export const getStaticProps = async ({ params }) => {
   // Fetch recent posts
   const recentPostsResponse = await client.getEntries({
     content_type: 'post',
-    select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt', 
-    limit: 5, 
+    select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt',
+    limit: 5,
     order: '-sys.createdAt'
   })
 
