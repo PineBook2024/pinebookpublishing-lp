@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
+      <link rel="shortcut icon" href="/images/fav.png" />
       <Head />
       <body>
         <Main />

@@ -49,6 +49,8 @@ export default function App({ Component, pageProps }) {
         <meta property="og:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
         <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
         <meta property="og:url" content="https://pinebookpublishing.com/" />
+        <link rel="shortcut icon" href="/images/fav.png" />
+
 
 
         <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
