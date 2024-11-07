@@ -174,7 +174,7 @@ export default function BookFormatting() {
                         <p className="font-poppins text-xl	pt-3 text-gray-500">Currently, we are dealing with designing pens, but there is always room to discuss more ideas. So don't hesitate to message us and discuss your ideas.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-6.webp"} width={700} height={300}
+                        <Image src={"/brand-img/merchandise-img-6.png"} width={700} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -198,7 +198,7 @@ export default function BookFormatting() {
                 <p className="font-poppins text-xl	pt-3 text-gray-500 text-center mb-14">We have comprehensively designed our work process in easy steps to ensure a smooth customer experience.</p>
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-7.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-7.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -225,7 +225,7 @@ export default function BookFormatting() {
                             Once you choose your print-on-demand merchandise, it's time to skyrocket your creativity and develop the design idea you want to imprint. At this stage, you can also engage with our design experts to further polish your ideas.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-8.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-8.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -236,7 +236,7 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-9.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-9.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -263,7 +263,7 @@ export default function BookFormatting() {
                             At this stage, our experts welcome constructive criticism and scrutinize how the design could be improved. You are welcome to share your concerns and ideas to improve.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-10.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-10.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
@@ -276,7 +276,7 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-11.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-11.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
