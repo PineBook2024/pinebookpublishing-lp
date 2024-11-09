@@ -991,6 +991,10 @@ footer svg {
     right: -36px;
   }
 
+  .bk-sil3.next {
+    right: -36px;
+  }
+
   .connect-form-border {
     border-radius: 30px;
   }
@@ -1022,10 +1026,18 @@ footer svg {
   }
 
   .bk-sil2.next svg,
-  .bk-sil2.prev svg,
   .bk-sil.next svg,
   .bk-sil.prev svg {
     width: 24px;
+  }
+
+  .bk-sil3.prev svg,
+  .bk-sil3.next svg{
+    width: 15px !important;
+  }
+
+  .bk-sil2.prev svg{
+    width: 24px !important;
   }
 
   .bk-sil2.next,
@@ -1033,6 +1045,12 @@ footer svg {
   .bk-sil.next,
   .bk-sil.prev {
     width: 61px;
+  }
+
+  .bk-sil3.next,
+  .bk-sil3.prev{
+    width: 35px !important;
+    height: 35px !important;
   }
 
   .main-banner-vid p {
@@ -1257,6 +1275,12 @@ footer svg {
 
   .brand-footer .widget-2:before {
     display: none;
+  }
+  .portfoilio-slider4-icon.prev {
+    left: 4px !important;
+  }
+  .portfoilio-slider4-icon.next {
+    right: 4px !important;
   }
 }
 
@@ -1910,10 +1934,11 @@ footer svg {
   position: relative;
   background-color: #e8e4e4;
   border-radius: 4px;
-  margin: 12px;
+  /* margin: 12px; */
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
+  height: 486px;
 }
 
 .brand-testimonials-card:before {
@@ -3830,4 +3855,84 @@ a.close-chat:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
+}
+
+.bk-sil3.next {
+  margin-top: 0px;
+  position: absolute;
+  top: 43%;
+  right: -36px;
+  width: 45px;
+  height: 35px;
+  transform: translateY(-50%);
+  background: #0d0f38;
+  border: none;
+  padding: 10px 7px;
+  color: #fff;
+  border-radius: 10px;
+  width: 3.5%;
+  font-size: 24px;
+  line-height: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+
+.bk-sil3.prev {
+  margin-top: 0px;
+  position: absolute;
+  top: 43%;
+  right: -36px;
+  width: 45px;
+  height: 35px;
+  transform: translateY(-50%);
+  background: #0d0f38;
+  border: none;
+  padding: 10px 7px;
+  color: #fff;
+  border-radius: 10px;
+  width: 3.5%;
+  font-size: 24px;
+  line-height: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+
+.portfoilio-slider4-icon.next {
+  position: absolute;
+  top: 50%;
+  right: -45px;
+  z-index: 99999;
+  border-radius: 51px ;
+  background-color: #fff ;
+  box-shadow: -4px 2px 43px 0px rgba(0, 0, 0, 0.75);
+  height: auto;
+  cursor: pointer;
+}
+
+
+.portfoilio-slider4-icon.prev {
+  position: absolute;
+  top: 50% ;
+  right: -22px ;
+  z-index: 99999;
+  border-radius: 51px ;
+  background-color: #fff ;
+  box-shadow: -4px 2px 43px 0px rgba(0, 0, 0, 0.75);
+  height: auto ;
+  cursor: pointer;
+  left: -49px;
+}
+
+.bk-sil3.next:hover {
+  scale: 0.9;
+  transition: 0.4s ease-in-out;
+}
+
+.bk-sil3.prev:hover {
+  scale: 0.9;
+  transition: 0.4s ease-in-out;
 }

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import BrandTopBar from "./components/BrandTopBar";
 import BrandFooter from "./components/BrandFooter";
 import BrandAbout from "./components/BrandAbout";
@@ -15,8 +16,72 @@ import BrandContact from "./components/BrandContactForm";
 import BrandLogo from "./components/BrandLogo";
 import BrandProcess from "./components/BrandProcess";
 import BrandBannerVideo from "./components/BrandBannerVideo";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/effect-coverflow";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css";
+import "swiper/css/navigation";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Navigation, Pagination } from "swiper";
+
+const videoClient = [
+    {
+        id: 1,
+        src: "https://www.youtube.com/embed/xUTyiqPY6Oo",
+        type: "video/mp4",
+        BookTitle: "Love And Laughter",
+        Consultant: "Damon Peters",
+        ProjectManager: "Amara Johnson & Ryan Peters",
+        clientname: "Lesvi Ferrel"
+    },
+
+    {
+        id: 2,
+        src: "https://www.youtube.com/embed/QMirTma0Wf4",
+        type: "video/mp4",
+        BookTitle: "Rising 2 B’Come",
+        Consultant: "Damon Peters",
+        ProjectManager: "Amara Johnson & Melissa",
+        clientname: "Stacey L. Joiner"
+    },
+    {
+        id: 3,
+        src: "https://www.youtube.com/embed/Tv3_r0EMVH4",
+        type: "video/mp4",
+        BookTitle: "Stewart, BC History",
+        Consultant: "Damon Peters",
+        ProjectManager: "Amara Johnson & Ryan Peters",
+        clientname: "Robert A. Eckess"
+    },
+    {
+        id: 4,
+        src: "https://www.youtube.com/embed/fX2J8iMy4z4",
+        type: "video/mp4",
+        BookTitle: "Free Yourself From Pain",
+        Consultant: "Damon Peters",
+        ProjectManager: "Ryan Peters",
+        clientname: "Lesvi Ferrel"
+    },
+    {
+        id: 5,
+        src: "https://www.youtube.com/embed/gWW43Tfa8gA",
+        type: "video/mp4",
+        BookTitle: "The 2023 Elections in Nigeria: Actors, Intrigues, and Winners",
+        Consultant: "Damon Peters",
+        ProjectManager: "Lia Sinclair & Ryan Peters",
+        clientname: "Edward Agbai"
+    },
+]
+
 
 export default function Home() {
+    const swiperRef2 = useRef(null);
     return (
         <>
             <Head>
@@ -62,6 +127,70 @@ export default function Home() {
             <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
+            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative'>
+                <div className="container mx-auto text-center m1-h mb-10">
+                    <h3 className="mb-4 text-white text-2xl md:text-4xl font-poppins  font-bold">
+                        VIDEOS TESTIMONIALS
+                    </h3>
+                    {/* <p className="text-black">
+                        Explore our Success Stories to see how Pine Book Publishing has
+                        empowered authors <br></br> in their self-publishing journey and stands out
+                        among self-book publishers.
+                    </p> */}
+                </div>
+                {/* Custom Previous Button */}
+                <div
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon prev cursor-pointer"
+                    onClick={() => swiperRef2.current?.slidePrev()}
+                >
+                    <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                </div>
+                {/* Swiper Slider */}
+                <Swiper
+                    spaceBetween={30}
+                    slidesPerView={3}
+                    loop={true}
+                    onSwiper={(swiper) => (swiperRef2.current = swiper)}
+                    className="mySwiper"
+                    breakpoints={{
+                        "@0.00": {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        "@1.00": {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
+                    }}
+                >
+                    <div className='testimonials-wrap grid grid-cols-1 md:grid-cols-3 gap-10'>
+                        {videoClient.map((videoClient) => (
+                            <SwiperSlide>
+                                <Link href={videoClient.src} className="glightbox block">
+                                    <div className='' key={videoClient.id}>
+                                        <h2 className="font-bold text-xl text-black" >{videoClient.clientname}</h2>
+                                        <iframe className='py-4 client-testi-video' height={225} width={415} src={videoClient.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <h4 className='text-black'> <span className='font-bold leading-normal'>Book Title:</span> {videoClient.BookTitle}</h4>
+                                        <h4 className='text-black'><span className='font-bold leading-normal '>Consultant:</span> {videoClient.Consultant}</h4>
+                                        <h4 className='text-black'><span className='font-bold leading-normal '>Project Manager: </span>{videoClient.ProjectManager}</h4>
+                                    </div>
+                                </Link>
+                            </SwiperSlide>
+                        ))}
+                    </div>
+                </Swiper>
+                {/* Custom Next Button */}
+                <div
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon next cursor-pointer"
+                    onClick={() => swiperRef2.current?.slideNext()}
+                >
+                    <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+                </div>
+                <div className="text-center mt-14">
+                    <Link href="/testimonials" className="brand-about-btn font-poppins">VIEW MORE TESTIMONIALS</Link>
+                </div>
+            </section>
+
             <BrandFaqs />
             <BrandContact />
             <BrandLogo />

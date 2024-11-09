@@ -144,7 +144,7 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
-                        <Image src={"/brand-img/merchandise-img-5.webp"} width={470} height={300}
+                        <Image src={"/brand-img/merchandise-img-5.png"} width={470} height={300}
                             loading="lazy"
                             alt="about img"
                             className="aos-init aos-animate"
