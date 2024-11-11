@@ -125,7 +125,7 @@ import "swiper/css/autoplay";
 import "swiper/css";
 import "swiper/css/navigation";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 
 export default function BrandTestimonial() {
     const swiperRef2 = useRef(null);
@@ -147,6 +147,7 @@ export default function BrandTestimonial() {
                     spaceBetween={30}
                     slidesPerView={3}
                     loop={true}
+                    autoplay={true}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     className="mySwiper"
                     breakpoints={{

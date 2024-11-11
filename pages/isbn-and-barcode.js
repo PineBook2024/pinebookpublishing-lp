@@ -33,7 +33,7 @@ export default function ISBN() {
                 <title>ISBN and Barcode Generation | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Need ISBN and Barcode for your book? Pine Book Publishing got you covered. Get the ISBN for your book right now in an affordable price with us."
+                    content="Need ISBN and Barcode for your book? Pine Book Publishing got you covered. Get the ISBN for your book right now at an affordable price with us."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
 

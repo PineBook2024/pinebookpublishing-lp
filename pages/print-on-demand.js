@@ -29,10 +29,10 @@ export default function PrintDemand() {
     return (
         <>
             <Head>
-                <title>Print On Demand Services | Pine Book Publishing</title>
+                <title>Expert Print On-Demand Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Want a physical copy of your book? Pine Book Publishing's print on demand services is all you need. We deliver the quality with speed. "
+                    content=" Want a physical copy of your book? Pine Book Publishing's Expert Print On-Demand Services is all you need. We deliver the quality with speed."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

@@ -76,7 +76,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                 <title>Affordable Book Publishing Packages | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Looking to get your book published in an afforadable cost? Our packages are designed to help your publish your book with breaking the bank."
+                    content="Looking to get your book published at an affordable cost? Our packages are designed to help you publish your book with breaking the bank."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

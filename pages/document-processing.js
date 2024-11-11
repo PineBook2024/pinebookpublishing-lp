@@ -32,7 +32,7 @@ export default function DocumentProcessing() {
                 <title>Document Processing Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Transform your business with our premium document processing services. From printing to seamless envelope insertion, we've got your needs covered."
+                    content="Use our document processing services to streamline your operations. For data extraction, digitization, indexing, and other tasks, we provide precise, effective, and safe solutions."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

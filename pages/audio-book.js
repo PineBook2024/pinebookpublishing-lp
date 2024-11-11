@@ -30,10 +30,10 @@ export default function AudioBook() {
     return (
         <>
             <Head>
-                <title>Audiobook Production and Publishing | Pine Book Publishing</title>
+                <title>Audiobook production company | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Transform your book into an audiobook with our professional audiobook production and publishing services. High quality and fast delivery. Contact us today!"
+                    content="One of the leading audiobook publishers in the United States is pINE Publishers. Our audiobook production company is hassle-free and reasonably priced."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
 

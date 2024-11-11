@@ -22,7 +22,7 @@ export default function BrandNavbar() {
         { name: 'Print On Demand', href: '/print-on-demand', icon: '/brand-img/Printing Icon.png', image: '/brand-img/Print on Demand.jpg', desc: 'Streamline your book printing process with our expert Print-On-Demand Services' },
         { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/Document Processing-icon.png', image: '/brand-img/service-img6.webp', desc: 'Simplify your workflows with expert document processing.' },
         { name: 'ISBN & Barcode', href: '/isbn-and-barcode', icon: '/brand-img/ISBN Barcode.png', image: '/brand-img/service-img6.webp', desc: "Secure your book's identity with our ISBN registration services." },
-        { name: 'Merchandising', href: '/merchandising', icon: '/brand-img/ISBN Barcode.png', image: '/brand-img/service-img6.webp', desc: "Make your personal and business accessories standout with custom merchandizing services." },
+        { name: 'Merchandising', href: '/merchandising', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Make your personal and business accessories standout with custom merchandizing services." },
     ];
 
     // Function to handle the service dropdown toggle

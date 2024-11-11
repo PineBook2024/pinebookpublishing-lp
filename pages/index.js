@@ -85,10 +85,10 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Premier Book Publishing Company | Pine Book Publishing</title>
+                <title>Best Book Publishing company | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!"
+                    content="A Best Book Publishing company dedicated to turning your writing dreams into reality. We make it happen for you, from text to market!"
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />

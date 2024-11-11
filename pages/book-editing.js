@@ -36,10 +36,10 @@ export default function BookEditing() {
     return (
         <>
             <Head>
-                <title>Expert Book Editing Services | Pine Book Publishing</title>
+                <title>Professional book editing services| Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Get expert Book Editing Services at affordable prices. Our experienced editors will polish your manuscript, ensuring accuracy and enhancing readability."
+                    content="What are some strategies for making the most of your book? by using our professional book editing services to edit it perfectly. The top book editors are available for hiring here."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

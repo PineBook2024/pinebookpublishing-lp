@@ -36,10 +36,10 @@ export default function BookPublishing() {
     return (
         <>
             <Head>
-                <title>Expert Book Publishing Services | Pine Book Publishing</title>
+                <title>Book Publishing Services | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Discover the art of book publishing with our Expert Book Publishing Services. Our expert team guides you through the process, from editing to distribution."
+                    content="Use our book publishing services to learn about the art of book publishing. From editing to distribution, our team of specialists walks you through the entire process."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>

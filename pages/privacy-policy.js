@@ -14,7 +14,7 @@ export default function Privacy() {
                 <title>Privacy Policy | Pine Book Publishing</title>
                 <meta
                     name="description"
-                    content="Privacy is our top priority at Pine Book Publishing. Check out our privacy policy to find out how we manage, protect, and respect your personal information."
+                    content=" Privacy is our top priority at Pine Book Publishing. Check out our privacy policy to find out how we manage, protect, and respect your personal information."
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
             </Head>
