@@ -1,18 +1,23 @@
 import crypto from 'crypto';
 
 export default async function handler(req, res) {
-  // Verify that the request came from Contentful using the signing secret
+  // Ensure the request method is POST
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method Not Allowed' });
+  }
+
   const contentfulSignature = req.headers['x-contentful-signature'];
   const expectedSignature = crypto
     .createHmac('sha256', process.env.CONTENTFUL_SIGNING_SECRET)
     .update(JSON.stringify(req.body))
     .digest('hex');
 
+  // Verify the Contentful signature
   if (contentfulSignature !== expectedSignature) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  // Check if the secret token matches the API_ROUTE_SECRET environment variable
+  // Verify the secret token
   if (req.query.secret !== process.env.API_ROUTE_SECRET) {
     return res.status(401).json({ message: 'Invalid token' });
   }
