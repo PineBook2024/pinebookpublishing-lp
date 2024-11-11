@@ -38,7 +38,7 @@ const Post = ({ post, recentPosts }) => {
               </>
             )}
           </article>
-          {/* <aside className='w-full lg:w-1/3 lg:pl-8'>
+          <aside className='w-full lg:w-1/3 lg:pl-8'>
             <div className='bg-gray-100 p-6 rounded-lg'>
               <h3 className='text-xl font-semibold mb-4'>Recent Blogs</h3>
               <hr className='mb-3'></hr>
@@ -68,7 +68,7 @@ const Post = ({ post, recentPosts }) => {
                 )}
               </ul>
             </div>
-          </aside> */}
+          </aside>
 
         </div>
       </section>
@@ -77,61 +77,24 @@ const Post = ({ post, recentPosts }) => {
   )
 }
 
-// export const getStaticProps = async ({ params }) => {
-//   const { slug } = params
-
-//   // Fetch current post
-//   const postResponse = await client.getEntries({
-//     content_type: 'post',
-//     'fields.slug': slug
-//   })
-
-//   // Fetch recent posts
-//   const recentPostsResponse = await client.getEntries({
-//     content_type: 'post',
-//     select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt',
-//     limit: 5,
-//     order: '-sys.createdAt'
-//   })
-
-//   if (!postResponse?.items?.length) {
-//     return {
-//       redirect: {
-//         destination: '/blog',
-//         permanent: false
-//       }
-//     }
-//   }
-
-//   return {
-//     props: {
-//       post: postResponse?.items?.[0],
-//       recentPosts: recentPostsResponse.items,
-//       revalidate: 60
-//     }
-//   }
-// }
-
-// export const getStaticPaths = async () => {
-//   const response = await client.getEntries({ content_type: 'post' })
-//   const paths = response.items.map(item => ({
-//     params: { slug: item.fields.slug }
-//   }))
-
-//   return {
-//     paths,
-//     fallback: true
-//   }
-// }
-
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
-  const response = await client.getEntries({
+
+  // Fetch current post
+  const postResponse = await client.getEntries({
     content_type: 'post',
     'fields.slug': slug
   })
 
-  if (!response?.items?.length) {
+  // Fetch recent posts
+  const recentPostsResponse = await client.getEntries({
+    content_type: 'post',
+    select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt',
+    limit: 5,
+    order: '-sys.createdAt'
+  })
+
+  if (!postResponse?.items?.length) {
     return {
       redirect: {
         destination: '/blog',
@@ -142,7 +105,8 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: response?.items?.[0],
+      post: postResponse?.items?.[0],
+      recentPosts: recentPostsResponse.items,
       revalidate: 60
     }
   }
