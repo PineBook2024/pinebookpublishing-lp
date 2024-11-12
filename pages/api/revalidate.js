@@ -2,9 +2,9 @@ import crypto from 'crypto';
 
 export default async function handler(req, res) {
   // Ensure the request method is POST
-//   if (req.method !== 'POST') {
-//     return res.status(405).json({ message: 'Method Not Allowed' });
-//   }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method Not Allowed' });
+  }
 
   const contentfulSignature = req.headers['x-contentful-signature'];
   const expectedSignature = crypto
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
   try {
     // Revalidate the blog posts page
-    await res.revalidate('/posts');
+    await res.revalidate('/blog');
     return res.json({ revalidated: true });
   } catch (err) {
     return res.status(500).send('Error revalidating');
