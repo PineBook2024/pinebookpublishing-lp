@@ -2,9 +2,9 @@ import crypto from 'crypto';
 
 export default async function handler(req, res) {
   // Ensure the request method is POST
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
+//   if (req.method !== 'POST') {
+//     return res.status(405).json({ message: 'Method Not Allowed' });
+//   }
 
   const contentfulSignature = req.headers['x-contentful-signature'];
   const expectedSignature = crypto
@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     .update(JSON.stringify(req.body))
     .digest('hex');
 
-  // Verify the Contentful signature
   if (contentfulSignature !== expectedSignature) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
