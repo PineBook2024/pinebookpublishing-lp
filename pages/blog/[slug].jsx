@@ -105,7 +105,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: postResponse?.items?.[0],
+      post: postResponse.items[0],
       recentPosts: recentPostsResponse.items,
     },
     revalidate: 60
