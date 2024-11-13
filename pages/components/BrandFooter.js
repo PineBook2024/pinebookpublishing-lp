@@ -317,6 +317,7 @@ export default function BrandFooter() {
                         fontSize: '16px',
                         boxShadow: '0 0px 5px #191b42',
                         border: '1px solid #288e7f',
+                        zIndex: 9999999999,
                     }}>
                         <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
                     </button>
