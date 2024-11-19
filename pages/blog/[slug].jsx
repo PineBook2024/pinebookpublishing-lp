@@ -13,6 +13,7 @@ import BrandFooter from '../components/BrandFooter';
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
 
+
   return (
     <>
       <Head>
