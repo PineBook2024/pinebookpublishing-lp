@@ -50,9 +50,6 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
         <meta property="og:url" content="https://pinebookpublishing.com/" />
         <link rel="shortcut icon" href="/images/fav.png" />
-
-
-
         <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
         <meta name="twitter:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
         <meta name="twitter:site" content="@pinebookwriting" />
@@ -142,7 +139,7 @@ export default function App({ Component, pageProps }) {
                   "position": 4,
                   "name": "Book Publishing Packages",
                   "item": "https://pinebookpublishing.com/packages"
-                },
+                },    
                 {
                   "@type": "ListItem",
                   "position": 5,
@@ -166,18 +163,7 @@ export default function App({ Component, pageProps }) {
           src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
           strategy="afterInteractive"
         />
-        {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
-        {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script>
-
-        {/* LiveAgent integration script */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,'https://pinebookpublishing.ladesk.com/scripts/track.js',function(e){  });
-          `,
-          }}
-        /> */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
