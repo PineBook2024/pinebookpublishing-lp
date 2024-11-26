@@ -50,9 +50,6 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
         <meta property="og:url" content="https://pinebookpublishing.com/" />
         <link rel="shortcut icon" href="/images/fav.png" />
-
-
-
         <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
         <meta name="twitter:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
         <meta name="twitter:site" content="@pinebookwriting" />
@@ -142,7 +139,7 @@ export default function App({ Component, pageProps }) {
                   "position": 4,
                   "name": "Book Publishing Packages",
                   "item": "https://pinebookpublishing.com/packages"
-                },
+                },    
                 {
                   "@type": "ListItem",
                   "position": 5,
@@ -166,22 +163,11 @@ export default function App({ Component, pageProps }) {
           src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
           strategy="afterInteractive"
         />
-        {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
-        {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script>
-
-        {/* LiveAgent integration script */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.defer=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,'https://pinebookpublishing.ladesk.com/scripts/track.js',function(e){  });
-          `,
-          }}
-        /> */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/VN080H4L0Z6J.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("VN080H4L0Z6J");}();`,
+            !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/Q6J2RHM0VR6D.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("Q6J2RHM0VR6D");}();`,
           }}
         />
         <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
@@ -199,6 +185,16 @@ export default function App({ Component, pageProps }) {
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '1828587994272272');
               fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+              o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+              o.onload=function(){window.trackingFunctions.onLoad({appId:"673cfe53e44b8903edb82af7"})},
+              document.head.appendChild(o)}initApollo();
             `,
           }}
         />

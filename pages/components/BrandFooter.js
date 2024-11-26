@@ -43,7 +43,7 @@ export default function BrandFooter() {
                     <div className="flex-grow flex flex-wrap -mb-10 md:mt-0 mt-10 md:text-left text-center justify-evenly py-10">
                         <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-2 relative">
                             <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                                <Image src={"/brand-img/logo.png"} width={250} height={200}></Image>
+                                <Image src={"/brand-img/PBP Christmas (white).gif"} width={250} height={200}></Image>
                             </a>
                             <p className="mt-2 text-sm text-white leading-7 px-4">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
@@ -317,6 +317,7 @@ export default function BrandFooter() {
                         fontSize: '16px',
                         boxShadow: '0 0px 5px #191b42',
                         border: '1px solid #288e7f',
+                        zIndex: 9999999999,
                     }}>
                         <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
                     </button>
