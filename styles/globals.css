@@ -1301,6 +1301,12 @@ footer svg {
   .tablet-margin-banner {
     margin: 0px !important;
   }
+  .christmas-banner-img{
+    display: none;
+  }
+  #navbar ul li a{
+    font-size: 9px;
+  }
 }
 
 
