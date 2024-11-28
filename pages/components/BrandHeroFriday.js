@@ -114,7 +114,7 @@ export default function BrandHeroFriday() {
         <>
             {/* Snowfall Background */}
             <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
-                <SnowFall />
+                {/* <SnowFall /> */}
                 <div className="container px-4 pt-20 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10">
                     <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
                         <div className="mb-4">
