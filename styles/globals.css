@@ -924,6 +924,9 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .hide-btn-responsive{
+    display: none !important;
+  }
   .portfoilio-slider-icon.prev {
     left: 5px !important;
   }
