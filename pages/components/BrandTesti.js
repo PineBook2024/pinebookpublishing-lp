@@ -162,11 +162,6 @@ const BrandTesti = () => {
                 </div>
             </section>
         </div>
-
-
-
-
-
     )
 }
 
