@@ -128,12 +128,13 @@ export default function HeroFormBookOffer() {
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
     }
-    const combinedPhoneNumber = `+${countryCodeValue} ${phone}`;
+    // const combinedPhoneNumber = `+${countryCodeValue} ${phone}`;
 
     const response = await submitMainContactForm(
       firstName,
       email,
-      combinedPhoneNumber, // Send combined phone number
+      // combinedPhoneNumber, 
+      phone,
       category,
       message
     );
@@ -234,7 +235,16 @@ export default function HeroFormBookOffer() {
                       />
                     </div>
                     <div className="relative w-full">
-                      <div className='tel-box'>
+                      <input
+                        type="text"
+                        onChange={handleChange}
+                        value={phone}
+                        name="phone"
+                        required
+                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                        placeholder="Enter your Phone"
+                      />
+                      {/* <div className='tel-box'>
                         <div className='select-box'>
                           <img src={flagImg} alt="country-flag" className='flag-img' />
                           <select
@@ -510,13 +520,6 @@ export default function HeroFormBookOffer() {
                           />
                         </div>
 
-                      </div>
-                      {/* <div className='output'>
-                        <h2>Phone no:</h2>
-                        <span className='result'>
-                          +{countryCodeValue}
-                          {phone}
-                        </span>
                       </div> */}
                     </div>
                     <div className="relative w-full">
