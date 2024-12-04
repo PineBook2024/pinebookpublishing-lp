@@ -13,7 +13,7 @@ const useHubspotForm = () => {
   const contactFormId2 = "a40c0b5c-b497-4985-b99a-dc77af456cba";
   const contactFormId3 = "ae3485db-9fd9-441d-9496-80c448617faa";
 
-  const submitMainContactForm = async (full_name, email, phoneNumber, message) => {
+  const submitMainContactForm = async (full_name, email, phoneNumber, service, message) => {
     try {
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId}`,
@@ -36,6 +36,10 @@ const useHubspotForm = () => {
               {
                 name: "phone",
                 value: phoneNumber,
+              },
+              {
+                name: "service",
+                value: service,
               },
               {
                 name: "message",
