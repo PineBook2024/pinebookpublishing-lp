@@ -89,13 +89,13 @@ section.main-banner-vid h2 span,
 
 .main-banner-vid {
   background: #0000009e;
-  height: 100vh;
+  height: 115vh;
 }
 
 video#vide {
   position: absolute;
   z-index: -1;
-  height: 100vh;
+  height: 115vh;
   width: 100%;
   object-fit: cover;
 
