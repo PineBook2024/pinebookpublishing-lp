@@ -476,7 +476,16 @@ export default function HeroFormBookOffer() {
                       />
                     </div>
                     <div className="relative w-full">
-                      <div className='tel-box'>
+                    <input
+                        type="text"
+                        onChange={handleChange}
+                        value={phone}
+                        name="phone"
+                        required
+                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                        placeholder="Enter your Phone"
+                      />
+                      {/* <div className='tel-box'> */}
                         {/* <div className='select-box'>
                           <img src={flagImg} alt="country-flag" className='flag-img' />
                           <select
@@ -739,7 +748,8 @@ export default function HeroFormBookOffer() {
                             <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                           </select>
                         </div> */}
-                        <div className="country-input-wrapper">
+                        {/* new code */}
+                        {/* <div className="country-input-wrapper">
                           <div className="select-box">
                             {loading ? (
                               <p>Loading...</p>
@@ -776,9 +786,9 @@ export default function HeroFormBookOffer() {
                               value={phone}
                             />
                           </div>
-                        </div>
+                        </div> */}
 
-                      </div>
+                      {/* </div> */}
                     </div>
                     <div className="relative w-full">
                       <input
