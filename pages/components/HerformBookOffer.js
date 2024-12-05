@@ -223,7 +223,7 @@ const countryCodes = [
 
 export default function HeroFormBookOffer() {
   const router = useRouter();
-  const { submitMainContactForm } = useHubspotForm();
+  const { submitMainContactFormLP } = useHubspotForm();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
@@ -372,7 +372,7 @@ export default function HeroFormBookOffer() {
     }
     const combinedPhoneNumber = `+${countryCodeValue} ${phone}`;
 
-    const response = await submitMainContactForm(
+    const response = await submitMainContactFormLP(
       firstName,
       email,
       combinedPhoneNumber, // Send combined phone number
