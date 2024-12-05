@@ -4148,12 +4148,12 @@ a.close-chat:hover {
   height: 40px;
 } */
 .select-box{
-  width: 47px;
+  width: 50px;
   height: 39px;
   position: absolute;
   z-index: 9;
   top: 5px;
-  left: 7px;
+  left: 6px;
 }
 .flag-img{
   width: 43px;
@@ -4214,8 +4214,8 @@ a.close-chat:hover {
 }
 .country-input-wrapper span{
   position: absolute;
-  top: 9px;
-  left: 72px;
+  top: 5px;
+  left: 83px;
   color: #706e6e;
   font-size: 0.875rem;
 }

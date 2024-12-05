@@ -6,8 +6,219 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import FadeIn from "./FadeIn";
-// import 'react-phone-number-input/style.css';
-// import PhoneInput from 'react-phone-number-input';
+
+const countryCodes = [
+  { name: "United States", code: "1", countryCode: "US", flag: "https://flagcdn.com/us.svg" },
+  { name: "United Kingdom", code: "44", countryCode: "GB", flag: "https://flagcdn.com/gb.svg" },
+  { name: "Canada", code: "1", countryCode: "CA", flag: "https://flagcdn.com/ca.svg" },
+  { name: "Afghanistan", code: "93", countryCode: "AF", flag: "https://flagcdn.com/af.svg" },
+  { name: "Albania", code: "355", countryCode: "AL", flag: "https://flagcdn.com/al.svg" },
+  { name: "Algeria", code: "213", countryCode: "DZ", flag: "https://flagcdn.com/dz.svg" },
+  { name: "American Samoa", code: "1684", countryCode: "AS", flag: "https://flagcdn.com/as.svg" },
+  { name: "Andorra", code: "376", countryCode: "AD", flag: "https://flagcdn.com/ad.svg" },
+  { name: "Angola", code: "244", countryCode: "AO", flag: "https://flagcdn.com/ao.svg" },
+  { name: "Anguilla", code: "1264", countryCode: "AI", flag: "https://flagcdn.com/ai.svg" },
+  { name: "Antarctica", code: "672", countryCode: "AQ", flag: "https://flagcdn.com/aq.svg" },
+  { name: "Antigua & Barbuda", code: "1268", countryCode: "AG", flag: "https://flagcdn.com/ag.svg" },
+  { name: "Argentina", code: "54", countryCode: "AR", flag: "https://flagcdn.com/ar.svg" },
+  { name: "Armenia", code: "374", countryCode: "AM", flag: "https://flagcdn.com/am.svg" },
+  { name: "Aruba", code: "297", countryCode: "AW", flag: "https://flagcdn.com/aw.svg" },
+  { name: "Australia", code: "61", countryCode: "AU", flag: "https://flagcdn.com/au.svg" },
+  { name: "Austria", code: "43", countryCode: "AT", flag: "https://flagcdn.com/at.svg" },
+  { name: "Azerbaijan", code: "994", countryCode: "AZ", flag: "https://flagcdn.com/az.svg" },
+  { name: "Bahamas", code: "1242", countryCode: "BS", flag: "https://flagcdn.com/bs.svg" },
+  { name: "Bahrain", code: "973", countryCode: "BH", flag: "https://flagcdn.com/bh.svg" },
+  { name: "Bangladesh", code: "880", countryCode: "BD", flag: "https://flagcdn.com/bd.svg" },
+  { name: "Barbados", code: "1246", countryCode: "BB", flag: "https://flagcdn.com/bb.svg" },
+  { name: "Belarus", code: "375", countryCode: "BY", flag: "https://flagcdn.com/by.svg" },
+  { name: "Belgium", code: "32", countryCode: "BE", flag: "https://flagcdn.com/be.svg" },
+  { name: "Belize", code: "501", countryCode: "BZ", flag: "https://flagcdn.com/bz.svg" },
+  { name: "Benin", code: "229", countryCode: "BJ", flag: "https://flagcdn.com/bj.svg" },
+  { name: "Bermuda", code: "1441", countryCode: "BM", flag: "https://flagcdn.com/bm.svg" },
+  { name: "Bhutan", code: "975", countryCode: "BT", flag: "https://flagcdn.com/bt.svg" },
+  { name: "Bolivia", code: "591", countryCode: "BO", flag: "https://flagcdn.com/bo.svg" },
+  { name: "Bosnia & Herzegovina", code: "387", countryCode: "BA", flag: "https://flagcdn.com/ba.svg" },
+  { name: "Botswana", code: "267", countryCode: "BW", flag: "https://flagcdn.com/bw.svg" },
+  { name: "Brazil", code: "55", countryCode: "BR", flag: "https://flagcdn.com/br.svg" },
+  { name: "British Indian Ocean Territory", code: "246", countryCode: "IO", flag: "https://flagcdn.com/io.svg" },
+  { name: "British Virgin Islands", code: "1284", countryCode: "VG", flag: "https://flagcdn.com/vg.svg" },
+  { name: "Brunei", code: "673", countryCode: "BN", flag: "https://flagcdn.com/bn.svg" },
+  { name: "Bulgaria", code: "359", countryCode: "BG", flag: "https://flagcdn.com/bg.svg" },
+  { name: "Burkina Faso", code: "226", countryCode: "BF", flag: "https://flagcdn.com/bf.svg" },
+  { name: "Burundi", code: "257", countryCode: "BI", flag: "https://flagcdn.com/bi.svg" },
+  { name: "Cambodia", code: "855", countryCode: "KH", flag: "https://flagcdn.com/kh.svg" },
+  { name: "Cameroon", code: "237", countryCode: "CM", flag: "https://flagcdn.com/cm.svg" },
+  { name: "Cape Verde Islands", code: "238", countryCode: "CV", flag: "https://flagcdn.com/cv.svg" },
+  { name: "Cayman Islands", code: "1345", countryCode: "KY", flag: "https://flagcdn.com/ky.svg" },
+  { name: "Central African Republic", code: "236", countryCode: "CF", flag: "https://flagcdn.com/cf.svg" },
+  { name: "Chad", code: "235", countryCode: "TD", flag: "https://flagcdn.com/td.svg" },
+  { name: "Chile", code: "56", countryCode: "CL", flag: "https://flagcdn.com/cl.svg" },
+  { name: "China", code: "86", countryCode: "CN", flag: "https://flagcdn.com/cn.svg" },
+  { name: "Christmas Island", code: "61", countryCode: "CX", flag: "https://flagcdn.com/cx.svg" },
+  { name: "Cocos Islands", code: "61", countryCode: "CC", flag: "https://flagcdn.com/cc.svg" },
+  { name: "Colombia", code: "57", countryCode: "CO", flag: "https://flagcdn.com/co.svg" },
+  { name: "Comoros", code: "269", countryCode: "KM", flag: "https://flagcdn.com/km.svg" },
+  { name: "Cook Islands", code: "682", countryCode: "CK", flag: "https://flagcdn.com/ck.svg" },
+  { name: "Costa Rica", code: "506", countryCode: "CR", flag: "https://flagcdn.com/cr.svg" },
+  { name: "Croatia", code: "385", countryCode: "HR", flag: "https://flagcdn.com/hr.svg" },
+  { name: "Cuba", code: "53", countryCode: "CU", flag: "https://flagcdn.com/cu.svg" },
+  { name: "Curacao", code: "599", countryCode: "CW", flag: "https://flagcdn.com/cw.svg" },
+  { name: "Cyprus - North", code: "90", countryCode: "CY", flag: "https://flagcdn.com/cy.svg" },
+  { name: "Cyprus - South", code: "357", countryCode: "CY", flag: "https://flagcdn.com/cy.svg" },
+  { name: "Czech Republic", code: "420", countryCode: "CZ", flag: "https://flagcdn.com/cz.svg" },
+  { name: "Democratic Republic of Congo", code: "243", countryCode: "CD", flag: "https://flagcdn.com/cd.svg" },
+  { name: "Denmark", code: "45", countryCode: "DK", flag: "https://flagcdn.com/dk.svg" },
+  { name: "Djibouti", code: "253", countryCode: "DJ", flag: "https://flagcdn.com/dj.svg" },
+  { name: "Dominica", code: "1809", countryCode: "DM", flag: "https://flagcdn.com/dm.svg" },
+  { name: "Dominican Republic", code: "1809", countryCode: "DO", flag: "https://flagcdn.com/do.svg" },
+  { name: "East Timor", code: "670", countryCode: "TL", flag: "https://flagcdn.com/tl.svg" },
+  { name: "Ecuador", code: "593", countryCode: "EC", flag: "https://flagcdn.com/ec.svg" },
+  { name: "Egypt", code: "20", countryCode: "EG", flag: "https://flagcdn.com/eg.svg" },
+  { name: "El Salvador", code: "503", countryCode: "SV", flag: "https://flagcdn.com/sv.svg" },
+  { name: "Equatorial Guinea", code: "240", countryCode: "GQ", flag: "https://flagcdn.com/gq.svg" },
+  { name: "Eritrea", code: "291", countryCode: "ER", flag: "https://flagcdn.com/er.svg" },
+  { name: "Estonia", code: "372", countryCode: "EE", flag: "https://flagcdn.com/ee.svg" },
+  { name: "Ethiopia", code: "251", countryCode: "ET", flag: "https://flagcdn.com/et.svg" },
+  { name: "Falkland Islands", code: "500", countryCode: "FK", flag: "https://flagcdn.com/fk.svg" },
+  { name: "Faroe Islands", code: "298", countryCode: "FO", flag: "https://flagcdn.com/fo.svg" },
+  { name: "Fiji", code: "679", countryCode: "FJ", flag: "https://flagcdn.com/fj.svg" },
+  { name: "Finland", code: "358", countryCode: "FI", flag: "https://flagcdn.com/fi.svg" },
+  { name: "France", code: "33", countryCode: "FR", flag: "https://flagcdn.com/fr.svg" },
+  { name: "French Guiana", code: "594", countryCode: "GF", flag: "https://flagcdn.com/gf.svg" },
+  { name: "French Polynesia", code: "689", countryCode: "PF", flag: "https://flagcdn.com/pf.svg" },
+  { name: "Gabon", code: "241", countryCode: "GA", flag: "https://flagcdn.com/ga.svg" },
+  { name: "Gambia", code: "220", countryCode: "GM", flag: "https://flagcdn.com/gm.svg" },
+  { name: "Georgia", code: "7880", countryCode: "GE", flag: "https://flagcdn.com/ge.svg" },
+  { name: "Germany", code: "49", countryCode: "DE", flag: "https://flagcdn.com/de.svg" },
+  { name: "Ghana", code: "233", countryCode: "GH", flag: "https://flagcdn.com/gh.svg" },
+  { name: "Gibraltar", code: "350", countryCode: "GI", flag: "https://flagcdn.com/gi.svg" },
+  { name: "Greece", code: "30", countryCode: "GR", flag: "https://flagcdn.com/gr.svg" },
+  { name: "Greenland", code: "299", countryCode: "GL", flag: "https://flagcdn.com/gl.svg" },
+  { name: "Grenada", code: "1473", countryCode: "GD", flag: "https://flagcdn.com/gd.svg" },
+  { name: "Guadeloupe", code: "590", countryCode: "GP", flag: "https://flagcdn.com/gp.svg" },
+  { name: "Guam", code: "671", countryCode: "GU", flag: "https://flagcdn.com/gu.svg" },
+  { name: "Guatemala", code: "502", countryCode: "GT", flag: "https://flagcdn.com/gt.svg" },
+  { name: "Guernsey", code: "44", countryCode: "GG", flag: "https://flagcdn.com/gg.svg" },
+  { name: "Guinea", code: "224", countryCode: "GN", flag: "https://flagcdn.com/gn.svg" },
+  { name: "Guinea-Bissau", code: "245", countryCode: "GW", flag: "https://flagcdn.com/gw.svg" },
+  { name: "Guyana", code: "592", countryCode: "GY", flag: "https://flagcdn.com/gy.svg" },
+  { name: "Haiti", code: "509", countryCode: "HT", flag: "https://flagcdn.com/ht.svg" },
+  { name: "Honduras", code: "504", countryCode: "HN", flag: "https://flagcdn.com/hn.svg" },
+  { name: "Hong Kong", code: "852", countryCode: "HK", flag: "https://flagcdn.com/hk.svg" },
+  { name: "Hungary", code: "36", countryCode: "HU", flag: "https://flagcdn.com/hu.svg" },
+  { countryCode: "NI", name: "Nicaragua", dialCode: "+505", flag: "https://flagcdn.com/w320/ni.png" },
+  { countryCode: "NE", name: "Niger", dialCode: "+227", flag: "https://flagcdn.com/w320/ne.png" },
+  { countryCode: "NG", name: "Nigeria", dialCode: "+234", flag: "https://flagcdn.com/w320/ng.png" },
+  { countryCode: "NU", name: "Niue", dialCode: "+683", flag: "https://flagcdn.com/w320/nu.png" },
+  { countryCode: "KP", name: "North Korea", dialCode: "+850", flag: "https://flagcdn.com/w320/kp.png" },
+  { countryCode: "NF", name: "Norfolk Islands", dialCode: "+672", flag: "https://flagcdn.com/w320/nf.png" },
+  { countryCode: "NP", name: "Northern Marianas", dialCode: "+670", flag: "https://flagcdn.com/w320/np.png" },
+  { countryCode: "NO", name: "Norway", dialCode: "+47", flag: "https://flagcdn.com/w320/no.png" },
+  { countryCode: "OM", name: "Oman", dialCode: "+968", flag: "https://flagcdn.com/w320/om.png" },
+  { countryCode: "PK", name: "Pakistan", dialCode: "+92", flag: "https://flagcdn.com/w320/pk.png" },
+  { countryCode: "PW", name: "Palau", dialCode: "+680", flag: "https://flagcdn.com/w320/pw.png" },
+  { countryCode: "PS", name: "Palestine", dialCode: "+970", flag: "https://flagcdn.com/w320/ps.png" },
+  { countryCode: "PA", name: "Panama", dialCode: "+507", flag: "https://flagcdn.com/w320/pa.png" },
+  { countryCode: "PG", name: "Papua New Guinea", dialCode: "+675", flag: "https://flagcdn.com/w320/pg.png" },
+  { countryCode: "PY", name: "Paraguay", dialCode: "+595", flag: "https://flagcdn.com/w320/py.png" },
+  { countryCode: "PE", name: "Peru", dialCode: "+51", flag: "https://flagcdn.com/w320/pe.png" },
+  { countryCode: "PH", name: "Philippines", dialCode: "+63", flag: "https://flagcdn.com/w320/ph.png" },
+  { countryCode: "PN", name: "Pitcairn", dialCode: "+64", flag: "https://flagcdn.com/w320/pn.png" },
+  { countryCode: "PL", name: "Poland", dialCode: "+48", flag: "https://flagcdn.com/w320/pl.png" },
+  { countryCode: "PT", name: "Portugal", dialCode: "+351", flag: "https://flagcdn.com/w320/pt.png" },
+  { countryCode: "PR", name: "Puerto Rico", dialCode: "+1787", flag: "https://flagcdn.com/w320/pr.png" },
+  { countryCode: "QA", name: "Qatar", dialCode: "+974", flag: "https://flagcdn.com/w320/qa.png" },
+  { countryCode: "CG", name: "Republic of the Congo", dialCode: "+242", flag: "https://flagcdn.com/w320/cg.png" },
+  { countryCode: "RE", name: "Reunion", dialCode: "+262", flag: "https://flagcdn.com/w320/re.png" },
+  { countryCode: "RO", name: "Romania", dialCode: "+40", flag: "https://flagcdn.com/w320/ro.png" },
+  { countryCode: "RU", name: "Russia", dialCode: "+7", flag: "https://flagcdn.com/w320/ru.png" },
+  { countryCode: "RW", name: "Rwanda", dialCode: "+250", flag: "https://flagcdn.com/w320/rw.png" },
+  { countryCode: "BL", name: "Saint Barthelemy", dialCode: "+590", flag: "https://flagcdn.com/w320/bl.png" },
+  { countryCode: "SH", name: "Saint Helena", dialCode: "+290", flag: "https://flagcdn.com/w320/sh.png" },
+  { countryCode: "KN", name: "Saint Kitts & Nevis", dialCode: "+1869", flag: "https://flagcdn.com/w320/kn.png" },
+  { countryCode: "SC", name: "Saint Lucia", dialCode: "+1758", flag: "https://flagcdn.com/w320/lc.png" },
+  { countryCode: "SR", name: "Suriname", dialCode: "+597", flag: "https://flagcdn.com/w320/sr.png" },
+  { countryCode: "MF", name: "Saint Martin", dialCode: "+590", flag: "https://flagcdn.com/w320/mf.png" },
+  { countryCode: "PM", name: "Saint Pierre and Miquelon", dialCode: "+508", flag: "https://flagcdn.com/w320/pm.png" },
+  { countryCode: "VC", name: "Saint Vincent and the Grenadines", dialCode: "+1784", flag: "https://flagcdn.com/w320/vc.png" },
+  { countryCode: "WS", name: "Samoa", dialCode: "+685", flag: "https://flagcdn.com/w320/ws.png" },
+  { countryCode: "SM", name: "San Marino", dialCode: "+378", flag: "https://flagcdn.com/w320/sm.png" },
+  { countryCode: "ST", name: "Sao Tome & Principe", dialCode: "+239", flag: "https://flagcdn.com/w320/st.png" },
+  { countryCode: "SA", name: "Saudi Arabia", dialCode: "+966", flag: "https://flagcdn.com/w320/sa.png" },
+  { countryCode: "SN", name: "Senegal", dialCode: "+221", flag: "https://flagcdn.com/w320/sn.png" },
+  { countryCode: "CS", name: "Serbia", dialCode: "+381", flag: "https://flagcdn.com/w320/cs.png" },
+  { countryCode: "SC", name: "Seychelles", dialCode: "+248", flag: "https://flagcdn.com/w320/sc.png" },
+  { countryCode: "SL", name: "Sierra Leone", dialCode: "+232", flag: "https://flagcdn.com/w320/sl.png" },
+  { countryCode: "SG", name: "Singapore", dialCode: "+65", flag: "https://flagcdn.com/w320/sg.png" },
+  { countryCode: "SX", name: "Sint Maarten", dialCode: "+1721", flag: "https://flagcdn.com/w320/sx.png" },
+  { countryCode: "SK", name: "Slovakia", dialCode: "+421", flag: "https://flagcdn.com/w320/sk.png" },
+  { countryCode: "SI", name: "Slovenia", dialCode: "+386", flag: "https://flagcdn.com/w320/si.png" },
+  { countryCode: "SB", name: "Solomon Islands", dialCode: "+677", flag: "https://flagcdn.com/w320/sb.png" },
+  { countryCode: "SO", name: "Somalia", dialCode: "+252", flag: "https://flagcdn.com/w320/so.png" },
+  { countryCode: "ZA", name: "South Africa", dialCode: "+27", flag: "https://flagcdn.com/w320/za.png" },
+  { countryCode: "KR", name: "South Korea", dialCode: "+82", flag: "https://flagcdn.com/w320/kr.png" },
+  { countryCode: "SS", name: "South Sudan", dialCode: "+211", flag: "https://flagcdn.com/w320/ss.png" },
+  { countryCode: "ES", name: "Spain", dialCode: "+34", flag: "https://flagcdn.com/w320/es.png" },
+  { countryCode: "IS", name: "Iceland", dialCode: "+354", flag: "https://flagcdn.com/w320/is.png" },
+  { countryCode: "IN", name: "India", dialCode: "+91", flag: "https://flagcdn.com/w320/in.png" },
+  { countryCode: "ID", name: "Indonesia", dialCode: "+62", flag: "https://flagcdn.com/w320/id.png" },
+  { countryCode: "IR", name: "Iran", dialCode: "+98", flag: "https://flagcdn.com/w320/ir.png" },
+  { countryCode: "IQ", name: "Iraq", dialCode: "+964", flag: "https://flagcdn.com/w320/iq.png" },
+  { countryCode: "IE", name: "Ireland", dialCode: "+353", flag: "https://flagcdn.com/w320/ie.png" },
+  { countryCode: "IM", name: "Isle of Man", dialCode: "+44", flag: "https://flagcdn.com/w320/im.png" },
+  { countryCode: "IL", name: "Israel", dialCode: "+972", flag: "https://flagcdn.com/w320/il.png" },
+  { countryCode: "IT", name: "Italy", dialCode: "+39", flag: "https://flagcdn.com/w320/it.png" },
+  { countryCode: "CI", name: "Ivory Coast", dialCode: "+225", flag: "https://flagcdn.com/w320/ci.png" },
+  { countryCode: "JM", name: "Jamaica", dialCode: "+1876", flag: "https://flagcdn.com/w320/jm.png" },
+  { countryCode: "JP", name: "Japan", dialCode: "+81", flag: "https://flagcdn.com/w320/jp.png" },
+  { countryCode: "JE", name: "Jersey", dialCode: "+44", flag: "https://flagcdn.com/w320/je.png" },
+  { countryCode: "JO", name: "Jordan", dialCode: "+962", flag: "https://flagcdn.com/w320/jo.png" },
+  { countryCode: "KZ", name: "Kazakhstan", dialCode: "+7", flag: "https://flagcdn.com/w320/kz.png" },
+  { countryCode: "KE", name: "Kenya", dialCode: "+254", flag: "https://flagcdn.com/w320/ke.png" },
+  { countryCode: "KI", name: "Kiribati", dialCode: "+686", flag: "https://flagcdn.com/w320/ki.png" },
+  { countryCode: "XK", name: "Kosovo", dialCode: "+383", flag: "https://flagcdn.com/w320/xk.png" },
+  { countryCode: "KW", name: "Kuwait", dialCode: "+965", flag: "https://flagcdn.com/w320/kw.png" },
+  { countryCode: "KG", name: "Kyrgyzstan", dialCode: "+996", flag: "https://flagcdn.com/w320/kg.png" },
+  { countryCode: "LA", name: "Laos", dialCode: "+856", flag: "https://flagcdn.com/w320/la.png" },
+  { countryCode: "LV", name: "Latvia", dialCode: "+371", flag: "https://flagcdn.com/w320/lv.png" },
+  { countryCode: "LB", name: "Lebanon", dialCode: "+961", flag: "https://flagcdn.com/w320/lb.png" },
+  { countryCode: "LS", name: "Lesotho", dialCode: "+266", flag: "https://flagcdn.com/w320/ls.png" },
+  { countryCode: "LR", name: "Liberia", dialCode: "+231", flag: "https://flagcdn.com/w320/lr.png" },
+  { countryCode: "LY", name: "Libya", dialCode: "+218", flag: "https://flagcdn.com/w320/ly.png" },
+  { countryCode: "LI", name: "Liechtenstein", dialCode: "+417", flag: "https://flagcdn.com/w320/li.png" },
+  { countryCode: "LT", name: "Lithuania", dialCode: "+370", flag: "https://flagcdn.com/w320/lt.png" },
+  { countryCode: "LU", name: "Luxembourg", dialCode: "+352", flag: "https://flagcdn.com/w320/lu.png" },
+  { countryCode: "MO", name: "Macao", dialCode: "+853", flag: "https://flagcdn.com/w320/mo.png" },
+  { countryCode: "MK", name: "Macedonia", dialCode: "+389", flag: "https://flagcdn.com/w320/mk.png" },
+  { countryCode: "MG", name: "Madagascar", dialCode: "+261", flag: "https://flagcdn.com/w320/mg.png" },
+  { countryCode: "MW", name: "Malawi", dialCode: "+265", flag: "https://flagcdn.com/w320/mw.png" },
+  { countryCode: "MY", name: "Malaysia", dialCode: "+60", flag: "https://flagcdn.com/w320/my.png" },
+  { countryCode: "MV", name: "Maldives", dialCode: "+960", flag: "https://flagcdn.com/w320/mv.png" },
+  { countryCode: "ML", name: "Mali", dialCode: "+223", flag: "https://flagcdn.com/w320/ml.png" },
+  { countryCode: "MT", name: "Malta", dialCode: "+356", flag: "https://flagcdn.com/w320/mt.png" },
+  { countryCode: "MH", name: "Marshall Islands", dialCode: "+692", flag: "https://flagcdn.com/w320/mh.png" },
+  { countryCode: "MQ", name: "Martinique", dialCode: "+596", flag: "https://flagcdn.com/w320/mq.png" },
+  { countryCode: "MR", name: "Mauritania", dialCode: "+222", flag: "https://flagcdn.com/w320/mr.png" },
+  { countryCode: "YT", name: "Mayotte", dialCode: "+269", flag: "https://flagcdn.com/w320/yt.png" },
+  { countryCode: "MX", name: "Mexico", dialCode: "+52", flag: "https://flagcdn.com/w320/mx.png" },
+  { countryCode: "FM", name: "Micronesia", dialCode: "+691", flag: "https://flagcdn.com/w320/fm.png" },
+  { countryCode: "MD", name: "Moldova", dialCode: "+373", flag: "https://flagcdn.com/w320/md.png" },
+  { countryCode: "MC", name: "Monaco", dialCode: "+377", flag: "https://flagcdn.com/w320/mc.png" },
+  { countryCode: "MN", name: "Mongolia", dialCode: "+976", flag: "https://flagcdn.com/w320/mn.png" },
+  { countryCode: "ME", name: "Montenegro", dialCode: "+382", flag: "https://flagcdn.com/w320/me.png" },
+  { countryCode: "MS", name: "Montserrat", dialCode: "+1664", flag: "https://flagcdn.com/w320/ms.png" },
+  { countryCode: "MA", name: "Morocco", dialCode: "+212", flag: "https://flagcdn.com/w320/ma.png" },
+  { countryCode: "MZ", name: "Mozambique", dialCode: "+258", flag: "https://flagcdn.com/w320/mz.png" },
+  { countryCode: "MN", name: "Myanmar", dialCode: "+95", flag: "https://flagcdn.com/w320/mm.png" },
+  { countryCode: "NA", name: "Namibia", dialCode: "+264", flag: "https://flagcdn.com/w320/na.png" },
+  { countryCode: "NR", name: "Nauru", dialCode: "+674", flag: "https://flagcdn.com/w320/nr.png" },
+  { countryCode: "NP", name: "Nepal", dialCode: "+977", flag: "https://flagcdn.com/w320/np.png" },
+  { countryCode: "NL", name: "Netherlands", dialCode: "+31", flag: "https://flagcdn.com/w320/nl.png" },
+  { countryCode: "AN", name: "Netherlands Antilles", dialCode: "+599", flag: "https://flagcdn.com/w320/an.png" },
+  { countryCode: "NC", name: "New Caledonia", dialCode: "+687", flag: "https://flagcdn.com/w320/nc.png" },
+  { countryCode: "NZ", name: "New Zealand", dialCode: "+64", flag: "https://flagcdn.com/w320/nz.png" }
+];
+
 
 
 export default function HeroFormBookOffer() {
@@ -21,13 +232,44 @@ export default function HeroFormBookOffer() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
-
-
+  const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]); // Default to the first country
 
   const [flagImg, setFlagImg] = useState(
     'https://flagpedia.net/data/flags/h80/us.webp'
   );
-  const [countryCodeValue, setCountryCodeValue] = useState('1');
+  // const [countryCodeValue, setCountryCodeValue] = useState('1');
+  const [countryCodeValue, setCountryCodeValue] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  // Fetch user region and auto-select country
+  const fetchUserRegion = async () => {
+    try {
+      const response = await fetch("https://ipapi.co/json/");
+      const data = await response.json();
+      const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code);
+
+      if (detectedCountry) {
+        setSelectedCountry(detectedCountry);
+      }
+    } catch (error) {
+      console.error("Failed to fetch user region:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserRegion();
+  }, []);
+
+  const handleCountryChange = (e) => {
+    const selectedCode = e.target.value;
+    const country = countryCodes.find((c) => c.code === selectedCode);
+    if (country) {
+      setSelectedCountry(country);
+    }
+  };
+
 
   const selectCountryHandler = (e) => {
     setCountryCodeValue(e.target.value);
@@ -128,13 +370,12 @@ export default function HeroFormBookOffer() {
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
     }
-    // const combinedPhoneNumber = `+${countryCodeValue} ${phone}`;
+    const combinedPhoneNumber = `+${countryCodeValue} ${phone}`;
 
     const response = await submitMainContactForm(
       firstName,
       email,
-      // combinedPhoneNumber, 
-      phone,
+      combinedPhoneNumber, // Send combined phone number
       category,
       message
     );
@@ -235,17 +476,8 @@ export default function HeroFormBookOffer() {
                       />
                     </div>
                     <div className="relative w-full">
-                      <input
-                        type="text"
-                        onChange={handleChange}
-                        value={phone}
-                        name="phone"
-                        required
-                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                        placeholder="Enter your Phone"
-                      />
-                      {/* <div className='tel-box'>
-                        <div className='select-box'>
+                      <div className='tel-box'>
+                        {/* <div className='select-box'>
                           <img src={flagImg} alt="country-flag" className='flag-img' />
                           <select
                             id="country"
@@ -492,8 +724,8 @@ export default function HeroFormBookOffer() {
                             <option data-countryCode="UG" value="256">Uganda (+256)</option>
                             <option data-countryCode="UA" value="380">Ukraine (+380)</option>
                             <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
-                        
-                            
+
+
                             <option data-countryCode="UY" value="598">Uruguay (+598)</option>
                             <option data-countryCode="UZ" value="998">Uzbekistan (+998)</option>
                             <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
@@ -506,21 +738,47 @@ export default function HeroFormBookOffer() {
                             <option data-countryCode="ZM" value="260">Zambia (+260)</option>
                             <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                           </select>
-                        </div>
+                        </div> */}
                         <div className="country-input-wrapper">
-                          <span>
-                            +{countryCodeValue}
-                          </span>
-                          <input
-                            type="tel"
-                            placeholder="Enter your Phone"
-                            className='tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl'
-                            onChange={phoneHandler}
-                            defaultValue={phone}
-                          />
+                          <div className="select-box">
+                            {loading ? (
+                              <p>Loading...</p>
+                            ) : (
+                              <div className="">
+                                <select
+                                  className="country-select pl-2 pr-2 py-2 cursor-pointer"
+                                  onChange={handleCountryChange}
+                                  value={selectedCountry.code}
+                                >
+                                  {countryCodes.map((country) => (
+                                    <option key={country.code} value={country.code}>
+                                      {country.name} (+{country.code})
+                                    </option>
+                                  ))}
+                                </select>
+                                <img
+                                  src={selectedCountry.flag}
+                                  alt={`Flag of ${selectedCountry.name}`}
+                                  className="flag-img w-6 h-4 ml-2"
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <div className="country-input-wrapper flex items-center space-x-2">
+                            <span className="country-code text-lg font-semibold">
+                              +{selectedCountry.code}
+                            </span>
+                            <input
+                              type="tel"
+                              placeholder="Enter your Phone"
+                              className="tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                              onChange={(e) => setPhone(e.target.value)}
+                              value={phone}
+                            />
+                          </div>
                         </div>
 
-                      </div> */}
+                      </div>
                     </div>
                     <div className="relative w-full">
                       <input
