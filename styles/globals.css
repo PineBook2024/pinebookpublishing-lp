@@ -1142,11 +1142,11 @@ footer svg {
   }
 
   video#brandVideo {
-    height: 380vw !important;
+    height: 395vw !important;
   }
 
   .brand-main-banner-video {
-    height: 380vw !important;
+    height: 395vw !important;
   }
 
   .break-words {
@@ -2041,7 +2041,7 @@ audio::-webkit-media-controls-play-button:hover {
 }
 
 .brand-main-banner-video {
-  height: 120vh;
+  height: 126vh;
   /* background: #0000009e; */
 }
 
@@ -2052,7 +2052,7 @@ audio::-webkit-media-controls-play-button:hover {
 video#brandVideo {
   position: absolute;
   z-index: -1;
-  height: 120vh;
+  height: 126vh;
   width: 100%;
   object-fit: cover;
 
@@ -3931,7 +3931,7 @@ a.close-chat:hover {
 .portfoilio-slider4-icon.next {
   position: absolute;
   top: 50%;
-  right: -45px;
+  right: -24px;
   z-index: 99999;
   border-radius: 51px;
   background-color: #fff;
@@ -4153,7 +4153,8 @@ a.close-chat:hover {
   position: absolute;
   z-index: 9;
   top: 5px;
-  left: 6px;
+  left: 0px;
+  background: transparent;
 }
 .flag-img{
   width: 43px;
@@ -4214,8 +4215,8 @@ a.close-chat:hover {
 }
 .country-input-wrapper span{
   position: absolute;
-  top: 5px;
-  left: 83px;
+  top: 6px;
+  left: 80px;
   color: #706e6e;
   font-size: 0.875rem;
 }

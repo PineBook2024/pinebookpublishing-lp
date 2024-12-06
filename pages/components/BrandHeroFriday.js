@@ -122,7 +122,7 @@ export default function BrandHeroFriday() {
                                 <span className="px-2 py-0">#1 Self</span> Publishing Company
                             </h3>
                             <FadeIn>
-                                <h1 className="font-poppins text-3xl md:text-5xl text-white font-bold">
+                                <h1 className="font-poppins text-3xl md:text-3xl text-white font-bold">
                                     DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
                                 </h1>
                             </FadeIn>

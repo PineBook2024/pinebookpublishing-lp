@@ -1,6 +1,6 @@
 export default function BrandBannerVideo({ Component = null }) {
     return (
-      <section className="brand-main-banner-video flex items-center justify-center gap-4 py-14 h-full">
+      <section className="brand-main-banner-video flex items-center justify-center gap-4 h-full">
         <video
           className="brand-video"
           id="brandVideo"
