@@ -202,7 +202,7 @@ const countryCodes = [
   { name: "Sao Tome & Principe", code: "239", countryCode: "ST", flag: "https://flagcdn.com/st.svg" },
   { name: "Saudi Arabia", code: "966", countryCode: "SA", flag: "https://flagcdn.com/sa.svg" },
   { name: "Senegal", code: "221", countryCode: "SN", flag: "https://flagcdn.com/sn.svg" },
-  { name: "Serbia", code: "381", countryCode: "CS", flag: "https://flagcdn.com/cs.svg" },
+  { name: "Serbia", code: "381", countryCode: "CS", flag: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg" },
   { name: "Seychelles", code: "248", countryCode: "SC", flag: "https://flagcdn.com/sc.svg" },
   { name: "Sierra Leone", code: "232", countryCode: "SL", flag: "https://flagcdn.com/sl.svg" },
   { name: "Singapore", code: "65", countryCode: "SG", flag: "https://flagcdn.com/sg.svg" },
