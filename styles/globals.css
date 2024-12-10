@@ -4042,11 +4042,11 @@ a.close-chat:hover {
 #fixed-social a {
   color: #000;
   display: block;
-  height: 36px;
+  height: 37px;
   position: relative;
   text-align: center;
   line-height: 35px;
-  width: 41px;
+  width: 45px;
   margin-bottom: 1px;
   z-index: 2;
   display: flex;
@@ -4055,6 +4055,7 @@ a.close-chat:hover {
   border: 1px solid #0d0f38;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  padding: 4px;
 }
 
 #fixed-social a svg{
@@ -4076,8 +4077,8 @@ a.close-chat:hover {
 }
 
 #fixed-social a:hover svg{
-  width: 30px !important;
-  font-size: 28px !important;
+  transform: scale(1.2);
+  font-size: 27px !important;
   transition: 0.4s ease-in-out;
 }
 
