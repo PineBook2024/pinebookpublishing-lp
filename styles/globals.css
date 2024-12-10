@@ -4026,128 +4026,162 @@ a.close-chat:hover {
   z-index: 1000;
   width: 165px;
 }
+
 /* fixed social*/
 #fixed-social {
   position: fixed;
-  top: 130px;
+  top: 30%;
   right: 0;
+  z-index: 9999999999;
 }
 
 #fixed-social a {
-  color: #fff;
+  color: #000;
   display: block;
-  height: 40px;
+  height: 34px;
   position: relative;
   text-align: center;
-   line-height: 40px;
-  width: 40px;
+  line-height: 35px;
+  width: 36px;
   margin-bottom: 1px;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0d0f38;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
-#fixed-social a:hover>span{
- visibility: visible;
- right: 41px;
- opacity: 1;
-} 
+
+/* #fixed-social a:hover span {
+  visibility: visible;
+  right: 34px;
+  opacity: 1;
+} */
+
 #fixed-social a span {
- line-height: 40px;
-   right: 30px;
-   position: absolute;
-   text-align: center;
-   width: 120px;
-   visibility: hidden;
-   transition-duration: 0.5s;
-   z-index: 1;
-   opacity: 0;
+  line-height: 34px;
+  right: 30px;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  visibility: hidden;
+  transition-duration: 0.5s;
+  z-index: 1;
+  opacity: 0;
+  border: 1px solid #0d0f38;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
-.fixed-facebook{
-  background-color: #00AAE5;
+
+.fixed-facebook {
+  background-color: #fff;
 }
-.fixed-facebook span{
- background-color: #00AAE5;
+
+.fixed-facebook span {
+  background-color: #fff;
 }
-.fixed-twitter{
- background-color: #7D3895;
+
+.fixed-twitter {
+  background-color: #fff;
 
 }
-.fixed-twitter span{
-  background-color: #7D3895;
+
+.fixed-twitter span {
+  background-color: #fff;
 }
-.fixed-gplus{
- background-color: #00AF54;
+
+.fixed-gplus {
+  background-color: #fff;
 
 }
-.fixed-gplus span{
-  background-color: #00AF54;
+
+.fixed-gplus span {
+  background-color: #fff;
 }
-.fixed-linkedin{
- background-color: #FFC41E;
+
+.fixed-linkedin {
+  background-color: #fff;
 
 }
-.fixed-linkedin span{
-  background-color: #FFC41E;
+
+.fixed-linkedin span {
+  background-color: #fff;
 }
-.fixed-instagrem{
- background-color: #ED2B29;
+
+.fixed-instagrem {
+  background-color: #fff;
 
 }
-.fixed-instagrem span{
-  background-color: #ED2B29;
+
+.fixed-instagrem span {
+  background-color: #fff;
 }
-.fixed-tumblr{
- background-color: #EB1471;
+
+.fixed-tumblr {
+  background-color: #fff;
 
 }
-.fixed-tumblr span{
-  background-color: #EB1471;
+
+.fixed-tumblr span {
+  background-color: #fff;
 }
+
 /*end fixed social*/
 
-.PhoneInputInput{
+.PhoneInputInput {
   outline: none;
 }
 
 
-.iti{
+.iti {
   width: 100%;
   outline: none;
 }
 
 /* Ensure proper width and styling for input field with separate dial code */
 .phone-input {
-  width: 100%; /* Ensure the input takes up the full width */
-  padding-left: 50px; /* Adjust padding to make space for the dial code */
+  width: 100%;
+  /* Ensure the input takes up the full width */
+  padding-left: 50px;
+  /* Adjust padding to make space for the dial code */
 }
 
 /* Add some styling to align the dial code correctly */
 .iti__country {
   display: inline-block;
-  margin-right: 10px; /* Space between the dial code and number input */
+  margin-right: 10px;
+  /* Space between the dial code and number input */
 }
 
 .iti__selected-flag {
-  margin-top: 5px; /* Adjust to vertically center the flag */
+  margin-top: 5px;
+  /* Adjust to vertically center the flag */
 }
 
 .iti__flag {
-  width: 20px; /* Adjust flag size */
-  height: 15px; /* Adjust flag size */
+  width: 20px;
+  /* Adjust flag size */
+  height: 15px;
+  /* Adjust flag size */
 }
 
 .iti__dropdown {
-  width: 100%; /* Ensure the dropdown takes the full width */
+  width: 100%;
+  /* Ensure the dropdown takes the full width */
 }
 
-.tel-box{
+.tel-box {
   display: flex;
   margin-top: 0;
   align-items: center;
 }
+
 /* .select-box{
   width: 60px;
   height: 40px;
 } */
-.select-box{
+.select-box {
   width: 50px;
   height: 39px;
   position: absolute;
@@ -4156,14 +4190,16 @@ a.close-chat:hover {
   left: 0px;
   background: transparent;
 }
-.flag-img{
+
+.flag-img {
   width: 43px;
   height: 30px;
   position: absolute;
   border: 2px solid #2c9283;
   border-radius: 5px;
 }
-.select-box select{
+
+.select-box select {
   font-family: 'Lato', sans-serif;
   width: 60px;
   height: 30px;
@@ -4176,7 +4212,7 @@ a.close-chat:hover {
   /* -webkit-appearance: none; */
 }
 
-.tel{
+.tel {
   width: 100%;
   height: 40px;
   background: none;
@@ -4188,17 +4224,19 @@ a.close-chat:hover {
   text-indent: 95px;
   background-color: #fff;
 }
-.output{
+
+.output {
   margin: 1rem;
   margin-top: 0;
   font-size: 1rem;
   font-weight: bold;
   display: flex;
-  align-self:center;
+  align-self: center;
 }
-.result{
+
+.result {
   font-family: 'Source Code Pro', monospace;
-  width:auto;
+  width: auto;
   padding: 0.25rem;
   border-radius: 5px;
   height: 30px;
@@ -4209,11 +4247,12 @@ a.close-chat:hover {
 
 }
 
-.country-input-wrapper{
+.country-input-wrapper {
   position: relative;
   width: 100%;
 }
-.country-input-wrapper span{
+
+.country-input-wrapper span {
   position: absolute;
   top: 6px;
   left: 80px;

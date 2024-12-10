@@ -324,26 +324,20 @@ export default function BrandFooter() {
                 )}
             </div>
             {/* <WhatsAppChat /> */}
-            {/* <div id="fixed-social">
+            <div id="fixed-social">
                 <div>
-                    <a href="#" class="fixed-facebook" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+                    <a href="https://www.facebook.com/pinebookwriting0" class="fixed-facebook" target="_blank"><FontAwesomeIcon icon={faFacebook} color="#316FF6" width={20} /> <span>Facebook</span></a>
                 </div>
                 <div>
-                    <a href="#" class="fixed-twitter" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
+                    <a href="https://x.com/pinebookwriting" class="fixed-twitter" target="_blank"> <FontAwesomeIcon icon={faXTwitter} color="#14171A" width={20} /><span>Twitter</span></a>
                 </div>
                 <div>
-                    <a href="#" class="fixed-gplus" target="_blank"><i class="fa fa-google"></i> <span>Google+</span></a>
+                    <a href="https://www.instagram.com/pinebookwriting/" class="fixed-instagrem" target="_blank"><Image src={"/brand-img/insta-icon.png"} width={16} height={14}></Image><span>Instagram</span></a>
                 </div>
                 <div>
-                    <a href="#" class="fixed-linkedin" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a>
+                    <a href="https://www.youtube.com/@Pinebookwriting" class="fixed-tumblr" target="_blank"><FontAwesomeIcon icon={faYoutube} color="#FF0000" width={20} /><span>Youtube</span></a>
                 </div>
-                <div>
-                    <a href="#" class="fixed-instagrem" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
-                </div>
-                <div>
-                    <a href="#" class="fixed-tumblr" target="_blank"><i class="fa fa-tumblr"></i> <span>Tumblr</span></a>
-                </div>
-            </div> */}
+            </div>
         </>
     );
 }
