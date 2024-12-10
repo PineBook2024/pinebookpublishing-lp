@@ -129,7 +129,7 @@ export default function Home() {
             <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
-            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative overflow-hidden'>
+            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative'>
                 <div className="container mx-auto text-center m1-h mb-10">
                     <h3 className="mb-4 text-white text-2xl md:text-4xl font-poppins  font-bold">
                         VIDEOS TESTIMONIALS
