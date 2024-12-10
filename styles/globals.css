@@ -4030,19 +4030,23 @@ a.close-chat:hover {
 /* fixed social*/
 #fixed-social {
   position: fixed;
-  top: 30%;
+  top: 0;
   right: 0;
   z-index: 9999999999;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
 }
 
 #fixed-social a {
   color: #000;
   display: block;
-  height: 34px;
+  height: 36px;
   position: relative;
   text-align: center;
   line-height: 35px;
-  width: 36px;
+  width: 41px;
   margin-bottom: 1px;
   z-index: 2;
   display: flex;
@@ -4053,11 +4057,30 @@ a.close-chat:hover {
   border-bottom-left-radius: 30px;
 }
 
-/* #fixed-social a:hover span {
-  visibility: visible;
-  right: 34px;
-  opacity: 1;
-} */
+#fixed-social a svg{
+  /* width: 30px !important; */
+  font-size: 23px !important;
+  transition: 0.4s ease-in-out;
+}
+
+#fixed-social a img{
+  width: 16px !important;
+  transform: scale(1.3);
+  transition: 0.4s ease-in-out;
+}
+
+#fixed-social a:hover img{
+  /* width: 18px !important; */
+  transform: scale(1.5);
+  transition: 0.4s ease-in-out;
+}
+
+#fixed-social a:hover svg{
+  width: 30px !important;
+  font-size: 28px !important;
+  transition: 0.4s ease-in-out;
+}
+
 
 #fixed-social a span {
   line-height: 34px;
