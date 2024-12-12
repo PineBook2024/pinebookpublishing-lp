@@ -924,6 +924,22 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  #navbar {
+    position: absolute;
+    top: 85px;
+  }
+
+  #fixed-social {
+    position: fixed;
+    top: 50% !important;
+    right: 0;
+    z-index: 9999999999;
+    display: block !important;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+  }
+
   .hide-btn-responsive {
     display: none !important;
   }
