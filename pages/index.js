@@ -30,6 +30,7 @@ import "swiper/css/navigation";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination } from "swiper";
 import BrandHeroFriday from "./components/BrandHeroFriday";
+import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
 
 const videoClient = [
     {
@@ -113,7 +114,7 @@ export default function Home() {
             <BrandNavbar />
             {/* <BrandHero /> */}
             {/* <BrandHeroFriday /> */}
-            <BrandBannerVideo Component={BrandHeroFriday} />
+            <BrandBannerVideo Component={BrandHeroFridayUpdate} />
             <BrandBannerLogo />
             <BrandAbout
                 subdescone="Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more book publishing companies out there than stars in the sky (okay, maybe not that many, but you get the idea)."

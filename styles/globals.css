@@ -1940,10 +1940,10 @@ footer svg {
 
 .header-form-off-badge {
   position: absolute;
-  right: -9px;
-  top: -40px;
+  right: -17px;
+  top: -18px;
   z-index: 1000;
-  width: 125px;
+  width: 83px;
 }
 
 .powered-by-text {
@@ -2041,7 +2041,7 @@ audio::-webkit-media-controls-play-button:hover {
 }
 
 .brand-main-banner-video {
-  height: 126vh;
+  height: 90vh;
   /* background: #0000009e; */
 }
 
@@ -2052,7 +2052,7 @@ audio::-webkit-media-controls-play-button:hover {
 video#brandVideo {
   position: absolute;
   z-index: -1;
-  height: 126vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
 
@@ -4014,17 +4014,16 @@ a.close-chat:hover {
 
 .christmas-banner-desc {
   color: #fff;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 20px;
 }
-
 
 .christmas-cap-form {
   position: absolute;
-  left: -80px;
-  top: -69px;
+  left: -53px;
+  top: -33px;
   z-index: 1000;
-  width: 165px;
+  width: 119px;
 }
 
 /* fixed social*/
@@ -4058,30 +4057,27 @@ a.close-chat:hover {
   padding: 4px;
 }
 
-#fixed-social a svg{
-  /* width: 30px !important; */
+#fixed-social a svg {
   font-size: 23px !important;
   transition: 0.4s ease-in-out;
 }
 
-#fixed-social a img{
+#fixed-social a img {
   width: 16px !important;
   transform: scale(1.3);
   transition: 0.4s ease-in-out;
 }
 
-#fixed-social a:hover img{
-  /* width: 18px !important; */
+#fixed-social a:hover img {
   transform: scale(1.5);
   transition: 0.4s ease-in-out;
 }
 
-#fixed-social a:hover svg{
+#fixed-social a:hover svg {
   transform: scale(1.2);
   font-size: 27px !important;
   transition: 0.4s ease-in-out;
 }
-
 
 #fixed-social a span {
   line-height: 34px;
@@ -4108,7 +4104,6 @@ a.close-chat:hover {
 
 .fixed-twitter {
   background-color: #fff;
-
 }
 
 .fixed-twitter span {
@@ -4117,7 +4112,6 @@ a.close-chat:hover {
 
 .fixed-gplus {
   background-color: #fff;
-
 }
 
 .fixed-gplus span {
@@ -4126,7 +4120,6 @@ a.close-chat:hover {
 
 .fixed-linkedin {
   background-color: #fff;
-
 }
 
 .fixed-linkedin span {
@@ -4135,7 +4128,6 @@ a.close-chat:hover {
 
 .fixed-instagrem {
   background-color: #fff;
-
 }
 
 .fixed-instagrem span {
@@ -4144,7 +4136,6 @@ a.close-chat:hover {
 
 .fixed-tumblr {
   background-color: #fff;
-
 }
 
 .fixed-tumblr span {

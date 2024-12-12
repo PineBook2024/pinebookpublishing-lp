@@ -78,7 +78,7 @@ export default function BrandNavbar() {
 
     return (
         <>
-            <header id="navbar" className="bg-transparent absolute top-20 lg:top-10 left-0 flex justify-between items-center p-4 z-10">
+            <header id="navbar" className="bg-transparent flex justify-between items-center p-4 z-10">
                 <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
                     <div>
                         <Link href="/" className="text-xl font-bold text-white">
