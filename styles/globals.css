@@ -924,6 +924,9 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .testimonials-wrap iframe{
+    width: 300px !important;
+  }
   #navbar {
     position: absolute;
     top: 85px;
