@@ -149,7 +149,7 @@ export default function BrandHeroFridayUpdate() {
                             </div>
                         </div>
                         <div>
-                            <div className="px-4 py-3 w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
+                            <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
                                 <Image
                                     className="text-center header-form-off-badge"
                                     src={"/brand-img/christmas-tag.png"}
@@ -176,7 +176,7 @@ export default function BrandHeroFridayUpdate() {
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div className="col-span-2 w-full relative">
-                                        <form className="flex flex-col gap-4 justify-start items-start" onSubmit={handleSubmit}>
+                                        <form className="flex flex-col gap-3 justify-start items-start" onSubmit={handleSubmit}>
                                             <div className="relative w-full">
                                                 <input
                                                     type="text"
