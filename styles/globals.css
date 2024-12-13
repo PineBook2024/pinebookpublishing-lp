@@ -924,6 +924,14 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .custom-merchand-slider-1 {
+    height: 330px !important;
+  }
+
+  .custom-merchand-slider-2,
+  .custom-merchand-slider-3{
+    height: 150px !important;
+  }
   .portfoilio-slider3-icon.next,
   .portfoilio-slider3-icon.prev,
   .portfoilio-slider5-icon.next,
@@ -934,6 +942,7 @@ footer svg {
   .portfoilio-slider2-icon.next{
     display: none;
   }
+
   .testimonials-wrap iframe {
     width: 350px !important;
     /* margin: 0 auto; */
