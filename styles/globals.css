@@ -932,6 +932,7 @@ footer svg {
   .custom-merchand-slider-3{
     height: 150px !important;
   }
+  
   .portfoilio-slider3-icon.next,
   .portfoilio-slider3-icon.prev,
   .portfoilio-slider5-icon.next,
@@ -1365,6 +1366,7 @@ footer svg {
   /* background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%); */
   position: absolute;
   width: 100%;
+  z-index: 99999;
 }
 
 /* .nav-top-bar svg{
@@ -4080,12 +4082,12 @@ a.close-chat:hover {
 /* fixed social*/
 #fixed-social {
   position: fixed;
-  top: 0;
+  top: 50%;
   right: 0;
   z-index: 9999999999;
-  display: flex;
+  display: block;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
 }
 
