@@ -142,12 +142,22 @@ export default function Home() {
                     </p> */}
                 </div>
                 {/* Custom Previous Button */}
-                <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon prev cursor-pointer"
-                    onClick={() => swiperRef2.current?.slidePrev()}
-                >
-                    <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                <div className="flex justify-end gap-4">
+                    <div
+                        className=" top-1/2 -left-10 transform -translate-y-1/2  portfoilio-slider4-icon prev cursor-pointer"
+                        onClick={() => swiperRef2.current?.slidePrev()}
+                    >
+                        <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                    </div>
+                    {/* Custom Next Button */}
+                    <div
+                        className=" top-1/2 -right-10 transform -translate-y-1/2  portfoilio-slider4-icon next cursor-pointer"
+                        onClick={() => swiperRef2.current?.slideNext()}
+                    >
+                        <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+                    </div>
                 </div>
+
                 {/* Swiper Slider */}
                 <Swiper
                     spaceBetween={30}
@@ -182,13 +192,7 @@ export default function Home() {
                         ))}
                     </div>
                 </Swiper>
-                {/* Custom Next Button */}
-                <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon next cursor-pointer"
-                    onClick={() => swiperRef2.current?.slideNext()}
-                >
-                    <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
-                </div>
+
                 <div className="text-center mt-14">
                     <Link href="/testimonials" className="brand-about-btn font-poppins">VIEW MORE TESTIMONIALS</Link>
                 </div>

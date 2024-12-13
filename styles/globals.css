@@ -924,11 +924,22 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
-  .testimonials-wrap iframe{
+  .portfoilio-slider3-icon.next,
+  .portfoilio-slider3-icon.prev,
+  .portfoilio-slider5-icon.next,
+  .portfoilio-slider5-icon.prev,
+  .portfoilio-slider-icon.prev,
+  .portfoilio-slider-icon.next,
+  .portfoilio-slider2-icon.prev,
+  .portfoilio-slider2-icon.next{
+    display: none;
+  }
+  .testimonials-wrap iframe {
     width: 350px !important;
     /* margin: 0 auto; */
     text-align: center;
   }
+
   #navbar {
     position: absolute;
     top: 85px;
@@ -3950,29 +3961,39 @@ a.close-chat:hover {
 }
 
 .portfoilio-slider4-icon.next {
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
-  right: -24px;
+  right: -15px;
   z-index: 99999;
   border-radius: 51px;
   background-color: #fff;
-  box-shadow: -4px 2px 43px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -4px 2px 16px 1px rgba(0, 0, 0, 0.75);
   height: auto;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .portfoilio-slider4-icon.prev {
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   right: -22px;
   z-index: 99999;
   border-radius: 51px;
   background-color: #fff;
-  box-shadow: -4px 2px 43px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -4px 2px 16px 1px rgba(0, 0, 0, 0.75);
   height: auto;
   cursor: pointer;
-  left: -49px;
+  left: -17px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bk-sil3.next:hover {
