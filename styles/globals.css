@@ -1359,7 +1359,6 @@ footer svg {
   }
 }
 
-
 /* Brand Layout CSS */
 
 .nav-top-bar {
@@ -1372,6 +1371,7 @@ footer svg {
 /* .nav-top-bar svg{
   width: 17px;
 } */
+
 .brand-about-btn {
   background: #15184c;
   color: #fff;
