@@ -103,7 +103,6 @@ export default function ISBN() {
                             <p className="para">Next, we merge your book's assigned<br></br> ISBN with a scannable barcode that will be<br></br> compatible with various retail systems.</p>
                         </div>
                     </div>
-
                     <div className="relative" data-aos="fade-left">
                         <Image src={"/brand-img/process-img5.png"} width={700} height={200} className=" pb-10"></Image>
                         <div className="brand-process-content text-left">
