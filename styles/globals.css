@@ -1184,11 +1184,11 @@ footer svg {
   }
 
   video#brandVideo {
-    height: 395vw !important;
+    height: 400vw !important;
   }
 
   .brand-main-banner-video {
-    height: 395vw !important;
+    height: 400vw !important;
   }
 
   .break-words {
@@ -2092,7 +2092,7 @@ audio::-webkit-media-controls-play-button:hover {
 .brand-main-banner-video {
   height: 90vh;
   /* background: #0000009e; */
-  background: #00000036;
+  /* background: #00000036; */
 }
 
 .brand-video {
