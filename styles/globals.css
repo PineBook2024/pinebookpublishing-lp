@@ -2092,6 +2092,7 @@ audio::-webkit-media-controls-play-button:hover {
 .brand-main-banner-video {
   height: 90vh;
   /* background: #0000009e; */
+  background: #00000036;
 }
 
 .brand-video {
@@ -2104,6 +2105,7 @@ video#brandVideo {
   height: 90vh;
   width: 100%;
   object-fit: cover;
+  background: #000;
 
 }
 
