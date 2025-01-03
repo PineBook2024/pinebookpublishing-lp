@@ -1229,7 +1229,7 @@ footer svg {
     right: -9px !important;
     top: -44px !important;
     z-index: 1000 !important;
-    width: 115px !important;
+    width: 75px !important;
   }
 
   .lp3-banner-left-side-book {
@@ -1340,7 +1340,13 @@ footer svg {
     left: -29px !important;
     top: -30px !important;
     z-index: 1000;
-    width: 95px !important;
+    width: 73px !important;
+  }
+  .fixed-top .nav-logo{
+    width: 155px;
+  }
+  .nav-logo{
+    width: 165px;
   }
 }
 

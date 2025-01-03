@@ -28,28 +28,28 @@ export default function BrandHeroFridayUpdate() {
             href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
             src: "/images/s2.png",
             alt: "LOGO",
-            width: 130,
+            width: 150,
             height: 60,
         },
         {
             href: "https://www.trustpilot.com/review/pinebookwriting.com",
             src: "/images/s3.png",
             alt: "LOGO",
-            width: 130,
+            width: 150,
             height: 60,
         },
         {
             href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
             src: "/images/s4.png",
             alt: "LOGO",
-            width: 130,
+            width: 150,
             height: 60,
         },
         {
             href: "https://clutch.co/profile/pine-book-writing",
             src: "/images/s6.png",
             alt: "LOGO",
-            width: 130,
+            width: 150,
             height: 60,
         },
     ];
@@ -118,11 +118,11 @@ export default function BrandHeroFridayUpdate() {
                 <div className="container px-4 pt-20 pb-10 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10 pt-36">
                     <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8">
                         <div className="mb-4">
-                            <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white">
+                            <h3 className="font-poppins text-xl md:text-2xl mb-4 aos-init aos-animate text-white">
                                 <span className="px-2 py-0">#1 Self</span> Publishing Company
                             </h3>
                             <FadeIn>
-                                <h1 className="font-poppins text-3xl md:text-3xl text-white font-bold">
+                                <h1 className="font-poppins text-2xl md:text-3xl text-white font-bold">
                                     DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
                                 </h1>
                             </FadeIn>
