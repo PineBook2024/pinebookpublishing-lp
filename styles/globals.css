@@ -738,7 +738,7 @@ footer svg {
   border-radius: 26px;
   color: #0d0f38;
   transition: .3s ease-in-out;
-  width: 370px;
+  width: 100%;
   font-weight: bold;
   border: 1px solid #747474;
 }
@@ -762,7 +762,7 @@ footer svg {
 .single-packages .package-badge {
   position: absolute;
   right: -4px;
-  top: -43px;
+  top: -39px;
   animation: upAndDown 3s ease-in-out .6s infinite;
   z-index: 1;
 }
@@ -819,12 +819,12 @@ footer svg {
   border: 1px solid #747474;
   /* position: absolute;
   bottom: 0; */
-  width: 370px;
+  width: 100%;
   margin: 0 auto;
   padding: 6px 13px;
   position: relative;
   top: 13px;
-  left: -1px;
+  left: 0px;
 }
 
 .hover-top-vector {
@@ -1108,7 +1108,7 @@ footer svg {
   }
 
   .single-packages .package-badge {
-    right: -9px;
+    right: 0px;
     width: 68px;
   }
 
@@ -1180,11 +1180,11 @@ footer svg {
   }
 
   .single-packages-footer {
-    width: 342px;
+    width: 100%;
   }
 
   .single-packages {
-    width: 342px;
+    width: 100%;
   }
 
   video#brandVideo {
