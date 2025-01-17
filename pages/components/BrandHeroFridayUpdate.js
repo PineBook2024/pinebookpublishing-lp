@@ -124,7 +124,7 @@ export default function BrandHeroFridayUpdate() {
                             <FadeIn>
                                 <h1 className="font-poppins text-2xl md:text-3xl text-white font-bold">
                                     DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
-                                </h1>
+                                </h1> 
                             </FadeIn>
                             <p className="text-xl text-white pt-4">
                                 Pine Book Publishing has made it much more easier to self-publish a
@@ -150,7 +150,7 @@ export default function BrandHeroFridayUpdate() {
                         </div>
                         <div>
                             <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
-                                <Image
+                                {/* <Image
                                     className="text-center header-form-off-badge"
                                     src={"/brand-img/christmas-tag.png"}
                                     width={140}
@@ -163,7 +163,7 @@ export default function BrandHeroFridayUpdate() {
                                     width={300}
                                     height={300}
                                     loading="lazy"
-                                ></Image>
+                                ></Image> */}
                                 <div className="text-start">
                                     <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
                                         Avail Discount
@@ -174,7 +174,7 @@ export default function BrandHeroFridayUpdate() {
                                         Your Story Deserves to be Heard!
                                     </h5>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                                     <div className="col-span-2 w-full relative">
                                         <form className="flex flex-col gap-3 justify-start items-start" onSubmit={handleSubmit}>
                                             <div className="relative w-full">
@@ -240,7 +240,7 @@ export default function BrandHeroFridayUpdate() {
 
                                         </form>
                                     </div>
-                                    <div className="col-span-1 flex justify-center items-center">
+                                    {/* <div className="col-span-1 flex justify-center items-center">
                                         <Image
                                             className="text-center christmas-banner-img"
                                             src={"/brand-img/crishtmis-img.png"}
@@ -248,7 +248,7 @@ export default function BrandHeroFridayUpdate() {
                                             height={500}
                                             loading="lazy"
                                         ></Image>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

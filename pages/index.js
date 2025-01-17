@@ -31,6 +31,8 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination } from "swiper";
 import BrandHeroFriday from "./components/BrandHeroFriday";
 import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
+import PortfolioSlider5 from "./components/PortfolioSlider5";
+import HomeBookSlider from "./components/HomeBookSlider";
 
 const videoClient = [
     {
@@ -121,6 +123,7 @@ export default function Home() {
                 subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published 100s of books since our inception on 22nd February 2023. Even though we may not have been in the market for too long, but our experts have at least 10-15 years of experience and are masters of their designated fields. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
                 subdescthree=""
             />
+            {/* <HomeBookSlider /> */}
             <BrandServices />
             <BrandCTA
                 title="Do You Have Concerns? "
