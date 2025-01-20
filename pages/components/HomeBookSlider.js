@@ -107,15 +107,15 @@ export default function HomeBookSlider() {
             url: 'https://a.co/d/9KUT5WH',
             category: 'Published Books'
         },
-        {
-            id: 9,
-            src: "/brand-img/11.png",
-            title: 'Love and Laughter',
-            author: 'by: Lesvi Ferrel',
-            logo1: '/brand-img/Amazon Icon.png',
-            logo2: '/brand-img/Barnes Noble Icon.png',
-            category: 'Published Books'
-        },
+        // {
+        //     id: 9,
+        //     src: "/brand-img/11.png",
+        //     title: 'Love and Laughter',
+        //     author: 'by: Lesvi Ferrel',
+        //     logo1: '/brand-img/Amazon Icon.png',
+        //     logo2: '/brand-img/Barnes Noble Icon.png',
+        //     category: 'Published Books'
+        // },
         {
             id: 10,
             src: "/brand-img/12.png",
