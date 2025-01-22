@@ -122,6 +122,15 @@ const videoClient = [
         ProjectManager: "Amara Johnson & Lia Sinclair",
         clientname: "David Van Fleet"
     },
+    {
+        id:14,
+        src: "https://www.youtube.com/embed/VsO2MhLTZPk",
+        type: "video/mp4",
+        BookTitle: "Go Ask Sabrina",
+        Consultant: "Damon Peters",
+        ProjectManager: "Lia Sinclair",
+        clientname : "Sabrina Biamby"
+    },
 ]
 
 const BrandTesti = () => {
@@ -153,11 +162,6 @@ const BrandTesti = () => {
                 </div>
             </section>
         </div>
-
-
-
-
-
     )
 }
 

@@ -114,7 +114,7 @@ export default function BrandHeroFriday() {
         <>
             {/* Snowfall Background */}
             <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
-                <SnowFall />
+                {/* <SnowFall /> */}
                 <div className="container px-4 pt-20 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10">
                     <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
                         <div className="mb-4">
@@ -122,7 +122,7 @@ export default function BrandHeroFriday() {
                                 <span className="px-2 py-0">#1 Self</span> Publishing Company
                             </h3>
                             <FadeIn>
-                                <h1 className="font-poppins text-3xl md:text-5xl text-white font-bold">
+                                <h1 className="font-poppins text-3xl md:text-3xl text-white font-bold">
                                     DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
                                 </h1>
                             </FadeIn>

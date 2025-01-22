@@ -59,6 +59,7 @@ import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
 import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
 import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 import BrandFooterBook from "../components/BrandFooterBook";
+import BrandHeroFriday from "../components/BrandHeroFriday";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,

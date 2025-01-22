@@ -30,6 +30,9 @@ import "swiper/css/navigation";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Navigation, Pagination } from "swiper";
 import BrandHeroFriday from "./components/BrandHeroFriday";
+import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
+import PortfolioSlider5 from "./components/PortfolioSlider5";
+import HomeBookSlider from "./components/HomeBookSlider";
 
 const videoClient = [
     {
@@ -113,13 +116,14 @@ export default function Home() {
             <BrandNavbar />
             {/* <BrandHero /> */}
             {/* <BrandHeroFriday /> */}
-            <BrandBannerVideo Component={BrandHeroFriday} />
+            <BrandBannerVideo Component={BrandHeroFridayUpdate} />
             <BrandBannerLogo />
             <BrandAbout
                 subdescone="Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more book publishing companies out there than stars in the sky (okay, maybe not that many, but you get the idea)."
                 subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published 100s of books since our inception on 22nd February 2023. Even though we may not have been in the market for too long, but our experts have at least 10-15 years of experience and are masters of their designated fields. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
                 subdescthree=""
             />
+            <HomeBookSlider />
             <BrandServices />
             <BrandCTA
                 title="Do You Have Concerns? "
@@ -129,8 +133,8 @@ export default function Home() {
             <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
-            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative'>
-                <div className="container mx-auto text-center m1-h mb-10">
+            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative overflow-hidden'>
+                <div className="container mx-auto text-center m1-h mb-10 ">
                     <h3 className="mb-4 text-white text-2xl md:text-4xl font-poppins  font-bold">
                         VIDEOS TESTIMONIALS
                     </h3>
@@ -141,12 +145,22 @@ export default function Home() {
                     </p> */}
                 </div>
                 {/* Custom Previous Button */}
-                <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon prev cursor-pointer"
-                    onClick={() => swiperRef2.current?.slidePrev()}
-                >
-                    <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                <div className="flex justify-end gap-4">
+                    <div
+                        className=" top-1/2 -left-10 transform -translate-y-1/2  portfoilio-slider4-icon prev cursor-pointer"
+                        onClick={() => swiperRef2.current?.slidePrev()}
+                    >
+                        <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                    </div>
+                    {/* Custom Next Button */}
+                    <div
+                        className=" top-1/2 -right-10 transform -translate-y-1/2  portfoilio-slider4-icon next cursor-pointer"
+                        onClick={() => swiperRef2.current?.slideNext()}
+                    >
+                        <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+                    </div>
                 </div>
+
                 {/* Swiper Slider */}
                 <Swiper
                     spaceBetween={30}
@@ -181,13 +195,7 @@ export default function Home() {
                         ))}
                     </div>
                 </Swiper>
-                {/* Custom Next Button */}
-                <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil3 portfoilio-slider4-icon next cursor-pointer"
-                    onClick={() => swiperRef2.current?.slideNext()}
-                >
-                    <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
-                </div>
+
                 <div className="text-center mt-14">
                     <Link href="/testimonials" className="brand-about-btn font-poppins">VIEW MORE TESTIMONIALS</Link>
                 </div>

@@ -205,6 +205,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Available on Kindle
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
@@ -313,6 +317,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -431,6 +439,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -617,6 +629,18 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 </tr>
                                                 <tr>
                                                     <td>Account Verification</td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Account Optimization</td>
                                                     <td>
                                                         ✔️
                                                     </td>
@@ -836,6 +860,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Available on Amazon & Kindle
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
@@ -996,6 +1024,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1173,6 +1205,10 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Account Verification
+                                    </div>
+                                    <div className="flex gap-2 mb-5 items-center">
+                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                                        Account Optimization
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1432,6 +1468,18 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </tr>
                                     <tr>
                                         <td>Account Verification</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Account Optimization</td>
                                         <td>
                                             ✔️
                                         </td>

@@ -208,13 +208,10 @@ export default function BrandFooter() {
                                 USA Address:
                             </h4>
                             <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
-                            <div>
+                            {/* <div>
                                 <Link href="https://www.facebook.com/pinebookwriting0" target="_blank">
                                     <FontAwesomeIcon icon={faFacebook} className="me-3" />
                                 </Link>
-                                {/* <Link href="">
-                                    <FontAwesomeIcon icon={faLinkedin} className="me-3" />
-                                </Link> */}
                                 <Link href="https://www.instagram.com/pinebookwriting/" target="_blank">
                                     <FontAwesomeIcon icon={faInstagram} className="me-3" />
                                 </Link>
@@ -224,7 +221,7 @@ export default function BrandFooter() {
                                 <Link href="https://www.youtube.com/@Pinebookwriting" target="_blank">
                                     <FontAwesomeIcon icon={faYoutube} className="me-3" />
                                 </Link>
-                            </div>
+                            </div> */}
                             {/* <nav className="list-none mb-10 mt-5">
                                 <li>
                                     <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
@@ -324,6 +321,20 @@ export default function BrandFooter() {
                 )}
             </div>
             {/* <WhatsAppChat /> */}
+            <div id="fixed-social">
+                <div>
+                    <a href="https://www.facebook.com/pinebookwriting0" class="fixed-facebook" target="_blank"><FontAwesomeIcon icon={faFacebook} color="#316FF6" width={20} /> <span>Facebook</span></a>
+                </div>
+                <div>
+                    <a href="https://x.com/pinebookwriting" class="fixed-twitter" target="_blank"> <FontAwesomeIcon icon={faXTwitter} color="#14171A" width={20} /><span>Twitter</span></a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/pinebookwriting/" class="fixed-instagrem" target="_blank"><Image src={"/brand-img/insta-icon.png"} width={30} height={30}></Image><span>Instagram</span></a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/@Pinebookwriting" class="fixed-tumblr" target="_blank"><FontAwesomeIcon icon={faYoutube} color="#FF0000" width={20} /><span>Youtube</span></a>
+                </div>
+            </div>
         </>
     );
 }

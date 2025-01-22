@@ -12,6 +12,52 @@ const useHubspotForm = () => {
   const contactFormId = "611226a7-7043-4d53-b9d6-21b30b0628a9";
   const contactFormId2 = "a40c0b5c-b497-4985-b99a-dc77af456cba";
   const contactFormId3 = "ae3485db-9fd9-441d-9496-80c448617faa";
+  const contactFormId4 = "9a1a5b9c-6575-456a-ae92-ba2e409f88d0";
+
+  const submitMainContactFormLP = async (full_name, email, phoneNumber, service, message) => {
+    try {
+      const formResponse = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId4}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            submittedAt: Date.now(),
+            fields: [
+              {
+                name: "full_name",
+                value: full_name,
+              },
+              {
+                name: "email",
+                value: email,
+              },
+              {
+                name: "phone",
+                value: phoneNumber,
+              },
+              {
+                name: "service",
+                value: service,
+              },
+              {
+                name: "message",
+                value: message,
+              },
+            ],
+          }),
+        }
+      );
+
+      const formDataResponse = await formResponse.json();
+
+      return formDataResponse.inlineMessage;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const submitMainContactForm = async (full_name, email, phoneNumber, message) => {
     try {
@@ -395,6 +441,7 @@ const useHubspotForm = () => {
     submitMainContactForm,
     submitBookPublishingServiceForm,
     submitPopupContactForm,
+    submitMainContactFormLP,
   };
 };
 

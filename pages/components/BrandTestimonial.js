@@ -177,7 +177,6 @@ export default function BrandTestimonial() {
                             </Link>
                         </div>
                     </SwiperSlide>
-
                     <SwiperSlide>
                         <div className="brand-testimonials-card relative aos-animate" data-aos="flip-right">
                             <Link href={"https://www.trustpilot.com/reviews/670ec0c34bd9530b421c7a35"} target="_blank">
@@ -194,7 +193,6 @@ export default function BrandTestimonial() {
                             </Link>
                         </div>
                     </SwiperSlide>
-
                     <SwiperSlide>
                         <div className="brand-testimonials-card relative aos-animate" data-aos="flip-left">
                             <Link href={"https://www.trustpilot.com/reviews/66d8f839c119e14570f3cc3a"} target="_blank">

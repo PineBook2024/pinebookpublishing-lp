@@ -146,7 +146,7 @@ export default function PortfolioSlider1LP() {
                 <h2 className="text-3xl font-medium mb-5 text-white">Book Cover Design</h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon prev cursor-pointer"
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon prev cursor-pointer hide-btn-responsive"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -187,7 +187,7 @@ export default function PortfolioSlider1LP() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon next cursor-pointer"
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon next cursor-pointer hide-btn-responsive"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
