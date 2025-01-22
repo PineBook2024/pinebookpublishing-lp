@@ -179,7 +179,8 @@ export default function HomeBookSlider() {
             title: 'Behind Closed Doors: Male Experience of Domestic Violence in the Age of Denial',
             author: 'by: Che A. Abongwa',
             url: '#',
-            category: 'Coming Soon'
+            category: 'Coming Soon',
+            date: 'fff'
         },
         {
             id: 18,
