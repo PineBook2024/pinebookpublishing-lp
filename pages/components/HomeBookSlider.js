@@ -180,7 +180,6 @@ export default function HomeBookSlider() {
             author: 'by: Che A. Abongwa',
             url: '#',
             category: 'Coming Soon',
-            date: 'fff'
         },
         {
             id: 18,

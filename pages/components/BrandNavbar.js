@@ -82,7 +82,7 @@ export default function BrandNavbar() {
                 <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
                     <div>
                         <Link href="/" className="text-xl font-bold text-white">
-                            <Image src={'/brand-img/PBP Christmas (white).gif'} className='nav-logo' width={240} height={80} alt="brand logo" loading="lazy" />
+                            <Image src={'/brand-img/PBP-logo.gif'} className='nav-logo' width={240} height={80} alt="brand logo" loading="lazy" />
                         </Link>
                     </div>
                     <div className="md:hidden">
