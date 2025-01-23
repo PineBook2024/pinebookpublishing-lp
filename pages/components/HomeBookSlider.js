@@ -4,6 +4,12 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import dynamic from 'next/dynamic';
+import {
+    Autoplay,
+    Pagination,
+    Navigation,
+    EffectCoverflow,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -226,9 +232,14 @@ export default function HomeBookSlider() {
                 <Swiper
                     spaceBetween={30}
                     slidesPerView={4}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
                     loop={true}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     className="mySwiper"
+                    modules={[Navigation, Autoplay, Pagination]}
                     breakpoints={{
                         "@0.00": {
                             slidesPerView: 1,
