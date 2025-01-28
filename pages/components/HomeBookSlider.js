@@ -177,7 +177,7 @@ export default function HomeBookSlider() {
             title: 'I Am a Boy',
             author: 'by: Pamela Avis Harry',
             url: 'https://a.co/d/dCOUypn',
-            category: 'Publish'
+            category: 'Published Books'
         },
         {
             id: 17,
@@ -192,16 +192,16 @@ export default function HomeBookSlider() {
             src: "/brand-img/09.png",
             title: 'Gathering: A Collection of Poetry',
             author: 'by: Louis Crump Smithwick',
-            url: '#',
-            category: 'Coming Soon'
+            url: 'https://a.co/d/3w5Jxy7',
+            category: 'Published Books'
         },
         {
             id: 19,
             src: "/brand-img/17.png",
             title: 'Steven The Railroad Teen',
             author: 'by: Evan M. Franzen',
-            url: '#',
-            category: 'Coming Soon'
+            url: 'https://a.co/d/hLhYHea',
+            category: 'Published Books'
         },
     ];
 
@@ -218,7 +218,7 @@ export default function HomeBookSlider() {
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
                 </div>
                 <div className="flex space-x-4 justify-center mb-12">
-                    {['Published Books', 'Coming Soon'].map(category => (
+                    {/* {['Published Books', 'Coming Soon'].map(category => (
                         <button
                             key={category}
                             className={`px-4 py-2 font-poppins ${activeCategory === category ? 'active' : 'in-active'}`}
@@ -226,7 +226,15 @@ export default function HomeBookSlider() {
                         >
                             {category}
                         </button>
-                    ))}
+                    ))} */}
+                       
+                        <button
+                            className='brand-nav-btn shadow-xl mt-10 cursor-pointer mb-10'
+                            
+                        >
+                          Published Book
+                        </button>
+              
                 </div>
                 {/* Swiper Slider */}
                 <Swiper
