@@ -184,8 +184,8 @@ export default function HomeBookSlider() {
             src: "/brand-img/04.png",
             title: 'Behind Closed Doors: Male Experience of Domestic Violence in the Age of Denial',
             author: 'by: Che A. Abongwa',
-            url: '#',
-            category: 'Coming Soon',
+            url: 'https://a.co/d/3ag7Sgb',
+            category: 'Published Books',
         },
         {
             id: 18,
@@ -227,14 +227,11 @@ export default function HomeBookSlider() {
                             {category}
                         </button>
                     ))} */}
-                       
-                        <button
-                            className='brand-nav-btn shadow-xl mt-10 cursor-pointer mb-10'
-                            
-                        >
-                          Published Book
-                        </button>
-              
+                    <button
+                        className='brand-nav-btn shadow-xl mt-10 cursor-pointer mb-10'
+                    >
+                        Published Book
+                    </button>
                 </div>
                 {/* Swiper Slider */}
                 <Swiper
