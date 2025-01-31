@@ -1078,14 +1078,13 @@ footer svg {
     display: none;
   }
 
-  .client-logo-sec {
+  /* .client-logo-sec {
     margin-top: 20px;
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: auto auto auto;
-    /* justify-content: center; */
     gap: 10px;
-  }
+  } */
 
 
 
