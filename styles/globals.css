@@ -4110,7 +4110,7 @@ a.close-chat:hover {
 /* fixed social*/
 #fixed-social {
   position: fixed;
-  top: 50%;
+  top: 37%;
   right: 0;
   z-index: 9999999999;
   display: block;

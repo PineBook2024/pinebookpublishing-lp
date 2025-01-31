@@ -162,7 +162,7 @@ export default function BrandHeroFridayUpdate() {
                                     modules={[Navigation, Autoplay, Pagination]}
                                     breakpoints={{
                                         "@0.00": {
-                                            slidesPerView: 1,
+                                            slidesPerView: 4,
                                             spaceBetween: 10,
                                         },
                                         "@1.00": {
@@ -171,9 +171,6 @@ export default function BrandHeroFridayUpdate() {
                                         },
                                     }}
                                 >
-
-
-
                                     {clientLogos.map((logo, index) => (
                                         <SwiperSlide>
                                             <Link key={index} href={logo.href} target="_blank" className="flex items-center">
@@ -185,7 +182,6 @@ export default function BrandHeroFridayUpdate() {
                                                 />
                                             </Link>
                                         </SwiperSlide>
-
                                     ))}
                                 </Swiper>
                             </div>
