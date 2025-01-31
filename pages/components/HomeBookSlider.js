@@ -216,7 +216,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book3.png",
             title: 'The Quest for the Templar Reliquary: Rowen’s Secret Part One',
             author: 'by: Scott Andrews',
-            url: '#',
             category: 'Coming Soon'
         },
         {
@@ -224,7 +223,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book2.png",
             title: 'Rowen’s Secret: The Quest for the Templar Reliquary Part Two',
             author: 'by: Scott Andrews',
-            url: '#',
             category: 'Coming Soon'
         },
 
@@ -233,7 +231,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book4.png",
             title: 'Global Terrorism: Quest for Social and Economic Justice',
             author: 'by: Edward Agbai',
-            url: '#',
             category: 'Coming Soon'
         },
         {
@@ -241,7 +238,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book5.png",
             title: 'The Truth About Giving in the Church',
             author: 'by: Eric Mills',
-            url: '#',
             category: 'Coming Soon'
         },
         {
@@ -249,7 +245,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book6.png",
             title: 'Mystforgotten Chronicles - Hopeful Purpose',
             author: 'by: Hayden M Rusk',
-            url: '#',
             category: 'Coming Soon'
         },
         {
@@ -257,7 +252,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book7.png",
             title: 'JujuBean Adventures Book one: OooBoys Burgers.',
             author: 'by: Shiela Orsot',
-            url: '#',
             category: 'Coming Soon'
         },
         {
@@ -265,7 +259,6 @@ export default function HomeBookSlider() {
             src: "/brand-img/coming-soon-book8.png",
             title: 'Unravelling the World: Adventures Across Continents ',
             author: 'by: Neil Dutta',
-            url: '#',
             category: 'Coming Soon'
         },
     ];
@@ -274,7 +267,7 @@ export default function HomeBookSlider() {
 
     return (
         <>
-            <div className="w-full max-w-6xl mx-auto py-10 relative home-book-cover">
+            <div className="w-full max-w-6xl mx-auto py-8 relative home-book-cover">
                 {/* Custom Previous Button */}
                 <div
                     className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon prev cursor-pointer"
