@@ -55,10 +55,10 @@ export default function PortfolioSlider2() {
             id: 2,
             src: "/brand-img/Artboard 1-1.png",
         },
-        {
-            id: 3,
-            src: "/brand-img/Artboard 1-2.png",
-        },
+        // {
+        //     id: 3,
+        //     src: "/brand-img/Artboard 1-2.png",
+        // },
         {
             id: 4,
             src: "/brand-img/Artboard 2.png",
@@ -67,10 +67,10 @@ export default function PortfolioSlider2() {
             id: 5,
             src: "/brand-img/Draft 02.png",
         },
-        {
-            id: 6,
-            src: "/brand-img/Efrain Castillos Barber Studio.png",
-        },
+        // {
+        //     id: 6,
+        //     src: "/brand-img/Efrain Castillos Barber Studio.png",
+        // },
         {
             id: 7,
             src: "/brand-img/John H Bowman 2.png",

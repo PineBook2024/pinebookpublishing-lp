@@ -1,12 +1,25 @@
 import useHubspotForm from "@/hooks/hubspot";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import FadeIn from "./FadeIn";
 import SnowFall from "./SnowFall";
+import { Swiper, SwiperSlide } from "swiper/react";
+import dynamic from 'next/dynamic';
+import {
+    Autoplay,
+    Pagination,
+    Navigation,
+    EffectCoverflow,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 export default function BrandHeroFridayUpdate() {
+    const swiperRef2 = useRef(null);
     const router = useRouter();
     const { submitMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
@@ -21,36 +34,36 @@ export default function BrandHeroFridayUpdate() {
             href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
             src: "/images/Google Partner.png",
             alt: "LOGO",
-            width: 95,
-            height: 95,
+            width: 125,
+            height: 125,
         },
         {
             href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
             src: "/images/s2.png",
             alt: "LOGO",
-            width: 95,
-            height: 60,
+            width: 125,
+            height: 125,
         },
         {
             href: "https://www.trustpilot.com/review/pinebookwriting.com",
             src: "/images/s3.png",
             alt: "LOGO",
-            width: 115,
-            height: 70,
+            width: 125,
+            height: 125,
         },
         {
             href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
             src: "/images/s4.png",
             alt: "LOGO",
-            width: 95,
-            height: 60,
+            width: 125,
+            height: 125,
         },
         {
             href: "https://clutch.co/profile/pine-book-writing",
             src: "/images/s6.png",
             alt: "LOGO",
-            width: 95,
-            height: 60,
+            width: 125,
+            height: 125,
         },
     ];
 
@@ -124,7 +137,7 @@ export default function BrandHeroFridayUpdate() {
                             <FadeIn>
                                 <h1 className="font-poppins text-2xl md:text-3xl text-white font-bold">
                                     DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
-                                </h1> 
+                                </h1>
                             </FadeIn>
                             <p className="text-xl text-white pt-4">
                                 Pine Book Publishing has made it much more easier to self-publish a
@@ -136,16 +149,45 @@ export default function BrandHeroFridayUpdate() {
                                 Our Credibility
                             </h4>
                             <div className="flex justify-start items-center mt-4 gap-2 md:gap-x-8 client-logo-sec">
-                                {clientLogos.map((logo, index) => (
-                                    <Link key={index} href={logo.href} target="_blank">
-                                        <Image
-                                            alt={logo.alt}
-                                            src={logo.src}
-                                            width={logo.width}
-                                            height={logo.height}
-                                        />
-                                    </Link>
-                                ))}
+                                <Swiper
+                                    spaceBetween={30}
+                                    slidesPerView={4}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false,
+                                    }}
+                                    loop={true}
+                                    onSwiper={(swiper) => (swiperRef2.current = swiper)}
+                                    className="mySwiper"
+                                    modules={[Navigation, Autoplay, Pagination]}
+                                    breakpoints={{
+                                        "@0.00": {
+                                            slidesPerView: 1,
+                                            spaceBetween: 10,
+                                        },
+                                        "@1.00": {
+                                            slidesPerView: 4,
+                                            spaceBetween: 10,
+                                        },
+                                    }}
+                                >
+
+
+
+                                    {clientLogos.map((logo, index) => (
+                                        <SwiperSlide>
+                                            <Link key={index} href={logo.href} target="_blank" className="flex items-center">
+                                                <Image
+                                                    alt={logo.alt}
+                                                    src={logo.src}
+                                                    width={logo.width}
+                                                    height={logo.height}
+                                                />
+                                            </Link>
+                                        </SwiperSlide>
+
+                                    ))}
+                                </Swiper>
                             </div>
                         </div>
                         <div>

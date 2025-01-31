@@ -929,7 +929,7 @@ footer svg {
     align-items: center;
   }
 
-  .home-book-cover .content{
+  .home-book-cover .content {
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -1086,6 +1086,8 @@ footer svg {
     /* justify-content: center; */
     gap: 10px;
   }
+
+
 
   .bk-sil2.next svg,
   .bk-sil.next svg,
@@ -4365,4 +4367,9 @@ a.close-chat:hover {
   background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
   color: #fff;
   border-radius: 50px;
+}
+
+
+.client-logo-sec .mySwiper .swiper-wrapper {
+  align-items: center !important;
 }
