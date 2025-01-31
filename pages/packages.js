@@ -1284,8 +1284,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Social Media Marketing
-                                        (Facebook, Instagram, Twitter)
-                                        (Youtube, Tiktok)
+                                        (Facebook, Instagram, Twitter, YouTube, TikTok)
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Guarantees
