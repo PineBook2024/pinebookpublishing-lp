@@ -213,20 +213,21 @@ export default function HomeBookSlider() {
         // },
         {
             id: 21,
-            src: "/brand-img/coming-soon-book2.png",
-            title: 'Rowen’s Secret: The Quest for the Templar Reliquary Part Two',
-            author: 'by: Scott Andrews',
-            url: '#',
-            category: 'Coming Soon'
-        },
-        {
-            id: 22,
             src: "/brand-img/coming-soon-book3.png",
             title: 'The Quest for the Templar Reliquary: Rowen’s Secret Part One',
             author: 'by: Scott Andrews',
             url: '#',
             category: 'Coming Soon'
         },
+        {
+            id: 22,
+            src: "/brand-img/coming-soon-book2.png",
+            title: 'Rowen’s Secret: The Quest for the Templar Reliquary Part Two',
+            author: 'by: Scott Andrews',
+            url: '#',
+            category: 'Coming Soon'
+        },
+
         {
             id: 23,
             src: "/brand-img/coming-soon-book4.png",
