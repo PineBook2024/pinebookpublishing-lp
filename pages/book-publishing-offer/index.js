@@ -397,11 +397,7 @@ export default function Home() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-                     window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-
-                      gtag('config', 'AW-16471224604');
+                window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16471224604'); 
               `,
           }}
         />
