@@ -159,9 +159,18 @@ export default function App({ Component, pageProps }) {
       </Head>
       <main className={`${poppins.variable}`}>
         <Component {...pageProps} />
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
           strategy="afterInteractive"
+        /> */}
+         {/* Google tag Manager Script */}
+         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16471224604'); 
+              `,
+          }}
         />
         <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script>
         <script
