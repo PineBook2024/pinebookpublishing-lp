@@ -33,6 +33,7 @@ import BrandHeroFriday from "./components/BrandHeroFriday";
 import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
 import PortfolioSlider5 from "./components/PortfolioSlider5";
 import HomeBookSlider from "./components/HomeBookSlider";
+import HomePopupNew from "./components/HomePopupNew";
 
 const videoClient = [
     {
@@ -205,6 +206,7 @@ export default function Home() {
             <BrandContact />
             <BrandLogo />
             <BrandFooter />
+            {/* <HomePopupNew /> */}
         </>
     );
 }

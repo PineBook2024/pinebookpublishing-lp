@@ -6,6 +6,7 @@ import Script from 'next/script';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
+import HomePopupNew from "./components/HomePopupNew";
 
 // Font files can be colocated inside of `pages`
 // const majallab = localFont({
@@ -217,8 +218,7 @@ export default function App({ Component, pageProps }) {
         </noscript>
         {/* End Meta Pixel Code */}
 
-
-
+        <HomePopupNew />
       </main>
     </>
   );

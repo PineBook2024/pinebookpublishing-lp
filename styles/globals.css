@@ -4372,3 +4372,33 @@ a.close-chat:hover {
 .client-logo-sec .mySwiper .swiper-wrapper {
   align-items: center !important;
 }
+
+.transparent-connect-form-border-new {
+  background-color: #87929d6b!important;
+  backdrop-filter: blur(4px);
+  background-image: url(../public/images/pop-bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.connect-form-border-new {
+  border: 6px solid #2C9384;
+  border-radius: 60px;
+}
+
+.home-popup-modal-wrapper-new {
+  width: 70%;
+  height: 520px;
+}
+
+.popup-form-wrapper-new {
+  width: 35%;
+  margin-left: auto;
+}
+
+.form-off-badge-new {
+  position: absolute;
+  left: -70px;
+  top: -50px;
+  z-index: 1000;
+}
