@@ -4377,7 +4377,7 @@ a.close-chat:hover {
   background-color: #87929d6b!important;
   backdrop-filter: blur(4px);
   background-image: url(../public/images/pop-bg.jpg);
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -4387,7 +4387,7 @@ a.close-chat:hover {
 }
 
 .home-popup-modal-wrapper-new {
-  width: 70%;
+  width: 84%;
   height: 520px;
 }
 

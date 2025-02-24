@@ -9,6 +9,7 @@ import useHubspotForm from "@/hooks/hubspot";
 
 export default function HomePopupNew() {
     const router = useRouter();
+    const { pathname } = router; // Get the current route
     const { submitPopupContactFormScreen } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fulName, setFulName] = useState("");
@@ -67,6 +68,10 @@ export default function HomePopupNew() {
         console.log("response", response);
     };
 
+    if (pathname === "/thank-you") {
+        return null;
+    }
+
     return (
         <>
             {isOpen && (
@@ -96,9 +101,9 @@ export default function HomePopupNew() {
 
                                 <form className="popup-form-wrapper-new" onSubmit={handleSubmit}>
                                     <div className="text-center">
-                                        <h2 className="font-poppins text-white md:text-3xl text-2xl mt-2">Come Celebrate with Us!
+                                        <h2 className="font-poppins text-white md:text-2xl text-2xl mt-2 font-bold">Come Celebrate with Us!
                                         </h2>
-                                        <p className="font-poppins text-white text-2xl">Exclusive Offer: Expert Book Writing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
+                                        <p className="font-poppins text-white text-lg">Exclusive Offer: Expert Book Writing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
                                     <div className="py-5">
@@ -168,7 +173,7 @@ export default function HomePopupNew() {
                                                 Form submitted Successfully!
                                             </p>
                                         )}
-                                        <button className="md:p-4 p-2 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn " type="submit">
+                                        <button className="md:p-2 p-2 w-full bg-green-500 uppercase text-white rounded font-poppins submit-btn " type="submit">
                                         Activate Your Discount Coupon
                                         </button>
                                     </div>
