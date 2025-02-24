@@ -924,6 +924,36 @@ footer svg {
 /* Media Query */
 
 @media (min-width: 300px) and (max-width: 680px) {
+  .connect-form-border-new {
+    padding: 8px;
+  }
+
+  .transparent-connect-form-border-new {
+    background: #000 !important;
+  }
+
+  .form-off-badge-new {
+    position: absolute;
+    left: -51px !important;
+    top: -50px !important;
+    z-index: 1000;
+    width: 100px;
+  }
+
+  .nav-top-bar {
+    z-index: 1 !important;
+  }
+
+  .popup-form-wrapper-new {
+    width: 100% !important;
+    margin-left: auto;
+  }
+
+  .home-popup-modal-wrapper-new {
+    width: 84%;
+    height: 480px !important;
+  }
+
   .home-book-cover .books {
     justify-content: center;
     align-items: center;
@@ -4374,7 +4404,7 @@ a.close-chat:hover {
 }
 
 .transparent-connect-form-border-new {
-  background-color: #87929d6b!important;
+  background-color: #87929d6b !important;
   backdrop-filter: blur(4px);
   background-image: url(../public/images/pop-bg.jpg);
   background-size: cover;
