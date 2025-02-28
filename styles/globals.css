@@ -4432,3 +4432,19 @@ a.close-chat:hover {
   top: -50px;
   z-index: 1000;
 }
+
+
+.terms-condition-bullets,
+.terms-condition-bullets-subs{
+  list-style: auto;
+}
+.terms-condition-bullets-subs p{
+  padding-bottom: 0px !important;
+}
+.terms-condition-bullets-subs {
+  margin-top: -9px;
+}
+.terms-condition-bullets{
+  margin-left: 25px;
+  margin-top: 19px;
+}

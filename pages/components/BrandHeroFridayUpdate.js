@@ -215,30 +215,32 @@ export default function BrandHeroFridayUpdate() {
                                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                                     <div className="col-span-2 w-full relative">
                                         <form className="flex flex-col gap-3 justify-start items-start" onSubmit={handleSubmit}>
-                                            <div className="relative w-full">
-                                                <input
-                                                    type="text"
-                                                    name="fullName"
-                                                    onChange={handleChange}
-                                                    value={fullName}
-                                                    required
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                                                    placeholder="Enter your Name"
-                                                />
-                                            </div>
-                                            <div className="relative w-full">
-                                                <input
-                                                    type="text"
-                                                    onChange={handleChange}
-                                                    value={phoneNumber}
-                                                    name="phoneNumber"
-                                                    required
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                                                    placeholder="Enter your Phone"
-                                                />
-                                                {phoneError && (
-                                                    <p className="text-red-500 text-sm mt-1">{phoneError}</p>
-                                                )}
+                                            <div class="grid gap-3 md:grid-cols-2 w-full">
+                                                <div className="relative w-full">
+                                                    <input
+                                                        type="text"
+                                                        name="fullName"
+                                                        onChange={handleChange}
+                                                        value={fullName}
+                                                        required
+                                                        className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                                                        placeholder="Enter your Name"
+                                                    />
+                                                </div>
+                                                <div className="relative w-full">
+                                                    <input
+                                                        type="text"
+                                                        onChange={handleChange}
+                                                        value={phoneNumber}
+                                                        name="phoneNumber"
+                                                        required
+                                                        className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                                                        placeholder="Enter your Phone"
+                                                    />
+                                                    {phoneError && (
+                                                        <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                                                    )}
+                                                </div>
                                             </div>
                                             <div className="relative w-full">
                                                 <input
@@ -247,13 +249,13 @@ export default function BrandHeroFridayUpdate() {
                                                     onChange={handleChange}
                                                     value={email}
                                                     required
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                    className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
                                                     placeholder="Enter your Email"
                                                 />
                                             </div>
                                             <div className="relative w-full">
                                                 <textarea
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                    className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
                                                     rows={2}
                                                     onChange={handleChange}
                                                     value={message}
@@ -262,6 +264,12 @@ export default function BrandHeroFridayUpdate() {
                                                     name="message"
                                                 ></textarea>
                                             </div>
+                                            <div class="flex items-start mb-5">
+                                                <div class="flex items-center h-5">
+                                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                                                </div>
+                                                <label for="remember" class="ms-2 text-sm font-medium text-gray-100 dark:text-gray-700">By checking this box, I consent to received text messages related to listing updates from Pine Book Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-300">(866) 841-7469</Link>  for assistance. For more information, please refer to our  <Link href="privacy-policy" className="text-blue-300" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-300" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
+                                            </div>
                                             {showSuccess && (
                                                 <p className="px-1 py-1 text-green-700">
                                                     Form submitted Successfully!
@@ -269,7 +277,7 @@ export default function BrandHeroFridayUpdate() {
                                             )}
                                             <div className="w-full">
                                                 <button
-                                                    className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
+                                                    className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-md shadow-xl text-xl"
                                                     type="submit"
                                                 >
                                                     Submit
