@@ -218,7 +218,7 @@ export default function App({ Component, pageProps }) {
         </noscript>
         {/* End Meta Pixel Code */}
 
-        <HomePopupNew />
+        {/* <HomePopupNew /> */}
       </main>
     </>
   );
