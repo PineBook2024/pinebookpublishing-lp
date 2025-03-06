@@ -335,9 +335,11 @@ export default function HeroFormBookOffer() {
   };
 
   const categoryPublishing = [
-    "Self-Publishing",
-    "Traditional Publishing",
-    "Hybrid Publishing",
+    "Book Publishing",
+    "Book Editing",
+    "Proofreading",
+    "Book Formatting",
+    "Book Writing ",
   ];
 
 
@@ -600,6 +602,7 @@ export default function HeroFormBookOffer() {
                               className="tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
                               onChange={(e) => setPhone(e.target.value)} 
                               value={phone}
+                              required
                             />
                           </div>
                         </div>
@@ -620,7 +623,7 @@ export default function HeroFormBookOffer() {
                     </div>
                     <div className="relative w-full">
                       <select name="category" value={category} onChange={handleChange} className="text-grey outline-0 pl-4 pr-4 py-2 border text-sm rounded-lg shadow-xl w-full header-form-input">
-                        <option value="" className="text-sm text-muted" disabled>Publishing Category
+                        <option value="" className="text-sm text-muted" disabled>Our Services
                         </option>
                         {categoryPublishing.map(option => (
                           <option key={option} value={option}>{option}</option>
