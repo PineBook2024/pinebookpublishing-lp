@@ -50,217 +50,371 @@ export default function HomeBookSlider() {
     const books = [
         {
             id: 1,
-            src: "/brand-img/01.png",
-            title: "Anders and Maren Larsen and Descendants' Life Histories and Stories",
-            author: 'by: Ronald A Larson',
-            url: 'https://a.co/d/1Y5YQs4',
-            category: 'Published Books'
-        },
-        {
-            id: 2,
-            src: "/brand-img/02.png",
-            title: "Facing Challenges: A Warrior's Story of Overcoming ",
-            author: 'by: Lesvi Ferrel',
-            url: 'https://a.co/d/fyPMmAq',
-            category: 'Published Books'
-        },
-        {
-            id: 3,
-            src: "/brand-img/03.png",
-            title: 'A Day of Play with Foamy and Friends',
-            author: 'by: Kristin Kramer',
-            url: 'https://a.co/d/b5Xi3E1',
-            category: 'Published Books'
-        },
-        {
-            id: 4,
-            src: "/brand-img/05.png",
-            title: "Ella's Songs",
-            author: 'by: David D. Van Fleet',
-            url: 'https://a.co/d/7mlkkL9',
-            category: 'Published Books'
-        },
-        {
-            id: 5,
-            src: "/brand-img/06.png",
-            title: 'Cataclysm: The Rise of Teatrie Part 2',
-            author: 'by: K. C. Climer',
-            url: 'https://a.co/d/1WnuVhJ',
-            category: 'Published Books'
-        },
-        {
-            id: 6,
-            src: "/brand-img/07.png",
-            title: 'Healing In Africa: Exploring Health and Wellness Across the Continent',
-            author: 'by: Christian Ehiobuche',
-            url: 'https://a.co/d/enWp3KC',
-            category: 'Published Books'
-
-        },
-        {
-            id: 7,
-            src: "/brand-img/08.png",
-            title: 'Shadows of Valor: Navigating Imposter Syndrome While Serving in the U.S. Military',
-            author: 'by: Dr. Joshan A. Flowers, DSL',
-            url: 'https://a.co/d/c7ux0mD',
-            category: 'Published Books'
-        },
-        {
-            id: 8,
-            src: "/brand-img/10.png",
-            title: 'My Journey : Vol 1',
-            author: 'by: John M Suits',
-            url: 'https://a.co/d/9KUT5WH',
-            category: 'Published Books'
-        },
-        // {
-        //     id: 9,
-        //     src: "/brand-img/11.png",
-        //     title: 'Love and Laughter',
-        //     author: 'by: Lesvi Ferrel',
-        //     logo1: '/brand-img/Amazon Icon.png',
-        //     logo2: '/brand-img/Barnes Noble Icon.png',
-        //     category: 'Published Books'
-        // },
-        {
-            id: 10,
-            src: "/brand-img/12.png",
-            title: "A Heart's Desire",
-            author: 'by: Queen Starasia',
-            url: 'https://a.co/d/eRFpsZR',
-            category: 'Published Books'
-        },
-        {
-            id: 11,
-            src: "/brand-img/13.png",
-            title: 'Genesis ',
-            author: 'by:Max O. Miller',
-            url: 'https://a.co/d/jhbP3PW',
-            category: 'Published Books'
-        },
-        {
-            id: 12,
-            src: "/brand-img/14.png",
-            title: 'The Well of Hope: Bloodlines',
-            author: 'by: Angel Mercado',
-            url: 'https://a.co/d/8H81GS7',
-            category: 'Published Books'
-        },
-        {
-            id: 13,
-            src: "/brand-img/15.png",
-            title: '3 Naughty Monkeys & the Christmas Disaster',
-            author: 'by: Mary Gunn',
-            url: 'https://a.co/d/4JOMf0m',
-            category: 'Published Books'
-        },
-        {
-            id: 14,
-            src: "/brand-img/16.png",
-            title: "Rising 2 B'come: Character building journal",
-            author: 'by: Stacey L Joiner',
-            url: 'https://a.co/d/6KD7e6K',
-            category: 'Published Books'
-
-        },
-        {
-            id: 15,
-            src: "/brand-img/18.png",
-            title: 'Sky Cats',
-            author: 'by: Mary Gunn',
-            url: 'https://www.amazon.com/dp/B0C5M1N2O3',
-            category: 'Published Books'
-        },
-        {
-            id: 16,
-            src: "/brand-img/19.png",
-            title: 'I Am a Boy',
-            author: 'by: Pamela Avis Harry',
-            url: 'https://a.co/d/dCOUypn',
-            category: 'Published Books'
-        },
-        {
-            id: 17,
-            src: "/brand-img/04.png",
-            title: 'Behind Closed Doors: Male Experience of Domestic Violence in the Age of Denial',
-            author: 'by: Che A. Abongwa',
-            url: 'https://a.co/d/3ag7Sgb',
-            category: 'Published Books',
-        },
-        {
-            id: 18,
-            src: "/brand-img/09.png",
-            title: 'Gathering: A Collection of Poetry',
-            author: 'by: Louis Crump Smithwick',
-            url: 'https://a.co/d/3w5Jxy7',
-            category: 'Published Books'
-        },
-        {
-            id: 19,
-            src: "/brand-img/17.png",
-            title: 'Steven The Railroad Teen',
-            author: 'by: Evan M. Franzen',
-            url: 'https://a.co/d/hLhYHea',
-            category: 'Published Books'
-        },
-        // {
-        //     id: 20,
-        //     src: "/brand-img/coming-soon-book1.png",
-        //     title: 'Steven The Railroad Teen',
-        //     author: 'by: Evan M. Franzen',
-        //     url: '#',
-        //     category: 'Coming Soon'
-        // },
-        {
-            id: 21,
-            src: "/brand-img/coming-soon-book3.png",
-            title: 'The Quest for the Templar Reliquary: Rowen’s Secret Part One',
-            author: 'by: Scott Andrews',
-            category: 'Coming Soon'
-        },
-        {
-            id: 22,
-            src: "/brand-img/coming-soon-book2.png",
-            title: 'Rowen’s Secret: The Quest for the Templar Reliquary Part Two',
-            author: 'by: Scott Andrews',
-            category: 'Coming Soon'
-        },
-
-        {
-            id: 23,
-            src: "/brand-img/coming-soon-book4.png",
-            title: 'Global Terrorism: Quest for Social and Economic Justice',
-            author: 'by: Edward Agbai',
-            category: 'Coming Soon'
-        },
-        {
-            id: 24,
             src: "/brand-img/coming-soon-book5.png",
             title: 'The Truth About Giving in the Church',
             author: 'by: Eric Mills',
             category: 'Coming Soon'
         },
         {
-            id: 25,
+            id: 2,
             src: "/brand-img/coming-soon-book6.png",
             title: 'Mystforgotten Chronicles - Hopeful Purpose',
             author: 'by: Hayden M Rusk',
             category: 'Coming Soon'
         },
         {
+            id: 3,
+            src: "/brand-img/Published-Books-Section/A. David.png",
+            title: 'The Lost Gospel of Rabbits',
+            author: 'by: A. David',
+            category: 'Published Books',
+            url: 'https://a.co/d/0XWuJ4u'
+        },
+        {
+            id: 4,
+            src: "/brand-img/Published-Books-Section/Ashlee Griffin.png",
+            title: 'Fate: The Alpha King and His Unexpected Mate',
+            author: 'by: Ashlee Griffin',
+            category: 'Published Books',
+            url: 'https://a.co/d/9m6GYKD'
+        },
+        {
+            id: 5,
+            src: "/brand-img/Published-Books-Section/C.B. Ryan.png",
+            title: 'I am a Werewolf Hunter',
+            author: 'by: C.B. Ryan',
+            category: 'Published Books',
+            url: 'https://a.co/d/bBHqxNO'
+        },
+        {
+            id: 6,
+            src: "/brand-img/Published-Books-Section/Carla Fendricks.png",
+            title: 'Shattered Without A Break',
+            author: 'by: Carla Fendricks',
+            category: 'Published Books',
+            url: 'https://a.co/d/4fidrBJ'
+        },
+        {
+            id: 7,
+            src: "/brand-img/Published-Books-Section/Che A. Abongwa.png",
+            title: 'Behind Closed Doors: Male Experience of Domestic Violence in the Age of Denial ',
+            author: 'by: Che A. Abongwa',
+            category: 'Published Books',
+            url: 'https://a.co/d/1nsoajL'
+        },
+        {
+            id: 8,
+            src: "/brand-img/Published-Books-Section/Chhavyvann So.png",
+            title: 'Silent Fear: The True Story of my Life ',
+            author: 'by: Chhavyvann So',
+            category: 'Published Books',
+            url: 'https://a.co/d/0fhsaTT'
+        },
+        {
+            id: 9,
+            src: "/brand-img/Published-Books-Section/Christopher Allen.png",
+            title: 'Vetting The Book of Enoch For The Last Days',
+            author: 'by: Christopher Allen',
+            category: 'Published Books',
+            url: 'https://a.co/d/hPZVuF3'
+        },
+        {
+            id: 10,
+            src: "/brand-img/Published-Books-Section/D.T. Weiss.png",
+            title: 'ANOMALOUS: Exploring UFOs, Non-Human-Intelligence and Related Phenomena',
+            author: 'by: D.T. Weiss',
+            category: 'Published Books',
+            url: 'https://a.co/d/d0zNDDB'
+        },
+        {
+            id: 11,
+            src: "/brand-img/Published-Books-Section/David Wolfson.png",
+            title: 'Financial Syndicate: Some Job Opportunities Go Too Far',
+            author: 'by: David Wolfson',
+            category: 'Published Books',
+            url: 'https://a.co/d/0XWuJ4u'
+        },
+        {
+            id: 12,
+            src: "/brand-img/Published-Books-Section/Dr. Joshan A. Flowers, DSL.png",
+            title: 'Imposter Syndrome: Silencing the Self-Doubt Within the Workplace',
+            author: 'by: Dr. Joshan A. Flowers, DSL',
+            category: 'Published Books',
+            url: 'https://a.co/d/9OBXNZs'
+        },
+        {
+            id: 13,
+            src: "/brand-img/Published-Books-Section/Edward Agbai.png",
+            title: 'The 2023 Elections in Nigeria: Actors, Intrigues, and Winners',
+            author: 'by: Edward Agbai',
+            category: 'Published Books',
+            url: 'https://a.co/d/8W8RCsb'
+        },
+        {
+            id: 14,
+            src: "/brand-img/Published-Books-Section/Evan M Franzen.png",
+            title: 'Steven the Railroad Teen',
+            author: 'by: Edward Agbai',
+            category: 'Published Books',
+            url: 'https://a.co/d/hLhYHea'
+        },
+        {
+            id: 15,
+            src: "/brand-img/Published-Books-Section/Frank Willard Morgan.png",
+            title: "Jesus in Action at His Feasts: How John's Entire Gospel Builds on Jewish Festal Scriptures",
+            author: 'by: Frank Willard Morgan',
+            category: 'Published Books',
+            url: 'https://a.co/d/9RWZI95'
+        },
+        {
+            id: 16,
+            src: "/brand-img/Published-Books-Section/J. Grace.png",
+            title: "Are You Ready For Us?",
+            author: 'by: J. Grace',
+            category: 'Published Books',
+            url: 'https://a.co/d/6Y9etUb'
+        },
+        {
+            id: 17,
+            src: "/brand-img/Published-Books-Section/J. L. Schaffer.png",
+            title: "Caught in the Horizon",
+            author: 'by: J. L. Schaffer',
+            category: 'Published Books',
+            url: 'https://a.co/d/3fKMB5m'
+        },
+        // {
+        //     id: 18,
+        //     src: "/brand-img/Published-Books-Section/J. L. Schaffer.png",
+        //     title: "Caught in the Horizon",
+        //     author: 'by: J. L. Schaffer',
+        //     category: 'Published Books',
+        //     url: 'https://a.co/d/3fKMB5m'
+        // },
+        {
+            id: 19,
+            src: "/brand-img/Published-Books-Section/J.E. Grace.png",
+            title: "Mary and Her Little Lamby (Story-Song Series)",
+            author: 'by: J.E. Grace',
+            category: 'Published Books',
+            url: 'https://a.co/d/bVRxqZd'
+        },
+        {
+            id: 20,
+            src: "/brand-img/Published-Books-Section/Jeff Ramin.png",
+            title: "What More?",
+            author: 'by: Jeff Ramin',
+            category: 'Published Books',
+            url: 'https://a.co/d/du0jfrb'
+        },
+        {
+            id: 21,
+            src: "/brand-img/Published-Books-Section/K. C. Climer  pt 1.png",
+            title: "Cataclysm: The Rise of Teatrie Part 1",
+            author: 'by: K. C. Climer ',
+            category: 'Published Books',
+            url: 'https://a.co/d/b8Rt1SZ'
+        },
+        {
+            id: 22,
+            src: "/brand-img/Published-Books-Section/Katie Loftis  -1.png",
+            title: "Thorns are more Deadly",
+            author: 'by: Katie Loftis',
+            category: 'Published Books',
+            url: 'https://a.co/d/7Ny4KeH'
+        },
+        {
+            id: 23,
+            src: "/brand-img/Published-Books-Section/Katie Loftis.png",
+            title: "Dirt is Forever Deadly",
+            author: 'by: Katie Loftis',
+            category: 'Published Books',
+            url: 'https://a.co/d/icKCEyF'
+        },
+        {
+            id: 24,
+            src: "/brand-img/Published-Books-Section/Larry NiMarLee.png",
+            title: "The Man With The Knowledge Of Eleven-Eleven",
+            author: 'by: Larry NiMarLee',
+            category: 'Published Books',
+            url: 'https://a.co/d/4mR2Fqx'
+        },
+        {
+            id: 25,
+            src: "/brand-img/Published-Books-Section/Leslie Vick.png",
+            title: "Finding Our Way",
+            author: 'by: Leslie Vick ',
+            category: 'Published Books',
+            url: 'https://a.co/d/17IqqNj'
+        },
+        {
             id: 26,
-            src: "/brand-img/coming-soon-book7.png",
-            title: 'JujuBean Adventures Book one: OooBoys Burgers.',
-            author: 'by: Shiela Orsot',
-            category: 'Coming Soon'
+            src: "/brand-img/Published-Books-Section/Lesvi Ferrel -2.png",
+            title: "Love and Laughter: Stories Between Abuelita and Her Little Grandchildren",
+            author: 'by: Lesvi Ferrel',
+            category: 'Published Books',
+            url: 'https://a.co/d/2o8sa4k'
         },
         {
             id: 27,
-            src: "/brand-img/coming-soon-book8.png",
-            title: 'Unravelling the World: Adventures Across Continents ',
-            author: 'by: Neil Dutta',
-            category: 'Coming Soon'
+            src: "/brand-img/Published-Books-Section/Lesvi Ferrel.png",
+            title: "Free Yourself From Pain: Therapeutic Massages for Fibromyalgia, Neuropathy, and Body Reduction",
+            author: 'by: Lesvi Ferrel',
+            category: 'Published Books',
+            url: 'https://a.co/d/1Tbi2T6'
         },
+        {
+            id: 28,
+            src: "/brand-img/Published-Books-Section/Louis Crump Smithwick.png",
+            title: "Gathering: A Collection of Poetry",
+            author: 'by: Louis Crump Smithwick',
+            category: 'Published Books',
+            url: 'https://a.co/d/3w5Jxy7'
+        },
+        {
+            id: 29,
+            src: "/brand-img/Published-Books-Section/Megan Siebenlist.png",
+            title: "Postpartum & Me",
+            author: 'by: Megan Siebenlist',
+            category: 'Published Books',
+            url: 'https://a.co/d/aGD3kw4'
+        },
+        {
+            id: 30,
+            src: "/brand-img/Published-Books-Section/Michael Garrell.png",
+            title: "All Blondes Live In Manhattan",
+            author: 'by: Michael Garrell',
+            category: 'Published Books',
+            url: 'https://www.barnesandnoble.com/w/all-blondes-live-in-manhattan-michael-garrell/1145938971'
+        },
+        {
+            id: 31,
+            src: "/brand-img/Published-Books-Section/Michele Angelique Vann.png",
+            title: "We Are Going to Turn This Thing Around: How to Turn Trauma into Triumph",
+            author: 'by: Michele Angelique Vann',
+            category: 'Published Books',
+            url: 'https://a.co/d/8AMmMQT'
+        },
+        {
+            id: 32,
+            src: "/brand-img/Published-Books-Section/Neil Dutta.png",
+            title: "Unravelling the World: Adventures Across Continents",
+            author: 'by: Neil Dutta',
+            category: 'Published Books',
+            url: 'https://a.co/d/c8rkJFV'
+        },
+        {
+            id: 33,
+            src: "/brand-img/Published-Books-Section/Pamela Avis Harry.png",
+            title: "I Am a Girl",
+            author: 'by: Pamela Avis Harry',
+            category: 'Published Books',
+            url: 'https://a.co/d/cx73np1'
+        },
+        {
+            id: 34,
+            src: "/brand-img/Published-Books-Section/Ready Writer.png",
+            title: "There's No Middle Ground, You Will Either Run to, or Run from This Book",
+            author: 'by: Ready Writer',
+            category: 'Published Books',
+            url: 'https://a.co/d/15EsENy'
+        },
+        {
+            id: 35,
+            src: "/brand-img/Published-Books-Section/Reginald Wade.png",
+            title: "An Uncivilized State",
+            author: 'by: Reginald Wade',
+            category: 'Published Books',
+            url: 'https://a.co/d/109dGId'
+        },
+        {
+            id: 36,
+            src: "/brand-img/Published-Books-Section/Rob Sturgeon.png",
+            title: "A Tale Told by a Timber Ghost-Spirit ",
+            author: 'by: Rob Sturgeon',
+            category: 'Published Books',
+            url: 'https://a.co/d/eNzTRtZ'
+        },
+        {
+            id: 37,
+            src: "/brand-img/Published-Books-Section/Robert A Eckess.png",
+            title: "Stewart, BC History",
+            author: 'by: Robert A Eckess',
+            category: 'Published Books',
+            url: 'https://a.co/d/8MueLIB'
+        },
+        {
+            id: 38,
+            src: "/brand-img/Published-Books-Section/Rosetta Khalideen.png",
+            title: "Time and the River",
+            author: 'by: Rosetta Khalideen',
+            category: 'Published Books',
+            url: 'https://a.co/d/4uN6KrO'
+        },
+        {
+            id: 39,
+            src: "/brand-img/Published-Books-Section/Scott Andrews -2.png",
+            title: "Rowen's Secrets: The Quest for the Templar Reliquaries - Part Two",
+            author: 'by: Scott Andrews ',
+            category: 'Published Books',
+            url: 'https://a.co/d/eqnK9Yr'
+        },
+        {
+            id: 40,
+            src: "/brand-img/Published-Books-Section/Scott Andrews.png",
+            title: "The Quest for the Templar Reliquaries: Rowen’s Secret - Part One",
+            author: 'by: Scott Andrews ',
+            category: 'Published Books',
+            url: 'https://a.co/d/caE3lye'
+        },
+        {
+            id: 41,
+            src: "/brand-img/Published-Books-Section/Sherrie Campbell.png",
+            title: "The Kingdom",
+            author: 'by: Sherrie Campbell',
+            category: 'Published Books',
+            url: 'https://a.co/d/20fxiNk'
+        },
+        {
+            id: 42,
+            src: "/brand-img/Published-Books-Section/Terry-Ann Reid.png",
+            title: "My Phonics Book: With Simple Words & Sentences",
+            author: 'by: Terry-Ann Reid ',
+            category: 'Published Books',
+            url: 'https://a.co/d/7dBVBkz'
+        },
+        {
+            id: 43,
+            src: "/brand-img/Published-Books-Section/Tonya Richardson.png",
+            title: "My Life in Poetry",
+            author: 'by: Tonya Richardson',
+            category: 'Published Books',
+            url: 'https://a.co/d/8pwWdLC'
+        },
+        {
+            id: 44,
+            src: "/brand-img/Published-Books-Section/Vikki LeBeau.png",
+            title: "Cancer Deception: Lean into the Message Behind the Truth",
+            author: 'by: Vikki LeBeau',
+            category: 'Published Books',
+            url: 'https://www.amazon.com/dp/B0C3G6H7I8'
+        },
+        {
+            id: 45,
+            src: "/brand-img/Published-Books-Section/Zach Berger.png",
+            title: "The Cocktail Playbook: 32 Game-Changing Recipes",
+            author: 'by: Zach Berger',
+            category: 'Published Books',
+            url: 'https://www.amazon.com/dp/B0C1J2K3L4'
+        },
+        {
+            id: 46,
+            src: "/brand-img/Published-Books-Section/Zulfi Ahmed.png",
+            title: "Why Quit?: The importance of commitment and follow through",
+            author: 'by: Zulfi Ahmed',
+            category: 'Published Books',
+            url: 'https://a.co/d/0QRWazP'
+        },
+       
     ];
 
     const filteredBooks = books.filter(book => book.category === activeCategory);
