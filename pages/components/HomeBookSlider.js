@@ -430,6 +430,46 @@ export default function HomeBookSlider() {
             category: 'Published Books',
             url: 'https://a.co/d/40DWfAu'
         },
+        {
+            id: 49,
+            src: "/brand-img/Published-Books-Section/David Van FleetNot.png",
+            title: "Ella's Songs",
+            author: 'by: David D. Van Fleet',
+            category: 'Published Books',
+            url: 'https://a.co/d/b3q8TeH'
+        },
+        {
+            id: 50,
+            src: "/brand-img/Published-Books-Section/K. C. Climer  pt 2Not.png",
+            title: "Cataclysm: The Rise of Teatrie Part 2",
+            author: 'by: K. C. Climer',
+            category: 'Published Books',
+            url: 'https://a.co/d/aZVedtv'
+        },
+        {
+            id: 51,
+            src: "/brand-img/Published-Books-Section/Angel Mercado.png",
+            title: "The Well of Hope: Bloodlines",
+            author: 'by: Angel Mercado',
+            category: 'Published Books',
+            url: 'https://a.co/d/4QTnH26'
+        },
+        {
+            id: 52,
+            src: "/brand-img/Published-Books-Section/56.png",
+            title: "Facing Challenges: A Warrior's Story of Overcoming",
+            author: 'by: Lesvi Ferrel',
+            category: 'Published Books',
+            url: 'https://a.co/d/aQtOC47'
+        },
+        {
+            id: 53,
+            src: "/brand-img/Published-Books-Section/60.png",
+            title: "I Am a Boy",
+            author: 'by: Pamela Avis Harry',
+            category: 'Published Books',
+            url: 'https://a.co/d/iwntism'
+        },
        
     ];
 
