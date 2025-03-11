@@ -414,6 +414,22 @@ export default function HomeBookSlider() {
             category: 'Published Books',
             url: 'https://a.co/d/0QRWazP'
         },
+        {
+            id: 47,
+            src: "/brand-img/Published-Books-Section/Shiela Orsot.png",
+            title: "JujuBean Adventures: OooBoys Burgers",
+            author: 'by: Shiela Orsot',
+            category: 'Published Books',
+            url: 'https://a.co/d/6eOGrwT'
+        },
+        {
+            id: 48,
+            src: "/brand-img/Published-Books-Section/World Association for Academic Doctors.png",
+            title: "Global Terrorism: Quest for Social and Economic Justice",
+            author: 'by: World Association for Academic Doctors ',
+            category: 'Published Books',
+            url: 'https://a.co/d/40DWfAu'
+        },
        
     ];
 
