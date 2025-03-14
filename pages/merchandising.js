@@ -67,8 +67,8 @@ export default function BookFormatting() {
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Printed apparel is among one of the most popular categories of promotional, branded items. Style your brand's appearance with personalized T-shirts, caps, and hoodies.
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">Pine Digital Hub specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">Confused about your design? Consult our expert designers at Pine Digital Hub. We're dedicated to making your team look exceptional, ensuring peak performance.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">Pine Book Publishing specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">Confused about your design? Consult our expert designers at Pine Book Publishing. We're dedicated to making your team look exceptional, ensuring peak performance.</p>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ export default function BookFormatting() {
                         <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700">Recall with Every Sip
                         </h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
-                            At Pine Digital Hub, we offer a wide range of customized mugs, flask bottles, and tumblers that are sure to meet your every need.
+                            At Pine Book Publishing, we offer a wide range of customized mugs, flask bottles, and tumblers that are sure to meet your every need.
                         </p>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">From personalized ceramic mugs adorned with print-on-demand designs to sleek and durable stainless steel flask bottles that keep your beverages hot or cold for hours, we have the perfect option for every occasion. Our products are crafted with the highest quality materials, ensuring both durability and style. With a wide range of sizes and colors, you can find the perfect product to match your style.</p>
                     </div>
@@ -114,7 +114,7 @@ export default function BookFormatting() {
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Are you planning to stand out from your competitors and boost visibility?
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">The perfect personalized banner can captivate the audience's attention and give your brand a powerful visual voice. At Pine Digital Hub, we specialize in creating signboards, wall banners, and standees specifically tailored to showcase your brand's identity. With our array of high-quality, full-colour designs, your personalized banner will effectively convey your product/service offering and help you stand out in high-traffic settings and events.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">The perfect personalized banner can captivate the audience's attention and give your brand a powerful visual voice. At Pine Book Publishing, we specialize in creating signboards, wall banners, and standees specifically tailored to showcase your brand's identity. With our array of high-quality, full-colour designs, your personalized banner will effectively convey your product/service offering and help you stand out in high-traffic settings and events.</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@ export default function BookFormatting() {
                             PENS
                         </h3>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
-                            A personalized stationery design from Pine Digital Hub can do wonders for your business. With our expertise in creating unique and eye-catching designs, we can help your stationery make a lasting impression on your clients and customers. Whether you're looking for a professional and sophisticated design or something more playful and creative, our team can tailor the design to represent your brand and message perfectly. Stand out from competitors and elevate your business with our custom stationery design services.
+                            A personalized stationery design from Pine Book Publishing can do wonders for your business. With our expertise in creating unique and eye-catching designs, we can help your stationery make a lasting impression on your clients and customers. Whether you're looking for a professional and sophisticated design or something more playful and creative, our team can tailor the design to represent your brand and message perfectly. Stand out from competitors and elevate your business with our custom stationery design services.
                         </p>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">Currently, we are dealing with designing pens, but there is always room to discuss more ideas. So don't hesitate to message us and discuss your ideas.</p>
                     </div>
@@ -187,7 +187,7 @@ export default function BookFormatting() {
             <Merchand />
             <BrandCTA
                 title="Do You Know?"
-                desc="Giving customers a tangible item to keep and use creates a lasting reminder of their experience with your brand. Experts at Pine Digital Hub can further contribute to this experience by delivering your unique brand story with print-on-demand items."
+                desc="Giving customers a tangible item to keep and use creates a lasting reminder of their experience with your brand. Experts at Pine Book Publishing can further contribute to this experience by delivering your unique brand story with print-on-demand items."
                 btntext="Speak to our Consultant"
             />
 
