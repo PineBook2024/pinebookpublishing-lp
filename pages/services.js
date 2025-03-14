@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import BrandFooter from "./components/BrandFooter";
 import BrandAbout from "./components/BrandAbout";
@@ -29,7 +30,14 @@ export default function Services() {
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Start Your Publishing Journey Now"
-                desc="Are you searching for a company with a wide range of Book Publishing Services? You are at the right place. At Pine Book Publishing, we offer comprehensive services to cater to your needs. From editing to publishing, we have mastered everything. Explore everything you need to kick-start your publishing journey."
+                desc={
+                    <>
+                        Are you searching for a company with a wide range of Book Publishing Services? You are at the right place. At{' '}
+                        <Link href="https://pinebookpublishing.com/" target="_blank">
+                            Pine Book Publishing
+                        </Link>, we offer comprehensive services to cater to your needs. From editing to publishing, we have mastered everything. Explore everything you need to kick-start your publishing journey.
+                    </>
+                }
             />
             <BrandBannerLogo />
             <BrandServices />

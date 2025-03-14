@@ -51,15 +51,14 @@ export default function TypeSetting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Beyond the Words, Design Matters
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Hire Professional Book Typesetting Services</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">
+                            Beyond the Words, Design Matters<br></br>
+                            Hire Professional Book Typesetting Services</h2>
                         <p className="font-poppins text-xl	pt-3">
                             Writing is an art, but fine-tuning the text, paragraphs, and lines and designing an overall page layout that affects your book's visuals is another. You only need to hire professional typesetting and layout design services to make your manuscript a print-ready book.
                         </p>
                         <p className="font-poppins text-xl	pt-3">
-                            A perfectly designed and formatted book fascinates your readers and keeps them engaged until the last page. This service helps create a natural flow, eliminate unwanted breaks, and ensure consistency throughout the manuscript.
+                            A perfectly designed and <Link href={"https://pinebookpublishing.com/book-formatting"} target="_blank">formatted book</Link> fascinates your readers and keeps them engaged until the last page. This service helps create a natural flow, eliminate unwanted breaks, and ensure consistency throughout the manuscript.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -72,7 +71,7 @@ export default function TypeSetting() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl	px-10 md:px-0 pt-6" data-aos="fade-right">
-                    At Pine Book Publishing, we understand that every book is different. So, our expertise tailors your book's design to perfection. Our team of skilled professionals brings years of experience working for various genres and ensures that every line of each chapter of your book is aligned with the specific requirements. Whether you are creating an engaging fiction novel, a research paper, or a children's book, we have you covered!
+                    At <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link>, we understand that every book is different. So, our expertise tailors your book's design to perfection. Our team of skilled professionals brings years of experience working for various genres and ensures that every line of each chapter of your book is aligned with the specific requirements. Whether you are creating an engaging fiction novel, a research paper, or a children's book, we have you covered!
                 </p>
             </div>
             {/* Process */}

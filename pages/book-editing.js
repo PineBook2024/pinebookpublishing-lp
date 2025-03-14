@@ -53,14 +53,13 @@ export default function BookEditing() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Pine Book Publishing - A Leading
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Book Editing Company</h2>
+                        <h2 className="font-poppins text-3xl md:text-3xl uppercase font-bold">
+                            Pine Book Publishing - A Leading<br></br>
+                            Book Editing Company</h2>
                         <p className="font-poppins text-xl	pt-3">
                             At Pine Book Publishing, we understand how valuable professional editing is. Mistakes and style issues can slip through the cracks, and a skilled editor can catch these, making your work more readable and impactful.
                         </p>
-                        <p className="font-poppins text-xl	pt-3">We at Pine Book Publishing offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
+                        <p className="font-poppins text-xl	pt-3">We at <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Editing.png"} width={470} height={300}
@@ -157,7 +156,7 @@ export default function BookEditing() {
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8" >
                     <div className="flex items-center flex-col md:flex-row" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">
                         <div className="basis-1/3 brand-choose-us-vector">
-                        <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
+                            <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
                                 loading="lazy"
                                 alt="about img"
                                 className="brand-about-img"

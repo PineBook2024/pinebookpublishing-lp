@@ -42,21 +42,24 @@ export default function AudioBook() {
             <BrandNavbar />
             <BrandPrimaryHeader
                 title="Reach Maximum Audience with Professional Audiobook Production Services"
-                desc="Why always sell text-based books when a large audience loves to listen to audio-recoded books? At Pine Book Publishing, we offer a complete package of audiobooks, from manuscript refinement to audio narration and publishing on the most popular audiobook publishing platforms. Contact us to learn more!"
+                desc={
+                    <>
+                        Why always sell text-based books when a large audience loves to listen to audio-recoded books? At Pine Book Publishing, we offer a complete package of audiobooks, from manuscript refinement to audio narration and <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank">publishing</Link> on the most popular audiobook publishing platforms. Contact us to learn more!
+                    </>
+                }
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-20">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Your Story, Our Voice
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Professional Audiobook Narration Services</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">
+                            Your Story, Our Voice<br></br>
+                            Professional Audiobook Narration Services</h2>
                         <p className="font-poppins text-xl	pt-3">
                             Audiobook creation and distribution is an engaging and more accessible way to consume a book's content while doing other activities or giving eyes rest. Audiobooks have a separate audience base that prefers to enjoy a book in an audio format. So, if you want to make your book accessible to a larger audience, audiobook creation is an excellent option.
                         </p>
                         <p className="font-poppins text-xl	pt-3">
-                            Pine Book Publishing has a talented group of male and female narrators of different ages, voices and expertise, as well as professional audio engineers on board who specialize in converting written words into ear-engaging audio experiences. They all serve years of experience in infusing life into different stories of different genres. Our extended team of audiobook narrators is steadily available to serve whether you require solo-narration, duet-narration, multicast narration or other. We thoroughly handle everything from writing to publishing.                         </p>
+                            <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> has a talented group of male and female narrators of different ages, voices and expertise, as well as professional audio engineers on board who specialize in converting written words into ear-engaging audio experiences. They all serve years of experience in infusing life into different stories of different genres. Our extended team of audiobook narrators is steadily available to serve whether you require solo-narration, duet-narration, multicast narration or other. We thoroughly handle everything from writing to publishing.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Audio Book.png"} width={470} height={300}

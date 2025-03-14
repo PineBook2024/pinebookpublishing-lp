@@ -51,12 +51,11 @@ export default function Proofreading() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                        Perfect Your Manuscript with Flawless  
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Grammar & Zero Typos</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">
+                            Perfect Your Manuscript with Flawless <br></br>
+                            Grammar & Zero Typos</h2>
                         <p className="font-poppins text-xl	pt-3">
-                        Have you ever been reading a book and come across a typo or an awkward construction that bumped you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material. Writing a book is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
+                            Have you ever been reading a book and come across a typo or an awkward construction that bumped you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material.<Link href={"https://www.pinebookwriting.com/"} target="_blank">Writing a book</Link> is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -69,7 +68,7 @@ export default function Proofreading() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl	px-10 md:px-0" data-aos="fade-right">
-                Choosing our Book proofreading service is a smart investment in your book. Let us take care of the fine details to present your book in the manner that it deserves. It is our mission to assist you in creating a book that people are going to read over and over and recommend to their friends.                </p>
+                    Choosing our Book proofreading service is a smart investment in your book. Let us take care of the fine details to present your book in the manner that it deserves. It is our mission to assist you in creating a book that people are going to read over and over and recommend to their friends.                </p>
             </div>
             {/* <BrandProcess /> */}
             <section className="brand-process  mx-auto relative pt-10 text-center flex justify-center mb-12 overflow-hidden">
@@ -153,7 +152,7 @@ export default function Proofreading() {
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8" >
                     <div className="flex items-center flex-col md:flex-row" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">
                         <div className="basis-1/3 brand-choose-us-vector">
-                        <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
+                            <Image src={"/brand-img/Why Choose Us 2.png"} width={750} height={750}
                                 loading="lazy"
                                 alt="about img"
                                 className="brand-about-img"

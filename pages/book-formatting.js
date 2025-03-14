@@ -51,12 +51,11 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Pine Book Publishing –
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">A leading Book Formatting Company</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">
+                            Pine Book Publishing – <br></br>
+                            A leading Book Formatting Company</h2>
                         <p className="font-poppins text-xl	pt-3">
-                            If you have finished your manuscript and are tired of looking at the screen for many hours, struggling to bring your manuscript in a professional format that meets industry standards, hiring a professional book formatting company is the only option you should choose. We at Pine Book Publishing are your trusted book formatting partner. With intense familiarity with publishing industry standards, we offer you comprehensive book formatting solutions for various popular publishing platforms.
+                            If you have finished your manuscript and are tired of looking at the screen for many hours, struggling to bring your manuscript in a professional format that meets industry standards, hiring a professional book formatting company is the only option you should choose. We at <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> are your trusted book formatting partner. With intense familiarity with publishing industry standards, we offer you comprehensive book formatting solutions for various popular publishing platforms.
                         </p>
                         <p className="font-poppins text-xl	pt-3">Our team of expert professionals works together to craft flawless layouts, accurate typography, and consistent formatting to help enhance your book's visual appeal. They deal with every aspect carefully, including specific table of contents, word length, number of pages, fonts, line spacing, and everything that affects the visual appearance of the book. We take pride in delivering top-notch results that always exceed our clients' expectations.</p>
                     </div>
