@@ -24,7 +24,7 @@ export default function BrandAbout(props) {
                             Pine Book Publishing</h2>
                         {/* <FadeIn> */}
                         <p className="font-poppins text-xl pt-4">
-                            Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more <Link href={"https://pinebookpublishing.com/"}> book publishing companies </Link> out there than stars in the sky (okay, maybe not that many, but you get the idea).
+                            Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more <Link href={"https://pinebookpublishing.com/"} className="font-bold hover:text-blue-500"> book publishing companies </Link> out there than stars in the sky (okay, maybe not that many, but you get the idea).
                         </p>
                         <p className="font-poppins text-xl mb-5">
                             {props.subdesctwo}

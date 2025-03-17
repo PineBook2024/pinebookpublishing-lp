@@ -59,7 +59,7 @@ export default function BookEditing() {
                         <p className="font-poppins text-xl	pt-3">
                             At Pine Book Publishing, we understand how valuable professional editing is. Mistakes and style issues can slip through the cracks, and a skilled editor can catch these, making your work more readable and impactful.
                         </p>
-                        <p className="font-poppins text-xl	pt-3">We at <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
+                        <p className="font-poppins text-xl	pt-3">We at <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link> offer impeccable book editing services, believing that a professional editor can significantly boost an author's chances of success. They help you get positive reviews and increase sales by ensuring your story connects with readers and stands out in the market. An editor turns a good manuscript into a great published book.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Editing.png"} width={470} height={300}

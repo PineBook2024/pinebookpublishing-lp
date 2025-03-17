@@ -42,7 +42,7 @@ export default function PrintDemand() {
             <BrandPrimaryHeader
                 title="Maximize Your Book Sales with Expert Print On-Demand Services"
                 desc={
-                    <>Don't let your book sales stop anywhere by hiring our fast and efficient book print-on-demand services to ensure your books are always in stock for your readers. At Pine Book Publishing, we handle everything from designing, <Link href={"https://pinebookpublishing.com/book-editing"} target="_blank">editing</Link>, printing, and shipping within the promised delivery time.</>}
+                    <>Don't let your book sales stop anywhere by hiring our fast and efficient book print-on-demand services to ensure your books are always in stock for your readers. At Pine Book Publishing, we handle everything from designing, <Link href={"https://pinebookpublishing.com/book-editing"} target="_blank" className="font-bold hover:text-blue-500">editing</Link>, printing, and shipping within the promised delivery time.</>}
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
@@ -52,7 +52,7 @@ export default function PrintDemand() {
                             Hassle-Free Print-On-Demand<br></br>
                             Services</h2>
                         <p className="font-poppins text-xl pt-3">
-                            Print On Demand (POD) is specially designed for <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank">self-published authors</Link> who want to avoid seeing their readers long-awaited for the next stock in bulk and want to stock a huge quantity of books every once. At <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link>, we offer fast and efficient Print-On-Demand services to help authors focus on their writing and increase their profitability without any hassle.
+                            Print On Demand (POD) is specially designed for <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank" className="font-bold hover:text-blue-500">self-published authors</Link> who want to avoid seeing their readers long-awaited for the next stock in bulk and want to stock a huge quantity of books every once. At <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link>, we offer fast and efficient Print-On-Demand services to help authors focus on their writing and increase their profitability without any hassle.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">

@@ -65,7 +65,7 @@ export default function BookFormatting() {
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Printed apparel is among one of the most popular categories of promotional, branded items. Style your brand's appearance with personalized T-shirts, caps, and hoodies.
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500"><Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500"><Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link> specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">Confused about your design? Consult our expert designers at Pine Book Publishing. We're dedicated to making your team look exceptional, ensuring peak performance.</p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ export default function BookFormatting() {
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             At Pine Book Publishing, we offer a wide range of customized mugs, flask bottles, and tumblers that are sure to meet your every need.
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">From personalized ceramic mugs adorned with <Link href={"https://pinebookpublishing.com/print-on-demand"} target="_blank">print-on-demand</Link> designs to sleek and durable stainless steel flask bottles that keep your beverages hot or cold for hours, we have the perfect option for every occasion. Our products are crafted with the highest quality materials, ensuring both durability and style. With a wide range of sizes and colors, you can find the perfect product to match your style.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">From personalized ceramic mugs adorned with <Link href={"https://pinebookpublishing.com/print-on-demand"} target="_blank" className="font-bold hover:text-blue-500">print-on-demand</Link> designs to sleek and durable stainless steel flask bottles that keep your beverages hot or cold for hours, we have the perfect option for every occasion. Our products are crafted with the highest quality materials, ensuring both durability and style. With a wide range of sizes and colors, you can find the perfect product to match your style.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/merchandise-img-2.png"} width={470} height={300}

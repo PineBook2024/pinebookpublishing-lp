@@ -33,7 +33,7 @@ export default function Services() {
                 desc={
                     <>
                         Are you searching for a company with a wide range of Book Publishing Services? You are at the right place. At{' '}
-                        <Link href="https://pinebookpublishing.com/" target="_blank">
+                        <Link href="https://pinebookpublishing.com/" target="_blank" className="font-bold hover:text-blue-500">
                             Pine Book Publishing
                         </Link>, we offer comprehensive services to cater to your needs. From editing to publishing, we have mastered everything. Explore everything you need to kick-start your publishing journey.
                     </>

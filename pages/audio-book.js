@@ -44,7 +44,7 @@ export default function AudioBook() {
                 title="Reach Maximum Audience with Professional Audiobook Production Services"
                 desc={
                     <>
-                        Why always sell text-based books when a large audience loves to listen to audio-recoded books? At Pine Book Publishing, we offer a complete package of audiobooks, from manuscript refinement to audio narration and <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank">publishing</Link> on the most popular audiobook publishing platforms. Contact us to learn more!
+                        Why always sell text-based books when a large audience loves to listen to audio-recoded books? At Pine Book Publishing, we offer a complete package of audiobooks, from manuscript refinement to audio narration and <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank" className="font-bold hover:text-blue-500">publishing</Link> on the most popular audiobook publishing platforms. Contact us to learn more!
                     </>
                 }
             />
@@ -59,7 +59,7 @@ export default function AudioBook() {
                             Audiobook creation and distribution is an engaging and more accessible way to consume a book's content while doing other activities or giving eyes rest. Audiobooks have a separate audience base that prefers to enjoy a book in an audio format. So, if you want to make your book accessible to a larger audience, audiobook creation is an excellent option.
                         </p>
                         <p className="font-poppins text-xl	pt-3">
-                            <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link> has a talented group of male and female narrators of different ages, voices and expertise, as well as professional audio engineers on board who specialize in converting written words into ear-engaging audio experiences. They all serve years of experience in infusing life into different stories of different genres. Our extended team of audiobook narrators is steadily available to serve whether you require solo-narration, duet-narration, multicast narration or other. We thoroughly handle everything from writing to publishing.</p>
+                            <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link> has a talented group of male and female narrators of different ages, voices and expertise, as well as professional audio engineers on board who specialize in converting written words into ear-engaging audio experiences. They all serve years of experience in infusing life into different stories of different genres. Our extended team of audiobook narrators is steadily available to serve whether you require solo-narration, duet-narration, multicast narration or other. We thoroughly handle everything from writing to publishing.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Audio Book.png"} width={470} height={300}

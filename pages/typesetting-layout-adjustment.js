@@ -58,7 +58,7 @@ export default function TypeSetting() {
                             Writing is an art, but fine-tuning the text, paragraphs, and lines and designing an overall page layout that affects your book's visuals is another. You only need to hire professional typesetting and layout design services to make your manuscript a print-ready book.
                         </p>
                         <p className="font-poppins text-xl	pt-3">
-                            A perfectly designed and <Link href={"https://pinebookpublishing.com/book-formatting"} target="_blank">formatted book</Link> fascinates your readers and keeps them engaged until the last page. This service helps create a natural flow, eliminate unwanted breaks, and ensure consistency throughout the manuscript.
+                            A perfectly designed and <Link href={"https://pinebookpublishing.com/book-formatting"} target="_blank" className="font-bold hover:text-blue-500">formatted book</Link> fascinates your readers and keeps them engaged until the last page. This service helps create a natural flow, eliminate unwanted breaks, and ensure consistency throughout the manuscript.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -71,7 +71,7 @@ export default function TypeSetting() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl	px-10 md:px-0 pt-6" data-aos="fade-right">
-                    At <Link href={"https://pinebookpublishing.com/"} target="_blank">Pine Book Publishing</Link>, we understand that every book is different. So, our expertise tailors your book's design to perfection. Our team of skilled professionals brings years of experience working for various genres and ensures that every line of each chapter of your book is aligned with the specific requirements. Whether you are creating an engaging fiction novel, a research paper, or a children's book, we have you covered!
+                    At <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link>, we understand that every book is different. So, our expertise tailors your book's design to perfection. Our team of skilled professionals brings years of experience working for various genres and ensures that every line of each chapter of your book is aligned with the specific requirements. Whether you are creating an engaging fiction novel, a research paper, or a children's book, we have you covered!
                 </p>
             </div>
             {/* Process */}
