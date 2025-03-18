@@ -1072,11 +1072,6 @@ export default function Home() {
         <section className="bg-white pt-5 pb-5">
           <div className="width-container">
             <div className="container mx-auto">
-              {/* <div className="text-center mb-6">
-                            <h3 className="text-2xl text-black font-poppins uppercase">Publishing</h3>
-                            <h2 className="font-poppins text-4xl font-bold text-black uppercase">Bundles</h2>
-                        </div> */}
-
               <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                 <div className="single-packages relative">
                   {/* <span className="hover-top-vector"></span> */}
@@ -1087,20 +1082,13 @@ export default function Home() {
                       <button className="tag-50-per-off"><del className="text-red italic">$700</del> | <span className="blink_me">$349 USD</span></button>
                     </div>
                   </h4>
-                  {/* <div className="flex justify-center">
-                    <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
-                  </div> */}
                   <div className="single-packages-content mb-5 px-10">
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Preparing Your Manuscript
                     </div>
-                    {/* <div className="flex gap-2 mb-5 items-center items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div> */}
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1116,7 +1104,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
+                      Basic Formatting
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1135,7 +1123,15 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Available on Kindle
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      eBook Format
                     </div>
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Guarantees
@@ -1187,12 +1183,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Developmental Editing
-                    </div>
-                    <div className="flex gap-2 mb-5 items-center">
-                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
-
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1210,8 +1201,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
-
+                      Publishing Standard Formatting
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1247,6 +1237,10 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Account Verification
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1310,11 +1304,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Developmental Editing
-                    </div>
-                    <div className="flex gap-2 mb-5 items-center">
-                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1333,8 +1323,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
-
+                      Publishing Standard Formatting
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1373,6 +1362,10 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Account Verification
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1432,9 +1425,6 @@ export default function Home() {
 
               <section className="table-sec overflow-x-scroll max-w-screen-xl mx-auto">
                 <div className="container mx-auto m1-h mt-10 text-center">
-                  {/* <h3 className="mb-8 text-center font-poppins text-3xl md:text-4xl font-bold">
-                        
-                                </h3> */}
                   <button className="compare-now-btn mb-10 mt-5" onClick={togglePackages2}>Comparison
                     <FontAwesomeIcon
                       className="ml-2"
@@ -1478,22 +1468,11 @@ export default function Home() {
                               colspan="4"
                               scope="row">Preparing Your Manuscript</th>
                           </tr>
+
                           <tr>
-                            <td>Line by Line Editing</td>
+                            <td>Editorial Support</td>
                             <td>
                               ✔️
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Developmental Editing</td>
-                            <td>
-                              ❌
                             </td>
                             <td>
                               ✔️
@@ -1525,12 +1504,20 @@ export default function Home() {
                             <td>✔️</td>
                           </tr>
                           <tr>
-                            <td>Formatting</td>
+                            <td>Basic Formatting</td>
                             <td>
-                              50+ Platforms
+                              ✔️
                             </td>
-                            <td>50+ Platforms</td>
-                            <td>50+ Platforms</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                          </tr>
+                          <tr>
+                            <td>Publishing Standard Formatting</td>
+                            <td>
+                              ❌
+                            </td>
+                            <td>✔️</td>
+                            <td>✔️</td>
                           </tr>
                           <tr>
                             <td>Revisions Per Draft</td>
@@ -1540,10 +1527,62 @@ export default function Home() {
                             <td>3</td>
                             <td>5</td>
                           </tr>
+
                           <tr className="m-4">
-                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
+                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                               colspan="4"
-                              scope="row">Book Publishing</th>
+                              scope="row">Preparing your Book Cover</th>
+                          </tr>
+                          <tr>
+                            <td>Graphic OR Illustrated Design</td>
+                            <td>
+                              ❌
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Cover Layout</td>
+                            <td>
+                              ❌
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Cover Formatting</td>
+                            <td>❌</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                          </tr>
+                          <tr>
+                            <td>Front, Back & Spine</td>
+                            <td>
+                              ❌
+                            </td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                          </tr>
+                          <tr>
+                            <td>ISBN + Barcode (2X)</td>
+                            <td>
+                              ❌
+                            </td>
+                            <td>❌</td>
+                            <td>✔️</td>
+                          </tr>
+                          <tr className="m-4">
+                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 "
+                              colspan="4"
+                              scope="row">Preparing for Print and Distribution</th>
                           </tr>
                           <tr>
                             <td>Account Creation</td>
@@ -1559,6 +1598,18 @@ export default function Home() {
                           </tr>
                           <tr>
                             <td>Account Verification</td>
+                            <td>
+                              ✔️
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                            <td>
+                              ✔️
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Account Optimization</td>
                             <td>
                               ✔️
                             </td>
@@ -1615,58 +1666,7 @@ export default function Home() {
                           </tr>
 
                           <tr className="m-4">
-                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-10 md:pl-10"
-                              colspan="4"
-                              scope="row">Designing your Cover</th>
-                          </tr>
-                          <tr>
-                            <td>Graphic OR Illustrated Design</td>
-                            <td>
-                              ❌
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Cover Layout</td>
-                            <td>
-                              ❌
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                            <td>
-                              ✔️
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Cover Formatting</td>
-                            <td>❌</td>
-                            <td>✔️</td>
-                            <td>✔️</td>
-                          </tr>
-                          <tr>
-                            <td>Front, Back & Spine</td>
-                            <td>
-                              ❌
-                            </td>
-                            <td>✔️</td>
-                            <td>✔️</td>
-                          </tr>
-                          <tr>
-                            <td>ISBN + Barcode (2X)</td>
-                            <td>
-                              ❌
-                            </td>
-                            <td>❌</td>
-                            <td>✔️</td>
-                          </tr>
-                          <tr className="m-4">
-                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
+                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                               colspan="4"
                               scope="row">Guarantees</th>
                           </tr>
@@ -1722,13 +1722,9 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Preparing Your Manuscript
                     </div>
-                    <div className="flex gap-2 mb-5 items-center items-center">
-                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Developmental Editing
-                    </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1744,7 +1740,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
+                      Publishing Standard Formatting
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1783,6 +1779,10 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Account Verification
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1890,12 +1890,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Developmental Editing
-                    </div>
-                    <div className="flex gap-2 mb-5 items-center">
-                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
-
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1913,7 +1908,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
+                      Publishing Standard Formatting
 
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
@@ -1954,6 +1949,10 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Account Verification
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -2009,7 +2008,7 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Social Media Marketing
-                      (Facebook, Instagram & LinkedIn)
+                      (Facebook, Instagram & Twitter)
                     </div>
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Guarantees
@@ -2076,11 +2075,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Developmental Editing
-                    </div>
-                    <div className="flex gap-2 mb-5 items-center">
-                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Line by Line Editing
+                      Editorial Support
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -2099,7 +2094,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                      Formatting (50+ Platforms)
+                      Publishing Standard Formatting
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -2138,6 +2133,10 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Account Verification
+                    </div>
+                    <div className="flex gap-2 mb-5 items-center">
+                      <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
+                      Account Optimization
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -2213,8 +2212,7 @@ export default function Home() {
                     <div className="flex gap-2 mb-5 items-center">
                       <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                       Social Media Marketing
-                      (Facebook, Instagram, Twitter)
-                      (Pinterest, Youtube & LinkedIn)
+                      (Facebook, Instagram, Twitter, YouTube, TikTok)
                     </div>
                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Guarantees
@@ -2317,19 +2315,7 @@ export default function Home() {
                         scope="row">Preparing Your Manuscript</th>
                     </tr>
                     <tr>
-                      <td>Line by Line Editing</td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Developmental Editing</td>
+                      <td>Editorial Support</td>
                       <td>
                         ✔️
                       </td>
@@ -2363,12 +2349,20 @@ export default function Home() {
                       <td>✔️</td>
                     </tr>
                     <tr>
-                      <td>Formatting</td>
+                      <td>Basic Formatting</td>
                       <td>
-                        50+ Platforms
+                        ✔️
                       </td>
-                      <td>50+ Platforms</td>
-                      <td>50+ Platforms</td>
+                      <td>✔️</td>
+                      <td>✔️</td>
+                    </tr>
+                    <tr>
+                      <td>Publishing Standard Formatting</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>✔️</td>
+                      <td>✔️</td>
                     </tr>
                     <tr>
                       <td>Revisions Per Draft</td>
@@ -2379,9 +2373,60 @@ export default function Home() {
                       <td>5</td>
                     </tr>
                     <tr className="m-4">
-                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
+                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                         colspan="4"
-                        scope="row">Book Publishing</th>
+                        scope="row">Preparing your Book Cover</th>
+                    </tr>
+                    <tr>
+                      <td>Graphic OR Illustrated Design</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cover Layout</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cover Formatting</td>
+                      <td>✔️</td>
+                      <td>✔️</td>
+                      <td>✔️</td>
+                    </tr>
+                    <tr>
+                      <td>Front, Back & Spine</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>✔️</td>
+                      <td>✔️</td>
+                    </tr>
+                    <tr>
+                      <td>ISBN + Barcode (2X)</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>✔️</td>
+                      <td>✔️</td>
+                    </tr>
+                    <tr className="m-4">
+                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 "
+                        colspan="4"
+                        scope="row">Preparing for Print and Distribution</th>
                     </tr>
                     <tr>
                       <td>Account Creation</td>
@@ -2397,6 +2442,18 @@ export default function Home() {
                     </tr>
                     <tr>
                       <td>Account Verification</td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                      <td>
+                        ✔️
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Account Optimization</td>
                       <td>
                         ✔️
                       </td>
@@ -2489,57 +2546,7 @@ export default function Home() {
                       <td>❌</td>
                       <td>✔️</td>
                     </tr>
-                    <tr className="m-4">
-                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
-                        colspan="4"
-                        scope="row">Designing your Cover</th>
-                    </tr>
-                    <tr>
-                      <td>Graphic OR Illustrated Design</td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cover Layout</td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>
-                        ✔️
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cover Formatting</td>
-                      <td>✔️</td>
-                      <td>✔️</td>
-                      <td>✔️</td>
-                    </tr>
-                    <tr>
-                      <td>Front, Back & Spine</td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>✔️</td>
-                      <td>✔️</td>
-                    </tr>
-                    <tr>
-                      <td>ISBN + Barcode (2X)</td>
-                      <td>
-                        ✔️
-                      </td>
-                      <td>✔️</td>
-                      <td>✔️</td>
-                    </tr>
+
                     {/* <tr className="m-4">
                                         <td className="text-2xl md:text-2xl text-start p-3 font-bold"
                                             colspan="4"
@@ -2576,7 +2583,7 @@ export default function Home() {
                                         <td>✔️</td>
                                     </tr> */}
                     <tr className="m-4">
-                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-14 md:pl-14"
+                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                         colspan="4"
                         scope="row">Online Presence</th>
                     </tr>
@@ -2605,7 +2612,7 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className="m-4">
-                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
+                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                         colspan="4"
                         scope="row">Marketing & Branding</th>
                     </tr>
@@ -2670,7 +2677,7 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className="m-4">
-                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
+                      <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                         colspan="4"
                         scope="row">Guarantees</th>
                     </tr>

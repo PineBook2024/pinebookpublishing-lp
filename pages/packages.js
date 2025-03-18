@@ -150,11 +150,6 @@ export default function Bundle({ isOpen, onClose, service }) {
             <section className="bg-white pt-5 pb-5">
                 <div className="width-container">
                     <div className="container mx-auto">
-                        {/* <div className="text-center mb-6">
-                            <h3 className="text-2xl text-black font-poppins uppercase">Publishing</h3>
-                            <h2 className="font-poppins text-4xl font-bold text-black uppercase">Bundles</h2>
-                        </div> */}
-
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
@@ -164,10 +159,6 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
                                     </div>
-                                    {/* <div className="flex gap-2 mb-5 items-center items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div> */}
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
                                         Editorial Support
