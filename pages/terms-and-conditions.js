@@ -93,7 +93,7 @@ export default function Privacy() {
                 <h2 class="font-poppins">SMS Terms and Conditions</h2>
                 <ol className="terms-condition-bullets">
                     <li className="font-poppins text-2xl font-bold">SMS Consent Communication:</li>
-                    <p className="pt-2">The information <Link href={"tel:(866) 841-7469"} >(866) 841-7469</Link> obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.</p>
+                    <p className="pt-2">The information <Link href={"tel:(866) 841-7469"} className=" hover:text-blue-500 text-blue-500">(866) 841-7469</Link> obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.</p>
                     <li className="font-poppins text-2xl font-bold">Types of SMS Communications:</li>
                     <p className="pt-2">If you have consented to receive text messages from Pine Book Writing inc, you may receive: </p>
                     <div className="terms-condition-bullets-subs pb-2">
@@ -119,13 +119,13 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">Opt-Out Method:</li>
                     <p className="pt-2">You can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. </p>
                     <li className="font-poppins text-2xl font-bold">Help:</li>
-                    <p className="pt-2">If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at <a href="https://pinebookpublishing.com/" target="_blank" className="font-bold hover:text-blue-500 text-blue-500">https://pinebookpublishing.com/</a>  </p>
+                    <p className="pt-2">If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at <a href="https://pinebookpublishing.com/" target="_blank" className=" hover:text-blue-500 text-blue-500">https://pinebookpublishing.com/</a>  </p>
                     <p className="text-xl font-poppins">Additional Options: </p>
                     <p>If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.</p>
                     <li className="font-poppins text-2xl font-bold">Standard Messaging Disclosures:</li>
                     <p className="text-xl pt-2">Message and data rates may apply.<br></br>
                         You can opt-out at any time by texting "STOP."<br></br>
-                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className="font-bold hover:text-blue-500 text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="text-blue-500 font-bold hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
+                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className=" hover:text-blue-500 text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="text-blue-500 hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
                         Message frequency may vary<br></br>
                     </p>
                 </ol>
@@ -212,7 +212,7 @@ export default function Privacy() {
                     Contact Information
                 </h2>
                 <p>
-                    If you have any questions or require further information about the aforementioned terms and conditions, please do not hesitate to contact us at <Link href="mailto:support@pinebookpublishing.com">support@pinebookpublishing.com</Link> . We are available to assist you and address any inquiries you may have.
+                    If you have any questions or require further information about the aforementioned terms and conditions, please do not hesitate to contact us at <Link href="mailto:support@pinebookpublishing.com" className=" hover:text-blue-500 text-blue-500">support@pinebookpublishing.com</Link> . We are available to assist you and address any inquiries you may have.
                 </p>
 
 
