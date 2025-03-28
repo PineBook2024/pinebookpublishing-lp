@@ -125,7 +125,7 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">Standard Messaging Disclosures:</li>
                     <p className="text-xl pt-2">Message and data rates may apply.<br></br>
                         You can opt-out at any time by texting "STOP."<br></br>
-                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className="font-bold hover:text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="font-bold hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
+                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className="font-bold hover:text-blue-500 text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="text-blue-500 font-bold hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
                         Message frequency may vary<br></br>
                     </p>
                 </ol>
