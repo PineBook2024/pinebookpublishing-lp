@@ -119,7 +119,7 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">Opt-Out Method:</li>
                     <p className="pt-2">You can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. </p>
                     <li className="font-poppins text-2xl font-bold">Help:</li>
-                    <p className="pt-2">If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at <a href="https://pinebookpublishing.com/" target="_blank">https://pinebookpublishing.com/</a>  </p>
+                    <p className="pt-2">If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at <a href="https://pinebookpublishing.com/" target="_blank" className="font-bold hover:text-blue-500 text-blue-500">https://pinebookpublishing.com/</a>  </p>
                     <p className="text-xl font-poppins">Additional Options: </p>
                     <p>If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.</p>
                     <li className="font-poppins text-2xl font-bold">Standard Messaging Disclosures:</li>
