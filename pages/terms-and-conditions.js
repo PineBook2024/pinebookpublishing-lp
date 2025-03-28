@@ -95,25 +95,16 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">SMS Consent Communication:</li>
                     <p className="pt-2">The information <Link href={"tel:(866) 841-7469"} >(866) 841-7469</Link> obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.</p>
                     <li className="font-poppins text-2xl font-bold">Types of SMS Communications:</li>
-                    <p className="pt-2">If you have consented to receive text messages from Pine Book Publishing, you may receive messages related to the following: </p>
+                    <p className="pt-2">If you have consented to receive text messages from Pine Book Writing inc, you may receive: </p>
                     <div className="terms-condition-bullets-subs pb-2">
                         <p className="flex items-center"> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
-                        </svg> Ghostwriting</p>
+                        </svg> Follow Up Messages</p>
                         <p className="flex items-center"> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
-                        </svg> Editing</p>
-                        <p className="flex items-center"> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
-                        </svg> Designing </p>
-                        <p className="flex items-center"> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
-                        </svg> Publishing </p>
-                        <p className="flex items-center"> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
-                        </svg> Advertising </p>
+                        </svg> Appointment Reminders</p>
                     </div>
-                    <p>Example: "Hello, I wanted to inform you that we are having a promotion offer for our services at a 50% OFF, let me know when you are available to discuss further. Reply STOP to opt out of SMS messaging at any time."</p>
+                    <p>Example: Following up on our conversation yesterday, do you need any additional information from me?</p>
                     <li className="font-poppins text-2xl font-bold">Message Frequency:</li>
                     <p className="pt-2">Message frequency may vary depending on the type of communication. For example, you may receive up to 100 SMS messages per week related to your Services. </p>
                     <li className="font-poppins text-2xl font-bold">Potential Fees for SMS Messaging:</li>
@@ -134,7 +125,7 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">Standard Messaging Disclosures:</li>
                     <p className="text-xl pt-2">Message and data rates may apply.<br></br>
                         You can opt-out at any time by texting "STOP."<br></br>
-                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank">Terms and Conditions</Link> pages.<br></br>
+                        For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className="font-bold hover:text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="font-bold hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
                         Message frequency may vary<br></br>
                     </p>
                 </ol>
