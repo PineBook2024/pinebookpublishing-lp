@@ -636,7 +636,6 @@ export default function HeroFormBookOffer() {
                         rows={3}
                         onChange={handleChange}
                         value={message}
-                        required
                         placeholder="Enter your Message"
                         name="message"
                       ></textarea>
