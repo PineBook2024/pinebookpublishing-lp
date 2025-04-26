@@ -4021,6 +4021,7 @@ a.close-chat:hover {
 .prose a{
   color: oklch(0.67 0.18 253.22);
   font-weight: bold;
+  
 }
 
 .bk-sil3.next {
