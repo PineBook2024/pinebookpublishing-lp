@@ -3984,6 +3984,45 @@ a.close-chat:hover {
   font-weight: bold;
 }
 
+.prose h4 {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h5 {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h6 {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose ol li {
+  list-style: decimal !important;
+}
+
+.prose ul li {
+  list-style: disc !important;
+}
+
+.prose ul li, .prose ol li{
+  margin-left: 19px;
+  margin-top: 10px;
+}
+
+.prose a{
+  color: oklch(0.67 0.18 253.22);
+  font-weight: bold;
+}
+
 .bk-sil3.next {
   margin-top: 0px;
   position: absolute;
@@ -4435,16 +4474,19 @@ a.close-chat:hover {
 
 
 .terms-condition-bullets,
-.terms-condition-bullets-subs{
+.terms-condition-bullets-subs {
   list-style: auto;
 }
-.terms-condition-bullets-subs p{
+
+.terms-condition-bullets-subs p {
   padding-bottom: 0px !important;
 }
+
 .terms-condition-bullets-subs {
   margin-top: -9px;
 }
-.terms-condition-bullets{
+
+.terms-condition-bullets {
   margin-left: 25px;
   margin-top: 19px;
 }
