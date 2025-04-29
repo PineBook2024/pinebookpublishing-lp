@@ -9,6 +9,7 @@ import ContentfulImage from '../components/ui/ContentfulImage'
 import { client } from '../../lib/contentful/client'
 import { useRouter } from 'next/router'
 import BrandFooter from '../components/BrandFooter';
+import DateComponent from '../components/ui/DateComponent';
 
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
@@ -21,11 +22,50 @@ const Post = ({ post, recentPosts }) => {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <BrandNavbar />
-      <BrandPrimaryHeader
-        subtitle="Enhance Your Book's Readability With"
-        title="Blogs"
-        desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
-      />
+      {/* Header Banner */}
+      {/* <section class="brand-primary-header-bg py-5">
+        <div class="container max-w-screen-xl mx-auto">
+          <div class="row py-5">
+            <div class="col-12 px-5 w-100 md:w-3/5">
+              <h1 class="text-3xl text-white  font-poppins pt-10">
+                Enhance Your Book's Readability With</h1>
+              <p class="text-xl text-white pt-2">Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!</p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Header Banner */}
+      <section
+        className="relative bg-cover bg-center bg-no-repeat py-32"
+        style={{
+          backgroundColor: `#2e3845`,
+        }}
+      >
+        <div className="container max-w-screen-xl mx-auto">
+          <div className="row">
+            <div className="col-12 text-center px-5">
+              <h1 className="text-2xl md:text-4xl font-bold text-white font-poppins drop-shadow-lg pt-20">
+                {post?.fields?.title}
+              </h1>
+              {post?.fields?.date && (
+                <p className="text-sm text-white mb-3 pt-3">
+                  {new Date(post.fields.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+              )}
+              {post?.fields?.author?.fields?.name && (
+                <span className="ml-2 text-white font-bold text-xl"> By {post.fields.author.fields.name}</span>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className='overflow-hidden'>
         <div className='max-w-screen-xl mx-auto px-4 my-20 relative py-22 flex flex-col lg:flex-row'>
           {/* Main Post Column */}

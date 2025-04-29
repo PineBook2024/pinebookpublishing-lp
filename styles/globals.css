@@ -3970,29 +3970,34 @@ a.close-chat:hover {
   font-size: 15px !important;
 }
 
+.prose h1 {
+  font-size: 36px;
+}
+
+
 .prose h2 {
-  font-size: 22px;
+  font-size: 32px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
 
 .prose h3 {
-  font-size: 18px;
+  font-size: 28px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
 
 .prose h4 {
-  font-size: 18px;
+  font-size: 21px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
 
 .prose h5 {
-  font-size: 18px;
+  font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
