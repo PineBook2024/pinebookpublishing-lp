@@ -100,7 +100,7 @@ const Post = ({ post, recentPosts }) => {
                             {recentPost.fields.title}
                           </h2>
                         </div>
-                        <p className='mt-3'>{recentPost.fields.excerpt}</p>
+                        {/* <p className='mt-3'>{recentPost.fields.excerpt}</p> */}
                       </a>
                     </li>
                   ))
