@@ -51,13 +51,13 @@ export default function BrandHeroFridayUpdate() {
             width: 125,
             height: 125,
         },
-        {
-            href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
-            src: "/images/s4.png",
-            alt: "LOGO",
-            width: 125,
-            height: 125,
-        },
+        // {
+        //     href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+        //     src: "/images/s4.png",
+        //     alt: "LOGO",
+        //     width: 125,
+        //     height: 125,
+        // },
         {
             href: "https://clutch.co/profile/pine-book-writing",
             src: "/images/s6.png",
