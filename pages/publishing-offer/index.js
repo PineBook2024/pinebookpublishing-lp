@@ -383,8 +383,8 @@ export default function Lp() {
             <section className="new-lp-about-book flex flex-col lg:flex-row justify-center items-start py-24 max-w-screen-xl mx-auto gap-6 md:gap-32 lg:px-0 px-5">
                 <div className="basis-1/2">
                     <h3 className="font-poppins text-3xl md:text-4xl font-bold mb-4">PEOPLE OF THE WORLD ARE EAGER TO READ YOUR BOOK</h3>
-                    <p className="mb-4">As said, every significant advancement begins with a fascinating work of imagination, at Pine Book Publishing, we will do that for you: we will take that step forward. There is no story that should go unnoticed. Therefore, we offer you a range of services of the most skilled and innovative writers, editors & publishers in the industry, all in a single place.</p>
-                    <p>We have published thousands of successful books – from writing, editing, design, and production. Most of the books we have published for our clients have grabbed a lot of attention in the sphere of literature and are among the best sellers. Through Pine Book Publishing, your ideas will be put on paper by none other than the best. Our team can assist you in writing & publishing your story, be it in the fiction or nonfiction genre.</p>
+                    <p className="mb-4">As said, every significant advancement begins with a fascinating work of imagination. At Pine Book Publishing, we will do that for you: we will take that step forward. No story should go unnoticed. Therefore, we offer you a range of services from the most skilled and innovative writers, editors, and publishers in the industry, all in one place.</p>
+                    <p>We have published thousands of successful books – from writing, editing, design, and production. Most of our clients' books have been bestsellers and have received a lot of attention in the literary world. Through Pine Book Publishing, your ideas will be put on paper by none other than the best. Our team can assist you in writing and publishing your story, whether fiction or nonfiction.</p>
                     <Link href={'javascript:;'} className="btn mt-6 font-poppins" onClick={() => setIsOpen(true)}>LET'S GET STARTED</Link>
                 </div>
                 <div className="basis-1/2 mt-24">
@@ -421,7 +421,7 @@ export default function Lp() {
                     <div className="text-center mb-6">
                         {/* <h3 className="text-2xl text-black font-poppins">Get your Book</h3> */}
                         <h2 className=" text-4xl text-black uppercase font-poppins font-bold">We Have Assisted Thousands Of Authors <br></br> To Publish Their Book</h2>
-                        <p className="mt-3 text-gray-600">The convenience of having a versatile team with multiple sets of skills has allowed us to expand into <br></br> various genres and fulfil the Publishing needs of clients across different industries and professions.</p>
+                        <p className="mt-3 text-gray-600">The convenience of having a versatile team with multiple sets of skills has allowed us to expand into<br></br> various genres and fulfill the publishing needs of clients across different industries and professions..</p>
                     </div>
                     <div className="flex space-x-4 justify-center mb-12">
                         {['Fiction', 'Non-Fiction'].map(category => (
@@ -465,7 +465,7 @@ export default function Lp() {
                         <Image alt="LOGO" src={'/brand-img/cta-book.webp'} width={440} height={440} loading="lazy" data-aos="fade-right" />
                     </div>
                     <div className="basis-1/2 mt-12">
-                        <h4>Don't worry, we will assist you to publish your book that could become a next bestseller.</h4>
+                        <h4>Don't worry, we will assist you in publishing your book that could become the next bestseller.</h4>
                         <h3 className="font-poppins text-3xl md:text-5xl font-bold mb-4 mt-4">Get your best seller published at <span>50% </span>OFF</h3>
                         <div className="flex items-start">
                             <FontAwesomeIcon icon={faEnvelope} className="me-3 mt-1" />

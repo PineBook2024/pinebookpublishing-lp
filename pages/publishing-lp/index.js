@@ -497,9 +497,8 @@ export default function Home() {
                   About<span>Pine Book Publishing</span>
                 </h3>
                 <p className="pt-3">
-                  Pine Book Publishing was founded on February 22, 2023, with the mission of providing quality editing and publishing services for the authors worldwide.
-                  Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
-                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book in known to the world.
+                  Pine Book Publishing was founded on February 22, 2023, with a mission of making publishing easier by offering quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
+                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
                 </p>
                 <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
                   {clientLogos.map((logo, index) => (
@@ -953,7 +952,7 @@ export default function Home() {
 
                   <div className="relative mb-3">
                     <input
-                      type="text" 
+                      type="text"
                       name="email"
                       onChange={handleChange}
                       value={email}

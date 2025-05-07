@@ -135,7 +135,7 @@ export default function HeroForm() {
             <span> #1 SELF </span> PUBLISHING COMPANY
           </h2> */}
           <h1 className="font-poppins text-4xl md:text-4xl mb-7 banner-text-custom">
-            Have you finished writing your<br></br> book  and are ready to<br></br> self-publish?
+            Have you finished writing your<br></br> book and ready to<br></br> self-publish?
           </h1>
           <p>Do not overwhelm yourself! Pine Book Publishing offers premium <span>Self-Publishing Services</span> with hands-on support from polishing your manuscript to printing and distributing your book worldwide. Our team can ensure your book will be available on all major online retailers.</p>
           {/* <button className="get-premium-btn" onClick={handleOpenChat}>Get premium book publishing services</button> */}

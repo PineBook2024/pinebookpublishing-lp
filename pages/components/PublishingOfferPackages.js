@@ -319,7 +319,7 @@ export default function PublishingOfferPackages({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -444,7 +444,7 @@ export default function PublishingOfferPackages({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -607,7 +607,7 @@ export default function PublishingOfferPackages({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
