@@ -45,7 +45,7 @@ export default function TypeSetting() {
             <BrandPrimaryHeader
                 subtitle="Enhance Your Book's Readability With"
                 title="Expert Book Typesetting and Layout Adjustment Services"
-                desc="Are you struggling with adjusting your manuscript's headings, texts, and spacing according to the layout and making your book's internal design according to the standards of printed or digital information resources? We're here to help! We offer expert typesetting and layout services to help you turn your manuscript into a visually engaging and perfect readable book. Contact us and get a free quote now!"
+                desc="Are you struggling with adjusting your manuscript's headings, texts, and spacing according to the layout and making your book's internal design according to the standards of printed or digital information resources? We're here to help! We offer expert typesetting and layout services to help you turn your manuscript into a visually engaging and perfectly readable book. Contact us and get a free quote now!"
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">

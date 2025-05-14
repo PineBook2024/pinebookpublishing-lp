@@ -85,8 +85,8 @@ export default function Bundle({ isOpen, onClose, service }) {
             <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Want to publish your book in affordable price?"
-                desc="Pine Book Publishing is here to offer you with the top-notch publishing service in affordable price. We are offering more than just publishing. Explore our Packages below!"
+                title="Want to Publish Your Book at an Affordable Price?"
+                desc="Pine Book Publishing is here to offer you top-notch publishing services at an affordable price. We are offering more than just publishing. Explore our packages below!"
             />
             <BrandBannerLogo />
             <section className="package pb-5 pt-12">
@@ -430,7 +430,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -842,7 +842,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1004,7 +1004,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1181,7 +1181,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1285,7 +1285,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </h5>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-poppins text-md mt-8" onClick={() => openModal('Enterprise')}>
+                                    <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Enterprise')}>
                                         GET A QUOTE
                                     </button>
                                 </div>

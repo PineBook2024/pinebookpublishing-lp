@@ -22,7 +22,7 @@ export default function Privacy() {
             <BrandPrimaryHeader
                 // subtitle="Enhance Your Book's Readability With"
                 title="Privacy Policy"
-                // desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
+            // desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
             />
             <div className="container privacy-policy mx-auto w-full px-10 md:px-32 pt-10 md:pt-24 mb-20 width-container">
                 <p>
@@ -77,7 +77,7 @@ export default function Privacy() {
                     3.3 To maintain the privacy of your information, the servers or computers used to store personally identifiable information are kept in a secure setting. Secure Sockets Layer (SSL) software, which encrypts the information, is used at [name] to keep information extremely secure during transmission.
                 </p>
                 <p>
-                    3.4 Despite the precautions we take to safeguard your personal information, you should be aware that no method of transmission over the Internet or method of electronic storage is 100 percent secure. Your personal information's complete security is not something we can guarantee.
+                    3.4 Despite the precautions we take to safeguard your personal information, you should be aware that no method of transmission over the Internet or method of electronic storage is 100% secure. Your personal information's complete security is not something we can guarantee.
                 </p>
                 <h2 className="font-poppins">
                     4. Payment
@@ -110,7 +110,7 @@ export default function Privacy() {
                     7. Ownership and discretion
                 </h2>
                 <p>
-                    7.1 Despite the fact that some services may need rewards for sales or recognition, our service is completely confidential. Under no circumstances will any communication or content that has been reviewed or created with the intention of collaborating be disclosed to any other party. Regarding the goods and services, we offer you, we make no reservations. Everything we write or edit is regarded as the client's exclusive property. If you come into contact with us, you will only be acknowledged as the material's owner or author.
+                    7.1 Despite the fact that some services may need rewards for sales or recognition, our service is completely confidential. Under no circumstances will any communication or content that has been reviewed or created with the intention of collaborating be disclosed to any other party. Regarding the goods and services we offer, we make no reservations. Everything we write or edit is regarded as the client's exclusive property. If you come into contact with us, you will only be acknowledged as the material's owner or author.
                 </p>
                 <h2 className="font-poppins">
                     8. Originality

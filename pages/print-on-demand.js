@@ -40,7 +40,7 @@ export default function PrintDemand() {
             <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Maximize Your Book Sales with Expert Print On-Demand Services"
+                title="Maximize Your Book Sales with Expert Print-On-Demand Services"
                 desc={
                     <>Don't let your book sales stop anywhere by hiring our fast and efficient book print-on-demand services to ensure your books are always in stock for your readers. At Pine Book Publishing, we handle everything from designing, <Link href={"https://pinebookpublishing.com/book-editing"} target="_blank" className="font-bold hover:text-blue-500">editing</Link>, printing, and shipping within the promised delivery time.</>}
             />
@@ -133,8 +133,8 @@ export default function PrintDemand() {
                             />
                         </div>
                         <div className="basis-1/3 md:ml-20 py-8">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Pring On Demand Services?</h2>
-                            <p className="text-white mt-2">Take full advantage of our fast and efficient book Print-On-Demand services to simplify your book writing and publishing journey. At Pine Book Publishing, we offer seamless book printing solutions, enabling you to focus on writing while we handle the rest.</p>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Print On Demand Services?</h2>
+                            <p className="text-white mt-2">Take full advantage of our fast and efficient book Print-On-Demand services to simplify your book-writing and publishing journey. At Pine Book Publishing, we offer seamless book printing solutions, enabling you to focus on writing while we handle the rest.</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />No Inventory</li>

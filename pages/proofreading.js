@@ -55,7 +55,7 @@ export default function Proofreading() {
                             Perfect Your Manuscript with Flawless <br></br>
                             Grammar & Zero Typos</h2>
                         <p className="font-poppins text-xl	pt-3">
-                            Have you ever been reading a book and come across a typo or an awkward construction that bumped you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material.<Link href={"https://www.pinebookwriting.com/"} target="_blank" className="font-bold hover:text-blue-500">Writing a book</Link> is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
+                            Have you ever been reading a book and come across a typo or an awkward construction that pulled you out of the story? It is important to do everything possible to eliminate even minor errors that can distract the reader from the material. Writing a book is a big thing, and after spending so much time on your story, you don’t want readers to be distracted by errors. Pine Book Publishing is here to help you avoid these problems. We know you want your book to look its best and be easy to read. Our team of experienced proofreaders will catch the mistakes you might miss. We give your text a careful look to make sure it’s clean and polished.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -160,7 +160,7 @@ export default function Proofreading() {
                         </div>
                         <div className="basis-1/3 md:ml-20">
                             <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Proofreading Services?</h2>
-                            <p className="text-white mt-2">Our expert team of proofreaders will certainly give that professional touch to your book to make it both absolutely error-less and of the highest impact. Precisely, you get:</p>
+                            <p className="text-white mt-2">Our expert team of proofreaders will certainly give that professional touch to your book to make it both absolutely error-free and of the highest impact. Precisely, you get:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Expert Proofreaders & Editors</li>

@@ -140,10 +140,7 @@ export default function BrandHeroFridayUpdate() {
                                 </h1>
                             </FadeIn>
                             <p className="text-xl text-white pt-4">
-                                Pine Book Publishing has made it much more easier to self-publish a
-                                book, with hands-on support from the first word to the final cover.
-                                Our process involves Proofreading, Editing, Formatting, Book Cover
-                                Design and print-on-demand through a vast network of global outlets.
+                                Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Ghostwriting, Editing, Formatting, Book Cover Design, Publishing and Print-on-demand through a vast network of global outlets.
                             </p>
                             <h4 className="font-poppins text-2xl mt-4 text-white uppercase font-bold">
                                 Our Credibility
@@ -269,7 +266,7 @@ export default function BrandHeroFridayUpdate() {
                                                     <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
                                                 </div>
                                                 <label for="remember" class="ms-2 text-sm font-medium text-white dark:text-gray-300">By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-400">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-400" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-400" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
-                                                </div>
+                                            </div>
                                             {showSuccess && (
                                                 <p className="px-1 py-1 text-green-700">
                                                     Form submitted Successfully!
