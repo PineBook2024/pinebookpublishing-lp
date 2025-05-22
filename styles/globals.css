@@ -1182,6 +1182,12 @@ footer svg {
     padding: 41% 0 7% 0 !important;
   }
 
+  .brand-primary-header-bg-signup {
+    padding: 2% 0 4% 0 !important;
+    background-size: cover;
+    background-position: top;
+}
+
   .brand-choose-us-vector::before {
     width: 358px !important;
     height: 467px !important;
