@@ -1942,6 +1942,13 @@ footer svg {
   background-size: cover;
 }
 
+.brand-primary-header-bg-signup{
+  background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg);
+  padding: 14% 0 7% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .brand-portfolio-books .active {
   background-color: #05092a;
   border: 1px solid #157d6e;
