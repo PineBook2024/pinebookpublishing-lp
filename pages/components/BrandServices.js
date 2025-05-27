@@ -27,7 +27,7 @@ export default function BrandServices() {
                     <div className="text-center mb-6">
                         <h3 className="text-xl text-white font-poppins">Our Publishing</h3>
                         <h2 className="font-poppins text-5xl md:text-5xl text-white font-bold">Services</h2>
-                        <p className="text-white pt-3">At Pine Book Publishing, we take your story from a rough draft to bookshelf-ready with our expert editing, publishing, and marketing services<br></br> Whether you want Amazon Self Publishing Services, lulu self publishing, or want to get your book published on any other retailer. We have covered all your needs. </p>
+                        <p className="text-white pt-3">At Pine Book Publishing, we take your story from a rough draft to bookshelf-ready with our expert editing, publishing, and marketing services.<br></br> Whether you want Amazon Self Publishing Services, Lulu Self Publishing, or want to get your book published on any other retailer. We have covered all your needs. </p>
                     </div>
 
                     {/* 1 of 2 */}

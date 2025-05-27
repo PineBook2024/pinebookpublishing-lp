@@ -108,16 +108,16 @@ export default function Privacy() {
                     <li className="font-poppins text-2xl font-bold">Message Frequency:</li>
                     <p className="pt-2">Message frequency may vary depending on the type of communication. For example, you may receive up to 100 SMS messages per week related to your services. </p>
                     <li className="font-poppins text-2xl font-bold">Potential Fees for SMS Messaging:</li>
-                    <p className="pt-2">Please note that standard message and data rates may apply, depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or internationally. </p>
+                    <p className="pt-2">Please note that standard message and data rates may apply depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or internationally. </p>
                     <li className="font-poppins text-2xl font-bold">Opt-In Method:</li>
-                    <p className="pt-2">You may opt in to receive SMS messages from Pine Book Publishing in the following ways: </p>
+                    <p className="pt-2">You may opt-in to receive SMS messages from Pine Book Publishing in the following ways: </p>
                     <div className="terms-condition-bullets-subs pb-2">
                         <p className="flex items-center"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000" />
                         </svg> By submitting an online form</p>
                     </div>
                     <li className="font-poppins text-2xl font-bold">Opt-Out Method:</li>
-                    <p className="pt-2">You can opt out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. </p>
+                    <p className="pt-2">You can opt-out of receiving SMS messages at any time. To do so, simply reply "STOP" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list. </p>
                     <li className="font-poppins text-2xl font-bold">Help:</li>
                     <p className="pt-2">If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at <a href="https://pinebookpublishing.com/" target="_blank" className=" hover:text-blue-500 text-blue-500">https://pinebookpublishing.com/</a>  </p>
                     <p className="text-xl font-poppins">Additional Options: </p>
@@ -126,7 +126,7 @@ export default function Privacy() {
                     <p className="text-xl pt-2">Message and data rates may apply.<br></br>
                         You can opt-out at any time by texting "STOP."<br></br>
                         For assistance, text "HELP" or visit our <Link href={"privacy-policy"} target="_blank" className=" hover:text-blue-500 text-blue-500">Privacy Policy</Link> and <Link href={"terms-and-conditions"} target="_blank" className="text-blue-500 hover:text-blue-500">Terms and Conditions</Link> pages.<br></br>
-                        Message frequency may vary<br></br>
+                        Message frequency may vary.<br></br>
                     </p>
                 </ol>
 
@@ -179,12 +179,12 @@ export default function Privacy() {
                     Refund Policy
                 </h2>
                 <p>
-                    Pine Book Publishing offers a 100% refund for orders placed within one hour of purchase. After one hour, orders are considered final and cannot be cancelled. If you are dissatisfied with your order, you may request a refund within 30 days of receiving it. Pine Book Publishing will refund your money, minus a 50% early termination fee.
+                    Pine Book Publishing offers a 100% refund for orders placed within one hour of purchase. After one hour, orders are considered final and cannot be canceled. If you are dissatisfied with your order, you may request a refund within 30 days of receiving it. Pine Book Publishing will refund your money minus a 50% early termination fee.
                 </p>
                 <p>1. You may cancel your order for any reason within one hour of placing it.<br></br>
-                    2. After one hour, your order is considered final and cannot be cancelled.<br></br>
+                    2. After one hour, your order is considered final and cannot be canceled.<br></br>
                     3. If you are dissatisfied with your order, you may request a refund within 30 days of receiving it.<br></br>
-                    4. Pine Book Publishing will refund your money, minus a 50% early termination fee.<br></br>
+                    4. Pine Book Publishing will refund your money minus a 50% early termination fee.<br></br>
                 </p>
 
 
