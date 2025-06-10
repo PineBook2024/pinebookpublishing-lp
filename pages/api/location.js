@@ -6,8 +6,8 @@ export default async function handler(req, res) {
 
   try {
     // Get user's country by IP
-      const country = 'CA';  // hardcoded for testing
-
+    const locationRes = await axios.get(`https://ipinfo.io/json?token=037dc08c6f7b22`);
+    const country = locationRes.data.country;
 
     // Define default currency per country
     const currencyMap = {
