@@ -18,7 +18,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopupBundle from "./components/PopupBundle";
 import BrandTopBar from "./components/BrandTopBar";
 
+
 export default function Bundle({ isOpen, onClose, service }) {
+const [currency, setCurrency] = useState('USD');
+  const [convertedPrice, setConvertedPrice] = useState(700); // default in USD
+
+  useEffect(() => {
+    async function fetchLocationData() {
+      try {
+        const res = await fetch('./api/location');
+        const data = await res.json();
+
+        const rate = data.rate || 1;
+        const price = 700 * rate;
+
+        setConvertedPrice(price.toFixed(0)); 
+        setCurrency(data.currency || 'USD');
+      } catch (err) {
+        console.error('Error fetching location data:', err);
+      }
+    }
+
+    fetchLocationData();
+  }, []);
+   
     const [openFAQ, setOpenFAQ] = useState(0);
     const [showPackages, setShowPackages] = useState(false);
     const [showPackages2, setShowPackages2] = useState(false);
@@ -154,7 +177,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>$700 USD</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>
+                                   ${convertedPrice}  {currency}
+                                </span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
@@ -1396,7 +1421,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <tr>
                                         <td>Publishing Standard Formatting</td>
                                         <td>
-                                        ✔️
+                                            ✔️
                                         </td>
                                         <td>✔️</td>
                                         <td>✔️</td>
@@ -1583,7 +1608,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>❌</td>
                                         <td>✔️</td>
                                     </tr>
-                                   
+
                                     {/* <tr className="m-4">
                                         <td className="text-2xl md:text-2xl text-start p-3 font-bold"
                                             colspan="4"
