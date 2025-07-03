@@ -26,7 +26,7 @@ const [currency, setCurrency] = useState('USD');
   useEffect(() => {
     async function fetchLocationData() {
       try {
-        const res = await fetch('./api/location');
+        const res = await fetch('/api/location');
         const data = await res.json();
 
         const rate = data.rate || 1;
