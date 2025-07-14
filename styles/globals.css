@@ -4509,3 +4509,7 @@ a.close-chat:hover {
   margin-left: 25px;
   margin-top: 19px;
 }
+
+section.brand-main-banner-video {
+    background: #00000082;
+}

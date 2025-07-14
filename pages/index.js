@@ -12,6 +12,7 @@ import BrandServices from "./components/BrandServices";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandTestimonial from "./components/BrandTestimonial";
 import BrandFaqs from "./components/BrandFaqs";
+import LazyYouTube from "./components/LazyYouTube";
 import BrandContact from "./components/BrandContactForm";
 import BrandLogo from "./components/BrandLogo";
 import BrandProcess from "./components/BrandProcess";
@@ -180,7 +181,7 @@ export default function Home() {
                     }}
                 >
                     <div className='testimonials-wrap grid grid-cols-1 md:grid-cols-3 gap-10'>
-                        {videoClient.map((videoClient) => (
+                        {/* {videoClient.map((videoClient) => (
                             <SwiperSlide>
                                 <Link href={videoClient.src} className="glightbox block">
                                     <div className='' key={videoClient.id}>
@@ -192,7 +193,33 @@ export default function Home() {
                                     </div>
                                 </Link>
                             </SwiperSlide>
-                        ))}
+                        ))} */}
+                        {videoClient.map((videoClient) => {
+                        // Extract YouTube video ID from the URL
+                        const videoUrl = new URL(videoClient.src);
+                        const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
+
+                        return (
+                            <SwiperSlide>
+                            <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
+
+                                <div className="py-4">
+                                      <LazyYouTube videoId={videoId} />
+                                </div>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
+                                </h4>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
+                                </h4>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
+                                </h4>
+                            </div>
+                            </SwiperSlide>
+                        );
+                    })}
                     </div>
                 </Swiper>
 
