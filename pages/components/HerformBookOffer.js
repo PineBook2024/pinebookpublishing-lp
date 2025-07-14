@@ -339,6 +339,7 @@ export default function HeroFormBookOffer() {
     "Book Editing",
     "Proofreading",
     "Book Formatting",
+
   ];
 
 

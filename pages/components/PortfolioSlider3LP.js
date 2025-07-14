@@ -49,19 +49,19 @@ export default function PortfolioSlider3LP() {
     const ImageSlides = [
         {
             id: 1,
-            src: "/brand-img/Editing Portfolio 1.jpg",
+            src: "/brand-img/editing-formatting-1.png",
         },
         {
             id: 2,
-            src: "/brand-img/Editing Portfolio 2.jpg",
+            src: "/brand-img/editing-formating-2.png",
         },
         {
             id: 3,
-            src: "/brand-img/Editing Portfolio 3.jpg",
+            src: "/brand-img/editing-formating-3.png",
         },
         {
             id: 4,
-            src: "/brand-img/Editing Portfolio 4.jpg",
+            src: "/brand-img/editing-formating-4.png",
         },
     ];
 
