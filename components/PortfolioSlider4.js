@@ -23,7 +23,7 @@ const GLightbox = dynamic(
     { ssr: false }
 );
 
-export default function PortfolioSlider3LP() {
+export default function PortfolioSlider4() {
     const swiperRef2 = useRef(null);
     const lightboxRef = useRef(null);
 
@@ -68,11 +68,11 @@ export default function PortfolioSlider3LP() {
     return (
         <>
             <div className="w-full max-w-6xl mx-auto py-10 relative">
-                <h1 className="text-4xl font-bold mb-20 text-center text-white">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
-                <h2 className="text-3xl font-medium mb-5 text-white">Editing, Formatting & Proofreading</h2>
+                <h1 className="text-4xl font-bold mb-20 text-center">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
+                <h2 className="text-3xl font-medium mb-5">Editing, Formatting & Proofreading</h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -113,7 +113,7 @@ export default function PortfolioSlider3LP() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon next cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon next cursor-pointer"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />

@@ -23,7 +23,7 @@ const GLightbox = dynamic(
     { ssr: false }
 );
 
-export default function PortfolioSlider3LP() {
+export default function PortfolioSlider3() {
     const swiperRef2 = useRef(null);
     const lightboxRef = useRef(null);
 
@@ -35,7 +35,7 @@ export default function PortfolioSlider3LP() {
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
-                    selector: '.glightbox4'
+                    selector: '.glightbox3'
                 });
             });
         }
@@ -49,30 +49,38 @@ export default function PortfolioSlider3LP() {
     const ImageSlides = [
         {
             id: 1,
-            src: "/brand-img/Editing Portfolio 1.jpg",
+            src: "/brand-img/foamy and F-01 (1).png",
         },
+        // {
+        //     id: 2,
+        //     src: "/brand-img/im a boy-01 (1).png",
+        // },
         {
             id: 2,
-            src: "/brand-img/Editing Portfolio 2.jpg",
+            src: "/brand-img/im a girl-01 (1).png",
         },
         {
             id: 3,
-            src: "/brand-img/Editing Portfolio 3.jpg",
+            src: "/brand-img/Untitled-1-01 (2).png",
         },
         {
             id: 4,
-            src: "/brand-img/Editing Portfolio 4.jpg",
+            src: "/brand-img/the phonics-01.png",
         },
+        {
+            id: 5,
+            src: "/brand-img/robert-01.png",
+        },
+
     ];
 
     return (
         <>
-            <div className="w-full max-w-6xl mx-auto py-10 relative">
-                <h1 className="text-4xl font-bold mb-20 text-center text-white">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
-                <h2 className="text-3xl font-medium mb-5 text-white">Editing, Formatting & Proofreading</h2>
+            <div className="w-full max-w-6xl mx-auto relative">
+                <h2 className="text-3xl font-medium mb-5 ">Illustrations </h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -81,8 +89,8 @@ export default function PortfolioSlider3LP() {
                 {/* Swiper Slider */}
                 <Swiper
                     spaceBetween={30}
-                    slidesPerView={2}
                     loop={true}
+                    slidesPerView={2}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     modules={[Navigation]}
                     className="mySwiper"
@@ -104,7 +112,7 @@ export default function PortfolioSlider3LP() {
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className="h-70 w-auto object-contain w-100 glightbox4 cursor-pointer"
+                                    className="h-100 w-auto object-contain glightbox3 cursor-pointer"
                                 />
                             </div>
                         </SwiperSlide>
@@ -113,7 +121,7 @@ export default function PortfolioSlider3LP() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon next cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon next cursor-pointer"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />

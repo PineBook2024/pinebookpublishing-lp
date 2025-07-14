@@ -23,7 +23,7 @@ const GLightbox = dynamic(
     { ssr: false }
 );
 
-export default function PortfolioSlider3LP() {
+export default function PortfolioSlider2() {
     const swiperRef2 = useRef(null);
     const lightboxRef = useRef(null);
 
@@ -35,7 +35,7 @@ export default function PortfolioSlider3LP() {
             import('glightbox').then((GLightboxModule) => {
                 const GLightbox = GLightboxModule.default;
                 lightboxRef.current = GLightbox({
-                    selector: '.glightbox4'
+                    selector: '.glightbox2'
                 });
             });
         }
@@ -49,30 +49,42 @@ export default function PortfolioSlider3LP() {
     const ImageSlides = [
         {
             id: 1,
-            src: "/brand-img/Editing Portfolio 1.jpg",
+            src: "/brand-img/Artboard 1.png",
         },
         {
             id: 2,
-            src: "/brand-img/Editing Portfolio 2.jpg",
+            src: "/brand-img/Artboard 1-1.png",
         },
-        {
-            id: 3,
-            src: "/brand-img/Editing Portfolio 3.jpg",
-        },
+        // {
+        //     id: 3,
+        //     src: "/brand-img/Artboard 1-2.png",
+        // },
         {
             id: 4,
-            src: "/brand-img/Editing Portfolio 4.jpg",
+            src: "/brand-img/Artboard 2.png",
         },
+        {
+            id: 5,
+            src: "/brand-img/Draft 02.png",
+        },
+        // {
+        //     id: 6,
+        //     src: "/brand-img/Efrain Castillos Barber Studio.png",
+        // },
+        {
+            id: 7,
+            src: "/brand-img/John H Bowman 2.png",
+        }
+
     ];
 
     return (
         <>
-            <div className="w-full max-w-6xl mx-auto py-10 relative">
-                <h1 className="text-4xl font-bold mb-20 text-center text-white">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
-                <h2 className="text-3xl font-medium mb-5 text-white">Editing, Formatting & Proofreading</h2>
+            <div className="w-full max-w-6xl mx-auto pb-10 relative">
+                <h2 className="text-3xl font-medium mb-5">Author Websites</h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider2-icon prev cursor-pointer"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -81,7 +93,7 @@ export default function PortfolioSlider3LP() {
                 {/* Swiper Slider */}
                 <Swiper
                     spaceBetween={30}
-                    slidesPerView={2}
+                    slidesPerView={3}
                     loop={true}
                     onSwiper={(swiper) => (swiperRef2.current = swiper)}
                     modules={[Navigation]}
@@ -93,7 +105,7 @@ export default function PortfolioSlider3LP() {
                             navigation: true,
                         },
                         "@1.00": {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 10,
                         },
                     }}
@@ -104,7 +116,7 @@ export default function PortfolioSlider3LP() {
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className="h-70 w-auto object-contain w-100 glightbox4 cursor-pointer"
+                                    className=" w-auto object-contain h-100 w-100 glightbox2 cursor-pointer border border-slate-500"
                                 />
                             </div>
                         </SwiperSlide>
@@ -113,7 +125,7 @@ export default function PortfolioSlider3LP() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon next cursor-pointer hide-btn-responsive"
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider2-icon next cursor-pointer"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
