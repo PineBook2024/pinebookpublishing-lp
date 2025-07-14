@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
@@ -7,12 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import HomePopupNew from "./components/HomePopupNew";
-
-// Font files can be colocated inside of `pages`
-// const majallab = localFont({
-//   src: './majallab-webfont.woff2',
-//   variable: '--font-majallab',
-// });
+import Loader from "./components/Loader";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -23,6 +18,17 @@ const poppins = Poppins({
 
 
 export default function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Wait for page to fully load (simulate for now with setTimeout)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // ⏱ You can adjust delay here (in ms)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -159,12 +165,10 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <main className={`${poppins.variable}`}>
+         {loading && <Loader />} 
+        {!loading && (
+          <>
         <Component {...pageProps} />
-        {/* <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
-          strategy="afterInteractive"
-        /> */}
-        {/* Google tag Manager Script */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -217,9 +221,8 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
           />
         </noscript>
-        {/* End Meta Pixel Code */}
-
-        {/* <HomePopupNew /> */}
+         </>
+        )}
       </main>
     </>
   );
