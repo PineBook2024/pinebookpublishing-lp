@@ -624,7 +624,7 @@ export default function Home() {
               {/* </AnimateFade> */}
               <div className="abt-pic text-center">
                 {/* <AnimateFade type={"left"}> */}
-                <Image src={"/images/About-us-img.png"} width={500} height={570}
+                <Image src={"/images/About-us-img.webp"} width={500} height={570}
                   layout="responsive"
                   loading="lazy"
                   alt="about img"
