@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
@@ -7,12 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import HomePopupNew from "./components/HomePopupNew";
-
-// Font files can be colocated inside of `pages`
-// const majallab = localFont({
-//   src: './majallab-webfont.woff2',
-//   variable: '--font-majallab',
-// });
+import Loader from "./components/Loader";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -23,6 +18,17 @@ const poppins = Poppins({
 
 
 export default function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Wait for page to fully load (simulate for now with setTimeout)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // ⏱ You can adjust delay here (in ms)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -159,13 +165,11 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <main className={`${poppins.variable}`}>
+         {loading && <Loader />} 
+        {!loading && (
+          <>
         <Component {...pageProps} />
-        {/* <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"
-          strategy="afterInteractive"
-        /> */}
-         {/* Google tag Manager Script */}
-         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -177,10 +181,11 @@ export default function App({ Component, pageProps }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/GNLKQHPY2W6Q.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("GNLKQHPY2W6Q");}();`,
+            !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/961Y0H4Z2KNG.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("961Y0H4Z2KNG");}();`,
           }}
         />
         <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
+        
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -216,9 +221,8 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
           />
         </noscript>
-        {/* End Meta Pixel Code */}
-
-        {/* <HomePopupNew /> */}
+         </>
+        )}
       </main>
     </>
   );

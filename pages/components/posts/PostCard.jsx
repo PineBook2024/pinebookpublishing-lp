@@ -20,11 +20,13 @@ export default function PostCard ({ post }) {
           />
         </div>
         <div className='p-4'>
-          <div className='text-sm mb-4 text-gray-400'>
+         
+          <h3 className='text-md mb-1 leading-snug font-bold'>{title}</h3>
+          <div className='text-sm mb-1 mt-3 text-gray-400'>
             <DateComponent dateString={date} />
           </div>
-          <h3 className='text-xl mb-1 leading-snug font-bold'>{title}</h3>
-          <p className='text-base mb-4'>{excerpt}</p>
+          <p className="text-base mb-4 line-clamp-3">{excerpt}</p>
+          <Link href={`/blog/${slug}`} aria-label={title} className='text-green-700'>Read More</Link>
           {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
         </div>
       </Link>

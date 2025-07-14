@@ -22,8 +22,8 @@ export default function BrandChooseUs() {
                             />
                         </div>
                         <div className="basis-1/3 md:ml-20 py-8">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us</h2>
-                            <p className="text-white mt-2">Tired of trying out the same old book publishing companies? At Pine Book Publishing, your success is our priority, and we're committed to help you achieve your literary goals with confidence and ease, which other self publishing companies might not offer. With us, you get:  </p>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Us?</h2>
+                            <p className="text-white mt-2">Tired of trying out the same old book publishing companies? At Pine Book Publishing, your success is our priority, and we're committed to helping you achieve your literary goals with confidence and ease, which other self-publishing companies might not offer. With us, you get:</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />Affordable Price</li>

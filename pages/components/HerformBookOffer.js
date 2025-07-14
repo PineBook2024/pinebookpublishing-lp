@@ -366,13 +366,13 @@ export default function HeroFormBookOffer() {
       width: 130,
       height: 60
     },
-    {
-      href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
-      src: "/images/s4.png",
-      alt: "LOGO",
-      width: 130,
-      height: 60
-    },
+    // {
+    //   href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
+    //   src: "/images/s4.png",
+    //   alt: "LOGO",
+    //   width: 130,
+    //   height: 60
+    // },
     {
       href: "https://clutch.co/profile/pine-book-writing",
       src: "/images/s6.png",
@@ -471,10 +471,7 @@ export default function HeroFormBookOffer() {
               </h1>
             </FadeIn>
             <p className="text-xl text-white pt-4">
-              Pine Book Publishing has made it much more easier to self-publish a
-              book, with hands-on support from the first word to the final cover.
-              Our process involves Proofreading, Editing, Formatting, Book Cover
-              Design and print-on-demand through a vast network of global outlets.
+            Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.
             </p>
             <h4 className="font-poppins text-2xl mt-8 text-white uppercase font-bold">
               Our Credibility
@@ -596,6 +593,7 @@ export default function HeroFormBookOffer() {
                             <span className="country-code text-lg font-semibold">
                               +{selectedCountry ? selectedCountry.code : ""}
                             </span>
+                            
                             <input
                               type="tel"
                               placeholder="Enter your Phone"
@@ -637,7 +635,6 @@ export default function HeroFormBookOffer() {
                         rows={3}
                         onChange={handleChange}
                         value={message}
-                        required
                         placeholder="Enter your Message"
                         name="message"
                       ></textarea>

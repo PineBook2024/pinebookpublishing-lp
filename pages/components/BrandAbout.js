@@ -19,13 +19,12 @@ export default function BrandAbout(props) {
             <div className="container mx-auto max-w-screen-lg overflow-hidden pt-0 md:pt-20 pb-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h4 className="font-poppins text-3xl md:text-5xl font-bold">
-                            About Us
-                        </h4>
-                        <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">Pine Book Publishing</h2>
+                        <h2 className="font-poppins text-3xl md:text-5xl uppercase font-bold">
+                            About Us<br></br>
+                            Pine Book Publishing</h2>
                         {/* <FadeIn> */}
                         <p className="font-poppins text-xl pt-4">
-                            {props.subdescone}
+                            Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more <Link href={"https://pinebookpublishing.com/"} className="font-bold hover:text-blue-500"> book publishing companies </Link> out there than stars in the sky (okay, maybe not that many, but you get the idea).
                         </p>
                         <p className="font-poppins text-xl mb-5">
                             {props.subdesctwo}
@@ -56,7 +55,7 @@ export default function BrandAbout(props) {
                                 className="pt-12"
                                 onLoad={() => setIsLoaded(true)}
                             /> */}
-                            <Image src={"/images/About-us-img.png"} width={500} height={570}
+                            <Image src={"/images/About-us-img.webp"} width={500} height={570}
                                 layout="responsive"
                                 loading="lazy"
                                 alt="about img"

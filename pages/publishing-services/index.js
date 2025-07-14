@@ -320,23 +320,23 @@ export default function PublishingLpNew() {
                 <div className="max-w-screen-xl mx-auto pt-20">
                     <div>
                         <div className="mb-4 new-lp3-why-choose-us-title">
-                            <h3 className="mb-5">Are you trying to find a publishing house for books?
+                            <h3 className="mb-5">A Trusted & Reliable Book Publishing Company
                             </h3>
                             <h1 className="font-poppins text-3xl md:text-4xl font-bold mb-5">
-                                Providing Top Book Publishers to <br></br>Authors to Help Them Succeed
+                            Offering Expert Book Publishing <br></br> Services to Help Authors Succeed
                             </h1>
-                            <h2 className="font-poppins text-md md:text-md mt-3">Put your trust in our team of expert book publishers from the top book publishing<br></br> houses to deliver a flawless publication experience meant to boost the sales of your book.</h2>
+                            <h2 className="font-poppins text-md md:text-md mt-3">Are you a new or experienced self-published author looking for reliable<br></br>  book publishing services? Don't look anymore, as Pine Book Publishing is here to handle all the complexities<br></br>  along the way and make your publishing journey easier, from ghostwriting and designing to publishing and marketing.</h2>
                             <div>
                                 <ul className="banner-features lp3-banner-list flex flex-col lg:flex-row mt-8 gap-6 justify-center">
-                                    <li>publication by professionals
+                                    <li>Decade-long Expertise
                                     </li>
-                                    <li>More than 10,000 Publishing Platforms.
+                                    <li>100+ Publishing Platforms
                                     </li>
                                 </ul>
                                 <ul className="banner-features lp3-banner-list flex flex-col lg:flex-row mt-3 gap-6 justify-center mb-10">
-                                    <li>Author advice.
+                                    <li>Fast Turnaround
                                     </li>
-                                    <li className="last">Fast turnaround time.</li>
+                                    <li className="last">Customized & Affordable Solutions</li>
                                 </ul>
                             </div>
                         </div>
@@ -456,9 +456,9 @@ export default function PublishingLpNew() {
 
             <section className="new-lp3-tabs-section max-w-screen-xl mx-auto mt-5">
                 <div className="text-center new-lp3-why-choose-us-title">
-                    <h2 className=" text-3xl text-black uppercase font-bold">What Takes Place?
+                    <h2 className=" text-3xl text-black uppercase font-bold">What's Included in Our Publishing Expertise?
                     </h2>
-                    <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse provides an extensive array of book publishing options.With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.</p>
+                    <p className="mt-3 text-gray-600">To help authors publish their books, we have designed a full-scale range of book publishing services with an extensive team of professionals who possess plentiful experience working in the industry. We always strive to go beyond our clients' expectations.</p>
                 </div>
                 <div className="p-8 tabs">
                     <div className="">
@@ -526,21 +526,20 @@ export default function PublishingLpNew() {
                             <div className="basis-1/2">
                                 <div className="mb-4 new-lp3-why-choose-us-title">
                                     <h2 className="font-poppins text-2xl md:text-3xl font-bold mb-5">
-                                        Publish Your Writing and Make Your Dream Come True.
+                                    Expert Publishing Services for Authors of Every Level!
                                     </h2>
-                                    <p className="font-poppins text-md md:text-md mt-3">We have established ourselves as one of the top providers of book publishing services because to our quality. We guarantee that the quality of your book is exceptional. Allow us to assist you in realizing your ambition of releasing your own book on Amazon.
+                                    <p className="font-poppins text-md md:text-md mt-3">At Pine Book Publishing, we have established ourselves as one of the top book publishing companies by winning the trust of many new and experienced authors. With our long-tenured experience and robust industry connections, we can help you publish your book on multiple popular platforms such as Amazon, Barnes & Noble, Lulu, Google Books, and others.
                                     </p>
                                     <ul className="banner-features lp3-banner-list flex flex-col lg:flex-row mt-8 gap-6 justify-start">
-                                        <li>Book Formatting & Design
+                                        <li>Collaborative Approach
                                         </li>
-                                        <li>Production & Printing
+                                        <li>100% Transparency
                                         </li>
-
                                     </ul>
                                     <ul className="banner-features lp3-banner-list flex flex-col lg:flex-row mt-3 gap-6 justify-start mb-10">
-                                        <li>Independent Publishing
+                                        <li>No Royalty Cuts
                                         </li>
-                                        <li className="last">Author Assistance
+                                        <li className="last">Satisfaction Guaranteed
                                         </li>
                                     </ul>
                                     <section className="tab-one-content flex flex-col lg:flex-row justify-between items-start max-w-screen-xl mx-auto">
@@ -602,7 +601,7 @@ export default function PublishingLpNew() {
                 <div className="max-w-screen-xl mx-auto ">
                     <div className="text-center mb-6">
                         {/* <h3 className="text-2xl text-black font-poppins">Get your Book</h3> */}
-                        <h2 className=" text-4xl text-black uppercase font-poppins font-bold">We Have Assisted Thousands Of Authors <br></br> To Publish Their Book</h2>
+                        <h2 className=" text-4xl text-black uppercase font-poppins font-bold">See How We’ve Helped Hundreds of<br></br> Authors Publish Their Books</h2>
                         <p className="mt-3 text-gray-600">The convenience of having a versatile team with multiple sets of skills has allowed us to expand into <br></br> various genres and fulfil the Publishing needs of clients across different industries and professions.</p>
                     </div>
                     <div className="flex space-x-4 justify-center mb-12">
@@ -631,9 +630,9 @@ export default function PublishingLpNew() {
             {/* CAT section  */}
             <section className="new-lp3-cta-sec new-lp-about-book flex flex-col lg:flex-row justify-between items-center max-w-screen-xl mx-auto my-10">
                 <div className="text-start new-lp3-why-choose-us-title">
-                    <h2 className=" text-3xl text-black uppercase font-bold">Publish Your Own Book
+                    <h2 className=" text-2xl text-black uppercase font-bold">Have any confusion? Why not make a call?
                     </h2>
-                    <p className="mt-3 text-gray-600">Don't put off telling the world about your tale for much<br></br> longer. We make it inexpensive and simple.</p>
+                    <p className="mt-3 text-gray-600">If you have any confusion or questions regarding our services,<br></br> pricing, or anything else, this page didn't answer.<br></br> Don't hesitate to book a call with our expert professionals!</p>
                 </div>
                 <div className="flex gap-10">
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
@@ -791,9 +790,9 @@ export default function PublishingLpNew() {
             {/* Why choose Us */}
             <section className="my-7">
                 <div className="text-center mb-6 new-lp3-why-choose-us-title">
-                    <h2 className=" text-3xl text-black uppercase font-bold">Why Opt for Us?
+                    <h2 className=" text-3xl text-black uppercase font-bold">Why Choose Us?
                     </h2>
-                    <p className="mt-3 text-gray-600">To assist authors in releasing their books, Book Writing Verse providesan extensive array of book publishing options.<br></br> With ten years of experience, our self-book publishing specialists are dedicated to exceeding all of your expectations.
+                    <p className="mt-3 text-gray-600">To assist authors in publishing their books, Book Writing Verse provides an extensive array<br></br> of book publishing options. With ten years of experience, our self-book publishing<br></br> specialists are dedicated to exceeding your expectations.
                     </p>
                 </div>
             </section>
@@ -805,7 +804,7 @@ export default function PublishingLpNew() {
                         </div>
                         <div className="new-lp3-why-choose-us-title">
                             <h4 className="text-2xl">Full Ownership</h4>
-                            <p>You are the sole owner. We exert all of our effort. With our professional assistance with book publishing, you acquire everything.
+                            <p>You are the sole owner. We exert all of our efforts. With our professional assistance with book publishing, you acquire everything.
                             </p>
                         </div>
                     </div>
@@ -816,7 +815,7 @@ export default function PublishingLpNew() {
                         <div className="new-lp3-why-choose-us-title">
                             <h4 className="text-2xl">Cost-effectiveness
                             </h4>
-                            <p>Being perfectionists, we are adamant that your life savings shouldn't be sacrificed for excellence. Our professional book publishing online services are unparalleled, and our pricing are reasonable.
+                            <p>Being perfectionists, we are adamant that your life savings shouldn't be sacrificed for excellence. Our professional book publishing online services are unparalleled, and our pricing is reasonable.
                             </p>
                         </div>
                     </div>
@@ -876,9 +875,9 @@ export default function PublishingLpNew() {
             {/* CAT section  */}
             <section className="new-lp3-cta-sec new-lp-about-book flex flex-col lg:flex-row justify-between items-center max-w-screen-xl mx-auto mb-10">
                 <div className="text-start new-lp3-why-choose-us-title">
-                    <h2 className=" text-3xl text-black uppercase font-bold">Publish Your Own Book
+                    <h2 className=" text-2xl text-black uppercase font-bold">You're Just a Step Away from Becoming an Author!
                     </h2>
-                    <p className="mt-3 text-gray-600">Don't put off telling the world about your tale for<br></br> much longer. We make it inexpensive and simple.</p>
+                    <p className="mt-3 text-gray-600">Are you ready to polish your draft or push your written book towards your <br></br>audience? Don't wait! Let's get in touch and discuss your dream goal!</p>
                 </div>
                 <div className="flex gap-10">
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-4">

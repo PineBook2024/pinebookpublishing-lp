@@ -45,7 +45,6 @@ export default function BookFormatting() {
             <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
-                subtitle=""
                 title="Custom Merchandises"
                 desc="Want to improve your product visibility? Our personalized print-on-demand accessories can help you create a unique style for your marketing."
             />
@@ -60,15 +59,14 @@ export default function BookFormatting() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-xl uppercase font-bold">
-                            APPARELS
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700	">Wear Your Style</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700	">
+                            APPARELS <br></br>
+                            Wear Your Style</h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Printed apparel is among one of the most popular categories of promotional, branded items. Style your brand's appearance with personalized T-shirts, caps, and hoodies.
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">Pine Digital Hub specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">Confused about your design? Consult our expert designers at Pine Digital Hub. We're dedicated to making your team look exceptional, ensuring peak performance.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500"><Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link> specializes in personalized apparel that tells your story. Let our skilled team transform your logo or design into high-quality shirts, hoodies, and caps. From comfortable everyday wear to premium brands, we craft garments you'll be proud to share, sell, or wear. Don't have a design? Our expert graphic designers are here to create a unique look for you.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">Confused about your design? Consult our expert designers at Pine Book Publishing. We're dedicated to making your team look exceptional, ensuring peak performance.</p>
                     </div>
                 </div>
             </div>
@@ -76,15 +74,14 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-xl uppercase font-bold">
-                            CUPS & MUGS
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700">Recall with Every Sip
+                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700">
+                            CUPS & MUGS <br></br>
+                            Recall with Every Sip
                         </h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
-                            At Pine Digital Hub, we offer a wide range of customized mugs, flask bottles, and tumblers that are sure to meet your every need.
+                            At Pine Book Publishing, we offer a wide range of customized mugs, flask bottles, and tumblers that are sure to meet your every need.
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">From personalized ceramic mugs adorned with print-on-demand designs to sleek and durable stainless steel flask bottles that keep your beverages hot or cold for hours, we have the perfect option for every occasion. Our products are crafted with the highest quality materials, ensuring both durability and style. With a wide range of sizes and colors, you can find the perfect product to match your style.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">From personalized ceramic mugs adorned with <Link href={"https://pinebookpublishing.com/print-on-demand"} target="_blank" className="font-bold hover:text-blue-500">print-on-demand</Link> designs to sleek and durable stainless steel flask bottles that keep your beverages hot or cold for hours, we have the perfect option for every occasion. Our products are crafted with the highest quality materials, ensuring both durability and style. With a wide range of sizes and colors, you can find the perfect product to match your style.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/merchandise-img-2.png"} width={470} height={300}
@@ -107,14 +104,13 @@ export default function BookFormatting() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-xl uppercase font-bold">
-                            BANNERS
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700	">Capture Immediate Attention</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-green-700	">
+                            BANNERS <br></br>
+                            Capture Immediate Attention</h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Are you planning to stand out from your competitors and boost visibility?
                         </p>
-                        <p className="font-poppins text-xl	pt-3 text-gray-500">The perfect personalized banner can captivate the audience's attention and give your brand a powerful visual voice. At Pine Digital Hub, we specialize in creating signboards, wall banners, and standees specifically tailored to showcase your brand's identity. With our array of high-quality, full-colour designs, your personalized banner will effectively convey your product/service offering and help you stand out in high-traffic settings and events.</p>
+                        <p className="font-poppins text-xl	pt-3 text-gray-500">The perfect personalized banner can captivate the audience's attention and give your brand a powerful visual voice. At Pine Book Publishing, we specialize in creating signboards, wall banners, and standees specifically tailored to showcase your brand's identity. With our array of high-quality, full-colour designs, your personalized banner will effectively convey your product/service offering and help you stand out in high-traffic settings and events.</p>
                     </div>
                 </div>
             </div>
@@ -122,11 +118,11 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-2xl uppercase font-bold">
+                        <h2 className="font-poppins text-xl md:text-2xl uppercase font-bold">
                             PENS
-                        </h3>
+                        </h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
-                            A personalized stationery design from Pine Digital Hub can do wonders for your business. With our expertise in creating unique and eye-catching designs, we can help your stationery make a lasting impression on your clients and customers. Whether you're looking for a professional and sophisticated design or something more playful and creative, our team can tailor the design to represent your brand and message perfectly. Stand out from competitors and elevate your business with our custom stationery design services.
+                            A personalized stationery design from Pine Book Publishing can do wonders for your business. With our expertise in creating unique and eye-catching designs, we can help your stationery make a lasting impression on your clients and customers. Whether you're looking for a professional and sophisticated design or something more playful and creative, our team can tailor the design to represent your brand and message perfectly. Stand out from competitors and elevate your business with our custom stationery design services.
                         </p>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">Currently, we are dealing with designing pens, but there is always room to discuss more ideas. So don't hesitate to message us and discuss your ideas.</p>
                     </div>
@@ -152,9 +148,9 @@ export default function BookFormatting() {
                         />
                     </div>
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-2xl uppercase font-bold">
+                        <h2 className="font-poppins text-xl md:text-2xl uppercase font-bold">
                             CALENDERS
-                        </h3>
+                        </h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Enhance your year with a touch of elegance by selecting our custom calendars featuring an array of captivating designs. Whether you desire a calendar for your office, home, or business, it is an essential addition that will elevate your daily routine.
                         </p>
@@ -165,9 +161,9 @@ export default function BookFormatting() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden mb-24">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-xl md:text-2xl uppercase font-bold">
+                        <h2 className="font-poppins text-xl md:text-2xl uppercase font-bold">
                             BOOKSMARKS
-                        </h3>
+                        </h2>
                         <p className="font-poppins text-xl	pt-3 text-gray-500">
                             Adding a bookmark to a novel or notebook is the perfect way to add that final, unique touch to a gift or keepsake. If your business wants to promote an upcoming sale or book release, custom bookmarks can be a highly effective tool to spread the word and generate excitement.
                         </p>
@@ -187,7 +183,7 @@ export default function BookFormatting() {
             <Merchand />
             <BrandCTA
                 title="Do You Know?"
-                desc="Giving customers a tangible item to keep and use creates a lasting reminder of their experience with your brand. Experts at Pine Digital Hub can further contribute to this experience by delivering your unique brand story with print-on-demand items."
+                desc="Giving customers a tangible item to keep and use creates a lasting reminder of their experience with your brand. Experts at Pine Book Publishing can further contribute to this experience by delivering your unique brand story with print-on-demand items."
                 btntext="Speak to our Consultant"
             />
 

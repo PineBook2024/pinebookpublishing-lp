@@ -18,7 +18,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopupBundle from "./components/PopupBundle";
 import BrandTopBar from "./components/BrandTopBar";
 
+
 export default function Bundle({ isOpen, onClose, service }) {
+const [currency, setCurrency] = useState('USD');
+  const [convertedPrice, setConvertedPrice] = useState(700); // default in USD
+
+  useEffect(() => {
+    async function fetchLocationData() {
+      try {
+        const res = await fetch('/api/location');
+        const data = await res.json();
+
+        const rate = data.rate || 1;
+        const price = 700 * rate;
+
+        setConvertedPrice(price.toFixed(0)); 
+        setCurrency(data.currency || 'USD');
+      } catch (err) {
+        console.error('Error fetching location data:', err);
+      }
+    }
+
+    fetchLocationData();
+  }, []);
+   
     const [openFAQ, setOpenFAQ] = useState(0);
     const [showPackages, setShowPackages] = useState(false);
     const [showPackages2, setShowPackages2] = useState(false);
@@ -85,8 +108,8 @@ export default function Bundle({ isOpen, onClose, service }) {
             <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Want to publish your book in affordable price?"
-                desc="Pine Book Publishing is here to offer you with the top-notch publishing service in affordable price. We are offering more than just publishing. Explore our Packages below!"
+                title="Want to Publish Your Book at an Affordable Price?"
+                desc="Pine Book Publishing is here to offer you top-notch publishing services at an affordable price. We are offering more than just publishing. Explore our packages below!"
             />
             <BrandBannerLogo />
             <section className="package pb-5 pt-12">
@@ -150,27 +173,20 @@ export default function Bundle({ isOpen, onClose, service }) {
             <section className="bg-white pt-5 pb-5">
                 <div className="width-container">
                     <div className="container mx-auto">
-                        {/* <div className="text-center mb-6">
-                            <h3 className="text-2xl text-black font-poppins uppercase">Publishing</h3>
-                            <h2 className="font-poppins text-4xl font-bold text-black uppercase">Bundles</h2>
-                        </div> */}
-
                         <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                             <div className="single-packages relative">
                                 {/* <span className="hover-top-vector"></span> */}
 
-                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>$700 USD</span></h4>
+                                <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package <br></br><span>
+                                   ${convertedPrice}  {currency}
+                                </span></h4>
                                 <div className="single-packages-content mb-5 px-10">
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
                                     </div>
-                                    {/* <div className="flex gap-2 mb-5 items-center items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div> */}
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -186,7 +202,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
+                                        Basic Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -257,12 +273,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
-
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -280,8 +291,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
-
+                                        Publishing Standard Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -376,11 +386,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -399,8 +405,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
-
+                                        Publishing Standard Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -450,7 +455,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -548,22 +553,11 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                         colspan="4"
                                                         scope="row">Preparing Your Manuscript</th>
                                                 </tr>
+
                                                 <tr>
-                                                    <td>Line by Line Editing</td>
+                                                    <td>Editorial Support</td>
                                                     <td>
                                                         ✔️
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Developmental Editing</td>
-                                                    <td>
-                                                        ❌
                                                     </td>
                                                     <td>
                                                         ✔️
@@ -595,12 +589,20 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>✔️</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Formatting</td>
+                                                    <td>Basic Formatting</td>
                                                     <td>
-                                                        50+ Platforms
+                                                        ✔️
                                                     </td>
-                                                    <td>50+ Platforms</td>
-                                                    <td>50+ Platforms</td>
+                                                    <td>✔️</td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Publishing Standard Formatting</td>
+                                                    <td>
+                                                        ❌
+                                                    </td>
+                                                    <td>✔️</td>
+                                                    <td>✔️</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Revisions Per Draft</td>
@@ -610,10 +612,62 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                     <td>3</td>
                                                     <td>5</td>
                                                 </tr>
+
                                                 <tr className="m-4">
-                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                                         colspan="4"
-                                                        scope="row">Book Publishing</th>
+                                                        scope="row">Preparing your Book Cover</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Graphic OR Illustrated Design</td>
+                                                    <td>
+                                                        ❌
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cover Layout</td>
+                                                    <td>
+                                                        ❌
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                    <td>
+                                                        ✔️
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cover Formatting</td>
+                                                    <td>❌</td>
+                                                    <td>✔️</td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Front, Back & Spine</td>
+                                                    <td>
+                                                        ❌
+                                                    </td>
+                                                    <td>✔️</td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ISBN + Barcode (2X)</td>
+                                                    <td>
+                                                        ❌
+                                                    </td>
+                                                    <td>❌</td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                                <tr className="m-4">
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 "
+                                                        colspan="4"
+                                                        scope="row">Preparing for Print and Distribution</th>
                                                 </tr>
                                                 <tr>
                                                     <td>Account Creation</td>
@@ -697,58 +751,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                                 </tr>
 
                                                 <tr className="m-4">
-                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-10 md:pl-10"
-                                                        colspan="4"
-                                                        scope="row">Designing your Cover</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Graphic OR Illustrated Design</td>
-                                                    <td>
-                                                        ❌
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cover Layout</td>
-                                                    <td>
-                                                        ❌
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                    <td>
-                                                        ✔️
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cover Formatting</td>
-                                                    <td>❌</td>
-                                                    <td>✔️</td>
-                                                    <td>✔️</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Front, Back & Spine</td>
-                                                    <td>
-                                                        ❌
-                                                    </td>
-                                                    <td>✔️</td>
-                                                    <td>✔️</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ISBN + Barcode (2X)</td>
-                                                    <td>
-                                                        ❌
-                                                    </td>
-                                                    <td>❌</td>
-                                                    <td>✔️</td>
-                                                </tr>
-                                                <tr className="m-4">
-                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
+                                                    <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                                         colspan="4"
                                                         scope="row">Guarantees</th>
                                                 </tr>
@@ -796,13 +799,9 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     <div className="flex gap-2 mb-5 items-center items-center text-xl">
                                         Preparing Your Manuscript
                                     </div>
-                                    <div className="flex gap-2 mb-5 items-center items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -818,7 +817,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
+                                        Publishing Standard Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -868,7 +867,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -960,12 +959,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
-
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -983,7 +977,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
+                                        Publishing Standard Formatting
 
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
@@ -1035,7 +1029,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1143,11 +1137,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Developmental Editing
-                                    </div>
-                                    <div className="flex gap-2 mb-5 items-center">
-                                        <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Line by Line Editing
+                                        Editorial Support
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1166,7 +1156,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Formatting (50+ Platforms)
+                                        Publishing Standard Formatting
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1216,7 +1206,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
-                                        Available on Barnes and Noble
+                                        Available on Barnes & Noble
                                     </div>
                                     <div className="flex gap-2 mb-5 items-center">
                                         <Image src={"/images/check-mark.png"} className="icon" width={13} height={13}></Image>
@@ -1320,7 +1310,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                     </h5>
                                 </div>
                                 <div className="text-center">
-                                    <button className="package-get-started-btn font-poppins text-md mt-8" onClick={() => openModal('Enterprise')}>
+                                    <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Enterprise')}>
                                         GET A QUOTE
                                     </button>
                                 </div>
@@ -1387,19 +1377,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                             scope="row">Preparing Your Manuscript</th>
                                     </tr>
                                     <tr>
-                                        <td>Line by Line Editing</td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Developmental Editing</td>
+                                        <td>Editorial Support</td>
                                         <td>
                                             ✔️
                                         </td>
@@ -1433,12 +1411,20 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr>
                                     <tr>
-                                        <td>Formatting</td>
+                                        <td>Basic Formatting</td>
                                         <td>
-                                            50+ Platforms
+                                            ✔️
                                         </td>
-                                        <td>50+ Platforms</td>
-                                        <td>50+ Platforms</td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Publishing Standard Formatting</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
                                     </tr>
                                     <tr>
                                         <td>Revisions Per Draft</td>
@@ -1449,9 +1435,60 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>5</td>
                                     </tr>
                                     <tr className="m-4">
-                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-16 md:pl-16"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                             colspan="4"
-                                            scope="row">Book Publishing</th>
+                                            scope="row">Preparing your Book Cover</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Graphic OR Illustrated Design</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cover Layout</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cover Formatting</td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Front, Back & Spine</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISBN + Barcode (2X)</td>
+                                        <td>
+                                            ✔️
+                                        </td>
+                                        <td>✔️</td>
+                                        <td>✔️</td>
+                                    </tr>
+                                    <tr className="m-4">
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 "
+                                            colspan="4"
+                                            scope="row">Preparing for Print and Distribution</th>
                                     </tr>
                                     <tr>
                                         <td>Account Creation</td>
@@ -1571,57 +1608,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>❌</td>
                                         <td>✔️</td>
                                     </tr>
-                                    <tr className="m-4">
-                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
-                                            colspan="4"
-                                            scope="row">Designing your Cover</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Graphic OR Illustrated Design</td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cover Layout</td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cover Formatting</td>
-                                        <td>✔️</td>
-                                        <td>✔️</td>
-                                        <td>✔️</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Front, Back & Spine</td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>✔️</td>
-                                        <td>✔️</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ISBN + Barcode (2X)</td>
-                                        <td>
-                                            ✔️
-                                        </td>
-                                        <td>✔️</td>
-                                        <td>✔️</td>
-                                    </tr>
+
                                     {/* <tr className="m-4">
                                         <td className="text-2xl md:text-2xl text-start p-3 font-bold"
                                             colspan="4"
@@ -1658,7 +1645,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         <td>✔️</td>
                                     </tr> */}
                                     <tr className="m-4">
-                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-14 md:pl-14"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                             colspan="4"
                                             scope="row">Online Presence</th>
                                     </tr>
@@ -1687,7 +1674,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-8 md:pl-8"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                             colspan="4"
                                             scope="row">Marketing & Branding</th>
                                     </tr>
@@ -1752,7 +1739,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                                         </td>
                                     </tr>
                                     <tr className="m-4">
-                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5 lg:pl-20 md:pl-20"
+                                        <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5"
                                             colspan="4"
                                             scope="row">Guarantees</th>
                                     </tr>

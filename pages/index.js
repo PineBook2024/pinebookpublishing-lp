@@ -12,6 +12,7 @@ import BrandServices from "./components/BrandServices";
 import BrandChooseUs from "./components/BrandChooseUs";
 import BrandTestimonial from "./components/BrandTestimonial";
 import BrandFaqs from "./components/BrandFaqs";
+import LazyYouTube from "./components/LazyYouTube";
 import BrandContact from "./components/BrandContactForm";
 import BrandLogo from "./components/BrandLogo";
 import BrandProcess from "./components/BrandProcess";
@@ -120,8 +121,7 @@ export default function Home() {
             <BrandBannerVideo Component={BrandHeroFridayUpdate} />
             <BrandBannerLogo />
             <BrandAbout
-                subdescone="Have you ever tried publishing a book but don’t know where to start? Did you ever plan to consult a book publishing company? We get it – there are more book publishing companies out there than stars in the sky (okay, maybe not that many, but you get the idea)."
-                subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published 100s of books since our inception on 22nd February 2023. Even though we may not have been in the market for too long, but our experts have at least 10-15 years of experience and are masters of their designated fields. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
+                subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published hundreds of books since our inception on 22nd February 2023. Our experts have 10-15 years of experience and are masters in their fields, even though we haven't been in the market long. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
                 subdescthree=""
             />
             <HomeBookSlider />
@@ -181,7 +181,7 @@ export default function Home() {
                     }}
                 >
                     <div className='testimonials-wrap grid grid-cols-1 md:grid-cols-3 gap-10'>
-                        {videoClient.map((videoClient) => (
+                        {/* {videoClient.map((videoClient) => (
                             <SwiperSlide>
                                 <Link href={videoClient.src} className="glightbox block">
                                     <div className='' key={videoClient.id}>
@@ -193,7 +193,33 @@ export default function Home() {
                                     </div>
                                 </Link>
                             </SwiperSlide>
-                        ))}
+                        ))} */}
+                        {videoClient.map((videoClient) => {
+                        // Extract YouTube video ID from the URL
+                        const videoUrl = new URL(videoClient.src);
+                        const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
+
+                        return (
+                            <SwiperSlide>
+                            <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
+
+                                <div className="py-4">
+                                      <LazyYouTube videoId={videoId} />
+                                </div>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
+                                </h4>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
+                                </h4>
+                                <h4 className="text-black">
+                                    <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
+                                </h4>
+                            </div>
+                            </SwiperSlide>
+                        );
+                    })}
                     </div>
                 </Swiper>
 

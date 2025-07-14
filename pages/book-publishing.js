@@ -53,14 +53,13 @@ export default function BookPublishing() {
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Unveil Your Story with An Expert
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Book Publishing Company</h2>
+                        <h2 className="font-poppins text-3xl md:text-3xl uppercase font-bold">
+                        Unveil Your Story with An Expert<br></br>
+                            Book Publishing Company</h2>
                         <p className="font-poppins text-xl	pt-3">
                             Have you ever felt like running in circles about self-publishing your book? Pine Book Publishing is here to guide you through the twists and turns of the book publishing process with professionalism and expertise.
                         </p>
-                        <p className="font-poppins text-xl	pt-3">Our professional online book publishing services make your works available for self-publishing on all popular platforms. As professional book publishers, Pine Book Publishing will work together with you to be sure your book meets industry standards and will make it easy for you to self-publish a book on Amazon.</p>
+                        <p className="font-poppins text-xl	pt-3">Our professional online book publishing services make your works available for self-publishing on all popular platforms. As professional book publishers,<Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link> will work together with you to be sure your book meets industry standards and will make it easy for you to self-publish a book on Amazon.</p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
                         <Image src={"/brand-img/Publishing.png"} width={470} height={300}
@@ -72,7 +71,7 @@ export default function BookPublishing() {
                     </div>
                 </div>
                 <p className="font-poppins text-xl px-10 md:px-0" data-aos="fade-right">
-                    Our services are not limited to publishing, but we help you with everything related to ISBN registration. We also provide online and traditional book distribution and marketing services to get your book to the right audience.<br></br>
+                    Our services are not limited to publishing, but we help you with everything related to <Link href={"https://pinebookpublishing.com/isbn-and-barcode"} target="_blank" className="font-bold hover:text-blue-500">ISBN</Link> registration. We also provide online and traditional book distribution and marketing services to get your book to the right audience.<br></br>
                     So, if you are looking for an expert book publishing company that can help you exhibit your book to your potential readers, Pine Book Publishing is your destination. Don't wait anymore! Contact us to get a free quote!
                 </p>
             </div>

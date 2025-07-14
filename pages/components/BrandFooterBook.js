@@ -162,7 +162,7 @@ export default function BrandFooterBook() {
                                 </li>
                                 <li className="mt-3">
                                     <Link href="/audio-book" onClick={(e) => { e.preventDefault(); window.location.href = "/audio-book"; }}>
-                                        Audio Book
+                                        Audiobook
                                     </Link>
                                 </li>
                                 <li className="mt-3">

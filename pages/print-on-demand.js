@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import BrandFooter from "./components/BrandFooter";
 import BrandNavbar from "./components/BrandNavbar";
 import BrandBannerLogo from "./components/BrandBannerLogo";
@@ -39,19 +40,19 @@ export default function PrintDemand() {
             <BrandTopBar />
             <BrandNavbar />
             <BrandPrimaryHeader
-                title="Maximize Your Book Sales with Expert Print On-Demand Services"
-                desc="Don't let your book sales stop anywhere by hiring our fast and efficient book print-on-demand services to ensure your books are always in stock for your readers. At Pine Book Publishing, we handle everything from designing, editing, printing, and shipping within the promised delivery time."
+                title="Maximize Your Book Sales with Expert Print-On-Demand Services"
+                desc={
+                    <>Don't let your book sales stop anywhere by hiring our fast and efficient book print-on-demand services to ensure your books are always in stock for your readers. At Pine Book Publishing, we handle everything from designing, <Link href={"https://pinebookpublishing.com/book-editing"} target="_blank" className="font-bold hover:text-blue-500">editing</Link>, printing, and shipping within the promised delivery time.</>}
             />
             <BrandBannerLogo />
             <div className="container mx-auto max-w-screen-xl overflow-hidden py-10 md:py-10">
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="basis-1/2 abt-txt m1-h p1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
-                        <h3 className="font-poppins text-2xl md:text-3xl uppercase">
-                            Hassle-Free Print-On-Demand
-                        </h3>
-                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Services</h2>
+                        <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">
+                            Hassle-Free Print-On-Demand<br></br>
+                            Services</h2>
                         <p className="font-poppins text-xl pt-3">
-                            Print On Demand (POD) is specially designed for self-published authors who want to avoid seeing their readers long-awaited for the next stock in bulk and want to stock a huge quantity of books every once. At Pine Book Publishing, we offer fast and efficient Print-On-Demand services to help authors focus on their writing and increase their profitability without any hassle.
+                            Print On Demand (POD) is specially designed for <Link href={"https://pinebookpublishing.com/book-publishing"} target="_blank" className="font-bold hover:text-blue-500">self-published authors</Link> who want to avoid seeing their readers long-awaited for the next stock in bulk and want to stock a huge quantity of books every once. At <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link>, we offer fast and efficient Print-On-Demand services to help authors focus on their writing and increase their profitability without any hassle.
                         </p>
                     </div>
                     <div className="basis-1/2 abt-pic text-center flex justify-center md:justify-center">
@@ -132,8 +133,8 @@ export default function PrintDemand() {
                             />
                         </div>
                         <div className="basis-1/3 md:ml-20 py-8">
-                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Pring On Demand Services?</h2>
-                            <p className="text-white mt-2">Take full advantage of our fast and efficient book Print-On-Demand services to simplify your book writing and publishing journey. At Pine Book Publishing, we offer seamless book printing solutions, enabling you to focus on writing while we handle the rest.</p>
+                            <h2 className="text-white font-poppins text-3xl md:text-4xl uppercase mt-20 md:mt-0 font-bold" data-aos="zoom-in-left" data-aos-delay="100">Why Choose Our Book Print On Demand Services?</h2>
+                            <p className="text-white mt-2">Take full advantage of our fast and efficient book Print-On-Demand services to simplify your book-writing and publishing journey. At Pine Book Publishing, we offer seamless book printing solutions, enabling you to focus on writing while we handle the rest.</p>
                             <div className="flex gap-10 mt-6">
                                 <ul>
                                     <li className="font-poppins flex items-center gap-3 text-sm mb-2"><Image src={"/images/check-mark.png"} className="icon" width={13} height={13} />No Inventory</li>

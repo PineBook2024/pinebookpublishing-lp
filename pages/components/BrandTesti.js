@@ -131,6 +131,15 @@ const videoClient = [
         ProjectManager: "Lia Sinclair",
         clientname : "Sabrina Biamby"
     },
+    {
+        id:15,
+        src: "https://www.youtube-nocookie.com/embed/_a6emmDhe7c?si=X8tc5K20NopJcxLV",
+        type: "video/mp4",
+        BookTitle: "The Other Side (Part 1 & Part 2)",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Lia Sinclair",
+        clientname : "Unique Moore"
+    },
 ]
 
 const BrandTesti = () => {

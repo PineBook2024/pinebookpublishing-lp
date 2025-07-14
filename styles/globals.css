@@ -1182,6 +1182,12 @@ footer svg {
     padding: 41% 0 7% 0 !important;
   }
 
+  .brand-primary-header-bg-signup {
+    padding: 2% 0 4% 0 !important;
+    background-size: cover;
+    background-position: top;
+}
+
   .brand-choose-us-vector::before {
     width: 358px !important;
     height: 467px !important;
@@ -1937,6 +1943,13 @@ footer svg {
 
 .brand-primary-header-bg {
   background-image: url(../public/brand-img/banner-img.jpg);
+  padding: 14% 0 7% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brand-primary-header-bg-signup{
+  background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg);
   padding: 14% 0 7% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3970,18 +3983,63 @@ a.close-chat:hover {
   font-size: 15px !important;
 }
 
+.prose h1 {
+  font-size: 36px;
+}
+
+
 .prose h2 {
-  font-size: 22px;
+  font-size: 32px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
 
 .prose h3 {
+  font-size: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h4 {
+  font-size: 21px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h5 {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.prose h6 {
   font-size: 18px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
+}
+
+.prose ol li {
+  list-style: decimal !important;
+}
+
+.prose ul li {
+  list-style: disc !important;
+}
+
+.prose ul li, .prose ol li{
+  margin-left: 19px;
+  margin-top: 10px;
+}
+
+.prose a{
+  color: oklch(0.67 0.18 253.22);
+  font-weight: bold;
+  
 }
 
 .bk-sil3.next {
@@ -4435,16 +4493,38 @@ a.close-chat:hover {
 
 
 .terms-condition-bullets,
-.terms-condition-bullets-subs{
+.terms-condition-bullets-subs {
   list-style: auto;
 }
-.terms-condition-bullets-subs p{
+
+.terms-condition-bullets-subs p {
   padding-bottom: 0px !important;
 }
+
 .terms-condition-bullets-subs {
   margin-top: -9px;
 }
-.terms-condition-bullets{
+
+.terms-condition-bullets {
   margin-left: 25px;
   margin-top: 19px;
+}
+
+section.brand-main-banner-video {
+    background: #00000082;
+}
+
+
+/* global.css */
+.loader {
+  border: 6px solid #eee;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

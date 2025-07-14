@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import BrandFooter from "./components/BrandFooter";
 import BrandNavbar from "./components/BrandNavbar";
 import BrandBannerLogo from "./components/BrandBannerLogo";
@@ -47,12 +48,11 @@ export default function DocumentProcessing() {
                 <div className="text-center">
                     <h2 className="font-poppins text-3xl md:text-4xl uppercase font-bold">Professional Document Processing Services</h2>
                     <p className="font-poppins text-xl text-center	pt-3">
-                        Being a leading name in the publishing and printing industry, we understand how important high-quality document printing and processing are. At Pine Book Publishing, we are familiar with all the perspectives of document management, from printing and folding to perfectly inserting documents in no time.
+                        Being a leading name in the publishing and printing industry, we understand how important high-quality document printing and processing are. At <Link href={"https://pinebookpublishing.com/"} target="_blank" className="font-bold hover:text-blue-500">Pine Book Publishing</Link>, we are familiar with all the perspectives of document management, from printing and folding to perfectly inserting documents in no time.
                     </p>
                 </div>
                 <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row px-10 md:px-0 py-10 md:py-0">
                     <div className="text-center flex justify-center md:justify-center">
-
                         <Image src={"/brand-img/doc-processing-bg-img.png"} width={670} height={500}
                             loading="lazy"
                             alt="about img"
