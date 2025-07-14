@@ -239,7 +239,7 @@ export default function PortfolioSlider5() {
                                     <img
                                         src={slide.src}
                                         alt={`Slide ${slide.id}`}
-                                        className="h-70 w-auto object-contain w-100"
+                                         class="object-contain"
                                     />
                                 </div>
                                 <div>

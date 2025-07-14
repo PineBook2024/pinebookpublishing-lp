@@ -526,7 +526,7 @@ export default function HomeBookSlider() {
                                 {book.url ? (
                                     <Link href={book.url} className="relative h-full flex flex-col gap-6 books" target="_blank">
                                         <div>
-                                            <img src={book.src} alt={`Book ${book.id}`} className="h-70 w-auto object-contain w-100" />
+                                            <img src={book.src} alt={`Book ${book.id}`} class="object-contain" />
                                         </div>
                                         <div className="content">
                                             <h4 className="text-size-custom">{book.title}</h4>
@@ -536,7 +536,7 @@ export default function HomeBookSlider() {
                                 ) : (
                                     <div className="relative h-full flex flex-col gap-6 books">
                                         <div>
-                                            <img src={book.src} alt={`Book ${book.id}`} className="h-70 w-auto object-contain w-100" />
+                                            <img src={book.src} alt={`Book ${book.id}`} class="object-contain" />
                                         </div>
                                         <div className="content">
                                             <h4 className="text-size-custom">{book.title}</h4>
