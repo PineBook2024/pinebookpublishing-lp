@@ -807,12 +807,207 @@ export default function Home() {
           </div>
         </section>
 
+        {/* <section className="portfolio overflow-hidden	 py-14">
+          <div className="grid grid-cols-1 ">
+            <div className="container mx-auto text-center">
+              <div className="portfolio-h m1-h">
+                <h3 className="font-poppins text-3xl md:text-4xl">
+                  Unveiling Our Authors’ Creations:
+                  <br />
+                  <span>Book Showcase</span>
+                </h3>
+              </div>
+
+              <div className="block md:hidden lg:hidden">
+                <Swiper
+                  className="px-20 gap-x-32 "
+                  spaceBetween={15}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={false}
+                  onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 1,
+                      spaceBetween: 10,
+
+                      navigation: {
+                        enabled: false,
+                      },
+                      pagination: false,
+                      navigation: true,
+                    },
+                    "@1.00": {
+                      slidesPerView: 1,
+                      spaceBetween: 15,
+                    },
+                  }}
+                >
+                  <SwiperSlide className="mx-auto text-center">
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb1-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img ten" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb5-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img eleven" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb8-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img twoelve" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb4-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img thirteen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb3-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img fifteen" />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb6-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img sixteen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb7-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img seventeen" />
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <Image src={"/images/bb2-min.webp"} width={260} height={289} loading="lazy" className="glightbox" layout="responsive" alt="book img eighteen" />
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+
+              </div>
+
+
+              <div className="grid grid-cols-4 gap-4 width-container books-collage">
+                {books.map((book, index) => (
+                  <div key={index}>
+                    <Image src={book.src} width={book.width} height={book.height} loading="lazy" alt={book.alt} className="book-zoom-effect glightbox" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section> */}
         <section className="portfolio-book-publishing-offer-bg">
           <PortfolioSlider3LP />
           <PortfolioSlider1LP />
           <PortfolioSlider2LP />
 
         </section>
+
+
+
+        {/* <section className="package py-14 overflow-hidden">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 mb-14 items-center m1-h text-center">
+              <h3 className="font-poppins text-5xl md:text-7xl">
+                Publishing Packages
+              </h3>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 width-container">
+              {packagesCard.map((pkg) => (
+                <div key={pkg.id} className="pack-wrap gap-8">
+                  <div className="pack-box flex items-center">
+                    <Image src={pkg.image} width={40} height={50} loading="lazy" alt="icon" />
+                    <h4 className="pl-2 font-poppins text-2xl md:text-3xl">
+                      {pkg.title}
+                    </h4>
+                  </div>
+                  <p>
+                    {pkg.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section> */}
+
+        {/* <Chart /> */}
+        {/* <Packages /> */}
+
+
+
+        {/* <section className="process pt-14">
+          <div className="container mx-auto text-center m1-h ">
+            <h3 className="font-poppins text-3xl md:text-4xl">
+              Our Book Publishing Process
+            </h3>
+            <p className="pt-2">
+              At Pine Book Publishing, we've streamlined Our Book Publishing
+              Process to <br></br>ensure authors have a seamless experience from start to
+              finish.
+            </p>
+            <Image
+              className="py-10 book-publishing-infograph-img"
+              src={"/images/processs.gif"}
+              width={1280}
+              height={400}
+              loading="lazy"
+              alt="process"
+            ></Image>
+          </div>
+
+          <div className="counter -mb-16">
+            <div className="container mx-auto">
+     
+              <div className="mt-6 grid grid-cols-1 px-6 gap-y-10 sm:grid-cols-2 mx-5 lg:grid-cols-4 xl:gap-x-8">
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                  <h2 className="text-xl">
+                    <Counter from={0} to={15} val={"+"} />
+                  </h2>
+                  <span className="text-sm">
+                    Years of industry experience
+                  </span>
+                </div>
+
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                  <h2>
+                    <Counter from={0} to={500} val={"+"} />
+                  </h2>
+                  <span className="text-sm">Published Books</span>
+                </div>
+
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                  <h2>
+                    <Counter from={0} to={100} val={"+"} />
+                  </h2>
+                  <span className="text-sm">Ongoing Clients</span>
+                </div>
+
+                <div className="conter-box rounded-lg bg-white py-8 px-5 text-center content-center" >
+                  <h2>
+                    <Counter from={0} to={99} val={"+"} />
+                  </h2>
+                  <span className="text-sm">Client Satisfaction Rate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> */}
 
         <section className="package pb-5 pt-12">
           <div className="container mx-auto max-w-screen-xl">
@@ -822,17 +1017,60 @@ export default function Home() {
               </h3>
               <h4 className="text-xl font-poppins md:text-xl font-bold mt-4">Limited Time Offer - Save <span className="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
             </div>
+
+            {/* <div className="grid grid-cols-4 gap-4 items-top"> */}
+            {/* <div className="grid grid-cols-1 px-6 mt-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                        <div className="gap-8 brand-bundle-pack-wrap">
+                            <div className="flex items-center pack-box">
+                                <Image src={"/images/pp1.png"} width={40} height={50}></Image>
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
+                                    Standard
+                                </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                        </div>
+                        <div className="brand-bundle-pack-wrap">
+                            <div className="flex items-center pack-box">
+                                <Image src={"/images/pp2.png"} width={40} height={50}></Image>
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
+                                    Professional
+                                </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                        </div>
+                        <div className="brand-bundle-pack-wrap">
+                            <div className="flex items-center pack-box">
+                                <Image src={"/images/pp3.png"} width={40} height={50}></Image>
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
+                                    All-Inclusive
+                                </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                        </div>
+                        <div className="brand-bundle-pack-wrap">
+                            <div className="flex items-center pack-box">
+                                <Image src={"/images/pp4.png"} width={40} height={50}></Image>
+                                <h4 className="pl-2 text-xl font-poppins md:text-2xl">
+                                    Traditional
+                                </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                        </div>
+                    </div> */}
           </div>
         </section>
 
         <section className="bg-white pt-5 pb-5">
           <div className="width-container">
             <div className="container mx-auto">
-<<<<<<< HEAD
-
-
-=======
->>>>>>> dd1f5498fdc5dd6a322ef698706e31a5f7aaf385
               <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                 <div className="single-packages relative">
                   {/* <span className="hover-top-vector"></span> */}
@@ -844,7 +1082,7 @@ export default function Home() {
                     </div>
                   </h4>
                   <div className="single-packages-content mb-5 px-10">
-                    <div className="flex gap-2 mb-5 items-center text-xl">
+                    <div className="flex gap-2 mb-5 items-center items-center text-xl">
                       Preparing Your Manuscript
                     </div>
                     <div className="flex gap-2 mb-5 items-center">
