@@ -88,7 +88,8 @@ section.main-banner-vid h2 span,
 }
 
 .main-banner-vid {
-  background: #0000009e;
+  /* background: #0000009e; */
+  background-image: url(../public/brand-img/banner-image.jpg);
   height: 115vh;
 }
 
@@ -4511,7 +4512,8 @@ a.close-chat:hover {
 }
 
 section.brand-main-banner-video {
-    background: #00000082;
+    /* background: #00000082; */
+    background-image: url(../public/brand-img/banner-image.jpg);
 }
 
 

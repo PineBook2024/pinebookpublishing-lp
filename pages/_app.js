@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import HomePopupNew from "./components/HomePopupNew";
-import Loader from "./components/Loader";
+// import Loader from "./components/Loader";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,16 +18,16 @@ const poppins = Poppins({
 
 
 export default function App({ Component, pageProps }) {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Wait for page to fully load (simulate for now with setTimeout)
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); // ⏱ You can adjust delay here (in ms)
+  // useEffect(() => {
+  //   // Wait for page to fully load (simulate for now with setTimeout)
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000); // ⏱ You can adjust delay here (in ms)
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
@@ -165,9 +165,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <main className={`${poppins.variable}`}>
-         {loading && <Loader />} 
-        {!loading && (
-          <>
+        
         <Component {...pageProps} />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
         <script
@@ -221,8 +219,6 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
           />
         </noscript>
-         </>
-        )}
       </main>
     </>
   );

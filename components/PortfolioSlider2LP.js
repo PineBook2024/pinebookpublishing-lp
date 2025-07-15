@@ -77,7 +77,7 @@ export default function PortfolioSlider2LP() {
     return (
         <>
             <div className="w-full max-w-6xl mx-auto relative pb-10">
-                <h2 className="text-3xl font-medium mb-5 text-white">Illustrations </h2>
+                <h2 className="text-3xl font-medium mb-5 text-white text-center md:text-left">Illustrations </h2>
                 {/* Custom Previous Button */}
                 <div
                     className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer hide-btn-responsive"

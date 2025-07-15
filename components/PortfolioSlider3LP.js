@@ -69,7 +69,7 @@ export default function PortfolioSlider3LP() {
         <>
             <div className="w-full max-w-6xl mx-auto py-10 relative">
                 <h1 className="text-4xl font-bold mb-20 text-center text-white">Our Portfolio - From Designing,<br></br> Formatting to Publishing</h1>
-                <h2 className="text-3xl font-medium mb-5 text-white">Editing, Formatting & Proofreading</h2>
+                <h2 className="text-3xl font-medium mb-5 text-white text-center md:text-left">Editing, Formatting & Proofreading</h2>
                 {/* Custom Previous Button */}
                 <div
                     className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider3-icon prev cursor-pointer hide-btn-responsive"
