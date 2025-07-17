@@ -106,7 +106,7 @@ export default function BrandNavbar() {
                             <li className='mb-3 md:mb-0'><Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }} className="text-white hover:text-gray-300">About Us</Link></li>
                             {/* <li className='mb-3 md:mb-0'><Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="text-white hover:text-gray-300">Services</Link></li> */}
                             <li
-                            class="mb-3 md:mb-0"
+                                class="mb-3 md:mb-0"
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
                                 onClick={toggleServiceDropdown}
@@ -197,6 +197,7 @@ export default function BrandNavbar() {
                             <li className='mb-3 md:mb-0'><Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/testimonials"; }} className="text-white hover:text-gray-300">Testimonials</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/packages"; }} className="text-white hover:text-gray-300">Packages</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/portfolio" onClick={(e) => { e.preventDefault(); window.location.href = "/portfolio"; }} className="text-white hover:text-gray-300">Portfolio</Link></li>
+                            <li className='mb-3 md:mb-0'><Link href="/blog" onClick={(e) => { e.preventDefault(); window.location.href = "/blog"; }} className="text-white hover:text-gray-300">Blog</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }} className="text-white hover:text-gray-300">Contact</Link></li>
                             <li><Link href={'javascript:;'} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 brand-nav-btn font-poppins text-sm" onClick={handleOpenChat}>Talk to an Expert</Link></li>
                         </ul>
