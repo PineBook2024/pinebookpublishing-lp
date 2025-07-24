@@ -19,7 +19,7 @@ const Post = ({ post, recentPosts }) => {
     <>
       <Head>
         <link rel="shortcut icon" href="/images/fav.png" />
-        <meta name="robots" content="noindex, nofollow" />
+        {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
       <BrandNavbar />
       {/* Header Banner */}
