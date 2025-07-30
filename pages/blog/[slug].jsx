@@ -18,8 +18,9 @@ const Post = ({ post, recentPosts }) => {
   return (
     <>
       <Head>
-        
+
         <link rel="shortcut icon" href="/images/fav.png" />
+        
         {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
       <BrandNavbar />
