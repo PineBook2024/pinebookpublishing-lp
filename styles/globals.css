@@ -4034,7 +4034,7 @@ a.close-chat:hover {
 
 .prose ul li, .prose ol li{
   margin-left: 19px;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 .prose a{
@@ -4531,4 +4531,12 @@ section.brand-main-banner-video {
   100% { transform: rotate(360deg); }
 
   
+}
+
+.prose p{
+  padding-bottom: 14px;
+}
+
+.prose ul li p{
+  padding-bottom: 3px;
 }
