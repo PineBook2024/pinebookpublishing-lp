@@ -18,23 +18,15 @@ const Post = ({ post, recentPosts }) => {
   return (
     <>
       <Head>
+        <title>{post?.fields?.metaTitle || post?.fields?.title}</title>
+        <meta
+          name="description"
+          content={post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'}
+        />
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
       <BrandNavbar />
-      {/* Header Banner */}
-      {/* <section class="brand-primary-header-bg py-5">
-        <div class="container max-w-screen-xl mx-auto">
-          <div class="row py-5">
-            <div class="col-12 px-5 w-100 md:w-3/5">
-              <h1 class="text-3xl text-white  font-poppins pt-10">
-                Enhance Your Book's Readability With</h1>
-              <p class="text-xl text-white pt-2">Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Header Banner */}
       <section
         className="relative bg-cover bg-center bg-no-repeat py-32"
@@ -100,7 +92,6 @@ const Post = ({ post, recentPosts }) => {
                             {recentPost.fields.title}
                           </h2>
                         </div>
-                        {/* <p className='mt-3'>{recentPost.fields.excerpt}</p> */}
                       </a>
                     </li>
                   ))
@@ -121,13 +112,11 @@ const Post = ({ post, recentPosts }) => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
 
-  // Fetch current post
   const postResponse = await client.getEntries({
     content_type: 'post',
     'fields.slug': slug
   })
 
-  // Fetch recent posts
   const recentPostsResponse = await client.getEntries({
     content_type: 'post',
     select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt',
