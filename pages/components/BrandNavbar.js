@@ -148,12 +148,12 @@ export default function BrandNavbar() {
                                             <h2 className='my-4 text-start'>OUR EXPERTS</h2>
                                             <div className='flex gap-4 mt-4 justify-center'>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-1.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Damon Peters</h3>
+                                                    <Image src={"/brand-img/team-6.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Kenneth Snyder</h3>
                                                 </div>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-4.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">AMARA JOHNSON
+                                                    <Image src={"/brand-img/team-7.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Emily Jones
                                                     </h3>
                                                 </div>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
@@ -164,13 +164,17 @@ export default function BrandNavbar() {
                                             </div>
                                             <div className='flex gap-4 mt-4 justify-center'>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-2.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Ryan Peters
-                                                    </h3>
+                                                    <Image src={"/brand-img/team-9.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">REX BROWN</h3>
                                                 </div>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                                                     <Image src={"/brand-img/team-5.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black leading-20 text-sm font-poppins uppercase">Lia Sinclair
+                                                    </h3>
+                                                </div>
+                                                  <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                    <Image src={"/brand-img/team-8.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Jerome Preston
                                                     </h3>
                                                 </div>
                                             </div>
