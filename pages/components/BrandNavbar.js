@@ -170,10 +170,6 @@ export default function BrandNavbar() {
                                                 </div>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                                                     <Image src={"/brand-img/team-5.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Lia Sinclair
-                                                    </h3>
-                                                </div>
-                                                  <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                                                     <Image src={"/brand-img/team-8.png"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black leading-20 text-sm font-poppins uppercase">Jerome Preston
                                                     </h3>
