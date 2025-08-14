@@ -161,7 +161,6 @@ export default function BrandNavbar() {
                                                     <h3 className="text-black leading-20 text-sm font-poppins uppercase">Steve Hayes
                                                     </h3>
                                                 </div>
-                                                
                                             </div>
                                             <div className='flex gap-4 mt-4 justify-center'>
                                                 <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
