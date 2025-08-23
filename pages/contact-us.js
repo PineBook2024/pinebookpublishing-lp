@@ -25,9 +25,7 @@ export default function Contact() {
             <BrandNavbar />
             <BrandPrimaryHeader 
               title="Connect with Publishing Experts Now!"
-              desc="Pine Book Publishing brings you the expert insights to kickstart your publishing journey. Reach out to us today!"
-              />
-
+              desc="Pine Book Publishing brings you the expert insights to kickstart your publishing journey. Reach out to us today!"/>
             <BrandMainContact />
             <BrandFooter />
         </>
