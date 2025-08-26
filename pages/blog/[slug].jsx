@@ -96,7 +96,7 @@ const Post = ({ post, recentPosts }) => {
                     </li>
                   ))
                 ) : (
-                  <p>No recent posts available. </p>
+                  <p>No recent posts available.</p>
                 )}
               </ul>
             </div>
