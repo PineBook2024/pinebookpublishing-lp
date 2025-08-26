@@ -98,7 +98,7 @@ const Post = ({ post, recentPosts }) => {
                 ) : (
                   <p>No recent posts available.</p>
                 )}
-              </ul>
+              </ul> 
             </div>
           </aside>
 
