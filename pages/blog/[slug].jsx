@@ -90,6 +90,7 @@ const Post = ({ post, recentPosts }) => {
                           />
                           <h2 className='font-bold'>
                             {recentPost.fields.title}
+                            
                           </h2>
                         </div>
                       </a>
