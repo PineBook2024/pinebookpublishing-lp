@@ -107,6 +107,11 @@ export default function BrandFooter() {
                                     Testimonials
                                 </li> */}
                                 <li className="mt-3">
+                                    <Link href="/blog" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }}>
+                                        Blog
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
                                     <Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }}>
                                         Contact Us
                                     </Link>
