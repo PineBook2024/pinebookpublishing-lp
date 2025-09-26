@@ -3,6 +3,7 @@ import Head from "next/head";
 import PostCard from '../components/posts/PostCard'
 import BrandPrimaryHeader from '../components/BrandPrimaryHeader'
 import BrandNavbar from '../components/BrandNavbar'
+import BrandFooter from '@/components/BrandFooter';
 
 const Posts = ({ posts }) => {
   return (
@@ -31,6 +32,7 @@ const Posts = ({ posts }) => {
           </ul>
         </div>
       </section>
+         <BrandFooter />
     </>
 
   )
