@@ -4,7 +4,21 @@ import Link from "next/link";
 import Head from "next/head";
 import Script from "next/script";
 
+
+window.lintrk('track', { conversion_id: 22803625 });
+
+
+
+
+
+
+
 export default function Home() {
+      useEffect(() => {
+    if (typeof window !== "undefined" && window.lintrk) {
+      window.lintrk('track', { conversion_id: 22803625 });
+    }
+  }, []);
     return (
 
         <>
