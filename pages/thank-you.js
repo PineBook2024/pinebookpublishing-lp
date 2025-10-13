@@ -1,11 +1,11 @@
+'use client'
+
 import React, { useEffect } from "react";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Head from "next/head";
 import Script from "next/script";
 
-
-window.lintrk('track', { conversion_id: 22803625 });
 
 
 
