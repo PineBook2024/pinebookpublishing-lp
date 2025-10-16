@@ -98,18 +98,18 @@ export default function Home() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+
+
                 {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
-                    gtag('config', 'G-9X52J8V8NK');
-              `,
-                    }}
+                    gtag('config', 'AW-16471224604');`,
+                            }}
                 />
 
 
@@ -195,31 +195,31 @@ export default function Home() {
                             </SwiperSlide>
                         ))} */}
                         {videoClient.map((videoClient) => {
-                        // Extract YouTube video ID from the URL
-                        const videoUrl = new URL(videoClient.src);
-                        const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
+                            // Extract YouTube video ID from the URL
+                            const videoUrl = new URL(videoClient.src);
+                            const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
 
-                        return (
-                            <SwiperSlide>
-                            <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
-                                <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
+                            return (
+                                <SwiperSlide>
+                                    <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                        <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
 
-                                <div className="py-4">
-                                      <LazyYouTube videoId={videoId} />
-                                </div>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
-                                </h4>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
-                                </h4>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
-                                </h4>
-                            </div>
-                            </SwiperSlide>
-                        );
-                    })}
+                                        <div className="py-4">
+                                            <LazyYouTube videoId={videoId} />
+                                        </div>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
+                                        </h4>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
+                                        </h4>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
+                                        </h4>
+                                    </div>
+                                </SwiperSlide>
+                            );
+                        })}
                     </div>
                 </Swiper>
 

@@ -14,11 +14,7 @@ import Script from "next/script";
 
 
 export default function Home() {
-      useEffect(() => {
-    if (typeof window !== "undefined" && window.lintrk) {
-      window.lintrk('track', { conversion_id: 22803625 });
-    }
-  }, []);
+   
     return (
 
         <>
