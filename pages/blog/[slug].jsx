@@ -12,7 +12,7 @@ import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
 
 const Post = ({ post, recentPosts }) => {
- const router = useRouter()
+  const router = useRouter()
 
   // Generate Article/BlogPosting Schema
   const generateArticleSchema = () => {
@@ -80,23 +80,26 @@ const Post = ({ post, recentPosts }) => {
     }
 
     // Make sure it's an array and has content
-    if (!Array.isArray(faqData) || faqData.length === 0) return null;
+    if (!Array.isArray(faqData) || faqData.length === 0) {
+      console.log('FAQ data is not an array or is empty');
+      return null;
+    }
 
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": faqData.map(item => ({
         "@type": "Question",
-        "name": item.question,
+        "name": item.question || item.Question || '',
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": item.answer
+          "text": item.answer || item.Answer || ''
         }
       }))
     };
 
-    return JSON.stringify(faqSchema, null, 2);
-    
+    console.log('Generated FAQ Schema:', faqSchema);
+    return JSON.stringify(faqSchema);
   };
 
   const faqSchemaString = generateFAQSchema();
