@@ -10,120 +10,9 @@ import { client } from '../../lib/contentful/client'
 import { useRouter } from 'next/router'
 import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
-import { useEffect } from 'react';
 
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
-
-  // Generate Article/BlogPosting Schema
-  const generateArticleSchema = () => {
-    // Parse blogSchema if it exists
-    let blogSchemaData = {};
-    if (post?.fields?.blogSchema) {
-      try {
-        blogSchemaData = typeof post.fields.blogSchema === 'string'
-          ? JSON.parse(post.fields.blogSchema)
-          : post.fields.blogSchema;
-      } catch (e) {
-        console.error('Invalid blog schema JSON:', e);
-      }
-    }
-
-    // Build the schema with fallbacks
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": blogSchemaData.schemaType || "BlogPosting",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://pinebookpublishing.com/blog/${post?.fields?.slug}`
-      },
-      "headline": blogSchemaData.headline || post?.fields?.title,
-      "description": blogSchemaData.description || post?.fields?.metaDescription || post?.fields?.excerpt,
-      "author": {
-        "@type": blogSchemaData.authorType || "Organization",
-        "name": blogSchemaData.authorName || post?.fields?.author?.fields?.name || "Pine Book Publishing",
-        "url": "https://pinebookpublishing.com/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": blogSchemaData.publisherName || "Pine Book Publishing",
-        "logo": {
-          "@type": "ImageObject",
-          "url": blogSchemaData.publisherLogo || "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.png&w=256&q=75"
-        }
-      },
-      "datePublished": post?.fields?.date || post?.sys?.createdAt,
-      "dateModified": blogSchemaData.dateModified || post?.sys?.updatedAt
-    };
-
-    // Add image from coverImage or blogSchema
-    const imageUrl = blogSchemaData.image || post?.fields?.coverImage?.fields?.file?.url;
-    if (imageUrl) {
-      schema.image = imageUrl.startsWith('http') ? imageUrl : `https:${imageUrl}`;
-    }
-
-    return JSON.stringify(schema, null, 2);
-  };
-
-  // Generate FAQ Schema
-  const generateFAQSchema = () => {
-    if (!post?.fields?.faqSchema) return null;
-
-    let faqData;
-    try {
-      // Parse if it's a string, otherwise use as is
-      faqData = typeof post.fields.faqSchema === 'string'
-        ? JSON.parse(post.fields.faqSchema)
-        : post.fields.faqSchema;
-    } catch (e) {
-      console.error('Invalid FAQ JSON:', e);
-      return null;
-    }
-
-    // Make sure it's an array and has content
-    if (!Array.isArray(faqData) || faqData.length === 0) {
-      console.log('FAQ data is not an array or is empty');
-      return null;
-    }
-
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqData.map(item => ({
-        "@type": "Question",
-        "name": item.question || item.Question || '',
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer || item.Answer || ''
-        }
-      }))
-    };
-
-    console.log('Generated FAQ Schema:', faqSchema);
-    return JSON.stringify(faqSchema);
-  };
-
-  // In your component, add debugging
-  useEffect(() => {
-    console.log('Post data:', post);
-    console.log('FAQ field:', post?.fields?.faqSchema);
-    console.log('FAQ type:', typeof post?.fields?.faqSchema);
-  }, [post]);
-
-  // Also modify the Head section temporarily to debug
-  {
-    post?.fields?.faqSchema && (
-      <>
-        {console.log('FAQ Schema exists, generating...')}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: generateFAQSchema() }}
-        />
-      </>
-    )
-  }
-
-  const faqSchemaString = generateFAQSchema();
 
 
   return (
@@ -135,18 +24,23 @@ const Post = ({ post, recentPosts }) => {
           content={post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'}
         />
         <link rel="shortcut icon" href="/images/fav.png" />
-
-        {/* Article/BlogPosting Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: generateArticleSchema() }}
-        />
-
-        {/* FAQ Schema  */}
-        {faqSchemaString && (
+        {/* <meta name="robots" content="noindex, nofollow" /> */}
+         {blogSchema && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: faqSchemaString }}
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(JSON.parse(blogSchema)),
+            }}
+          />
+        )}
+
+        {/* Inject FAQ Schema if available */}
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(JSON.parse(faqSchema)),
+            }}
           />
         )}
       </Head>
@@ -238,8 +132,7 @@ export const getStaticProps = async ({ params }) => {
 
   const postResponse = await client.getEntries({
     content_type: 'post',
-    'fields.slug': slug,
-    include: 2  // Make sure nested fields are included
+    'fields.slug': slug
   })
 
   const recentPostsResponse = await client.getEntries({
@@ -263,7 +156,7 @@ export const getStaticProps = async ({ params }) => {
       post: postResponse?.items?.[0],
       recentPosts: recentPostsResponse.items,
     },
-    revalidate: 10
+    revalidate: 60
   }
 }
 
