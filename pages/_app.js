@@ -63,7 +63,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:url" content="https://pinebookpublishing.com/" />
         <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
         <meta name="p:domain_verify" content="327df5313414f4447f99182ec46c1485" />
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -162,7 +162,7 @@ export default function App({ Component, pageProps }) {
               ]
             }),
           }}
-        />
+        /> */}
       </Head>
       <main className={`${poppins.variable}`}>
         
