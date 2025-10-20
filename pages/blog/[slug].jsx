@@ -10,6 +10,7 @@ import { client } from '../../lib/contentful/client'
 import { useRouter } from 'next/router'
 import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
+import { useEffect } from 'react';
 
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
@@ -20,8 +21,8 @@ const Post = ({ post, recentPosts }) => {
     let blogSchemaData = {};
     if (post?.fields?.blogSchema) {
       try {
-        blogSchemaData = typeof post.fields.blogSchema === 'string' 
-          ? JSON.parse(post.fields.blogSchema) 
+        blogSchemaData = typeof post.fields.blogSchema === 'string'
+          ? JSON.parse(post.fields.blogSchema)
           : post.fields.blogSchema;
       } catch (e) {
         console.error('Invalid blog schema JSON:', e);
@@ -71,8 +72,8 @@ const Post = ({ post, recentPosts }) => {
     let faqData;
     try {
       // Parse if it's a string, otherwise use as is
-      faqData = typeof post.fields.faqSchema === 'string' 
-        ? JSON.parse(post.fields.faqSchema) 
+      faqData = typeof post.fields.faqSchema === 'string'
+        ? JSON.parse(post.fields.faqSchema)
         : post.fields.faqSchema;
     } catch (e) {
       console.error('Invalid FAQ JSON:', e);
@@ -101,6 +102,26 @@ const Post = ({ post, recentPosts }) => {
     console.log('Generated FAQ Schema:', faqSchema);
     return JSON.stringify(faqSchema);
   };
+
+  // In your component, add debugging
+  useEffect(() => {
+    console.log('Post data:', post);
+    console.log('FAQ field:', post?.fields?.faqSchema);
+    console.log('FAQ type:', typeof post?.fields?.faqSchema);
+  }, [post]);
+
+  // Also modify the Head section temporarily to debug
+  {
+    post?.fields?.faqSchema && (
+      <>
+        {console.log('FAQ Schema exists, generating...')}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: generateFAQSchema() }}
+        />
+      </>
+    )
+  }
 
   const faqSchemaString = generateFAQSchema();
 
@@ -217,7 +238,8 @@ export const getStaticProps = async ({ params }) => {
 
   const postResponse = await client.getEntries({
     content_type: 'post',
-    'fields.slug': slug
+    'fields.slug': slug,
+    include: 2  // Make sure nested fields are included
   })
 
   const recentPostsResponse = await client.getEntries({
@@ -241,7 +263,7 @@ export const getStaticProps = async ({ params }) => {
       post: postResponse?.items?.[0],
       recentPosts: recentPostsResponse.items,
     },
-    revalidate: 60
+    revalidate: 10
   }
 }
 
