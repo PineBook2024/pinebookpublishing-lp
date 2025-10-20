@@ -50,6 +50,7 @@ const Post = ({ post, recentPosts }) => {
             }}
           />
         )}
+        
 
       </Head>
       <BrandNavbar />
