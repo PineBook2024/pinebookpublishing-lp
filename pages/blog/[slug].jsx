@@ -12,7 +12,93 @@ import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
 
 const Post = ({ post, recentPosts }) => {
-  const router = useRouter()
+ const router = useRouter()
+
+  // Generate Article/BlogPosting Schema
+  const generateArticleSchema = () => {
+    // Parse blogSchema if it exists
+    let blogSchemaData = {};
+    if (post?.fields?.blogSchema) {
+      try {
+        blogSchemaData = typeof post.fields.blogSchema === 'string' 
+          ? JSON.parse(post.fields.blogSchema) 
+          : post.fields.blogSchema;
+      } catch (e) {
+        console.error('Invalid blog schema JSON:', e);
+      }
+    }
+
+    // Build the schema with fallbacks
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": blogSchemaData.schemaType || "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://pinebookpublishing.com/blog/${post?.fields?.slug}`
+      },
+      "headline": blogSchemaData.headline || post?.fields?.title,
+      "description": blogSchemaData.description || post?.fields?.metaDescription || post?.fields?.excerpt,
+      "author": {
+        "@type": blogSchemaData.authorType || "Organization",
+        "name": blogSchemaData.authorName || post?.fields?.author?.fields?.name || "Pine Book Publishing",
+        "url": "https://pinebookpublishing.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": blogSchemaData.publisherName || "Pine Book Publishing",
+        "logo": {
+          "@type": "ImageObject",
+          "url": blogSchemaData.publisherLogo || "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.png&w=256&q=75"
+        }
+      },
+      "datePublished": post?.fields?.date || post?.sys?.createdAt,
+      "dateModified": blogSchemaData.dateModified || post?.sys?.updatedAt
+    };
+
+    // Add image from coverImage or blogSchema
+    const imageUrl = blogSchemaData.image || post?.fields?.coverImage?.fields?.file?.url;
+    if (imageUrl) {
+      schema.image = imageUrl.startsWith('http') ? imageUrl : `https:${imageUrl}`;
+    }
+
+    return JSON.stringify(schema, null, 2);
+  };
+
+  // Generate FAQ Schema
+  const generateFAQSchema = () => {
+    if (!post?.fields?.faqSchema) return null;
+
+    let faqData;
+    try {
+      // Parse if it's a string, otherwise use as is
+      faqData = typeof post.fields.faqSchema === 'string' 
+        ? JSON.parse(post.fields.faqSchema) 
+        : post.fields.faqSchema;
+    } catch (e) {
+      console.error('Invalid FAQ JSON:', e);
+      return null;
+    }
+
+    // Make sure it's an array and has content
+    if (!Array.isArray(faqData) || faqData.length === 0) return null;
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    };
+
+    return JSON.stringify(faqSchema, null, 2);
+  };
+
+  const faqSchemaString = generateFAQSchema();
 
 
   return (
@@ -24,7 +110,20 @@ const Post = ({ post, recentPosts }) => {
           content={post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'}
         />
         <link rel="shortcut icon" href="/images/fav.png" />
-        {/* <meta name="robots" content="noindex, nofollow" /> */}
+
+        {/* Article/BlogPosting Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: generateArticleSchema() }}
+        />
+
+        {/* FAQ Schema  */}
+        {faqSchemaString && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: faqSchemaString }}
+          />
+        )}
       </Head>
       <BrandNavbar />
       {/* Header Banner */}
