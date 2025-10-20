@@ -25,24 +25,32 @@ const Post = ({ post, recentPosts }) => {
         />
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}
-         {blogSchema && (
+        {post?.fields?.blogSchema && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(JSON.parse(blogSchema)),
+              __html: JSON.stringify(
+                typeof post.fields.blogSchema === "string"
+                  ? JSON.parse(post.fields.blogSchema) // parse only if it's a string
+                  : post.fields.blogSchema // if already object, just use it
+              ),
             }}
           />
         )}
 
-        {/* Inject FAQ Schema if available */}
-        {faqSchema && (
+        {post?.fields?.faqSchema && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(JSON.parse(faqSchema)),
+              __html: JSON.stringify(
+                typeof post.fields.faqSchema === "string"
+                  ? JSON.parse(post.fields.faqSchema)
+                  : post.fields.faqSchema
+              ),
             }}
           />
         )}
+
       </Head>
       <BrandNavbar />
       {/* Header Banner */}
