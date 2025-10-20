@@ -96,6 +96,7 @@ const Post = ({ post, recentPosts }) => {
     };
 
     return JSON.stringify(faqSchema, null, 2);
+    
   };
 
   const faqSchemaString = generateFAQSchema();
