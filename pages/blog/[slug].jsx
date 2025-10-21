@@ -23,6 +23,9 @@ const Post = ({ post, recentPosts }) => {
           name="description"
           content={post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'}
         />
+        {post?.fields?.canonicalUrl && (
+          <link rel="canonical" href={post.fields.canonicalUrl} />
+        )}
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}
         {post?.fields?.blogSchema && (
@@ -50,7 +53,7 @@ const Post = ({ post, recentPosts }) => {
             }}
           />
         )}
-        
+
 
       </Head>
       <BrandNavbar />

@@ -490,20 +490,6 @@ export default function HeroFormBookOffer() {
           </div>
           <div>
             <div className="px-4 py-3 w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
-              {/* <Image
-                className="text-center header-form-off-badge"
-                src={"/brand-img/christmas-tag.png"}
-                width={140}
-                height={180}
-                loading="lazy"
-              ></Image>
-              <Image
-                className="text-center christmas-cap-form"
-                src={"/brand-img/christmas-cap.png"}
-                width={300}
-                height={300}
-                loading="lazy"
-              ></Image> */}
               <div className="text-start">
                 <h4 className="font-poppins text-white text-2xl md:text-4xl font-bold christmas-banner-title">
                   Avail Discount
@@ -530,31 +516,7 @@ export default function HeroFormBookOffer() {
                       />
                     </div>
                     <div className="relative w-full">
-                      {/* <input
-                        type="text"
-                        onChange={handleChange}
-                        value={phone}
-                        name="phone"
-                        required
-                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                        placeholder="Enter your Phone"
-                      /> */}
                       <div className='tel-box'>
-                        {/* <div className='select-box'>
-                          <img src={flagImg} alt="country-flag" className='flag-img' />
-                          <select
-                            id="country"
-                            onChange={(e) => {
-                              const selectedOption = e.target.selectedOptions[0];
-                              setCountryCodeValue(e.target.value); // Update country code
-                              setFlagImg(
-                                `https://flagpedia.net/data/flags/h80/${selectedOption.dataset.countrycode.toLowerCase()}.webp` // Update flag
-                              );
-                            }}
-                            defaultValue="1"
-                          >
-                          </select>
-                        </div> */}
                         {/* new code */}
                         <div className="country-input-wrapper">
                           <div className="select-box">
@@ -656,15 +618,6 @@ export default function HeroFormBookOffer() {
                     </button>
                   </form>
                 </div>
-                {/* <div className="col-span-1 flex justify-center items-center">
-                  <Image
-                    className="text-center christmas-banner-img"
-                    src={"/brand-img/crishtmis-img.png"}
-                    width={250}
-                    height={500}
-                    loading="lazy"
-                  ></Image>
-                </div> */}
               </div>
             </div>
           </div>
