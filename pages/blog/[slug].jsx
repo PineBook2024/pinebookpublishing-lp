@@ -18,6 +18,7 @@ const Post = ({ post, recentPosts }) => {
   return (
     <>
       <Head>
+        
         <title>{post?.fields?.metaTitle || post?.fields?.title}</title>
         <meta
           name="description"
