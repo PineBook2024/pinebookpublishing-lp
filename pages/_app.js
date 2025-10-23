@@ -48,53 +48,16 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    if (document.getElementById('ze-snippet')) {
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.id = 'ze-snippet';
-    script.src = 'https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973';
-    script.async = true;
-    document.head.appendChild(script);
-
-    const openZendeskChat = () => {
-      let attempts = 0;
-      const maxAttempts = 20; 
-      
-      const tryOpen = () => {
-        attempts++;
-        
-        if (window.zE) {
-          try {
-            window.zE('messenger', 'open');
-            console.log('✅ Zendesk chat opened successfully');
-          } catch (error) {
-            console.log('⏳ Messenger ready nahi hai, retry...', attempts);
-            if (attempts < maxAttempts) {
-              setTimeout(tryOpen, 500);
-            }
-          }
-        } else {
-          console.log('⏳ Waiting for Zendesk to load...', attempts);
-          if (attempts < maxAttempts) {
-            setTimeout(tryOpen, 500);
-          }
-        }
-      };
-      
-      setTimeout(tryOpen, 2000);
-    };
-
-    script.onload = openZendeskChat;
-    
-    if (script.readyState === 'complete') {
-      openZendeskChat();
-    }
-
-    return () => {
-    };
+    const checkZendesk = setInterval(() => {
+      if (typeof window.$zopim !== "undefined" && window.$zopim.livechat) {
+        // Open chat automatically
+        window.$zopim.livechat.window.show();
+        clearInterval(checkZendesk);
+      }
+    }, 1000);
+    return () => clearInterval(checkZendesk);
   }, []);
+
 
   return (
     <>
