@@ -48,177 +48,196 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    if (document.getElementById('ze-snippet')) {
+      return;
+    }
+
     const script = document.createElement('script');
     script.id = 'ze-snippet';
     script.src = 'https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973';
     script.async = true;
+    document.head.appendChild(script);
 
-    // Script load hone ka wait karein
-    script.onload = () => {
-      // Chat widget ko open karein
-      setTimeout(() => {
+    const openZendeskChat = () => {
+      let attempts = 0;
+      const maxAttempts = 20; 
+      
+      const tryOpen = () => {
+        attempts++;
+        
         if (window.zE) {
-          window.zE('messenger', 'open');
-          console.log('Zendesk chat opened');
+          try {
+            window.zE('messenger', 'open');
+            console.log('✅ Zendesk chat opened successfully');
+          } catch (error) {
+            console.log('⏳ Messenger ready nahi hai, retry...', attempts);
+            if (attempts < maxAttempts) {
+              setTimeout(tryOpen, 500);
+            }
+          }
+        } else {
+          console.log('⏳ Waiting for Zendesk to load...', attempts);
+          if (attempts < maxAttempts) {
+            setTimeout(tryOpen, 500);
+          }
         }
-      }, 1500);
+      };
+      
+      setTimeout(tryOpen, 2000);
     };
 
-    document.body.appendChild(script);
+    script.onload = openZendeskChat;
+    
+    if (script.readyState === 'complete') {
+      openZendeskChat();
+    }
 
-    // Cleanup function - unmount par script remove ho
     return () => {
-      const existingScript = document.getElementById('ze-snippet');
-      if (existingScript) {
-        existingScript.remove();
-      }
     };
   }, []);
 
-
-
-return (
-  <>
-    <Head>
-      <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
-      <meta property="og:title" content="Premier Book Publishing Company | Pine Book Publishing" />
-      <meta property="og:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
-      <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
-      <meta property="og:url" content="https://pinebookpublishing.com/" />
-      <link rel="shortcut icon" href="/images/fav.png" />
-      <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
-      <meta name="twitter:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
-      <meta name="twitter:site" content="@pinebookwriting" />
-      <meta name="twitter:url" content="https://pinebookpublishing.com/" />
-      <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
-      <meta name="p:domain_verify" content="327df5313414f4447f99182ec46c1485" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Pine Book Publishing",
-            "url": "https://pinebookpublishing.com/",
-            "logo": "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75",
-            "alternateName": "Pine Book Publishing",
-            "sameAs": [
-              "https://www.facebook.com/pinebookwriting0",
-              "https://www.instagram.com/pinebookwriting/",
-              "https://twitter.com/pinebookwriting",
-              "https://www.youtube.com/@Pinebookwriting"
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "R-10225, Yonge St, Suite #250",
-              "addressLocality": "Richmond Hill",
-              "addressRegion": "ON",
-              "postalCode": "L4C 3B2",
-              "addressCountry": "CA"
-            },
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (866) 841 7463",
-                "contactType": "customer service",
-                "email": "support@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
+  return (
+    <>
+      <Head>
+        <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
+        <meta property="og:title" content="Premier Book Publishing Company | Pine Book Publishing" />
+        <meta property="og:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
+        <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
+        <meta property="og:url" content="https://pinebookpublishing.com/" />
+        <link rel="shortcut icon" href="/images/fav.png" />
+        <meta name="twitter:title" content="Premier Book Publishing Company | Pine Book Publishing" />
+        <meta name="twitter:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
+        <meta name="twitter:site" content="@pinebookwriting" />
+        <meta name="twitter:url" content="https://pinebookpublishing.com/" />
+        <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
+        <meta name="p:domain_verify" content="327df5313414f4447f99182ec46c1485" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Pine Book Publishing",
+              "url": "https://pinebookpublishing.com/",
+              "logo": "https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75",
+              "alternateName": "Pine Book Publishing",
+              "sameAs": [
+                "https://www.facebook.com/pinebookwriting0",
+                "https://www.instagram.com/pinebookwriting/",
+                "https://twitter.com/pinebookwriting",
+                "https://www.youtube.com/@Pinebookwriting"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "R-10225, Yonge St, Suite #250",
+                "addressLocality": "Richmond Hill",
+                "addressRegion": "ON",
+                "postalCode": "L4C 3B2",
+                "addressCountry": "CA"
               },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (289) 809-7465",
-                "contactType": "sales",
-                "email": "damon@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1 (289) 809-6209",
-                "contactType": "sales",
-                "email": "steve@pinebookpublishing.com",
-                "contactOption": "TollFree",
-                "availableLanguage": "en"
-              }
-            ]
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "About Pine Book Publishing",
-                "item": "https://pinebookpublishing.com/about"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Publishing Services",
-                "item": "https://pinebookpublishing.com/services"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Success Stories",
-                "item": "https://pinebookpublishing.com/testimonials"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Book Publishing Packages",
-                "item": "https://pinebookpublishing.com/packages"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "Shelf-Worthy Portfolio",
-                "item": "https://pinebookpublishing.com/portfolio"
-              },
-              {
-                "@type": "ListItem",
-                "position": 6,
-                "name": "Get in Touch",
-                "item": "https://pinebookpublishing.com/contact-us"
-              }
-            ]
-          }),
-        }}
-      />
-    </Head>
-    <main className={`${poppins.variable}`}>
-
-      <Component {...pageProps} />
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (866) 841 7463",
+                  "contactType": "customer service",
+                  "email": "support@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-7465",
+                  "contactType": "sales",
+                  "email": "damon@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1 (289) 809-6209",
+                  "contactType": "sales",
+                  "email": "steve@pinebookpublishing.com",
+                  "contactOption": "TollFree",
+                  "availableLanguage": "en"
+                }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "About Pine Book Publishing",
+                  "item": "https://pinebookpublishing.com/about"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Publishing Services",
+                  "item": "https://pinebookpublishing.com/services"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Success Stories",
+                  "item": "https://pinebookpublishing.com/testimonials"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Book Publishing Packages",
+                  "item": "https://pinebookpublishing.com/packages"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "name": "Shelf-Worthy Portfolio",
+                  "item": "https://pinebookpublishing.com/portfolio"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "name": "Get in Touch",
+                  "item": "https://pinebookpublishing.com/contact-us"
+                }
+              ]
+            }),
+          }}
+        />
+      </Head>
+      <main className={`${poppins.variable}`}>
+        
+        <Component {...pageProps} />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
                 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16471224604'); 
               `,
-        }}
-      />
-      {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
-      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </script>
-
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+          }}
+        />
+        {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
+        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </script>
+        
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
             !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/961Y0H4Z2KNG.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("961Y0H4Z2KNG");}();`,
-        }}
-      />
-      <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
-
-      {/* Meta Pixel Code */}
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+          }}
+        />
+        <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
+        
+        {/* Meta Pixel Code */}
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -230,37 +249,37 @@ return (
               fbq('init', '1828587994272272');
               fbq('track', 'PageView');
             `,
-        }}
-      />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+          }}
+        />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
               function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
               o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
               o.onload=function(){window.trackingFunctions.onLoad({appId:"673cfe53e44b8903edb82af7"})},
               document.head.appendChild(o)}initApollo();
             `,
-        }}
-      />
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
+          }}
         />
-      </noscript>
-      <script
-        type="text/javascript"
-        dangerouslySetInnerHTML={{
-          __html: `(function(c,l,a,r,i,t,y){
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
+          />
+        </noscript>
+    <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "lck76mjve8");`,
-        }}
-      />
-    </main>
-  </>
-);
+          }}
+        />
+      </main>
+    </>
+  );
 }
