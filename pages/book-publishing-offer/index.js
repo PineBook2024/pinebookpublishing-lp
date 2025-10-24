@@ -85,9 +85,9 @@ const PortfolioSlider3LP = dynamic(() => import("@/components/PortfolioSlider3")
 // import PortfolioSlider2 from "../components/PortfolioSlider2";
 // import PortfolioSlider3 from "../components/PortfolioSlider3";
 // import PortfolioSlider4 from "../components/PortfolioSlider4";
-import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
-import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
-import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
+// import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
+// import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
+// import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 import BrandFooterBook from "../components/BrandFooterBook";
 import BrandHeroFriday from "../components/BrandHeroFriday";
 
