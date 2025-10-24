@@ -12,11 +12,30 @@ import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandPortfolio from "./components/BrandPortfolio";
 import BrandCTA from "./components/BrandCTA";
 import BrandProcess from "./components/BrandProcess";
-import PortfolioSlider1 from "./components/PortfolioSlider1";
-import PortfolioSlider2 from "./components/PortfolioSlider2";
-import PortfolioSlider3 from "./components/PortfolioSlider3";
-import PortfolioSlider4 from "./components/PortfolioSlider4";
-import PortfolioSlider5 from "./components/PortfolioSlider5";
+// import PortfolioSlider1 from "./components/PortfolioSlider1";
+// import PortfolioSlider2 from "./components/PortfolioSlider2";
+// import PortfolioSlider3 from "./components/PortfolioSlider3";
+// import PortfolioSlider4 from "./components/PortfolioSlider4";
+// import PortfolioSlider5 from "./components/PortfolioSlider5";
+
+
+import dynamic from "next/dynamic";
+const PortfolioSlider1 = dynamic(() => import("@/components/PortfolioSlider1"), {
+  ssr: false,
+});
+const PortfolioSlider2 = dynamic(() => import("@/components/PortfolioSlider2"), {
+  ssr: false,
+});
+const PortfolioSlider3 = dynamic(() => import("@/components/PortfolioSlider3"), {
+  ssr: false,
+});
+const PortfolioSlider4 = dynamic(() => import("@/components/PortfolioSlider4"), {
+  ssr: false,
+});
+const PortfolioSlider5 = dynamic(() => import("@/components/PortfolioSlider5"), {
+  ssr: false,
+});
+
 import BrandTopBar from "./components/BrandTopBar";
 
 export default function Portfolio() {
