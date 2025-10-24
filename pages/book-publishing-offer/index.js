@@ -53,7 +53,6 @@ import PopupBundleBookPublish from "../components/PopupBundleBookPublish";
 import BrandFooter from "../components/BrandFooter";
 // import PortfolioSlider1 from "../components/PortfolioSlider1";
 
-import dynamic from "next/dynamic";
 
 const PortfolioSlider1 = dynamic(() => import("@/components/PortfolioSlider1"), {
   ssr: false,
