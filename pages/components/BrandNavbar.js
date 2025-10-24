@@ -79,7 +79,7 @@ export default function BrandNavbar() {
     return (
         <>
                 {/* Apne nav items */}
-        <div id="google_translate_element" style={{ display: "inline-block" }}></div>
+        {/* <div id="google_translate_element" style={{ display: "inline-block" }}></div> */}
 
             <header id="navbar" className="bg-transparent flex justify-between items-center p-4 z-10">
                 <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
