@@ -285,6 +285,7 @@ export default function BrandFooter() {
                             >
                                 Terms & Conditions |
                             </Link>
+                            
                             <Link
                                 href="/privacy-policy"
                                 rel="noopener noreferrer"
