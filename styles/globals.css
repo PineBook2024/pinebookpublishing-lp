@@ -1001,7 +1001,7 @@ footer svg {
   #fixed-social {
     position: fixed;
     top: 50% !important;
-    right: 0;
+    left: 0;
     z-index: 9999999999;
     display: block !important;
     flex-direction: column;
@@ -4215,7 +4215,7 @@ a.close-chat:hover {
 #fixed-social {
   position: fixed;
   top: 37%;
-  right: 0;
+  left: 0;
   z-index: 9999999999;
   display: block;
   flex-direction: column;
@@ -4237,8 +4237,8 @@ a.close-chat:hover {
   justify-content: center;
   align-items: center;
   border: 1px solid #0d0f38;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   padding: 4px;
 }
 

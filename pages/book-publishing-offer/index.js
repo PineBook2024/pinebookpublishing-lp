@@ -51,13 +51,42 @@ import HeroFormBookOffer from "../components/HerformBookOffer";
 import PopupBundle from "../components/PopupBundle";
 import PopupBundleBookPublish from "../components/PopupBundleBookPublish";
 import BrandFooter from "../components/BrandFooter";
-import PortfolioSlider1 from "../components/PortfolioSlider1";
-import PortfolioSlider2 from "../components/PortfolioSlider2";
-import PortfolioSlider3 from "../components/PortfolioSlider3";
-import PortfolioSlider4 from "../components/PortfolioSlider4";
-import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
-import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
-import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
+// import PortfolioSlider1 from "../components/PortfolioSlider1";
+
+
+const PortfolioSlider1 = dynamic(() => import("@/components/PortfolioSlider1"), {
+  ssr: false,
+});
+
+const PortfolioSlider2 = dynamic(() => import("@/components/PortfolioSlider2"), {
+  ssr: false,
+});
+
+const PortfolioSlider3 = dynamic(() => import("@/components/PortfolioSlider3"), {
+  ssr: false,
+});
+
+const PortfolioSlider4 = dynamic(() => import("@/components/PortfolioSlider4"), {
+  ssr: false,
+});
+
+const PortfolioSlider1LP = dynamic(() => import("@/components/PortfolioSlider1LP"), {
+  ssr: false,
+});
+const PortfolioSlider2LP = dynamic(() => import("@/components/PortfolioSlider2LP"), {
+  ssr: false,
+});
+const PortfolioSlider3LP = dynamic(() => import("@/components/PortfolioSlider3"), {
+  ssr: false,
+});
+
+
+// import PortfolioSlider2 from "../components/PortfolioSlider2";
+// import PortfolioSlider3 from "../components/PortfolioSlider3";
+// import PortfolioSlider4 from "../components/PortfolioSlider4";
+// import PortfolioSlider1LP from "../components/PortfolioSlider1LP";
+// import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
+// import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 import BrandFooterBook from "../components/BrandFooterBook";
 import BrandHeroFriday from "../components/BrandHeroFriday";
 
