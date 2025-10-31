@@ -284,7 +284,6 @@ export default function BrandFooter() {
                                 target="_blank"
                             >
                                 Terms & Conditions |
-                                
                             </Link>
                             <Link
                                 href="/privacy-policy"
