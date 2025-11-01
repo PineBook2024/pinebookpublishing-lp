@@ -58,6 +58,7 @@ const Post = ({ post, recentPosts }) => {
 
       </Head>
       <BrandNavbar />
+      
       {/* Header Banner */}
       <section
         className="relative bg-cover bg-center bg-no-repeat py-32"
