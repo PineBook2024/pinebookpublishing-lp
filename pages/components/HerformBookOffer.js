@@ -254,26 +254,40 @@ const countryCodes = [
 
 
 export default function HeroFormBookOffer() {
-  const router = useRouter();
   const { submitMainContactFormLP } = useHubspotForm();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
-  const [budgets, setBudget] = useState("");
   const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState(null); // Default to the first country
-
-  const [countryCodeValue, setCountryCodeValue] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Get user location info
+  const [userInfo, setUserInfo] = useState({
+    ip: '',
+    city: '',
+    region: '',
+    country: ''
+  });
 
   const fetchUserRegion = async () => {
     try {
       const response = await fetch("https://ipwhois.app/json/");
       const data = await response.json();
       console.log("IP API Response:", data);
+
+      // Store user info for email
+      setUserInfo({
+        ip: data.ip || '',
+        city: data.city || '',
+        region: data.region || '',
+        country: data.country || ''
+      });
 
       const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code);
       if (detectedCountry) {
@@ -294,44 +308,165 @@ export default function HeroFormBookOffer() {
     fetchUserRegion();
   }, []);
 
-  // const handleCountryChange = (e) => {
-  //   const selectedCode = e.target.value;
-  //   const country = countryCodes.find((c) => c.code === selectedCode);
-  //     console.log("Selected Country: ", country); // Debug log
-  //   if (country) {
-  //     setSelectedCountry(country);
-  //     console.log("Selected Country: ", country); // Debug log
-  //   }
-  // };
   const handleCountryChange = (e) => {
     const selectedCountryCode = e.target.value;
     const country = countryCodes.find((c) => c.countryCode === selectedCountryCode);
-    console.log("Selected Country: ", country); // Debug log
+    console.log("Selected Country: ", country);
     if (country) {
       setSelectedCountry(country);
-      setCountryCodeValue(selectedCountry.code);  // Update country code when country is selected
-
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const setters = {
+      firstName: setFirstName,
+      email: setEmail,
+      message: setMessage,
+      category: setCategory,
+      phone: setPhone,
+    };
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  const selectCountryHandler = (e) => {
-    setCountryCodeValue(e.target.value);
+    const setter = setters[name];
+    if (setter) {
+      if (name === 'phone') {
+        const phoneRegex = /^\d{0,}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          if (value.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
+          } else {
+            setPhoneError("");
+          }
+        } else {
+          setPhoneError("Invalid phone number format");
+        }
+      } else {
+        setter(value);
+      }
+    }
   };
 
-  const phoneHandler = (e) => {
-    setPhone(e.target.value);
+  const sendEmailNotification = async (formData) => {
+    try {
+      const response = await fetch('/api/send-signup-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          category: formData.category,
+          message: formData.message,
+          countryCode: formData.countryCode,
+          currentPage: window.location.href,
+          referringPage: document.referrer || 'Direct visit',
+          userIP: userInfo.ip,
+          userCity: userInfo.city,
+          userRegion: userInfo.region,
+          userCountry: userInfo.country
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        console.error('Email sending failed:', result.message);
+      } else {
+        console.log('Email sent successfully');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return { success: false, error: error.message };
+    }
   };
 
-  const countryFlagHandler = (e) => {
-    const selectedOption = e.target.selectedOptions[0];
-    setFlagImg(
-      `https://flagpedia.net/data/flags/h80/${selectedOption.dataset.countrycode.toLowerCase()}.webp`
-    );
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (phone.length < 9) {
+      setPhoneError("Phone number must be at least 9 digits");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Combine phone number and country code
+    const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
+
+    const formData = {
+      firstName,
+      email,
+      phone: combinedPhoneNumber,
+      category,
+      message,
+      countryCode: selectedCountry.countryCode,
+    };
+
+    try {
+      // Send to both email and HubSpot in parallel
+      const [emailResult, hubspotResponse] = await Promise.all([
+        // Send email notification
+        sendEmailNotification(formData),
+
+        // Submit to HubSpot
+        submitMainContactFormLP(
+          firstName,
+          email,
+          combinedPhoneNumber,
+          category,
+          message
+        )
+      ]);
+
+      // Check if both submissions were successful
+      if (emailResult.success && hubspotResponse) {
+        console.log('Both email and HubSpot submissions successful');
+        setShowSuccess(true);
+
+        // Redirect to thank you page
+        setTimeout(() => {
+          window.location.href = "/thankyou-offer";
+        }, 1500);
+
+        // Clear form after delay
+        setTimeout(() => {
+          setShowSuccess(false);
+          setEmail("");
+          setFirstName("");
+          setPhone("");
+          setCategory("");
+          setMessage("");
+        }, 3000);
+      } else {
+        // Handle partial failure
+        if (!emailResult.success) {
+          console.error('Email submission failed:', emailResult.message);
+        }
+        if (!hubspotResponse) {
+          console.error('HubSpot submission failed');
+        }
+
+        // Still show success if at least one succeeded
+        if (emailResult.success || hubspotResponse) {
+          setShowSuccess(true);
+          setTimeout(() => {
+            window.location.href = "/thankyou-offer";
+          }, 1500);
+        } else {
+          alert('There was an error submitting your form. Please try again.');
+        }
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const categoryPublishing = [
@@ -382,77 +517,6 @@ export default function HeroFormBookOffer() {
   ];
 
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    const setters = {
-      firstName: setFirstName,
-      email: setEmail,
-      message: setMessage,
-      category: setCategory,
-      phone: setPhone,
-    };
-
-    console.log(value);
-
-    const setter = setters[name];
-    if (setter) {
-      if (name === 'phone') {
-        const phoneRegex = /^\d{0,}$/;
-        if (phoneRegex.test(value)) {
-          setter(value);
-          if (value.length < 9) {
-            setPhoneError("Phone number must be at least 9 digits");
-          } else {
-            setPhoneError("");
-          }
-        } else {
-          setPhoneError("Invalid phone number format");
-        }
-      } else {
-        setter(value);
-      }
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (phone.length < 9) {
-      setPhoneError("Phone number must be at least 9 digits");
-    }
-   // Combine phone number and country code
-  const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
-
-  // If you want to send country code and phone separately, you can do this:
-  const phoneData = {
-    countryCode: selectedCountry.countryCode,
-    phoneNumber: phone,
-  };
-
-    const response = await submitMainContactFormLP(
-      firstName,
-      email,
-      combinedPhoneNumber, // Send combined phone number
-      category,
-      message,
-      phoneData 
-    );
-    if (response) {
-      setShowSuccess(true);
-      // router.push('/thank-you'); 
-      // router.push('/thankyou-offer')
-      window.location.href = "thankyou-offer";
-      setTimeout(() => {
-        setShowSuccess(false);
-        setEmail("");
-        setFirstName("");
-        setPhone("");
-        setCategory("");
-        setMessage("");
-      }, 3000);
-    }
-
-    console.log("response", response);
-  };
 
   return (
 
@@ -470,7 +534,7 @@ export default function HeroFormBookOffer() {
               </h1>
             </FadeIn>
             <p className="text-xl text-white pt-4">
-            Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.
+              Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.
             </p>
             <h4 className="font-poppins text-2xl mt-8 text-white uppercase font-bold">
               Our Credibility
@@ -554,12 +618,12 @@ export default function HeroFormBookOffer() {
                             <span className="country-code text-lg font-semibold">
                               +{selectedCountry ? selectedCountry.code : ""}
                             </span>
-                            
+
                             <input
                               type="tel"
                               placeholder="Enter your Phone"
                               className="tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                              onChange={(e) => setPhone(e.target.value)} 
+                              onChange={(e) => setPhone(e.target.value)}
                               value={phone}
                               required
                             />
@@ -611,10 +675,11 @@ export default function HeroFormBookOffer() {
                       </p>
                     )}
                     <button
-                      className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
+                      className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl disabled:opacity-50"
                       type="submit"
+                      disabled={isSubmitting}
                     >
-                      Submit
+                      {isSubmitting ? 'Submitting...' : 'Submit'}
                     </button>
                   </form>
                 </div>
