@@ -105,12 +105,17 @@ export default async function handler(req, res) {
             <p style="margin:0; font-size:16px; opacity:0.9;">We've Received Your Message</p>
           </div>
           <div style="padding:32px 24px; color:#333333;">
-            <p style="font-size:16px; line-height:1.8; margin-bottom:16px;">
-              Thank you for reaching out to <strong style="color:#0d0f38;">Pine Book Publishing</strong>!
-            </p>
-            <p style="font-size:16px; line-height:1.8; margin-bottom:24px;">
-              We're excited to help you with your publishing journey. Our team has received your inquiry and will get back to you within <strong>24 hours</strong> to discuss your project in detail.
-            </p>
+             <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                <strong>Dear Author,</strong>
+              </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                Thank you for signing up with Pine Book Publishing.
+              </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:24px;">
+                 We’d love to schedule a call to discuss your book publishing in more detail.
+                Please let us know a time that works best for you so we can connect and talk further.
+                I’d really appreciate hearing back from you.
+                </p>
             
             <div style="background:#f8f9fa; padding:24px; border-radius:8px; border-left:4px solid #0d0f38; margin:24px 0;">
               <p style="margin:0 0 16px 0; font-weight:600; color:#0d0f38; font-size:16px;">📋 Your Contact Details:</p>
@@ -130,24 +135,21 @@ export default async function handler(req, res) {
               </table>
             </div>
 
-            <div style="background:#fff3cd; padding:20px; border-radius:8px; margin:24px 0; border-left:4px solid #ffc107;">
-              <p style="margin:0; color:#856404; font-size:15px; line-height:1.6;">
-                <strong>🎁 Limited Time Offer:</strong> Don't miss our Holiday Season Sale with 50% off on expert book publishing services!
+             <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                <strong>Thank you and best regards,</strong>
               </p>
-            </div>
-
-            <p style="font-size:16px; line-height:1.8; margin-top:24px; margin-bottom:16px;">
-              <strong>What happens next?</strong>
-            </p>
-            <ul style="font-size:15px; line-height:1.8; color:#555; margin-bottom:24px; padding-left:20px;">
-              <li style="margin-bottom:8px;">Our publishing consultant will review your inquiry</li>
-              <li style="margin-bottom:8px;">You'll receive a personalized consultation call</li>
-              <li style="margin-bottom:8px;">We'll discuss your publishing goals and next steps</li>
-            </ul>
-
-            <p style="font-size:16px; line-height:1.8; margin-bottom:24px;">
-              In the meantime, feel free to explore our services or reach out if you have any questions.
-            </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                 <strong>Pine Book Publishing Team</strong>
+              </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                   Email: support@pinebookpublishing.com
+              </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                   Call: +1 (866) 841-7463
+              </p>
+              <p style="font-size:16px; line-height:1.6; margin-bottom:16px;">
+                   WhatsApp: +1 (866) 841-7463
+              </p>
             
             <div style="text-align:center; margin-top:32px;">
               <a href="https://pinebookpublishing.com" style="display:inline-block; background:#0d0f38; color:#ffffff; padding:16px 40px; text-decoration:none; border-radius:6px; font-weight:600; font-size:16px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
@@ -157,8 +159,7 @@ export default async function handler(req, res) {
           </div>
           <div style="background:#f1f3f5; color:#666; padding:24px; border-top:1px solid #e9ecef; border-radius:0 0 8px 8px; text-align:center;">
             <p style="margin:0 0 8px 0; font-weight:600;">📧 Pine Book Publishing</p>
-            <p style="margin:0; font-size:14px;">Questions? Reply to this email or contact us at <a href="mailto:sales@pinebookpublishing.com" style="color:#0d0f38; text-decoration:none;">sales@pinebookpublishing.com</a></p>
-            <p style="margin:8px 0 0 0; font-size:13px; color:#999;">📞 Call us: <a href="tel:(866) 841-7469" style="color:#0d0f38; text-decoration:none;">(866) 841-7469</a></p>
+            <p style="margin:0; font-size:14px;">Questions? Reply to this email or contact us at <a href="mailto:support@pinebookpublishing.com" style="color:#0d0f38; text-decoration:none;">support@pinebookpublishing.com</a></p>
           </div>
         </div>
       </div>
