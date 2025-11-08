@@ -175,6 +175,26 @@ export default function BrandFooter() {
                                         ISBN & Barcode
                                     </Link>
                                 </li>
+                                 <li className="mt-3">
+                                    <Link href="/book-marketing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-marketing"; }}>
+                                        Book Marketing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/childrens-book-illustration" onClick={(e) => { e.preventDefault(); window.location.href = "/childrens-book-illustration"; }}>
+                                        Children's Book Illustration
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-illustration-services" onClick={(e) => { e.preventDefault(); window.location.href = "/book-illustration-services"; }}>
+                                        Book Illustration Services
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-translation" onClick={(e) => { e.preventDefault(); window.location.href = "/book-translation"; }}>
+                                        Book Translation
+                                    </Link>
+                                </li>
                             </nav>
                         </div>
 

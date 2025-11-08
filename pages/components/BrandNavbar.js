@@ -23,6 +23,10 @@ export default function BrandNavbar() {
         { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/Document Processing-icon.png', image: '/brand-img/service-img6.webp', desc: 'Simplify your workflows with expert document processing.' },
         { name: 'ISBN & Barcode', href: '/isbn-and-barcode', icon: '/brand-img/ISBN Barcode.png', image: '/brand-img/service-img6.webp', desc: "Secure your book's identity with our ISBN registration services." },
         { name: 'Merchandising', href: '/merchandising', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Make your personal and business accessories standout with custom merchandizing services." },
+        { name: 'Book Marketing', href: '/book-marketing', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Boost your book’s reach and visibility with our targeted marketing strategies." },
+        { name: 'Childrens Book Illustration', href: '/childrens-book-illustration', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Bring your children’s stories to life with engaging and colorful illustrations." },
+        { name: 'Book Illustration Services', href: '/book-illustration-services', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Enhance your book’s visual appeal with professional illustration designs." },
+        { name: 'Book Translation', href: '/book-translation', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Expand your global reach with expert translation in multiple languages." },
     ];
 
     // Function to handle the service dropdown toggle
@@ -78,8 +82,8 @@ export default function BrandNavbar() {
 
     return (
         <>
-                {/* Apne nav items */}
-        {/* <div id="google_translate_element" style={{ display: "inline-block" }}></div> */}
+            {/* Apne nav items */}
+            {/* <div id="google_translate_element" style={{ display: "inline-block" }}></div> */}
 
             <header id="navbar" className="bg-transparent flex justify-between items-center p-4 z-10">
                 <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
