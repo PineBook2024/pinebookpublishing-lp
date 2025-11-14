@@ -116,6 +116,25 @@ export default function BrandFooter() {
                                         Contact Us
                                     </Link>
                                 </li>
+                                <li className="mt-3">
+                                    <Link
+                                        href="/terms-and-conditions"
+                                        rel="noopener noreferrer"
+                                        className="text-white ml-1"
+                                        target="_blank"
+                                    >
+                                        Terms & Conditions
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link
+                                        href="/privacy-policy"
+                                        rel="noopener noreferrer"
+                                        className="text-white ml-1"
+                                        target="_blank"
+                                    >Privacy Policy {" "}
+                                    </Link>
+                                </li>
                             </nav>
                         </div>
                         <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
@@ -175,7 +194,7 @@ export default function BrandFooter() {
                                         ISBN & Barcode
                                     </Link>
                                 </li>
-                                 <li className="mt-3">
+                                <li className="mt-3">
                                     <Link href="/book-marketing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-marketing"; }}>
                                         Book Marketing
                                     </Link>
@@ -296,24 +315,7 @@ export default function BrandFooter() {
                 <div className="copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-white w-full md:text-center text-sm sm:text-left">
-                            Copyright © 2025 |
-                            <Link
-                                href="/terms-and-conditions"
-                                rel="noopener noreferrer"
-                                className="text-white ml-1"
-                                target="_blank"
-                            >
-                                Terms & Conditions |
-                            </Link>
-                            
-                            <Link
-                                href="/privacy-policy"
-                                rel="noopener noreferrer"
-                                className="text-white ml-1"
-                                target="_blank"
-                            >
-                                Privacy Policy | {" "}
-                            </Link>
+                            Copyright © 2025
                             Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
                         </p>
                     </div>

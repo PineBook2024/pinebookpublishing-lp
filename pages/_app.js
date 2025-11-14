@@ -48,15 +48,24 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    // Mobile par auto-open OFF
+    if (isMobile) {
+      return;
+    }
+
+    // Desktop par auto-open ON
     const checkZendesk = setInterval(() => {
       if (typeof window.$zopim !== "undefined" && window.$zopim.livechat) {
-        // Open chat automatically
         window.$zopim.livechat.window.show();
         clearInterval(checkZendesk);
       }
     }, 1000);
+
     return () => clearInterval(checkZendesk);
   }, []);
+
 
 
   return (
@@ -176,7 +185,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <main className={`${poppins.variable}`}>
-        
+
         <Component {...pageProps} />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
         <Script
@@ -188,7 +197,7 @@ export default function App({ Component, pageProps }) {
         />
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </script>
-        
+
         <Script
           dangerouslySetInnerHTML={{
             __html: `
@@ -196,7 +205,7 @@ export default function App({ Component, pageProps }) {
           }}
         />
         <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
-        
+
         {/* Meta Pixel Code */}
         <Script
           dangerouslySetInnerHTML={{
@@ -232,7 +241,7 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
           />
         </noscript>
-    <script
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
