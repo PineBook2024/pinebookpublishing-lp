@@ -3345,7 +3345,7 @@ video#brandVideo {
 .brand-footer .widget-1:before {
   content: '';
   background-color: #ffffff82;
-  height: 300px;
+  height: auto;
   width: 1px;
   position: absolute;
   right: -15px;
@@ -3356,7 +3356,7 @@ video#brandVideo {
 .brand-footer .widget-2:before {
   content: '';
   background-color: #ffffff82;
-  height: 300px;
+  height: auto;
   width: 1px;
   position: absolute;
   right: 4%;
