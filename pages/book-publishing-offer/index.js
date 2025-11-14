@@ -89,6 +89,10 @@ const PortfolioSlider3LP = dynamic(() => import("@/components/PortfolioSlider3")
 // import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 import BrandFooterBook from "../components/BrandFooterBook";
 import BrandHeroFriday from "../components/BrandHeroFriday";
+import GoogleTranslate from "../components/GoogleTranslate";
+import CustomLanguageSelector from "../components/CustomLanguageSelector";
+import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
+import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -145,6 +149,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const lightboxRef = useRef(null);
   useEffect(() => {
@@ -317,28 +322,36 @@ export default function Home() {
       setPhoneError("Phone number must be exactly 10 digits");
       return;
     }
-    const response = await submitMainContactForm(
-      fullName,
-      email,
-      phoneNumber,
-      message
-    );
-    if (response) {
-      setShowSuccess(true);
-      // router.push('/thankyou-offer')
-      window.location.href = "thankyou-offer";
-      setTimeout(() => {
-        setShowSuccess(false);
-        setEmail("");
-        setFullName("");
-        setPhoneNumber("")
-        setMessage("");
-      }, 3000);
+   setIsSubmitting(true);
+    try {
+      const [hubspotResponse, emailResponse] = await Promise.all([
+        submitMainContactForm(fullName, email, phoneNumber, message),
+        fetch('/api/send-signup-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName,
+            email,
+            phoneNumber,
+            message,
+            formType: 'contact',
+            countryCode: '',
+            referringPage: document.referrer || 'Direct',
+            currentPage: window.location.href,
+          }),
+        }).then(res => res.json())
+      ]);
+
+      if (hubspotResponse && emailResponse.success) {
+        setShowSuccess(true);
+        window.location.href = "thankyou-offer";
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }finally {
+      setIsSubmitting(false);
     }
-    console.log("response", response);
   };
-
-
 
 
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -432,6 +445,8 @@ export default function Home() {
         />
       </Head>
       <main>
+        <GoogleTranslateWidget />
+       
         {/* <Header /> */}
         <header className="container mx-auto py-2 width-container z-10">
           <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
@@ -453,6 +468,7 @@ export default function Home() {
               <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
                 <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
               </button>
+               <LanguageSelectorDropdown />
             </div>
           </div>
         </header>
@@ -630,8 +646,8 @@ export default function Home() {
                   About<span>Pine Book Publishing</span>
                 </h3>
                 <p className="pt-3">
-                Pine Book Publishing was founded on February 22, 2023, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
-                We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
+                  Pine Book Publishing was founded on February 22, 2023, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
+                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
                 </p>
                 <div className="flex gap-6">
                   <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
@@ -2902,8 +2918,8 @@ export default function Home() {
                       Form submitted Successfully!
                     </p>
                   )}
-                  <button className="p-4 w-full bg-green-500 uppercase text-white rounded submit-btn mb-10" type="submit">
-                    Submit
+                  <button className="p-4 w-full bg-green-500 uppercase text-white rounded submit-btn mb-10" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
                 </form>
               </div>

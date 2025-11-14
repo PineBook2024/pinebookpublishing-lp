@@ -175,6 +175,26 @@ export default function BrandFooter() {
                                         ISBN & Barcode
                                     </Link>
                                 </li>
+                                 <li className="mt-3">
+                                    <Link href="/book-marketing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-marketing"; }}>
+                                        Book Marketing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/childrens-book-illustration" onClick={(e) => { e.preventDefault(); window.location.href = "/childrens-book-illustration"; }}>
+                                        Children's Book Illustration
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-illustration-services" onClick={(e) => { e.preventDefault(); window.location.href = "/book-illustration-services"; }}>
+                                        Book Illustration Services
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-translation" onClick={(e) => { e.preventDefault(); window.location.href = "/book-translation"; }}>
+                                        Book Translation
+                                    </Link>
+                                </li>
                             </nav>
                         </div>
 
@@ -276,7 +296,7 @@ export default function BrandFooter() {
                 <div className="copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-white w-full md:text-center text-sm sm:text-left">
-                            Copyright © 2024 |
+                            Copyright © 2025 |
                             <Link
                                 href="/terms-and-conditions"
                                 rel="noopener noreferrer"
@@ -285,6 +305,7 @@ export default function BrandFooter() {
                             >
                                 Terms & Conditions |
                             </Link>
+                            
                             <Link
                                 href="/privacy-policy"
                                 rel="noopener noreferrer"
