@@ -547,40 +547,6 @@ export default function HomeBookSlider() {
                             </SwiperSlide>
                         ))}
                     </div>
-                    {/* {ImageSlides.map((slide) => (
-                        <SwiperSlide key={slide.id}>
-                            {slide.url ? (
-                                <Link href={slide.url} className="relative h-full flex flex-col gap-6" target="_blank">
-                                    <div>
-                                        <img
-                                            src={slide.src}
-                                            alt={`Slide ${slide.id}`}
-                                            className="h-70 w-auto object-contain w-100"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-size-custom">{slide.title}</h4>
-                                        <h4>{slide.author}</h4>
-                                    </div>
-                                </Link>
-                            ) : (
-                                <div className="relative h-full flex flex-col gap-6">
-                                    <div>
-                                        <img
-                                            src={slide.src}
-                                            alt={`Slide ${slide.id}`}
-                                            className="h-70 w-auto object-contain w-100"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-size-custom">{slide.title}</h4>
-                                        <h4>{slide.author}</h4>
-                                    </div>
-                                </div>
-                            )}
-                        </SwiperSlide>
-                    ))} */}
-
                 </Swiper>
 
                 {/* Custom Next Button */}

@@ -960,7 +960,6 @@ export default function Home() {
           <PortfolioSlider3LP />
           <PortfolioSlider1LP />
           <PortfolioSlider2LP />
-
         </section>
 
 
