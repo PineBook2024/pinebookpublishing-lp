@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 

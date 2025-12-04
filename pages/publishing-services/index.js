@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import Head from "next/head";
 import Image from "next/image";
 import Link from 'next/link';
