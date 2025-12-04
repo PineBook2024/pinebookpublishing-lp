@@ -25,6 +25,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import 'glightbox/dist/css/glightbox.min.css';
+import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
 
 
 
@@ -1025,9 +1026,8 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
+      {/* <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          {/* <!-- Heading --> */}
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase tracking-wide">
               Exclusive Book Signing Events
@@ -1035,7 +1035,6 @@ export default function HomePage() {
             <div className="w-24 h-1 bg-[#15184c] mx-auto mt-4 rounded-full"></div>
           </div>
 
-          {/* <!-- Events Wrapper --> */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl duration-300">
@@ -1072,7 +1071,9 @@ export default function HomePage() {
 
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <ExclusiveBookSigningParallax />
 
       <section
         className="py-20 bg-[#117d6b] bg-cover bg-center bg-no-repeat text-white relative"
