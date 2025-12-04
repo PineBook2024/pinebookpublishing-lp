@@ -20,19 +20,19 @@ import BrandProcess from "./components/BrandProcess";
 
 
 import dynamic from "next/dynamic";
-const PortfolioSlider1 = dynamic(() => import("@/components/PortfolioSlider1"), {
+const PortfolioSlider1 = dynamic(() => import("/components/PortfolioSlider1"), {
   ssr: false,
 });
-const PortfolioSlider2 = dynamic(() => import("@/components/PortfolioSlider2"), {
+const PortfolioSlider2 = dynamic(() => import("/components/PortfolioSlider2"), {
   ssr: false,
 });
-const PortfolioSlider3 = dynamic(() => import("@/components/PortfolioSlider3"), {
+const PortfolioSlider3 = dynamic(() => import("/components/PortfolioSlider3"), {
   ssr: false,
 });
-const PortfolioSlider4 = dynamic(() => import("@/components/PortfolioSlider4"), {
+const PortfolioSlider4 = dynamic(() => import("/components/PortfolioSlider4"), {
   ssr: false,
 });
-const PortfolioSlider5 = dynamic(() => import("@/components/PortfolioSlider5"), {
+const PortfolioSlider5 = dynamic(() => import("/components/PortfolioSlider5"), {
   ssr: false,
 });
 
