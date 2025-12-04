@@ -1,4 +1,4 @@
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";

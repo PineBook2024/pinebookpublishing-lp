@@ -1,4 +1,4 @@
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import "intl-tel-input/build/css/intlTelInput.css";
 import intlTelInput from 'intl-tel-input';
 import React, { useEffect, useRef, useState } from 'react';

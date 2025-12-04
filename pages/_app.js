@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import React, { useEffect, useState } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
