@@ -48,27 +48,6 @@ export default function BrandFooter() {
                             <p className="mt-2 text-sm text-white leading-7 px-4">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
-                            {/* <nav className="list-none mb-10 mt-5">
-                                <li>
-                                    <Link
-                                        href="tel:8668417469"
-                                        className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                        (888) 786-7135
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link
-                                        href="mailto:support@pinebookpublishing.com"
-                                        className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faEnvelope} className="me-3" />
-                                        {" "}
-                                        support@pinebookpublishing.com{" "}
-                                    </Link>
-                                </li>
-                            </nav> */}
                         </div>
                         <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
