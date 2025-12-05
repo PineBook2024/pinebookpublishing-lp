@@ -341,8 +341,6 @@ export default function HeroFormBookOffer() {
         } else {
           setPhoneError("Invalid phone number format");
         }
-      } else {
-        setter(value);
       }
     }
   };
@@ -621,13 +619,22 @@ export default function HeroFormBookOffer() {
 
                             <input
                               type="tel"
+                              name="phone"
                               placeholder="Enter your Phone"
-                              className="tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
-                              onChange={(e) => setPhone(e.target.value)}
+                              className={`tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl ${phoneError ? "border-red-500" : ""
+                                }`}
+                              onChange={handleChange}
                               value={phone}
                               required
                             />
                           </div>
+
+                          {phoneError && (
+                            <p className="text-[#FF0000] text-xs mt-1">
+                              {phoneError}
+                            </p>
+                          )}
+
                         </div>
 
 
