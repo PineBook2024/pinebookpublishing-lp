@@ -341,9 +341,40 @@ export default function HeroFormBookOffer() {
         } else {
           setPhoneError("Invalid phone number format");
         }
+      } else {
+        // For all other fields (firstName, email, message, category)
+        setter(value);
       }
     }
   };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   const setters = {
+  //     firstName: setFirstName,
+  //     email: setEmail,
+  //     message: setMessage,
+  //     category: setCategory,
+  //     phone: setPhone,
+  //   };
+
+  //   const setter = setters[name];
+  //   if (setter) {
+  //     if (name === 'phone') {
+  //       const phoneRegex = /^\d{0,}$/;
+  //       if (phoneRegex.test(value)) {
+  //         setter(value);
+  //         if (value.length < 9) {
+  //           setPhoneError("Phone number must be at least 9 digits");
+  //         } else {
+  //           setPhoneError("");
+  //         }
+  //       } else {
+  //         setPhoneError("Invalid phone number format");
+  //       }
+  //     }
+  //   }
+  // };
 
   const sendEmailNotification = async (formData) => {
     try {
