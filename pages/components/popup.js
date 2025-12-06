@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 
 export default function popup({ isOpen, onClose, service }) {
     const router = useRouter();

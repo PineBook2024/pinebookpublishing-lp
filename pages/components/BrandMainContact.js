@@ -1,4 +1,4 @@
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,71 @@ export default function BrandMainContact() {
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [phoneError, setPhoneError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Get user location info
+    const [userInfo, setUserInfo] = useState({
+        ip: '',
+        city: '',
+        region: '',
+        country: ''
+    });
+
+    useEffect(() => {
+        fetchUserRegion();
+    }, []);
+
+    const fetchUserRegion = async () => {
+        try {
+            const response = await fetch("https://ipwhois.app/json/");
+            const data = await response.json();
+
+            setUserInfo({
+                ip: data.ip || '',
+                city: data.city || '',
+                region: data.region || '',
+                country: data.country || ''
+            });
+        } catch (error) {
+            console.error("Failed to fetch user region:", error);
+        }
+    };
+
+    const sendEmailNotification = async (formData) => {
+        try {
+            const response = await fetch('/api/brand-signup-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    currentPage: window.location.href,
+                    referringPage: document.referrer || 'Direct visit',
+                    userIP: userInfo.ip,
+                    userCity: userInfo.city,
+                    userRegion: userInfo.region,
+                    userCountry: userInfo.country
+                }),
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+                console.error('Email sending failed:', result.message);
+            } else {
+                console.log('Email sent successfully');
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error sending email:', error);
+            return { success: false, error: error.message };
+        }
+    };
 
 
     const handleChange = (e) => {
@@ -31,13 +96,17 @@ export default function BrandMainContact() {
 
         const setter = setters[name];
         if (setter) {
-            if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/;
+            if (name === "phoneNumber") {
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -47,30 +116,81 @@ export default function BrandMainContact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
-        const response = await submitMainContactForm(
+
+        setIsSubmitting(true);
+
+        const formData = {
             fullName,
             email,
             phoneNumber,
-            message
-        );
-        if (response) {
-            setShowSuccess(true);
-            router.push('/thank-you')
-            setTimeout(() => {
-                setShowSuccess(false);
-                setEmail("");
-                setFullName("");
-                setPhoneNumber("")
-                setMessage("");
-            }, 3000);
-        }
+            message,
+        };
 
-        console.log("response", response);
+        try {
+            // Send to both email and HubSpot in parallel
+            const [emailResult, hubspotResponse] = await Promise.all([
+                // Send email notification
+                sendEmailNotification(formData),
+
+                // Submit to HubSpot
+                submitMainContactForm(
+                    fullName,
+                    email,
+                    phoneNumber,
+                    message
+                )
+            ]);
+
+            // Check if both submissions were successful
+            if (emailResult.success && hubspotResponse) {
+                console.log('Both email and HubSpot submissions successful');
+                setShowSuccess(true);
+
+                // Redirect to thank you page
+                setTimeout(() => {
+                    router.push("/thank-you");
+                }, 1500);
+
+                // Clear form after delay
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setEmail("");
+                    setFullName("");
+                    setPhoneNumber("");
+                    setMessage("");
+                }, 3000);
+            } else {
+                // Handle partial failure
+                if (!emailResult.success) {
+                    console.error('Email submission failed:', emailResult.message);
+                }
+                if (!hubspotResponse) {
+                    console.error('HubSpot submission failed');
+                }
+
+                // Still show success if at least one succeeded
+                if (emailResult.success || hubspotResponse) {
+                    setShowSuccess(true);
+                    setTimeout(() => {
+                        router.push("/thank-you");
+                    }, 1500);
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting your form. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
+
 
     return (
         <>
@@ -179,8 +299,8 @@ export default function BrandMainContact() {
                                 </p>
                             )}
                             <div className="flex justify-center">
-                                <button className="p-4 bg-green-500 uppercase text-white rounded font-poppins brand-submit-btn mb-10" type="submit">
-                                    Submit
+                                <button disabled={isSubmitting} className="p-4 bg-green-500 uppercase text-white rounded font-poppins brand-submit-btn mb-10" type="submit">
+                                     {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </button>
                             </div>
                         </form>
@@ -188,50 +308,52 @@ export default function BrandMainContact() {
                 </div>
             </section>
 
-            <section className="max-w-screen-xl mx-auto mt-20 mb-8">
-                <div className="flex justify-center gap-32 flex-col md:flex-row">
-
+               <section className="max-w-screen-xl mx-auto mt-20 mb-8">
+                <div className="flex justify-around md:flex-row">
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                        <Image src={"/brand-img/team-1.webp"} width={210} height={200} className="mb-5" />
-                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Damon Peters</h3>
+                        <Image src={"/brand-img/team-6.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Kenneth Snyder</h3>
                         <h4 className="text-black text-xl font-poppins">Head of Operations</h4>
-                        <p className="text-black font-bold text-xl">damon@pinebookpublishing.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7465</p>
+                        <p className="text-black font-bold text-xl">Kenneth@pinebookwriting.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7142</p>
                     </div>
-
-                    
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                        <Image src={"/brand-img/team-7.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Emily Jones</h3>
+                        <h4 className="text-black text-xl font-poppins">Project Manager</h4>
+                        <p className="text-black font-bold text-xl">emily@pinebookwriting.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 372-0660</p>
+                    </div>
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/team-3.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Steve Hayes</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Project Consultant</h4>
-                        <p className="text-black font-bold text-xl">steve@pinebookpublishing.com</p>
+                        <p className="text-black font-bold text-xl">steve@pinebookwriting.com</p>
                         <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-6209</p>
                     </div>
                 </div>
 
-                <div className="flex justify-center gap-32 flex-col md:flex-row">
-                    {/* <div className="brand-meet-team-container text-center flex justify-center flex-col items-center mt-10 lg:mt-0 md:mt-0">
-                        <Image src={"/brand-img/team-2.webp"} width={210} height={200} className="mb-5" />
-                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Ryan Peters</h3>
-                        <h4 className="text-black text-xl font-poppins">Publishing Manager</h4>
-                        <p className="text-black font-bold text-xl">ryan@pinebookpublishing.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-5612</p>
-                    </div> */}
-
-                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                <div className="flex justify-around flex-col md:flex-row">
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-9.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">REX BROWN</h3>
+                        <h4 className="text-black text-xl font-poppins">SENIOR PROJECT MANAGER</h4>
+                        <p className="text-black font-bold text-xl">Rex.brown@pinebookwriting.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">+1 (289) 809 7044</p>
+                    </div>
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/team-5.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Lia Sinclair</h3>
-                        <h4 className="text-black text-xl font-poppins">Senior Publishing Manager</h4>
-                        <p className="text-black font-bold text-xl">lia@pinebookpublishing.com</p>
+                        <h4 className="text-black text-xl font-poppins">Publishing Consultant</h4>
+                        <p className="text-black font-bold text-xl">lia@pinebookwriting.com</p>
                         <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-379-7913</p>
                     </div>
-
-                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                        <Image src={"/brand-img/team-4.webp"} width={210} height={200} className="mb-5" />
-                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">AMARA JOHNSON</h3>
-                        <h4 className="text-black text-xl font-poppins">Senior Project Manager</h4>
-                        <p className="text-black font-bold text-xl">amara@pinebookpublishing.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7044</p>
+                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-8.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jerome Preston</h3>
+                        <h4 className="text-black text-xl font-poppins">Senior Consultant & Outreach Manager</h4>
+                        <p className="text-black font-bold text-xl">jerome@pinebookwriting.com</p>
+                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 809-1995</p>
                     </div>
                 </div>
             </section>

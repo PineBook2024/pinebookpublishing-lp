@@ -3,6 +3,7 @@ import Head from "next/head";
 import PostCard from '../components/posts/PostCard'
 import BrandPrimaryHeader from '../components/BrandPrimaryHeader'
 import BrandNavbar from '../components/BrandNavbar'
+import BrandFooter from '../components/BrandFooter';
 
 const Posts = ({ posts }) => {
   return (
@@ -14,7 +15,7 @@ const Posts = ({ posts }) => {
           content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
         />
         <link rel="shortcut icon" href="/images/fav.png" />
-        <meta name="robots" content="noindex, nofollow" />
+        {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
       <BrandNavbar />
       <BrandPrimaryHeader
@@ -31,6 +32,7 @@ const Posts = ({ posts }) => {
           </ul>
         </div>
       </section>
+         <BrandFooter />
     </>
 
   )

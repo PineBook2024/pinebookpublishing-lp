@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import Head from "next/head";
 import Image from "next/image";
 import Link from 'next/link';
@@ -679,7 +679,7 @@ export default function Lp() {
                 <div className="new-lp-copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-white w-full md:text-center text-sm sm:text-left">
-                            Copyright © 2024 |
+                            Copyright © 2025 |
                             <Link
                                 href="/terms-and-conditions"
                                 rel="noopener noreferrer"

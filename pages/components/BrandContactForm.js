@@ -1,4 +1,4 @@
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +19,72 @@ export default function BrandContact() {
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [phoneError, setPhoneError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Get user location info
+    const [userInfo, setUserInfo] = useState({
+        ip: '',
+        city: '',
+        region: '',
+        country: ''
+    });
+
+    useEffect(() => {
+        fetchUserRegion();
+    }, []);
+
+    const fetchUserRegion = async () => {
+        try {
+            const response = await fetch("https://ipwhois.app/json/");
+            const data = await response.json();
+
+            setUserInfo({
+                ip: data.ip || '',
+                city: data.city || '',
+                region: data.region || '',
+                country: data.country || ''
+            });
+        } catch (error) {
+            console.error("Failed to fetch user region:", error);
+        }
+    };
+
+    const sendEmailNotification = async (formData) => {
+        try {
+            const response = await fetch('/api/brand-signup-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    currentPage: window.location.href,
+                    referringPage: document.referrer || 'Direct visit',
+                    userIP: userInfo.ip,
+                    userCity: userInfo.city,
+                    userRegion: userInfo.region,
+                    userCountry: userInfo.country
+                }),
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+                console.error('Email sending failed:', result.message);
+            } else {
+                console.log('Email sent successfully');
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error sending email:', error);
+            return { success: false, error: error.message };
+        }
+    };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,13 +97,17 @@ export default function BrandContact() {
 
         const setter = setters[name];
         if (setter) {
-            if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/;
+            if (name === "phoneNumber") {
+                const phoneRegex = /^\d{0,}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
-                    setPhoneError("");
+                    if (value.length < 9) {
+                        setPhoneError("Phone number must be at least 9 digits");
+                    } else {
+                        setPhoneError("");
+                    }
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Invalid phone number format");
                 }
             } else {
                 setter(value);
@@ -47,29 +117,79 @@ export default function BrandContact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
             return;
         }
-        const response = await submitMainContactForm(
+
+        setIsSubmitting(true);
+
+        const formData = {
             fullName,
             email,
             phoneNumber,
-            message
-        );
-        if (response) {
-            setShowSuccess(true);
-            router.push('/thank-you')
-            setTimeout(() => {
-                setShowSuccess(false);
-                setEmail("");
-                setFullName("");
-                setPhoneNumber("")
-                setMessage("");
-            }, 3000);
-        }
+            message,
+        };
 
-        console.log("response", response);
+        try {
+            // Send to both email and HubSpot in parallel
+            const [emailResult, hubspotResponse] = await Promise.all([
+                // Send email notification
+                sendEmailNotification(formData),
+
+                // Submit to HubSpot
+                submitMainContactForm(
+                    fullName,
+                    email,
+                    phoneNumber,
+                    message
+                )
+            ]);
+
+            // Check if both submissions were successful
+            if (emailResult.success && hubspotResponse) {
+                console.log('Both email and HubSpot submissions successful');
+                setShowSuccess(true);
+
+                // Redirect to thank you page
+                setTimeout(() => {
+                    router.push("/thank-you");
+                }, 1500);
+
+                // Clear form after delay
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setEmail("");
+                    setFullName("");
+                    setPhoneNumber("");
+                    setMessage("");
+                }, 3000);
+            } else {
+                // Handle partial failure
+                if (!emailResult.success) {
+                    console.error('Email submission failed:', emailResult.message);
+                }
+                if (!hubspotResponse) {
+                    console.error('HubSpot submission failed');
+                }
+
+                // Still show success if at least one succeeded
+                if (emailResult.success || hubspotResponse) {
+                    setShowSuccess(true);
+                    setTimeout(() => {
+                        router.push("/thank-you");
+                    }, 1500);
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting your form. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
 
@@ -103,34 +223,34 @@ export default function BrandContact() {
                                 </p>
                                 <div class="grid gap-3 md:grid-cols-2">
 
-                                <div className="relative mb-3">
-                                    <input
-                                        type="text"
-                                        name="fullName"
-                                        onChange={handleChange}
-                                        value={fullName}
-                                        required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
-                                        placeholder="Enter your Name"
-                                    />
-                                    <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
-                                </div>
+                                    <div className="relative mb-3">
+                                        <input
+                                            type="text"
+                                            name="fullName"
+                                            onChange={handleChange}
+                                            value={fullName}
+                                            required
+                                            className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                            placeholder="Enter your Name"
+                                        />
+                                        <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                    </div>
 
-                                <div className="relative mb-3">
-                                    <input
-                                        type="text"
-                                        name="phoneNumber"
-                                        onChange={handleChange}
-                                        value={phoneNumber}
-                                        required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
-                                        placeholder="Enter your Number"
-                                    />
-                                    <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
-                                    {phoneError && (
-                                        <p className="text-red-500 text-sm mt-1">{phoneError}</p>
-                                    )}
-                                </div>
+                                    <div className="relative mb-3">
+                                        <input
+                                            type="text"
+                                            name="phoneNumber"
+                                            onChange={handleChange}
+                                            value={phoneNumber}
+                                            required
+                                            className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                            placeholder="Enter your Number"
+                                        />
+                                        <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                        {phoneError && (
+                                            <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                                        )}
+                                    </div>
                                 </div>
 
                                 <div className="relative mb-3">
@@ -175,11 +295,11 @@ export default function BrandContact() {
                                     </p>
                                 )}
                                 <div className="flex justify-center">
-                                <button className="p-4 bg-green-500 uppercase text-white rounded brand-submit-btn mb-10" type="submit">
-                                    Submit
-                                </button>
+                                    <button disabled={isSubmitting} className="p-4 bg-green-500 uppercase text-white rounded brand-submit-btn mb-10" type="submit">
+                                        {isSubmitting ? 'Submitting...' : 'Submit'}
+                                    </button>
                                 </div>
-                               
+
                             </form>
                         </div>
                     </div>

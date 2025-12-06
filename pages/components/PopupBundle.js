@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 
 export default function PopupBundle({ isOpen, onClose, service }) {
     const router = useRouter();
@@ -13,24 +13,76 @@ export default function PopupBundle({ isOpen, onClose, service }) {
     const [email, setEmail] = useState("");
     const [fulName, setFulName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    // const [budget, setBudget] = useState("");
     const [message, setMessage] = useState("");
     const [serviceState, setServiceState] = useState(service);
     const [showSuccess, setShowSuccess] = useState(false);
     const [phoneError, setPhoneError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
+    // Get user location info
+    const [userInfo, setUserInfo] = useState({
+        ip: '',
+        city: '',
+        region: '',
+        country: ''
+    });
 
-    const budgetOptions = [
-        "$500 - $1000", "$1001 - $2000", "$2001 - $3000", "$3001 - $4000",
-        "$4001 - $5000", "$5001 - $6000", "$6001 - $7000", "$7001 - $8000",
-        "$8001 - $9000", "$9001 - $10000"
-    ];
+    useEffect(() => {
+        fetchUserRegion();
+    }, []);
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         router.push('/publishing-lp');
-    //     }, 3000);
-    // }, [router]);
+    const fetchUserRegion = async () => {
+        try {
+            const response = await fetch("https://ipwhois.app/json/");
+            const data = await response.json();
+
+            setUserInfo({
+                ip: data.ip || '',
+                city: data.city || '',
+                region: data.region || '',
+                country: data.country || ''
+            });
+        } catch (error) {
+            console.error("Failed to fetch user region:", error);
+        }
+    };
+
+    const sendEmailNotification = async (formData) => {
+        try {
+            const response = await fetch('/api/popup-signup-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    service: formData.service,
+                    currentPage: window.location.href,
+                    referringPage: document.referrer || 'Direct visit',
+                    userIP: userInfo.ip,
+                    userCity: userInfo.city,
+                    userRegion: userInfo.region,
+                    userCountry: userInfo.country
+                }),
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+                console.error('Email sending failed:', result.message);
+            } else {
+                console.log('Email sent successfully');
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error sending email:', error);
+            return { success: false, error: error.message };
+        }
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -39,7 +91,6 @@ export default function PopupBundle({ isOpen, onClose, service }) {
             email: setEmail,
             message: setMessage,
             service: setServiceState,
-            // budget: setBudget,
             phoneNumber: setPhoneNumber,
         };
 
@@ -61,32 +112,81 @@ export default function PopupBundle({ isOpen, onClose, service }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (phoneNumber.length !== 10) {
             setPhoneError("Phone number must be exactly 10 digits");
             return;
         }
-        const response = await submitPopupContactForm(
-            fulName,
+
+        setIsSubmitting(true);
+
+        const formData = {
+            fullName: fulName,
             email,
             phoneNumber,
             service,
-            // budget,
-            message
-        );
-        if (response) {
-            setShowSuccess(true);
-            router.push('/thankyou-page')
-            setTimeout(() => {
-                setShowSuccess(false);
-                setEmail("");
-                setFulName("");
-                setPhoneNumber("")
-                setMessage("");
-                // setBudget("");
-            }, 3000);
-        }
+            message,
+        };
 
-        console.log("response", response);
+        try {
+            // Send to both email and HubSpot in parallel
+            const [emailResult, hubspotResponse] = await Promise.all([
+                // Send email notification
+                sendEmailNotification(formData),
+
+                // Submit to HubSpot
+                submitPopupContactForm(
+                    fulName,
+                    email,
+                    phoneNumber,
+                    service,
+                    message
+                )
+            ]);
+
+            // Check if both submissions were successful
+            if (emailResult.success && hubspotResponse) {
+                console.log('Both email and HubSpot submissions successful');
+                setShowSuccess(true);
+
+                // Redirect to thank you page
+                setTimeout(() => {
+                    window.location.href = "/thankyou-page";
+                }, 1500);
+
+                // Clear form after delay
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setEmail("");
+                    setFulName("");
+                    setPhoneNumber("");
+                    setMessage("");
+                }, 3000);
+            } else {
+                // Handle partial failure
+                if (!emailResult.success) {
+                    console.error('Email submission failed:', emailResult.message);
+                }
+                if (!hubspotResponse) {
+                    console.error('HubSpot submission failed');
+                }
+
+                // Still show success if at least one succeeded
+                if (emailResult.success || hubspotResponse) {
+                    setShowSuccess(true);
+                    setTimeout(() => {
+                        window.location.href = "/thankyou-page";
+                    }, 1500);
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting your form. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -203,8 +303,8 @@ export default function PopupBundle({ isOpen, onClose, service }) {
                                                 Form submitted Successfully!
                                             </p>
                                         )}
-                                        <button className="p-4 w-full bg-green-500 uppercase text-white rounded submit-btn " type="submit">
-                                            Submit
+                                        <button disabled={isSubmitting} className="p-4 w-full bg-green-500 uppercase text-white rounded submit-btn " type="submit">
+                                            {isSubmitting ? 'Submitting...' : 'Submit'}
                                         </button>
                                     </div>
                                 </form>

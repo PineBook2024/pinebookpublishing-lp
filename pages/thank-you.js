@@ -1,10 +1,20 @@
+'use client'
+
 import React, { useEffect } from "react";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Head from "next/head";
 import Script from "next/script";
 
+
+
+
+
+
+
+
 export default function Home() {
+   
     return (
 
         <>

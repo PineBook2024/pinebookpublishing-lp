@@ -1,5 +1,5 @@
-import useHubspotForm from "@/hooks/hubspot";
-import React, { useState, useRef } from "react";
+import useHubspotForm from "/hooks/hubspot";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -28,6 +28,71 @@ export default function BrandHeroFridayUpdate() {
     const [message, setMessage] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [phoneError, setPhoneError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Get user location info
+    const [userInfo, setUserInfo] = useState({
+        ip: '',
+        city: '',
+        region: '',
+        country: ''
+    });
+
+    useEffect(() => {
+        fetchUserRegion();
+    }, []);
+
+    const fetchUserRegion = async () => {
+        try {
+            const response = await fetch("https://ipwhois.app/json/");
+            const data = await response.json();
+            
+            setUserInfo({
+                ip: data.ip || '',
+                city: data.city || '',
+                region: data.region || '',
+                country: data.country || ''
+            });
+        } catch (error) {
+            console.error("Failed to fetch user region:", error);
+        }
+    };
+
+    const sendEmailNotification = async (formData) => {
+        try {
+            const response = await fetch('/api/brand-signup-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    currentPage: window.location.href,
+                    referringPage: document.referrer || 'Direct visit',
+                    userIP: userInfo.ip,
+                    userCity: userInfo.city,
+                    userRegion: userInfo.region,
+                    userCountry: userInfo.country
+                }),
+            });
+
+            const result = await response.json();
+            
+            if (!result.success) {
+                console.error('Email sending failed:', result.message);
+            } else {
+                console.log('Email sent successfully');
+            }
+            
+            return result;
+        } catch (error) {
+            console.error('Error sending email:', error);
+            return { success: false, error: error.message };
+        }
+    };
 
     const clientLogos = [
         {
@@ -51,13 +116,6 @@ export default function BrandHeroFridayUpdate() {
             width: 125,
             height: 125,
         },
-        // {
-        //     href: "https://www.yelp.com/biz/pine-book-writing-richmond-hill",
-        //     src: "/images/s4.png",
-        //     alt: "LOGO",
-        //     width: 125,
-        //     height: 125,
-        // },
         {
             href: "https://clutch.co/profile/pine-book-writing",
             src: "/images/s6.png",
@@ -98,29 +156,79 @@ export default function BrandHeroFridayUpdate() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         if (phoneNumber.length < 9) {
             setPhoneError("Phone number must be at least 9 digits");
             return;
         }
-        const response = await submitMainContactForm(
+
+        setIsSubmitting(true);
+
+        const formData = {
             fullName,
             email,
             phoneNumber,
-            message
-        );
-        if (response) {
-            setShowSuccess(true);
-            router.push("/thank-you");
-            setTimeout(() => {
-                setShowSuccess(false);
-                setEmail("");
-                setFullName("");
-                setPhoneNumber("");
-                setMessage("");
-            }, 3000);
-        }
+            message,
+        };
 
-        console.log("response", response);
+        try {
+            // Send to both email and HubSpot in parallel
+            const [emailResult, hubspotResponse] = await Promise.all([
+                // Send email notification
+                sendEmailNotification(formData),
+                
+                // Submit to HubSpot
+                submitMainContactForm(
+                    fullName,
+                    email,
+                    phoneNumber,
+                    message
+                )
+            ]);
+
+            // Check if both submissions were successful
+            if (emailResult.success && hubspotResponse) {
+                console.log('Both email and HubSpot submissions successful');
+                setShowSuccess(true);
+                
+                // Redirect to thank you page
+                setTimeout(() => {
+                    router.push("/thank-you");
+                }, 1500);
+                
+                // Clear form after delay
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setEmail("");
+                    setFullName("");
+                    setPhoneNumber("");
+                    setMessage("");
+                }, 3000);
+            } else {
+                // Handle partial failure
+                if (!emailResult.success) {
+                    console.error('Email submission failed:', emailResult.message);
+                }
+                if (!hubspotResponse) {
+                    console.error('HubSpot submission failed');
+                }
+                
+                // Still show success if at least one succeeded
+                if (emailResult.success || hubspotResponse) {
+                    setShowSuccess(true);
+                    setTimeout(() => {
+                        router.push("/thank-you");
+                    }, 1500);
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting your form. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -169,8 +277,8 @@ export default function BrandHeroFridayUpdate() {
                                     }}
                                 >
                                     {clientLogos.map((logo, index) => (
-                                        <SwiperSlide>
-                                            <Link key={index} href={logo.href} target="_blank">
+                                        <SwiperSlide key={index}>
+                                            <Link href={logo.href} target="_blank">
                                                 <Image
                                                     alt={logo.alt}
                                                     src={logo.src}
@@ -185,20 +293,6 @@ export default function BrandHeroFridayUpdate() {
                         </div>
                         <div>
                             <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
-                                {/* <Image
-                                    className="text-center header-form-off-badge"
-                                    src={"/brand-img/christmas-tag.png"}
-                                    width={140}
-                                    height={180}
-                                    loading="lazy"
-                                ></Image>
-                                <Image
-                                    className="text-center christmas-cap-form"
-                                    src={"/brand-img/christmas-cap.png"}
-                                    width={300}
-                                    height={300}
-                                    loading="lazy"
-                                ></Image> */}
                                 <div className="text-start">
                                     <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
                                         Avail Discount
@@ -212,7 +306,7 @@ export default function BrandHeroFridayUpdate() {
                                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                                     <div className="col-span-2 w-full relative">
                                         <form className="flex flex-col gap-3 justify-start items-start" onSubmit={handleSubmit}>
-                                            <div class="grid gap-3 md:grid-cols-2 w-full">
+                                            <div className="grid gap-3 md:grid-cols-2 w-full">
                                                 <div className="relative w-full">
                                                     <input
                                                         type="text"
@@ -261,11 +355,11 @@ export default function BrandHeroFridayUpdate() {
                                                     name="message"
                                                 ></textarea>
                                             </div>
-                                            <div class="flex items-start mb-5">
-                                                <div class="flex items-center h-5">
-                                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                                            <div className="flex items-start mb-5">
+                                                <div className="flex items-center h-5">
+                                                    <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
                                                 </div>
-                                                <label for="remember" class="ms-2 text-sm font-medium text-white dark:text-gray-300">By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-400">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-400" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-400" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
+                                                <label htmlFor="remember" className="ms-2 text-sm font-medium text-white dark:text-gray-300">By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-400">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-400" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-400" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
                                             </div>
                                             {showSuccess && (
                                                 <p className="px-1 py-1 text-green-700">
@@ -274,24 +368,15 @@ export default function BrandHeroFridayUpdate() {
                                             )}
                                             <div className="w-full">
                                                 <button
-                                                    className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-md shadow-xl text-xl"
+                                                    className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-md shadow-xl text-xl disabled:opacity-50 disabled:cursor-not-allowed"
                                                     type="submit"
+                                                    disabled={isSubmitting}
                                                 >
-                                                    Submit
+                                                    {isSubmitting ? 'Submitting...' : 'Submit'}
                                                 </button>
                                             </div>
-
                                         </form>
                                     </div>
-                                    {/* <div className="col-span-1 flex justify-center items-center">
-                                        <Image
-                                            className="text-center christmas-banner-img"
-                                            src={"/brand-img/crishtmis-img.png"}
-                                            width={250}
-                                            height={500}
-                                            loading="lazy"
-                                        ></Image>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>

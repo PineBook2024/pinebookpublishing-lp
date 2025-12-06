@@ -98,18 +98,18 @@ export default function Home() {
                 />
                 <link rel="shortcut icon" href="/images/fav.png" />
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+
+
                 {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
-                    gtag('config', 'G-9X52J8V8NK');
-              `,
-                    }}
+                    gtag('config', 'AW-16471224604');`,
+                            }}
                 />
 
 
@@ -119,6 +119,7 @@ export default function Home() {
             {/* <BrandHero /> */}
             {/* <BrandHeroFriday /> */}
             <BrandBannerVideo Component={BrandHeroFridayUpdate} />
+            {/* <BrandBannerVideo Component={BrandHeroFriday} /> */}
             <BrandBannerLogo />
             <BrandAbout
                 subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published hundreds of books since our inception on 22nd February 2023. Our experts have 10-15 years of experience and are masters in their fields, even though we haven't been in the market long. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
@@ -195,31 +196,31 @@ export default function Home() {
                             </SwiperSlide>
                         ))} */}
                         {videoClient.map((videoClient) => {
-                        // Extract YouTube video ID from the URL
-                        const videoUrl = new URL(videoClient.src);
-                        const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
+                            // Extract YouTube video ID from the URL
+                            const videoUrl = new URL(videoClient.src);
+                            const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
 
-                        return (
-                            <SwiperSlide>
-                            <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
-                                <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
+                            return (
+                                <SwiperSlide>
+                                    <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                        <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
 
-                                <div className="py-4">
-                                      <LazyYouTube videoId={videoId} />
-                                </div>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
-                                </h4>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
-                                </h4>
-                                <h4 className="text-black">
-                                    <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
-                                </h4>
-                            </div>
-                            </SwiperSlide>
-                        );
-                    })}
+                                        <div className="py-4">
+                                            <LazyYouTube videoId={videoId} />
+                                        </div>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
+                                        </h4>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
+                                        </h4>
+                                        <h4 className="text-black">
+                                            <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
+                                        </h4>
+                                    </div>
+                                </SwiperSlide>
+                            );
+                        })}
                     </div>
                 </Swiper>
 

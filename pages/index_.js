@@ -1,4 +1,4 @@
-import useHubspotForm from "@/hooks/hubspot";
+import useHubspotForm from "/hooks/hubspot";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";

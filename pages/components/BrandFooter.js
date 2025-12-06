@@ -48,27 +48,6 @@ export default function BrandFooter() {
                             <p className="mt-2 text-sm text-white leading-7 px-4">
                                 Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
                             </p>
-                            {/* <nav className="list-none mb-10 mt-5">
-                                <li>
-                                    <Link
-                                        href="tel:8668417469"
-                                        className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                        (888) 786-7135
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link
-                                        href="mailto:support@pinebookpublishing.com"
-                                        className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faEnvelope} className="me-3" />
-                                        {" "}
-                                        support@pinebookpublishing.com{" "}
-                                    </Link>
-                                </li>
-                            </nav> */}
                         </div>
                         <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
                             <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
@@ -107,8 +86,32 @@ export default function BrandFooter() {
                                     Testimonials
                                 </li> */}
                                 <li className="mt-3">
+                                    <Link href="/blog" onClick={(e) => { e.preventDefault(); window.location.href = "/blog"; }}>
+                                        Blog
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
                                     <Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }}>
                                         Contact Us
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link
+                                        href="/terms-and-conditions"
+                                        rel="noopener noreferrer"
+                                        className="text-white ml-1"
+                                        target="_blank"
+                                    >
+                                        Terms & Conditions
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link
+                                        href="/privacy-policy"
+                                        rel="noopener noreferrer"
+                                        className="text-white ml-1"
+                                        target="_blank"
+                                    >Privacy Policy {" "}
                                     </Link>
                                 </li>
                             </nav>
@@ -168,6 +171,26 @@ export default function BrandFooter() {
                                 <li className="mt-3">
                                     <Link href="/isbn-and-barcode" onClick={(e) => { e.preventDefault(); window.location.href = "/isbn-and-barcode"; }}>
                                         ISBN & Barcode
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-marketing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-marketing"; }}>
+                                        Book Marketing
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/childrens-book-illustration" onClick={(e) => { e.preventDefault(); window.location.href = "/childrens-book-illustration"; }}>
+                                        Children's Book Illustration
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-illustration-services" onClick={(e) => { e.preventDefault(); window.location.href = "/book-illustration-services"; }}>
+                                        Book Illustration Services
+                                    </Link>
+                                </li>
+                                <li className="mt-3">
+                                    <Link href="/book-translation" onClick={(e) => { e.preventDefault(); window.location.href = "/book-translation"; }}>
+                                        Book Translation
                                     </Link>
                                 </li>
                             </nav>
@@ -271,23 +294,7 @@ export default function BrandFooter() {
                 <div className="copyright-sec">
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-white w-full md:text-center text-sm sm:text-left">
-                            Copyright © 2024 |
-                            <Link
-                                href="/terms-and-conditions"
-                                rel="noopener noreferrer"
-                                className="text-white ml-1"
-                                target="_blank"
-                            >
-                                Terms & Conditions |
-                            </Link>
-                            <Link
-                                href="/privacy-policy"
-                                rel="noopener noreferrer"
-                                className="text-white ml-1"
-                                target="_blank"
-                            >
-                                Privacy Policy | {" "}
-                            </Link>
+                            Copyright © 2025
                             Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
                         </p>
                     </div>

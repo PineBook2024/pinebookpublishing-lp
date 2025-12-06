@@ -23,6 +23,10 @@ export default function BrandNavbar() {
         { name: 'Document Processing', href: '/document-processing', icon: '/brand-img/Document Processing-icon.png', image: '/brand-img/service-img6.webp', desc: 'Simplify your workflows with expert document processing.' },
         { name: 'ISBN & Barcode', href: '/isbn-and-barcode', icon: '/brand-img/ISBN Barcode.png', image: '/brand-img/service-img6.webp', desc: "Secure your book's identity with our ISBN registration services." },
         { name: 'Merchandising', href: '/merchandising', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Make your personal and business accessories standout with custom merchandizing services." },
+        { name: 'Book Marketing', href: '/book-marketing', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Boost your book’s reach and visibility with our targeted marketing strategies." },
+        { name: "Children's Book Illustration", href: '/childrens-book-illustration', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Bring your children’s stories to life with engaging and colorful illustrations." },
+        { name: 'Book Illustration Services', href: '/book-illustration-services', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Enhance your book’s visual appeal with professional illustration designs." },
+        { name: 'Book Translation', href: '/book-translation', icon: '/brand-img/merchandise-icon.png', image: '/brand-img/service-img6.webp', desc: "Expand your global reach with expert translation in multiple languages." },
     ];
 
     // Function to handle the service dropdown toggle
@@ -78,6 +82,9 @@ export default function BrandNavbar() {
 
     return (
         <>
+            {/* Apne nav items */}
+            {/* <div id="google_translate_element" style={{ display: "inline-block" }}></div> */}
+
             <header id="navbar" className="bg-transparent flex justify-between items-center p-4 z-10">
                 <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
                     <div>
@@ -146,40 +153,46 @@ export default function BrandNavbar() {
                                         </ul>
                                         <div className='p-5 hidden md:block lg:block'>
                                             <h2 className='my-4 text-start'>OUR EXPERTS</h2>
-                                            <div className='flex gap-4 mt-4 justify-center'>
-                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-1.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Damon Peters</h3>
+
+                                            <div className="grid grid-cols-3 gap-y-6 gap-x-6 text-center">
+                                                <div className="w-full flex flex-col items-center">
+                                                    <Image src={"/brand-img/team-6.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Kenneth Snyder</h3>
                                                 </div>
-                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-4.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">AMARA JOHNSON
-                                                    </h3>
+                                                <div className="w-full flex flex-col items-center">
+                                                    <Image src={"/brand-img/team-7.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Emily Jones</h3>
                                                 </div>
-                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                <div className="w-full flex flex-col items-center">
                                                     <Image src={"/brand-img/team-3.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Steve Hayes
-                                                    </h3>
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Steve Hayes</h3>
                                                 </div>
-                                            </div>
-                                            <div className='flex gap-4 mt-4 justify-center'>
-                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
-                                                    <Image src={"/brand-img/team-2.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Ryan Peters
-                                                    </h3>
+
+                                                <div className="w-full flex flex-col items-center">
+                                                    <Image src={"/brand-img/team-9.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Rex Brown</h3>
                                                 </div>
-                                                <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                                                <div className="w-full flex flex-col items-center">
                                                     <Image src={"/brand-img/team-5.webp"} width={70} height={70} className="mb-2" />
-                                                    <h3 className="text-black leading-20 text-sm font-poppins uppercase">Lia Sinclair
-                                                    </h3>
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Lia Sinclair</h3>
+                                                </div>
+                                                <div className="w-full flex flex-col items-center">
+                                                    <Image src={"/brand-img/team-8.png"} width={70} height={70} className="mb-2" />
+                                                    <h3 className="text-black text-sm font-poppins uppercase">Jerome Preston</h3>
                                                 </div>
                                             </div>
-                                            <div className='mt-4'>
+
+                                            <div className='mt-6'>
                                                 <h2 className='text-start'>TALK TO AN EXPERTS NOW!</h2>
-                                                <p className='mb-3 text-start pt-4'>Ready to bring your book to life? Schedule a call with one of our experts now to unlock your book's potential. Your customized solution awaits—don't miss out!</p>
-                                                <Link href={'javascript:;'} className="main-button font-poppins mb-5 uppercase" onClick={handleOpenChat}>schedule a call</Link>
+                                                <p className='mb-3 text-start pt-4'>
+                                                    Ready to bring your book to life? Schedule a call with one of our experts now to unlock your book's potential. Your customized solution awaits—don't miss out!
+                                                </p>
+                                                <Link href={'javascript:;'} className="main-button font-poppins mb-5 uppercase" onClick={handleOpenChat}>
+                                                    schedule a call
+                                                </Link>
                                             </div>
                                         </div>
+
                                         {/* <div className="flex-shrink-0">
                                             {hoveredService !== null && (
                                                 <Image

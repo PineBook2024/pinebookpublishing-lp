@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import React, { useEffect, useState } from 'react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
@@ -47,6 +47,26 @@ export default function App({ Component, pageProps }) {
     });
   }, []);
 
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    // Mobile par auto-open OFF
+    if (isMobile) {
+      return;
+    }
+
+    // Desktop par auto-open ON
+    const checkZendesk = setInterval(() => {
+      if (typeof window.$zopim !== "undefined" && window.$zopim.livechat) {
+        window.$zopim.livechat.window.show();
+        clearInterval(checkZendesk);
+      }
+    }, 1000);
+
+    return () => clearInterval(checkZendesk);
+  }, []);
+
+
 
   return (
     <>
@@ -62,7 +82,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:site" content="@pinebookwriting" />
         <meta name="twitter:url" content="https://pinebookpublishing.com/" />
         <meta name="twitter:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
-
+        <meta name="p:domain_verify" content="327df5313414f4447f99182ec46c1485" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -165,7 +185,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <main className={`${poppins.variable}`}>
-        
+
         <Component {...pageProps} />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
         <Script
@@ -177,14 +197,15 @@ export default function App({ Component, pageProps }) {
         />
         {/* <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </Script> */}
         <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </script>
+
         <Script
           dangerouslySetInnerHTML={{
             __html: `
             !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/961Y0H4Z2KNG.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("961Y0H4Z2KNG");}();`,
           }}
         />
-        {/* <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script> */}
-        
+        <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
+
         {/* Meta Pixel Code */}
         <Script
           dangerouslySetInnerHTML={{
@@ -220,7 +241,7 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
           />
         </noscript>
-    <script
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
