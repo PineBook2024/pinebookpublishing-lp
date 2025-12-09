@@ -46,7 +46,7 @@ export default function BrandHeroFridayUpdate() {
         try {
             const response = await fetch("https://ipwhois.app/json/");
             const data = await response.json();
-            
+
             setUserInfo({
                 ip: data.ip || '',
                 city: data.city || '',
@@ -80,13 +80,13 @@ export default function BrandHeroFridayUpdate() {
             });
 
             const result = await response.json();
-            
+
             if (!result.success) {
                 console.error('Email sending failed:', result.message);
             } else {
                 console.log('Email sent successfully');
             }
-            
+
             return result;
         } catch (error) {
             console.error('Error sending email:', error);
@@ -156,7 +156,7 @@ export default function BrandHeroFridayUpdate() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (phoneNumber.length < 9) {
             setPhoneError("Phone number must be at least 9 digits");
             return;
@@ -176,7 +176,7 @@ export default function BrandHeroFridayUpdate() {
             const [emailResult, hubspotResponse] = await Promise.all([
                 // Send email notification
                 sendEmailNotification(formData),
-                
+
                 // Submit to HubSpot
                 submitMainContactForm(
                     fullName,
@@ -190,12 +190,12 @@ export default function BrandHeroFridayUpdate() {
             if (emailResult.success && hubspotResponse) {
                 console.log('Both email and HubSpot submissions successful');
                 setShowSuccess(true);
-                
+
                 // Redirect to thank you page
                 setTimeout(() => {
                     router.push("/thank-you");
                 }, 1500);
-                
+
                 // Clear form after delay
                 setTimeout(() => {
                     setShowSuccess(false);
@@ -212,7 +212,7 @@ export default function BrandHeroFridayUpdate() {
                 if (!hubspotResponse) {
                     console.error('HubSpot submission failed');
                 }
-                
+
                 // Still show success if at least one succeeded
                 if (emailResult.success || hubspotResponse) {
                     setShowSuccess(true);
@@ -235,7 +235,7 @@ export default function BrandHeroFridayUpdate() {
         <>
             {/* Snowfall Background */}
             <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
-                {/* <SnowFall /> */}
+                <SnowFall />
                 <div className="container px-4 pt-20 pb-10 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10 pt-36">
                     <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8">
                         <div className="mb-4">
@@ -293,6 +293,20 @@ export default function BrandHeroFridayUpdate() {
                         </div>
                         <div>
                             <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
+                                <Image
+                                    className="text-center header-form-off-badge"
+                                    src={"/brand-img/christmas-tag.png"}
+                                    width={140}
+                                    height={180}
+                                    loading="lazy"
+                                ></Image>
+                                <Image
+                                    className="text-center christmas-cap-form"
+                                    src={"/brand-img/christmas-cap.png"}
+                                    width={300}
+                                    height={300}
+                                    loading="lazy"
+                                ></Image>
                                 <div className="text-start">
                                     <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
                                         Avail Discount

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import FadeIn from "./FadeIn";
+import SnowFall from "/components/SnowFall";
 
 const countryCodes = [
   { name: "United States", code: "1", countryCode: "US", flag: "https://flagcdn.com/us.svg" },
@@ -519,7 +520,7 @@ export default function HeroFormBookOffer() {
   return (
 
     <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
-      {/* <SnowFall /> */}
+      <SnowFall />
       <div className="container px-4 pt-20 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10">
         <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
           <div className="mb-4">
@@ -552,6 +553,20 @@ export default function HeroFormBookOffer() {
           </div>
           <div>
             <div className="px-4 py-3 w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
+              <Image
+                className="text-center header-form-off-badge"
+                src={"/brand-img/christmas-tag.png"}
+                width={140}
+                height={180}
+                loading="lazy"
+              ></Image>
+              <Image
+                className="text-center christmas-cap-form"
+                src={"/brand-img/christmas-cap.png"}
+                width={300}
+                height={300}
+                loading="lazy"
+              ></Image>
               <div className="text-start">
                 <h4 className="font-poppins text-white text-2xl md:text-4xl font-bold christmas-banner-title">
                   Avail Discount
@@ -634,10 +649,7 @@ export default function HeroFormBookOffer() {
                               {phoneError}
                             </p>
                           )}
-
                         </div>
-
-
                       </div>
                     </div>
                     <div className="relative w-full">
