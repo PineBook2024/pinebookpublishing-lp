@@ -28,14 +28,14 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "saad.siddiqui1002@gmail.com",
-        pass: "wvdoqcvokporrplp",
+        user: "pinebookwriting@gmail.com",
+        pass: "owwwkmrznsnddjtm",
       },
     });
 
     // Format services for display
-    const servicesText = services.length > 0 
-      ? services.join(", ") 
+    const servicesText = services.length > 0
+      ? services.join(", ")
       : "Not specified";
 
     // Admin Email Template
