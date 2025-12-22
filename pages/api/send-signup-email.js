@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     userCity,
     userRegion,
     userCountry,
-    formType, // 'signup' ya 'contact' - distinguish between forms
+    formType, 
   } = req.body;
 
   try {
@@ -29,8 +29,8 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-user: "pinebookwriting@gmail.com",
-        pass: "owwwkmrznsnddjtm", 
+        user: "pinebookwriting@gmail.com",
+        pass: "owwwkmrznsnddjtm",
       },
     });
 
