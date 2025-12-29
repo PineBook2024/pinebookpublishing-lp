@@ -69,7 +69,6 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
                 setIsOpen(false); // Close the popup after successful submission
             }, 3000);
         }
-
         console.log("response", response);
     };
 
