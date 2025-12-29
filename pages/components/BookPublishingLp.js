@@ -71,6 +71,7 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
         }
 
         console.log("response", response);
+        
     };
 
     return (
