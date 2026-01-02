@@ -131,7 +131,6 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
                                                 )}
                                             </div>
                                         </div>
-
                                         <div className="relative mb-3">
                                             <textarea
                                                 onChange={handleChange}
