@@ -149,6 +149,15 @@ const videoClient = [
         ProjectManager: "Lia Sinclair ",
         clientname : "Adolfo Professor Pamphili"
     },
+    {
+        id:17,
+        src: "https://www.youtube-nocookie.com/embed/FJgKVI-sAIo",
+        type: "video/mp4",
+        BookTitle: "Shin Misaki: Future Dark Ages of World War IV",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Rex Brown ",
+        clientname : " Theodore A Anderson"
+    }
 ]
 
 const BrandTesti = () => {
