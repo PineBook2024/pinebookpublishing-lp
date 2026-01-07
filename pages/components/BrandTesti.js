@@ -157,7 +157,43 @@ const videoClient = [
         Consultant: "Steve Hayes",
         ProjectManager: "Rex Brown ",
         clientname : " Theodore A Anderson"
-    }
+    },
+    {
+        id:18,
+        src: "https://www.youtube-nocookie.com/embed/S0F5k_mP9no ",
+        type: "video/mp4",
+        BookTitle: "The Tale Of A Phantom Trail",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Rex Brown",
+        clientname : "Phyllis McGillivary"
+    },
+    {
+        id:19,
+        src: "https://www.youtube-nocookie.com/embed/_muLcViAkZI",
+        type: "video/mp4",
+        BookTitle: "Forbidden: The Definitive Edition",
+        Consultant: "Jenson Walker",
+        ProjectManager: "Rex Brown",
+        clientname : "Tanna Marie Angers"
+    },
+    {
+        id:20,
+        src: "https://www.youtube-nocookie.com/embed/fKner3oan7Q",
+        type: "video/mp4",
+        BookTitle: "From Where Lions Speak",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Rex Brown",
+        clientname : "Douglas P Andonian"
+    },
+    {
+        id:21,
+        src: "https://www.youtube-nocookie.com/embed/77grNmvBBXU",
+        type: "video/mp4",
+        BookTitle: "Hebrew And Greek Insights Eight Biblical Words Explained",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Rex Brown",
+        clientname : "Lezlie Ann Watson"
+    },
 ]
 
 const BrandTesti = () => {
