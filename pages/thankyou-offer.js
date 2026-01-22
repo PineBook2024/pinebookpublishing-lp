@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Thank You | Pine Book Writing</title>
+        <title>Thank You | Pine Book Publishing</title>
         <meta name="description" content="" />
         <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
         <link rel="shortcut icon" href="/images/fav.png" />
