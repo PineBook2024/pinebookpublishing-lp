@@ -313,23 +313,23 @@ export default function BrandMainContact() {
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/team-6.png"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Kenneth Snyder</h3>
-                        <h4 className="text-black text-xl font-poppins">Head of Operations</h4>
+                        <h4 className="text-black text-xl font-poppins">Senior Project Consultant</h4>
                         <p className="text-black font-bold text-xl">Kenneth@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7142</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7142</p> */}
                     </div>
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/team-7.png"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Emily Jones</h3>
                         <h4 className="text-black text-xl font-poppins">Project Manager</h4>
                         <p className="text-black font-bold text-xl">emily@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 372-0660</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 372-0660</p> */}
                     </div>
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/team-3.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Steve Hayes</h3>
-                        <h4 className="text-black text-xl font-poppins">Senior Project Consultant</h4>
+                        <h4 className="text-black text-xl font-poppins">Head of Operations</h4>
                         <p className="text-black font-bold text-xl">steve@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-6209</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-6209</p> */}
                     </div>
                 </div>
 
@@ -339,21 +339,57 @@ export default function BrandMainContact() {
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">REX BROWN</h3>
                         <h4 className="text-black text-xl font-poppins">SENIOR PROJECT MANAGER</h4>
                         <p className="text-black font-bold text-xl">Rex.brown@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">+1 (289) 809 7044</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">+1 (289) 809 7044</p> */}
                     </div>
                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/team-5.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Lia Sinclair</h3>
                         <h4 className="text-black text-xl font-poppins">Publishing Consultant</h4>
                         <p className="text-black font-bold text-xl">lia@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-379-7913</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-379-7913</p> */}
                     </div>
                      <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/team-8.png"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jerome Preston</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Consultant & Outreach Manager</h4>
                         <p className="text-black font-bold text-xl">jerome@pinebookwriting.com</p>
-                        <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 809-1995</p>
+                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">(289) 809-1995</p> */}
+                    </div>
+                </div>
+
+                <div className="flex justify-around flex-col md:flex-row">
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-9.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Hailey Carter</h3>
+                        <h4 className="text-black text-xl font-poppins">Project Manager</h4>
+                        <p className="text-black font-bold text-xl">haileycarter@pinebookwriting.com</p>
+                    </div>
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-5.webp"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Ryan Peters</h3>
+                        <h4 className="text-black text-xl font-poppins">Client Success Strategist</h4>
+                        <p className="text-black font-bold text-xl">ryan@pinebookwriting.com</p>
+                    </div>
+                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-8.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Marcus Ryan</h3>
+                        <h4 className="text-black text-xl font-poppins">Senior Marketing Strategists</h4>
+                        <p className="text-black font-bold text-xl">marcusryan@pinebookpublishing.com</p>
+                    </div>
+                </div>
+
+                <div className="flex justify-around flex-col md:flex-row">
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-9.png"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Bradley Lucas</h3>
+                        <h4 className="text-black text-xl font-poppins">Consultant Manager Writing & Publishing</h4>
+                        <p className="text-black font-bold text-xl">bradleylucas@pinebookpublishing.com</p>
+                    </div>
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/team-5.webp"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jenson Walker</h3>
+                        <h4 className="text-black text-xl font-poppins">Senior Consultant Writing & Publishing</h4>
+                        <p className="text-black font-bold text-xl">jensonwalker@pinebookwriting.com</p>
                     </div>
                 </div>
             </section>
