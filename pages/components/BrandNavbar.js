@@ -156,28 +156,28 @@ export default function BrandNavbar() {
 
                                             <div className="grid grid-cols-3 gap-y-6 gap-x-6 text-center">
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-6.png"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Kenneth Snyder.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Kenneth Snyder</h3>
                                                 </div>
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-7.png"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Emily Jones.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Emily Jones</h3>
                                                 </div>
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-3.webp"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Steve Hayes.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Steve Hayes</h3>
                                                 </div>
 
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-9.png"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Rex Brown.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Rex Brown</h3>
                                                 </div>
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-5.webp"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Lia Sinclair.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Lia Sinclair</h3>
                                                 </div>
                                                 <div className="w-full flex flex-col items-center">
-                                                    <Image src={"/brand-img/team-8.png"} width={70} height={70} className="mb-2" />
+                                                    <Image src={"/brand-img/Jerome Preston.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Jerome Preston</h3>
                                                 </div>
                                             </div>

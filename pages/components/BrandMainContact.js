@@ -349,7 +349,7 @@ export default function BrandMainContact() {
                         {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-379-7913</p> */}
                     </div>
                      <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
-                        <Image src={"/brand-img/team-8.png"} width={210} height={200} className="mb-5" />
+                        <Image src={"/brand-img/Jerome Preston.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jerome Preston</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Consultant & Outreach Manager</h4>
                         <p className="text-black font-bold text-xl">jerome@pinebookwriting.com</p>
