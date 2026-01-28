@@ -25,7 +25,7 @@ const Post = ({ post, recentPosts }) => {
           content={post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'}
         />
         {post?.fields?.canonicalUrl && (
-          <link rel="canonical" href={post.fields.canonicalUrl} />
+          <link rel="canonical" href={post.fields.canonicalUrl} key="canonical" />
         )}
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}

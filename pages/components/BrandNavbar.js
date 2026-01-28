@@ -167,7 +167,6 @@ export default function BrandNavbar() {
                                                     <Image src={"/brand-img/Steve Hayes.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Steve Hayes</h3>
                                                 </div>
-
                                                 <div className="w-full flex flex-col items-center">
                                                     <Image src={"/brand-img/Rex Brown.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Rex Brown</h3>

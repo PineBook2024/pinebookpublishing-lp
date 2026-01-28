@@ -6,6 +6,7 @@ import Script from 'next/script';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
+import { useRouter } from 'next/router';
 import HomePopupNew from "./components/HomePopupNew";
 // import Loader from "./components/Loader";
 
@@ -18,6 +19,7 @@ const poppins = Poppins({
 
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   // const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
@@ -68,10 +70,15 @@ export default function App({ Component, pageProps }) {
 
 
 
+  const baseUrl = "https://pinebookpublishing.com";
+  const path = (router?.asPath || "/").split("?")[0].split("#")[0];
+  const canonicalUrl = `${baseUrl}${path === "/" ? "/" : path}`;
+
   return (
     <>
       <Head>
         <meta name="facebook-domain-verification" content="ddnvgvw5pn3121zvii7izv2bijv916" />
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
         <meta property="og:title" content="Premier Book Publishing Company | Pine Book Publishing" />
         <meta property="og:description" content="A Premier Book Publishing Company dedicated to turn your writing dreams into reality. From manuscript to marketplace, We Make It Happen for YOU!" />
         <meta property="og:image" content="https://pinebookpublishing.com/_next/image?url=%2Fbrand-img%2Flogo.webp&w=256&q=75" />
