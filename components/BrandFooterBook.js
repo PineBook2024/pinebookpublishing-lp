@@ -4,7 +4,7 @@ import Image from "next/image";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube, faThreads } from "@fortawesome/free-brands-svg-icons";
 import WhatsAppChat from "./WhatsAppChat";
 
 export default function BrandFooterBook() {
@@ -224,6 +224,9 @@ export default function BrandFooterBook() {
                                 <Link href="https://www.youtube.com/@Pinebookwriting" target="_blank">
                                     <FontAwesomeIcon icon={faYoutube} className="me-3" />
                                 </Link>
+                                <Link href="https://www.threads.com/@pinebookwriting" target="_blank">
+                  <FontAwesomeIcon icon={faThreads} className="me-3" />
+                </Link>
                             </div>
                             {/* <nav className="list-none mb-10 mt-5">
                                 <li>

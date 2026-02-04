@@ -7,7 +7,7 @@ import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
 import BrandFooterBook from "/components/BrandFooterBook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faThreads } from "@fortawesome/free-solid-svg-icons";
 import Story from "/components/Story";
 import PortfolioSlider3LP from "/components/PortfolioSlider3LP";
 import PortfolioSlider2LP from "/components/PortfolioSlider2LP";
@@ -2389,6 +2389,9 @@ export default function HomePage() {
                 </Link>
                 <Link href="https://www.youtube.com/@Pinebookwriting" target="_blank">
                   <FontAwesomeIcon icon={faYoutube} className="me-3" />
+                </Link>
+                <Link href="https://www.threads.com/@pinebookwriting" target="_blank">
+                  <FontAwesomeIcon icon={faThreads} className="me-3" />
                 </Link>
               </div>
               {/* <nav className="list-none mb-10 mt-5">

@@ -310,13 +310,12 @@ export default function BrandMainContact() {
 
                <section className="max-w-screen-xl mx-auto mt-20 mb-8">
                 <div className="flex justify-around md:flex-row">
-                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
+                    {/* <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/Kenneth Snyder.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Kenneth Snyder</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Project Consultant</h4>
                         <p className="text-black font-bold text-xl">Kenneth@pinebookwriting.com</p>
-                        {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-7142</p> */}
-                    </div>
+                    </div> */}
                     <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/Emily Jones.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Emily Jones</h3>

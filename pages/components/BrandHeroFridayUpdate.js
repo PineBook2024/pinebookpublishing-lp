@@ -173,18 +173,18 @@ export default function BrandHeroFridayUpdate() {
 
         try {
             // Send to both email and HubSpot in parallel
-            const [emailResult, hubspotResponse] = await Promise.all([
-                // Send email notification
+            const [emailResult, hubspotResponse, crmResult] = await Promise.all([
                 sendEmailNotification(formData),
-
-                // Submit to HubSpot
-                submitMainContactForm(
-                    fullName,
-                    email,
-                    phoneNumber,
-                    message
-                )
+                submitMainContactForm(fullName, email, phoneNumber, message),
+                fetch("/api/lead-capture", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData),
+                }).then(r => r.json()),
             ]);
+
+            const crmOk = crmResult?.success === true;
+            console.log(crmOk);
 
             // Check if both submissions were successful
             if (emailResult.success && hubspotResponse) {

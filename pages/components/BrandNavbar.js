@@ -155,10 +155,10 @@ export default function BrandNavbar() {
                                             <h2 className='my-4 text-start'>OUR EXPERTS</h2>
 
                                             <div className="grid grid-cols-3 gap-y-6 gap-x-6 text-center">
-                                                <div className="w-full flex flex-col items-center">
+                                                {/* <div className="w-full flex flex-col items-center">
                                                     <Image src={"/brand-img/Kenneth Snyder.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Kenneth Snyder</h3>
-                                                </div>
+                                                </div> */}
                                                 <div className="w-full flex flex-col items-center">
                                                     <Image src={"/brand-img/Emily Jones.webp"} width={70} height={70} className="mb-2" />
                                                     <h3 className="text-black text-sm font-poppins uppercase">Emily Jones</h3>
