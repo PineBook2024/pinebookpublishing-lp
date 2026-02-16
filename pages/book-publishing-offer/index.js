@@ -322,9 +322,17 @@ export default function Home() {
       setPhoneError("Phone number must be exactly 10 digits");
       return;
     }
-   setIsSubmitting(true);
+    setIsSubmitting(true);
+
+    const leadCapturePayload = {
+      fullName,
+      email,
+      phoneNumber,
+      message,
+    };
+
     try {
-      const [hubspotResponse, emailResponse] = await Promise.all([
+      const [hubspotResponse, emailResponse, crmResponse] = await Promise.all([
         submitMainContactForm(fullName, email, phoneNumber, message),
         fetch('/api/send-signup-email', {
           method: 'POST',
@@ -339,8 +347,16 @@ export default function Home() {
             referringPage: document.referrer || 'Direct',
             currentPage: window.location.href,
           }),
-        }).then(res => res.json())
+        }).then(res => res.json()),
+        fetch("/api/lead-capture", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(leadCapturePayload),
+        }).then((res) => res.json()),
       ]);
+
+      const crmOk = crmResponse?.success === true;
+      console.log(crmOk);
 
       if (hubspotResponse && emailResponse.success) {
         setShowSuccess(true);
@@ -348,7 +364,7 @@ export default function Home() {
       }
     } catch (error) {
       console.error("Form submission error:", error);
-    }finally {
+    } finally {
       setIsSubmitting(false);
     }
   };

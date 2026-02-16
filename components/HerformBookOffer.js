@@ -264,6 +264,7 @@ export default function HeroFormBookOffer() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null); // Default to the first country
 
   const [countryCodeValue, setCountryCodeValue] = useState("");
@@ -418,40 +419,70 @@ export default function HeroFormBookOffer() {
     e.preventDefault();
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
+      return;
     }
-   // Combine phone number and country code
-  const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
 
-  // If you want to send country code and phone separately, you can do this:
-  const phoneData = {
-    countryCode: selectedCountry.countryCode,
-    phoneNumber: phone,
-  };
+    if (!selectedCountry) {
+      return;
+    }
 
-    const response = await submitMainContactFormLP(
-      firstName,
+    setIsSubmitting(true);
+
+    // Combine phone number and country code
+    const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
+
+    const phoneData = {
+      countryCode: selectedCountry.countryCode,
+      phoneNumber: phone,
+    };
+
+    const leadCapturePayload = {
+      fullName: firstName,
       email,
-      combinedPhoneNumber, // Send combined phone number
-      category,
+      phoneNumber: combinedPhoneNumber,
       message,
-      phoneData 
-    );
-    if (response) {
-      setShowSuccess(true);
-      // router.push('/thank-you'); 
-      // router.push('/thankyou-offer')
-      window.location.href = "thankyou-offer";
-      setTimeout(() => {
-        setShowSuccess(false);
-        setEmail("");
-        setFirstName("");
-        setPhone("");
-        setCategory("");
-        setMessage("");
-      }, 3000);
-    }
+    };
 
-    console.log("response", response);
+    try {
+      const [response, crmResult] = await Promise.all([
+        submitMainContactFormLP(
+          firstName,
+          email,
+          combinedPhoneNumber,
+          category,
+          message,
+          phoneData
+        ),
+        fetch("/api/lead-capture", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(leadCapturePayload),
+        }).then((r) => r.json()),
+      ]);
+
+      const crmOk = crmResult?.success === true;
+      console.log(crmOk);
+
+      if (response) {
+        setShowSuccess(true);
+        window.location.href = "thankyou-offer";
+        setTimeout(() => {
+          setShowSuccess(false);
+          setEmail("");
+          setFirstName("");
+          setPhone("");
+          setCategory("");
+          setMessage("");
+        }, 3000);
+      }
+
+      console.log("response", response);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -649,10 +680,11 @@ export default function HeroFormBookOffer() {
                       </p>
                     )}
                     <button
-                      className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
+                      className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl disabled:opacity-50 disabled:cursor-not-allowed"
                       type="submit"
+                      disabled={isSubmitting}
                     >
-                      Submit
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </button>
                   </form>
                 </div>
