@@ -4,7 +4,27 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { fullName, email, phoneNumber, message } = req.body || {};
+    const {
+      fullName,
+      firstName,
+      name,
+      email,
+      phoneNumber,
+      phone,
+      message,
+      service,
+      category,
+    } = req.body || {};
+
+    const payload = {
+      name: fullName || firstName || name || "",
+      email: email || "",
+      phone: phoneNumber || phone || "",
+      message: message || "",
+    };
+
+    const serviceValue = service || category;
+    if (serviceValue) payload.service = serviceValue;
 
     const resp = await fetch(process.env.LEAD_CAPTURE_URL, {
       method: "POST",
@@ -12,12 +32,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
         "X-Lead-Token": process.env.LEAD_CAPTURE_TOKEN,
       },
-      body: JSON.stringify({
-        name: fullName,
-        email,
-        phone: phoneNumber,
-        message,
-      }),
+      body: JSON.stringify(payload),
     });
 
     const data = await resp.json().catch(() => ({}));

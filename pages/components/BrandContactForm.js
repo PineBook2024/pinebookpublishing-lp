@@ -115,6 +115,35 @@ export default function BrandContact() {
         }
     };
 
+    const submitLeadToCRM = async (formData) => {
+        try {
+            const response = await fetch("/api/lead-capture", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    // optional service:
+                    // service: formData.service || "",
+                }),
+            });
+
+            const data = await response.json().catch(() => ({}));
+
+            return {
+                success: response.ok && data?.success !== false,
+                status: response.status,
+                data,
+            };
+        } catch (error) {
+            return { success: false, message: error.message };
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -133,31 +162,30 @@ export default function BrandContact() {
         };
 
         try {
-            // Send to both email and HubSpot in parallel
-            const [emailResult, hubspotResponse] = await Promise.all([
-                // Send email notification
+            const [emailResult, hubspotResult, crmResult] = await Promise.allSettled([
                 sendEmailNotification(formData),
-
-                // Submit to HubSpot
-                submitMainContactForm(
-                    fullName,
-                    email,
-                    phoneNumber,
-                    message
-                )
+                submitMainContactForm(fullName, email, phoneNumber, message),
+                submitLeadToCRM(formData),
             ]);
 
-            // Check if both submissions were successful
-            if (emailResult.success && hubspotResponse) {
-                console.log('Both email and HubSpot submissions successful');
+            const emailOk =
+                emailResult.status === "fulfilled" && emailResult.value?.success === true;
+
+            const hubspotOk =
+                hubspotResult.status === "fulfilled" && !!hubspotResult.value;
+
+            const crmOk =
+                crmResult.status === "fulfilled" && crmResult.value?.success === true;
+
+            console.log({ emailResult, hubspotResult, crmResult });
+
+            if (emailOk || hubspotOk || crmOk) {
                 setShowSuccess(true);
 
-                // Redirect to thank you page
                 setTimeout(() => {
                     router.push("/thank-you");
                 }, 1500);
 
-                // Clear form after delay
                 setTimeout(() => {
                     setShowSuccess(false);
                     setEmail("");
@@ -166,31 +194,16 @@ export default function BrandContact() {
                     setMessage("");
                 }, 3000);
             } else {
-                // Handle partial failure
-                if (!emailResult.success) {
-                    console.error('Email submission failed:', emailResult.message);
-                }
-                if (!hubspotResponse) {
-                    console.error('HubSpot submission failed');
-                }
-
-                // Still show success if at least one succeeded
-                if (emailResult.success || hubspotResponse) {
-                    setShowSuccess(true);
-                    setTimeout(() => {
-                        router.push("/thank-you");
-                    }, 1500);
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
-                }
+                alert("There was an error submitting your form. Please try again.");
             }
         } catch (error) {
-            console.error('Form submission error:', error);
-            alert('There was an error submitting your form. Please try again.');
+            console.error("Form submission error:", error);
+            alert("There was an error submitting your form. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
     };
+
 
 
 

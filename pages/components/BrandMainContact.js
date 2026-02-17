@@ -114,6 +114,35 @@ export default function BrandMainContact() {
         }
     };
 
+    const submitLeadToCRM = async (formData) => {
+        try {
+            const response = await fetch("/api/lead-capture", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                    // optional service:
+                    // service: formData.service || "",
+                }),
+            });
+
+            const data = await response.json().catch(() => ({}));
+
+            return {
+                success: response.ok && data?.success !== false,
+                status: response.status,
+                data,
+            };
+        } catch (error) {
+            return { success: false, message: error.message };
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -132,31 +161,30 @@ export default function BrandMainContact() {
         };
 
         try {
-            // Send to both email and HubSpot in parallel
-            const [emailResult, hubspotResponse] = await Promise.all([
-                // Send email notification
+            const [emailResult, hubspotResult, crmResult] = await Promise.allSettled([
                 sendEmailNotification(formData),
-
-                // Submit to HubSpot
-                submitMainContactForm(
-                    fullName,
-                    email,
-                    phoneNumber,
-                    message
-                )
+                submitMainContactForm(fullName, email, phoneNumber, message),
+                submitLeadToCRM(formData),
             ]);
 
-            // Check if both submissions were successful
-            if (emailResult.success && hubspotResponse) {
-                console.log('Both email and HubSpot submissions successful');
+            const emailOk =
+                emailResult.status === "fulfilled" && emailResult.value?.success === true;
+
+            const hubspotOk =
+                hubspotResult.status === "fulfilled" && !!hubspotResult.value;
+
+            const crmOk =
+                crmResult.status === "fulfilled" && crmResult.value?.success === true;
+
+            console.log({ emailResult, hubspotResult, crmResult });
+
+            if (emailOk || hubspotOk || crmOk) {
                 setShowSuccess(true);
 
-                // Redirect to thank you page
                 setTimeout(() => {
                     router.push("/thank-you");
                 }, 1500);
 
-                // Clear form after delay
                 setTimeout(() => {
                     setShowSuccess(false);
                     setEmail("");
@@ -165,31 +193,16 @@ export default function BrandMainContact() {
                     setMessage("");
                 }, 3000);
             } else {
-                // Handle partial failure
-                if (!emailResult.success) {
-                    console.error('Email submission failed:', emailResult.message);
-                }
-                if (!hubspotResponse) {
-                    console.error('HubSpot submission failed');
-                }
-
-                // Still show success if at least one succeeded
-                if (emailResult.success || hubspotResponse) {
-                    setShowSuccess(true);
-                    setTimeout(() => {
-                        router.push("/thank-you");
-                    }, 1500);
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
-                }
+                alert("There was an error submitting your form. Please try again.");
             }
         } catch (error) {
-            console.error('Form submission error:', error);
-            alert('There was an error submitting your form. Please try again.');
+            console.error("Form submission error:", error);
+            alert("There was an error submitting your form. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
     };
+
 
 
     return (
@@ -292,7 +305,7 @@ export default function BrandMainContact() {
                                     <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
                                 </div>
                                 <label for="remember" class="ms-2 text-sm font-medium text-gray-600 dark:text-gray-300">By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-500">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-500" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-500" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
-                                </div>
+                            </div>
                             {showSuccess && (
                                 <p className="px-1 py-2 text-green-700">
                                     Form submitted Successfully!
@@ -300,7 +313,7 @@ export default function BrandMainContact() {
                             )}
                             <div className="flex justify-center">
                                 <button disabled={isSubmitting} className="p-4 bg-green-500 uppercase text-white rounded font-poppins brand-submit-btn mb-10" type="submit">
-                                     {isSubmitting ? 'Submitting...' : 'Submit'}
+                                    {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </button>
                             </div>
                         </form>
@@ -308,7 +321,7 @@ export default function BrandMainContact() {
                 </div>
             </section>
 
-               <section className="max-w-screen-xl mx-auto mt-20 mb-8">
+            <section className="max-w-screen-xl mx-auto mt-20 mb-8">
                 <div className="flex justify-around md:flex-row">
                     {/* <div className="brand-meet-team-container text-center flex justify-center flex-col items-center">
                         <Image src={"/brand-img/Kenneth Snyder.webp"} width={210} height={200} className="mb-5" />
@@ -346,7 +359,7 @@ export default function BrandMainContact() {
                         <p className="text-black font-bold text-xl">lia@pinebookwriting.com</p>
                         {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-379-7913</p> */}
                     </div>
-                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Jerome Preston.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jerome Preston</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Consultant & Outreach Manager</h4>
@@ -368,7 +381,7 @@ export default function BrandMainContact() {
                         <h4 className="text-black text-xl font-poppins">Client Success Strategist</h4>
                         <p className="text-black font-bold text-xl">ryan@pinebookwriting.com</p>
                     </div>
-                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Marcus Ryan.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Marcus Ryan</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Marketing Strategists</h4>

@@ -291,83 +291,114 @@ export default function Home() {
   // }, [router]);
 
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    const setters = {
-      fullName: setFullName,
-      email: setEmail,
-      message: setMessage,
-      phoneNumber: setPhoneNumber,
-    };
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  const setters = {
+    fullName: setFullName,
+    email: setEmail,
+    message: setMessage,
+    phoneNumber: setPhoneNumber,
+  };
 
-    const setter = setters[name];
-    if (setter) {
-      if (name === 'phoneNumber') {
-        const phoneRegex = /^\d{0,10}$/;
-        if (phoneRegex.test(value)) {
-          setter(value);
-          setPhoneError("");
-        } else {
-          setPhoneError("Phone number must be exactly 10 digits");
-        }
-      } else {
+  const setter = setters[name];
+  if (setter) {
+    if (name === "phoneNumber") {
+      const phoneRegex = /^\d{0,10}$/;
+      if (phoneRegex.test(value)) {
         setter(value);
+        setPhoneError("");
+      } else {
+        setPhoneError("Phone number must be exactly 10 digits");
       }
+    } else {
+      setter(value);
     }
+  }
+};
+
+const submitLeadToCRM = async (payload) => {
+  const res = await fetch("/api/lead-capture", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json().catch(() => ({}));
+
+  return {
+    success: res.ok && data?.success !== false,
+    status: res.status,
+    data,
+  };
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (phoneNumber.length !== 10) {
+    setPhoneError("Phone number must be exactly 10 digits");
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  const leadCapturePayload = {
+    fullName,
+    email,
+    phoneNumber,
+    message,
+    // optional: service field agar ho:
+    // service: selectedService || category || "",
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (phoneNumber.length !== 10) {
-      setPhoneError("Phone number must be exactly 10 digits");
-      return;
+  try {
+    const [hubspotResult, emailResult, crmResult] = await Promise.allSettled([
+      submitMainContactForm(fullName, email, phoneNumber, message),
+      fetch("/api/send-signup-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phoneNumber,
+          message,
+          formType: "contact",
+          countryCode: "",
+          referringPage: document.referrer || "Direct",
+          currentPage: window.location.href,
+        }),
+      }).then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        return { success: res.ok && data?.success !== false, data };
+      }),
+      submitLeadToCRM(leadCapturePayload),
+    ]);
+
+    const hubspotOk =
+      hubspotResult.status === "fulfilled" && !!hubspotResult.value;
+
+    const emailOk =
+      emailResult.status === "fulfilled" && emailResult.value?.success === true;
+
+    const crmOk =
+      crmResult.status === "fulfilled" && crmResult.value?.success === true;
+
+    console.log({ hubspotResult, emailResult, crmResult });
+
+    if (hubspotOk || emailOk || crmOk) {
+      setShowSuccess(true);
+      window.location.href = "thankyou-offer";
+    } else {
+      alert("There was an error submitting your form. Please try again.");
     }
-    setIsSubmitting(true);
+  } catch (error) {
+    console.error("Form submission error:", error);
+    alert("There was an error submitting your form. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
-    const leadCapturePayload = {
-      fullName,
-      email,
-      phoneNumber,
-      message,
-    };
-
-    try {
-      const [hubspotResponse, emailResponse, crmResponse] = await Promise.all([
-        submitMainContactForm(fullName, email, phoneNumber, message),
-        fetch('/api/send-signup-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            fullName,
-            email,
-            phoneNumber,
-            message,
-            formType: 'contact',
-            countryCode: '',
-            referringPage: document.referrer || 'Direct',
-            currentPage: window.location.href,
-          }),
-        }).then(res => res.json()),
-        fetch("/api/lead-capture", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(leadCapturePayload),
-        }).then((res) => res.json()),
-      ]);
-
-      const crmOk = crmResponse?.success === true;
-      console.log(crmOk);
-
-      if (hubspotResponse && emailResponse.success) {
-        setShowSuccess(true);
-        window.location.href = "thankyou-offer";
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
 
   const [openFAQ, setOpenFAQ] = useState(null);

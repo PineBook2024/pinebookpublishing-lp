@@ -415,8 +415,29 @@ export default function HeroFormBookOffer() {
     }
   };
 
+  const submitLeadToCRM = async (formData) => {
+    const resp = await fetch("/api/lead-capture", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await resp.json().catch(() => ({}));
+
+    return {
+      success: resp.ok && data?.success !== false,
+      status: resp.status,
+      data,
+    };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!selectedCountry) {
+      alert("Country is loading, please wait.");
+      return;
+    }
 
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
@@ -425,79 +446,43 @@ export default function HeroFormBookOffer() {
 
     setIsSubmitting(true);
 
-    // Combine phone number and country code
     const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
-
     const formData = {
       firstName,
       email,
       phone: combinedPhoneNumber,
-      category,
+      category, // CRM me service map ho jayegi
       message,
       countryCode: selectedCountry.countryCode,
     };
 
     try {
-      // Send to both email and HubSpot in parallel
-      const [emailResult, hubspotResponse] = await Promise.all([
-        // Send email notification
+      const [emailResult, hubspotResponse, crmResult] = await Promise.allSettled([
         sendEmailNotification(formData),
-
-        // Submit to HubSpot
-        submitMainContactFormLP(
-          firstName,
-          email,
-          combinedPhoneNumber,
-          category,
-          message
-        )
+        submitMainContactFormLP(firstName, email, combinedPhoneNumber, category, message),
+        submitLeadToCRM(formData),
       ]);
 
-      // Check if both submissions were successful
-      if (emailResult.success && hubspotResponse) {
-        console.log('Both email and HubSpot submissions successful');
+      const emailOk = emailResult.status === "fulfilled" && emailResult.value?.success;
+      const hubspotOk = hubspotResponse.status === "fulfilled" && !!hubspotResponse.value;
+      const crmOk = crmResult.status === "fulfilled" && crmResult.value?.success;
+
+      console.log({ emailResult, hubspotResponse, crmResult });
+
+      if (emailOk || hubspotOk || crmOk) {
         setShowSuccess(true);
-
-        // Redirect to thank you page
-        setTimeout(() => {
-          window.location.href = "/thankyou-offer";
-        }, 1500);
-
-        // Clear form after delay
-        setTimeout(() => {
-          setShowSuccess(false);
-          setEmail("");
-          setFirstName("");
-          setPhone("");
-          setCategory("");
-          setMessage("");
-        }, 3000);
+        setTimeout(() => (window.location.href = "/thankyou-offer"), 1500);
       } else {
-        // Handle partial failure
-        if (!emailResult.success) {
-          console.error('Email submission failed:', emailResult.message);
-        }
-        if (!hubspotResponse) {
-          console.error('HubSpot submission failed');
-        }
-
-        // Still show success if at least one succeeded
-        if (emailResult.success || hubspotResponse) {
-          setShowSuccess(true);
-          setTimeout(() => {
-            window.location.href = "/thankyou-offer";
-          }, 1500);
-        } else {
-          alert('There was an error submitting your form. Please try again.');
-        }
+        alert("There was an error submitting your form. Please try again.");
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('There was an error submitting your form. Please try again.');
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const categoryPublishing = [
     "Book Publishing",
