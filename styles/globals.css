@@ -4000,21 +4000,21 @@ a.close-chat:hover {
   font-size: 19px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h4 {
   font-size: 17px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h5 {
   font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h6 {
