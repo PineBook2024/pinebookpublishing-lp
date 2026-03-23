@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
 import BrandFooterBook from "/components/BrandFooterBook";
-import HeroFormBookOffer from "../components/HerformBookOffer";
+import HeroFormBookOffer, { countryCodes as projectCountryCodes } from "../components/HerformBookOffer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faThreads } from "@fortawesome/free-solid-svg-icons";
 import Story from "/components/Story";
@@ -33,9 +33,6 @@ import PortfolioSlider2 from "../components/PortfolioSlider2";
 import PortfolioSlider3 from "../components/PortfolioSlider3";
 import PortfolioSlider5 from "../components/PortfolioSlider5";
 
-
-
-
 export default function HomePage() {
   const handleOpenChat = () => {
     window.zE && window.zE('webWidget', 'open');
@@ -49,10 +46,15 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState("Fiction");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [projectCountry, setProjectCountry] = useState("US");
+  const [projectPhone, setProjectPhone] = useState("");
 
   const swiperRef2 = useRef(null);
   const lightboxRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('Published Books');
+  const selectedProjectCountry =
+    projectCountryCodes.find((country) => country.countryCode === projectCountry) ||
+    projectCountryCodes[0];
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -630,6 +632,10 @@ export default function HomePage() {
       if (result.success) {
         alert('Thank you! Your message has been sent successfully.');
         e.target.reset();
+        if (formType === 'Project Needs') {
+          setProjectCountry("US");
+          setProjectPhone("");
+        }
         if (formType === 'Modal') {
           setIsOpen(false);
         }
@@ -1100,7 +1106,7 @@ export default function HomePage() {
       {/* ------------------ PORTFOLIO SECTION ------------------ */}
 
       <div className="w-full max-w-6xl mx-auto py-8 relative home-book-cover">
-        <div class="max-w-6xl mx-auto px-6"><h2 class="text-3xl font-bold mb-2 text-center">Our Portfolio</h2><p class="text-center text-gray-600 mb-8">A few of the bestselling books we’ve proudly published for our amazing authors.</p></div>
+        {/* <div class="max-w-6xl mx-auto px-6"><h2 class="text-3xl font-bold mb-2 text-center">Our Portfolio</h2><p class="text-center text-gray-600 mb-8">A few of the bestselling books we’ve proudly published for our amazing authors.</p></div> */}
         {/* Custom Previous Button */}
         <div
           className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon prev cursor-pointer"
@@ -1297,7 +1303,7 @@ export default function HomePage() {
           {/* <!-- Left Side Image --> */}
           <div class="w-full md:w-1/2 flex justify-center">
             <Image
-              src="/brand-img/new-lp/cta_img.webp"
+              src="/brand-img/new-lp/cta_img-new.webp"
               alt="Author writing a book"
               width="500"
               height="400"
@@ -1531,7 +1537,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1582,7 +1588,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1636,7 +1642,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1695,7 +1701,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1758,7 +1764,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1830,7 +1836,7 @@ export default function HomePage() {
                   <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
                     📞 Talk to Us
                   </a>
-                  <a href="javascript:;" className="hover:text-[#15184c] transition">
+                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
                     💬 Chat With Us
                   </a>
                 </div>
@@ -1952,14 +1958,14 @@ export default function HomePage() {
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-[#117d6b] text-white rounded-2xl p-8">
-            <h2 className="text-2xl font-semibold mb-6">
+          <div className="bg-[#117d6b] rounded-2xl p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-white">
               Tell Us About Your Project Needs
             </h2>
 
             <form onSubmit={(e) => handleFormSubmit(e, 'Project Needs')} className="space-y-4">
               {/* Services Checkboxes */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 text-white">
                 {[
                   "Book Publishing",
                   "Cover Design",
@@ -1998,17 +2004,56 @@ export default function HomePage() {
                 required
               />
 
-              {/* Phone Field */}
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your Phone No *"
-                pattern="[0-9]{10}"
-                minLength="10"
-                maxLength="15"
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                required
-              />
+              {/* Phone Field With Country Code */}
+              <div className="relative w-full">
+                <div className="tel-box">
+                  <div className="country-input-wrapper">
+                    <div className="select-box">
+                      <div className="select-box flex items-center">
+                        <select
+                          className="country-select pl-2 pr-2 py-2 cursor-pointer"
+                          value={projectCountry}
+                          onChange={(e) => setProjectCountry(e.target.value)}
+                        >
+                          {projectCountryCodes.map((country) => (
+                            <option key={country.countryCode} value={country.countryCode}>
+                              {country.name} (+{country.code})
+                            </option>
+                          ))}
+                        </select>
+                        <img
+                          src={selectedProjectCountry.flag}
+                          alt={`Flag of ${selectedProjectCountry.name}`}
+                          className="flag-img w-6 h-4 ml-2"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="country-input-wrapper flex items-center mt-2">
+                      <span className="country-code text-lg font-semibold">
+                        +{selectedProjectCountry.code}
+                      </span>
+                      <input
+                        type="tel"
+                        name="phone_local"
+                        placeholder="Enter your Phone No *"
+                        pattern="[0-9]{7,15}"
+                        minLength={7}
+                        maxLength={15}
+                        value={projectPhone}
+                        onChange={(e) => setProjectPhone(e.target.value.replace(/\D/g, ""))}
+                        className="tel pl-4 pr-4 py-3 w-full rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                        required
+                      />
+                    </div>
+                    <input
+                      type="hidden"
+                      name="phone"
+                      value={`+${selectedProjectCountry.code} ${projectPhone}`}
+                    />
+                  </div>
+                </div>
+              </div>
 
               {/* Manuscript Status Dropdown */}
               <select
@@ -2058,7 +2103,7 @@ export default function HomePage() {
                   required
                   className="mt-1 accent-[#15184c]"
                 />
-                <span>
+                <span className="text-white">
                   I agree to receive communications by text message about my
                   inquiry. Message and data rates may apply.
                 </span>
@@ -2205,7 +2250,7 @@ export default function HomePage() {
           {/* Right Image */}
           <div className="flex justify-center">
             <Image
-              src="/brand-img/new-lp/Our.png"
+              src="/brand-img/new-lp/Our.webp"
               alt="Books stack"
               width={400}
               height={300}
@@ -2247,7 +2292,7 @@ export default function HomePage() {
               <div className="relative mt-10 hidden md:block">
                 <div className="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-r from-[#8fd3c8] to-[#fef4d6]" />
                 <img
-                  src="/brand-img/new-lp/strips.png"
+                  src="/brand-img/new-lp/strips.webp"
                   alt="Book covers"
                   className="relative z-[1] max-w-full h-auto"
                 />
@@ -2727,3 +2772,4 @@ export default function HomePage() {
     </main>
   );
 }
+

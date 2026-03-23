@@ -31,12 +31,7 @@ export default function App({ Component, pageProps }) {
   //   return () => clearTimeout(timer);
   // }, []);
 
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-9X52J8V8NK');
-  }, []);
+
 
   useEffect(() => {
     AOS.init({
@@ -194,6 +189,15 @@ export default function App({ Component, pageProps }) {
       <main className={`${poppins.variable}`}>
 
         <Component {...pageProps} />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9X52J8V8NK"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9X52J8V8NK');
+          `}
+        </Script>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
         <Script
           dangerouslySetInnerHTML={{

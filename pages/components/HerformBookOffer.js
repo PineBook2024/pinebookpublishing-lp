@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import FadeIn from "./FadeIn";
 import SnowFall from "/components/SnowFall";
 
-const countryCodes = [
+export const countryCodes = [
   { name: "United States", code: "1", countryCode: "US", flag: "https://flagcdn.com/us.svg" },
   { name: "United Kingdom", code: "44", countryCode: "GB", flag: "https://flagcdn.com/gb.svg" },
   { name: "Canada", code: "1", countryCode: "CA", flag: "https://flagcdn.com/ca.svg" },
