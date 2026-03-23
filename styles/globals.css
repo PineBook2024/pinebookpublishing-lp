@@ -4048,7 +4048,7 @@ a.close-chat:hover {
 
 .prose table {
   margin-bottom: 10px;
-  
+
 }
 
 .prose table,
@@ -4653,4 +4653,20 @@ html[dir="rtl"] .container {
 /* Fix for Google Translate iframe */
 iframe.goog-te-banner-frame {
   display: none !important;
+}
+
+.blink {
+  animation: blinkAnimation 1.5s infinite;
+}
+
+@keyframes blinkAnimation {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }

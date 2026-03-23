@@ -123,76 +123,85 @@ const videoClient = [
         clientname: "David Van Fleet"
     },
     {
-        id:14,
+        id: 14,
         src: "https://www.youtube.com/embed/VsO2MhLTZPk",
         type: "video/mp4",
         BookTitle: "Go Ask Sabrina",
         Consultant: "Damon Peters",
         ProjectManager: "Lia Sinclair",
-        clientname : "Sabrina Biamby"
+        clientname: "Sabrina Biamby"
     },
     {
-        id:15,
+        id: 15,
         src: "https://www.youtube-nocookie.com/embed/_a6emmDhe7c?si=X8tc5K20NopJcxLV",
         type: "video/mp4",
         BookTitle: "The Other Side (Part 1 & Part 2)",
         Consultant: "Steve Hayes",
         ProjectManager: "Lia Sinclair",
-        clientname : "Unique Moore"
+        clientname: "Unique Moore"
     },
-     {
-        id:16,
+    {
+        id: 16,
         src: "https://www.youtube-nocookie.com/embed/Sae1noZeLvg",
         type: "video/mp4",
         BookTitle: "Orthomolecular biohacking: From Pauling to Panfili",
         Consultant: "Steve Hayes",
         ProjectManager: "Lia Sinclair ",
-        clientname : "Adolfo Professor Pamphili"
+        clientname: "Adolfo Professor Pamphili"
     },
     {
-        id:17,
+        id: 17,
         src: "https://www.youtube-nocookie.com/embed/FJgKVI-sAIo",
         type: "video/mp4",
         BookTitle: "Shin Misaki: Future Dark Ages of World War IV",
         Consultant: "Steve Hayes",
         ProjectManager: "Rex Brown ",
-        clientname : " Theodore A Anderson"
+        clientname: " Theodore A Anderson"
     },
     {
-        id:18,
+        id: 18,
         src: "https://www.youtube-nocookie.com/embed/S0F5k_mP9no ",
         type: "video/mp4",
         BookTitle: "The Tale Of A Phantom Trail",
         Consultant: "Steve Hayes",
         ProjectManager: "Rex Brown",
-        clientname : "Phyllis McGillivary"
+        clientname: "Phyllis McGillivary"
     },
     {
-        id:19,
+        id: 19,
         src: "https://www.youtube-nocookie.com/embed/_muLcViAkZI",
         type: "video/mp4",
         BookTitle: "Forbidden: The Definitive Edition",
         Consultant: "Jenson Walker",
         ProjectManager: "Rex Brown",
-        clientname : "Tanna Marie Angers"
+        clientname: "Tanna Marie Angers"
     },
     {
-        id:20,
+        id: 20,
         src: "https://www.youtube-nocookie.com/embed/fKner3oan7Q",
         type: "video/mp4",
         BookTitle: "From Where Lions Speak",
         Consultant: "Steve Hayes",
         ProjectManager: "Rex Brown",
-        clientname : "Douglas P Andonian"
+        clientname: "Douglas P Andonian"
     },
     {
-        id:21,
+        id: 21,
         src: "https://www.youtube-nocookie.com/embed/77grNmvBBXU",
         type: "video/mp4",
         BookTitle: "Hebrew And Greek Insights Eight Biblical Words Explained",
         Consultant: "Steve Hayes",
         ProjectManager: "Rex Brown",
-        clientname : "Lezlie Ann Watson"
+        clientname: "Lezlie Ann Watson"
+    },
+    {
+        id: 22,
+        src: "https://www.youtube-nocookie.com/embed/77grNmvBBXU",
+        type: "video/mp4",
+        BookTitle: "Das Trevas Para Luz",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Lia Sinclair",
+        clientname: "Miguel De Oliveira"
     },
 ]
 const BrandTesti = () => {

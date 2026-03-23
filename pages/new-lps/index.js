@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
 import BrandFooterBook from "/components/BrandFooterBook";
+import HeroFormBookOffer from "../components/HerformBookOffer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faThreads } from "@fortawesome/free-solid-svg-icons";
 import Story from "/components/Story";
@@ -26,6 +27,11 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import 'glightbox/dist/css/glightbox.min.css';
 import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
+import PortfolioSlider4 from "../components/PortfolioSlider4";
+import PortfolioSlider1 from "../components/PortfolioSlider1";
+import PortfolioSlider2 from "../components/PortfolioSlider2";
+import PortfolioSlider3 from "../components/PortfolioSlider3";
+import PortfolioSlider5 from "../components/PortfolioSlider5";
 
 
 
@@ -36,6 +42,8 @@ export default function HomePage() {
   };
 
   const counterRef = useRef(null);
+  const swiperRef = useRef();
+  const swiperRef3 = useRef();
   const [startCounter, setStartCounter] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Fiction");
@@ -65,6 +73,12 @@ export default function HomePage() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (lightboxRef.current) {
+      lightboxRef.current.reload();
+    }
+  }, [activeCategory]);
 
 
   const books = [
@@ -666,7 +680,7 @@ export default function HomePage() {
       {/* ------------------ HEADER ------------------ */}
 
       <header>
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 gap-10">
+        <div className="relative z-10 w-full max-w-6xl mx-auto gap-10">
           <div className="flex flex-row justify-between items-center py-6">
             <Link href="/new-lps">
               <Image
@@ -696,7 +710,7 @@ export default function HomePage() {
       </header>
 
       {/* ------------------ HERO SECTION ------------------ */}
-      <section className="relative bg-[#0a2c24] text-white md:min-h-[90vh] py-36 flex items-center justify-center">
+      <section className="relative bg-[#0a2c24]  md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <Image
             src="/images/hero-bg.webp"
@@ -705,180 +719,383 @@ export default function HomePage() {
             className="object-cover opacity-30"
           />
         </div>
+        <div className="relative z-10 w-full max-w-6xl">
+          <HeroFormBookOffer />
+        </div>
+      </section>
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-          {/* Left Text */}
-          <div className="flex flex-col justify-center md:space-y-6 space-y-5">
-            <h5 className="text-2xl text-bold">#1 Self Publishing Company</h5>
-            <h1 className="text-2xl md:text-5xl font-bold leading-snug">
-              DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
-            </h1>
-            <p className="text-lg text-gray-200 uppercase">
-              Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.</p>
-            <div className="flex gap-4 mt-6">
-              {/* Primary Button */}
-              <button onClick={() => setIsOpen(true)} className="bg-[#15184c] border-2 border-[#fff] transition-ease text-[#fff] font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-[#fff] hover:text-black hover:shadow-2xl duration-300 flex items-center">
-                Get Started
-              </button>
-
-              {/* Secondary Button */}
-              <button onClick={handleOpenChat} className="px-8 py-3 rounded-full font-semibold bg-transparent text-[#fff] border-2 border-[#fff]  duration-300 hover:bg-[#fff] hover:text-[#117d6b] hover:border-[#15184c] hover:opacity-100">
-                Live Chat
-              </button>
+      <section className="brnd-slider bg-black overflow-hidden">
+        {/* <AnimateFade type={"right"}> */}
+        <div className="container grid grid-cols-1 width-container position-relative">
+          <div className="container mx-auto position-relative">
+            <div className="book-sell-text ">
+              <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
             </div>
+            <div className="bnd-slider flex py-7 justify-center">
+              <Swiper
+                className="px-20 gap-x-32"
+                spaceBetween={15}
+                slidesPerView={6}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={false}
+                onBeforeInit={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
+                modules={[Navigation, Autoplay, Pagination]}
+                breakpoints={{
+                  "@0.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
 
-            <Image
-              src="/brand-img/new-lp/badge.webp"
-              alt="PineBookPublishing badge"
-              width={500}
-              height={60}
-            />
-          </div>
-
-          <div
-            className="w-full flex flex-col justify-center p-8 bg-white rounded-2xl shadow-xl duration-500 hover:shadow-2xl relative"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
-            <div className="absolute inset-0 translate-y-4 blur-2xl bg-black/10 rounded-[32px] pointer-events-none" />
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold text-[#117d6b] uppercase">Up to 50% Off On</h2>
-              <h5 className="text-xl font-semibold text-[#15184c] mt-2 uppercase">
-                Book Publishing Packages
-              </h5>
-            </div>
-
-            <form onSubmit={(e) => handleFormSubmit(e, 'Hero Form')} className="space-y-4 ">
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your Name *"
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#15184c] focus:border-transparent outline-none text-black"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your Email *"
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#15184c] focus:border-transparent outline-none text-black"
-              />
-              <input
-                name="phone"
-                type="tel"
-                minLength="10"
-                maxLength="10"
-                pattern="[0-9]{10}"
-                placeholder="Enter your Phone No"
-                title="Please Enter Valid Phone No."
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#15184c] focus:border-transparent outline-none text-black"
-              />
-              <textarea
-                name="msg"
-                placeholder="Tell me about your book"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 h-28 resize-none focus:ring-2 focus:ring-[#15184c] focus:border-transparent outline-none text-black"
-              ></textarea>
-              <label className="flex items-start space-x-2 text-sm text-gray-700">
-                <input
-                  type="checkbox"
-                  name="subscribe"
-                  value="yes"
-                  className="mt-1 accent-[#15184c]"
-                />
-                <span className="text-left">
-                  I agree to the <a href="#" className="text-[#15184c] underline">Privacy Policy</a>
-                  and allow contact for service-related communication.
-                </span>
-              </label>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#117d6b] text-white font-semibold py-3 rounded-lg hover:bg-[#15184c] hover:text-[#fff] duration-300 disabled:opacity-50"
+                    navigation: {
+                      enabled: false,
+                    },
+                    pagination: true,
+                    navigation: true,
+                  },
+                  "@1.00": {
+                    slidesPerView: 6,
+                    spaceBetween: 15,
+                  },
+                }}
               >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-              </button>
-            </form>
-          </div>
+                <SwiperSlide className="mx-auto text-center">
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/Smashwords.png"}
+                        width={110}
+                        height={80}
+                        className="custom-logo-size"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
 
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/Barnes-and-Noble.png"}
+                        width={70}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/Google-Books.png"}
+                        width={100}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/Draft2digital.png"}
+                        width={100}
+                        height={120}
+                        loading="lazy"
+                        className="custom-logo-size"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo5.png"}
+                        width={100}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo6.png"}
+                        width={100}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo7.png"}
+                        width={100}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="flex justify-center">
+                    <a href="#">
+                      <Image
+                        alt="LOGO"
+                        src={"/images/logo8.png"}
+                        width={100}
+                        height={80}
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
         </div>
+        {/* </AnimateFade> */}
       </section>
 
-
-
-
-      {/* ------------------ COUNTER SECTION ------------------ */}
-      <section ref={counterRef} className="bg-[#117d6b] text-white py-12 text-center">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            {/* <h2 className="text-4xl font-bold">2500</h2> */}
-            <span className="text-4xl font-bold">
-              {startCounter && (
-                <CountUp
-                  start={0}
-                  end={2500}
-                  duration={3}
-                  separator=","
-                />
-              )}
-              +
-            </span>
-            <p className="text-sm text-gray-200 mt-1">Published Authors</p>
+      <section className="about pt-14 overflow-hidden">
+        <div className="container mx-auto px-5 md:px-0 w-full lg:max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
+            {/* <AnimateFade type={"top"}> */}
+            <div className="abt-txt m1-h p1">
+              <h3 className="font-poppins text-3xl md:text-5xl font-bold">
+                About<span>Pine Book Publishing</span>
+              </h3>
+              <p className="pt-3">
+                Pine Book Publishing has been helping new to seasoned writers for years with the mission of providing quality writing, editing, and publishing services worldwide, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
+                We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
+              </p>
+              <div className="flex gap-6">
+                <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
+                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
+              </div>
+              {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
+                  {clientLogos.map((logo, index) => (
+                    <Link key={index} href={logo.href} target="_blank">
+                      <Image
+                        alt={logo.alt}
+                        src={logo.src}
+                        width={logo.width}
+                        height={logo.height}
+                      />
+                    </Link>
+                  ))}
+                </div> */}
+            </div>
+            {/* </AnimateFade> */}
+            <div className="abt-pic text-center">
+              {/* <AnimateFade type={"left"}> */}
+              <Image src={"/images/About-us-img.webp"} width={500} height={570}
+                layout="responsive"
+                loading="lazy"
+                alt="about img"
+              />
+              {/* </AnimateFade> */}
+            </div>
           </div>
 
-          <div>
-            {/* <h2 className="text-4xl font-bold">400</h2> */}
-            <span className="text-4xl font-bold">
-              {startCounter && (
-                <CountUp
-                  start={0}
-                  end={400}
-                  duration={3}
-                  separator=","
-                />
-              )}
-              +
-            </span>
-            <p className="text-sm text-gray-200 mt-1">Editing Experts</p>
+          <div className="book-joun relative p-5 rounded-lg md:p-10 mb-9">
+            <div className="text-center">
+              <Swiper
+                className="px-20"
+                spaceBetween={15}
+                slidesPerView={3}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={false}
+                onBeforeInit={(swiper) => {
+                  swiperRef3.current = swiper;
+                }}
+                modules={[Navigation, Autoplay, Pagination]}
+                breakpoints={{
+                  "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    navigation: {
+                      enabled: false,
+                    },
+                    pagination: false,
+                    navigation: true,
+                  },
+                  "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row justify-between items-center border-about-card">
+                    <Image
+                      src={"/images/b1.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img one"
+                    ></Image>
+                    <p className="p-4">
+                      Explore worlds of knowledge and discovery.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b2.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img two"
+                    ></Image>
+                    <p className="p-4">
+                      Journey through the lives and experiences of others.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b3.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img three"
+                    ></Image>
+                    <p className="p-4">
+                      Get lost in imaginary worlds and captivating narratives.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b4.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img four"
+                    ></Image>
+                    <p className="p-4">
+                      Discover the truth and reality behind fascinating topics.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b5.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img five"
+                    ></Image>
+                    <p className="p-4">
+                      Dive into the personal stories and reflections of individuals.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b6.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img six"
+                    ></Image>
+                    <p className="p-4">
+                      Learn about the lives and achievements of remarkable figures.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b7.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img seven"
+                    ></Image>
+                    <p className="p-4">
+                      Embark on thrilling quests and adrenaline-pumping escapades.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b8.png"}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      alt="book img eight"
+                    ></Image>
+                    <p className="p-4">
+                      Indulge in tales of love, passion, and heartwarming connections.
+                    </p>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                    <Image
+                      src={"/images/b9.png"}
+                      width={100}
+                      loading="lazy"
+                      alt="book img nine"
+                      height={100}
+                    ></Image>
+                    <p className="p-4">
+                      Experience a collection of diverse stories and perspectives.
+                    </p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+              <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+              <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+            </div>
           </div>
-
-          <div>
-            {/* <h2 className="text-4xl font-bold">25000</h2> */}
-            <span className="text-4xl font-bold">
-              {startCounter && (
-                <CountUp
-                  start={0}
-                  end={25000}
-                  duration={3}
-                  separator=","
-                />
-              )}
-              +
-            </span>
-            <p className="text-sm text-gray-200 mt-1">Books Published</p>
-          </div>
-
-          <div>
-            {/* <h2 className="text-4xl font-bold">2 </h2> */}
-            <span className="text-4xl font-bold">
-              {startCounter && (
-                <CountUp
-                  start={0}
-                  end={2}
-                  duration={3}
-                  separator=","
-                />
-              )}
-              M +
-
-            </span>
-            <p className="text-sm text-gray-200 mt-1">Happy Readers</p>
-          </div>
-
         </div>
       </section>
-
-
 
       {/* ------------------ PORTFOLIO SECTION ------------------ */}
 
@@ -929,27 +1146,20 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
             {filteredBooks.map(book => (
               <SwiperSlide key={book.id}>
-                {book.url ? (
-                  <Link href={book.url} className="relative h-full flex flex-col gap-6 books" target="_blank">
-                    <div>
-                      <img src={book.src} alt={`Book ${book.id}`} class="object-contain" />
-                    </div>
-                    <div className="content">
-                      <h4 className="text-size-custom">{book.title}</h4>
-                      <h4>{book.author}</h4>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="relative h-full flex flex-col gap-6 books">
-                    <div>
-                      <img src={book.src} alt={`Book ${book.id}`} class="object-contain" />
-                    </div>
-                    <div className="content">
-                      <h4 className="text-size-custom">{book.title}</h4>
-                      <h4>{book.author}</h4>
-                    </div>
+                <div className="relative h-full flex flex-col gap-6 books">
+                  <a
+                    href={book.src}
+                    className="glightbox5 block"
+                    data-gallery="portfolio-books"
+                    data-glightbox={`title: ${book.title}; description: ${book.author || ""}`}
+                  >
+                    <img src={book.src} alt={`Book ${book.id}`} className="object-contain" />
+                  </a>
+                  <div className="content">
+                    <h4 className="text-size-custom">{book.title}</h4>
+                    <h4>{book.author}</h4>
                   </div>
-                )}
+                </div>
               </SwiperSlide>
             ))}
           </div>
@@ -962,13 +1172,15 @@ export default function HomePage() {
         >
           <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
         </div>
-        <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" />
+        {/* <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" /> */}
       </div>
 
-      <section className="bg-[#2c9384] pt-10">
-        {/* <PortfolioSlider3LP /> */}
-        <PortfolioSlider2LP />
-        {/* <PortfolioSlider1LP /> */}
+      <section className="bg-[#f5f5f5] pt-10">
+        <PortfolioSlider4 />
+        <PortfolioSlider1 />
+        <PortfolioSlider2 />
+        <PortfolioSlider3 />
+        <PortfolioSlider5 />
       </section>
 
 
@@ -1164,64 +1376,101 @@ export default function HomePage() {
             <div
               class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
             >
-              <h2 class="text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                 Step 1
               </h2>
+              <img src={"/images/Editing.png"} alt="logo" className="mx-auto" width={50} height={50} />
               <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Manuscript Review & Publishing Strategy
+                Editing
               </h6>
-              <p class="text-gray-600 text-sm leading-relaxed">
-                We assess your book’s needs and recommend the best publishing path —
-                self-publishing or hybrid publishing.
-              </p>
             </div>
 
             {/* <!-- Step 2 --> */}
             <div
               class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
             >
-              <h2 class="text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                 Step 2
               </h2>
+              <img src={"/images/Proofreading.png"} alt="logo" className="mx-auto" width={50} height={50} />
               <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Editing, Formatting & Cover Design
+                Proofreading
               </h6>
-              <p class="text-gray-600 text-sm leading-relaxed">
-                Our team edits, formats, and designs a professional book layout to
-                ensure high-quality publishing.
-              </p>
             </div>
 
             {/* <!-- Step 3 --> */}
             <div
               class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
             >
-              <h2 class="text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                 Step 3
               </h2>
+              <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
+
               <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Publishing & Distribution Setup
+                TypeSetting
               </h6>
-              <p class="text-gray-600 text-sm leading-relaxed">
-                We publish your book across eBook, print, and audiobook platforms,
-                ensuring wide availability and seamless distribution.
-              </p>
             </div>
 
             {/* <!-- Step 4 --> */}
             <div
               class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
             >
-              <h2 class="text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                 Step 4
               </h2>
+              <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
               <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Book Launch & Marketing Support
+                Layout Adjustment
               </h6>
-              <p class="text-gray-600 text-sm leading-relaxed">
-                We help with launch strategies, marketing campaigns, and ongoing book
-                promotions to maximize your book’s success.
-              </p>
+            </div>
+
+            <div
+              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+            >
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                Step 5
+              </h2>
+              <img src={"/images/Formatting.png"} alt="logo" className="mx-auto" width={50} height={50} />
+              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                Formatting
+              </h6>
+            </div>
+
+            <div
+              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+            >
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                Step 6
+              </h2>
+              <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                Cover Designing
+              </h6>
+            </div>
+
+            <div
+              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+            >
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                Step 7
+              </h2>
+              <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                Cover Adjustment
+              </h6>
+            </div>
+
+            <div
+              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+            >
+              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                Step 8
+              </h2>
+              <img src={"/images/Publishing.png"} alt="logo" className="mx-auto" width={50} height={50} />
+              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                Publishing
+              </h6>
             </div>
           </div>
         </div>

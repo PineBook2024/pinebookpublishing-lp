@@ -541,7 +541,7 @@ export default function HeroFormBookOffer() {
         <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
           <div className="mb-4">
             <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white">
-              <span className="px-2 py-0">#1 Self</span> Publishing Company
+              <span className="px-2 py-0 blink">#1 Self</span> Publishing Company
             </h3>
             <FadeIn>
               <h1 className="font-poppins text-3xl md:text-3xl text-white font-bold">

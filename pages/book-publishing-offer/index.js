@@ -291,113 +291,113 @@ export default function Home() {
   // }, [router]);
 
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  const setters = {
-    fullName: setFullName,
-    email: setEmail,
-    message: setMessage,
-    phoneNumber: setPhoneNumber,
-  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const setters = {
+      fullName: setFullName,
+      email: setEmail,
+      message: setMessage,
+      phoneNumber: setPhoneNumber,
+    };
 
-  const setter = setters[name];
-  if (setter) {
-    if (name === "phoneNumber") {
-      const phoneRegex = /^\d{0,10}$/;
-      if (phoneRegex.test(value)) {
-        setter(value);
-        setPhoneError("");
+    const setter = setters[name];
+    if (setter) {
+      if (name === "phoneNumber") {
+        const phoneRegex = /^\d{0,10}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          setPhoneError("");
+        } else {
+          setPhoneError("Phone number must be exactly 10 digits");
+        }
       } else {
-        setPhoneError("Phone number must be exactly 10 digits");
+        setter(value);
       }
-    } else {
-      setter(value);
     }
-  }
-};
-
-const submitLeadToCRM = async (payload) => {
-  const res = await fetch("/api/lead-capture", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  const data = await res.json().catch(() => ({}));
-
-  return {
-    success: res.ok && data?.success !== false,
-    status: res.status,
-    data,
-  };
-};
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  if (phoneNumber.length !== 10) {
-    setPhoneError("Phone number must be exactly 10 digits");
-    return;
-  }
-
-  setIsSubmitting(true);
-
-  const leadCapturePayload = {
-    fullName,
-    email,
-    phoneNumber,
-    message,
-    // optional: service field agar ho:
-    // service: selectedService || category || "",
   };
 
-  try {
-    const [hubspotResult, emailResult, crmResult] = await Promise.allSettled([
-      submitMainContactForm(fullName, email, phoneNumber, message),
-      fetch("/api/send-signup-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName,
-          email,
-          phoneNumber,
-          message,
-          formType: "contact",
-          countryCode: "",
-          referringPage: document.referrer || "Direct",
-          currentPage: window.location.href,
+  const submitLeadToCRM = async (payload) => {
+    const res = await fetch("/api/lead-capture", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    return {
+      success: res.ok && data?.success !== false,
+      status: res.status,
+      data,
+    };
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (phoneNumber.length !== 10) {
+      setPhoneError("Phone number must be exactly 10 digits");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const leadCapturePayload = {
+      fullName,
+      email,
+      phoneNumber,
+      message,
+      // optional: service field agar ho:
+      // service: selectedService || category || "",
+    };
+
+    try {
+      const [hubspotResult, emailResult, crmResult] = await Promise.allSettled([
+        submitMainContactForm(fullName, email, phoneNumber, message),
+        fetch("/api/send-signup-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName,
+            email,
+            phoneNumber,
+            message,
+            formType: "contact",
+            countryCode: "",
+            referringPage: document.referrer || "Direct",
+            currentPage: window.location.href,
+          }),
+        }).then(async (res) => {
+          const data = await res.json().catch(() => ({}));
+          return { success: res.ok && data?.success !== false, data };
         }),
-      }).then(async (res) => {
-        const data = await res.json().catch(() => ({}));
-        return { success: res.ok && data?.success !== false, data };
-      }),
-      submitLeadToCRM(leadCapturePayload),
-    ]);
+        submitLeadToCRM(leadCapturePayload),
+      ]);
 
-    const hubspotOk =
-      hubspotResult.status === "fulfilled" && !!hubspotResult.value;
+      const hubspotOk =
+        hubspotResult.status === "fulfilled" && !!hubspotResult.value;
 
-    const emailOk =
-      emailResult.status === "fulfilled" && emailResult.value?.success === true;
+      const emailOk =
+        emailResult.status === "fulfilled" && emailResult.value?.success === true;
 
-    const crmOk =
-      crmResult.status === "fulfilled" && crmResult.value?.success === true;
+      const crmOk =
+        crmResult.status === "fulfilled" && crmResult.value?.success === true;
 
-    console.log({ hubspotResult, emailResult, crmResult });
+      console.log({ hubspotResult, emailResult, crmResult });
 
-    if (hubspotOk || emailOk || crmOk) {
-      setShowSuccess(true);
-      window.location.href = "thankyou-offer";
-    } else {
+      if (hubspotOk || emailOk || crmOk) {
+        setShowSuccess(true);
+        window.location.href = "thankyou-offer";
+      } else {
+        alert("There was an error submitting your form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
       alert("There was an error submitting your form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Form submission error:", error);
-    alert("There was an error submitting your form. Please try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
 
 
@@ -493,7 +493,7 @@ const handleSubmit = async (e) => {
       </Head>
       <main>
         <GoogleTranslateWidget />
-       
+
         {/* <Header /> */}
         <header className="container mx-auto py-2 width-container z-10">
           <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
@@ -515,7 +515,7 @@ const handleSubmit = async (e) => {
               <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
                 <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
               </button>
-               <LanguageSelectorDropdown />
+              <LanguageSelectorDropdown />
             </div>
           </div>
         </header>
