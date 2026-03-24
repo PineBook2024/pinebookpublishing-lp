@@ -1656,7 +1656,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -1707,7 +1707,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -1761,7 +1761,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -1868,7 +1868,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -1931,7 +1931,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -2003,7 +2003,7 @@ export default function HomePage() {
               </ul>
 
               <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Get A Quote
+                Start Project
               </button>
 
               <div className="mt-6 text-sm">
@@ -2097,7 +2097,7 @@ export default function HomePage() {
               { img: "/brand-img/new-lp/8.webp", title: "Children's Book Illustration", url: "/childrens-book-illustration" },
               { img: "/brand-img/new-lp/8.webp", title: "Book Illustration Services", url: "/book-illustration-services" },
               { img: "/brand-img/new-lp/8.webp", title: "Book Translation", url: "/book-translation" },
-              { img: "/brand-img/new-lp/4.webp", title: "Book Writing", url: "/book-writing" },
+              // { img: "/brand-img/new-lp/4.webp", title: "Book Writing", url: "/book-writing" },
             ].map((service, index) => (
               <div
                 key={index}
