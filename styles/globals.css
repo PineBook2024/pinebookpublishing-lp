@@ -3296,6 +3296,16 @@ video#brandVideo {
   margin-top: 6px;
 }
 
+.compare-now-btn-new {
+  background-color: transparent;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
 .compare-now-btn {
   background-color: transparent;
   padding: 10px 30px;

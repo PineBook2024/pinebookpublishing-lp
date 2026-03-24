@@ -2,17 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import { useRef, useState, useEffect } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
-import BrandFooterBook from "/components/BrandFooterBook";
+import BrandFooterBook from "../components/BrandFooterBook";
 import HeroFormBookOffer, { countryCodes as projectCountryCodes } from "../components/HerformBookOffer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faThreads } from "@fortawesome/free-solid-svg-icons";
 import Story from "/components/Story";
 import PortfolioSlider3LP from "/components/PortfolioSlider3LP";
 import PortfolioSlider2LP from "/components/PortfolioSlider2LP";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import dynamic from 'next/dynamic';
 import {
@@ -32,6 +32,9 @@ import PortfolioSlider1 from "../components/PortfolioSlider1";
 import PortfolioSlider2 from "../components/PortfolioSlider2";
 import PortfolioSlider3 from "../components/PortfolioSlider3";
 import PortfolioSlider5 from "../components/PortfolioSlider5";
+import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
+import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
+import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
 
 export default function HomePage() {
   const handleOpenChat = () => {
@@ -39,6 +42,7 @@ export default function HomePage() {
   };
 
   const counterRef = useRef(null);
+  const contentRef = useRef(null);
   const swiperRef = useRef();
   const swiperRef3 = useRef();
   const [startCounter, setStartCounter] = useState(false);
@@ -46,6 +50,10 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState("Fiction");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [showPackages, setShowPackages] = useState(false);
+  const [showPackages2, setShowPackages2] = useState(false);
+  const [collapseOpen1, setCollapseOpen1] = useState(false);
+  const [collapseOpen2, setCollapseOpen2] = useState(false);
   const [projectCountry, setProjectCountry] = useState("US");
   const [projectPhone, setProjectPhone] = useState("");
 
@@ -55,6 +63,131 @@ export default function HomePage() {
   const selectedProjectCountry =
     projectCountryCodes.find((country) => country.countryCode === projectCountry) ||
     projectCountryCodes[0];
+
+  const togglePackages2 = () => {
+    setShowPackages2(!showPackages2);
+    setCollapseOpen2(!collapseOpen2);
+  };
+
+  const togglePackages = () => {
+    setShowPackages(!showPackages);
+    setCollapseOpen1(!collapseOpen1);
+  };
+
+  const comparisonBasic = [
+    {
+      section: "Preparing Your Manuscript",
+      rows: [
+        ["Editorial Support", "✔", "✔", "✔"],
+        ["Proofreading", "✔", "✔", "✔"],
+        ["Typesetting", "✔", "✔", "✔"],
+        ["Layout Adjustment", "✔", "✔", "✔"],
+        ["Basic Formatting", "✔", "✔", "✔"],
+        ["Publishing Standard Formatting", "✖", "✔", "✔"],
+        ["Revisions Per Draft", "2", "3", "5"],
+      ],
+    },
+    {
+      section: "Preparing your Book Cover",
+      rows: [
+        ["Graphic OR Illustrated Design", "✖", "✔", "✔"],
+        ["Cover Layout", "✖", "✔", "✔"],
+        ["Cover Formatting", "✖", "✔", "✔"],
+        ["Front, Back & Spine", "✖", "✔", "✔"],
+        ["ISBN + Barcode (2X)", "✖", "✖", "✔"],
+      ],
+    },
+    {
+      section: "Preparing for Print and Distribution",
+      rows: [
+        ["Account Creation", "✔", "✔", "✔"],
+        ["Account Verification", "✔", "✔", "✔"],
+        ["Account Optimization", "✔", "✔", "✔"],
+        ["Kindle", "✔", "✔", "✔"],
+        ["Amazon", "✖", "✔", "✔"],
+        ["Barnes and Noble", "✖", "✖", "✔"],
+        ["eBook Format", "✔", "✔", "✔"],
+        ["Paperback Format", "✖", "✔", "✔"],
+        ["Hardcover Format", "✖", "✖", "✔"],
+      ],
+    },
+    {
+      section: "Guarantees",
+      rows: [
+        ["No Royalties Share", "✔", "✔", "✔"],
+        ["100% Ownership Rights", "✔", "✔", "✔"],
+        ["100% Satisfaction", "✔", "✔", "✔"],
+      ],
+    },
+  ];
+
+  const comparisonAdvanced = [
+    {
+      section: "Preparing Your Manuscript",
+      rows: [
+        ["Editorial Support", "✔", "✔", "✔"],
+        ["Proofreading", "✔", "✔", "✔"],
+        ["Typesetting", "✔", "✔", "✔"],
+        ["Layout Adjustment", "✔", "✔", "✔"],
+        ["Basic Formatting", "✔", "✔", "✔"],
+        ["Publishing Standard Formatting", "✔", "✔", "✔"],
+        ["Revisions Per Draft", "5", "5", "5"],
+      ],
+    },
+    {
+      section: "Preparing your Book Cover",
+      rows: [
+        ["Graphic OR Illustrated Design", "✔", "✔", "✔"],
+        ["Cover Layout", "✔", "✔", "✔"],
+        ["Cover Formatting", "✔", "✔", "✔"],
+        ["Front, Back & Spine", "✔", "✔", "✔"],
+        ["ISBN + Barcode (2X)", "✔", "✔", "✔"],
+      ],
+    },
+    {
+      section: "Preparing for Print and Distribution",
+      rows: [
+        ["Account Creation", "✔", "✔", "✔"],
+        ["Account Verification", "✔", "✔", "✔"],
+        ["Account Optimization", "✔", "✔", "✔"],
+        ["Kindle", "✔", "✔", "✔"],
+        ["Amazon", "✔", "✔", "✔"],
+        ["Barnes and Noble", "✔", "✔", "✔"],
+        ["Google Books", "✔", "✔", "✔"],
+        ["Smashwords", "✖", "✔", "✔"],
+        ["Draft2Digital", "✖", "✖", "✔"],
+        ["ACX", "✖", "✖", "✔"],
+        ["eBook Format", "✔", "✔", "✔"],
+        ["Paperback Format", "✔", "✔", "✔"],
+        ["Hardcover Format", "✔", "✔", "✔"],
+        ["Audiobook Format", "✖", "✖", "✔"],
+      ],
+    },
+    {
+      section: "Online Presence",
+      rows: [
+        ["Author Website", "3-5 Pages", "3-5 Pages", "3-5 Pages"],
+        ["Domain & Hosting", "1 Year", "1 Year", "2 Year"],
+      ],
+    },
+    {
+      section: "Marketing & Branding",
+      rows: [
+        ["Book Trailer", "30-60 Seconds", "30-60 Seconds", "60-90 Seconds"],
+        ["Social Media Marketing", "✖", "3 Platforms", "6 Platforms"],
+        ["Organic Google Marketing", "✖", "6 Months", "12 Months"],
+        ["Blog & Article Posting", "✖", "✖", "✔"],
+        ["Press Releases", "✖", "✖", "150+ Platforms"],
+      ],
+    },
+    {
+      section: "Guarantees",
+      rows: [
+        ["100% Royalties", "✔", "✔", "✔"],
+        ["100% Ownership Rights", "✔", "✔", "✔"],
+      ],
+    },
+  ];
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -682,42 +815,37 @@ export default function HomePage() {
   return (
     <main className="font-sans text-gray-800">
 
-
+      <GoogleTranslateWidget />
       {/* ------------------ HEADER ------------------ */}
 
-      <header>
-        <div className="relative z-10 w-full max-w-6xl mx-auto gap-10">
-          <div className="flex flex-row justify-between items-center py-6">
-            <Link href="/new-lps">
-              <Image
-                src="/images/logo.png"
-                alt="PineBookPublishing Logo"
-                width={200}
-                height={60}
-              />
+      <header className="absolute top-0 left-0 right-0 container mx-auto py-2 width-container z-50 w-full lg:max-w-6xl bg-transparent">
+        <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
+          <div className="head-logo">
+            <Link className="text-center" href="/book-publishing-offer">
+              <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
             </Link>
+          </div>
 
-            <button onClick={() => setIsOpen(true)} className="
-            px-5 py-2 text-sm          
-    sm:px-6 sm:py-2.5 sm:text-base 
-    md:px-5 md:py-3 md:text-lg 
-    lg:px-5 lg:py-2 lg:text-lg  
-    rounded-full font-semibold
-    bg-transparent text-white border-2 border-white
-    transition-ease duration-300
-    hover:bg-white hover:text-[#117d6b] hover:border-[#15184c]
-    hover:opacity-100
-
-            ">
-              Get Started
+          <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
+            <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
+              <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
             </button>
+
+            <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
+              <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
+            </button>
+
+            <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
+              <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
+            </button>
+            <LanguageSelectorDropdown />
           </div>
         </div>
       </header>
 
       {/* ------------------ HERO SECTION ------------------ */}
-      <section className="relative bg-[#0a2c24]  md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0">
+      <section className="relative z-0 bg-[#0a2c24] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
           <Image
             src="/images/hero-bg.webp"
             alt="Hero Background"
@@ -725,8 +853,8 @@ export default function HomePage() {
             className="object-cover opacity-30"
           />
         </div>
-        <div className="relative z-10 w-full max-w-6xl">
-          <HeroFormBookOffer />
+        <div className="relative z-10 w-full lg:max-w-6xl">
+          <HeroFormBookOfferLP onOpenModal={() => setIsOpen(true)} />
         </div>
       </section>
 
@@ -1502,10 +1630,10 @@ export default function HomePage() {
             {/* Package 1 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Basic Authors Package
+                Basic Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1547,10 +1675,10 @@ export default function HomePage() {
             {/* Package 2 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Start Up Authors Package
+                Start Up Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1598,10 +1726,10 @@ export default function HomePage() {
             {/* Package 3 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Standard Authors Package
+                Standard Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1648,14 +1776,62 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto mt-8">
+            <div className="container mx-auto m1-h mt-10 text-center">
+              <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages2}>Comparison
+                <FontAwesomeIcon
+                  className="ml-2"
+                  icon={collapseOpen2 ? faArrowUp : faArrowDown}
+                  color="#fff"
+                />
+              </button>
+            </div>
+            <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
+              <div className="md:w-full w-[500px] responsive-width">
+                <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                  <thead className="chart-header-custom">
+                    <tr>
+                      <th className="mainpage-regular"></th>
+                      <th className="font-poppins"><div className="heading">Basic Package</div></th>
+                      <th className="font-poppins"><div className="heading">Start Up Package</div></th>
+                      <th className="font-poppins"><div className="heading">Standard Package</div></th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-center">
+                    {comparisonBasic.map((group) => (
+                      <Fragment key={group.section}>
+                        <tr className="m-4">
+                          <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                            {group.section}
+                          </th>
+                        </tr>
+                        {group.rows.map((row) => (
+                          <tr key={`${group.section}-${row[0]}`}>
+                            <td>{row[0]}</td>
+                            <td>{row[1]}</td>
+                            <td>{row[2]}</td>
+                            <td>{row[3]}</td>
+                          </tr>
+                        ))}
+                      </Fragment>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
 
             {/* Package 4 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Expert Authors Package
+                Expert Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1685,7 +1861,7 @@ export default function HomePage() {
                 <li>3 - 5 Page Authors Website</li>
                 <li>1 - Year Domain & Hosting</li>
                 <li>30 - 60 Seconds Book Trailer</li>
-                <h4 className="font-bold text-lg">Online Presence</h4>
+                <h4 className="font-bold text-lg">Guarantees</h4>
                 <li>No Royalties Share</li>
                 <li>100% Ownership Rights</li>
                 <li>100% Satisfaction</li>
@@ -1711,10 +1887,10 @@ export default function HomePage() {
             {/* Package 5 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Premium Authors Package
+                Premium Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1774,10 +1950,10 @@ export default function HomePage() {
             {/* Package 6 */}
             <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
               <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Enterprise Authors Package
+                Enterprise Package
               </h3>
               <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                Flat <span className="text-[#117d6b]">50%</span> Off
+                <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
               </h2>
               <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                 <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1843,6 +2019,51 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto">
+            <div className="container mx-auto m1-h mt-10 text-center">
+              <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages}>Comparison
+                <FontAwesomeIcon
+                  className="ml-2"
+                  icon={collapseOpen1 ? faArrowUp : faArrowDown}
+                  color="#fff"
+                />
+              </button>
+            </div>
+            <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}>
+              <div className="md:w-full w-[500px] responsive-width">
+                <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                  <thead className="chart-header-custom">
+                    <tr>
+                      <th className="mainpage-regular"></th>
+                      <th className="font-poppins"><div className="heading">Expert Package</div></th>
+                      <th className="font-poppins"><div className="heading">Premium Package</div></th>
+                      <th className="font-poppins"><div className="heading">Enterprise Package</div></th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-center">
+                    {comparisonAdvanced.map((group) => (
+                      <Fragment key={group.section}>
+                        <tr className="m-4">
+                          <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                            {group.section}
+                          </th>
+                        </tr>
+                        {group.rows.map((row) => (
+                          <tr key={`${group.section}-${row[0]}`}>
+                            <td>{row[0]}</td>
+                            <td>{row[1]}</td>
+                            <td>{row[2]}</td>
+                            <td>{row[3]}</td>
+                          </tr>
+                        ))}
+                      </Fragment>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -1955,6 +2176,37 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center mt-6">
+              {/* Button 1 */}
+              <button
+                onClick={() => setIsOpen(true)}
+                type="button"
+                className="bg-[#15184c]  text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+              >
+                Publish Your Book Now
+                <svg
+                  className="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
+                0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 
+                0-32 14.3-32 32s14.3 32 32 32h370.7L297.4 
+                393.4c-12.5 12.5-12.5 32.8 0 
+                45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+              </button>
+
+              {/* Button 2 */}
+              <button
+                type="button"
+                onClick={handleOpenChat}
+                className="bg-[#15184c] text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+              >
+                Live Chat
+              </button>
+            </div>
           </div>
 
           {/* Right Side - Form */}
@@ -2181,7 +2433,7 @@ export default function HomePage() {
 
       <section
         className="  text-[#117d6b] relative ">
-        <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center shadow-[0_0_10px_#212529] rounded-[30px] px-[30px] py-[40px] md:mt-[-15%] bg-white z-30">
+        <div className="container mx-auto w-full lg:max-w-6xl grid md:grid-cols-2 gap-10 items-center shadow-[0_0_10px_#212529] rounded-[30px] px-[30px] py-[40px] md:mt-[-15%] bg-white z-30">
           {/* Left Content */}
           <div className="space-y-5">
             <h2 className="text-3xl md:text-4xl font-bold leading-snug">
@@ -2265,7 +2517,7 @@ export default function HomePage() {
         className="py-20 bg-[#f9f9f9] bg-cover"
       // style={{ backgroundImage: "url('/brand-img/new-lp/footer.webp')" }}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 w-full lg:max-w-6xl">
           {/* Top heading like screenshot */}
           {/* <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1b3040]">
@@ -2459,290 +2711,7 @@ export default function HomePage() {
         </div>
       )}
 
-      <footer className="text-white body-font brand-footer">
-        <div className="container px-5 pt-10 pb-10 md:pt-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col position-relative">
-          <div className="flex-grow flex flex-wrap -mb-10 md:mt-0 mt-10 md:text-left text-center justify-evenly py-10">
-            <div className="lg:w-1/3 md:w-1/4 w-full px-4 widget-2 relative">
-              <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                <Image src={"/brand-img/logo.png"} width={250} height={200}></Image>
-              </a>
-              <p className="mt-2 text-sm text-white leading-7 px-4">
-                Pine Book Publishing is a team of passionate book publishers that believe in the power of storytelling and the importance of writers' ability to tell their tales. Our streamlined process and dedicated support make book publishing service a realistic and rewarding goal for any author.
-              </p>
-              {/* <nav className="list-none mb-10 mt-5">
-                                <li>
-                                    <Link
-                                        href="tel:8668417469"
-                                        className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                        (888) 786-7135
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link
-                                        href="mailto:support@pinebookpublishing.com"
-                                        className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start"
-                                    >
-                                        <FontAwesomeIcon icon={faEnvelope} className="me-3" />
-                                        {" "}
-                                        support@pinebookpublishing.com{" "}
-                                    </Link>
-                                </li>
-                            </nav> */}
-            </div>
-            <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
-              <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
-                Quick Links
-              </h2>
-              <nav className="list-none mb-10 mt-5">
-                <li>
-                  <Link href="/">
-                    Home
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }}>
-                    About Us
-                  </Link>
-                </li>
-                {/* <li className="mt-3">
-                                    Services
-                                </li> */}
-                <li className="mt-3">
-                  <Link href="/testimonials" onClick={(e) => { e.preventDefault(); window.location.href = "/testimonials"; }}>
-                    Testimonials
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/packages" onClick={(e) => { e.preventDefault(); window.location.href = "/packages"; }}>
-                    Packages
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/portfolio" onClick={(e) => { e.preventDefault(); window.location.href = "/portfolio"; }}>
-                    Portfolio
-                  </Link>
-                </li>
-                {/* <li className="mt-3">
-                                    Testimonials
-                                </li> */}
-                <li className="mt-3">
-                  <Link href="/contact-us" onClick={(e) => { e.preventDefault(); window.location.href = "/contact-us"; }}>
-                    Contact Us
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link
-                    href="/terms-and-conditions"
-                    rel="noopener noreferrer"
-                    className="text-white ml-1"
-                    target="_blank"
-                  >
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link
-                    href="/privacy-policy"
-                    rel="noopener noreferrer"
-                    className="text-white ml-1"
-                    target="_blank"
-                  >Privacy Policy {" "}
-                  </Link>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/5 md:w-1/5 w-full px-4 widget-2 relative">
-              <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
-                Services
-              </h2>
-              <nav className="list-none mb-10 mt-5">
-                <li>
-                  <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
-                    Book Publishing
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
-                    Book Editing
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/proofreading" onClick={(e) => { e.preventDefault(); window.location.href = "/proofreading"; }}>
-                    Proofreading
-                  </Link>
-                </li>
-                {/* <li className="mt-3">
-                                    Services
-                                </li> */}
-                <li className="mt-3">
-                  <Link href="/book-formatting" onClick={(e) => { e.preventDefault(); window.location.href = "/book-formatting"; }}>
-                    Book Formatting
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/typesetting-layout-adjustment" onClick={(e) => { e.preventDefault(); window.location.href = "/typesetting-layout-adjustment"; }}>
-                    Typesetting & Layout
-                  </Link>
-                </li>
-
-                {/* <li className="mt-3">
-                                    Testimonials
-                                </li> */}
-                <li className="mt-3">
-                  <Link href="/print-on-demand" onClick={(e) => { e.preventDefault(); window.location.href = "/print-on-demand"; }}>
-                    Print On Demand
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/document-processing" onClick={(e) => { e.preventDefault(); window.location.href = "/document-processing"; }}>
-                    Document Processing
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/audio-book" onClick={(e) => { e.preventDefault(); window.location.href = "/audio-book"; }}>
-                    Audiobook
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/isbn-and-barcode" onClick={(e) => { e.preventDefault(); window.location.href = "/isbn-and-barcode"; }}>
-                    ISBN & Barcode
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/book-marketing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-marketing"; }}>
-                    Book Marketing
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/childrens-book-illustration" onClick={(e) => { e.preventDefault(); window.location.href = "/childrens-book-illustration"; }}>
-                    Children's Book Illustration
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/book-illustration-services" onClick={(e) => { e.preventDefault(); window.location.href = "/book-illustration-services"; }}>
-                    Book Illustration Services
-                  </Link>
-                </li>
-                <li className="mt-3">
-                  <Link href="/book-translation" onClick={(e) => { e.preventDefault(); window.location.href = "/book-translation"; }}>
-                    Book Translation
-                  </Link>
-                </li>
-              </nav>
-            </div>
-
-
-            <div className="lg:w-1/4 md:w-1/4 w-full px-4 widget-3 relative">
-              <h2 className="title-font text-white tracking-widest text-2xl md:text-2xl mb-3 font-poppins font-bold	">
-                Contact Info
-              </h2>
-              {/* <Link
-                                href="tel:8668417469"
-                                className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
-                            >
-                                <FontAwesomeIcon icon={faPhone} className="me-3" />
-                                (888) 786-7135
-                            </Link> */}
-              <Link
-                href="tel:8887867135"
-                className="text-white text-sm hover:text-white font-poppins flex justify-center md:justify-start mb-5"
-              >
-                <FontAwesomeIcon icon={faPhone} className="me-3" />
-                (888) 786-7135
-              </Link>
-              <Link
-                href="mailto:support@pinebookpublishing.com"
-                className="text-white hover:text-white font-poppins text-sm flex justify-center md:justify-start mb-5"
-              >
-                <FontAwesomeIcon icon={faEnvelope} className="me-3" />
-                {" "}
-                support@pinebookpublishing.com{" "}
-              </Link>
-              <h4 className="text-white leading-20 font-bold text-xl md:text-md font-poppins text-center lg:text-start uppercase">
-                Canada Address:
-              </h4>
-              <p className="text-white mb-5"> R-10225 Yonge St, Suite #250, Richmond Hill, ON L4C 3B2</p>
-              <h4 className="text-white leading-20 font-bold text-xl md:text-md font-poppins text-center lg:text-start uppercase">
-                USA Address:
-              </h4>
-              <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
-              <div>
-                <Link href="https://www.facebook.com/pinebookwriting0" target="_blank">
-                  <FontAwesomeIcon icon={faFacebook} className="me-3" />
-                </Link>
-                {/* <Link href="">
-                                    <FontAwesomeIcon icon={faLinkedin} className="me-3" />
-                                </Link> */}
-                <Link href="https://www.instagram.com/pinebookwriting/" target="_blank">
-                  <FontAwesomeIcon icon={faInstagram} className="me-3" />
-                </Link>
-                <Link href="https://x.com/pinebookwriting" target="_blank">
-                  <FontAwesomeIcon icon={faXTwitter} className="me-3" />
-                </Link>
-                <Link href="https://www.youtube.com/@Pinebookwriting" target="_blank">
-                  <FontAwesomeIcon icon={faYoutube} className="me-3" />
-                </Link>
-                <Link href="https://www.threads.com/@pinebookwriting" target="_blank">
-                  <FontAwesomeIcon icon={faThreads} className="me-3" />
-                </Link>
-              </div>
-              {/* <nav className="list-none mb-10 mt-5">
-                                <li>
-                                    <Link href="/book-editing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-editing"; }}>
-                                        Book Editing
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href="/proofreading" onClick={(e) => { e.preventDefault(); window.location.href = "/proofreading"; }}>
-                                        Proofreading
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href={'javascript:;'}>
-                                        Book Formatting
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href={'javascript:;'}>
-                                        Typesetting & Layout
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href="/book-publishing" onClick={(e) => { e.preventDefault(); window.location.href = "/book-publishing"; }}>
-                                        Book Publishing
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href={'javascript:;'}>
-                                        Audio Book
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href={'javascript:;'}>
-                                        Print on Demand
-                                    </Link>
-                                </li>
-                                <li className="mt-3">
-                                    <Link href={'javascript:;'}>
-                                        Document Processing
-                                    </Link>
-                                </li>
-                            </nav> */}
-            </div>
-          </div>
-
-        </div>
-        <div className="copyright-sec">
-          <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-white w-full md:text-center text-sm sm:text-left">
-              Copyright © 2025
-              Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
-            </p>
-          </div>
-        </div>
-      </footer>
+      <BrandFooterBook />
 
       <div>
         {isVisible && (
