@@ -2722,7 +2722,7 @@ export default function HomePage() {
             height: '40px',
             width: '40px',
             textAlign: 'center',
-            backgroundColor: '#fff',
+            backgroundColor: '#00',
             color: '#000',
             borderRadius: '50%',
             border: 'none',

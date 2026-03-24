@@ -475,7 +475,7 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
 
       if (emailOk || hubspotOk || crmOk) {
         setShowSuccess(true);
-        setTimeout(() => (window.location.href = "/thankyou-offer"), 1500);
+        setTimeout(() => (window.location.href = "/thank-you-page-new-lp"), 1500);
       } else {
         alert("There was an error submitting your form. Please try again.");
       }
