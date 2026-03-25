@@ -2723,7 +2723,7 @@ export default function HomePage() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#15184c]/45 via-[#1f2870]/35 to-[#117d6b]/30"></div>
                   <p className="relative z-[1] mb-3 inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em]">
-                    Free Consultation
+                    Request a Callback
                   </p>
                   <h3 className="relative z-[1] text-2xl font-bold leading-tight">
                     Let us publish your book the right way
@@ -2731,7 +2731,8 @@ export default function HomePage() {
                 </div>
 
                 <div className="p-6 sm:p-8">
-                  <h4 className="text-xl font-bold text-slate-900">Request a Callback</h4>
+                  <h4 className="text-xl font-bold text-slate-900">We are here to help!
+                  </h4>
                   <p className="mt-1 text-sm text-slate-600">
                     Fill out the form and our expert will contact you shortly.
                   </p>
