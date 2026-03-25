@@ -813,226 +813,247 @@ export default function HomePage() {
   const slides = slidesData[activeTab] || [];
 
   return (
-    <main className="font-sans text-gray-800">
+    <>
+      <Head>
+        <title>Pine Book Publishing | Book Publishing Offer</title>
+        <meta
+          name="description"
+          content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
+        />
+        <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+        <link rel="shortcut icon" href="/images/fav.png" />
+        <meta name="robots" content="noindex" />
 
-      <GoogleTranslateWidget />
-      {/* ------------------ HEADER ------------------ */}
+        {/* Google tag Manager Script */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16471224604'); 
+                  `,
+          }}
+        />
+      </Head>
+      <main className="font-sans text-gray-800">
 
-      <header className="absolute top-0 left-0 right-0 container mx-auto py-2 width-container z-50 w-full lg:max-w-6xl bg-transparent">
-        <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
-          <div className="head-logo">
-            <Link className="text-center" href="/book-publishing-offer">
-              <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
-            </Link>
-          </div>
+        <GoogleTranslateWidget />
+        {/* ------------------ HEADER ------------------ */}
 
-          <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
-            <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
-              <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
-            </button>
-
-            <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
-              <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
-            </button>
-
-            <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
-              <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
-            </button>
-            <LanguageSelectorDropdown />
-          </div>
-        </div>
-      </header>
-
-      {/* ------------------ HERO SECTION ------------------ */}
-      <section className="relative z-0 bg-[#0a2c24] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="/images/hero-bg.webp"
-            alt="Hero Background"
-            fill
-            className="object-cover opacity-30"
-          />
-        </div>
-        <div className="relative z-10 w-full lg:max-w-6xl">
-          <HeroFormBookOfferLP onOpenModal={() => setIsOpen(true)} />
-        </div>
-      </section>
-
-      <section className="brnd-slider bg-black overflow-hidden">
-        {/* <AnimateFade type={"right"}> */}
-        <div className="container grid grid-cols-1 width-container position-relative">
-          <div className="container mx-auto position-relative">
-            <div className="book-sell-text ">
-              <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
+        <header className="absolute top-0 left-0 right-0 container mx-auto py-2 width-container z-50 w-full lg:max-w-6xl bg-transparent">
+          <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
+            <div className="head-logo">
+              <Link className="text-center" href="/book-publishing-offer">
+                <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
+              </Link>
             </div>
-            <div className="bnd-slider flex py-7 justify-center">
-              <Swiper
-                className="px-20 gap-x-32"
-                spaceBetween={15}
-                slidesPerView={6}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={false}
-                onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                modules={[Navigation, Autoplay, Pagination]}
-                breakpoints={{
-                  "@0.00": {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
 
-                    navigation: {
-                      enabled: false,
-                    },
-                    pagination: true,
-                    navigation: true,
-                  },
-                  "@1.00": {
-                    slidesPerView: 6,
-                    spaceBetween: 15,
-                  },
-                }}
-              >
-                <SwiperSlide className="mx-auto text-center">
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/Smashwords.png"}
-                        width={110}
-                        height={80}
-                        className="custom-logo-size"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
+            <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
+              <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
+                <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
+              </button>
 
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/Barnes-and-Noble.png"}
-                        width={70}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
+              <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
+                <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
+              </button>
 
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/Google-Books.png"}
-                        width={100}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/Draft2digital.png"}
-                        width={100}
-                        height={120}
-                        loading="lazy"
-                        className="custom-logo-size"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/logo5.png"}
-                        width={100}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/logo6.png"}
-                        width={100}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/logo7.png"}
-                        width={100}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="flex justify-center">
-                    <a href="#">
-                      <Image
-                        alt="LOGO"
-                        src={"/images/logo8.png"}
-                        width={100}
-                        height={80}
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
+              <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
+                <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
+              </button>
+              <LanguageSelectorDropdown />
             </div>
           </div>
-        </div>
-        {/* </AnimateFade> */}
-      </section>
+        </header>
 
-      <section className="about pt-14 overflow-hidden">
-        <div className="container mx-auto px-5 md:px-0 w-full lg:max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
-            {/* <AnimateFade type={"top"}> */}
-            <div className="abt-txt m1-h p1">
-              <h3 className="font-poppins text-3xl md:text-5xl font-bold">
-                About<span>Pine Book Publishing</span>
-              </h3>
-              <p className="pt-3">
-                Pine Book Publishing has been helping new to seasoned writers for years with the mission of providing quality writing, editing, and publishing services worldwide, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
-                We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
-              </p>
-              <div className="flex gap-6">
-                <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
-                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
+        {/* ------------------ HERO SECTION ------------------ */}
+        <section className="relative z-0 bg-[#0a2c24] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <Image
+              src="/images/hero-bg.webp"
+              alt="Hero Background"
+              fill
+              className="object-cover opacity-30"
+            />
+          </div>
+          <div className="relative z-10 w-full lg:max-w-6xl">
+            <HeroFormBookOfferLP onOpenModal={() => setIsOpen(true)} />
+          </div>
+        </section>
+
+        <section className="brnd-slider bg-black overflow-hidden">
+          {/* <AnimateFade type={"right"}> */}
+          <div className="container grid grid-cols-1 width-container position-relative">
+            <div className="container mx-auto position-relative">
+              <div className="book-sell-text ">
+                <h3 className="font-poppins text-xl md:text-xl leading-3 font-bold">Sell Your <br></br> <span>Book With</span></h3>
               </div>
-              {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
+              <div className="bnd-slider flex py-7 justify-center">
+                <Swiper
+                  className="px-20 gap-x-32"
+                  spaceBetween={15}
+                  slidesPerView={6}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={false}
+                  onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                  }}
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+
+                      navigation: {
+                        enabled: false,
+                      },
+                      pagination: true,
+                      navigation: true,
+                    },
+                    "@1.00": {
+                      slidesPerView: 6,
+                      spaceBetween: 15,
+                    },
+                  }}
+                >
+                  <SwiperSlide className="mx-auto text-center">
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/Smashwords.png"}
+                          width={110}
+                          height={80}
+                          className="custom-logo-size"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/Barnes-and-Noble.png"}
+                          width={70}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/Google-Books.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/Draft2digital.png"}
+                          width={100}
+                          height={120}
+                          loading="lazy"
+                          className="custom-logo-size"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo5.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo6.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo7.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <div className="flex justify-center">
+                      <a href="#">
+                        <Image
+                          alt="LOGO"
+                          src={"/images/logo8.png"}
+                          width={100}
+                          height={80}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </div>
+          </div>
+          {/* </AnimateFade> */}
+        </section>
+
+        <section className="about pt-14 overflow-hidden">
+          <div className="container mx-auto px-5 md:px-0 w-full lg:max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
+              {/* <AnimateFade type={"top"}> */}
+              <div className="abt-txt m1-h p1">
+                <h3 className="font-poppins text-3xl md:text-5xl font-bold">
+                  About<span>Pine Book Publishing</span>
+                </h3>
+                <p className="pt-3">
+                  Pine Book Publishing has been helping new to seasoned writers for years with the mission of providing quality writing, editing, and publishing services worldwide, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
+                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
+                </p>
+                <div className="flex gap-6">
+                  <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
+                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
+                </div>
+                {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
                   {clientLogos.map((logo, index) => (
                     <Link key={index} href={logo.href} target="_blank">
                       <Image
@@ -1044,286 +1065,286 @@ export default function HomePage() {
                     </Link>
                   ))}
                 </div> */}
-            </div>
-            {/* </AnimateFade> */}
-            <div className="abt-pic text-center">
-              {/* <AnimateFade type={"left"}> */}
-              <Image src={"/images/About-us-img.webp"} width={500} height={570}
-                layout="responsive"
-                loading="lazy"
-                alt="about img"
-              />
+              </div>
               {/* </AnimateFade> */}
+              <div className="abt-pic text-center">
+                {/* <AnimateFade type={"left"}> */}
+                <Image src={"/images/About-us-img.webp"} width={500} height={570}
+                  layout="responsive"
+                  loading="lazy"
+                  alt="about img"
+                />
+                {/* </AnimateFade> */}
+              </div>
             </div>
-          </div>
 
-          <div className="book-joun relative p-5 rounded-lg md:p-10 mb-9">
-            <div className="text-center">
-              <Swiper
-                className="px-20"
-                spaceBetween={15}
-                slidesPerView={3}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={false}
-                onBeforeInit={(swiper) => {
-                  swiperRef3.current = swiper;
-                }}
-                modules={[Navigation, Autoplay, Pagination]}
-                breakpoints={{
-                  "@0.00": {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    navigation: {
-                      enabled: false,
+            <div className="book-joun relative p-5 rounded-lg md:p-10 mb-9">
+              <div className="text-center">
+                <Swiper
+                  className="px-20"
+                  spaceBetween={15}
+                  slidesPerView={3}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={false}
+                  onBeforeInit={(swiper) => {
+                    swiperRef3.current = swiper;
+                  }}
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 1,
+                      spaceBetween: 10,
+                      navigation: {
+                        enabled: false,
+                      },
+                      pagination: false,
+                      navigation: true,
                     },
-                    pagination: false,
-                    navigation: true,
-                  },
-                  "@1.00": {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                  },
-                }}
-              >
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row justify-between items-center border-about-card">
-                    <Image
-                      src={"/images/b1.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img one"
-                    ></Image>
-                    <p className="p-4">
-                      Explore worlds of knowledge and discovery.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                    "@1.00": {
+                      slidesPerView: 3,
+                      spaceBetween: 15,
+                    },
+                  }}
+                >
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row justify-between items-center border-about-card">
+                      <Image
+                        src={"/images/b1.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img one"
+                      ></Image>
+                      <p className="p-4">
+                        Explore worlds of knowledge and discovery.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b2.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img two"
-                    ></Image>
-                    <p className="p-4">
-                      Journey through the lives and experiences of others.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b2.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img two"
+                      ></Image>
+                      <p className="p-4">
+                        Journey through the lives and experiences of others.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b3.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img three"
-                    ></Image>
-                    <p className="p-4">
-                      Get lost in imaginary worlds and captivating narratives.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b3.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img three"
+                      ></Image>
+                      <p className="p-4">
+                        Get lost in imaginary worlds and captivating narratives.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b4.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img four"
-                    ></Image>
-                    <p className="p-4">
-                      Discover the truth and reality behind fascinating topics.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b4.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img four"
+                      ></Image>
+                      <p className="p-4">
+                        Discover the truth and reality behind fascinating topics.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b5.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img five"
-                    ></Image>
-                    <p className="p-4">
-                      Dive into the personal stories and reflections of individuals.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b5.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img five"
+                      ></Image>
+                      <p className="p-4">
+                        Dive into the personal stories and reflections of individuals.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b6.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img six"
-                    ></Image>
-                    <p className="p-4">
-                      Learn about the lives and achievements of remarkable figures.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b6.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img six"
+                      ></Image>
+                      <p className="p-4">
+                        Learn about the lives and achievements of remarkable figures.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b7.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img seven"
-                    ></Image>
-                    <p className="p-4">
-                      Embark on thrilling quests and adrenaline-pumping escapades.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b7.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img seven"
+                      ></Image>
+                      <p className="p-4">
+                        Embark on thrilling quests and adrenaline-pumping escapades.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b8.png"}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      alt="book img eight"
-                    ></Image>
-                    <p className="p-4">
-                      Indulge in tales of love, passion, and heartwarming connections.
-                    </p>
-                  </div>
-                </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b8.png"}
+                        width={100}
+                        height={100}
+                        loading="lazy"
+                        alt="book img eight"
+                      ></Image>
+                      <p className="p-4">
+                        Indulge in tales of love, passion, and heartwarming connections.
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
-                    <Image
-                      src={"/images/b9.png"}
-                      width={100}
-                      loading="lazy"
-                      alt="book img nine"
-                      height={100}
-                    ></Image>
-                    <p className="p-4">
-                      Experience a collection of diverse stories and perspectives.
-                    </p>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-              <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
-              <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+                  <SwiperSlide>
+                    <div className="bg-white rounded-xl flex flex-row items-center border-about-card">
+                      <Image
+                        src={"/images/b9.png"}
+                        width={100}
+                        loading="lazy"
+                        alt="book img nine"
+                        height={100}
+                      ></Image>
+                      <p className="p-4">
+                        Experience a collection of diverse stories and perspectives.
+                      </p>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+                <div className="bk-sil prev cursor-pointer" onClick={() => swiperRef3.current?.slidePrev()}><FontAwesomeIcon icon={faArrowLeft} /></div>
+                <div className="bk-sil next cursor-pointer" onClick={() => swiperRef3.current?.slideNext()}><FontAwesomeIcon icon={faArrowRight} /></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ------------------ PORTFOLIO SECTION ------------------ */}
+        {/* ------------------ PORTFOLIO SECTION ------------------ */}
 
-      <div className="w-full max-w-6xl mx-auto py-8 relative home-book-cover">
-        {/* <div class="max-w-6xl mx-auto px-6"><h2 class="text-3xl font-bold mb-2 text-center">Our Portfolio</h2><p class="text-center text-gray-600 mb-8">A few of the bestselling books we’ve proudly published for our amazing authors.</p></div> */}
-        {/* Custom Previous Button */}
-        <div
-          className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon prev cursor-pointer"
-          onClick={() => swiperRef2.current?.slidePrev()}
-        >
-          <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
-        </div>
-        <div className="flex space-x-4 justify-center mb-12">
-          {['Published Books', 'Coming Soon'].map(category => (
-            <button
-              key={category}
-              className={`px-4 py-2 font-poppins ${activeCategory === category ? 'active' : 'in-active'}`}
-              onClick={() => setActiveCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        {/* Swiper Slider */}
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={4}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          onSwiper={(swiper) => (swiperRef2.current = swiper)}
-          className="mySwiper"
-          modules={[Navigation, Autoplay, Pagination]}
-          breakpoints={{
-            "@0.00": {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            "@1.00": {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }}
-        >
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
-            {filteredBooks.map(book => (
-              <SwiperSlide key={book.id}>
-                <div className="relative h-full flex flex-col gap-6 books">
-                  <a
-                    href={book.src}
-                    className="glightbox5 block"
-                    data-gallery="portfolio-books"
-                    data-glightbox={`title: ${book.title}; description: ${book.author || ""}`}
-                  >
-                    <img src={book.src} alt={`Book ${book.id}`} className="object-contain" />
-                  </a>
-                  <div className="content">
-                    <h4 className="text-size-custom">{book.title}</h4>
-                    <h4>{book.author}</h4>
-                  </div>
-                </div>
-              </SwiperSlide>
+        <div className="w-full max-w-6xl mx-auto py-8 relative home-book-cover">
+          {/* <div class="max-w-6xl mx-auto px-6"><h2 class="text-3xl font-bold mb-2 text-center">Our Portfolio</h2><p class="text-center text-gray-600 mb-8">A few of the bestselling books we’ve proudly published for our amazing authors.</p></div> */}
+          {/* Custom Previous Button */}
+          <div
+            className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon prev cursor-pointer"
+            onClick={() => swiperRef2.current?.slidePrev()}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+          </div>
+          <div className="flex space-x-4 justify-center mb-12">
+            {['Published Books', 'Coming Soon'].map(category => (
+              <button
+                key={category}
+                className={`px-4 py-2 font-poppins ${activeCategory === category ? 'active' : 'in-active'}`}
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
+              </button>
             ))}
           </div>
-        </Swiper>
+          {/* Swiper Slider */}
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={4}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            onSwiper={(swiper) => (swiperRef2.current = swiper)}
+            className="mySwiper"
+            modules={[Navigation, Autoplay, Pagination]}
+            breakpoints={{
+              "@0.00": {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              "@1.00": {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+            }}
+          >
 
-        {/* Custom Next Button */}
-        <div
-          className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon next cursor-pointer"
-          onClick={() => swiperRef2.current?.slideNext()}
-        >
-          <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+              {filteredBooks.map(book => (
+                <SwiperSlide key={book.id}>
+                  <div className="relative h-full flex flex-col gap-6 books">
+                    <a
+                      href={book.src}
+                      className="glightbox5 block"
+                      data-gallery="portfolio-books"
+                      data-glightbox={`title: ${book.title}; description: ${book.author || ""}`}
+                    >
+                      <img src={book.src} alt={`Book ${book.id}`} className="object-contain" />
+                    </a>
+                    <div className="content">
+                      <h4 className="text-size-custom">{book.title}</h4>
+                      <h4>{book.author}</h4>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+
+          {/* Custom Next Button */}
+          <div
+            className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider5-icon next cursor-pointer"
+            onClick={() => swiperRef2.current?.slideNext()}
+          >
+            <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+          </div>
+          {/* <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" /> */}
         </div>
-        {/* <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" /> */}
-      </div>
 
-      <section className="bg-[#f5f5f5] pt-10">
-        <PortfolioSlider4 />
-        <PortfolioSlider1 />
-        <PortfolioSlider2 />
-        <PortfolioSlider3 />
-        <PortfolioSlider5 />
-      </section>
+        <section className="bg-[#f5f5f5] pt-10">
+          <PortfolioSlider4 />
+          <PortfolioSlider1 />
+          <PortfolioSlider2 />
+          <PortfolioSlider3 />
+          <PortfolioSlider5 />
+        </section>
 
 
-      <section className="bg-[#f9fafb]">
-        <BrandTestimonial />
-      </section>
+        <section className="bg-[#f9fafb]">
+          <BrandTestimonial />
+        </section>
 
 
-      {/* 
+        {/* 
       <section className="py-16 bg-gray-50" data-aos="fade-up" data-aos-duration="1500">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-10">
@@ -1372,7 +1393,7 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      {/* <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
+        {/* <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase tracking-wide">
@@ -1419,1326 +1440,1327 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      <ExclusiveBookSigningParallax />
+        <ExclusiveBookSigningParallax />
 
-      <section
-        className="py-20 bg-[#117d6b] bg-cover bg-center bg-no-repeat text-white relative"
-        style={{ backgroundImage: "url('/brand-img/new-lp/cta-bg.webp')" }}
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-          {/* <!-- Left Side Image --> */}
-          <div class="w-full md:w-1/2 flex justify-center">
-            <Image
-              src="/brand-img/new-lp/cta_img-new.webp"
-              alt="Author writing a book"
-              width="500"
-              height="400"
-              class="rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </div>
+        <section
+          className="py-20 bg-[#117d6b] bg-cover bg-center bg-no-repeat text-white relative"
+          style={{ backgroundImage: "url('/brand-img/new-lp/cta-bg.webp')" }}
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            {/* <!-- Left Side Image --> */}
+            <div class="w-full md:w-1/2 flex justify-center">
+              <Image
+                src="/brand-img/new-lp/cta_img-new.webp"
+                alt="Author writing a book"
+                width="500"
+                height="400"
+                class="rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
 
-          {/* <!-- Right Side Content --> */}
-          <div class="w-full md:w-1/2 space-y-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#fff]">
-              How Can We Help?
-            </h2>
-            <p class="text-gray-100 leading-relaxed">
-              At <span class="font-semibold text-white">Pine Book Publishing</span>, we transform your ideas
-              into professionally written and published books. Our team of experienced writers covers a wide range
-              of genres, ensuring your voice is heard authentically.
-            </p>
-            <p class="text-gray-100 leading-relaxed">
-              With thousands of successful publications delivered, we’ve built a reputation for excellence in
-              writing, editing, design, and publishing. Many of our clients’ books have gained traction in the
-              literary world and achieved bestseller status.
-            </p>
+            {/* <!-- Right Side Content --> */}
+            <div class="w-full md:w-1/2 space-y-6">
+              <h2 class="text-3xl md:text-4xl font-bold text-[#fff]">
+                How Can We Help?
+              </h2>
+              <p class="text-gray-100 leading-relaxed">
+                At <span class="font-semibold text-white">Pine Book Publishing</span>, we transform your ideas
+                into professionally written and published books. Our team of experienced writers covers a wide range
+                of genres, ensuring your voice is heard authentically.
+              </p>
+              <p class="text-gray-100 leading-relaxed">
+                With thousands of successful publications delivered, we’ve built a reputation for excellence in
+                writing, editing, design, and publishing. Many of our clients’ books have gained traction in the
+                literary world and achieved bestseller status.
+              </p>
 
-            {/* <!-- CTA Buttons --> */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-              {/* Primary Button */}
-              <button
-                onClick={() => setIsOpen(true)}
-                type="button"
-                className="bg-[#15184c] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-white hover:text-black hover:shadow-2xl duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
-              >
-                Publish Your Book Now
-                <svg
-                  className="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
-                  aria-hidden="true"
+              {/* <!-- CTA Buttons --> */}
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+                {/* Primary Button */}
+                <button
+                  onClick={() => setIsOpen(true)}
+                  type="button"
+                  className="bg-[#15184c] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-white hover:text-black hover:shadow-2xl duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                 >
-                  <path
-                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3
+                  Publish Your Book Now
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3
         0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 0-32
         14.3-32 32s14.3 32 32 32h370.7L297.4
         393.4c-12.5 12.5-12.5 32.8 0
         45.3s32.8 12.5 45.3 0l160-160z"
-                  ></path>
-                </svg>
-              </button>
+                    ></path>
+                  </svg>
+                </button>
 
-              {/* Secondary Button */}
-              <button
-                type="button"
-                onClick={handleOpenChat}
-                className="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#15184c] hover:text-white duration-300 w-full sm:w-auto"
-              >
-                Live Chat
-              </button>
-            </div>
+                {/* Secondary Button */}
+                <button
+                  type="button"
+                  onClick={handleOpenChat}
+                  className="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#15184c] hover:text-white duration-300 w-full sm:w-auto"
+                >
+                  Live Chat
+                </button>
+              </div>
 
-          </div>
-        </div>
-      </section>
-
-      <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1500">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-          {/* <!-- Heading --> */}
-          <div class="mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase tracking-wide">
-              Our Process: From Concept to Perfection
-            </h2>
-            <div class="w-20 h-1 bg-[#15184c] mx-auto mt-4 rounded-full"></div>
-          </div>
-
-          {/* <!-- Process Steps --> */}
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* <!-- Step 1 --> */}
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 1
-              </h2>
-              <img src={"/images/Editing.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Editing
-              </h6>
-            </div>
-
-            {/* <!-- Step 2 --> */}
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 2
-              </h2>
-              <img src={"/images/Proofreading.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Proofreading
-              </h6>
-            </div>
-
-            {/* <!-- Step 3 --> */}
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 3
-              </h2>
-              <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
-
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                TypeSetting
-              </h6>
-            </div>
-
-            {/* <!-- Step 4 --> */}
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 4
-              </h2>
-              <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Layout Adjustment
-              </h6>
-            </div>
-
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 5
-              </h2>
-              <img src={"/images/Formatting.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Formatting
-              </h6>
-            </div>
-
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 6
-              </h2>
-              <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Cover Designing
-              </h6>
-            </div>
-
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 7
-              </h2>
-              <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Cover Adjustment
-              </h6>
-            </div>
-
-            <div
-              class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
-            >
-              <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
-                Step 8
-              </h2>
-              <img src={"/images/Publishing.png"} alt="logo" className="mx-auto" width={50} height={50} />
-              <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
-                Publishing
-              </h6>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      <section style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
-        className="py-20 bg-gray-50"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[#fff] uppercase">
-            Book Publishing Bundles
-          </h2>
-          <div className="w-24 h-1 bg-[#fff] mx-auto mt-4 rounded-full"></div>
-          <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
-
-
-          {/* Packages */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-            {/* Package 1 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Basic Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
+        <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1500">
+          <div class="max-w-6xl mx-auto px-6 text-center">
+            {/* <!-- Heading --> */}
+            <div class="mb-12">
+              <h2 class="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase tracking-wide">
+                Our Process: From Concept to Perfection
               </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Basic Formatting</li>
-                <li>2 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Kindle</li>
-                <li>eBook Format</li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share</li>
-                <li>100% Ownership Rights</li>
-                <li>100% Satisfaction</li>
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
+              <div class="w-20 h-1 bg-[#15184c] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            {/* Package 2 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Start Up Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
-              </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Publishing Standard Formatting</li>
-                <li>3 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Designing your Cover</h4>
-                <li>Graphic OR Illustrated Design</li>
-                <li>Cover Layout</li>
-                <li>Cover Formatting</li>
-                <li>Front, Back & Spine</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Amazon & Kindle</li>
-                <li>eBook Format</li>
-                <li>Paperback Format</li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share</li>
-                <li>100% Ownership Rights</li>
-                <li>100% Satisfaction</li>
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Package 3 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Standard Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
-              </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Publishing Standard Formatting</li>
-                <li>5 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Designing your Cover</h4>
-                <li>Graphic OR Illustrated Design</li>
-                <li>Cover Layout</li>
-                <li>Cover Formatting</li>
-                <li>Front, Back & Spine</li>
-                <li>ISBN + Barcode (2X)</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Amazon & Kindle</li>
-                <li>Available on Barnes & Noble</li>
-                <li>eBook Format</li>
-                <li>Paperback Format</li>
-                <li>Hardcover Format</li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share</li>
-                <li>100% Ownership Rights</li>
-                <li>100% Satisfaction</li>
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto mt-8">
-            <div className="container mx-auto m1-h mt-10 text-center">
-              <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages2}>Comparison
-                <FontAwesomeIcon
-                  className="ml-2"
-                  icon={collapseOpen2 ? faArrowUp : faArrowDown}
-                  color="#fff"
-                />
-              </button>
-            </div>
-            <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
-              <div className="md:w-full w-[500px] responsive-width">
-                <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
-                  <thead className="chart-header-custom">
-                    <tr>
-                      <th className="mainpage-regular"></th>
-                      <th className="font-poppins"><div className="heading">Basic Package</div></th>
-                      <th className="font-poppins"><div className="heading">Start Up Package</div></th>
-                      <th className="font-poppins"><div className="heading">Standard Package</div></th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-                    {comparisonBasic.map((group) => (
-                      <Fragment key={group.section}>
-                        <tr className="m-4">
-                          <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
-                            {group.section}
-                          </th>
-                        </tr>
-                        {group.rows.map((row) => (
-                          <tr key={`${group.section}-${row[0]}`}>
-                            <td>{row[0]}</td>
-                            <td>{row[1]}</td>
-                            <td>{row[2]}</td>
-                            <td>{row[3]}</td>
-                          </tr>
-                        ))}
-                      </Fragment>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
-
-            {/* Package 4 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Expert Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
-              </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Publishing Standard Formatting</li>
-                <li>5 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Designing your Cover</h4>
-                <li>Graphic OR Illustrated Design</li>
-                <li>Cover Layout</li>
-                <li>Cover Formatting</li>
-                <li>Front, Back & Spine</li>
-                <li>ISBN + Barcode (2X)</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Amazon & Kindle</li>
-                <li>Available on Barnes & Noble</li>
-                <li>Available on Google Books</li>
-                <li>eBook Format</li>
-                <li>Paperback Format</li>
-                <li>Hardcover Format</li>
-                <h4 className="font-bold text-lg">Online Presence</h4>
-                <li>3 - 5 Page Authors Website</li>
-                <li>1 - Year Domain & Hosting</li>
-                <li>30 - 60 Seconds Book Trailer</li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share</li>
-                <li>100% Ownership Rights</li>
-                <li>100% Satisfaction</li>
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Package 5 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Premium Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
-              </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Publishing Standard Formatting</li>
-                <li>5 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Designing your Cover</h4>
-                <li>Graphic OR Illustrated Design</li>
-                <li>Cover Layout</li>
-                <li>Cover Formatting</li>
-                <li>Front, Back & Spine</li>
-                <li>ISBN + Barcode (2X)</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Amazon & Kindle</li>
-                <li>Available on Barnes & Noble</li>
-                <li>Available on Google Books</li>
-                <li>Available on Smashwords</li>
-                <li>eBook Format</li>
-                <li>Paperback Format</li>
-                <li>Hardcover Format</li>
-                <h4 className="font-bold text-lg">12 Months Brand Marketing</h4>
-                <li>Logo Design (Complimentary)</li>
-                <li>3 - 5 Page Authors Website</li>
-                <li>1 - Year Domain & Hosting</li>
-                <li>30 - 60 Seconds Book Trailer</li>
-                <li>Organic Google Marketing</li>
-                <li>Social Media Marketing (Facebook, Instagram & Twitter)</li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share</li>
-                <li>100% Ownership Rights</li>
-                <li>100% Satisfaction</li>
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Package 6 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-              <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                Enterprise Package
-              </h3>
-              <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
-              </h2>
-              <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                <li>Editorial Support</li>
-                <li>Proofreading</li>
-                <li>Typesetting</li>
-                <li>Layout Adjustment</li>
-                <li>Publishing Standard Formatting</li>
-                <li>5 Revisions Per Draft</li>
-                <h4 className="font-bold text-lg">Designing your Cover</h4>
-                <li>Graphic OR Illustrated Design</li>
-                <li>Cover Layout</li>
-                <li>Cover Formatting</li>
-                <li>Front, Back & Spine</li>
-                <li>ISBN + Barcode (2X)</li>
-                <h4 className="font-bold text-lg">Book Publishing</h4>
-                <li>Account Creation</li>
-                <li>Account Verification</li>
-                <li>Account Optimization</li>
-                <li>Available on Amazon & Kindle</li>
-                <li>Available on Barnes & Noble</li>
-                <li>Available on Google Books</li>
-                <li>Available on Smashwords</li>
-                <li>Available on Draft2Digital</li>
-                <li>Available on ACX</li>
-                <li>eBook Format</li>
-                <li>Paperback Format</li>
-                <li>Hardcover Format</li>
-                <li>Audiobook Format</li>
-                <h4 className="font-bold text-lg">24 Months Brand Marketing</h4>
-                <li>Logo Design (Complimentary)</li>
-                <li>3 - 5 Page Authors Website</li>
-                <li>2 - Year Domain & Hosting</li>
-                <li>Organic Google Marketing</li>
-                <li>Blogs & Article Postings</li>
-                <li>Press Releases (150+ Platforms)</li>
-                <li>Social Media Marketing (Facebook, Instagram, Twitter, YouTube, TikTok)
-                </li>
-                <h4 className="font-bold text-lg">Guarantees</h4>
-                <li>No Royalties Share
-                </li>
-                <li>100% Ownership Rights
-                </li>
-                <li>100% Satisfaction
-                </li>
-
-              </ul>
-
-              <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                Start Project
-              </button>
-
-              <div className="mt-6 text-sm">
-                <p className="font-semibold text-gray-700">Need more info?</p>
-                <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                  <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                    📞 Talk to Us
-                  </a>
-                  <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                    💬 Chat With Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto">
-            <div className="container mx-auto m1-h mt-10 text-center">
-              <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages}>Comparison
-                <FontAwesomeIcon
-                  className="ml-2"
-                  icon={collapseOpen1 ? faArrowUp : faArrowDown}
-                  color="#fff"
-                />
-              </button>
-            </div>
-            <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}>
-              <div className="md:w-full w-[500px] responsive-width">
-                <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
-                  <thead className="chart-header-custom">
-                    <tr>
-                      <th className="mainpage-regular"></th>
-                      <th className="font-poppins"><div className="heading">Expert Package</div></th>
-                      <th className="font-poppins"><div className="heading">Premium Package</div></th>
-                      <th className="font-poppins"><div className="heading">Enterprise Package</div></th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-center">
-                    {comparisonAdvanced.map((group) => (
-                      <Fragment key={group.section}>
-                        <tr className="m-4">
-                          <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
-                            {group.section}
-                          </th>
-                        </tr>
-                        {group.rows.map((row) => (
-                          <tr key={`${group.section}-${row[0]}`}>
-                            <td>{row[0]}</td>
-                            <td>{row[1]}</td>
-                            <td>{row[2]}</td>
-                            <td>{row[3]}</td>
-                          </tr>
-                        ))}
-                      </Fragment>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-
-
-      <section
-        className="my-20"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase">
-            Our Services for You
-          </h2>
-          <div className="w-24 h-1 bg-[#15184c] mx-auto mt-4 rounded-full"></div>
-
-          {/* Service Boxes */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-16">
-            {[
-              { img: "/brand-img/new-lp/1.webp", title: "Book Publishing", url: "/book-publishing" },
-              { img: "/brand-img/new-lp/9.webp", title: "Book Editing", url: "/book-editing" },
-              { img: "/brand-img/new-lp/2.webp", title: "Proofreading", url: "/proofreading" },
-              { img: "/brand-img/new-lp/10.webp", title: "Book Formatting", url: "/book-formatting" },
-              { img: "/brand-img/new-lp/3.webp", title: "Typesetting & Layout", url: "/typesetting-layout-adjustment" },
-              { img: "/brand-img/new-lp/3.webp", title: "Audio Book", url: "/audio-book" },
-              { img: "/brand-img/new-lp/3.webp", title: "Print on Demand", url: "/print-on-demand" },
-              { img: "/brand-img/new-lp/3.webp", title: "Document Processing", url: "/document-processing" },
-              { img: "/brand-img/new-lp/3.webp", title: "ISBN & Barcode", url: "/isbn-and-barcode" },
-              { img: "/brand-img/new-lp/3.webp", title: "Merchandising", url: "/merchandising" },
-              { img: "/brand-img/new-lp/8.webp", title: "Book Marketing", url: "/book-marketing" },
-              { img: "/brand-img/new-lp/8.webp", title: "Children's Book Illustration", url: "/childrens-book-illustration" },
-              { img: "/brand-img/new-lp/8.webp", title: "Book Illustration Services", url: "/book-illustration-services" },
-              { img: "/brand-img/new-lp/8.webp", title: "Book Translation", url: "/book-translation" },
-              // { img: "/brand-img/new-lp/4.webp", title: "Book Writing", url: "/book-writing" },
-            ].map((service, index) => (
+            {/* <!-- Process Steps --> */}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* <!-- Step 1 --> */}
               <div
-                key={index}
-                className="group bg-white rounded-2xl shadow-md hover:shadow-xl duration-500 hover:-translate-y-2 flex flex-col items-center justify-between p-6 border border-gray-100 hover:border-[#15184c]"
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
               >
-                <Image
-                  src={service.img}
-                  alt={service.title}
-                  width={50}
-                  height={50}
-                  className="mx-auto mb-4 transition-transform duration-500 group-hover:scale-110"
-                />
-                <h5 className="text-lg font-semibold text-[#117d6b] mb-3">
-                  {service.title}
-                </h5>
-                <Link
-                  href={service.url}
-                  className="px-5 py-2 bg-[#15184c] text-[#ffff] rounded-full font-medium text-sm duration-300 hover:bg-[#117d6b] hover:text-[#fff] flex items-center gap-2"
-                >
-                  Get Info
-                </Link>
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 1
+                </h2>
+                <img src={"/images/Editing.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Editing
+                </h6>
               </div>
-            ))}
-          </div>
 
-        </div>
-      </section>
-
-      <Story />
-      <section
-        className="py-20 bg-white text-[#117d6b]"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <div className="max-w-7xl mx-auto text-center px-4 grid md:grid-cols-2 gap-10">
-          {/* Left Side */}
-          <div>
-            <h2 className="text-3xl font-bold mb-4 text-left">
-              Bring Your Book to Life with Pine Book Publishing
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed text-left">
-              At Pine Book Publishing, we believe that every story deserves to
-              be told — and told beautifully, with the care, passion, and
-              professionalism it deserves. Whether you're beginning with a single
-              spark of an idea, struggling through the early stages of a rough
-              draft, or holding a completed manuscript ready for the world, we are
-              here to help transform your vision into a masterpiece.
-            </p>
-
-            <ul className="grid grid-cols-2 gap-2 text-sm">
-              {[
-                "Book Publishing",
-                "Book Editing",
-                "Proofreading",
-                "Book Formatting",
-                "Typesetting & Layout",
-                "Audio Book",
-                "Print on Demand",
-                "Document Processing",
-                "ISBN & Barcode",
-                "Merchandising",
-                "Book Marketing",
-                "Children's Book Illustration",
-                "Book Illustration Services",
-                "Book Translation",
-                "Book Writing",
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <Image
-                    src="/brand-img/new-lp/check.webp"
-                    alt="check"
-                    width={16}
-                    height={16}
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center mt-6">
-              {/* Button 1 */}
-              <button
-                onClick={() => setIsOpen(true)}
-                type="button"
-                className="bg-[#15184c]  text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+              {/* <!-- Step 2 --> */}
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
               >
-                Publish Your Book Now
-                <svg
-                  className="w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
-                0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 
-                0-32 14.3-32 32s14.3 32 32 32h370.7L297.4 
-                393.4c-12.5 12.5-12.5 32.8 0 
-                45.3s32.8 12.5 45.3 0l160-160z" />
-                </svg>
-              </button>
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 2
+                </h2>
+                <img src={"/images/Proofreading.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Proofreading
+                </h6>
+              </div>
 
-              {/* Button 2 */}
-              <button
-                type="button"
-                onClick={handleOpenChat}
-                className="bg-[#15184c] text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+              {/* <!-- Step 3 --> */}
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
               >
-                Live Chat
-              </button>
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 3
+                </h2>
+                <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
+
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  TypeSetting
+                </h6>
+              </div>
+
+              {/* <!-- Step 4 --> */}
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+              >
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 4
+                </h2>
+                <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Layout Adjustment
+                </h6>
+              </div>
+
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+              >
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 5
+                </h2>
+                <img src={"/images/Formatting.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Formatting
+                </h6>
+              </div>
+
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+              >
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 6
+                </h2>
+                <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Cover Designing
+                </h6>
+              </div>
+
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+              >
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 7
+                </h2>
+                <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Cover Adjustment
+                </h6>
+              </div>
+
+              <div
+                class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#15184c]"
+              >
+                <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
+                  Step 8
+                </h2>
+                <img src={"/images/Publishing.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
+                  Publishing
+                </h6>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Right Side - Form */}
-          <div className="bg-[#117d6b] rounded-2xl p-8">
-            <h2 className="text-2xl font-semibold mb-6 text-white">
-              Tell Us About Your Project Needs
+
+        <section style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
+          className="py-20 bg-gray-50"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold text-[#fff] uppercase">
+              Book Publishing Bundles
             </h2>
+            <div className="w-24 h-1 bg-[#fff] mx-auto mt-4 rounded-full"></div>
+            <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
 
-            <form onSubmit={(e) => handleFormSubmit(e, 'Project Needs')} className="space-y-4">
-              {/* Services Checkboxes */}
-              <div className="grid grid-cols-2 gap-3 text-white">
-                {[
-                  "Book Publishing",
-                  "Cover Design",
-                  "Illustration",
-                  "Book Editing",
-                  "Printing",
-                  "Interior Formatting",
-                ].map((label, index) => (
-                  <label key={index} className="flex items-center gap-2 text-sm">
-                    <input
-                      type="checkbox"
-                      name="services"
-                      value={label}
-                      className="accent-[#15184c]"
-                    />
-                    {label}
-                  </label>
-                ))}
-              </div>
 
-              {/* Name Field */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name *"
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                required
-              />
+            {/* Packages */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+              {/* Package 1 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Basic Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Basic Formatting</li>
+                  <li>2 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Kindle</li>
+                  <li>eBook Format</li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share</li>
+                  <li>100% Ownership Rights</li>
+                  <li>100% Satisfaction</li>
+                </ul>
 
-              {/* Email Field */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address *"
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                required
-              />
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
 
-              {/* Phone Field With Country Code */}
-              <div className="relative w-full">
-                <div className="tel-box">
-                  <div className="country-input-wrapper">
-                    <div className="select-box">
-                      <div className="select-box flex items-center">
-                        <select
-                          className="country-select pl-2 pr-2 py-2 cursor-pointer"
-                          value={projectCountry}
-                          onChange={(e) => setProjectCountry(e.target.value)}
-                        >
-                          {projectCountryCodes.map((country) => (
-                            <option key={country.countryCode} value={country.countryCode}>
-                              {country.name} (+{country.code})
-                            </option>
-                          ))}
-                        </select>
-                        <img
-                          src={selectedProjectCountry.flag}
-                          alt={`Flag of ${selectedProjectCountry.name}`}
-                          className="flag-img w-6 h-4 ml-2"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="country-input-wrapper flex items-center mt-2">
-                      <span className="country-code text-lg font-semibold">
-                        +{selectedProjectCountry.code}
-                      </span>
-                      <input
-                        type="tel"
-                        name="phone_local"
-                        placeholder="Enter your Phone No *"
-                        pattern="[0-9]{7,15}"
-                        minLength={7}
-                        maxLength={15}
-                        value={projectPhone}
-                        onChange={(e) => setProjectPhone(e.target.value.replace(/\D/g, ""))}
-                        className="tel pl-4 pr-4 py-3 w-full rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                        required
-                      />
-                    </div>
-                    <input
-                      type="hidden"
-                      name="phone"
-                      value={`+${selectedProjectCountry.code} ${projectPhone}`}
-                    />
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Manuscript Status Dropdown */}
-              <select
-                name="manuscript"
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                required
-              >
-                <option value="">Do You Have a Completed Manuscript? *</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="inprogress">In Progress</option>
-              </select>
+              {/* Package 2 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Start Up Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Publishing Standard Formatting</li>
+                  <li>3 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Designing your Cover</h4>
+                  <li>Graphic OR Illustrated Design</li>
+                  <li>Cover Layout</li>
+                  <li>Cover Formatting</li>
+                  <li>Front, Back & Spine</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Amazon & Kindle</li>
+                  <li>eBook Format</li>
+                  <li>Paperback Format</li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share</li>
+                  <li>100% Ownership Rights</li>
+                  <li>100% Satisfaction</li>
+                </ul>
 
-              {/* Genre Dropdown */}
-              <select
-                name="genre"
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                required
-              >
-                <option value="">What Genre Is Your Book? *</option>
-                <option value="Fiction">Fiction</option>
-                <option value="Non-Fiction">Non-Fiction</option>
-                <option value="Memoir">Memoir</option>
-                <option value="Self-Help">Self-Help</option>
-                <option value="Business">Business</option>
-                <option value="Children">Children</option>
-                <option value="Romance">Romance</option>
-                <option value="Mystery/Thriller">Mystery/Thriller</option>
-                <option value="Science Fiction">Science Fiction</option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Biography">Biography</option>
-                <option value="Other">Other</option>
-              </select>
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
 
-              {/* Message Textarea */}
-              <textarea
-                name="msg"
-                placeholder="Tell us more about your project..."
-                className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
-                rows="4"
-              ></textarea>
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-              {/* Consent Checkbox */}
-              <label className="flex items-start gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  required
-                  className="mt-1 accent-[#15184c]"
-                />
-                <span className="text-white">
-                  I agree to receive communications by text message about my
-                  inquiry. Message and data rates may apply.
-                </span>
-              </label>
+              {/* Package 3 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Standard Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Publishing Standard Formatting</li>
+                  <li>5 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Designing your Cover</h4>
+                  <li>Graphic OR Illustrated Design</li>
+                  <li>Cover Layout</li>
+                  <li>Cover Formatting</li>
+                  <li>Front, Back & Spine</li>
+                  <li>ISBN + Barcode (2X)</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Amazon & Kindle</li>
+                  <li>Available on Barnes & Noble</li>
+                  <li>eBook Format</li>
+                  <li>Paperback Format</li>
+                  <li>Hardcover Format</li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share</li>
+                  <li>100% Ownership Rights</li>
+                  <li>100% Satisfaction</li>
+                </ul>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-white w-full text-[#117d6b] font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
 
-
-      <section
-        style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
-        className="pt-20 pb-[15%] cover bg-center bg-no-repeat bg-cover"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-          {/* Left Side Image */}
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-md">
-              <Image src={"/images/book-image-big.png"} width={400} height={200} className="aos-init aos-animate book-publishing-cta-img" ></Image>
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto mt-8">
+              <div className="container mx-auto m1-h mt-10 text-center">
+                <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages2}>Comparison
+                  <FontAwesomeIcon
+                    className="ml-2"
+                    icon={collapseOpen2 ? faArrowUp : faArrowDown}
+                    color="#fff"
+                  />
+                </button>
+              </div>
+              <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
+                <div className="md:w-full w-[500px] responsive-width">
+                  <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                    <thead className="chart-header-custom">
+                      <tr>
+                        <th className="mainpage-regular"></th>
+                        <th className="font-poppins"><div className="heading">Basic Package</div></th>
+                        <th className="font-poppins"><div className="heading">Start Up Package</div></th>
+                        <th className="font-poppins"><div className="heading">Standard Package</div></th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-center">
+                      {comparisonBasic.map((group) => (
+                        <Fragment key={group.section}>
+                          <tr className="m-4">
+                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                              {group.section}
+                            </th>
+                          </tr>
+                          {group.rows.map((row) => (
+                            <tr key={`${group.section}-${row[0]}`}>
+                              <td>{row[0]}</td>
+                              <td>{row[1]}</td>
+                              <td>{row[2]}</td>
+                              <td>{row[3]}</td>
+                            </tr>
+                          ))}
+                        </Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
+
+              {/* Package 4 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Expert Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Publishing Standard Formatting</li>
+                  <li>5 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Designing your Cover</h4>
+                  <li>Graphic OR Illustrated Design</li>
+                  <li>Cover Layout</li>
+                  <li>Cover Formatting</li>
+                  <li>Front, Back & Spine</li>
+                  <li>ISBN + Barcode (2X)</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Amazon & Kindle</li>
+                  <li>Available on Barnes & Noble</li>
+                  <li>Available on Google Books</li>
+                  <li>eBook Format</li>
+                  <li>Paperback Format</li>
+                  <li>Hardcover Format</li>
+                  <h4 className="font-bold text-lg">Online Presence</h4>
+                  <li>3 - 5 Page Authors Website</li>
+                  <li>1 - Year Domain & Hosting</li>
+                  <li>30 - 60 Seconds Book Trailer</li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share</li>
+                  <li>100% Ownership Rights</li>
+                  <li>100% Satisfaction</li>
+                </ul>
+
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
+
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Package 5 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Premium Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Publishing Standard Formatting</li>
+                  <li>5 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Designing your Cover</h4>
+                  <li>Graphic OR Illustrated Design</li>
+                  <li>Cover Layout</li>
+                  <li>Cover Formatting</li>
+                  <li>Front, Back & Spine</li>
+                  <li>ISBN + Barcode (2X)</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Amazon & Kindle</li>
+                  <li>Available on Barnes & Noble</li>
+                  <li>Available on Google Books</li>
+                  <li>Available on Smashwords</li>
+                  <li>eBook Format</li>
+                  <li>Paperback Format</li>
+                  <li>Hardcover Format</li>
+                  <h4 className="font-bold text-lg">12 Months Brand Marketing</h4>
+                  <li>Logo Design (Complimentary)</li>
+                  <li>3 - 5 Page Authors Website</li>
+                  <li>1 - Year Domain & Hosting</li>
+                  <li>30 - 60 Seconds Book Trailer</li>
+                  <li>Organic Google Marketing</li>
+                  <li>Social Media Marketing (Facebook, Instagram & Twitter)</li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share</li>
+                  <li>100% Ownership Rights</li>
+                  <li>100% Satisfaction</li>
+                </ul>
+
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
+
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Package 6 */}
+              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                  Enterprise Package
+                </h3>
+                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                  <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
+                </h2>
+                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                  <li>Editorial Support</li>
+                  <li>Proofreading</li>
+                  <li>Typesetting</li>
+                  <li>Layout Adjustment</li>
+                  <li>Publishing Standard Formatting</li>
+                  <li>5 Revisions Per Draft</li>
+                  <h4 className="font-bold text-lg">Designing your Cover</h4>
+                  <li>Graphic OR Illustrated Design</li>
+                  <li>Cover Layout</li>
+                  <li>Cover Formatting</li>
+                  <li>Front, Back & Spine</li>
+                  <li>ISBN + Barcode (2X)</li>
+                  <h4 className="font-bold text-lg">Book Publishing</h4>
+                  <li>Account Creation</li>
+                  <li>Account Verification</li>
+                  <li>Account Optimization</li>
+                  <li>Available on Amazon & Kindle</li>
+                  <li>Available on Barnes & Noble</li>
+                  <li>Available on Google Books</li>
+                  <li>Available on Smashwords</li>
+                  <li>Available on Draft2Digital</li>
+                  <li>Available on ACX</li>
+                  <li>eBook Format</li>
+                  <li>Paperback Format</li>
+                  <li>Hardcover Format</li>
+                  <li>Audiobook Format</li>
+                  <h4 className="font-bold text-lg">24 Months Brand Marketing</h4>
+                  <li>Logo Design (Complimentary)</li>
+                  <li>3 - 5 Page Authors Website</li>
+                  <li>2 - Year Domain & Hosting</li>
+                  <li>Organic Google Marketing</li>
+                  <li>Blogs & Article Postings</li>
+                  <li>Press Releases (150+ Platforms)</li>
+                  <li>Social Media Marketing (Facebook, Instagram, Twitter, YouTube, TikTok)
+                  </li>
+                  <h4 className="font-bold text-lg">Guarantees</h4>
+                  <li>No Royalties Share
+                  </li>
+                  <li>100% Ownership Rights
+                  </li>
+                  <li>100% Satisfaction
+                  </li>
+
+                </ul>
+
+                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                  Start Project
+                </button>
+
+                <div className="mt-6 text-sm">
+                  <p className="font-semibold text-gray-700">Need more info?</p>
+                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                      📞 Talk to Us
+                    </a>
+                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                      💬 Chat With Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto">
+              <div className="container mx-auto m1-h mt-10 text-center">
+                <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages}>Comparison
+                  <FontAwesomeIcon
+                    className="ml-2"
+                    icon={collapseOpen1 ? faArrowUp : faArrowDown}
+                    color="#fff"
+                  />
+                </button>
+              </div>
+              <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}>
+                <div className="md:w-full w-[500px] responsive-width">
+                  <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                    <thead className="chart-header-custom">
+                      <tr>
+                        <th className="mainpage-regular"></th>
+                        <th className="font-poppins"><div className="heading">Expert Package</div></th>
+                        <th className="font-poppins"><div className="heading">Premium Package</div></th>
+                        <th className="font-poppins"><div className="heading">Enterprise Package</div></th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-center">
+                      {comparisonAdvanced.map((group) => (
+                        <Fragment key={group.section}>
+                          <tr className="m-4">
+                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                              {group.section}
+                            </th>
+                          </tr>
+                          {group.rows.map((row) => (
+                            <tr key={`${group.section}-${row[0]}`}>
+                              <td>{row[0]}</td>
+                              <td>{row[1]}</td>
+                              <td>{row[2]}</td>
+                              <td>{row[3]}</td>
+                            </tr>
+                          ))}
+                        </Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
           </div>
+        </section>
 
-          {/* Right Side Text */}
-          <div className="text-white space-y-5">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              Achieve Best-Selling <br /> Status at 70% Off
+
+        <section
+          className="my-20"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold text-[#117d6b] uppercase">
+              Our Services for You
             </h2>
-            <p className="text-lg">We’ll help turn your manuscript into a best-seller!</p>
+            <div className="w-24 h-1 bg-[#15184c] mx-auto mt-4 rounded-full"></div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center">
-              {/* Button 1 */}
-              <button
-                onClick={() => setIsOpen(true)}
-                type="button"
-                className="bg-[#15184c]  text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
-              >
-                Publish Your Book Now
-                <svg
-                  className="w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
+            {/* Service Boxes */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-16">
+              {[
+                { img: "/brand-img/new-lp/1.webp", title: "Book Publishing", url: "/book-publishing" },
+                { img: "/brand-img/new-lp/9.webp", title: "Book Editing", url: "/book-editing" },
+                { img: "/brand-img/new-lp/2.webp", title: "Proofreading", url: "/proofreading" },
+                { img: "/brand-img/new-lp/10.webp", title: "Book Formatting", url: "/book-formatting" },
+                { img: "/brand-img/new-lp/3.webp", title: "Typesetting & Layout", url: "/typesetting-layout-adjustment" },
+                { img: "/brand-img/new-lp/3.webp", title: "Audio Book", url: "/audio-book" },
+                { img: "/brand-img/new-lp/3.webp", title: "Print on Demand", url: "/print-on-demand" },
+                { img: "/brand-img/new-lp/3.webp", title: "Document Processing", url: "/document-processing" },
+                { img: "/brand-img/new-lp/3.webp", title: "ISBN & Barcode", url: "/isbn-and-barcode" },
+                { img: "/brand-img/new-lp/3.webp", title: "Merchandising", url: "/merchandising" },
+                { img: "/brand-img/new-lp/8.webp", title: "Book Marketing", url: "/book-marketing" },
+                { img: "/brand-img/new-lp/8.webp", title: "Children's Book Illustration", url: "/childrens-book-illustration" },
+                { img: "/brand-img/new-lp/8.webp", title: "Book Illustration Services", url: "/book-illustration-services" },
+                { img: "/brand-img/new-lp/8.webp", title: "Book Translation", url: "/book-translation" },
+                // { img: "/brand-img/new-lp/4.webp", title: "Book Writing", url: "/book-writing" },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-md hover:shadow-xl duration-500 hover:-translate-y-2 flex flex-col items-center justify-between p-6 border border-gray-100 hover:border-[#15184c]"
                 >
-                  <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
+                  <Image
+                    src={service.img}
+                    alt={service.title}
+                    width={50}
+                    height={50}
+                    className="mx-auto mb-4 transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <h5 className="text-lg font-semibold text-[#117d6b] mb-3">
+                    {service.title}
+                  </h5>
+                  <Link
+                    href={service.url}
+                    className="px-5 py-2 bg-[#15184c] text-[#ffff] rounded-full font-medium text-sm duration-300 hover:bg-[#117d6b] hover:text-[#fff] flex items-center gap-2"
+                  >
+                    Get Info
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        <Story />
+        <section
+          className="py-20 bg-white text-[#117d6b]"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div className="max-w-7xl mx-auto text-center px-4 grid md:grid-cols-2 gap-10">
+            {/* Left Side */}
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-left">
+                Bring Your Book to Life with Pine Book Publishing
+              </h2>
+              <p className="text-gray-700 mb-6 leading-relaxed text-left">
+                At Pine Book Publishing, we believe that every story deserves to
+                be told — and told beautifully, with the care, passion, and
+                professionalism it deserves. Whether you're beginning with a single
+                spark of an idea, struggling through the early stages of a rough
+                draft, or holding a completed manuscript ready for the world, we are
+                here to help transform your vision into a masterpiece.
+              </p>
+
+              <ul className="grid grid-cols-2 gap-2 text-sm">
+                {[
+                  "Book Publishing",
+                  "Book Editing",
+                  "Proofreading",
+                  "Book Formatting",
+                  "Typesetting & Layout",
+                  "Audio Book",
+                  "Print on Demand",
+                  "Document Processing",
+                  "ISBN & Barcode",
+                  "Merchandising",
+                  "Book Marketing",
+                  "Children's Book Illustration",
+                  "Book Illustration Services",
+                  "Book Translation",
+                  "Book Writing",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <Image
+                      src="/brand-img/new-lp/check.webp"
+                      alt="check"
+                      width={16}
+                      height={16}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center mt-6">
+                {/* Button 1 */}
+                <button
+                  onClick={() => setIsOpen(true)}
+                  type="button"
+                  className="bg-[#15184c]  text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+                >
+                  Publish Your Book Now
+                  <svg
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
                 0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 
                 0-32 14.3-32 32s14.3 32 32 32h370.7L297.4 
                 393.4c-12.5 12.5-12.5 32.8 0 
                 45.3s32.8 12.5 45.3 0l160-160z" />
-                </svg>
-              </button>
+                  </svg>
+                </button>
 
-              {/* Button 2 */}
-              <button
-                type="button"
-                onClick={handleOpenChat}
-                className="bg-[#15184c] text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
-              >
-                Live Chat
-              </button>
+                {/* Button 2 */}
+                <button
+                  type="button"
+                  onClick={handleOpenChat}
+                  className="bg-[#15184c] text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+                >
+                  Live Chat
+                </button>
+              </div>
+            </div>
+
+            {/* Right Side - Form */}
+            <div className="bg-[#117d6b] rounded-2xl p-8">
+              <h2 className="text-2xl font-semibold mb-6 text-white">
+                Tell Us About Your Project Needs
+              </h2>
+
+              <form onSubmit={(e) => handleFormSubmit(e, 'Project Needs')} className="space-y-4">
+                {/* Services Checkboxes */}
+                <div className="grid grid-cols-2 gap-3 text-white">
+                  {[
+                    "Book Publishing",
+                    "Cover Design",
+                    "Illustration",
+                    "Book Editing",
+                    "Printing",
+                    "Interior Formatting",
+                  ].map((label, index) => (
+                    <label key={index} className="flex items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        name="services"
+                        value={label}
+                        className="accent-[#15184c]"
+                      />
+                      {label}
+                    </label>
+                  ))}
+                </div>
+
+                {/* Name Field */}
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name *"
+                  className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                  required
+                />
+
+                {/* Email Field */}
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address *"
+                  className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                  required
+                />
+
+                {/* Phone Field With Country Code */}
+                <div className="relative w-full">
+                  <div className="tel-box">
+                    <div className="country-input-wrapper">
+                      <div className="select-box">
+                        <div className="select-box flex items-center">
+                          <select
+                            className="country-select pl-2 pr-2 py-2 cursor-pointer"
+                            value={projectCountry}
+                            onChange={(e) => setProjectCountry(e.target.value)}
+                          >
+                            {projectCountryCodes.map((country) => (
+                              <option key={country.countryCode} value={country.countryCode}>
+                                {country.name} (+{country.code})
+                              </option>
+                            ))}
+                          </select>
+                          <img
+                            src={selectedProjectCountry.flag}
+                            alt={`Flag of ${selectedProjectCountry.name}`}
+                            className="flag-img w-6 h-4 ml-2"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="country-input-wrapper flex items-center mt-2">
+                        <span className="country-code text-lg font-semibold">
+                          +{selectedProjectCountry.code}
+                        </span>
+                        <input
+                          type="tel"
+                          name="phone_local"
+                          placeholder="Enter your Phone No *"
+                          pattern="[0-9]{7,15}"
+                          minLength={7}
+                          maxLength={15}
+                          value={projectPhone}
+                          onChange={(e) => setProjectPhone(e.target.value.replace(/\D/g, ""))}
+                          className="tel pl-4 pr-4 py-3 w-full rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                          required
+                        />
+                      </div>
+                      <input
+                        type="hidden"
+                        name="phone"
+                        value={`+${selectedProjectCountry.code} ${projectPhone}`}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Manuscript Status Dropdown */}
+                <select
+                  name="manuscript"
+                  className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                  required
+                >
+                  <option value="">Do You Have a Completed Manuscript? *</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="inprogress">In Progress</option>
+                </select>
+
+                {/* Genre Dropdown */}
+                <select
+                  name="genre"
+                  className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                  required
+                >
+                  <option value="">What Genre Is Your Book? *</option>
+                  <option value="Fiction">Fiction</option>
+                  <option value="Non-Fiction">Non-Fiction</option>
+                  <option value="Memoir">Memoir</option>
+                  <option value="Self-Help">Self-Help</option>
+                  <option value="Business">Business</option>
+                  <option value="Children">Children</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Mystery/Thriller">Mystery/Thriller</option>
+                  <option value="Science Fiction">Science Fiction</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Biography">Biography</option>
+                  <option value="Other">Other</option>
+                </select>
+
+                {/* Message Textarea */}
+                <textarea
+                  name="msg"
+                  placeholder="Tell us more about your project..."
+                  className="w-full p-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-[#15184c]"
+                  rows="4"
+                ></textarea>
+
+                {/* Consent Checkbox */}
+                <label className="flex items-start gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    required
+                    className="mt-1 accent-[#15184c]"
+                  />
+                  <span className="text-white">
+                    I agree to receive communications by text message about my
+                    inquiry. Message and data rates may apply.
+                  </span>
+                </label>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-white w-full text-[#117d6b] font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+              </form>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section
-        className="  text-[#117d6b] relative ">
-        <div className="container mx-auto w-full lg:max-w-6xl grid md:grid-cols-2 gap-10 items-center shadow-[0_0_10px_#212529] rounded-[30px] px-[30px] py-[40px] md:mt-[-15%] bg-white z-30">
-          {/* Left Content */}
-          <div className="space-y-5">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              Excited to Publish Your Manuscript?
-            </h2>
 
-            <p className="text-gray-700">
-              We’re here to help. At Pine Book Publishing, we offer end-to-end
-              book writing and publishing services, including:
-            </p>
+        <section
+          style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
+          className="pt-20 pb-[15%] cover bg-center bg-no-repeat bg-cover"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+            {/* Left Side Image */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md">
+                <Image src={"/images/book-image-big.png"} width={400} height={200} className="aos-init aos-animate book-publishing-cta-img" ></Image>
+              </div>
+            </div>
 
-            <ul className="space-y-2 text-gray-800">
-              {[
-                "E-book publication",
-                "Audiobooks",
-                "Website Design, Development, & SEO",
-                "Video Book Trailers",
-                "Branding & Publicity",
-                "Cover Design & Typesetting",
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <Image
-                    src="/brand-img/new-lp/check.webp"
-                    alt="Check icon"
-                    width={20}
-                    height={20}
-                    className="object-contain"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            {/* Right Side Text */}
+            <div className="text-white space-y-5">
+              <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+                Achieve Best-Selling <br /> Status at 70% Off
+              </h2>
+              <p className="text-lg">We’ll help turn your manuscript into a best-seller!</p>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-              <button
-                type="button"
-                className="px-5 py-4 flex gap-2 items-center bg-[#15184c] text-[#ffff] rounded-full font-medium text-sm duration-300 hover:bg-[#117d6b] hover:text-[#fff]"
-              >
-                Publish Your Book Now
-                <svg
-                  className="w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center">
+                {/* Button 1 */}
+                <button
+                  onClick={() => setIsOpen(true)}
+                  type="button"
+                  className="bg-[#15184c]  text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
                 >
-                  <path d="M502.6 278.6c12.5-12.5 12.5-32.8 
+                  Publish Your Book Now
+                  <svg
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
+                0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 
+                0-32 14.3-32 32s14.3 32 32 32h370.7L297.4 
+                393.4c-12.5 12.5-12.5 32.8 0 
+                45.3s32.8 12.5 45.3 0l160-160z" />
+                  </svg>
+                </button>
+
+                {/* Button 2 */}
+                <button
+                  type="button"
+                  onClick={handleOpenChat}
+                  className="bg-[#15184c] text-[#fff] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-white hover:text-black"
+                >
+                  Live Chat
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="  text-[#117d6b] relative ">
+          <div className="container mx-auto w-full lg:max-w-6xl grid md:grid-cols-2 gap-10 items-center shadow-[0_0_10px_#212529] rounded-[30px] px-[30px] py-[40px] md:mt-[-15%] bg-white z-30">
+            {/* Left Content */}
+            <div className="space-y-5">
+              <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+                Excited to Publish Your Manuscript?
+              </h2>
+
+              <p className="text-gray-700">
+                We’re here to help. At Pine Book Publishing, we offer end-to-end
+                book writing and publishing services, including:
+              </p>
+
+              <ul className="space-y-2 text-gray-800">
+                {[
+                  "E-book publication",
+                  "Audiobooks",
+                  "Website Design, Development, & SEO",
+                  "Video Book Trailers",
+                  "Branding & Publicity",
+                  "Cover Design & Typesetting",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <Image
+                      src="/brand-img/new-lp/check.webp"
+                      alt="Check icon"
+                      width={20}
+                      height={20}
+                      className="object-contain"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+                <button
+                  type="button"
+                  className="px-5 py-4 flex gap-2 items-center bg-[#15184c] text-[#ffff] rounded-full font-medium text-sm duration-300 hover:bg-[#117d6b] hover:text-[#fff]"
+                >
+                  Publish Your Book Now
+                  <svg
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M502.6 278.6c12.5-12.5 12.5-32.8 
                   0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 
                   0s-12.5 32.8 0 45.3L402.7 224H32c-17.7 
                   0-32 14.3-32 32s14.3 32 32 32h370.7L297.4 
                   393.4c-12.5 12.5-12.5 32.8 0 
                   45.3s32.8 12.5 45.3 0l160-160z" />
-                </svg>
-              </button>
+                  </svg>
+                </button>
 
-              <button
-                type="button"
-                onClick={handleOpenChat}
-                className="bg-[#117d6b] text-white font-semibold py-3 rounded-full hover:bg-[#15184c] hover:text-[#fff] duration-300 px-5 py-2"
-              >
-                Live Chat
-              </button>
+                <button
+                  type="button"
+                  onClick={handleOpenChat}
+                  className="bg-[#117d6b] text-white font-semibold py-3 rounded-full hover:bg-[#15184c] hover:text-[#fff] duration-300 px-5 py-2"
+                >
+                  Live Chat
+                </button>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="flex justify-center">
+              <Image
+                src="/brand-img/new-lp/Our.webp"
+                alt="Books stack"
+                width={400}
+                height={300}
+                className="object-contain rounded-lg"
+              />
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="flex justify-center">
-            <Image
-              src="/brand-img/new-lp/Our.webp"
-              alt="Books stack"
-              width={400}
-              height={300}
-              className="object-contain rounded-lg"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
 
-      <section
-        className="py-20 bg-[#f9f9f9] bg-cover"
-      // style={{ backgroundImage: "url('/brand-img/new-lp/footer.webp')" }}
-      >
-        <div className="container mx-auto px-4 w-full lg:max-w-6xl">
-          {/* Top heading like screenshot */}
-          {/* <div className="text-center mb-12">
+        <section
+          className="py-20 bg-[#f9f9f9] bg-cover"
+        // style={{ backgroundImage: "url('/brand-img/new-lp/footer.webp')" }}
+        >
+          <div className="container mx-auto px-4 w-full lg:max-w-6xl">
+            {/* Top heading like screenshot */}
+            {/* <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1b3040]">
               CONNECT WITH US
             </h2>
           </div> */}
 
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
-            {/* Left content block */}
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              className="w-full lg:w-5/12"
-            >
-              <h3 className="text-3xl md:text-4xl font-semibold text-[#123d4f] mb-4">
-                Connect Us Now!
-              </h3>
-              <p className="text-gray-600 max-w-md">
-                Ready to share your story? Tell us what you need and we’ll help bring
-                your book to life.
-              </p>
+            <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
+              {/* Left content block */}
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                className="w-full lg:w-5/12"
+              >
+                <h3 className="text-3xl md:text-4xl font-semibold text-[#123d4f] mb-4">
+                  Connect Us Now!
+                </h3>
+                <p className="text-gray-600 max-w-md">
+                  Ready to share your story? Tell us what you need and we’ll help bring
+                  your book to life.
+                </p>
 
-              {/* Optional book strip behind text, like the covers in the screenshot */}
-              <div className="relative mt-10 hidden md:block">
-                <div className="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-r from-[#8fd3c8] to-[#fef4d6]" />
-                <img
-                  src="/brand-img/new-lp/strips.webp"
-                  alt="Book covers"
-                  className="relative z-[1] max-w-full h-auto"
-                />
+                {/* Optional book strip behind text, like the covers in the screenshot */}
+                <div className="relative mt-10 hidden md:block">
+                  <div className="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-r from-[#8fd3c8] to-[#fef4d6]" />
+                  <img
+                    src="/brand-img/new-lp/strips.webp"
+                    alt="Book covers"
+                    className="relative z-[1] max-w-full h-auto"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Right form card */}
-            <div className="w-full lg:w-7/12 flex justify-center">
-              <div className="relative w-full max-w-xl">
-                {/* Card shadow halo like screenshot */}
-                <div className="absolute inset-0 translate-y-4 blur-2xl bg-black/10 rounded-[32px] pointer-events-none" />
+              {/* Right form card */}
+              <div className="w-full lg:w-7/12 flex justify-center">
+                <div className="relative w-full max-w-xl">
+                  {/* Card shadow halo like screenshot */}
+                  <div className="absolute inset-0 translate-y-4 blur-2xl bg-black/10 rounded-[32px] pointer-events-none" />
 
-                <form
-                  onSubmit={(e) => handleFormSubmit(e, 'Footer Contact')}
-                  className="relative bg-white rounded-[32px] px-6 sm:px-8 lg:px-10 py-8 sm:py-10 shadow-[0_20px_45px_rgba(15,23,42,0.18)]"
-                >
-                  {/* Card header like “Join Thousands…” */}
-                  <div className="mb-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#0f766e] mb-2">
-                      Join thousands of writers
-                    </p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#123d4f] leading-snug">
-                      Become a published author with Pine Book Publishing
-                    </h3>
-                  </div>
-
-                  {/* Name and Email Row (unchanged fields) */}
-                  <div className="flex flex-col md:flex-row gap-4 mb-4">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your Name *"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
-                      required
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your Email *"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
-                      required
-                    />
-                  </div>
-
-                  {/* Phone Field */}
-                  <div className="mb-4">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Enter your Phone No *"
-                      pattern="[0-9]{10,15}"
-                      minLength={10}
-                      maxLength={15}
-                      title="Please Enter Valid Phone No."
-                      required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
-                    />
-                  </div>
-
-                  {/* Message Textarea */}
-                  <div className="mb-4">
-                    <textarea
-                      name="msg"
-                      placeholder="Enter a brief description about your book *"
-                      rows={4}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black resize-none"
-                      required
-                    ></textarea>
-                  </div>
-
-                  {/* Consent Checkbox */}
-                  <label className="flex items-start text-xs sm:text-sm text-black space-x-2 mb-6">
-                    <input
-                      type="checkbox"
-                      name="subscribe"
-                      value="yes"
-                      className="mt-1 accent-[#117d6b]"
-                      required
-                    />
-                    <span className="text-left leading-relaxed">
-                      I agree to receive communications by text message about my
-                      inquiry. You may opt-out by replying STOP or ask for more
-                      information by replying HELP. Message frequency varies. Message
-                      and data rates may apply.
-                    </span>
-                  </label>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#117d6b] text-white font-semibold py-3 rounded-[999px] hover:bg-[#159372] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  <form
+                    onSubmit={(e) => handleFormSubmit(e, 'Footer Contact')}
+                    className="relative bg-white rounded-[32px] px-6 sm:px-8 lg:px-10 py-8 sm:py-10 shadow-[0_20px_45px_rgba(15,23,42,0.18)]"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Consult a Publishing Expert'}
-                  </button>
+                    {/* Card header like “Join Thousands…” */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#0f766e] mb-2">
+                        Join thousands of writers
+                      </p>
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#123d4f] leading-snug">
+                        Become a published author with Pine Book Publishing
+                      </h3>
+                    </div>
 
-                </form>
+                    {/* Name and Email Row (unchanged fields) */}
+                    <div className="flex flex-col md:flex-row gap-4 mb-4">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your Name *"
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
+                        required
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your Email *"
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
+                        required
+                      />
+                    </div>
+
+                    {/* Phone Field */}
+                    <div className="mb-4">
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter your Phone No *"
+                        pattern="[0-9]{10,15}"
+                        minLength={10}
+                        maxLength={15}
+                        title="Please Enter Valid Phone No."
+                        required
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black"
+                      />
+                    </div>
+
+                    {/* Message Textarea */}
+                    <div className="mb-4">
+                      <textarea
+                        name="msg"
+                        placeholder="Enter a brief description about your book *"
+                        rows={4}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#117d6b] text-black resize-none"
+                        required
+                      ></textarea>
+                    </div>
+
+                    {/* Consent Checkbox */}
+                    <label className="flex items-start text-xs sm:text-sm text-black space-x-2 mb-6">
+                      <input
+                        type="checkbox"
+                        name="subscribe"
+                        value="yes"
+                        className="mt-1 accent-[#117d6b]"
+                        required
+                      />
+                      <span className="text-left leading-relaxed">
+                        I agree to receive communications by text message about my
+                        inquiry. You may opt-out by replying STOP or ask for more
+                        information by replying HELP. Message frequency varies. Message
+                        and data rates may apply.
+                      </span>
+                    </label>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#117d6b] text-white font-semibold py-3 rounded-[999px] hover:bg-[#159372] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Consult a Publishing Expert'}
+                    </button>
+
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
 
-      {/* Button to Open Modal */}
-      {/* <button
+        {/* Button to Open Modal */}
+        {/* <button
         onClick={() => setIsOpen(true)}
         className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
       >
         Open Form
       </button> */}
 
-      {/* Modal */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white w-[90%] max-w-lg p-6 rounded-3xl shadow-lg relative">
-            <h3 className="text-xl font-semibold mb-4 text-center text-black">We are here to help!</h3>
+        {/* Modal */}
+        {isOpen && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white w-[90%] max-w-lg p-6 rounded-3xl shadow-lg relative">
+              <h3 className="text-xl font-semibold mb-4 text-center text-black">We are here to help!</h3>
 
-            <form onSubmit={(e) => handleFormSubmit(e, 'Modal')} className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name *"
-                required
-                className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your Phone No"
-                pattern="[0-9]{10}"
-                required
-                className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address *"
-                required
-                className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-              />
-              <textarea
-                name="msg"
-                placeholder="Describe your project..."
-                required
-                className="w-full border border-gray-300 rounded-lg p-2 h-24 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-              ></textarea>
+              <form onSubmit={(e) => handleFormSubmit(e, 'Modal')} className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name *"
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your Phone No"
+                  pattern="[0-9]{10}"
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address *"
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                />
+                <textarea
+                  name="msg"
+                  placeholder="Describe your project..."
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-2 h-24 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                ></textarea>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#117d6b] text-white py-2 rounded-lg hover:bg-[#15184c] transition disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+              </form>
+
               <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#117d6b] text-white py-2 rounded-lg hover:bg-[#15184c] transition disabled:opacity-50"
+                onClick={() => setIsOpen(false)}
+                className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
+                ✕
               </button>
-            </form>
-
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              ✕
-            </button>
+            </div>
           </div>
-        </div>
-      )}
-
-      <BrandFooterBook />
-
-      <div>
-        {isVisible && (
-          <button onClick={scrollToTop} className="responsive-back-to-top" style={{
-            position: 'fixed',
-            bottom: '29px',
-            right: '120px',
-            height: '40px',
-            width: '40px',
-            textAlign: 'center',
-            backgroundColor: '#00',
-            color: '#000',
-            borderRadius: '50%',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '16px',
-            boxShadow: '0 0px 5px #191b42',
-            border: '1px solid #288e7f',
-          }}>
-            <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
-          </button>
         )}
-      </div>
-    </main>
+
+        <BrandFooterBook />
+
+        <div>
+          {isVisible && (
+            <button onClick={scrollToTop} className="responsive-back-to-top" style={{
+              position: 'fixed',
+              bottom: '29px',
+              right: '120px',
+              height: '40px',
+              width: '40px',
+              textAlign: 'center',
+              backgroundColor: '#00',
+              color: '#000',
+              borderRadius: '50%',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '16px',
+              boxShadow: '0 0px 5px #191b42',
+              border: '1px solid #288e7f',
+            }}>
+              <Image src={"/brand-img/top-arrow.png"} width={15} height={15}></Image>
+            </button>
+          )}
+        </div>
+      </main>
+    </>
   );
 }
 
