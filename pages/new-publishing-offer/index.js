@@ -843,7 +843,7 @@ export default function HomePage() {
         <header className="absolute top-0 left-0 right-0 container mx-auto py-2 width-container z-50 w-full lg:max-w-6xl bg-transparent">
           <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
             <div className="head-logo">
-              <Link className="text-center" href="/book-publishing-offer">
+              <Link className="text-center" href="/new-publishing-offer">
                 <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
               </Link>
             </div>
@@ -2681,54 +2681,115 @@ export default function HomePage() {
 
         {/* Modal */}
         {isOpen && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-white w-[90%] max-w-lg p-6 rounded-3xl shadow-lg relative">
-              <h3 className="text-xl font-semibold mb-4 text-center text-black">We are here to help!</h3>
-
-              <form onSubmit={(e) => handleFormSubmit(e, 'Modal')} className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name *"
-                  required
-                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Enter your Phone No"
-                  pattern="[0-9]{10}"
-                  required
-                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address *"
-                  required
-                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                />
-                <textarea
-                  name="msg"
-                  placeholder="Describe your project..."
-                  required
-                  className="w-full border border-gray-300 rounded-lg p-2 h-24 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                ></textarea>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-[#117d6b] text-white py-2 rounded-lg hover:bg-[#15184c] transition disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
-                </button>
-              </form>
-
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 px-4 py-8 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            <div
+              className="relative w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/20 bg-white shadow-[0_35px_90px_rgba(2,6,23,0.5)]"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
+                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-slate-400 "
+                aria-label="Close modal"
               >
-                ✕
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 6L18 18M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
+
+              <div className="grid md:grid-cols-[1.05fr_1.45fr]">
+                <div
+                  className="relative h-full overflow-hidden bg-[#15184c] p-7 text-white sm:p-8"
+                  style={{
+                    backgroundImage: "url('/brand-img/contact-bg-img.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundAttachment: "fixed",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#15184c]/45 via-[#1f2870]/35 to-[#117d6b]/30"></div>
+                  <p className="relative z-[1] mb-3 inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em]">
+                    Free Consultation
+                  </p>
+                  <h3 className="relative z-[1] text-2xl font-bold leading-tight">
+                    Let us publish your book the right way
+                  </h3>
+                </div>
+
+                <div className="p-6 sm:p-8">
+                  <h4 className="text-xl font-bold text-slate-900">Request a Callback</h4>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Fill out the form and our expert will contact you shortly.
+                  </p>
+
+                  <form onSubmit={(e) => handleFormSubmit(e, 'Modal')} className="mt-6 space-y-4">
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Full Name *"
+                        required
+                        className="w-full rounded-xl border border-slate-300 px-4 py-3 text-black transition focus:border-[#117d6b] focus:outline-none focus:ring-2 focus:ring-[#117d6b]/20"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email Address *"
+                        required
+                        className="w-full rounded-xl border border-slate-300 px-4 py-3 text-black transition focus:border-[#117d6b] focus:outline-none focus:ring-2 focus:ring-[#117d6b]/20"
+                      />
+                    </div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number *"
+                      pattern="[0-9]{10,15}"
+                      minLength={10}
+                      maxLength={15}
+                      required
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-black transition focus:border-[#117d6b] focus:outline-none focus:ring-2 focus:ring-[#117d6b]/20"
+                    />
+                    <textarea
+                      name="msg"
+                      placeholder="Tell us about your book project..."
+                      required
+                      rows={4}
+                      className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-black transition focus:border-[#117d6b] focus:outline-none focus:ring-2 focus:ring-[#117d6b]/20"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="view-posts-btn modal-submit-btn"
+                    >
+                      <span className="btn-text">
+                        {isSubmitting ? 'Submitting...' : 'Consult a Publishing Expert'}
+                      </span>
+                      <span className="btn-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path
+                            fill="currentColor"
+                            d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42s1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -2764,4 +2825,5 @@ export default function HomePage() {
     </>
   );
 }
+
 
