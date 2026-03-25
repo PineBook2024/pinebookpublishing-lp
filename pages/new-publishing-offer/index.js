@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import Marquee from "react-fast-marquee";
 import { Fragment, useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
