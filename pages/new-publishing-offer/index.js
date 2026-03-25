@@ -2714,14 +2714,14 @@ export default function HomePage() {
                 <div
                   className="relative h-full overflow-hidden bg-[#15184c] p-7 text-white sm:p-8"
                   style={{
-                    backgroundImage: "url('/brand-img/contact-bg-img.png')",
+                    backgroundImage: "url('/brand-img/new-lp/333221.webp')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
-                    backgroundAttachment: "fixed",
+                    // backgroundAttachment: "fixed",
                   }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#15184c]/45 via-[#1f2870]/35 to-[#117d6b]/30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#15184c]/85 via-[#1f2870]/35 to-[#117d6bd4]/30"></div>
                   <p className="relative z-[1] mb-3 inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em]">
                     Request a Callback
                   </p>
