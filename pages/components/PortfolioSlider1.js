@@ -84,6 +84,10 @@ export default function PortfolioSlider1() {
             id: 8,
             src: "/brand-img/Jean Bosco N. Ruhashya Full cover.png",
         },
+        {
+            id: 9,
+            src: "/brand-img/Doris.jpg",
+        },
     ];
 
     return (
@@ -141,7 +145,7 @@ export default function PortfolioSlider1() {
 
 
             <div className="w-full max-w-6xl mx-auto pb-10 relative">
-                
+
 
                 <h2 className="text-3xl font-medium mb-5 ">Book Cover Design</h2>
                 {/* Custom Previous Button */}
