@@ -196,12 +196,39 @@ const videoClient = [
     },
     {
         id: 22,
-        src: "https://www.youtube-nocookie.com/embed/77grNmvBBXU",
+        src: "https://www.youtube.com/embed/jBQ1vIbK2zQ?si=DdvEu-V0Q_rG_FgS",
         type: "video/mp4",
         BookTitle: "Das Trevas Para Luz",
         Consultant: "Steve Hayes",
         ProjectManager: "Lia Sinclair",
         clientname: "Miguel De Oliveira"
+    },
+    {
+        id: 23,
+        src: "https://www.youtube.com/embed/DEzkPXPfYRk?si=V7HdYP-l7XBwq6Yl",
+        type: "video/mp4",
+        BookTitle: "Remembering Dad: The First Year",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Rex Brown",
+        clientname: "Adrea M. Witherspoon"
+    },
+    {
+        id: 24,
+        src: "https://www.youtube.com/embed/7FC8oT9eTPs?si=Yg6pZE18GtbexR3T",
+        type: "video/mp4",
+        BookTitle: "Fearless Friendships: Why Adults Struggle to Connect and How to Fix it",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Emily Jones",
+        clientname: "Philip A. Grimes, PhD"
+    },
+    {
+        id: 25,
+        src: "https://www.youtube.com/embed/rOtE_fGt1p0?si=2-ahTZuT2qyJLthO",
+        type: "video/mp4",
+        BookTitle: "Sufficiency of God’s Promises: A Biblical Study Journal",
+        Consultant: "Steve Hayes",
+        ProjectManager: "Emily Jones",
+        clientname: "Vernell T. Walton"
     },
 ]
 const BrandTesti = () => {
