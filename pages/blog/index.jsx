@@ -23,6 +23,7 @@ const Posts = ({ posts }) => {
         title="Blogs"
         desc="Read our insightful blog posts written by publishing experts and writers who stay updated with industry trends and the challenges faced by both new and experienced authors. Stay informed with expert tips and practical guides on book publishing, formatting, marketing, and other key aspects of the publishing process."
       />
+
       <section className='overflow-hidden'>
         <div className='max-w-screen-xl mx-auto px-4 my-20 relative py-22'>
           <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-10'>
