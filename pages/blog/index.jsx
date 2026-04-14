@@ -20,7 +20,7 @@ const Posts = ({ posts }) => {
       <BrandNavbar />
       <BrandPrimaryHeader
         subtitle="Our Blog - Learn. Write. Improve"
-        title="Blogs"
+        title=""
         desc="Read our insightful blog posts written by publishing experts and writers who stay updated with industry trends and the challenges faced by both new and experienced authors. Stay informed with expert tips and practical guides on book publishing, formatting, marketing, and other key aspects of the publishing process."
       />
       <section className='overflow-hidden'>
