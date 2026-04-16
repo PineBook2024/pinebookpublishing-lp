@@ -122,8 +122,6 @@ export default function PortfolioSlider1() {
       }
     };
   }, []);
-
-
   return (
     <section className="w-full pb-10 border-y border-[#193166] bg-[#071638] mb-10">
       <div className="mx-auto w-full">
