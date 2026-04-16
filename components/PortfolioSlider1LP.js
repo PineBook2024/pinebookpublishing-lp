@@ -141,7 +141,7 @@ export default function PortfolioSlider1LP() {
 
 
             <div className="w-full max-w-6xl mx-auto pb-10 relative">
-                
+
 
                 <h2 className="text-3xl font-medium mb-5 text-white text-center md:text-left">Book Cover Design</h2>
                 {/* Custom Previous Button */}

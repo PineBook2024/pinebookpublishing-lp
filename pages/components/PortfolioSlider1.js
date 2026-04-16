@@ -1,204 +1,131 @@
-import React, { useEffect, useState, useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import "swiper/css/effect-coverflow";
-import {
-    Autoplay,
-    Pagination,
-    Navigation,
-    EffectCoverflow,
-} from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Swiper, SwiperSlide } from "swiper/react";
-import dynamic from 'next/dynamic';
-import 'glightbox/dist/css/glightbox.min.css';
+import React, { useEffect, useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const GLightbox = dynamic(
-    () => import('glightbox').then((glightboxModule) => glightboxModule.default),
-    { ssr: false }
-);
+const bookCoverPaths = [
+  "/brand-img/new-lp/book-covers/B&NPB 2.jpg",
+  "/brand-img/new-lp/book-covers/Chhavyvann So 2-01.jpg",
+  "/brand-img/new-lp/book-covers/Christopher Allen PB.jpg",
+  "/brand-img/new-lp/book-covers/Hosea James Givan Paperback.jpg",
+  "/brand-img/new-lp/book-covers/Jean Bosco N.jpg",
+  "/brand-img/new-lp/book-covers/Jerimy Des Paperback.jpg",
+  "/brand-img/new-lp/book-covers/Jerry Schaffe LULU PB.jpg",
+  "/brand-img/new-lp/book-covers/Katie Loftis (Book 2) PB 2.jpg",
+  "/brand-img/new-lp/book-covers/Kyle Climer 4.jpg",
+  "/brand-img/new-lp/book-covers/Leslie Sundahl-Vick PB.jpg",
+  "/brand-img/new-lp/book-covers/Max Miller Paper back Amazon-01.jpg",
+  "/brand-img/new-lp/book-covers/Odell Furtick Paperback 2.jpg",
+  "/brand-img/new-lp/book-covers/PAPERBACK-4.jpg",
+  "/brand-img/new-lp/book-covers/PAPERBACK_2.jpg",
+  "/brand-img/new-lp/book-covers/PAPERBACK_6.000x9.jpg",
+  "/brand-img/new-lp/book-covers/Reginald Wade PB B&N.jpg",
+  "/brand-img/new-lp/book-covers/Sandee Juicey Gordon Paperback-2.jpg",
+  "/brand-img/new-lp/book-covers/Sonya Miranda 2_Front Cover copy 5.jpg",
+  "/brand-img/new-lp/book-covers/Stewart BC 8.jpg",
+  "/brand-img/new-lp/book-covers/Theodore A Anderson Paperback B&N.jpg",
+  "/brand-img/new-lp/book-covers/Time & The River 7.jpg",
+  "/brand-img/new-lp/book-covers/Unique Moore Part 1- Paperback.jpg",
+  "/brand-img/new-lp/book-covers/Zulfi PB.jpg",
+];
 
+const imageSlides = bookCoverPaths.map((src, index) => ({
+  id: index + 1,
+  src,
+}));
+
+const rowSplitIndex = Math.ceil(imageSlides.length / 2);
+const firstRowSlides = imageSlides.slice(0, rowSplitIndex);
+const secondRowSlides = imageSlides.slice(rowSplitIndex);
+
+const baseSliderSettings = {
+  arrows: false,
+  dots: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 0,
+  speed: 7000,
+  cssEase: "linear",
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  swipe: false,
+  draggable: false,
+  touchMove: false,
+  variableWidth: false,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+};
+
+function CoverRow({ slides, rtl = false }) {
+  return (
+    <Slider {...baseSliderSettings} rtl={rtl} className="portfolio-slick-row">
+      {slides.concat(slides).map((slide, index) => (
+        <div
+          key={`${slide.id}-${index}`}
+          className="portfolio-slick-slide px-2"
+        >
+          <div className="h-full overflow-hidden bg-[#0e1b3f] w-full">
+            <a
+              href={slide.src}
+              className="portfolio1-glightbox block h-full w-full h-full"
+              data-gallery="portfolio1-covers"
+            >
+              <img
+                src={slide.src}
+                alt={`Book cover ${slide.id}`}
+                className="h-full w-full object-contain"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  );
+}
 
 export default function PortfolioSlider1() {
-    const swiperRef2 = useRef(null);
-    const lightboxRef = useRef(null);
+  const lightboxRef = useRef(null);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            if (lightboxRef.current) {
-                lightboxRef.current.destroy();
-            }
-            import('glightbox').then((GLightboxModule) => {
-                const GLightbox = GLightboxModule.default;
-                lightboxRef.current = GLightbox({
-                    selector: '.glightbox1'
-                });
-            });
-        }
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
-        return () => {
-            if (lightboxRef.current) {
-                lightboxRef.current.destroy();
-            }
-        };
-    }, []);
-    const ImageSlides = [
-        // {
-        //     id: 1,
-        //     src: "/brand-img/1 PAPERBACK_8.500x8.500_25_PREMIUM_WHITE_en_US.png",
-        // },
-        {
-            id: 1,
-            src: "/brand-img/Chhavyvann So 2-01.png",
-        },
-        {
-            id: 2,
-            src: "/brand-img/full cover-01 (1).png",
-        },
-        {
-            id: 3,
-            src: "/brand-img/Hardcover lulu.png",
-        },
-        {
-            id: 4,
-            src: "/brand-img/Katie Loftis (Book 2) PB 2.png",
-        },
-        {
-            id: 5,
-            src: "/brand-img/PAPERBACK-01.png",
-        },
-        {
-            id: 6,
-            src: "/brand-img/PAPERBACK-4 compressed.png",
-        },
-        {
-            id: 7,
-            src: "/brand-img/Vikki LeBeau PB 3.png",
-        },
-        {
-            id: 8,
-            src: "/brand-img/Jean Bosco N. Ruhashya Full cover.png",
-        },
-        {
-            id: 9,
-            src: "/brand-img/Doris.jpg",
-        },
-    ];
+    import("glightbox").then((GLightboxModule) => {
+      if (lightboxRef.current) {
+        lightboxRef.current.destroy();
+      }
 
-    return (
-        <>
-            {/* <section className="firstslider pt-8">
+      const GLightbox = GLightboxModule.default;
+      lightboxRef.current = GLightbox({
+        selector: ".portfolio1-glightbox",
+      });
+    });
 
-                <div className="container mx-auto relative w-[80%]">
-                    <h1 className="text-5xl font-bold mb-28 text-center">Browse our design portfolio</h1>
+    return () => {
+      if (lightboxRef.current) {
+        lightboxRef.current.destroy();
+      }
+    };
+  }, []);
 
-                    <h2 className="text-3xl font-medium mb-5 ml-8">Book Cover Design</h2>
-                    <Swiper
-                        grabCursor={true}
-                        slidesPerView={3}
-                        navigation={true}
-                        loop={true}
-                        coverflowEffect={{
-                            stretch: 0,
-                        }}
-                        onBeforeInit={(swiper) => {
-                            swiperRef2.current = swiper;
-                        }}
-                        modules={[EffectCoverflow, Pagination, Navigation]}
-                        className="mySwiper"
-                        breakpoints={{
-                            "@0.00": {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                                navigation: true,
-                            },
-                            "@1.00": {
-                                slidesPerView: 3,
-                                spaceBetween: 10,
-                            },
-                        }}
-                    >
-                        {ImageSlides.map((Fslider) => (
-                            <SwiperSlide key={Fslider.id} className="text-center">
-                                <Image className='inline pb-4' src={Fslider.src} height={260} width={370}></Image>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <div className="bk-sil2 portfoilio-slider-icon prev" onClick={() => swiperRef2.current?.slidePrev()}>
-                        <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
-                    </div>
-                    <div className="bk-sil2 portfoilio-slider-icon next" onClick={() => swiperRef2.current?.slideNext()}>
-                        <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
-                    </div>
+  return (
+    <section className="w-full pb-10 border-y border-[#193166] bg-[#071638] mb-10">
+      <div className="mx-auto w-full">
+        <div className="mb-5 px-4 pt-10 md:px-6">
+          <h2 className="bg-gradient-to-r from-[#f5d27a] via-[#fff2c8] to-[#d9a441] bg-clip-text text-center text-3xl font-semibold tracking-[0.08em] text-transparent drop-shadow-[0_2px_12px_rgba(245,210,122,0.35)] md:text-3xl">
+            Book Cover Design
+          </h2>
+          <div className="mx-auto mt-3 h-[2px] w-[150px] rounded-full bg-gradient-to-r from-transparent via-[#f2cf79] to-transparent md:w-[190px]" />
+        </div>
 
-                    <hr class="h-[2px] bg-gray-100 dark:bg-gray-600 my-10 border-none" />
+        <div className="overflow-hidden py-3">
+          <CoverRow slides={firstRowSlides} rtl />
+        </div>
 
-                </div>
-
-
-            </section> */}
-
-
-            <div className="w-full max-w-6xl mx-auto pb-10 relative">
-
-
-                <h2 className="text-3xl font-medium mb-5 ">Book Cover Design</h2>
-                {/* Custom Previous Button */}
-                <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon prev cursor-pointer"
-                    onClick={() => swiperRef2.current?.slidePrev()}
-                >
-                    <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
-                </div>
-
-                {/* Swiper Slider */}
-                <Swiper
-                    spaceBetween={30}
-                    loop={true}
-                    slidesPerView={3}
-                    onSwiper={(swiper) => (swiperRef2.current = swiper)}
-                    modules={[Navigation]}
-                    className="mySwiper"
-                    breakpoints={{
-                        "@0.00": {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                            navigation: true,
-                        },
-                        "@1.00": {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                        },
-                    }}
-                >
-                    {ImageSlides.map((slide) => (
-                        <SwiperSlide key={slide.id}>
-                            <div className="relative h-full flex flex-col items-center">
-                                <img
-                                    src={slide.src}
-                                    alt={`Slide ${slide.id}`}
-                                    className="h-72 w-auto object-contain glightbox1 cursor-pointer"
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
-                {/* Custom Next Button */}
-                <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon next cursor-pointer"
-                    onClick={() => swiperRef2.current?.slideNext()}
-                >
-                    <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
-                </div>
-                <hr class="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" />
-
-            </div>
-        </>
-    );
+        <div className="mt-3 overflow-hidden py-3">
+          <CoverRow slides={secondRowSlides} />
+        </div>
+      </div>
+    </section>
+  );
 }
