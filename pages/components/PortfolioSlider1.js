@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -54,12 +55,23 @@ const baseSliderSettings = {
   variableWidth: false,
   slidesToShow: 5,
   slidesToScroll: 1,
+  lazyLoad: "ondemand",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 4 },
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 2 },
+    },
+  ],
 };
 
 function CoverRow({ slides, rtl = false }) {
   return (
     <Slider {...baseSliderSettings} rtl={rtl} className="portfolio-slick-row">
-      {slides.concat(slides).map((slide, index) => (
+      {slides.map((slide, index) => (
         <div
           key={`${slide.id}-${index}`}
           className="portfolio-slick-slide px-2"
@@ -70,11 +82,14 @@ function CoverRow({ slides, rtl = false }) {
               className="portfolio1-glightbox block h-full w-full h-full"
               data-gallery="portfolio1-covers"
             >
-              <img
+              <Image
                 src={slide.src}
                 alt={`Book cover ${slide.id}`}
                 className="h-full w-full object-contain"
-                loading="lazy"
+                width={700}
+                height={1050}
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                priority={index < 2}
               />
             </a>
           </div>
