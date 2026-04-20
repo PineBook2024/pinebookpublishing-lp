@@ -19,9 +19,9 @@ const Posts = ({ posts }) => {
       </Head>
       <BrandNavbar />
       <BrandPrimaryHeader
-        subtitle="Our Blog - Helpful Writing Tips, Guides & Ideas"
+        subtitle="Our Blog - Learn. Write. Improve"
         title=""
-        desc="Explore Pine Book Writing's blog page and find honest writing advice, writing tips, how well-known authors are thriving, and the latest writing trends written by industry experts. This section is for every writer, whether you're a content writer, business writer, or aspiring book writer. There's something here for everyone."
+        desc="Read our insightful blog posts written by publishing experts and writers who stay updated with industry trends and the challenges faced by both new and experienced authors. Stay informed with expert tips and practical guides on book publishing, formatting, marketing, and other key aspects of the publishing process."
       />
       <section className='overflow-hidden'>
         <div className='max-w-screen-xl mx-auto px-4 my-20 relative py-22'>
