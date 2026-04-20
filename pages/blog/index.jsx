@@ -30,6 +30,7 @@ const Posts = ({ posts }) => {
               <PostCard key={post.fields.slug} post={post} />
             ))}
           </ul>
+
         </div>
       </section>
       <BrandFooter />
