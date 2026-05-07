@@ -11,8 +11,25 @@ import { useRouter } from 'next/router'
 import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
 
+const parseJsonLd = (value) => {
+  if (!value) return null
+  if (typeof value === 'object') return value
+
+  if (typeof value === 'string') {
+    try {
+      return JSON.parse(value)
+    } catch (error) {
+      return null
+    }
+  }
+
+  return null
+}
+
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
+  const blogSchema = parseJsonLd(post?.fields?.blogSchema)
+  const faqSchema = parseJsonLd(post?.fields?.faqSchema)
 
 
   return (
@@ -29,28 +46,20 @@ const Post = ({ post, recentPosts }) => {
         )}
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}
-        {post?.fields?.blogSchema && (
+        {blogSchema && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(
-                typeof post.fields.blogSchema === "string"
-                  ? JSON.parse(post.fields.blogSchema) // parse only if it's a string
-                  : post.fields.blogSchema // if already object, just use it
-              ),
+              __html: JSON.stringify(blogSchema),
             }}
           />
         )}
 
-        {post?.fields?.faqSchema && (
+        {faqSchema && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(
-                typeof post.fields.faqSchema === "string"
-                  ? JSON.parse(post.fields.faqSchema)
-                  : post.fields.faqSchema
-              ),
+              __html: JSON.stringify(faqSchema),
             }}
           />
         )}
