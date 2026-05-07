@@ -7,17 +7,22 @@ import { client } from '../../../lib/contentful/client'
 
 export default function PostCard ({ post }) {
   const { title, slug, excerpt, coverImage, author, date } = post.fields
+  const imageFile = coverImage?.fields?.file
 
   return (
     <li className='rounded-md overflow-hidden shadow-md'>
       <Link href={`/blog/${slug}`} aria-label={title}>
         <div className='mb-2'>
-          <ContentfulImage
-            alt={`Cover Image for ${title}`}
-            src={coverImage.fields.file.url}
-            width={coverImage.fields.file.details.image.width}
-            height={coverImage.fields.file.details.image.height}
-          />
+          {imageFile ? (
+            <ContentfulImage
+              alt={`Cover Image for ${title}`}
+              src={imageFile.url}
+              width={imageFile.details.image.width}
+              height={imageFile.details.image.height}
+            />
+          ) : (
+            <div className='w-full h-52 bg-gray-300' />
+          )}
         </div>
         <div className='p-4'>
          
@@ -44,4 +49,3 @@ export const getStaticProps = async () => {
     }
   }
 }
-

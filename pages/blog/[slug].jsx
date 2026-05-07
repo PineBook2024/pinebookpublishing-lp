@@ -26,6 +26,9 @@ const parseJsonLd = (value) => {
   return null
 }
 
+const normalizeSlug = (value = '') =>
+  decodeURIComponent(String(value)).trim().replace(/^\/+|\/+$/g, '').toLowerCase()
+
 const Post = ({ post, recentPosts }) => {
   const router = useRouter()
   const blogSchema = parseJsonLd(post?.fields?.blogSchema)
@@ -121,13 +124,17 @@ const Post = ({ post, recentPosts }) => {
                     <li key={recentPost.sys.id} className='mb-4 '>
                       <a href={`/blog/${recentPost.fields.slug}`} className='text-black hover:underline'>
                         <div className='flex items-center'>
-                          <ContentfulImage
-                            alt={`Cover Image for ${recentPost.fields.title}`}
-                            src={recentPost.fields.coverImage.fields.file.url}
-                            width={recentPost.fields.coverImage.fields.file.details.image.width}
-                            height={recentPost.fields.coverImage.fields.file.details.image.height}
-                            className='w-24 h-16 object-cover mr-4 rounded-lg'
-                          />
+                          {recentPost?.fields?.coverImage?.fields?.file ? (
+                            <ContentfulImage
+                              alt={`Cover Image for ${recentPost.fields.title}`}
+                              src={recentPost.fields.coverImage.fields.file.url}
+                              width={recentPost.fields.coverImage.fields.file.details.image.width}
+                              height={recentPost.fields.coverImage.fields.file.details.image.height}
+                              className='w-24 h-16 object-cover mr-4 rounded-lg'
+                            />
+                          ) : (
+                            <div className='w-24 h-16 mr-4 rounded-lg bg-gray-300 shrink-0' />
+                          )}
                           <h2 className='font-bold'>
                             {recentPost.fields.title}
                           </h2>
@@ -150,12 +157,27 @@ const Post = ({ post, recentPosts }) => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const { slug } = params
+  const requestedSlug = normalizeSlug(params?.slug)
 
-  const postResponse = await client.getEntries({
+  let postResponse = await client.getEntries({
     content_type: 'post',
-    'fields.slug': slug
+    'fields.slug': requestedSlug,
+    limit: 1
   })
+
+  if (!postResponse?.items?.length) {
+    const fallbackResponse = await client.getEntries({
+      content_type: 'post',
+      'fields.slug[match]': requestedSlug,
+      limit: 10
+    })
+
+    const matchedItem = fallbackResponse?.items?.find(
+      (item) => normalizeSlug(item?.fields?.slug) === requestedSlug
+    )
+
+    postResponse = matchedItem ? { items: [matchedItem] } : postResponse
+  }
 
   const recentPostsResponse = await client.getEntries({
     content_type: 'post',
@@ -190,7 +212,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
