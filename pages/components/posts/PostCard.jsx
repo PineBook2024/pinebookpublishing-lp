@@ -26,7 +26,7 @@ export default function PostCard ({ post }) {
             <DateComponent dateString={date} />
           </div>
           <p className="text-base mb-4 line-clamp-3">{excerpt}</p>
-          <Link href={`/blog/${slug}`} aria-label={title} className='text-green-700'>Read More</Link>
+          <span className='text-green-700'>Read More</span>
           {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
         </div>
       </Link>
@@ -44,5 +44,4 @@ export const getStaticProps = async () => {
     }
   }
 }
-
 
