@@ -17,7 +17,6 @@ const Posts = ({ posts }) => {
         <link rel="shortcut icon" href="/images/fav.png" />
         {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Head>
-
       <BrandNavbar />
       <BrandPrimaryHeader
         subtitle="Our Blog - Learn. Write. Improve"
