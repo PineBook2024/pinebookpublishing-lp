@@ -1948,7 +1948,7 @@ footer svg {
 }
 
 .brand-primary-header-bg-signup {
-  background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg);
+  /* background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg); */
   padding: 14% 0 7% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4744,4 +4744,9 @@ iframe.goog-te-banner-frame {
 
 .modal-submit-btn {
   width: 100%;
+}
+
+.prose ul,
+.prose ol {
+  margin-left: 23px
 }
