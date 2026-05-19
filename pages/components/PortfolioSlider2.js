@@ -75,6 +75,8 @@ export default function PortfolioSlider2() {
             id: 7,
             src: "/brand-img/John H Bowman 2.png",
         }
+        
+        
 
     ];
 

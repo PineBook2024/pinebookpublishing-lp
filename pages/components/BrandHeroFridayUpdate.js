@@ -1,4 +1,4 @@
-import useHubspotForm from "/hooks/hubspot";
+// import useHubspotForm from "/hooks/hubspot";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,12 +6,12 @@ import { useRouter } from "next/navigation";
 import FadeIn from "./FadeIn";
 import SnowFall from "./SnowFall";
 import { Swiper, SwiperSlide } from "swiper/react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import {
-    Autoplay,
-    Pagination,
-    Navigation,
-    EffectCoverflow,
+  Autoplay,
+  Pagination,
+  Navigation,
+  EffectCoverflow,
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,281 +19,332 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 export default function BrandHeroFridayUpdate() {
-    const swiperRef2 = useRef(null);
-    const router = useRouter();
-    const { submitMainContactForm } = useHubspotForm();
-    const [email, setEmail] = useState("");
-    const [fullName, setFullName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [message, setMessage] = useState("");
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [phoneError, setPhoneError] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const swiperRef2 = useRef(null);
+  const router = useRouter();
+  // const { submitMainContactForm } = useHubspotForm();
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Get user location info
-    const [userInfo, setUserInfo] = useState({
-        ip: '',
-        city: '',
-        region: '',
-        country: ''
-    });
+  // Get user location info
+  const [userInfo, setUserInfo] = useState({
+    ip: "",
+    city: "",
+    region: "",
+    country: "",
+  });
 
-    useEffect(() => {
-        fetchUserRegion();
-    }, []);
+  useEffect(() => {
+    fetchUserRegion();
+  }, []);
 
-    const fetchUserRegion = async () => {
-        try {
-            const response = await fetch("https://ipwhois.app/json/");
-            const data = await response.json();
+  const fetchUserRegion = async () => {
+    try {
+      const response = await fetch("https://ipwhois.app/json/");
+      const data = await response.json();
 
-            setUserInfo({
-                ip: data.ip || '',
-                city: data.city || '',
-                region: data.region || '',
-                country: data.country || ''
-            });
-        } catch (error) {
-            console.error("Failed to fetch user region:", error);
-        }
+      setUserInfo({
+        ip: data.ip || "",
+        city: data.city || "",
+        region: data.region || "",
+        country: data.country || "",
+      });
+    } catch (error) {
+      console.error("Failed to fetch user region:", error);
+    }
+  };
+
+  // const sendEmailNotification = async (formData) => {
+  //     try {
+  //         const response = await fetch('/api/brand-signup-email', {
+  //             method: 'POST',
+  //             headers: {
+  //                 'Content-Type': 'application/json',
+  //             },
+  //             body: JSON.stringify({
+  //                 fullName: formData.fullName,
+  //                 email: formData.email,
+  //                 phoneNumber: formData.phoneNumber,
+  //                 message: formData.message,
+  //                 currentPage: window.location.href,
+  //                 referringPage: document.referrer || 'Direct visit',
+  //                 userIP: userInfo.ip,
+  //                 userCity: userInfo.city,
+  //                 userRegion: userInfo.region,
+  //                 userCountry: userInfo.country
+  //             }),
+  //         });
+  //
+  //         const result = await response.json();
+  //
+  //         if (!result.success) {
+  //             console.error('Email sending failed:', result.message);
+  //         } else {
+  //             console.log('Email sent successfully');
+  //         }
+  //
+  //         return result;
+  //     } catch (error) {
+  //         console.error('Error sending email:', error);
+  //         return { success: false, error: error.message };
+  //     }
+  // };
+  //
+  const clientLogos = [
+    {
+      href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
+      src: "/images/Google Partner.png",
+      alt: "LOGO",
+      width: 125,
+      height: 125,
+    },
+    {
+      href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
+      src: "/images/s2.png",
+      alt: "LOGO",
+      width: 125,
+      height: 125,
+    },
+    {
+      href: "https://www.trustpilot.com/review/pinebookwriting.com",
+      src: "/images/s3.png",
+      alt: "LOGO",
+      width: 125,
+      height: 125,
+    },
+    {
+      href: "https://clutch.co/profile/pine-book-writing",
+      src: "/images/s6.png",
+      alt: "LOGO",
+      width: 125,
+      height: 125,
+    },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const setters = {
+      fullName: setFullName,
+      email: setEmail,
+      message: setMessage,
+      phoneNumber: setPhoneNumber,
     };
 
-    const sendEmailNotification = async (formData) => {
-        try {
-            const response = await fetch('/api/brand-signup-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    fullName: formData.fullName,
-                    email: formData.email,
-                    phoneNumber: formData.phoneNumber,
-                    message: formData.message,
-                    currentPage: window.location.href,
-                    referringPage: document.referrer || 'Direct visit',
-                    userIP: userInfo.ip,
-                    userCity: userInfo.city,
-                    userRegion: userInfo.region,
-                    userCountry: userInfo.country
-                }),
-            });
-
-            const result = await response.json();
-
-            if (!result.success) {
-                console.error('Email sending failed:', result.message);
-            } else {
-                console.log('Email sent successfully');
-            }
-
-            return result;
-        } catch (error) {
-            console.error('Error sending email:', error);
-            return { success: false, error: error.message };
-        }
-    };
-
-    const clientLogos = [
-        {
-            href: "https://goo.gl/maps/D6kJBoXBJYwcZWkP7",
-            src: "/images/Google Partner.png",
-            alt: "LOGO",
-            width: 125,
-            height: 125,
-        },
-        {
-            href: "https://www.bbb.org/ca/on/richmond-hill/profile/publishers-book/pine-book-writing-inc-0107-1406919",
-            src: "/images/s2.png",
-            alt: "LOGO",
-            width: 125,
-            height: 125,
-        },
-        {
-            href: "https://www.trustpilot.com/review/pinebookwriting.com",
-            src: "/images/s3.png",
-            alt: "LOGO",
-            width: 125,
-            height: 125,
-        },
-        {
-            href: "https://clutch.co/profile/pine-book-writing",
-            src: "/images/s6.png",
-            alt: "LOGO",
-            width: 125,
-            height: 125,
-        },
-    ];
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        const setters = {
-            fullName: setFullName,
-            email: setEmail,
-            message: setMessage,
-            phoneNumber: setPhoneNumber,
-        };
-
-        const setter = setters[name];
-        if (setter) {
-            if (name === "phoneNumber") {
-                const phoneRegex = /^\d{0,}$/;
-                if (phoneRegex.test(value)) {
-                    setter(value);
-                    if (value.length < 9) {
-                        setPhoneError("Phone number must be at least 9 digits");
-                    } else {
-                        setPhoneError("");
-                    }
-                } else {
-                    setPhoneError("Invalid phone number format");
-                }
-            } else {
-                setter(value);
-            }
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (phoneNumber.length < 9) {
+    const setter = setters[name];
+    if (setter) {
+      if (name === "phoneNumber") {
+        const phoneRegex = /^\d{0,}$/;
+        if (phoneRegex.test(value)) {
+          setter(value);
+          if (value.length < 9) {
             setPhoneError("Phone number must be at least 9 digits");
-            return;
+          } else {
+            setPhoneError("");
+          }
+        } else {
+          setPhoneError("Invalid phone number format");
         }
+      } else {
+        setter(value);
+      }
+    }
+  };
 
-        setIsSubmitting(true);
+  // NEW CODE FOR SENDING FORM DATA TO LARAVEL BACKEND
 
-        const formData = {
-            fullName,
-            email,
-            phoneNumber,
-            message,
-        };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(" handleSubmit fired");
+    // if (!selectedCountry) {
+    //   alert("Please select your country");
+    //   return;
+    // }
 
-        try {
-            // Send to both email and HubSpot in parallel
-            const [emailResult, hubspotResponse] = await Promise.all([
-                // Send email notification
-                sendEmailNotification(formData),
+    console.log("TESTING");
+    if (phoneNumber.length < 9) {
+      alert("Phone number must be at least 9 digits");
+      return;
+    }
 
-                // Submit to HubSpot
-                submitMainContactForm(
-                    fullName,
-                    email,
-                    phoneNumber,
-                    message
-                )
-            ]);
+    const combinedPhoneNumber = `${phoneNumber}`;
 
-            // Check if both submissions were successful
-            if (emailResult.success && hubspotResponse) {
-                console.log('Both email and HubSpot submissions successful');
-                setShowSuccess(true);
-
-                // Redirect to thank you page
-                setTimeout(() => {
-                    router.push("/thank-you");
-                }, 1500);
-
-                // Clear form after delay
-                setTimeout(() => {
-                    setShowSuccess(false);
-                    setEmail("");
-                    setFullName("");
-                    setPhoneNumber("");
-                    setMessage("");
-                }, 3000);
-            } else {
-                // Handle partial failure
-                if (!emailResult.success) {
-                    console.error('Email submission failed:', emailResult.message);
-                }
-                if (!hubspotResponse) {
-                    console.error('HubSpot submission failed');
-                }
-
-                // Still show success if at least one succeeded
-                if (emailResult.success || hubspotResponse) {
-                    setShowSuccess(true);
-                    setTimeout(() => {
-                        router.push("/thank-you");
-                    }, 1500);
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
-                }
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            alert('There was an error submitting your form. Please try again.');
-        } finally {
-            setIsSubmitting(false);
-        }
+    const payload = {
+      name: fullName,
+      email,
+      phone: combinedPhoneNumber,
+      message,
+      service: "Book Publishing",
     };
 
-    return (
-        <>
-            {/* Snowfall Background */}
-            <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
-                {/* <SnowFall /> */}
-                <div className="container px-4 pt-20 pb-10 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10 pt-36">
-                    <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8">
-                        <div className="mb-4">
-                            <h3 className="font-poppins text-xl md:text-2xl mb-4 aos-init aos-animate text-white">
-                                <span className="px-2 py-0">#1 Self</span> Publishing Company
-                            </h3>
-                            <FadeIn>
-                                <h1 className="font-poppins text-2xl md:text-3xl text-white font-bold">
-                                    DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
-                                </h1>
-                            </FadeIn>
-                            <p className="text-xl text-white pt-4">
-                                Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Ghostwriting, Editing, Formatting, Book Cover Design, Publishing and Print-on-demand through a vast network of global outlets.
-                            </p>
-                            <h4 className="font-poppins text-2xl mt-4 text-white uppercase font-bold">
-                                Our Credibility
-                            </h4>
-                            <div className="flex justify-start items-center mt-4 gap-2 md:gap-x-8 client-logo-sec">
-                                <Swiper
-                                    spaceBetween={30}
-                                    slidesPerView={4}
-                                    autoplay={{
-                                        delay: 2500,
-                                        disableOnInteraction: false,
-                                    }}
-                                    loop={true}
-                                    onSwiper={(swiper) => (swiperRef2.current = swiper)}
-                                    className="mySwiper"
-                                    modules={[Navigation, Autoplay, Pagination]}
-                                    breakpoints={{
-                                        "@0.00": {
-                                            slidesPerView: 3,
-                                            spaceBetween: 10,
-                                        },
-                                        "@1.00": {
-                                            slidesPerView: 4,
-                                            spaceBetween: 10,
-                                        },
-                                    }}
-                                >
-                                    {clientLogos.map((logo, index) => (
-                                        <SwiperSlide key={index}>
-                                            <Link href={logo.href} target="_blank">
-                                                <Image
-                                                    alt={logo.alt}
-                                                    src={logo.src}
-                                                    width={logo.width}
-                                                    height={logo.height}
-                                                />
-                                            </Link>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
-                                {/* <Image
+    try {
+      const res = await fetch("http://localhost:8000/api/leads/from-website", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.error("CRM Error:", data);
+        alert(data.message || "Lead submission failed");
+        return;
+      }
+
+      console.log("CRM Lead Created:", data);
+      router.push("/thankyou-offer");
+    } catch (error) {
+      console.error("Network Error:", error);
+      alert("Network error. Please try again.");
+    }
+  };
+
+  //   OLD CODE FOR FORM SUBMIT TO SEND EMAIL AND HUBSPOT
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //
+  //   if (phoneNumber.length < 9) {
+  //     setPhoneError("Phone number must be at least 9 digits");
+  //     return;
+  //   }
+  //
+  //   setIsSubmitting(true);
+  //
+  //   const formData = {
+  //     fullName,
+  //     email,
+  //     phoneNumber,
+  //     message,
+  //   };
+  //
+  //   try {
+  //     // Send to both email and HubSpot in parallel
+  //     const [emailResult, hubspotResponse] = await Promise.all([
+  //       // Send email notification
+  //       // sendEmailNotification(formData),
+  //       // Submit to HubSpot
+  //       // submitMainContactForm(fullName, email, phoneNumber, message),
+  //     ]);
+  //
+  //     // Check if both submissions were successful
+  //     if (emailResult.success && hubspotResponse) {
+  //       console.log("Both email and HubSpot submissions successful");
+  //       setShowSuccess(true);
+  //
+  //       // Redirect to thank you page
+  //       setTimeout(() => {
+  //         router.push("/thank-you");
+  //       }, 1500);
+  //
+  //       // Clear form after delay
+  //       setTimeout(() => {
+  //         setShowSuccess(false);
+  //         setEmail("");
+  //         setFullName("");
+  //         setPhoneNumber("");
+  //         setMessage("");
+  //       }, 3000);
+  //     } else {
+  //       // Handle partial failure
+  //       if (!emailResult.success) {
+  //         console.error("Email submission failed:", emailResult.message);
+  //       }
+  //       if (!hubspotResponse) {
+  //         console.error("HubSpot submission failed");
+  //       }
+  //
+  //       // Still show success if at least one succeeded
+  //       if (emailResult.success || hubspotResponse) {
+  //         setShowSuccess(true);
+  //         setTimeout(() => {
+  //           router.push("/thank-you");
+  //         }, 1500);
+  //       } else {
+  //         alert("There was an error submitting your form. Please try again.");
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error("Form submission error:", error);
+  //     alert("There was an error submitting your form. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+  //
+  return (
+    <>
+      {/* Snowfall Background */}
+      <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
+        {/* <SnowFall /> */}
+        <div className="container px-4 pt-20 pb-10 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10 pt-36">
+          <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8">
+            <div className="mb-4">
+              <h3 className="font-poppins text-xl md:text-2xl mb-4 aos-init aos-animate text-white">
+                <span className="px-2 py-0">#1 Self</span> Publishing Company
+              </h3>
+              <FadeIn>
+                <h1 className="font-poppins text-2xl md:text-3xl text-white font-bold">
+                  DO YOU HAVE A MANUSCRIPT READY TO BE PUBLISHED?
+                </h1>
+              </FadeIn>
+              <p className="text-xl text-white pt-4">
+                Pine Book Publishing has made it much easier to self-publish a
+                book, with hands-on support from the first word to the final
+                cover. Our process involves Ghostwriting, Editing, Formatting,
+                Book Cover Design, Publishing and Print-on-demand through a vast
+                network of global outlets.
+              </p>
+              <h4 className="font-poppins text-2xl mt-4 text-white uppercase font-bold">
+                Our Credibility
+              </h4>
+              <div className="flex justify-start items-center mt-4 gap-2 md:gap-x-8 client-logo-sec">
+                <Swiper
+                  spaceBetween={30}
+                  slidesPerView={4}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  loop={true}
+                  onSwiper={(swiper) => (swiperRef2.current = swiper)}
+                  className="mySwiper"
+                  modules={[Navigation, Autoplay, Pagination]}
+                  breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                    "@1.00": {
+                      slidesPerView: 4,
+                      spaceBetween: 10,
+                    },
+                  }}
+                >
+                  {clientLogos.map((logo, index) => (
+                    <SwiperSlide key={index}>
+                      <Link href={logo.href} target="_blank">
+                        <Image
+                          alt={logo.alt}
+                          src={logo.src}
+                          width={logo.width}
+                          height={logo.height}
+                        />
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+            <div>
+              <div className="px-4 py-3 w-full rounded-2xl px-8 py-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">
+                {/* <Image
                                     className="text-center header-form-off-badge"
                                     src={"/brand-img/christmas-tag.png"}
                                     width={140}
@@ -307,96 +358,142 @@ export default function BrandHeroFridayUpdate() {
                                     height={300}
                                     loading="lazy"
                                 ></Image> */}
-                                <div className="text-start">
-                                    <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
-                                        Avail Discount
-                                    </h4>
-                                    <h5 className="font-poppins text-white text-sm mb-3 christmas-banner-desc">
-                                        Holiday Season Sale: Expert Book Publishing at{" "}
-                                        <span className="text-blink">50% Off</span> – <br />
-                                        Your Story Deserves to be Heard!
-                                    </h5>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-                                    <div className="col-span-2 w-full relative">
-                                        <form className="flex flex-col gap-3 justify-start items-start" onSubmit={handleSubmit}>
-                                            <div className="grid gap-3 md:grid-cols-2 w-full">
-                                                <div className="relative w-full">
-                                                    <input
-                                                        type="text"
-                                                        name="fullName"
-                                                        onChange={handleChange}
-                                                        value={fullName}
-                                                        required
-                                                        className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
-                                                        placeholder="Enter your Name"
-                                                    />
-                                                </div>
-                                                <div className="relative w-full">
-                                                    <input
-                                                        type="text"
-                                                        onChange={handleChange}
-                                                        value={phoneNumber}
-                                                        name="phoneNumber"
-                                                        required
-                                                        className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
-                                                        placeholder="Enter your Phone"
-                                                    />
-                                                    {phoneError && (
-                                                        <p className="text-red-500 text-sm mt-1">{phoneError}</p>
-                                                    )}
-                                                </div>
-                                            </div>
-                                            <div className="relative w-full">
-                                                <input
-                                                    type="text"
-                                                    name="email"
-                                                    onChange={handleChange}
-                                                    value={email}
-                                                    required
-                                                    className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
-                                                    placeholder="Enter your Email"
-                                                />
-                                            </div>
-                                            <div className="relative w-full">
-                                                <textarea
-                                                    className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
-                                                    rows={2}
-                                                    onChange={handleChange}
-                                                    value={message}
-                                                    required
-                                                    placeholder="Enter your Message"
-                                                    name="message"
-                                                ></textarea>
-                                            </div>
-                                            <div className="flex items-start mb-5">
-                                                <div className="flex items-center h-5">
-                                                    <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
-                                                </div>
-                                                <label htmlFor="remember" className="ms-2 text-sm font-medium text-white dark:text-gray-300">By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-400">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-400" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-400" target="_blank"> TERMS and CONDITIONS </Link> on our website</label>
-                                            </div>
-                                            {showSuccess && (
-                                                <p className="px-1 py-1 text-green-700">
-                                                    Form submitted Successfully!
-                                                </p>
-                                            )}
-                                            <div className="w-full">
-                                                <button
-                                                    className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-md shadow-xl text-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                                                    type="submit"
-                                                    disabled={isSubmitting}
-                                                >
-                                                    {isSubmitting ? 'Submitting...' : 'Submit'}
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="text-start">
+                  <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
+                    Avail Discount
+                  </h4>
+                  <h5 className="font-poppins text-white text-sm mb-3 christmas-banner-desc">
+                    Holiday Season Sale: Expert Book Publishing at{" "}
+                    <span className="text-blink">50% Off</span> – <br />
+                    Your Story Deserves to be Heard!
+                  </h5>
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                  <div className="col-span-2 w-full relative">
+                    <form
+                      className="flex flex-col gap-3 justify-start items-start"
+                      onSubmit={handleSubmit}
+                    >
+                      <div className="grid gap-3 md:grid-cols-2 w-full">
+                        <div className="relative w-full">
+                          <input
+                            type="text"
+                            name="fullName"
+                            onChange={handleChange}
+                            value={fullName}
+                            required
+                            className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                            placeholder="Enter your Name"
+                          />
+                        </div>
+                        <div className="relative w-full">
+                          <input
+                            type="text"
+                            onChange={handleChange}
+                            value={phoneNumber}
+                            name="phoneNumber"
+                            required
+                            className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                            placeholder="Enter your Phone"
+                          />
+                          {phoneError && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {phoneError}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="relative w-full">
+                        <input
+                          type="text"
+                          name="email"
+                          onChange={handleChange}
+                          value={email}
+                          required
+                          className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                          placeholder="Enter your Email"
+                        />
+                      </div>
+                      <div className="relative w-full">
+                        <textarea
+                          className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
+                          rows={2}
+                          onChange={handleChange}
+                          value={message}
+                          required
+                          placeholder="Enter your Message"
+                          name="message"
+                        ></textarea>
+                      </div>
+                      <div className="flex items-start mb-5">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="remember"
+                            type="checkbox"
+                            value=""
+                            className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                            required
+                          />
+                        </div>
+                        <label
+                          htmlFor="remember"
+                          className="ms-2 text-sm font-medium text-white dark:text-gray-300"
+                        >
+                          By checking this box, I consent to received text
+                          messages related to Follow Up Messages and Appointment
+                          Reminders from Pine Book Writing and Publishing. you
+                          can reply "STOP" at any time to opt-out. Message and
+                          data rates may apply. Message Frequency may vary, text
+                          Help to{" "}
+                          <Link
+                            href="tel:(866) 841-7469"
+                            className="text-blue-400"
+                          >
+                            (866) 841-7469
+                          </Link>{" "}
+                          for assistance. For more information, please refer to
+                          our{" "}
+                          <Link
+                            href="privacy-policy"
+                            className="text-blue-400"
+                            target="_blank"
+                          >
+                            PRIVACY POLICY
+                          </Link>{" "}
+                          and SMS{" "}
+                          <Link
+                            href="terms-and-conditions"
+                            className="text-blue-400"
+                            target="_blank"
+                          >
+                            {" "}
+                            TERMS and CONDITIONS{" "}
+                          </Link>{" "}
+                          on our website
+                        </label>
+                      </div>
+                      {showSuccess && (
+                        <p className="px-1 py-1 text-green-700">
+                          Form submitted Successfully!
+                        </p>
+                      )}
+                      <div className="w-full">
+                        <button
+                          className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-md shadow-xl text-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                          type="submit"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? "Submitting..." : "Submit"}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

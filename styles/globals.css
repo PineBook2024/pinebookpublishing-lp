@@ -3,6 +3,14 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+/* ============================================
+   CART & CHECKOUT PAGE DROPDOWN FIX
+   ============================================ */
+
+/* .cart-page-wrapper .header-nav .dropdown,
+.cart-page-wrapper .header-nav .submenu {
+  display: none !important;
+} */
 @font-face {
   font-family: 'Cinzel Decorative';
   src: url('../pages/Lucida\ Bright\ Regular.ttf') format('ttf');

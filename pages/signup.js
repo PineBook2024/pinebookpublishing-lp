@@ -1,8 +1,9 @@
-import useHubspotForm from "/hooks/hubspot";
+
 import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
+import { useRouter } from "next/router"; 
 import BrandFooter from "./components/BrandFooter";
 import Link from "next/link";
 import BrandAbout from "./components/BrandAbout";
@@ -258,49 +259,7 @@ const countryCodes = [
     { name: "Zambia", code: "260", countryCode: "ZM", flag: "https://flagcdn.com/zm.svg" },
     { name: "Zimbabwe", code: "263", countryCode: "ZW", flag: "https://flagcdn.com/zw.svg" },
 
-];
-export default function Services() {
-    const router = useRouter();
-    const { submitMainContactFormLP } = useHubspotForm();
-    const [email, setEmail] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [budgets, setBudget] = useState("");
-    const [category, setCategory] = useState("");
-    const [message, setMessage] = useState("");
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [phoneError, setPhoneError] = useState("");
-    const [selectedCountry, setSelectedCountry] = useState(null); // Default to the first country
-
-    const [countryCodeValue, setCountryCodeValue] = useState("");
-    const [loading, setLoading] = useState(true);
-
-    const fetchUserRegion = async () => {
-        try {
-            const response = await fetch("https://ipwhois.app/json/");
-            const data = await response.json();
-            console.log("IP API Response:", data);
-
-            const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code);
-            if (detectedCountry) {
-                setSelectedCountry(detectedCountry);
-            } else {
-                console.warn("Region not detected. Defaulting to Canada.");
-                setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA"));
-            }
-        } catch (error) {
-            console.error("Failed to fetch user region:", error);
-            setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA"));
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        fetchUserRegion();
-    }, []);
-
-    // const handleCountryChange = (e) => {
+]; export default function Services() { const router = useRouter(); const [email, setEmail] = useState(""); const [firstName, setFirstName] = useState(""); const [phone, setPhone] = useState(""); const [budgets, setBudget] = useState(""); const [category, setCategory] = useState(""); const [message, setMessage] = useState(""); const [showSuccess, setShowSuccess] = useState(false); const [phoneError, setPhoneError] = useState(""); const [selectedCountry, setSelectedCountry] = useState(null); // Default to the first country const [countryCodeValue, setCountryCodeValue] = useState(""); const [loading, setLoading] = useState(true); const fetchUserRegion = async () => { try { const response = await fetch("https://ipwhois.app/json/"); const data = await response.json(); console.log("IP API Response:", data); const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code); if (detectedCountry) { setSelectedCountry(detectedCountry); } else { console.warn("Region not detected. Defaulting to Canada."); setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA")); } } catch (error) { console.error("Failed to fetch user region:", error); setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA")); } finally { setLoading(false); } }; useEffect(() => { fetchUserRegion(); }, []); const handleCountryChange = (e) => {
     //   const selectedCode = e.target.value;
     //   const country = countryCodes.find((c) => c.code === selectedCode);
     //     console.log("Selected Country: ", country); // Debug log
@@ -420,45 +379,56 @@ export default function Services() {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (phone.length < 9) {
-            setPhoneError("Phone number must be at least 9 digits");
-        }
-        // Combine phone number and country code
-        const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+console.log(" handleSubmit fired");
+  // if (!selectedCountry) {
+  //   alert("Please select your country");
+  //   return;
+  // }
 
-        // If you want to send country code and phone separately, you can do this:
-        const phoneData = {
-            countryCode: selectedCountry.countryCode,
-            phoneNumber: phone,
-        };
+  console.log("TESTING")
+  if (phone.length < 9) {
+    alert("Phone number must be at least 9 digits");
+    return;
+  }
 
-        const response = await submitMainContactFormLP(
-            firstName,
-            email,
-            combinedPhoneNumber, // Send combined phone number
-            category,
-            message,
-            phoneData
-        );
-        if (response) {
-            setShowSuccess(true);
-            // router.push('/thank-you'); 
-            // router.push('/thankyou-offer')
-            window.location.href = "thankyou-offer";
-            setTimeout(() => {
-                setShowSuccess(false);
-                setEmail("");
-                setFirstName("");
-                setPhone("");
-                setCategory("");
-                setMessage("");
-            }, 3000);
-        }
+  const combinedPhoneNumber = `+${selectedCountry.code}${phone}`;
 
-        console.log("response", response);
-    };
+  const payload = {
+    name: firstName,
+    email,
+    phone: combinedPhoneNumber,
+    message,
+    service: category || "Book Publishing",
+  };
+
+  try {
+        const res = await fetch("http://127.0.0.1:8001/api/leads/from-website", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json", 
+        },
+        body: JSON.stringify(payload),
+        });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("CRM Error:", data);
+      alert(data.message || "Lead submission failed");
+      return;
+    }
+
+    console.log("CRM Lead Created:", data);
+    router.push("/thankyou-offer");
+
+  } catch (error) {
+    console.error("Network Error:", error);
+    alert("Network error. Please try again.");
+  }
+};
+
 
     return (
         <>
@@ -484,10 +454,10 @@ export default function Services() {
                 </div>
             </section>
 
-            <div className="relative overflow-hidden w-full" style={{ zIndex: 1 }}>
+            <div className="relative w-full overflow-hidden" style={{ zIndex: 1 }}>
                 {/* <SnowFall /> */}
-                <div className="container px-4 pt-10 pb-10 tablet-margin-banner mx-auto max-w-screen-xl brand-hero-section relative z-10">
-                    <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8">
+                <div className="container relative z-10 max-w-screen-xl px-4 pt-10 pb-10 mx-auto tablet-margin-banner brand-hero-section">
+                    <div className="grid items-center justify-between grid-cols-1 text-left sm:gap-8 sm:py-0 md:grid-cols-2 md:gap-8">
                         <div className="mb-4">
                             <img src="./brand-img/contact page moc.png" />
                         </div>
@@ -495,18 +465,18 @@ export default function Services() {
                             <div className="px-4 py-10 w-full rounded-2xl px-8 bg-[#0d0f38] bg-clip-padding backdrop-filter backdrop-blur-sm border-gray-100 relative">
 
                                 <div className="text-start">
-                                    <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
+                                    <h4 className="text-2xl font-bold text-white font-poppins md:text-3xl christmas-banner-title">
                                         Avail Discount
                                     </h4>
-                                    <h5 className="font-poppins text-white text-sm mb-3 christmas-banner-desc">
+                                    <h5 className="mb-3 text-sm text-white font-poppins christmas-banner-desc">
                                         Holiday Season Sale: Expert Book Publishing at{" "}
-                                        <span className="text-blink">50% Off</span> – <br />
+                                        <span className="text-blink">5% Off</span> – <br />
                                         Your Story Deserves to be Heard!
                                     </h5>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-                                    <div className="col-span-2 w-full relative">
-                                        <form className="flex flex-col gap-4 justify-start items-start" onSubmit={handleSubmit}>
+                                <div className="grid grid-cols-1 gap-8 md:grid-cols-1">
+                                    <div className="relative w-full col-span-2">
+                                        <form className="flex flex-col items-start justify-start gap-4" onSubmit={handleSubmit} >
                                             <div className="relative w-full">
                                                 <input
                                                     type="text"
@@ -514,7 +484,7 @@ export default function Services() {
                                                     onChange={handleChange}
                                                     value={firstName}
                                                     required
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                    className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl"
                                                     placeholder="Enter your Name"
                                                 />
                                             </div>
@@ -525,7 +495,7 @@ export default function Services() {
                         value={phone}
                         name="phone"
                         required
-                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                        className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl"
                         placeholder="Enter your Phone"
                       /> */}
                                                 <div className='tel-box'>
@@ -550,9 +520,9 @@ export default function Services() {
                                                             {loading ? (
                                                                 <p>Loading...</p>
                                                             ) : (
-                                                                <div className="select-box flex items-center">
+                                                                <div className="flex items-center select-box">
                                                                     <select
-                                                                        className="country-select pl-2 pr-2 py-2 cursor-pointer"
+                                                                        className="py-2 pl-2 pr-2 cursor-pointer country-select"
                                                                         // onChange={handleCountryChange}
                                                                         // value={selectedCountry ? selectedCountry.code : ""}
                                                                         onChange={handleCountryChange}
@@ -571,21 +541,21 @@ export default function Services() {
                                                                         <img
                                                                             src={selectedCountry.flag}
                                                                             alt={`Flag of ${selectedCountry.name}`}
-                                                                            className="flag-img w-6 h-4 ml-2"
+                                                                            className="w-6 h-4 ml-2 flag-img"
                                                                         />
                                                                     )}
                                                                 </div>
                                                             )}
                                                         </div>
-                                                        <div className="country-input-wrapper flex items-center mt-2">
-                                                            <span className="country-code text-lg font-semibold">
+                                                        <div className="flex items-center mt-2 country-input-wrapper">
+                                                            <span className="text-lg font-semibold country-code">
                                                                 +{selectedCountry ? selectedCountry.code : ""}
                                                             </span>
 
                                                             <input
                                                                 type="tel"
                                                                 placeholder="Enter your Phone"
-                                                                className="tel pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                                className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl tel rounded-xl"
                                                                 onChange={(e) => setPhone(e.target.value)}
                                                                 value={phone}
                                                                 required
@@ -603,12 +573,12 @@ export default function Services() {
                                                     onChange={handleChange}
                                                     value={email}
                                                     required
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                    className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl"
                                                     placeholder="Enter your Email"
                                                 />
                                             </div>
                                             <div className="relative w-full">
-                                                <select name="category" value={category} onChange={handleChange} className="text-grey outline-0 pl-4 pr-4 py-2 border text-sm rounded-lg shadow-xl w-full header-form-input">
+                                                <select name="category" value={category} onChange={handleChange} className="w-full py-2 pl-4 pr-4 text-sm border rounded-lg shadow-xl text-grey outline-0 header-form-input">
                                                     <option value="" className="text-sm text-muted" disabled>Our Services
                                                     </option>
                                                     {categoryPublishing.map(option => (
@@ -619,7 +589,7 @@ export default function Services() {
 
                                             <div className="relative w-full">
                                                 <textarea
-                                                    className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl"
+                                                    className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl"
                                                     rows={3}
                                                     onChange={handleChange}
                                                     value={message}
@@ -627,9 +597,7 @@ export default function Services() {
                                                     name="message"
                                                 ></textarea>
                                                 <div
-                                                    className="absolute inset-y-0 left-0 pl-3 pt-3 
-                   flex items-start  
-                   pointer-events-none"
+                                                    className="absolute inset-y-0 left-0 flex items-start pt-3 pl-3 pointer-events-none"
                                                 ></div>
                                             </div>
                                             {showSuccess && (
@@ -638,7 +606,7 @@ export default function Services() {
                                                 </p>
                                             )}
                                             <button
-                                                className="w-full p-4 py-2 text-white uppercase header-submit-btn rounded rounded-xl shadow-xl text-xl"
+                                                className="w-full p-4 py-2 text-xl text-white uppercase rounded shadow-xl header-submit-btn rounded-xl"
                                                 type="submit"
                                             >
                                                 Submit
@@ -656,3 +624,86 @@ export default function Services() {
         </>
     );
 }
+
+
+
+
+
+// 2
+
+
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   const payload = {
+//     name: form.name,
+//     email: form.email,
+//     phone: form.phone,
+//     message: form.message, // will be saved as description
+//     service: form.service,
+//   };
+
+//   try {
+//     const res = await fetch("http://127.0.0.1:8000/api/leads /from-website", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(payload),
+//     });
+
+//     if (res.ok) {
+//       router.push("/thankyou-offer");
+//     } else {
+//       const data = await res.json();
+//       alert("Lead submission failed: " + (data.message || "Unknown error"));
+//     }
+//   } catch (error) {
+//     console.error("Network error:", error);
+//     alert("Lead submission failed due to network error.");
+//   }
+// };
+
+
+// 3
+
+//  const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         if (phone.length < 9) {
+//             setPhoneError("Phone number must be at least 9 digits");
+//         }
+//         // Combine phone number and country code
+//         const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
+
+//         // If you want to send country code and phone separately, you can do this:
+//         const phoneData = {
+//             countryCode: selectedCountry.countryCode,
+//             phoneNumber: phone,
+//         };
+
+//         const response = await submitMainContactFormLP(
+//             firstName,
+//             email,
+//             combinedPhoneNumber, // Send combined phone number
+//             category,
+//             message,
+//             phoneData
+//         );
+//         if (response) {
+//             setShowSuccess(true);
+//             // router.push('/thank-you'); 
+//             // router.push('/thankyou-offer')
+//             window.location.href = "thankyou-offer";
+//             setTimeout(() => {
+//                 setShowSuccess(false);
+//                 setEmail("");
+//                 setFirstName("");
+//                 setPhone("");
+//                 setCategory("");
+//                 setMessage("");
+//             }, 3000);
+//         }
+
+//         console.log("response", response);
+//     };
+

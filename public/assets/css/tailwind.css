@@ -1,0 +1,44 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+/* BASE CSS */
+@import "./base/fonts.css";
+@import "./base/variables.css";
+@import "./base/global.css";
+@import "./base/grid.css";
+@import "./base/preloader.css";
+
+/* LAYOUTS */
+@import "./layout/header/header.css";
+
+/* COMPONENTS */
+@import "./components/btn.css";
+@import "./components/offcanvas.css";
+@import "./components/rangeslider.css";
+@import "./components/forms.css";
+@import "./components/niceselect.css";
+@import "./components/widget.css";
+@import "./components/shop.css";
+@import "./components/about.css";
+@import "./components/card.css";
+@import "./components/main-slider.css";
+@import "./components/testimonial.css";
+@import "./components/swiper.css";
+@import "./components/overlay.css";
+@import "./components/lightgallery.css";
+@import "./components/portfolio.css";
+@import "./components/registration.css";
+@import "./components/blog.css";
+@import "./components/accordion.css";
+@import "./components/pricingbox.css";
+@import "./components/faq.css";
+@import "./components/contact.css";
+
+/* PAGES */
+@import "./pages/index.css";
+@import "./pages/index-2.css";
+@import "./pages/index-3.css";
+@import "./pages/error.css";
+@import "./pages/my-account.css";

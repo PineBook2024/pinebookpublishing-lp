@@ -1,0 +1,51 @@
+.product-box.style-4 .sale-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/shap.svg);
+    background-size: contain;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+.panel-close-btn.active {
+    width: 100%;
+    opacity: 0.8;
+    filter: blur(0);
+}
+@media only screen and (max-width: 1199px) {
+    .shop-filter {
+        padding: 30px 35px;
+        position: fixed;
+        left: -445px;
+        top: 0px;
+        z-index: 10000;
+        background: #ffffff;
+        height: 100%;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
+        transition: all 1s;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        overflow: scroll;
+    }
+    .shop-filter.active {
+        left: 0;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .shop-filter {
+        left: -100%;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+    .panel-close-btn.active {
+        width: 40px;
+    }
+    .compare-table tr.compare-product {
+        padding-top: 0px !important;
+    }
+}

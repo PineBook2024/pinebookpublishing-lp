@@ -1,0 +1,4 @@
+.portfolio-button-prev.swiper-button-prev:after,
+.portfolio-button-next.swiper-button-next::after{
+    display: none;
+}

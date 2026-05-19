@@ -1,4 +1,4 @@
-import useHubspotForm from "/hooks/hubspot";
+// import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 export default function BrandContact() {
     const router = useRouter();
     // Form Integration
-    const { submitMainContactForm } = useHubspotForm();
+    // const { submitMainContactForm } = useHubspotForm();
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -115,97 +115,97 @@ export default function BrandContact() {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-        if (phoneNumber.length < 9) {
-            setPhoneError("Phone number must be at least 9 digits");
-            return;
-        }
+    //     if (phoneNumber.length < 9) {
+    //         setPhoneError("Phone number must be at least 9 digits");
+    //         return;
+    //     }
 
-        setIsSubmitting(true);
+    //     setIsSubmitting(true);
 
-        const formData = {
-            fullName,
-            email,
-            phoneNumber,
-            message,
-        };
+    //     const formData = {
+    //         fullName,
+    //         email,
+    //         phoneNumber,
+    //         message,
+    //     };
 
-        try {
-            // Send to both email and HubSpot in parallel
-            const [emailResult, hubspotResponse] = await Promise.all([
-                // Send email notification
-                sendEmailNotification(formData),
+    //     try {
+    //         // Send to both email and HubSpot in parallel
+    //         const [emailResult, hubspotResponse] = await Promise.all([
+    //             // Send email notification
+    //             sendEmailNotification(formData),
 
-                // Submit to HubSpot
-                submitMainContactForm(
-                    fullName,
-                    email,
-                    phoneNumber,
-                    message
-                )
-            ]);
+    //             // Submit to HubSpot
+    //             submitMainContactForm(
+    //                 fullName,
+    //                 email,
+    //                 phoneNumber,
+    //                 message
+    //             )
+    //         ]);
 
-            // Check if both submissions were successful
-            if (emailResult.success && hubspotResponse) {
-                console.log('Both email and HubSpot submissions successful');
-                setShowSuccess(true);
+    //         // Check if both submissions were successful
+    //         if (emailResult.success && hubspotResponse) {
+    //             console.log('Both email and HubSpot submissions successful');
+    //             setShowSuccess(true);
 
-                // Redirect to thank you page
-                setTimeout(() => {
-                    router.push("/thank-you");
-                }, 1500);
+    //             // Redirect to thank you page
+    //             setTimeout(() => {
+    //                 router.push("/thank-you");
+    //             }, 1500);
 
-                // Clear form after delay
-                setTimeout(() => {
-                    setShowSuccess(false);
-                    setEmail("");
-                    setFullName("");
-                    setPhoneNumber("");
-                    setMessage("");
-                }, 3000);
-            } else {
-                // Handle partial failure
-                if (!emailResult.success) {
-                    console.error('Email submission failed:', emailResult.message);
-                }
-                if (!hubspotResponse) {
-                    console.error('HubSpot submission failed');
-                }
+    //             // Clear form after delay
+    //             setTimeout(() => {
+    //                 setShowSuccess(false);
+    //                 setEmail("");
+    //                 setFullName("");
+    //                 setPhoneNumber("");
+    //                 setMessage("");
+    //             }, 3000);
+    //         } else {
+    //             // Handle partial failure
+    //             if (!emailResult.success) {
+    //                 console.error('Email submission failed:', emailResult.message);
+    //             }
+    //             if (!hubspotResponse) {
+    //                 console.error('HubSpot submission failed');
+    //             }
 
-                // Still show success if at least one succeeded
-                if (emailResult.success || hubspotResponse) {
-                    setShowSuccess(true);
-                    setTimeout(() => {
-                        router.push("/thank-you");
-                    }, 1500);
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
-                }
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            alert('There was an error submitting your form. Please try again.');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    //             // Still show success if at least one succeeded
+    //             if (emailResult.success || hubspotResponse) {
+    //                 setShowSuccess(true);
+    //                 setTimeout(() => {
+    //                     router.push("/thank-you");
+    //                 }, 1500);
+    //             } else {
+    //                 alert('There was an error submitting your form. Please try again.');
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error('Form submission error:', error);
+    //         alert('There was an error submitting your form. Please try again.');
+    //     } finally {
+    //         setIsSubmitting(false);
+    //     }
+    // };
 
 
 
     return (
         <>
 
-            <section className="btm-form overflow-hidden relative">
+            <section className="relative overflow-hidden btm-form">
                 <div className="contact-form-bg-img"></div>
-                <div className="max-w-screen-xl mx-auto px-8 md:px-10">
-                    <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
-                        <div className="flex flex-col md:flex-row items-end">
-                            <div className="basis-1/3 hidden md:block position-relative">
+                <div className="max-w-screen-xl px-8 mx-auto md:px-10">
+                    <div className="pt-4 mb-12 bg-gray-200 form-mid-wrap connect-form-border">
+                        <div className="flex flex-col items-end md:flex-row">
+                            <div className="hidden basis-1/3 md:block position-relative">
                                 <AnimateFade type={"right"} className="position-relative">
                                     <Image
-                                        className="text-center pt-10 contact-form-img"
+                                        className="pt-10 text-center contact-form-img"
                                         src={"/brand-img/cheerful-smiling-female-professional-posing-near-office.png"}
                                         width={600}
                                         height={300}
@@ -214,11 +214,11 @@ export default function BrandContact() {
                                 </AnimateFade>
                             </div>
 
-                            <form className="basis-1/2 px-5 mb-5  md:ml-20" onSubmit={handleSubmit}>
-                                <h3 className="text-black leading-20 font-bold text-3xl md:text-4xl font-poppins text-start uppercase">
+                            <form className="px-5 mb-5 basis-1/2 md:ml-20" >
+                                <h3 className="text-3xl font-bold text-black uppercase leading-20 md:text-4xl font-poppins text-start">
                                     Let’s Get in Touch
                                 </h3>
-                                <p className="text-black leading-6  pb-5 text-base pt-4">
+                                <p className="pt-4 pb-5 text-base leading-6 text-black">
                                     Are you still hesitant about self book publishing and don’t know where to start? Just submit your query and let us guide you.
                                 </p>
                                 <div class="grid gap-3 md:grid-cols-2">
@@ -230,10 +230,10 @@ export default function BrandContact() {
                                             onChange={handleChange}
                                             value={fullName}
                                             required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                            className="w-full py-2 pl-4 pr-4 border rounded-lg shadow-xl brand-connect-form-input"
                                             placeholder="Enter your Name"
                                         />
-                                        <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                        <Image src={"/brand-img/user-icon.png"} width={16} height={16} className="absolute left-0 ml-4 top-4" />
                                     </div>
 
                                     <div className="relative mb-3">
@@ -243,12 +243,12 @@ export default function BrandContact() {
                                             onChange={handleChange}
                                             value={phoneNumber}
                                             required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                            className="w-full py-2 pl-4 pr-4 border rounded-lg shadow-xl brand-connect-form-input"
                                             placeholder="Enter your Number"
                                         />
-                                        <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-4" />
+                                        <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 ml-4 top-4" />
                                         {phoneError && (
-                                            <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                                            <p className="mt-1 text-sm text-red-500">{phoneError}</p>
                                         )}
                                     </div>
                                 </div>
@@ -260,10 +260,10 @@ export default function BrandContact() {
                                         onChange={handleChange}
                                         value={email}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                        className="w-full py-2 pl-4 pr-4 border rounded-lg shadow-xl brand-connect-form-input"
                                         placeholder="Enter your Email"
                                     />
-                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-5 ml-4" />
+                                    <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 ml-4 top-5" />
                                 </div>
 
                                 <div className="relative mb-3">
@@ -273,14 +273,12 @@ export default function BrandContact() {
                                         required
                                         placeholder="Enter your Message"
                                         name="message"
-                                        className="resize-none pl-4 pr-4 py-2 border rounded-lg w-full brand-connect-form-input shadow-xl"
+                                        className="w-full py-2 pl-4 pr-4 border rounded-lg shadow-xl resize-none brand-connect-form-input"
                                         rows={4}
                                     ></textarea>
-                                    <FontAwesomeIcon icon={faPen} color="#000" className="absolute left-0 top-3 ml-4" width={14} />
+                                    <FontAwesomeIcon icon={faPen} color="#000" className="absolute left-0 ml-4 top-3" width={14} />
                                     <div
-                                        className="absolute inset-y-0 left-0 pl-3 pt-3 
-                              flex items-start  
-                              pointer-events-none"
+                                        className="absolute inset-y-0 left-0 flex items-start pt-3 pl-3 pointer-events-none //"
                                     ></div>
                                 </div>
                                 <div class="flex items-start mb-5">
@@ -295,7 +293,7 @@ export default function BrandContact() {
                                     </p>
                                 )}
                                 <div className="flex justify-center">
-                                    <button disabled={isSubmitting} className="p-4 bg-green-500 uppercase text-white rounded brand-submit-btn mb-10" type="submit">
+                                    <button disabled={isSubmitting} className="p-4 mb-10 text-white uppercase bg-green-500 rounded brand-submit-btn" type="submit">
                                         {isSubmitting ? 'Submitting...' : 'Submit'}
                                     </button>
                                 </div>

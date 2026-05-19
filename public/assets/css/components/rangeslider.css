@@ -1,0 +1,38 @@
+.range-slider.style-1 .noUi-horizontal {
+    height: 4px;
+}
+.range-slider.style-1 .noUi-target .noUi-connect {
+    background: var(--secondary);
+}
+.range-slider.style-1 .noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    background-color: var(--light);
+    box-shadow: none;
+    top: -8px;
+    right: 0;
+    cursor: pointer;
+}
+.range-slider.style-1 .noUi-target {
+    background: #D7D7D7;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+}
+.noUi-handle:after, .noUi-handle:before,
+.range-slider.style-1 .noUi-horizontal .noUi-handle .noUi-tooltip {
+    display: none;
+}
+.range-slider.style-1 .noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    background-color: var(--light);
+    box-shadow: none;
+    top: -8px;
+    right: 0;
+    cursor: pointer;
+}

@@ -88,12 +88,12 @@ export default function PortfolioSlider1LP() {
 
     return (
         <>
-            {/* <section className="firstslider pt-8">
+            {/* <section className="pt-8 firstslider">
 
                 <div className="container mx-auto relative w-[80%]">
-                    <h1 className="text-5xl font-bold mb-28 text-center">Browse our design portfolio</h1>
+                    <h1 className="text-5xl font-bold text-center mb-28">Browse our design portfolio</h1>
 
-                    <h2 className="text-3xl font-medium mb-5 ml-8">Book Cover Design</h2>
+                    <h2 className="mb-5 ml-8 text-3xl font-medium">Book Cover Design</h2>
                     <Swiper
                         grabCursor={true}
                         slidesPerView={3}
@@ -140,13 +140,13 @@ export default function PortfolioSlider1LP() {
             </section> */}
 
 
-            <div className="w-full max-w-6xl mx-auto pb-10 relative">
+            <div className="relative w-full max-w-6xl pb-10 mx-auto">
                 
 
-                <h2 className="text-3xl font-medium mb-5 text-white text-center md:text-left">Book Cover Design</h2>
+                <h2 className="mb-5 text-3xl font-medium text-center text-white md:text-left">Book Cover Design</h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon prev cursor-pointer hide-btn-responsive"
+                    className="absolute transform -translate-y-1/2 cursor-pointer top-1/2 -left-10 bk-sil2 portfoilio-slider-icon prev hide-btn-responsive"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -174,11 +174,11 @@ export default function PortfolioSlider1LP() {
                 >
                     {ImageSlides.map((slide) => (
                         <SwiperSlide key={slide.id}>
-                            <div className="relative h-full flex flex-col items-center">
+                            <div className="relative flex flex-col items-center h-full">
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className="h-72 w-auto object-contain glightbox1 cursor-pointer"
+                                    className="object-contain w-auto cursor-pointer h-72 glightbox1"
                                 />
                             </div>
                         </SwiperSlide>
@@ -187,7 +187,7 @@ export default function PortfolioSlider1LP() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon next cursor-pointer hide-btn-responsive"
+                    className="absolute transform -translate-y-1/2 cursor-pointer top-1/2 -right-10 bk-sil2 portfoilio-slider-icon next hide-btn-responsive"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />

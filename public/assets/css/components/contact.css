@@ -1,0 +1,22 @@
+.point:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50%;
+    animation: 2s ease 0s infinite normal none running pointZoom;
+}
+@keyframes pointZoom {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1; }
+    75% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0; }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0; } 
+    }

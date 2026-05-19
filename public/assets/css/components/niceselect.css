@@ -1,0 +1,48 @@
+.nice-select:after {
+    width: 28px;
+    height: 8px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    content: "\f078";
+    vertical-align: middle;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    border: none !important;
+    transform: rotate(0) !important;
+    right: 20px;
+}
+.nice-select.style-1:after {
+    right: 8px;
+    color: #a4a4a4;
+    font-size: 11px;
+}
+.nice-select {
+    display: inline-flex;
+}
+.nice-select .list {
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    font-family: DM Sans, sans-serif;
+    color: #5E626F;
+}
+li.option.selected.focus ,
+.nice-select .list:hover .option.selected.focus:not(:hover) {
+    background-color: var(--secondary) !important;
+    color: #fff;
+}
+.nice-select.style-1 li.option.selected.focus,
+.nice-select.style-1 .list:hover .option.selected.focus:not(:hover) {
+    background-color: var(--light) !important;
+    color: var(--primary);
+}
+.nice-select .option {
+    font-weight: 400 !important;
+    line-height: 30px;
+    height: 30px;
+    min-height: 30px;
+}

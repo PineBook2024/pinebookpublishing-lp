@@ -1,0 +1,40 @@
+.faq-side-content {
+    padding: 130px 75px 75px;
+}
+.faq-end-content {
+    padding: 120px 150px 45px;
+}
+@media only screen and (max-width: 1480px) {
+    .faq-side-content {
+        padding: 130px 60px 70px;
+    }
+    .faq-end-content {
+        padding: 130px 60px 70px;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    .faq-side-content {
+        padding: 130px 30px 70px;
+    }
+    .faq-end-content {
+        padding: 130px 30px 70px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .faq-end-content {
+        padding: 50px 60px 70px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .faq-side-content {
+        padding: 100px 20px 40px;
+    }
+    .faq-end-content {
+        padding: 30px 20px 20px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .faq-end-content {
+        padding: 20px 20px 10px;
+    }
+}

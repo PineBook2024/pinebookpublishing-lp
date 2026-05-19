@@ -234,6 +234,89 @@ export default function Home() {
             <BrandLogo />
             <BrandFooter />
             {/* <HomePopupNew /> */}
+
+            {/* Floating Shop Button */}
+            <style jsx global>{`
+                @keyframes shopPulse {
+                    0%, 100% { box-shadow: 0 8px 22px -5px rgba(19, 124, 109, 0.55), 0 0 0 0 rgba(48, 150, 135, 0.65); }
+                    50% { box-shadow: 0 8px 22px -5px rgba(19, 124, 109, 0.65), 0 0 0 10px rgba(48, 150, 135, 0); }
+                }
+                @keyframes shopShine {
+                    0% { transform: translateX(-120%) skewX(-20deg); }
+                    100% { transform: translateX(220%) skewX(-20deg); }
+                }
+                .floating-shop-btn {
+                    position: fixed;
+                    top: 120px;
+                    right: 22px;
+                    z-index: 9999;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 7px;
+                    padding: 9px 18px;
+                    border-radius: 999px;
+                    color: #fff;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 600;
+                    font-size: 13px;
+                    letter-spacing: 0.3px;
+                    text-decoration: none;
+                    background: linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%);
+                    overflow: hidden;
+                    animation: shopPulse 2.2s ease-in-out infinite;
+                    transition: transform 0.25s ease, filter 0.25s ease;
+                    border: 1.5px solid rgba(255, 255, 255, 0.22);
+                }
+                .floating-shop-btn:hover {
+                    transform: translateY(-2px) scale(1.03);
+                    filter: brightness(1.08);
+                    color: #fff;
+                }
+                .floating-shop-btn::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    height: 100%;
+                    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+                    animation: shopShine 2.8s ease-in-out infinite;
+                    pointer-events: none;
+                }
+                .floating-shop-btn .badge {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 18px;
+                    height: 18px;
+                    padding: 0 5px;
+                    border-radius: 999px;
+                    background: #fff;
+                    color: #137c6d;
+                    font-size: 9px;
+                    font-weight: 800;
+                    margin-left: 2px;
+                    letter-spacing: 0.5px;
+                }
+                @media (max-width: 640px) {
+                    .floating-shop-btn {
+                        top: auto;
+                        bottom: 18px;
+                        right: 14px;
+                        padding: 8px 14px;
+                        font-size: 12px;
+                    }
+                }
+            `}</style>
+            <Link href="/shop" aria-label="Shop Now" className="floating-shop-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'relative', zIndex: 1 }}>
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                <span style={{ position: 'relative', zIndex: 1 }}>Shop Now</span>
+                <span className="badge">NEW</span>
+            </Link>
         </>
     );
 }
