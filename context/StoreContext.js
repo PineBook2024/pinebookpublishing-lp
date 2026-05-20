@@ -4,7 +4,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const StoreContext = createContext();
 
-const API = "http://localhost:8000/api";
+// StoreContext.js
+const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
 
 export const StoreProvider = ({ children }) => {
   const [cart, setCart] = useState([]);

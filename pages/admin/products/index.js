@@ -3,6 +3,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL || 'http://localhost:8000/storage';
+
+// const resolveImageUrl = (raw) => {
+//   if (!raw || typeof raw !== 'string') return null;
+//   const trimmed = raw.trim();
+//   if (!trimmed) return null;
+//   if (/^(https?:|data:|blob:)/i.test(trimmed)) return trimmed;
+//   if (trimmed.startsWith('/')) return trimmed;
+//   return `${STORAGE_URL.replace(/\/$/, '')}/${trimmed.replace(/^\/+/, '')}`;
+// };
 
 // ─── Sidebar Component ───────────────────────────────────────────────────────
 function Sidebar({ activePath }) {
@@ -285,12 +295,25 @@ export default function ProductsIndex() {
     return icons[format] || '📦';
   };
 
-  const getCoverImage = (product) => {
+ const getCoverImage = (product) => {
     if (!product) return null;
-    if (product.cover_image_url) return product.cover_image_url;
-    if (product.images?.length && product.images[0]?.image_url) return product.images[0].image_url;
-    return null;
-  };
+    const raw =
+      product.cover_image_url ||
+      product.cover_image ||
+      product.cover_url ||
+      (product.images?.length && (product.images[0]?.image_url || product.images[0]?.url)) ||
+      null;
+    if (!raw || typeof raw !== 'string') return null;
+    const trimmed = raw.trim();
+    if (!trimmed) return null;
+    // Rewrite localhost URLs the backend embeds in responses (matches shop.js behavior)
+    const rewritten = trimmed
+      .replace('http://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com')
+      .replace('https://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com');
+    if (/^(https?:|data:|blob:)/i.test(rewritten)) return rewritten;
+    if (rewritten.startsWith('/')) return rewritten;
+    return `${STORAGE_URL.replace(/\/$/, '')}/${rewritten.replace(/^\/+/, '')}`;
+};
 
   // ✅ SAFE FILTERING with null checks
   const filteredProducts = useMemo(() => {
@@ -550,10 +573,18 @@ export default function ProductsIndex() {
                   </div>
                   <div style={{ height: 200, background: '#f8fafc', position: 'relative', overflow: 'hidden' }}>
                     {getCoverImage(p) ? (
-                      <img src={getCoverImage(p)} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    ) : (
-                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#cbd5e1', fontSize: 48 }}>📚</div>
-                    )}
+    <img 
+        src={getCoverImage(p)} 
+        alt={p.title}
+        onError={(e) => { 
+            e.target.style.display = 'none'; 
+            e.target.parentElement.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#cbd5e1;font-size:48px">📚</div>';
+        }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+    />
+) : (
+    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#cbd5e1', fontSize: 48 }}>📚</div>
+)}
                     <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px 16px 12px', background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
                       <span style={{ color: '#fff', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5 }}>
                         {getFormatIcon(p.format)} {p.format}

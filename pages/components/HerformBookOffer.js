@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import FadeIn from "./FadeIn";
 import SnowFall from "/components/SnowFall";
 
-const countryCodes = [
+export const countryCodes = [
   { name: "United States", code: "1", countryCode: "US", flag: "https://flagcdn.com/us.svg" },
   { name: "United Kingdom", code: "44", countryCode: "GB", flag: "https://flagcdn.com/gb.svg" },
   { name: "Canada", code: "1", countryCode: "CA", flag: "https://flagcdn.com/ca.svg" },
@@ -415,8 +415,29 @@ export default function HeroFormBookOffer() {
     }
   };
 
+  const submitLeadToCRM = async (formData) => {
+    const resp = await fetch("/api/lead-capture", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await resp.json().catch(() => ({}));
+
+    return {
+      success: resp.ok && data?.success !== false,
+      status: resp.status,
+      data,
+    };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!selectedCountry) {
+      alert("Country is loading, please wait.");
+      return;
+    }
 
     if (phone.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
@@ -425,79 +446,43 @@ export default function HeroFormBookOffer() {
 
     setIsSubmitting(true);
 
-    // Combine phone number and country code
     const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
-
     const formData = {
       firstName,
       email,
       phone: combinedPhoneNumber,
-      category,
+      category, // CRM me service map ho jayegi
       message,
       countryCode: selectedCountry.countryCode,
     };
 
     try {
-      // Send to both email and HubSpot in parallel
-      const [emailResult, hubspotResponse] = await Promise.all([
-        // Send email notification
+      const [emailResult, hubspotResponse, crmResult] = await Promise.allSettled([
         sendEmailNotification(formData),
-
-        // Submit to HubSpot
-        submitMainContactFormLP(
-          firstName,
-          email,
-          combinedPhoneNumber,
-          category,
-          message
-        )
+        submitMainContactFormLP(firstName, email, combinedPhoneNumber, category, message),
+        submitLeadToCRM(formData),
       ]);
 
-      // Check if both submissions were successful
-      if (emailResult.success && hubspotResponse) {
-        console.log('Both email and HubSpot submissions successful');
+      const emailOk = emailResult.status === "fulfilled" && emailResult.value?.success;
+      const hubspotOk = hubspotResponse.status === "fulfilled" && !!hubspotResponse.value;
+      const crmOk = crmResult.status === "fulfilled" && crmResult.value?.success;
+
+      console.log({ emailResult, hubspotResponse, crmResult });
+
+      if (emailOk || hubspotOk || crmOk) {
         setShowSuccess(true);
-
-        // Redirect to thank you page
-        setTimeout(() => {
-          window.location.href = "/thankyou-offer";
-        }, 1500);
-
-        // Clear form after delay
-        setTimeout(() => {
-          setShowSuccess(false);
-          setEmail("");
-          setFirstName("");
-          setPhone("");
-          setCategory("");
-          setMessage("");
-        }, 3000);
+        setTimeout(() => (window.location.href = "/thankyou-offer"), 1500);
       } else {
-        // Handle partial failure
-        if (!emailResult.success) {
-          console.error('Email submission failed:', emailResult.message);
-        }
-        if (!hubspotResponse) {
-          console.error('HubSpot submission failed');
-        }
-
-        // Still show success if at least one succeeded
-        if (emailResult.success || hubspotResponse) {
-          setShowSuccess(true);
-          setTimeout(() => {
-            window.location.href = "/thankyou-offer";
-          }, 1500);
-        } else {
-          alert('There was an error submitting your form. Please try again.');
-        }
+        alert("There was an error submitting your form. Please try again.");
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('There was an error submitting your form. Please try again.');
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const categoryPublishing = [
     "Book Publishing",
@@ -556,7 +541,7 @@ export default function HeroFormBookOffer() {
         <div className="grid grid-cols-1 sm:gap-8 sm:py-0 md:grid-cols-2 text-left items-center justify-between md:gap-8 md:py-36">
           <div className="mb-4">
             <h3 className="font-poppins text-2xl mb-4 aos-init aos-animate text-white">
-              <span className="px-2 py-0">#1 Self</span> Publishing Company
+              <span className="px-2 py-0 blink">#1 Self</span> Publishing Company
             </h3>
             <FadeIn>
               <h1 className="font-poppins text-3xl md:text-3xl text-white font-bold">
@@ -603,7 +588,7 @@ export default function HeroFormBookOffer() {
                   Avail Discount
                 </h4>
                 <h5 className="font-poppins text-white text-lg mb-3 christmas-banner-desc">
-                  Holiday Season Sale: Expert Book Publishing at{" "}
+                  Exclusive Offer: Expert Book Publishing at{" "}
                   <span className="text-blink">50% Off</span> – <br />
                   Your Story Deserves to be Heard!
                 </h5>

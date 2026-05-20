@@ -9,7 +9,7 @@ export default function Home() {
 
         <>
             <Head>
-                <title>Thank You | Pine Book Writing</title>
+                <title>Thank You | Pine Book Publishing</title>
                 <meta
                     name="description"
                     content=""

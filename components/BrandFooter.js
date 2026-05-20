@@ -337,6 +337,9 @@ export default function BrandFooter() {
                 <div>
                     <a href="https://www.youtube.com/@Pinebookwriting" class="fixed-tumblr" target="_blank"><FontAwesomeIcon icon={faYoutube} color="#FF0000" width={20} /><span>Youtube</span></a>
                 </div>
+                <div>
+                    <a href="https://www.threads.com/@pinebookwriting" class="fixed-tumblr" target="_blank"><FontAwesomeIcon icon={faThreads} color="#14171A" width={20} /><span>Threads</span></a>
+                </div>
             </div>
         </>
     );

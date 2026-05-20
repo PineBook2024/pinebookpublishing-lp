@@ -63,6 +63,7 @@ export default function PortfolioSlider4() {
             id: 4,
             src: "/brand-img/Editing Portfolio 4.jpg",
         },
+
     ];
 
     return (

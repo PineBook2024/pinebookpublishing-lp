@@ -59,18 +59,18 @@ const Posts = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>Blogs | Pine Book Publishing</title>
+        <title>Book Publishing Blog | Insightful Guides For Authors</title>
         <meta
           name="description"
-          content="Everything about Pine Book Publishing—your partner in crafting, editing, and publishing your story. Experience seamless service from manuscript to bookshelf."
+          content="Read blog posts related to book publishing, formatting, and marketing and stay updated with self-publishing guides written by industry experts"
         />
         <link rel="shortcut icon" href="/images/fav.png" />
       </Head>
       <BrandNavbar />
       <BrandPrimaryHeader
-        subtitle="Enhance Your Book's Readability With"
-        title="Blogs"
-        desc="Are you in search of expert book formatting services to get your manuscript formatted well? If so, then we're here to help. At Pine Book Publishing, we offer professional book formatting services to blow life into your book. Our expert team of book formatters will work together with you to give your book a professional and polished look. Get a free quote now!"
+        subtitle="Our Blog - Learn. Write. Improve"
+        title=""
+        desc="Read our insightful blog posts written by publishing experts and writers who stay updated with industry trends and the challenges faced by both new and experienced authors. Stay informed with expert tips and practical guides on book publishing, formatting, marketing, and other key aspects of the publishing process."
       />
       <section className='overflow-hidden'>
         <div className='relative max-w-screen-xl px-4 mx-auto my-20 py-22'>
@@ -79,8 +79,10 @@ const Posts = ({ posts }) => {
               <PostCard key={post.fields.slug} post={post} />
             ))}
           </ul>
+
         </div>
       </section>
+      <BrandFooter />
       <BrandFooter />
     </>
   )

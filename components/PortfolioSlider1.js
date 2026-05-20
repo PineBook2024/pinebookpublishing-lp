@@ -84,20 +84,20 @@ export default function PortfolioSlider1() {
             id: 8,
             src: "/brand-img/Jean Bosco N. Ruhashya Full cover.png",
         },
-         {
+        {
             id: 9,
-            src: "/brand-img/ptf.jpg",
+            src: "/brand-img/Doris.jpg",
         },
     ];
 
     return (
         <>
-            {/* <section className="pt-8 firstslider">
+            {/* <section className="firstslider pt-8">
 
                 <div className="container mx-auto relative w-[80%]">
-                    <h1 className="text-5xl font-bold text-center mb-28">Browse our design portfolio</h1>
+                    <h1 className="text-5xl font-bold mb-28 text-center">Browse our design portfolio</h1>
 
-                    <h2 className="mb-5 ml-8 text-3xl font-medium">Book Cover Design</h2>
+                    <h2 className="text-3xl font-medium mb-5 ml-8">Book Cover Design</h2>
                     <Swiper
                         grabCursor={true}
                         slidesPerView={3}
@@ -144,13 +144,13 @@ export default function PortfolioSlider1() {
             </section> */}
 
 
-            <div className="relative w-full max-w-6xl pb-10 mx-auto">
-                
+            <div className="w-full max-w-6xl mx-auto pb-10 relative">
 
-                <h2 className="mb-5 text-3xl font-medium ">Book Cover Design</h2>
+
+                <h2 className="text-3xl font-medium mb-5 ">Book Cover Design</h2>
                 {/* Custom Previous Button */}
                 <div
-                    className="absolute transform -translate-y-1/2 cursor-pointer top-1/2 -left-10 bk-sil2 portfoilio-slider-icon prev"
+                    className="absolute top-1/2 -left-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon prev cursor-pointer"
                     onClick={() => swiperRef2.current?.slidePrev()}
                 >
                     <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
@@ -178,11 +178,11 @@ export default function PortfolioSlider1() {
                 >
                     {ImageSlides.map((slide) => (
                         <SwiperSlide key={slide.id}>
-                            <div className="relative flex flex-col items-center h-full">
+                            <div className="relative h-full flex flex-col items-center">
                                 <img
                                     src={slide.src}
                                     alt={`Slide ${slide.id}`}
-                                    className="object-contain w-auto cursor-pointer h-72 glightbox1"
+                                    className="h-72 w-auto object-contain glightbox1 cursor-pointer"
                                 />
                             </div>
                         </SwiperSlide>
@@ -191,7 +191,7 @@ export default function PortfolioSlider1() {
 
                 {/* Custom Next Button */}
                 <div
-                    className="absolute transform -translate-y-1/2 cursor-pointer top-1/2 -right-10 bk-sil2 portfoilio-slider-icon next"
+                    className="absolute top-1/2 -right-10 transform -translate-y-1/2 bk-sil2 portfoilio-slider-icon next cursor-pointer"
                     onClick={() => swiperRef2.current?.slideNext()}
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />

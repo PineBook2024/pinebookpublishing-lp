@@ -73,7 +73,7 @@ export default function ContactCopy() {
     return (
         <>
             <Head>
-                <title>Get in Touch | Pine Book Writing</title>
+                <title>Get in Touch | Pine Book Publishing</title>
                 <meta
                     name="description"
                     content="Our team of experts are ready to assist you with all your queries. Contact us now and get all your questions answered in no time. "

@@ -1680,17 +1680,15 @@ footer svg {
 
 .right-4 {
   position: absolute;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 90%, 50% 24%);
-  height: 81px;
-  width: 86px;
+  height: 32px;
+  width: 32px;
   bottom: 34px;
-  left: -43px;
   background: #0d0f38;
-  opacity: 0;
   transition: .4s ease-in-out;
   z-index: 1;
   transform: rotate(90deg);
   transform: scaleX(-1);
+  color: #fff;
 }
 
 .bottom-4 {
@@ -1958,7 +1956,7 @@ footer svg {
 }
 
 .brand-primary-header-bg-signup {
-  background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg);
+  /* background-image: url(../public/brand-img/Contact\ page\ banner\ 2.jpg); */
   padding: 14% 0 7% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3304,6 +3302,16 @@ video#brandVideo {
   margin-top: 6px;
 }
 
+.compare-now-btn-new {
+  background-color: transparent;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
 .compare-now-btn {
   background-color: transparent;
   padding: 10px 30px;
@@ -3998,31 +4006,31 @@ a.close-chat:hover {
 
 
 .prose h2 {
-  font-size: 32px;
+  font-size: 24px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }
 
 .prose h3 {
-  font-size: 28px;
+  font-size: 19px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h4 {
-  font-size: 21px;
+  font-size: 17px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h5 {
   font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .prose h6 {
@@ -4048,13 +4056,15 @@ a.close-chat:hover {
 
 .prose a {
   color: oklch(0.67 0.18 253.22);
-  font-weight: bold;
+  /* font-weight: bold; */
 
 }
 
+
+
 .prose table {
   margin-bottom: 10px;
-  
+
 }
 
 .prose table,
@@ -4659,4 +4669,92 @@ html[dir="rtl"] .container {
 /* Fix for Google Translate iframe */
 iframe.goog-te-banner-frame {
   display: none !important;
+}
+
+.blink {
+  animation: blinkAnimation 1.5s infinite;
+}
+
+@keyframes blinkAnimation {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Modal CTA button style */
+.view-posts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 8px 8px 24px;
+  border: 2px solid #2c9384;
+  border-radius: 16px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
+}
+
+.view-posts-btn:hover {
+  background-color: #2c9384;
+}
+
+.view-posts-btn:active {
+  transform: scale(0.98);
+}
+
+.view-posts-btn .btn-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.view-posts-btn:hover .btn-text {
+  color: #0d0f38;
+}
+
+.view-posts-btn .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d0f38;
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.view-posts-btn:hover .btn-icon {
+  transform: rotate(45deg);
+}
+
+.view-posts-btn .btn-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.view-posts-btn:hover .btn-icon svg {
+  transform: rotate(-45deg);
+}
+
+.view-posts-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.modal-submit-btn {
+  width: 100%;
+}
+
+.prose ul,
+.prose ol {
+  margin-left: 23px
 }

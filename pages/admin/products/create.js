@@ -54,36 +54,58 @@ export default function CreateProduct() {
   const token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
 
   useEffect(() => {
+  const fetchData = async () => {
     const token = localStorage.getItem('token');
+    
     if (!token) {
       setFetchError('No auth token. Please login.');
+      router.push('/login?redirect=/admin/products/create');
       return;
     }
 
-    fetch(`${API_URL}/authors`, {
-      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
-    })
-      .then(async r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        const json = await r.json();
-        setAuthors(Array.isArray(json) ? json : (json.data || []));
-      })
-      .catch(err => {
-        console.error('Authors error:', err);
-        setFetchError(err.message);
+    try {
+      // Fetch authors
+      const authorsRes = await fetch(`${API_URL}/authors`, {
+        headers: { 
+          'Authorization': `Bearer ${token}`, 
+          'Accept': 'application/json'
+        }
       });
 
-    fetch(`${API_URL}/categories`, {
-      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
-    })
-      .then(async r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        const json = await r.json();
-        setCategories(Array.isArray(json) ? json : (json.data || []));
-      })
-      .catch(err => console.error('Categories error:', err));
-  }, []);
+      if (authorsRes.status === 401) {
+        // Token expired or invalid
+        localStorage.removeItem('token');
+        localStorage.removeItem('user'); // Clear any other auth data
+        router.push('/login?redirect=/admin/products/create');
+        throw new Error('Session expired. Please login again.');
+      }
 
+      if (!authorsRes.ok) throw new Error(`HTTP ${authorsRes.status}`);
+      
+      const authorsJson = await authorsRes.json();
+      setAuthors(Array.isArray(authorsJson) ? authorsJson : (authorsJson.data || []));
+
+      // Fetch categories similarly
+      const categoriesRes = await fetch(`${API_URL}/categories`, {
+        headers: { 
+          'Authorization': `Bearer ${token}`, 
+          'Accept': 'application/json'
+        }
+      });
+
+      if (categoriesRes.ok) {
+        const categoriesJson = await categoriesRes.json();
+        setCategories(Array.isArray(categoriesJson) ? categoriesJson : (categoriesJson.data || []));
+      }
+      
+    } catch (err) {
+      console.error('Error fetching data:', err);
+      setFetchError(err.message);
+    }
+  };
+
+  fetchData();
+}, [router]);
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setForm(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));

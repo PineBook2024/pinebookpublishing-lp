@@ -23,13 +23,13 @@
     "**/*.tsx"
   ],
   "exclude": [
-  "node_modules",
-  "components/blog",
-  "components/shop",
-  "components/portfolio",
-  "components/form",
-  "components/line-text",
-  "hooks/use-isotop.ts",
-  "hooks/use-text-invert.ts"
-]
+    "node_modules",
+    "components/blog",
+    "components/shop",
+    "components/portfolio",
+    "components/form",
+    "components/line-text",
+    "hooks/use-isotop.ts",
+    "hooks/use-text-invert.ts"
+  ]
 }

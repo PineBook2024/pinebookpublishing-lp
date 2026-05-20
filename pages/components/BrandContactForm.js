@@ -115,82 +115,87 @@ export default function BrandContact() {
         }
     };
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
+    const submitLeadToCRM = async (formData) => {
+        try {
+            const response = await fetch("/api/lead-capture", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phoneNumber,
+                    message: formData.message,
+                }),
+            });
 
-    //     if (phoneNumber.length < 9) {
-    //         setPhoneError("Phone number must be at least 9 digits");
-    //         return;
-    //     }
+            const data = await response.json().catch(() => ({}));
 
-    //     setIsSubmitting(true);
+            return {
+                success: response.ok && data?.success !== false,
+                status: response.status,
+                data,
+            };
+        } catch (error) {
+            return { success: false, message: error.message };
+        }
+    };
 
-    //     const formData = {
-    //         fullName,
-    //         email,
-    //         phoneNumber,
-    //         message,
-    //     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    //     try {
-    //         // Send to both email and HubSpot in parallel
-    //         const [emailResult, hubspotResponse] = await Promise.all([
-    //             // Send email notification
-    //             sendEmailNotification(formData),
+        if (phoneNumber.length < 9) {
+            setPhoneError("Phone number must be at least 9 digits");
+            return;
+        }
 
-    //             // Submit to HubSpot
-    //             submitMainContactForm(
-    //                 fullName,
-    //                 email,
-    //                 phoneNumber,
-    //                 message
-    //             )
-    //         ]);
+        setIsSubmitting(true);
 
-    //         // Check if both submissions were successful
-    //         if (emailResult.success && hubspotResponse) {
-    //             console.log('Both email and HubSpot submissions successful');
-    //             setShowSuccess(true);
+        const formData = {
+            fullName,
+            email,
+            phoneNumber,
+            message,
+        };
 
-    //             // Redirect to thank you page
-    //             setTimeout(() => {
-    //                 router.push("/thank-you");
-    //             }, 1500);
+        try {
+            const [emailResult, crmResult] = await Promise.allSettled([
+                sendEmailNotification(formData),
+                submitLeadToCRM(formData),
+            ]);
 
-    //             // Clear form after delay
-    //             setTimeout(() => {
-    //                 setShowSuccess(false);
-    //                 setEmail("");
-    //                 setFullName("");
-    //                 setPhoneNumber("");
-    //                 setMessage("");
-    //             }, 3000);
-    //         } else {
-    //             // Handle partial failure
-    //             if (!emailResult.success) {
-    //                 console.error('Email submission failed:', emailResult.message);
-    //             }
-    //             if (!hubspotResponse) {
-    //                 console.error('HubSpot submission failed');
-    //             }
+            const emailOk =
+                emailResult.status === "fulfilled" && emailResult.value?.success === true;
 
-    //             // Still show success if at least one succeeded
-    //             if (emailResult.success || hubspotResponse) {
-    //                 setShowSuccess(true);
-    //                 setTimeout(() => {
-    //                     router.push("/thank-you");
-    //                 }, 1500);
-    //             } else {
-    //                 alert('There was an error submitting your form. Please try again.');
-    //             }
-    //         }
-    //     } catch (error) {
-    //         console.error('Form submission error:', error);
-    //         alert('There was an error submitting your form. Please try again.');
-    //     } finally {
-    //         setIsSubmitting(false);
-    //     }
-    // };
+            const crmOk =
+                crmResult.status === "fulfilled" && crmResult.value?.success === true;
+
+            if (emailOk || crmOk) {
+                setShowSuccess(true);
+
+                setTimeout(() => {
+                    router.push("/thank-you");
+                }, 1500);
+
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setEmail("");
+                    setFullName("");
+                    setPhoneNumber("");
+                    setMessage("");
+                }, 3000);
+            } else {
+                alert("There was an error submitting your form. Please try again.");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            alert("There was an error submitting your form. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
 
 
 
@@ -214,7 +219,7 @@ export default function BrandContact() {
                                 </AnimateFade>
                             </div>
 
-                            <form className="px-5 mb-5 basis-1/2 md:ml-20" >
+                            <form className="px-5 mb-5 basis-1/2 md:ml-20" onSubmit={handleSubmit}>
                                 <h3 className="text-3xl font-bold text-black uppercase leading-20 md:text-4xl font-poppins text-start">
                                     Let’s Get in Touch
                                 </h3>

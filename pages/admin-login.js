@@ -28,7 +28,7 @@ export default function AdminLogin() {
     setMessage(null);
 
     try {
-      await axios.post("http://127.0.0.1:8000/api/admin/login", {
+     await axios.post("https://pinebookbackend.pinedigitalhub.com/api/admin/login",  {
         email: form.email,
         password: form.password,
       });
@@ -53,7 +53,7 @@ const handleVerifyOtp = async (e) => {
 
   try {
     const res = await axios.post(
-      "http://127.0.0.1:8000/api/admin/verify-otp",
+      "https://pinebookbackend.pinedigitalhub.com/api/admin/verify-otp",
       {
         email: form.email,
         otp: form.otp,

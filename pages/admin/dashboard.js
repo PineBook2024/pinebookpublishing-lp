@@ -156,7 +156,7 @@ export default function AdminUsersDashboard() {
       // ✅ Debug: Log token (remove in production)
       console.log("Token:", token?.substring(0, 20) + "...");
 
-      const res = await axios.get("http://127.0.0.1:8000/api/all-data", {
+      const res = await axios.get("https://pinebookbackend.pinedigitalhub.com/api/all-data", {
         headers: { 
           Authorization: `Bearer ${token}`,
           Accept: "application/json"

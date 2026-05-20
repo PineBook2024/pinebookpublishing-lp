@@ -5,6 +5,19 @@ import Link from 'next/link';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL || 'http://localhost:8000/storage';
 
+const resolveImageUrl = (raw) => {
+  if (!raw || typeof raw !== 'string') return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  // Rewrite backend localhost host (matches shop.js behavior)
+  const rewritten = trimmed
+    .replace('http://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com')
+    .replace('https://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com');
+  if (/^(https?:|data:|blob:)/i.test(rewritten)) return rewritten;
+  if (rewritten.startsWith('/')) return rewritten;
+  return `${STORAGE_URL.replace(/\/$/, '')}/${rewritten.replace(/^\/+/, '')}`;
+};
+
 export default function EditProduct() {
   const router = useRouter();
   const { id } = router.query;
@@ -18,6 +31,7 @@ export default function EditProduct() {
   // Existing images from DB
   const [existingImages, setExistingImages] = useState([]);
   const [deletedImageIds, setDeletedImageIds] = useState([]);
+  const [existingCoverUrl, setExistingCoverUrl] = useState(null);
   
   // New images to upload
   const [newImages, setNewImages] = useState([]);
@@ -133,6 +147,9 @@ export default function EditProduct() {
         });
         
         setExistingImages(p.images || []);
+        setExistingCoverUrl(
+          resolveImageUrl(p.cover_image_url || p.cover_image || p.cover_url)
+        );
         setLoading(false);
       })
       .catch(err => {
@@ -432,7 +449,7 @@ export default function EditProduct() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: 12 }}>
                   {existingImages.map(img => (
                     <div key={img.image_id} style={{ position: 'relative', borderRadius: 8, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
-                      <img src={`${STORAGE_URL}/${img.image_url}`} alt={img.alt_text || 'Product'} style={{ width: '100%', height: 100, objectFit: 'cover' }} />
+                      <img src={resolveImageUrl(img.image_url)} alt={img.alt_text || 'Product'} style={{ width: '100%', height: 100, objectFit: 'cover' }} />
                       <button type="button" onClick={() => removeExistingImage(img.image_id)} style={{
                         position: 'absolute', top: 4, right: 4, background: '#ef4444', color: '#fff',
                         border: 'none', borderRadius: '50%', width: 22, height: 22, cursor: 'pointer',
@@ -500,8 +517,13 @@ export default function EditProduct() {
                 }}>
                   {coverPreview ? (
                     <img src={coverPreview} alt="New cover" style={{ maxWidth: '100%', maxHeight: 120, borderRadius: 4 }} />
+                  ) : existingCoverUrl ? (
+                    <div>
+                      <img src={existingCoverUrl} alt="Current cover" style={{ maxWidth: '100%', maxHeight: 120, borderRadius: 4 }} />
+                      <p style={{ margin: '8px 0 0', fontSize: 11, color: '#94a3b8' }}>Current cover — click to replace</p>
+                    </div>
                   ) : (
-                    <span>+ Change cover image</span>
+                    <span>+ Click to upload cover</span>
                   )}
                 </label>
                 {coverImage && (

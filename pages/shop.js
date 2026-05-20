@@ -8,7 +8,7 @@ import Link from "next/link";
 import {
   ShoppingCart, Search, Loader2, Star, Filter, BookOpen,
   Heart, Eye, X, Plus, Minus, Trash2, ArrowRight, ChevronRight,
-  CheckCircle2  // ✅ Added for success icon
+  CheckCircle2
 } from "lucide-react";
 import ReactPaginate from "react-paginate";
 import { useCart } from "../hooks/useCart";
@@ -16,7 +16,20 @@ import usePagination from "../hooks/use-pagination";
 
 const PRODUCTS_PER_PAGE = 12;
 
-const API_BASE_URL = "http://localhost:8000/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+
+// URL fix helper - localhost URLs ko live domain se replace karega
+const fixImageUrl = (url) => {
+  if (!url) return null;
+  
+  return url.replace(
+    'http://localhost:8000', 
+    'https://pinebookbackend.pinedigitalhub.com'
+  ).replace(
+    'https://localhost:8000',
+    'https://pinebookbackend.pinedigitalhub.com'
+  );
+};
 
 export default function BookShop() {
   const [products, setProducts] = useState([]);
@@ -27,14 +40,16 @@ export default function BookShop() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [wishlist, setWishlist] = useState([]);
   const [quickView, setQuickView] = useState(null);
+  const [imgErrors, setImgErrors] = useState({});
+  const [cartImgErrors, setCartImgErrors] = useState({});
+  const [quickViewImgError, setQuickViewImgError] = useState(false);
 
-  // ✅ ADDED: Toast notification state
+  // Toast notification state
   const [toast, setToast] = useState({ show: false, message: "", product: null });
 
-  // FIXED: reloadCart added to destructuring
   const { cartItems, cartTotal, cartCount, addToCart, removeFromCart, updateQuantity, reloadCart } = useCart();
 
-  // ✅ ADDED: Auto-hide toast after 3 seconds
+  // Auto-hide toast after 3 seconds
   useEffect(() => {
     if (toast.show) {
       const timer = setTimeout(() => {
@@ -75,7 +90,6 @@ export default function BookShop() {
     setWishlist((prev) => prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]);
   };
 
-  // ✅ ADDED: Wrapper function to show toast when adding to cart
   const handleAddToCart = (product) => {
     addToCart(product);
     setToast({
@@ -103,13 +117,50 @@ export default function BookShop() {
     { id: "hardcover", label: "Hardcover" },
   ];
 
+  // Helper: Render book cover image with fallback
+  const renderBookCover = (src, alt, productId, isCart = false, isQuickView = false) => {
+    // Fix localhost URLs
+    const fixedSrc = src ? src.replace('http://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com')
+                              .replace('https://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com') 
+                        : null;
+
+    // If no src, show fallback immediately
+    if (!fixedSrc) {
+        return (
+            <div style={{ 
+                width: "100%", 
+                height: "100%", 
+                display: "flex", 
+                flexDirection: "column", 
+                alignItems: "center", 
+                justifyContent: "center", 
+                color: "#9ca3af" 
+            }}>
+                <BookOpen style={{ width: "64px", height: "64px", marginBottom: "8px" }} />
+                <span style={{ fontSize: "14px" }}>No Cover</span>
+            </div>
+        );
+    }
+
+    // Image exists - render it (NO onError handler)
+    return (
+        <Image 
+            src={fixedSrc} 
+            alt={alt || "Book"} 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: "cover" }} 
+            unoptimized
+        />
+    );
+};
+
   return (
     <>
-     
       <Head><title>Pine Book | Online Bookstore</title></Head>
       <div style={{ minHeight: "100vh", backgroundColor: "#f8fafc", fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
-        {/* ✅ ADDED: Toast Notification Popup */}
+        {/* Toast Notification */}
         {toast.show && (
           <div style={{
             position: "fixed",
@@ -163,17 +214,11 @@ export default function BookShop() {
           </div>
         )}
 
-        {/* ✅ ADDED: CSS animation for toast */}
+        {/* CSS Styles */}
         <style>{`
           @keyframes slideIn {
-            from {
-              transform: translateX(100%);
-              opacity: 0;
-            }
-            to {
-              transform: translateX(0);
-              opacity: 1;
-            }
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
           }
           .shop-pagination {
             display: flex;
@@ -223,10 +268,12 @@ export default function BookShop() {
           }
         `}</style>
 
+        {/* Announcement Bar */}
         <div style={{ backgroundColor: "#d97706", color: "white", padding: "8px 16px", textAlign: "center", fontSize: "14px" }}>
           Free shipping on orders over $50 | Use code: FREESHIP
         </div>
 
+        {/* Header */}
         <header style={{ backgroundColor: "white", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", position: "sticky", top: 0, zIndex: 50 }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
             <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
@@ -245,15 +292,7 @@ export default function BookShop() {
           </div>
         </header>
 
-        {/* <nav style={{ backgroundColor: "#111827", color: "white", padding: "12px 0" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 16px", display: "flex", gap: "24px", overflowX: "auto" }}>
-            {["All Books", "Bestsellers", "Featured", "Deals", "E-Books", "Hardcover", "Paperback"].map((item) => (
-              <button key={item} onClick={() => { if (item === "All Books") setActiveFilter("all"); else if (item === "Bestsellers") setActiveFilter("bestseller"); else if (item === "Featured") setActiveFilter("featured"); else if (item === "Deals") setActiveFilter("sale"); else setActiveFilter(item.toLowerCase()); }}
-                style={{ color: "white", background: "none", border: "none", fontSize: "14px", fontWeight: "500", whiteSpace: "nowrap", padding: "4px 0", cursor: "pointer" }}>{item}</button>
-            ))}
-          </div>
-        </nav> */}
-
+        {/* Cart Sidebar */}
         {cartOpen && (
           <>
             <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)", zIndex: 99 }} onClick={() => setCartOpen(false)} />
@@ -276,7 +315,7 @@ export default function BookShop() {
                   cartItems.map((item) => (
                     <div key={item.product_id || item.id} style={{ display: "flex", gap: "16px", padding: "16px 0", borderBottom: "1px solid #f3f4f6" }}>
                       <div style={{ width: "70px", height: "90px", backgroundColor: "#f3f4f6", borderRadius: "8px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
-                        {item.cover_image_url ? <Image src={item.cover_image_url} alt={item.title} fill style={{ objectFit: "cover" }} unoptimized /> : <BookOpen style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", color: "#9ca3af" }} />}
+                        {renderBookCover(item.cover_image_url, item.title, item.product_id || item.id, true)}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <h4 style={{ fontWeight: "600", color: "#111827", margin: "0 0 4px 0", fontSize: "14px" }}>{item.title}</h4>
@@ -306,6 +345,7 @@ export default function BookShop() {
           </>
         )}
 
+        {/* Hero Section */}
         <section style={{ background: "linear-gradient(135deg, #111827 0%, #1f2937 50%, #92400e 100%)", color: "white", padding: "80px 16px" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
             <h2 style={{ fontSize: "48px", fontWeight: "bold", margin: "0 0 16px 0", lineHeight: 1.1 }}>Discover Your Next<br /><span style={{ color: "#fbbf24" }}>Great Read</span></h2>
@@ -314,6 +354,7 @@ export default function BookShop() {
           </div>
         </section>
 
+        {/* Filter Bar */}
         <section style={{ backgroundColor: "white", borderBottom: "1px solid #e5e7eb", padding: "16px", position: "sticky", top: "64px", zIndex: 40, boxShadow: "0 1px 2px rgba(0,0,0,0.05)" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "8px", overflowX: "auto", alignItems: "center" }}>
             <Filter style={{ width: "18px", height: "18px", color: "#9ca3af", flexShrink: 0 }} />
@@ -326,6 +367,7 @@ export default function BookShop() {
           </div>
         </section>
 
+        {/* Products Grid */}
         <main id="products" style={{ maxWidth: "1280px", margin: "0 auto", padding: "48px 16px" }}>
           {loading && <div style={{ textAlign: "center", padding: "80px 0" }}><Loader2 style={{ width: "48px", height: "48px", color: "#d97706", animation: "spin 1s linear infinite", margin: "0 auto" }} /><p style={{ color: "#6b7280", marginTop: "16px" }}>Loading books...</p></div>}
           {error && !loading && <div style={{ textAlign: "center", padding: "80px 0" }}><p style={{ color: "#dc2626", fontSize: "18px", marginBottom: "8px" }}>Error: {error}</p><p style={{ color: "#6b7280" }}>API: {API_BASE_URL}/products</p><button style={{ marginTop: "16px", padding: "10px 24px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontSize: "16px" }} onClick={() => window.location.reload()}>Retry</button></div>}
@@ -348,16 +390,11 @@ export default function BookShop() {
                         onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)"; }}>
 
+                        {/* Book Cover - FIXED */}
                         <div style={{ position: "relative", width: "100%", height: "400px", backgroundColor: "#f3f4f6", overflow: "hidden" }}>
-                          {product.cover_image_url ? (
-                            <Image src={product.cover_image_url} alt={product.title || "Book"} fill style={{ objectFit: "cover", transition: "transform 0.5s ease" }} className="book-img" unoptimized
-                              onError={(e) => { e.target.style.display = "none"; e.target.parentElement.innerHTML = `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9ca3af"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span style="margin-top:8px;font-size:14px">No Cover</span></div>`; }} />
-                          ) : (
-                            <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#9ca3af" }}>
-                              <BookOpen style={{ width: "64px", height: "64px", marginBottom: "8px" }} /><span>No Cover Available</span>
-                            </div>
-                          )}
+                          {renderBookCover(product.cover_image_url, product.title, product.product_id)}
 
+                          {/* Badges */}
                           <div style={{ position: "absolute", top: "12px", left: "12px", display: "flex", flexDirection: "column", gap: "6px", zIndex: 5 }}>
                             {(product.is_bestseller == 1 || product.is_bestseller === true) && (
                               <span style={{ backgroundColor: "#dc2626", color: "white", padding: "5px 12px", borderRadius: "6px", fontSize: "11px", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.5px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>Bestseller</span>
@@ -370,16 +407,18 @@ export default function BookShop() {
                             )}
                           </div>
 
+                          {/* Action Buttons */}
                           <button style={{ position: "absolute", top: "12px", right: "12px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", zIndex: 10 }}
                             onClick={(e) => { e.stopPropagation(); toggleWishlist(product.product_id); }}>
                             <Heart style={{ width: "16px", height: "16px", color: isWishlisted ? "#dc2626" : "#374151", fill: isWishlisted ? "#dc2626" : "none" }} />
                           </button>
                           <button style={{ position: "absolute", top: "56px", right: "12px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", zIndex: 10 }}
-                            onClick={(e) => { e.stopPropagation(); setQuickView(product); }}>
+                            onClick={(e) => { e.stopPropagation(); setQuickView(product); setQuickViewImgError(false); }}>
                             <Eye style={{ width: "16px", height: "16px", color: "#374151" }} />
                           </button>
                         </div>
 
+                        {/* Product Info */}
                         <div style={{ padding: "24px" }}>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
                             <span style={{ fontSize: "12px", fontWeight: "bold", color: "#d97706", textTransform: "uppercase", letterSpacing: "1px" }}>{product.format || "Book"}</span>
@@ -408,7 +447,6 @@ export default function BookShop() {
                           </div>
 
                           <div style={{ display: "flex", gap: "8px" }}>
-                            {/* ✅ CHANGED: Using handleAddToCart instead of addToCart */}
                             <button style={{ flex: 1, padding: "10px 16px", backgroundColor: "#111827", color: "white", border: "none", borderRadius: "10px", fontSize: "14px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", transition: "all 0.2s" }}
                               onClick={() => handleAddToCart(product)}
                               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#d97706"; }}
@@ -433,6 +471,7 @@ export default function BookShop() {
                 </div>
               )}
 
+              {/* Pagination */}
               {pageCount > 1 && (
                 <div style={{ display: "flex", justifyContent: "center", marginTop: "48px" }}>
                   <ReactPaginate
@@ -462,13 +501,14 @@ export default function BookShop() {
           )}
         </main>
 
+        {/* Quick View Modal */}
         {quickView && (
           <>
             <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", zIndex: 100 }} onClick={() => setQuickView(null)} />
             <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", backgroundColor: "white", borderRadius: "20px", boxShadow: "0 25px 50px rgba(0,0,0,0.3)", maxWidth: "800px", width: "90%", maxHeight: "90vh", overflowY: "auto", zIndex: 101 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                 <div style={{ position: "relative", height: "500px", backgroundColor: "#f3f4f6" }}>
-                  {quickView.cover_image_url ? <Image src={quickView.cover_image_url} alt={quickView.title} fill style={{ objectFit: "cover" }} unoptimized /> : <BookOpen style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", color: "#9ca3af" }} />}
+                  {renderBookCover(quickView.cover_image_url, quickView.title, quickView.product_id, false, true)}
                 </div>
                 <div style={{ padding: "32px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
@@ -489,7 +529,6 @@ export default function BookShop() {
                   </div>
                   <p style={{ color: "#6b7280", lineHeight: 1.6, marginBottom: "24px" }}>{quickView.short_description || quickView.full_description || "No description available."}</p>
                   <div style={{ display: "flex", gap: "12px" }}>
-                    {/* ✅ CHANGED: Using handleAddToCart in Quick View too */}
                     <button style={{ flex: 1, padding: "14px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "12px", fontSize: "16px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
                       onClick={() => { handleAddToCart(quickView); setQuickView(null); }}>
                       <ShoppingCart size={20} /> Add to Cart
@@ -504,6 +543,7 @@ export default function BookShop() {
           </>
         )}
 
+        {/* Footer */}
         <footer style={{ backgroundColor: "#111827", color: "#9ca3af", padding: "48px 16px 24px" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "32px", marginBottom: "32px" }}>

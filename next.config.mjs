@@ -21,18 +21,24 @@ const nextConfig = {
       "imperiumdesigners.com",
       "videos.ctfassets.net",
       "localhost",
+       "pinebookbackend.pinedigitalhub.com",
       
     ],
 
     // ✅ IMPORTANT for Laravel backend images
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8000",
-        pathname: "/storage/**",
-      },
-    ],
+   remotePatterns: [
+  {
+    protocol: "https",
+    hostname: "pinebookbackend.pinedigitalhub.com",
+    pathname: "/storage/**",
+  },
+  {
+    protocol: "http",
+    hostname: "localhost",
+    port: "8000",
+    pathname: "/storage/**",
+  },
+],
   },
 };
 
