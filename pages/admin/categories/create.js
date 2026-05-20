@@ -3,6 +3,8 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 const Icons = {
   ArrowLeft: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
@@ -38,7 +40,7 @@ export default function CreateCategoryPage() {
     const token = localStorage.getItem("token");
     
     try {
-      await axios.post("http://127.0.0.1:8000/api/categories", form, {
+      await axios.post(`${API_BASE_URL}/categories` , form, {
         headers: { 
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json"
@@ -53,33 +55,33 @@ export default function CreateCategoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen p-6 bg-gray-50">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <Link href="/admin/categories">
-            <button className="p-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+            <button className="p-2 transition-colors bg-white border border-gray-200 rounded-lg hover:bg-gray-50">
               <Icons.ArrowLeft />
             </button>
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Add Category</h1>
-            <p className="text-gray-500 text-sm">Create a new category</p>
+            <p className="text-sm text-gray-500">Create a new category</p>
           </div>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="mb-4 p-4 bg-red-50 text-red-700 rounded-lg border border-red-200">
+          <div className="p-4 mb-4 text-red-700 border border-red-200 rounded-lg bg-red-50">
             {error}
           </div>
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-white border border-gray-100 shadow-sm rounded-xl">
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Name *</label>
             <input
               type="text"
               name="name"
@@ -93,7 +95,7 @@ export default function CreateCategoryPage() {
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Description</label>
             <textarea
               name="description"
               value={form.description}
@@ -106,7 +108,7 @@ export default function CreateCategoryPage() {
 
           {/* Image URL */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Image URL</label>
             <input
               type="text"
               name="image_url"
@@ -119,7 +121,7 @@ export default function CreateCategoryPage() {
 
           {/* Parent ID */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Parent Category ID</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Parent Category ID</label>
             <input
               type="number"
               name="parent_id"
@@ -132,7 +134,7 @@ export default function CreateCategoryPage() {
 
           {/* Sort Order */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Sort Order</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Sort Order</label>
             <input
               type="number"
               name="sort_order"
@@ -149,7 +151,7 @@ export default function CreateCategoryPage() {
               name="is_active"
               checked={form.is_active}
               onChange={handleChange}
-              className="w-4 h-4 rounded border-gray-300 text-blue-600"
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
             />
             <label className="text-sm text-gray-700">Active</label>
           </div>
@@ -159,14 +161,14 @@ export default function CreateCategoryPage() {
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+              className="flex-1 px-4 py-2 font-medium text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
             >
               {loading ? "Creating..." : "Create Category"}
             </button>
             <Link href="/admin/categories">
               <button
                 type="button"
-                className="px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                className="px-4 py-2 font-medium text-gray-700 transition-colors border border-gray-200 rounded-lg hover:bg-gray-50"
               >
                 Cancel
               </button>

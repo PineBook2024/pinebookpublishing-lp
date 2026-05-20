@@ -17,7 +17,7 @@ export default function FeaturedBookEdit() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
 
   useEffect(() => {
     if (!id) return;

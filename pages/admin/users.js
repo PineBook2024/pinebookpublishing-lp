@@ -5,6 +5,8 @@ import axios from "axios";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 // ===== SIDEBAR + TABLE ICONS =====
 const Icons = {
   Edit: () => (
@@ -111,7 +113,7 @@ export default function AdminUsersTable() {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://127.0.0.1:8000/api/all-data", {
+      const res = await axios.get(`${API_BASE_URL}/all-data`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -171,7 +173,7 @@ export default function AdminUsersTable() {
     const token = localStorage.getItem("token");
     const endpoint = item.type === "author" ? "authors" : item.type === "vendor" ? "vendor-applications" : "users";
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/${endpoint}/${item.id}`, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.delete(`${API_BASE_URL}/${endpoint}/${item.id}`, { headers: { Authorization: `Bearer ${token}` } });
       fetchData();
     } catch (err) { alert("Delete failed"); }
   };
@@ -182,9 +184,9 @@ export default function AdminUsersTable() {
     const token = localStorage.getItem("token");
     try {
       if (item.type === "author") {
-        await axios.post(`http://127.0.0.1:8000/api/admin/author/approve/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
+        await axios.post(`${API_BASE_URL}/admin/author/approve/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
       } else if (item.type === "vendor") {
-        await axios.post(`http://127.0.0.1:8000/api/admin/vendor/approve/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
+        await axios.post(`${API_BASE_URL}/admin/vendor/approve/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
       }
       fetchData();
     } catch (err) { alert("Approval failed"); } finally { setProcessingId(null); }
@@ -197,9 +199,9 @@ export default function AdminUsersTable() {
     const token = localStorage.getItem("token");
     try {
       if (item.type === "author") {
-        await axios.post(`http://127.0.0.1:8000/api/admin/author/reject/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
+        await axios.post(`${API_BASE_URL}/admin/author/reject/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
       } else if (item.type === "vendor") {
-        await axios.post(`http://127.0.0.1:8000/api/admin/vendor/reject/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
+        await axios.post(`${API_BASE_URL}/admin/vendor/reject/${item.id}`, {}, { headers: { Authorization: `Bearer ${token}` } });
       }
       fetchData();
     } catch (err) { alert("Rejection failed"); } finally { setProcessingId(null); }

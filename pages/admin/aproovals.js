@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 export default function PendingRequests() {
   const [data, setData] = useState({ authors: [], applications: [] });
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ export default function PendingRequests() {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/pending-requests`, {
+      const res = await axios.get(`${API_BASE_URL}/admin/pending-requests`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setData(res.data);
@@ -25,9 +27,9 @@ export default function PendingRequests() {
   const token = localStorage.getItem("token");
   
   // URL ko backend ke 'admin' prefix aur structure se match karein
-  const url = type === 'author' 
-    ? `http://127.0.0.1:8000/api/admin/author/${action}/${id}` 
-    : `http://127.0.0.1:8000/api/admin/vendor/${action}/${id}`;
+  const url = type === 'author'
+    ? `${API_BASE_URL}/admin/author/${action}/${id}`
+    : `${API_BASE_URL}/admin/vendor/${action}/${id}`;
 
   try {
     const res = await axios.post(url, {}, { 

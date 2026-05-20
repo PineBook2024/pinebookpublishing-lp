@@ -30,44 +30,46 @@ export default function AuthorCreate() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    const token = localStorage.getItem("token",);
+  const token = localStorage.getItem("token");
 
-    try {
-      await axios.post("http://127.0.0.1:8000/api/authors", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+  try {
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+    
+    await axios.post(`${API_BASE_URL}/authors`, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-      setMessage({ type: "success", text: "Author created successfully!" });
+    setMessage({ type: "success", text: "Author created successfully!" });
 
-      setFormData({
-        display_name: "",
-        company_name: "",
-        author_bio: "",
-        email: "",
-        phone: "",
-        website_url: "",
-        branding_logo_url: "",
-        branding_banner_url: "",
-        profile_image_url: "",
-        tax_number: "",
-        approval_status: "inactive",
-      });
-    } catch (error) {
-      setMessage({
-        type: "error",
-        text: error.response?.data?.message || "Something went wrong",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+    setFormData({
+      display_name: "",
+      company_name: "",
+      author_bio: "",
+      email: "",
+      phone: "",
+      website_url: "",
+      branding_logo_url: "",
+      branding_banner_url: "",
+      profile_image_url: "",
+      tax_number: "",
+      approval_status: "inactive",
+    });
+  } catch (error) {
+    setMessage({
+      type: "error",
+      text: error.response?.data?.message || "Something went wrong",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="max-w-6xl p-6 mx-auto font-sans text-gray-800">

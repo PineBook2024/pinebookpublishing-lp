@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowLeft, Save, XCircle } from 'lucide-react';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
 
 export default function CreateOrder() {
   const router = useRouter();

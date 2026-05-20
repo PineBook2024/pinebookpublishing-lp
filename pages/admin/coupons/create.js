@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 export default function CreateCoupon() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -28,36 +30,36 @@ export default function CreateCoupon() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      const token = localStorage.getItem("token");
-      await axios.post("http://127.0.0.1:8000/api/coupons", {
-        code: form.code,
-        name: form.name,
-        description: form.description || null,
-        discount_type: form.discount_type,
-        discount_value: parseFloat(form.discount_value),
-        minimum_order_amount: parseFloat(form.minimum_order_amount) || 0,
-        maximum_discount_amount: form.maximum_discount_amount ? parseFloat(form.maximum_discount_amount) : null,
-        usage_limit: form.usage_limit ? parseInt(form.usage_limit) : null,
-        starts_at: form.starts_at || null,
-        ends_at: form.ends_at || null,
-        is_active: form.is_active ? 1 : 0,
-      }, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+  try {
+    const token = localStorage.getItem("token");
 
-      router.push("/admin/coupons");
-    } catch (err) {
-      alert("Error: " + (err.response?.data?.message || "Failed to create"));
-    } finally {
-      setLoading(false);
-    }
-  };
+    await axios.post(`${API_BASE_URL}/coupons`, {
+      code: form.code,
+      name: form.name,
+      description: form.description || null,
+      discount_type: form.discount_type,
+      discount_value: parseFloat(form.discount_value),
+      minimum_order_amount: parseFloat(form.minimum_order_amount) || 0,
+      maximum_discount_amount: form.maximum_discount_amount ? parseFloat(form.maximum_discount_amount) : null,
+      usage_limit: form.usage_limit ? parseInt(form.usage_limit) : null,
+      starts_at: form.starts_at || null,
+      ends_at: form.ends_at || null,
+      is_active: form.is_active ? 1 : 0,
+    }, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
+    router.push("/admin/coupons");
+  } catch (err) {
+    alert("Error: " + (err.response?.data?.message || "Failed to create"));
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div style={{ padding: "40px", backgroundColor: "#f8fafc", minHeight: "100vh" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>

@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 // ===== ICONS ===== (same as before, unchanged)
 const Icons = {
   Users: () => (
@@ -156,7 +158,7 @@ export default function AdminUsersDashboard() {
       // ✅ Debug: Log token (remove in production)
       console.log("Token:", token?.substring(0, 20) + "...");
 
-      const res = await axios.get("https://pinebookbackend.pinedigitalhub.com/api/all-data", {
+      const res = await axios.get(`${API_BASE_URL}/all-data`, {
         headers: { 
           Authorization: `Bearer ${token}`,
           Accept: "application/json"
@@ -264,7 +266,7 @@ export default function AdminUsersDashboard() {
     const endpoint = item.type === "author" ? "authors" : item.type === "vendor" ? "vendor-applications" : "users";
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/${endpoint}/${item.id}`, {
+      await axios.delete(`${API_BASE_URL}/${endpoint}/${item.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDeleteModal(null);

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 // Icons
 const Icons = {
   Shield: () => (
@@ -131,7 +133,7 @@ export default function PermissionsPage() {
       
       console.log("🔍 Loading permissions with token...");
       
-      const res = await axios.get("http://127.0.0.1:8000/api/permissions", {
+      const res = await axios.get(`${API_BASE_URL}/permissions`, {
         headers: { Authorization: "Bearer " + token },
       });
 
@@ -175,7 +177,7 @@ export default function PermissionsPage() {
       const token = localStorage.getItem("token");
       
       await axios.post(
-        "http://127.0.0.1:8000/api/permissions",
+        `${API_BASE_URL}/permissions`,
         { permissions: permissions },
         { headers: { Authorization: "Bearer " + token } }
       );

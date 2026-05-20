@@ -2,7 +2,16 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
+const unwrapList = (data, ...keys) => {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.data)) return data.data;
+  for (const k of keys) {
+    if (Array.isArray(data?.[k])) return data[k];
+  }
+  return [];
+};
 
 export default function EditMarketingRequest() {
   const router = useRouter();
@@ -18,6 +27,31 @@ export default function EditMarketingRequest() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
+  const [authors, setAuthors] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [optionsLoading, setOptionsLoading] = useState(true);
+  const [optionsError, setOptionsError] = useState(null);
+
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+    const headers = {
+      Accept: 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    };
+    Promise.all([
+      axios.get(`${API_URL}/authors`, { headers }).then(r => r.data),
+      axios.get(`${API_URL}/products`, { headers }).then(r => r.data),
+    ])
+      .then(([authorData, productData]) => {
+        setAuthors(unwrapList(authorData, 'authors'));
+        setProducts(unwrapList(productData, 'products'));
+      })
+      .catch(err => {
+        const status = err?.response?.status;
+        setOptionsError(status ? `Failed to load options (HTTP ${status})` : (err?.message || 'Failed to load options'));
+      })
+      .finally(() => setOptionsLoading(false));
+  }, []);
 
   const requestTypes = [
     { value: 'featured', label: 'Featured' },
@@ -37,10 +71,15 @@ export default function EditMarketingRequest() {
     if (!id) return;
     const fetchRequest = async () => {
       try {
+        const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
         const res = await axios.get(`${API_URL}/marketing-requests/${id}`, {
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          }
         });
-        const data = res.data;
+        const data = res.data?.data ?? res.data;
         setFormData({
           author_id: data.author_id?.toString() || '',
           product_id: data.product_id?.toString() || '',
@@ -51,7 +90,7 @@ export default function EditMarketingRequest() {
         });
       } catch (err) {
         alert('Failed to load request');
-        router.push('/marketing-requests');
+        router.push('/admin/marketing-requests');
       } finally {
         setFetching(false);
       }
@@ -71,6 +110,7 @@ export default function EditMarketingRequest() {
     setErrors({});
 
     try {
+      const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
       const payload = {
         ...formData,
         author_id: parseInt(formData.author_id) || null,
@@ -78,14 +118,27 @@ export default function EditMarketingRequest() {
       };
 
       await axios.put(`${API_URL}/marketing-requests/${id}`, payload, {
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        }
       });
-      router.push('/marketing-requests');
+      router.push('/admin/marketing-requests');
     } catch (err) {
       if (err.response?.status === 422) {
         setErrors(err.response.data.errors || {});
       } else {
-        alert('Failed to update request');
+        const status = err?.response?.status;
+        const body = err?.response?.data;
+        const serverMsg = body?.message || body?.error
+          || (typeof body === 'string' ? body : null)
+          || (status ? `Request failed with status ${status}` : null)
+          || (err?.message === 'Network Error'
+            ? 'Cannot reach the server. Check your connection or that the backend allows requests from this origin (CORS).'
+            : err?.message)
+          || 'Failed to update request';
+        alert(serverMsg);
       }
       setLoading(false);
     }
@@ -98,31 +151,60 @@ export default function EditMarketingRequest() {
       <h1 style={styles.title}>Edit Marketing Request #{id}</h1>
       
       <form onSubmit={handleSubmit} style={styles.form}>
+        {optionsError && (
+          <div style={{ padding: '10px 14px', background: '#fef2f2', color: '#b91c1c', border: '1px solid #fecaca', borderRadius: 8, marginBottom: 16, fontSize: 13 }}>
+            {optionsError}
+          </div>
+        )}
+
         <div style={styles.formGrid}>
-          
+
           <div style={styles.fieldGroup}>
-            <label style={styles.label}>Author ID <span style={styles.required}>*</span></label>
-            <input
-              type="number"
+            <label style={styles.label}>Author <span style={styles.required}>*</span></label>
+            <select
               name="author_id"
               value={formData.author_id}
               onChange={handleChange}
-              placeholder="Enter author ID"
-              style={{...styles.input, ...(errors.author_id ? styles.inputError : {})}}
-            />
+              disabled={optionsLoading}
+              style={{...styles.input, ...styles.select, ...(errors.author_id ? styles.inputError : {})}}
+            >
+              <option value="">{optionsLoading ? 'Loading authors...' : 'Select Author'}</option>
+              {authors.map(a => {
+                const aid = a.author_id ?? a.id;
+                const display = a.display_name
+                  || a.name
+                  || [a.first_name, a.last_name].filter(Boolean).join(' ').trim()
+                  || a.email
+                  || `Author #${aid}`;
+                return (
+                  <option key={aid} value={aid}>
+                    {display}{a.email ? ` (${a.email})` : ''}
+                  </option>
+                );
+              })}
+            </select>
             {errors.author_id && <span style={styles.errorText}>{errors.author_id[0]}</span>}
           </div>
 
           <div style={styles.fieldGroup}>
-            <label style={styles.label}>Product ID</label>
-            <input
-              type="number"
+            <label style={styles.label}>Product</label>
+            <select
               name="product_id"
               value={formData.product_id}
               onChange={handleChange}
-              placeholder="Enter product ID (optional)"
-              style={styles.input}
-            />
+              disabled={optionsLoading}
+              style={{...styles.input, ...styles.select, ...(errors.product_id ? styles.inputError : {})}}
+            >
+              <option value="">{optionsLoading ? 'Loading products...' : 'Select Product (optional)'}</option>
+              {products.map(p => {
+                const pid = p.product_id ?? p.id;
+                return (
+                  <option key={pid} value={pid}>
+                    {p.name || p.title || `Product #${pid}`}
+                  </option>
+                );
+              })}
+            </select>
             {errors.product_id && <span style={styles.errorText}>{errors.product_id[0]}</span>}
           </div>
 

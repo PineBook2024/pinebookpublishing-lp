@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
 
 // ===== SIDEBAR ICONS =====
 const Icons = {
@@ -191,14 +191,41 @@ export default function ReviewsIndex() {
   ];
 
   useEffect(() => {
-    fetch(`${API_URL}/reviews`)
-      .then(res => res.json())
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+    fetch(`${API_URL}/reviews`, {
+      headers: {
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          let msg = `Request failed with status ${res.status}`;
+          try {
+            const body = await res.json();
+            msg = body?.message || body?.error || msg;
+          } catch (_) {}
+          throw new Error(msg);
+        }
+        return res.json();
+      })
       .then(data => {
-        setReviews(data);
+        const list = Array.isArray(data)
+          ? data
+          : Array.isArray(data?.data)
+            ? data.data
+            : Array.isArray(data?.reviews)
+              ? data.reviews
+              : [];
+        setReviews(list);
         setLoading(false);
       })
       .catch(err => {
-        setError(err.message);
+        const msg = err?.message === 'Failed to fetch'
+          ? 'Cannot reach the server. Check your internet connection or that the backend allows requests from this origin (CORS).'
+          : err?.message || 'Failed to load reviews';
+        setError(msg);
+        setReviews([]);
         setLoading(false);
       });
   }, []);
@@ -206,11 +233,28 @@ export default function ReviewsIndex() {
   const handleDelete = async (id) => {
     if (!confirm('Are you sure you want to delete this review? This action cannot be undone.')) return;
     try {
-      const res = await fetch(`${API_URL}/reviews/${id}`, { method: 'DELETE' });
-      if (!res.ok) throw new Error('Failed to delete');
+      const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+      const res = await fetch(`${API_URL}/reviews/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+      });
+      if (!res.ok) {
+        let msg = `Request failed with status ${res.status}`;
+        try {
+          const body = await res.json();
+          msg = body?.message || body?.error || msg;
+        } catch (_) {}
+        throw new Error(msg);
+      }
       setReviews(reviews.filter(r => r.review_id !== id));
     } catch (err) {
-      alert(err.message);
+      const msg = err?.message === 'Failed to fetch'
+        ? 'Cannot reach the server. Check your internet connection or that the backend allows requests from this origin (CORS).'
+        : err?.message || 'Failed to delete review';
+      alert(msg);
     }
   };
 

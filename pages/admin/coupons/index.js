@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 // ===== SIDEBAR ICONS =====
 const SidebarIcons = {
   Dashboard: () => (
@@ -133,7 +135,7 @@ export default function CouponsIndex() {
   const fetchCoupons = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://127.0.0.1:8000/api/coupons", {
+      const res = await axios.get(`${API_BASE_URL}/coupons`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCoupons(res.data);
@@ -151,7 +153,7 @@ export default function CouponsIndex() {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://127.0.0.1:8000/api/coupons/${id}`, {
+      await axios.delete(`${API_BASE_URL}/coupons/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDeleteModal(null);

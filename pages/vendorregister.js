@@ -34,30 +34,32 @@ export default function VendorRegister() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    // Get your Auth token (assuming stored in localStorage or cookie)
-    const token = localStorage.getItem('token'); 
+  e.preventDefault();
+  setLoading(true);
+  
+  const token = localStorage.getItem('token'); 
 
-    try {
-      const response = await axios.post(
-        'http://127.0.0.1:8000/api/vendor-applications', 
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      setMessage({ type: 'success', text: 'Application submitted successfully!' });
-    } catch (error) {
-      setMessage({ type: 'error', text: error.response?.data?.message || 'Something went wrong' });
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+    
+    const response = await axios.post(
+      `${API_BASE_URL}/vendor-applications`, 
+      formData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    
+    setMessage({ type: 'success', text: 'Application submitted successfully!' });
+  } catch (error) {
+    setMessage({ type: 'error', text: error.response?.data?.message || 'Something went wrong' });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="max-w-6xl p-6 mx-auto font-sans text-gray-800">

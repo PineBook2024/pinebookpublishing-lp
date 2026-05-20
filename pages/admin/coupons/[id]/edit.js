@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 export default function EditCoupon() {
   const router = useRouter();
   const { id } = router.query;
@@ -29,7 +31,7 @@ export default function EditCoupon() {
     const fetchCoupon = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://127.0.0.1:8000/api/coupons/${id}`, {
+        const res = await axios.get(`${API_BASE_URL}/coupons/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -81,7 +83,7 @@ export default function EditCoupon() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.put(`http://127.0.0.1:8000/api/coupons/${id}`, {
+      await axios.put(`${API_BASE_URL}/coupons/${id}`, {
         name: form.name,
         description: form.description || null,
         discount_type: form.discount_type,

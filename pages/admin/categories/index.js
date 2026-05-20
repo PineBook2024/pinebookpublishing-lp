@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 // ===== SIDEBAR + PAGE ICONS =====
 const Icons = {
   // Sidebar Icons
@@ -123,45 +125,48 @@ export default function CategoriesPage() {
   }, []);
 
   const fetchCategories = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      const token = localStorage.getItem("token");
-      if (!token) {
-        setError("Please login first");
-        setLoading(false);
-        return;
-      }
-
-      const res = await axios.get("http://127.0.0.1:8000/api/categories", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      const data = res.data?.data || res.data || [];
-      setCategories(Array.isArray(data) ? data : []);
-    } catch (err) {
-      console.error("Error:", err);
-      setError(err.response?.data?.message || "Failed to load categories");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    if (!confirm("Delete this category?")) return;
-    setDeleteLoading(id);
+  try {
+    setLoading(true);
+    setError("");
     const token = localStorage.getItem("token");
-    try {
-      await axios.delete(`http://127.0.0.1:8000/api/categories/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      fetchCategories();
-    } catch (err) {
-      alert(err.response?.data?.message || "Delete failed");
-    } finally {
-      setDeleteLoading(null);
+    if (!token) {
+      setError("Please login first");
+      setLoading(false);
+      return;
     }
-  };
+
+    // ✅ Fixed: Removed extra /api
+    const res = await axios.get(`${API_BASE_URL}/categories`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const data = res.data?.data || res.data || [];
+    setCategories(Array.isArray(data) ? data : []);
+  } catch (err) {
+    console.error("Error:", err);
+    setError(err.response?.data?.message || "Failed to load categories");
+  } finally {
+    setLoading(false);
+  }
+};
+
+const handleDelete = async (id) => {
+  if (!confirm("Delete this category?")) return;
+  setDeleteLoading(id);
+  const token = localStorage.getItem("token");
+  
+  try {
+    // ✅ Fixed: Removed extra /api
+    await axios.delete(`${API_BASE_URL}/categories/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    fetchCategories();
+  } catch (err) {
+    alert(err.response?.data?.message || "Delete failed");
+  } finally {
+    setDeleteLoading(null);
+  }
+};
 
   const flattenCategories = (cats, level = 0) => {
     if (!Array.isArray(cats)) return [];

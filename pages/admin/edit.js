@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
+
 export default function AdminEditPage() {
   const router = useRouter();
   const { type, id } = router.query;
@@ -85,7 +87,7 @@ export default function AdminEditPage() {
         }
 
         const res = await axios.get(
-          `http://127.0.0.1:8000/api/${endpoint}/${id}`,
+          `${API_BASE_URL}/${endpoint}/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -139,7 +141,7 @@ export default function AdminEditPage() {
       console.log("Sending update:", updateData);
 
       await axios.put(
-        `http://127.0.0.1:8000/api/${endpoint}/${id}`,
+        `${API_BASE_URL}/${endpoint}/${id}`,
         updateData,
         {
           headers: { 
