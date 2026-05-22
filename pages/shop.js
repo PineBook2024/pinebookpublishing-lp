@@ -8,11 +8,28 @@ import Link from "next/link";
 import {
   ShoppingCart, Search, Loader2, Star, Filter, BookOpen,
   Heart, Eye, X, Plus, Minus, Trash2, ArrowRight, ChevronRight,
-  CheckCircle2
+  CheckCircle2, Sparkles, Phone, Mail
 } from "lucide-react";
 import ReactPaginate from "react-paginate";
 import { useCart } from "../hooks/useCart";
 import usePagination from "../hooks/use-pagination";
+import BrandFooter from "./components/BrandFooter";
+
+// Brand palette
+const BRAND = {
+  primary: "#137c6d",
+  primaryLight: "#309687",
+  primaryDark: "#075448",
+  gradient: "linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgba(48, 150, 135, 1) 100%)",
+  gradientDark: "linear-gradient(90deg, rgba(19, 124, 109, 1) 0%, rgb(7, 84, 72) 100%)",
+  soft: "#ecfdf5",
+  border: "#e7e5e4",
+  text: "#0f172a",
+  textMuted: "#64748b",
+  bg: "#fafaf9",
+  surface: "#ffffff",
+  accent: "#fbbf24",
+};
 
 const PRODUCTS_PER_PAGE = 12;
 
@@ -158,7 +175,23 @@ export default function BookShop() {
   return (
     <>
       <Head><title>Pine Book | Online Bookstore</title></Head>
-      <div style={{ minHeight: "100vh", backgroundColor: "#f8fafc", fontFamily: "system-ui, -apple-system, sans-serif" }}>
+      <div style={{ background: BRAND.gradient, color: "white", padding: "8px 16px", fontSize: "13px", fontWeight: 500, letterSpacing: "0.2px" }}>
+        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "flex-end", alignItems: "center", gap: "8px 24px" }}>
+          <a href="tel:8887867135" style={{ color: "white", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
+            <Phone style={{ width: 14, height: 14 }} />
+            Sales: (888) 786-7135
+          </a>
+          <a href="tel:8668417469" style={{ color: "white", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
+            <Phone style={{ width: 14, height: 14 }} />
+            Support: (866) 841-7469
+          </a>
+          <a href="mailto:support@pinebookpublishing.com" style={{ color: "white", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
+            <Mail style={{ width: 14, height: 14 }} />
+            support@pinebookpublishing.com
+          </a>
+        </div>
+      </div>
+      <div style={{ minHeight: "100vh", backgroundColor: BRAND.bg, fontFamily: "'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif" }}>
 
         {/* Toast Notification */}
         {toast.show && (
@@ -170,11 +203,11 @@ export default function BookShop() {
             animation: "slideIn 0.3s ease-out"
           }}>
             <div style={{
-              backgroundColor: "#10b981",
+              background: BRAND.gradient,
               color: "white",
               padding: "16px 24px",
-              borderRadius: "12px",
-              boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+              borderRadius: "14px",
+              boxShadow: "0 10px 30px rgba(19,124,109,0.35)",
               display: "flex",
               alignItems: "center",
               gap: "12px",
@@ -185,7 +218,7 @@ export default function BookShop() {
                 width: "32px",
                 height: "32px",
                 borderRadius: "50%",
-                backgroundColor: "rgba(255,255,255,0.2)",
+                backgroundColor: "rgba(255,255,255,0.22)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -197,7 +230,7 @@ export default function BookShop() {
                 <p style={{ margin: 0, fontWeight: "600", fontSize: "14px" }}>Added to Cart</p>
                 <p style={{ margin: "4px 0 0 0", fontSize: "13px", opacity: 0.9 }}>{toast.message}</p>
               </div>
-              <button 
+              <button
                 onClick={() => setToast({ show: false, message: "", product: null })}
                 style={{
                   background: "none",
@@ -205,7 +238,7 @@ export default function BookShop() {
                   color: "white",
                   cursor: "pointer",
                   padding: "4px",
-                  opacity: 0.8
+                  opacity: 0.85
                 }}
               >
                 <X style={{ width: "16px", height: "16px" }} />
@@ -220,6 +253,7 @@ export default function BookShop() {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
           }
+          @keyframes shimmer { 0% { transform: translateX(-100%);} 100% { transform: translateX(100%);} }
           .shop-pagination {
             display: flex;
             list-style: none;
@@ -236,58 +270,62 @@ export default function BookShop() {
             height: 40px;
             padding: 0 12px;
             border-radius: 10px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid ${BRAND.border};
             background: white;
-            color: #374151;
+            color: ${BRAND.text};
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
             text-decoration: none;
+            font-family: inherit;
           }
           .shop-pagination__item .shop-pagination__link:hover {
-            border-color: #d97706;
-            color: #d97706;
+            border-color: ${BRAND.primary};
+            color: ${BRAND.primary};
           }
           .shop-pagination__item--active .shop-pagination__link {
-            background: #d97706;
-            border-color: #d97706;
+            background: ${BRAND.gradient};
+            border-color: transparent;
             color: white;
-            box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 6px 14px rgba(19, 124, 109, 0.28);
           }
           .shop-pagination__item--active .shop-pagination__link:hover {
             color: white;
+            border-color: transparent;
           }
           .shop-pagination__item--disabled .shop-pagination__link {
             opacity: 0.4;
             cursor: not-allowed;
           }
           .shop-pagination__item--disabled .shop-pagination__link:hover {
-            border-color: #e5e7eb;
-            color: #374151;
+            border-color: ${BRAND.border};
+            color: ${BRAND.text};
+          }
+          .shop-search-input:focus {
+            border-color: ${BRAND.primary} !important;
+            box-shadow: 0 0 0 4px rgba(19,124,109,0.10) !important;
           }
         `}</style>
 
-        {/* Announcement Bar */}
-        <div style={{ backgroundColor: "#d97706", color: "white", padding: "8px 16px", textAlign: "center", fontSize: "14px" }}>
-          Free shipping on orders over $50 | Use code: FREESHIP
-        </div>
-
         {/* Header */}
-        <header style={{ backgroundColor: "white", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", position: "sticky", top: 0, zIndex: 50 }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
-            <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
-              <BookOpen style={{ width: "32px", height: "32px", color: "#d97706" }} />
-              <h1 style={{ fontSize: "24px", fontWeight: "bold", color: "#111827", margin: 0 }}>Pine<span style={{ color: "#d97706" }}>Book</span></h1>
+        <header style={{ backgroundColor: "white", boxShadow: "0 1px 0 rgba(15,23,42,0.05)", borderBottom: `1px solid ${BRAND.border}`, position: "sticky", top: 0, zIndex: 50, backdropFilter: "blur(8px)" }}>
+          <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px", gap: 16 }}>
+            <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+              <div style={{ width: 38, height: 38, borderRadius: 10, background: BRAND.gradient, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 14px rgba(19,124,109,0.30)" }}>
+                <BookOpen style={{ width: "20px", height: "20px", color: "white" }} />
+              </div>
+              <h1 style={{ fontSize: "22px", fontWeight: 700, color: BRAND.text, margin: 0, letterSpacing: "-0.02em" }}>Pine<span style={{ color: BRAND.primary }}>Book</span></h1>
             </Link>
-            <div style={{ position: "relative", flex: 1, maxWidth: "500px", margin: "0 32px" }}>
-              <Search style={{ position: "absolute", left: "14px", top: "50%", transform: "translateY(-50%)", width: "18px", height: "18px", color: "#9ca3af" }} />
+            <div style={{ position: "relative", flex: 1, maxWidth: "560px", margin: "0 16px" }}>
+              <Search style={{ position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)", width: "18px", height: "18px", color: BRAND.textMuted }} />
               <input type="text" placeholder="Search by title, author, ISBN..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ width: "100%", padding: "10px 16px 10px 40px", borderRadius: "9999px", border: "1px solid #d1d5db", outline: "none", fontSize: "14px" }} />
+                className="shop-search-input"
+                style={{ width: "100%", padding: "11px 18px 11px 44px", borderRadius: "9999px", border: `1px solid ${BRAND.border}`, outline: "none", fontSize: "14px", backgroundColor: "#f8fafc", color: BRAND.text, fontFamily: "inherit", transition: "all 0.2s" }} />
             </div>
-            <button style={{ position: "relative", padding: "8px", background: "none", border: "none", cursor: "pointer" }} onClick={() => setCartOpen(!cartOpen)}>
-              <ShoppingCart style={{ width: "24px", height: "24px", color: "#374151" }} />
-              {cartCount > 0 && <span style={{ position: "absolute", top: "-4px", right: "-4px", backgroundColor: "#dc2626", color: "white", borderRadius: "50%", width: "20px", height: "20px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontWeight: "bold" }}>{cartCount}</span>}
+            <button style={{ position: "relative", padding: "10px", background: BRAND.soft, border: `1px solid ${BRAND.border}`, borderRadius: 12, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => setCartOpen(!cartOpen)}>
+              <ShoppingCart style={{ width: "20px", height: "20px", color: BRAND.primaryDark }} />
+              {cartCount > 0 && <span style={{ position: "absolute", top: "-6px", right: "-6px", background: BRAND.gradient, color: "white", borderRadius: "50%", minWidth: "22px", height: "22px", padding: "0 6px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontWeight: 700, boxShadow: "0 4px 10px rgba(19,124,109,0.4)" }}>{cartCount}</span>}
             </button>
           </div>
         </header>
@@ -295,36 +333,43 @@ export default function BookShop() {
         {/* Cart Sidebar */}
         {cartOpen && (
           <>
-            <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)", zIndex: 99 }} onClick={() => setCartOpen(false)} />
-            <div style={{ position: "fixed", top: 0, right: 0, width: "100%", maxWidth: "400px", height: "100vh", backgroundColor: "white", boxShadow: "-10px 0 40px rgba(0,0,0,0.2)", zIndex: 100, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 24px", borderBottom: "2px solid #f3f4f6" }}>
+            <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(7,84,72,0.45)", backdropFilter: "blur(6px)", zIndex: 99 }} onClick={() => setCartOpen(false)} />
+            <div style={{ position: "fixed", top: 0, right: 0, width: "100%", maxWidth: "420px", height: "100vh", backgroundColor: "white", boxShadow: "-20px 0 60px rgba(15,23,42,0.18)", zIndex: 100, display: "flex", flexDirection: "column", fontFamily: "inherit" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 24px", borderBottom: `1px solid ${BRAND.border}`, background: BRAND.soft }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <ShoppingCart style={{ width: "24px", height: "24px", color: "#d97706" }} />
-                  <h2 style={{ margin: 0, fontSize: "20px" }}>Your Cart</h2>
-                  <span style={{ backgroundColor: "#fef3c7", color: "#92400e", padding: "4px 12px", borderRadius: "9999px", fontSize: "14px", fontWeight: "bold" }}>{cartCount} items</span>
+                  <div style={{ width: 36, height: 36, borderRadius: 10, background: BRAND.gradient, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <ShoppingCart style={{ width: "18px", height: "18px", color: "white" }} />
+                  </div>
+                  <div>
+                    <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 700, color: BRAND.text, letterSpacing: "-0.01em" }}>Your Cart</h2>
+                    <p style={{ margin: 0, fontSize: 12, color: BRAND.textMuted }}>{cartCount} {cartCount === 1 ? "item" : "items"}</p>
+                  </div>
                 </div>
-                <button style={{ padding: "8px", background: "none", border: "none", cursor: "pointer" }} onClick={() => setCartOpen(false)}><X style={{ width: "20px", height: "20px" }} /></button>
+                <button style={{ padding: "8px", background: "white", border: `1px solid ${BRAND.border}`, borderRadius: 10, cursor: "pointer" }} onClick={() => setCartOpen(false)}><X style={{ width: "18px", height: "18px", color: BRAND.text }} /></button>
               </div>
-              <div style={{ flex: 1, overflowY: "auto", padding: "20px 24px" }}>
+              <div style={{ flex: 1, overflowY: "auto", padding: "16px 24px" }}>
                 {cartItems.length === 0 ? (
-                  <div style={{ textAlign: "center", padding: "40px 0" }}>
-                    <ShoppingCart style={{ width: "64px", height: "64px", color: "#d1d5db", margin: "0 auto 16px" }} />
-                    <p style={{ color: "#6b7280", fontSize: "16px" }}>Your cart is empty</p>
+                  <div style={{ textAlign: "center", padding: "60px 0" }}>
+                    <div style={{ width: 72, height: 72, borderRadius: "50%", background: BRAND.soft, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                      <ShoppingCart style={{ width: "32px", height: "32px", color: BRAND.primary }} />
+                    </div>
+                    <p style={{ color: BRAND.text, fontSize: "16px", fontWeight: 600, margin: "0 0 4px" }}>Your cart is empty</p>
+                    <p style={{ color: BRAND.textMuted, fontSize: 13, margin: 0 }}>Start adding some great reads</p>
                   </div>
                 ) : (
                   cartItems.map((item) => (
-                    <div key={item.product_id || item.id} style={{ display: "flex", gap: "16px", padding: "16px 0", borderBottom: "1px solid #f3f4f6" }}>
-                      <div style={{ width: "70px", height: "90px", backgroundColor: "#f3f4f6", borderRadius: "8px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
+                    <div key={item.product_id || item.id} style={{ display: "flex", gap: "14px", padding: "14px", marginBottom: 10, borderRadius: 12, border: `1px solid ${BRAND.border}`, backgroundColor: "#f8fafc" }}>
+                      <div style={{ width: "64px", height: "84px", backgroundColor: "white", borderRadius: "8px", position: "relative", overflow: "hidden", flexShrink: 0, border: `1px solid ${BRAND.border}` }}>
                         {renderBookCover(item.cover_image_url, item.title, item.product_id || item.id, true)}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <h4 style={{ fontWeight: "600", color: "#111827", margin: "0 0 4px 0", fontSize: "14px" }}>{item.title}</h4>
-                        <p style={{ color: "#d97706", fontWeight: "bold", margin: "0 0 8px 0" }}>${item.discount_price || item.price}</p>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <button style={{ width: "28px", height: "28px", borderRadius: "50%", border: "1px solid #d1d5db", background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => updateQuantity(item.product_id || item.id, item.quantity - 1)}><Minus size={14} /></button>
-                          <span style={{ width: "32px", textAlign: "center", fontWeight: "600" }}>{item.quantity}</span>
-                          <button style={{ width: "28px", height: "28px", borderRadius: "50%", border: "1px solid #d1d5db", background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => updateQuantity(item.product_id || item.id, item.quantity + 1)}><Plus size={14} /></button>
-                          <button style={{ marginLeft: "auto", color: "#dc2626", background: "none", border: "none", cursor: "pointer", padding: "4px" }} onClick={() => removeFromCart(item.product_id || item.id)}><Trash2 size={16} /></button>
+                        <h4 style={{ fontWeight: 600, color: BRAND.text, margin: "0 0 4px 0", fontSize: "13px", overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{item.title}</h4>
+                        <p style={{ color: BRAND.primary, fontWeight: 700, margin: "0 0 8px 0", fontSize: 14 }}>${item.discount_price || item.price}</p>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                          <button style={{ width: "26px", height: "26px", borderRadius: 8, border: `1px solid ${BRAND.border}`, background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => updateQuantity(item.product_id || item.id, item.quantity - 1)}><Minus size={12} /></button>
+                          <span style={{ width: "28px", textAlign: "center", fontWeight: 600, fontSize: 13 }}>{item.quantity}</span>
+                          <button style={{ width: "26px", height: "26px", borderRadius: 8, border: `1px solid ${BRAND.border}`, background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => updateQuantity(item.product_id || item.id, item.quantity + 1)}><Plus size={12} /></button>
+                          <button style={{ marginLeft: "auto", color: "#dc2626", background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 8, cursor: "pointer", padding: "5px 8px", display: "flex", alignItems: "center", justifyContent: "center" }} onClick={() => removeFromCart(item.product_id || item.id)}><Trash2 size={13} /></button>
                         </div>
                       </div>
                     </div>
@@ -332,13 +377,17 @@ export default function BookShop() {
                 )}
               </div>
               {cartItems.length > 0 && (
-                <div style={{ padding: "20px 24px", borderTop: "2px solid #f3f4f6" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "20px", fontWeight: "bold", marginBottom: "16px" }}>
+                <div style={{ padding: "20px 24px", borderTop: `1px solid ${BRAND.border}`, background: "white" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", color: BRAND.textMuted, marginBottom: 6 }}>
+                    <span>Subtotal</span><span>${cartTotal.toFixed(2)}</span>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "20px", fontWeight: 700, color: BRAND.text, marginBottom: 14, letterSpacing: "-0.01em" }}>
                     <span>Total</span><span>${cartTotal.toFixed(2)}</span>
                   </div>
-                  <Link href="/checkout" style={{ width: "100%", padding: "14px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "12px", fontSize: "16px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", textDecoration: "none" }}>
-                    Checkout <ArrowRight size={20} />
+                  <Link href="/checkout" style={{ width: "100%", padding: "14px", background: BRAND.gradient, color: "white", border: "none", borderRadius: "12px", fontSize: "15px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", textDecoration: "none", boxShadow: "0 8px 20px rgba(19,124,109,0.30)" }}>
+                    Proceed to Checkout <ArrowRight size={18} />
                   </Link>
+                  <p style={{ textAlign: "center", fontSize: 11, color: BRAND.textMuted, marginTop: 10, margin: "10px 0 0" }}>Secure checkout · SSL encrypted</p>
                 </div>
               )}
             </div>
@@ -346,21 +395,50 @@ export default function BookShop() {
         )}
 
         {/* Hero Section */}
-        <section style={{ background: "linear-gradient(135deg, #111827 0%, #1f2937 50%, #92400e 100%)", color: "white", padding: "80px 16px" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-            <h2 style={{ fontSize: "48px", fontWeight: "bold", margin: "0 0 16px 0", lineHeight: 1.1 }}>Discover Your Next<br /><span style={{ color: "#fbbf24" }}>Great Read</span></h2>
-            <p style={{ fontSize: "18px", color: "#d1d5db", margin: "0 0 32px 0", maxWidth: "500px" }}>Explore thousands of titles from bestselling authors. Free delivery on your first order.</p>
-            <button style={{ padding: "14px 32px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "9999px", fontSize: "16px", fontWeight: "bold", cursor: "pointer" }} onClick={() => document.getElementById("products").scrollIntoView({ behavior: "smooth" })}>Browse Collection</button>
+        <section style={{ background: "linear-gradient(135deg, #075448 0%, #137c6d 55%, #309687 100%)", color: "white", padding: "80px 16px", position: "relative", overflow: "hidden" }}>
+          <div style={{ position: "absolute", top: -80, right: -80, width: 320, height: 320, borderRadius: "50%", background: "radial-gradient(circle, rgba(251,191,36,0.18), transparent 70%)" }} />
+          <div style={{ position: "absolute", bottom: -100, left: -60, width: 280, height: 280, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%)" }} />
+          <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 2 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 999, background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.18)", marginBottom: 20, backdropFilter: "blur(6px)" }}>
+              <Sparkles style={{ width: 14, height: 14, color: BRAND.accent }} />
+              <span style={{ fontSize: 12, fontWeight: 500, letterSpacing: "0.5px", textTransform: "uppercase" }}>Pine Book Publishing Store</span>
+            </div>
+            <h2 style={{ fontSize: "52px", fontWeight: 700, margin: "0 0 18px 0", lineHeight: 1.05, letterSpacing: "-0.02em" }}>Discover Your Next<br /><span style={{ color: BRAND.accent }}>Great Read</span></h2>
+            <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.85)", margin: "0 0 32px 0", maxWidth: "560px", lineHeight: 1.6 }}>Explore thousands of titles from bestselling authors. Curated by our editorial team, delivered to your door.</p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <button style={{ padding: "14px 28px", backgroundColor: "white", color: BRAND.primaryDark, border: "none", borderRadius: "9999px", fontSize: "15px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit", display: "inline-flex", alignItems: "center", gap: 8, boxShadow: "0 10px 24px rgba(0,0,0,0.15)" }} onClick={() => document.getElementById("products").scrollIntoView({ behavior: "smooth" })}>
+                Browse Collection <ArrowRight size={16} />
+              </button>
+              <button style={{ padding: "14px 28px", backgroundColor: "rgba(255,255,255,0.12)", color: "white", border: "1px solid rgba(255,255,255,0.25)", borderRadius: "9999px", fontSize: "15px", fontWeight: 600, cursor: "pointer", fontFamily: "inherit", backdropFilter: "blur(6px)" }} onClick={() => setActiveFilter("bestseller")}>
+                View Bestsellers
+              </button>
+            </div>
           </div>
         </section>
 
         {/* Filter Bar */}
-        <section style={{ backgroundColor: "white", borderBottom: "1px solid #e5e7eb", padding: "16px", position: "sticky", top: "64px", zIndex: 40, boxShadow: "0 1px 2px rgba(0,0,0,0.05)" }}>
+        <section style={{ backgroundColor: "white", borderBottom: `1px solid ${BRAND.border}`, padding: "14px 16px", position: "sticky", top: "72px", zIndex: 40, boxShadow: "0 4px 12px rgba(15,23,42,0.04)" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", gap: "8px", overflowX: "auto", alignItems: "center" }}>
-            <Filter style={{ width: "18px", height: "18px", color: "#9ca3af", flexShrink: 0 }} />
+            <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", borderRadius: 10, backgroundColor: BRAND.soft, color: BRAND.primaryDark, fontSize: 12, fontWeight: 600, flexShrink: 0, marginRight: 4 }}>
+              <Filter style={{ width: "14px", height: "14px" }} />
+              <span>Filter</span>
+            </div>
             {filters.map((filter) => (
               <button key={filter.id} onClick={() => setActiveFilter(filter.id)}
-                style={{ padding: "8px 20px", borderRadius: "9999px", border: "none", fontSize: "14px", fontWeight: activeFilter === filter.id ? "bold" : "500", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s", backgroundColor: activeFilter === filter.id ? "#d97706" : "#f3f4f6", color: activeFilter === filter.id ? "white" : "#374151", boxShadow: activeFilter === filter.id ? "0 4px 6px rgba(217, 119, 6, 0.3)" : "none" }}>
+                style={{
+                  padding: "9px 18px",
+                  borderRadius: "9999px",
+                  border: activeFilter === filter.id ? "1px solid transparent" : `1px solid ${BRAND.border}`,
+                  fontSize: "13px",
+                  fontWeight: activeFilter === filter.id ? 700 : 500,
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                  transition: "all 0.2s",
+                  background: activeFilter === filter.id ? BRAND.gradient : "white",
+                  color: activeFilter === filter.id ? "white" : BRAND.text,
+                  boxShadow: activeFilter === filter.id ? "0 6px 14px rgba(19,124,109,0.28)" : "none",
+                  fontFamily: "inherit"
+                }}>
                 {filter.label}
               </button>
             ))}
@@ -368,95 +446,116 @@ export default function BookShop() {
         </section>
 
         {/* Products Grid */}
-        <main id="products" style={{ maxWidth: "1280px", margin: "0 auto", padding: "48px 16px" }}>
-          {loading && <div style={{ textAlign: "center", padding: "80px 0" }}><Loader2 style={{ width: "48px", height: "48px", color: "#d97706", animation: "spin 1s linear infinite", margin: "0 auto" }} /><p style={{ color: "#6b7280", marginTop: "16px" }}>Loading books...</p></div>}
-          {error && !loading && <div style={{ textAlign: "center", padding: "80px 0" }}><p style={{ color: "#dc2626", fontSize: "18px", marginBottom: "8px" }}>Error: {error}</p><p style={{ color: "#6b7280" }}>API: {API_BASE_URL}/products</p><button style={{ marginTop: "16px", padding: "10px 24px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontSize: "16px" }} onClick={() => window.location.reload()}>Retry</button></div>}
+        <main id="products" style={{ maxWidth: "1280px", margin: "0 auto", padding: "56px 20px" }}>
+          {loading && (
+            <div style={{ textAlign: "center", padding: "100px 0" }}>
+              <Loader2 style={{ width: "44px", height: "44px", color: BRAND.primary, animation: "spin 1s linear infinite", margin: "0 auto" }} />
+              <p style={{ color: BRAND.textMuted, marginTop: "16px", fontSize: 14 }}>Loading books...</p>
+            </div>
+          )}
+          {error && !loading && (
+            <div style={{ textAlign: "center", padding: "80px 20px", maxWidth: 480, margin: "0 auto", backgroundColor: "white", border: `1px solid ${BRAND.border}`, borderRadius: 16 }}>
+              <p style={{ color: "#dc2626", fontSize: "18px", fontWeight: 600, marginBottom: "8px" }}>Error: {error}</p>
+              <p style={{ color: BRAND.textMuted, fontSize: 13, marginBottom: 16 }}>API: {API_BASE_URL}/products</p>
+              <button style={{ marginTop: "8px", padding: "10px 24px", background: BRAND.gradient, color: "white", border: "none", borderRadius: "10px", cursor: "pointer", fontSize: "14px", fontWeight: 600, fontFamily: "inherit" }} onClick={() => window.location.reload()}>Retry</button>
+            </div>
+          )}
 
           {!loading && !error && (
             <>
-              <div style={{ marginBottom: "32px" }}>
-                <h3 style={{ fontSize: "28px", fontWeight: "bold", color: "#111827", margin: "0 0 8px 0" }}>{activeFilter === "all" ? "All Books" : filters.find(f => f.id === activeFilter)?.label}</h3>
-                <p style={{ color: "#6b7280", margin: 0 }}>{filteredProducts.length} {filteredProducts.length === 1 ? "book" : "books"} available</p>
+              <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 12, marginBottom: "36px" }}>
+                <div>
+                  <h3 style={{ fontSize: "32px", fontWeight: 700, color: BRAND.text, margin: "0 0 6px 0", letterSpacing: "-0.02em" }}>
+                    {activeFilter === "all" ? "All Books" : filters.find(f => f.id === activeFilter)?.label}
+                  </h3>
+                  <p style={{ color: BRAND.textMuted, margin: 0, fontSize: 14 }}>
+                    <span style={{ color: BRAND.primary, fontWeight: 600 }}>{filteredProducts.length}</span> {filteredProducts.length === 1 ? "book" : "books"} available
+                  </p>
+                </div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 14px", borderRadius: 10, backgroundColor: "white", border: `1px solid ${BRAND.border}`, fontSize: 12, color: BRAND.textMuted }}>
+                  <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: BRAND.primary }} />
+                  <span>Curated by Pine Book</span>
+                </div>
               </div>
 
               {filteredProducts.length > 0 ? (
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "32px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "28px" }}>
                   {currentItems.map((product) => {
                     const discount = product.discount_price && product.price > 0 ? Math.round(((product.price - product.discount_price) / product.price) * 100) : 0;
                     const isWishlisted = wishlist.includes(product.product_id);
 
                     return (
-                      <div key={product.product_id} style={{ backgroundColor: "white", borderRadius: "16px", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", border: "1px solid #f3f4f6", transition: "all 0.3s ease", cursor: "pointer" }}
-                        onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)"; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)"; }}>
+                      <div key={product.product_id} style={{ backgroundColor: "white", borderRadius: "18px", overflow: "hidden", boxShadow: "0 1px 3px rgba(15,23,42,0.06)", border: `1px solid ${BRAND.border}`, transition: "transform 0.3s ease, box-shadow 0.3s ease", cursor: "pointer", display: "flex", flexDirection: "column" }}
+                        onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 18px 40px rgba(19,124,109,0.14)"; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 1px 3px rgba(15,23,42,0.06)"; }}>
 
-                        {/* Book Cover - FIXED */}
-                        <div style={{ position: "relative", width: "100%", height: "400px", backgroundColor: "#f3f4f6", overflow: "hidden" }}>
+                        {/* Book Cover */}
+                        <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", backgroundColor: "#f8fafc", overflow: "hidden", borderBottom: `1px solid ${BRAND.border}` }}>
                           {renderBookCover(product.cover_image_url, product.title, product.product_id)}
 
                           {/* Badges */}
-                          <div style={{ position: "absolute", top: "12px", left: "12px", display: "flex", flexDirection: "column", gap: "6px", zIndex: 5 }}>
+                          <div style={{ position: "absolute", top: "14px", left: "14px", display: "flex", flexDirection: "column", gap: "6px", zIndex: 5 }}>
                             {(product.is_bestseller == 1 || product.is_bestseller === true) && (
-                              <span style={{ backgroundColor: "#dc2626", color: "white", padding: "5px 12px", borderRadius: "6px", fontSize: "11px", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.5px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>Bestseller</span>
+                              <span style={{ background: "linear-gradient(90deg,#dc2626,#ef4444)", color: "white", padding: "5px 11px", borderRadius: "999px", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.6px", boxShadow: "0 4px 10px rgba(220,38,38,0.30)" }}>★ Bestseller</span>
                             )}
                             {(product.is_featured == 1 || product.is_featured === true) && (
-                              <span style={{ backgroundColor: "#d97706", color: "white", padding: "5px 12px", borderRadius: "6px", fontSize: "11px", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.5px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>Featured</span>
+                              <span style={{ background: BRAND.gradient, color: "white", padding: "5px 11px", borderRadius: "999px", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.6px", boxShadow: "0 4px 10px rgba(19,124,109,0.30)" }}>Featured</span>
                             )}
                             {discount > 0 && (
-                              <span style={{ backgroundColor: "#16a34a", color: "white", padding: "5px 12px", borderRadius: "6px", fontSize: "11px", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.5px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>-{discount}% OFF</span>
+                              <span style={{ backgroundColor: BRAND.accent, color: BRAND.primaryDark, padding: "5px 11px", borderRadius: "999px", fontSize: "10px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.6px", boxShadow: "0 4px 10px rgba(251,191,36,0.35)" }}>−{discount}%</span>
                             )}
                           </div>
 
                           {/* Action Buttons */}
-                          <button style={{ position: "absolute", top: "12px", right: "12px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", zIndex: 10 }}
+                          <button style={{ position: "absolute", top: "14px", right: "14px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: `1px solid ${BRAND.border}`, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(15,23,42,0.08)", zIndex: 10 }}
                             onClick={(e) => { e.stopPropagation(); toggleWishlist(product.product_id); }}>
-                            <Heart style={{ width: "16px", height: "16px", color: isWishlisted ? "#dc2626" : "#374151", fill: isWishlisted ? "#dc2626" : "none" }} />
+                            <Heart style={{ width: "15px", height: "15px", color: isWishlisted ? "#dc2626" : BRAND.text, fill: isWishlisted ? "#dc2626" : "none" }} />
                           </button>
-                          <button style={{ position: "absolute", top: "56px", right: "12px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", zIndex: 10 }}
+                          <button style={{ position: "absolute", top: "58px", right: "14px", width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "white", border: `1px solid ${BRAND.border}`, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 10px rgba(15,23,42,0.08)", zIndex: 10 }}
                             onClick={(e) => { e.stopPropagation(); setQuickView(product); setQuickViewImgError(false); }}>
-                            <Eye style={{ width: "16px", height: "16px", color: "#374151" }} />
+                            <Eye style={{ width: "15px", height: "15px", color: BRAND.text }} />
                           </button>
                         </div>
 
                         {/* Product Info */}
-                        <div style={{ padding: "24px" }}>
+                        <div style={{ padding: "20px", display: "flex", flexDirection: "column", flex: 1 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
-                            <span style={{ fontSize: "12px", fontWeight: "bold", color: "#d97706", textTransform: "uppercase", letterSpacing: "1px" }}>{product.format || "Book"}</span>
+                            <span style={{ fontSize: "10px", fontWeight: 700, color: BRAND.primary, textTransform: "uppercase", letterSpacing: "1.2px" }}>{product.format || "Book"}</span>
                             {product.stock_quantity !== undefined && product.stock_quantity > 0 && product.stock_quantity < 10 && (
-                              <span style={{ fontSize: "12px", fontWeight: "bold", color: "#dc2626" }}>Only {product.stock_quantity} left</span>
+                              <span style={{ fontSize: "10px", fontWeight: 700, color: "#dc2626", padding: "2px 8px", borderRadius: 999, backgroundColor: "#fef2f2" }}>Only {product.stock_quantity} left</span>
                             )}
                           </div>
 
-                          <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#111827", margin: "0 0 8px 0", lineHeight: 1.3, minHeight: "48px" }}>{product.title || "Untitled Book"}</h4>
-                          {product.author_name && <p style={{ fontSize: "14px", color: "#6b7280", margin: "0 0 12px 0" }}>by {product.author_name}</p>}
+                          <h4 style={{ fontSize: "16px", fontWeight: 700, color: BRAND.text, margin: "0 0 6px 0", lineHeight: 1.35, letterSpacing: "-0.01em", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: "44px" }}>{product.title || "Untitled Book"}</h4>
+                          {product.author_name && <p style={{ fontSize: "12px", color: BRAND.textMuted, margin: "0 0 12px 0" }}>by <span style={{ color: BRAND.text, fontWeight: 500 }}>{product.author_name}</span></p>}
 
                           {product.average_rating > 0 && (
-                            <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "12px" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "3px", marginBottom: "12px" }}>
                               {[...Array(5)].map((_, i) => (
-                                <Star key={i} style={{ width: "16px", height: "16px", color: i < Math.floor(product.average_rating) ? "#fbbf24" : "#d1d5db", fill: i < Math.floor(product.average_rating) ? "#fbbf24" : "none" }} />
+                                <Star key={i} style={{ width: "14px", height: "14px", color: i < Math.floor(product.average_rating) ? BRAND.accent : "#e5e7eb", fill: i < Math.floor(product.average_rating) ? BRAND.accent : "none" }} />
                               ))}
-                              <span style={{ fontSize: "12px", color: "#9ca3af", marginLeft: "4px" }}>({product.total_reviews || 0})</span>
+                              <span style={{ fontSize: "11px", color: BRAND.textMuted, marginLeft: "5px" }}>({product.total_reviews || 0})</span>
                             </div>
                           )}
 
-                          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", marginBottom: "16px" }}>
-                            <span style={{ fontSize: "22px", fontWeight: "bold", color: "#111827" }}>${product.discount_price || product.price || 0}</span>
+                          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", marginBottom: "14px", marginTop: "auto" }}>
+                            <span style={{ fontSize: "22px", fontWeight: 800, color: BRAND.text, letterSpacing: "-0.02em" }}>${product.discount_price || product.price || 0}</span>
                             {product.discount_price && product.price > product.discount_price && (
-                              <span style={{ fontSize: "14px", color: "#9ca3af", textDecoration: "line-through" }}>${product.price}</span>
+                              <span style={{ fontSize: "13px", color: BRAND.textMuted, textDecoration: "line-through" }}>${product.price}</span>
                             )}
                           </div>
 
                           <div style={{ display: "flex", gap: "8px" }}>
-                            <button style={{ flex: 1, padding: "10px 16px", backgroundColor: "#111827", color: "white", border: "none", borderRadius: "10px", fontSize: "14px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", transition: "all 0.2s" }}
+                            <button style={{ flex: 1, padding: "11px 14px", background: BRAND.gradient, color: "white", border: "none", borderRadius: "10px", fontSize: "13px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", transition: "all 0.2s", boxShadow: "0 4px 12px rgba(19,124,109,0.25)", fontFamily: "inherit" }}
                               onClick={() => handleAddToCart(product)}
-                              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#d97706"; }}
-                              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#111827"; }}>
-                              <ShoppingCart style={{ width: "16px", height: "16px" }} /> Add
+                              onMouseEnter={(e) => { e.currentTarget.style.filter = "brightness(1.08)"; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.filter = "brightness(1)"; }}>
+                              <ShoppingCart style={{ width: "15px", height: "15px" }} /> Add
                             </button>
-                            <Link href={`/shop-details/${product.product_id}`} style={{ flex: 1, padding: "10px 16px", backgroundColor: "white", color: "#111827", border: "2px solid #e5e7eb", borderRadius: "10px", fontSize: "14px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", textDecoration: "none", transition: "all 0.2s" }}
-                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#d97706"; e.currentTarget.style.color = "#d97706"; }}
-                              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e5e7eb"; e.currentTarget.style.color = "#111827"; }}>
-                              View Details <ChevronRight style={{ width: "16px", height: "16px" }} />
+                            <Link href={`/shop-details/${product.product_id}`} style={{ flex: 1, padding: "11px 14px", backgroundColor: "white", color: BRAND.text, border: `1px solid ${BRAND.border}`, borderRadius: "10px", fontSize: "13px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "4px", textDecoration: "none", transition: "all 0.2s", fontFamily: "inherit" }}
+                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = BRAND.primary; e.currentTarget.style.color = BRAND.primary; e.currentTarget.style.backgroundColor = BRAND.soft; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.borderColor = BRAND.border; e.currentTarget.style.color = BRAND.text; e.currentTarget.style.backgroundColor = "white"; }}>
+                              Details <ChevronRight style={{ width: "14px", height: "14px" }} />
                             </Link>
                           </div>
                         </div>
@@ -465,9 +564,12 @@ export default function BookShop() {
                   })}
                 </div>
               ) : (
-                <div style={{ textAlign: "center", padding: "60px 0" }}>
-                  <BookOpen style={{ width: "64px", height: "64px", color: "#d1d5db", margin: "0 auto 16px" }} />
-                  <p style={{ fontSize: "18px", color: "#6b7280" }}>No books found</p>
+                <div style={{ textAlign: "center", padding: "80px 20px", backgroundColor: "white", border: `1px solid ${BRAND.border}`, borderRadius: 16, maxWidth: 480, margin: "0 auto" }}>
+                  <div style={{ width: 80, height: 80, borderRadius: "50%", background: BRAND.soft, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                    <BookOpen style={{ width: "32px", height: "32px", color: BRAND.primary }} />
+                  </div>
+                  <p style={{ fontSize: "17px", color: BRAND.text, fontWeight: 600, margin: "0 0 4px" }}>No books found</p>
+                  <p style={{ fontSize: 13, color: BRAND.textMuted, margin: 0 }}>Try adjusting your filters or search</p>
                 </div>
               )}
 
@@ -504,58 +606,47 @@ export default function BookShop() {
         {/* Quick View Modal */}
         {quickView && (
           <>
-            <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", zIndex: 100 }} onClick={() => setQuickView(null)} />
-            <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", backgroundColor: "white", borderRadius: "20px", boxShadow: "0 25px 50px rgba(0,0,0,0.3)", maxWidth: "800px", width: "90%", maxHeight: "90vh", overflowY: "auto", zIndex: 101 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                <div style={{ position: "relative", height: "500px", backgroundColor: "#f3f4f6" }}>
+            <div style={{ position: "fixed", inset: 0, backgroundColor: "rgba(7,84,72,0.55)", backdropFilter: "blur(6px)", zIndex: 100 }} onClick={() => setQuickView(null)} />
+            <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", backgroundColor: "white", borderRadius: "20px", boxShadow: "0 25px 60px rgba(15,23,42,0.30)", maxWidth: "880px", width: "94%", maxHeight: "92vh", overflowY: "auto", zIndex: 101, fontFamily: "inherit", border: `1px solid ${BRAND.border}` }}>
+              <div className="qv-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                <div style={{ position: "relative", minHeight: "440px", backgroundColor: "#f8fafc", borderRight: `1px solid ${BRAND.border}` }}>
                   {renderBookCover(quickView.cover_image_url, quickView.title, quickView.product_id, false, true)}
                 </div>
                 <div style={{ padding: "32px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                    <span style={{ fontSize: "12px", fontWeight: "bold", color: "#d97706", textTransform: "uppercase", letterSpacing: "1px" }}>{quickView.format}</span>
-                    <button onClick={() => setQuickView(null)} style={{ background: "none", border: "none", cursor: "pointer", padding: "4px" }}><X size={24} /></button>
+                    <span style={{ fontSize: "11px", fontWeight: 700, color: BRAND.primary, textTransform: "uppercase", letterSpacing: "1.2px", padding: "4px 10px", backgroundColor: BRAND.soft, borderRadius: 999 }}>{quickView.format || "Book"}</span>
+                    <button onClick={() => setQuickView(null)} style={{ background: "white", border: `1px solid ${BRAND.border}`, borderRadius: 10, cursor: "pointer", padding: "6px", display: "flex", alignItems: "center", justifyContent: "center" }}><X size={18} /></button>
                   </div>
-                  <h3 style={{ fontSize: "28px", fontWeight: "bold", color: "#111827", margin: "0 0 8px 0" }}>{quickView.title}</h3>
-                  {quickView.author_name && <p style={{ color: "#6b7280", marginBottom: "16px" }}>by {quickView.author_name}</p>}
+                  <h3 style={{ fontSize: "26px", fontWeight: 700, color: BRAND.text, margin: "0 0 6px 0", letterSpacing: "-0.02em", lineHeight: 1.25 }}>{quickView.title}</h3>
+                  {quickView.author_name && <p style={{ color: BRAND.textMuted, fontSize: 14, marginBottom: "16px" }}>by <span style={{ color: BRAND.text, fontWeight: 500 }}>{quickView.author_name}</span></p>}
                   {quickView.average_rating > 0 && (
                     <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "16px" }}>
-                      {[...Array(5)].map((_, i) => <Star key={i} style={{ width: "20px", height: "20px", color: i < Math.floor(quickView.average_rating) ? "#fbbf24" : "#d1d5db", fill: i < Math.floor(quickView.average_rating) ? "#fbbf24" : "none" }} />)}
-                      <span style={{ marginLeft: "8px", color: "#6b7280" }}>({quickView.total_reviews} reviews)</span>
+                      {[...Array(5)].map((_, i) => <Star key={i} style={{ width: "18px", height: "18px", color: i < Math.floor(quickView.average_rating) ? BRAND.accent : "#e5e7eb", fill: i < Math.floor(quickView.average_rating) ? BRAND.accent : "none" }} />)}
+                      <span style={{ marginLeft: "8px", color: BRAND.textMuted, fontSize: 13 }}>({quickView.total_reviews} reviews)</span>
                     </div>
                   )}
-                  <div style={{ marginBottom: "16px" }}>
-                    <span style={{ fontSize: "32px", fontWeight: "bold", color: "#111827" }}>${quickView.discount_price || quickView.price}</span>
-                    {quickView.discount_price && <span style={{ fontSize: "18px", color: "#9ca3af", textDecoration: "line-through", marginLeft: "12px" }}>${quickView.price}</span>}
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: "16px", padding: "12px 0", borderTop: `1px solid ${BRAND.border}`, borderBottom: `1px solid ${BRAND.border}` }}>
+                    <span style={{ fontSize: "30px", fontWeight: 800, color: BRAND.text, letterSpacing: "-0.02em" }}>${quickView.discount_price || quickView.price}</span>
+                    {quickView.discount_price && <span style={{ fontSize: "16px", color: BRAND.textMuted, textDecoration: "line-through" }}>${quickView.price}</span>}
                   </div>
-                  <p style={{ color: "#6b7280", lineHeight: 1.6, marginBottom: "24px" }}>{quickView.short_description || quickView.full_description || "No description available."}</p>
-                  <div style={{ display: "flex", gap: "12px" }}>
-                    <button style={{ flex: 1, padding: "14px", backgroundColor: "#d97706", color: "white", border: "none", borderRadius: "12px", fontSize: "16px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                  <p style={{ color: BRAND.textMuted, lineHeight: 1.65, marginBottom: "24px", fontSize: 14 }}>{quickView.short_description || quickView.full_description || "No description available."}</p>
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    <button style={{ flex: 1, padding: "13px", background: BRAND.gradient, color: "white", border: "none", borderRadius: "12px", fontSize: "14px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", boxShadow: "0 8px 20px rgba(19,124,109,0.30)", fontFamily: "inherit" }}
                       onClick={() => { handleAddToCart(quickView); setQuickView(null); }}>
-                      <ShoppingCart size={20} /> Add to Cart
+                      <ShoppingCart size={18} /> Add to Cart
                     </button>
-                    <Link href={`/shop-details/${quickView.slug || quickView.product_id}`} style={{ padding: "14px 24px", backgroundColor: "white", color: "#111827", border: "2px solid #e5e7eb", borderRadius: "12px", fontSize: "16px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+                    <Link href={`/shop-details/${quickView.slug || quickView.product_id}`} style={{ padding: "13px 22px", backgroundColor: "white", color: BRAND.text, border: `1px solid ${BRAND.border}`, borderRadius: "12px", fontSize: "14px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", fontFamily: "inherit" }}>
                       Details
                     </Link>
                   </div>
                 </div>
               </div>
+              <style>{`@media (max-width: 720px){ .qv-grid{ grid-template-columns: 1fr !important; } }`}</style>
             </div>
           </>
         )}
-
-        {/* Footer */}
-        <footer style={{ backgroundColor: "#111827", color: "#9ca3af", padding: "48px 16px 24px" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "32px", marginBottom: "32px" }}>
-              <div><h3 style={{ color: "white", fontSize: "18px", fontWeight: "bold", margin: "0 0 16px 0" }}>PineBook</h3><p style={{ fontSize: "14px", lineHeight: 1.6 }}>Your trusted online bookstore for all genres and formats.</p></div>
-              <div><h4 style={{ color: "white", fontWeight: "600", margin: "0 0 12px 0" }}>Categories</h4>{["E-Books", "Paperback", "Hardcover", "Bestsellers"].map((cat) => <button key={cat} style={{ color: "#9ca3af", background: "none", border: "none", padding: 0, display: "block", marginBottom: "8px", cursor: "pointer", fontSize: "14px" }} onClick={() => setActiveFilter(cat.toLowerCase().replace("-", ""))}>{cat}</button>)}</div>
-              <div><h4 style={{ color: "white", fontWeight: "600", margin: "0 0 12px 0" }}>Support</h4>{["FAQ", "Shipping", "Returns", "Contact Us"].map((item) => <span key={item} style={{ display: "block", marginBottom: "8px", fontSize: "14px" }}>{item}</span>)}</div>
-              <div><h4 style={{ color: "white", fontWeight: "600", margin: "0 0 12px 0" }}>Contact</h4><p style={{ fontSize: "14px" }}>support@pinebook.com</p><p style={{ fontSize: "14px" }}>+1 (555) 123-4567</p></div>
-            </div>
-            <div style={{ borderTop: "1px solid #374151", paddingTop: "24px", textAlign: "center", fontSize: "14px" }}>© 2026 Pine Book Publishing. All rights reserved.</div>
-          </div>
-        </footer>
       </div>
+      <BrandFooter />
     </>
   );
 }
