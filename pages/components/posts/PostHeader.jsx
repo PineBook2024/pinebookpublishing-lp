@@ -1,9 +1,9 @@
 // import Avatar from '../ui/Avatar'
 import ContentfulImage from '../ui/ContentfulImage'
 import DateComponent from '../ui/DateComponent'
-import { client } from '../../../lib/contentful/client'
 
 const PostHeader = ({ post }) => {
+  if (!post?.fields) return null
   const { title, coverImage, author, date } = post.fields
 
   return (
@@ -28,14 +28,5 @@ const PostHeader = ({ post }) => {
     </>
   )
 }
-export const getStaticProps = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
 
-  return {
-    props: {
-      post: response?.items?.[0],
-      revalidate: 60
-    }
-  }
-}
 export default PostHeader

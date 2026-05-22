@@ -2,10 +2,10 @@ import Link from 'next/link'
 // import Avatar from '../ui/Avatar'
 import ContentfulImage from '../ui/ContentfulImage'
 import DateComponent from '../ui/DateComponent'
-import { client } from '../../../lib/contentful/client'
 
 
 export default function PostCard ({ post }) {
+  if (!post?.fields) return null
   const { title, slug, excerpt, coverImage, author, date } = post.fields
   const imageFile = coverImage?.fields?.file
 
@@ -37,15 +37,4 @@ export default function PostCard ({ post }) {
       </Link>
     </li>
   )
-}
-
-export const getStaticProps = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
-
-  return {
-    props: {
-      post: response?.items?.[0],
-      revalidate: 60
-    }
-  }
 }

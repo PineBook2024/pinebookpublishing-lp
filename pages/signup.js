@@ -259,15 +259,44 @@ const countryCodes = [
     { name: "Zambia", code: "260", countryCode: "ZM", flag: "https://flagcdn.com/zm.svg" },
     { name: "Zimbabwe", code: "263", countryCode: "ZW", flag: "https://flagcdn.com/zw.svg" },
 
-]; export default function Services() { const router = useRouter(); const [email, setEmail] = useState(""); const [firstName, setFirstName] = useState(""); const [phone, setPhone] = useState(""); const [budgets, setBudget] = useState(""); const [category, setCategory] = useState(""); const [message, setMessage] = useState(""); const [showSuccess, setShowSuccess] = useState(false); const [phoneError, setPhoneError] = useState(""); const [selectedCountry, setSelectedCountry] = useState(null); // Default to the first country const [countryCodeValue, setCountryCodeValue] = useState(""); const [loading, setLoading] = useState(true); const fetchUserRegion = async () => { try { const response = await fetch("https://ipwhois.app/json/"); const data = await response.json(); console.log("IP API Response:", data); const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code); if (detectedCountry) { setSelectedCountry(detectedCountry); } else { console.warn("Region not detected. Defaulting to Canada."); setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA")); } } catch (error) { console.error("Failed to fetch user region:", error); setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA")); } finally { setLoading(false); } }; useEffect(() => { fetchUserRegion(); }, []); const handleCountryChange = (e) => {
-    //   const selectedCode = e.target.value;
-    //   const country = countryCodes.find((c) => c.code === selectedCode);
-    //     console.log("Selected Country: ", country); // Debug log
-    //   if (country) {
-    //     setSelectedCountry(country);
-    //     console.log("Selected Country: ", country); // Debug log
-    //   }
-    // };
+];
+
+export default function Services() {
+    const router = useRouter();
+    const [email, setEmail] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [budgets, setBudget] = useState("");
+    const [category, setCategory] = useState("");
+    const [message, setMessage] = useState("");
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
+    const [selectedCountry, setSelectedCountry] = useState(null);
+    const [countryCodeValue, setCountryCodeValue] = useState("");
+    const [loading, setLoading] = useState(true);
+
+    const fetchUserRegion = async () => {
+        try {
+            const response = await fetch("https://ipwhois.app/json/");
+            const data = await response.json();
+            const detectedCountry = countryCodes.find((c) => c.countryCode === data.country_code);
+            if (detectedCountry) {
+                setSelectedCountry(detectedCountry);
+            } else {
+                setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA"));
+            }
+        } catch (error) {
+            console.error("Failed to fetch user region:", error);
+            setSelectedCountry(countryCodes.find((c) => c.countryCode === "CA"));
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchUserRegion();
+    }, []);
+
     const handleCountryChange = (e) => {
         const selectedCountryCode = e.target.value;
         const country = countryCodes.find((c) => c.countryCode === selectedCountryCode);
