@@ -479,7 +479,7 @@ export default function BookShop() {
               </div>
 
               {filteredProducts.length > 0 ? (
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "28px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px" }}>
                   {currentItems.map((product) => {
                     const discount = product.discount_price && product.price > 0 ? Math.round(((product.price - product.discount_price) / product.price) * 100) : 0;
                     const isWishlisted = wishlist.includes(product.product_id);
