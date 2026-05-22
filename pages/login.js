@@ -232,27 +232,6 @@ export default function Login() {
                 <p><span>Phone</span> : (064) 332-1233</p>
               </li>
             </ul>
-            <h6 className="mb-2 capitalize">subscribe to our newsletter</h6>
-            <form className="dzSubscribe style-1" action="script/mailchamp.php" method="post">
-              <div className="dzSubscribeMsg"></div>
-              <div className="form-group">
-                <div className="relative flex flex-wrap items-stretch w-full">
-                  <input
-                    name="dzEmail"
-                    required
-                    type="email"
-                    className="w-[1%] flex-auto h-[45px] py-2.5 px-5 border border-white rounded-xl outline-none focus:shadow-focus"
-                    placeholder="Your Email Address"
-                    style={{ backgroundColor: '#FCFBF4' }}
-                  />
-                  <div className="absolute right-0 -translate-y-1/2 top-1/2 z-9">
-                    <button name="submit" value="Submit" type="submit" className="size-13.5 group">
-                      <i className="text-xl icon feather icon-arrow-right group-hover:animate-toLeftFromRight"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
 

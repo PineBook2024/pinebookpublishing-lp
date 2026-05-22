@@ -920,63 +920,6 @@ var Pixio = function () {
 
 	}
 
-	var handleOpenModal = function () {
-
-		var modalBox = `<div class="modal modal-subscribe bg-black/60 z-9999999 fixed top-0 lef-0 size-full overflow-x-hidden overflow-y-auto hidden" id="myModal">
-			<div class="modal-dialog max-w-[800px] max-sm:w-[350px] flex min-h-auto bg-white rounded-3.5xl relative w-auto pointer-events-none mx-auto sm:my-7" role="document">
-				<div class="max-w-[50%] max-md:hidden">
-					<img src="assets/images/adv-2.png" alt=""/ class="size-full object-cover">
-				</div>
-				<div class="relative flex flex-col w-full pointer-events-auto rounded-3.5xl bg-white py-10 px-14.5 max-md:p-5 max-w-[50%] max-sm:max-w-full items-center justify-center">
-					<button type="button" class="modal-close absolute right-0 bg-secondary top-0 text-white text-2xl size-10 leading-[1] z-9999999">
-					  <span aria-hidden="true">
-						<i class="icon feather icon-x"></i>
-					  </span>
-					</button>
-					<div>
-						<div class="mb-7.5">
-							<span class="text-sm font-medium uppercase tracking-[1px]">Newsletter</span>
-							<h3 class="font-bold w-full" id="exampleModalLongTitle">Subscribe Now</h3>
-							<p class="text-body text-base">Stay updated on all that's new add noteworthy</p>
-						</div>
-						<div class="modal-body">
-							<form action="script/mailchamp.php" class="dzSubscribe" method="post">
-								<div class="dzSubscribeMsg"></div>
-								<div class="mb-5">
-									<label class="block text-2xs font-medium">Email Address</label>
-									<input type="email" name="dzEmail" class="w-full py-4 px-5 h-13.5 outline-none rounded-xl border border-black duration-500" required placeholder="Enter Email Address">
-								</div>
-								<button name="submit" type="submit" value="Submit" class="btn py-3 px-7.5 max-sm:px-6 text-base max-sm:text-sm font-Lufga font-medium leading-[1.2] border border-secondary bg-secondary text-white rounded-xl duration-700 relative overflow-hidden uppercase block w-full mb-3.6">Subscribe</button>
-								<div class="custom-checkbox">
-									<input type="checkbox" class="form-check-input" id="basic_checkbox_3">
-									<label class="form-check-label" for="basic_checkbox_3">I agree to receive marketing materials</label>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>`;
-
-		if (getCookie('prevent_subscription') != 'true') {
-			jQuery('body').append(modalBox);
-			setTimeout(function () {
-				$(".modal-subscribe").addClass("show");
-			}, 5000)
-			$('.modal-close').on('click', function(){
-				$(".modal").removeClass("show");
-				// console.log(1439);
-			});
-		}
-
-	}
-
-	var handleOpenModalCookie = function () {
-		$(document).on('click', '.modal-subscribe .modal-close', function () {
-			setCookie('prevent_subscription', 'true', 60);
-		});
-	}
-
 	var handleSplitSlider = function () {
 		if (jQuery('#myContainer').length > 0) {
 			$('#myContainer').multiscroll({
@@ -1277,7 +1220,6 @@ var Pixio = function () {
 			handleMultiScroll();
 			handleTextChar();
 			handlemodal();
-			handleOpenModalCookie();
 		},
 
 		load: function () {
@@ -1286,7 +1228,6 @@ var Pixio = function () {
 			handleMultipleImageSize();
 			handleIsotope();
 			handlemodal();
-			handleOpenModal();
 			jQuery('.modal').on('show.bs.modal', reposition);
 		},
 
