@@ -33,20 +33,7 @@ const BRAND = {
 
 const PRODUCTS_PER_PAGE = 12;
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
-
-// URL fix helper - localhost URLs ko live domain se replace karega
-const fixImageUrl = (url) => {
-  if (!url) return null;
-  
-  return url.replace(
-    'http://localhost:8000', 
-    'https://pinebookbackend.pinedigitalhub.com'
-  ).replace(
-    'https://localhost:8000',
-    'https://pinebookbackend.pinedigitalhub.com'
-  );
-};
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com/api";
 
 export default function BookShop() {
   const [products, setProducts] = useState([]);
@@ -136,13 +123,7 @@ export default function BookShop() {
 
   // Helper: Render book cover image with fallback
   const renderBookCover = (src, alt, productId, isCart = false, isQuickView = false) => {
-    // Fix localhost URLs
-    const fixedSrc = src ? src.replace('http://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com')
-                              .replace('https://localhost:8000', 'https://pinebookbackend.pinedigitalhub.com') 
-                        : null;
-
-    // If no src, show fallback immediately
-    if (!fixedSrc) {
+    if (!src) {
         return (
             <div style={{ 
                 width: "100%", 
@@ -161,9 +142,9 @@ export default function BookShop() {
 
     // Image exists - render it (NO onError handler)
     return (
-        <Image 
-            src={fixedSrc} 
-            alt={alt || "Book"} 
+        <Image
+            src={src}
+            alt={alt || "Book"}
             fill 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: "cover" }} 
