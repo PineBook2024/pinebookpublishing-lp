@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useCart } from "../../hooks/useCart";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com/api";
 
 export default function ProductDetail() {
   const router = useRouter();
