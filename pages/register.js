@@ -578,7 +578,7 @@ export default function Register() {
                     color: BRAND.textMuted,
                   }}
                 >
-                  Secure registration · SSL encrypted
+                  
                 </p>
               </form>
             </div>

@@ -511,7 +511,7 @@ export default function Login() {
                     color: BRAND.textMuted,
                   }}
                 >
-                  Secure login · SSL encrypted
+                  
                 </p>
               </form>
             </div>
