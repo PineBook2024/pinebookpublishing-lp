@@ -184,7 +184,7 @@ export default function HomePopupNew() {
   return (
     <>
       {isOpen && (
-        <section className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3 md:p-6">
+        <section className="fixed inset-0 z-50 flex items-center justify-center p-3 bg-black/60 md:p-6">
           <div className="relative w-full max-w-6xl overflow-hidden rounded-[24px] bg-[#e8e8ee] shadow-2xl">
             <button
               type="button"
@@ -196,7 +196,7 @@ export default function HomePopupNew() {
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
-              <div className="relative min-h-[260px] md:min-h-[700px]">
+              <div className="relative min-h-[260px] md:min-h-[500px]">
                 <Image
                   src="/brand-img/01-02.jpg"
                   alt="Memorial Day popup banner"
@@ -204,7 +204,7 @@ export default function HomePopupNew() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-5 md:p-8">
+                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 via-black/40 to-transparent md:p-8">
                   <h3 className="max-w-[420px] font-poppins text-3xl font-bold leading-tight text-white md:text-[56px]">
                     <span className="popup-typewriter">Get 50% OFF</span>
                   </h3>
@@ -278,19 +278,19 @@ export default function HomePopupNew() {
                       rows={3}
                     />
 
-                    <div className="flex items-start">
-                      <div className="flex h-5 items-center">
+                    {/* <div className="flex items-start">
+                      <div className="flex items-center h-5">
                         <input
                           id="popup-consent"
                           type="checkbox"
-                          className="h-4 w-4 rounded-sm border border-gray-300 bg-gray-50"
+                          className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50"
                           required
                         />
                       </div>
                       <label htmlFor="popup-consent" className="ms-2 text-xs font-medium text-[#3b4155]">
                         By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-600">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-600" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-600" target="_blank"> TERMS and CONDITIONS </Link> on our website.
                       </label>
-                    </div>
+                    </div> */}
 
                     {showSuccess && (
                       <p className="px-1 py-2 text-green-700">Form submitted Successfully!</p>
