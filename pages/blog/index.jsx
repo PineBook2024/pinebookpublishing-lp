@@ -40,12 +40,18 @@ const Posts = ({ posts }) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
-  const posts = [...(response.items || [])].sort((a, b) => {
-    const aDate = new Date(a?.fields?.date || a?.sys?.createdAt || 0).getTime()
-    const bDate = new Date(b?.fields?.date || b?.sys?.createdAt || 0).getTime()
-    return bDate - aDate
-  })
+  let posts = []
+
+  try {
+    const response = await client.getEntries({ content_type: 'post' })
+    posts = [...(response.items || [])].sort((a, b) => {
+      const aDate = new Date(a?.fields?.date || a?.sys?.createdAt || 0).getTime()
+      const bDate = new Date(b?.fields?.date || b?.sys?.createdAt || 0).getTime()
+      return bDate - aDate
+    })
+  } catch (error) {
+    console.error('Failed to fetch blog posts from Contentful during build:', error?.message || error)
+  }
 
   return {
     props: {
