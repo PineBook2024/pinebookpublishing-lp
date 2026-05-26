@@ -158,50 +158,55 @@ export default function BrandHeroFridayUpdate() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(" handleSubmit fired");
-    // if (!selectedCountry) {
-    //   alert("Please select your country");
-    //   return;
-    // }
 
-    console.log("TESTING");
     if (phoneNumber.length < 9) {
-      alert("Phone number must be at least 9 digits");
+      setPhoneError("Phone number must be at least 9 digits");
       return;
     }
 
-    const combinedPhoneNumber = `${phoneNumber}`;
+    setIsSubmitting(true);
 
     const payload = {
-      name: fullName,
+      fullName,
       email,
-      phone: combinedPhoneNumber,
+      phoneNumber,
       message,
-      service: "Book Publishing",
+      service: "Avail Discount - Holiday Season 50% Off",
+      currentPage: typeof window !== "undefined" ? window.location.href : "",
+      referringPage:
+        typeof document !== "undefined"
+          ? document.referrer || "Direct visit"
+          : "",
+      userIP: userInfo.ip,
+      userCity: userInfo.city,
+      userRegion: userInfo.region,
+      userCountry: userInfo.country,
     };
 
     try {
-      const res = await fetch("http://localhost:8000/api/leads/from-website", {
+      const res = await fetch("/api/popup-signup-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
-      if (!res.ok) {
-        console.error("CRM Error:", data);
-        alert(data.message || "Lead submission failed");
+      if (!res.ok || data?.success === false) {
+        console.error("Lead submission error:", data);
+        alert(data?.message || "Lead submission failed");
         return;
       }
 
-      console.log("CRM Lead Created:", data);
       router.push("/thankyou-offer");
     } catch (error) {
       console.error("Network Error:", error);
       alert("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

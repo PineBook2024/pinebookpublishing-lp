@@ -7,16 +7,21 @@ export default async function handler(req, res) {
 
   try {
    
-    console.log(" LARAVEL_API_URL:", process.env.LARAVEL_API_URL);
+    const backendBase =
+      process.env.LARAVEL_API_URL ||
+      (process.env.NEXT_PUBLIC_API_URL
+        ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "")
+        : "");
 
-    if (!process.env.LARAVEL_API_URL) {
-      throw new Error("LARAVEL_API_URL is not defined");
+    if (!backendBase) {
+      throw new Error(
+        "Backend URL not configured (LARAVEL_API_URL or NEXT_PUBLIC_API_URL)"
+      );
     }
 
     const payload = req.body;
-    console.log(" Payload received in Next API:", payload);
     const response = await fetch(
-      `${process.env.LARAVEL_API_URL}/api/leads/from-website`,
+      `${backendBase}/api/leads/from-website`,
       {
         method: "POST",
         headers: {

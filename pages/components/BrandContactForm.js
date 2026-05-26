@@ -51,7 +51,7 @@ export default function BrandContact() {
 
     const sendEmailNotification = async (formData) => {
         try {
-            const response = await fetch('/api/brand-signup-email', {
+            const response = await fetch('/api/popup-signup-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,9 +60,10 @@ export default function BrandContact() {
                     fullName: formData.fullName,
                     email: formData.email,
                     phoneNumber: formData.phoneNumber,
+                    service: 'Brand Contact - Let’s Get In Touch',
                     message: formData.message,
-                    currentPage: window.location.href,
-                    referringPage: document.referrer || 'Direct visit',
+                    currentPage: typeof window !== 'undefined' ? window.location.href : '',
+                    referringPage: typeof document !== 'undefined' ? (document.referrer || 'Direct visit') : '',
                     userIP: userInfo.ip,
                     userCity: userInfo.city,
                     userRegion: userInfo.region,
@@ -117,18 +118,23 @@ export default function BrandContact() {
 
     const submitLeadToCRM = async (formData) => {
         try {
-            const response = await fetch("/api/lead-capture", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    fullName: formData.fullName,
-                    email: formData.email,
-                    phoneNumber: formData.phoneNumber,
-                    message: formData.message,
-                }),
-            });
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_API_URL}/leads/from-website`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: formData.fullName,
+                        email: formData.email,
+                        phone: formData.phoneNumber,
+                        message: formData.message,
+                        service: "Book Publishing",
+                    }),
+                }
+            );
 
             const data = await response.json().catch(() => ({}));
 
@@ -160,18 +166,11 @@ export default function BrandContact() {
         };
 
         try {
-            const [emailResult, crmResult] = await Promise.allSettled([
-                sendEmailNotification(formData),
-                submitLeadToCRM(formData),
-            ]);
+            const emailResult = await sendEmailNotification(formData);
 
-            const emailOk =
-                emailResult.status === "fulfilled" && emailResult.value?.success === true;
+            const emailOk = emailResult?.success === true;
 
-            const crmOk =
-                crmResult.status === "fulfilled" && crmResult.value?.success === true;
-
-            if (emailOk || crmOk) {
+            if (emailOk) {
                 setShowSuccess(true);
 
                 setTimeout(() => {

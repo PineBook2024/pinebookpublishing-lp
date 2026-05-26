@@ -135,7 +135,7 @@ export default function CategoriesPage() {
       return;
     }
 
-    // ✅ Fixed: Removed extra /api
+    
     const res = await axios.get(`${API_BASE_URL}/categories`, {
       headers: { Authorization: `Bearer ${token}` },
     });
