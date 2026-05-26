@@ -3,8 +3,8 @@ import ContentfulImage from '../ui/ContentfulImage'
 import DateComponent from '../ui/DateComponent'
 
 const PostHeader = ({ post }) => {
-  if (!post?.fields) return null
   const { title, coverImage, author, date } = post.fields
+  const imageFile = coverImage?.fields?.file
 
   return (
     <>
@@ -14,12 +14,16 @@ const PostHeader = ({ post }) => {
         {/* <DateComponent dateString={date} className='text-sm text-gray-400' /> */}
       </div>
       <div className='mb-8 sm:mx-0'>
-        <ContentfulImage
-          alt={`Cover Image for ${title}`}
-          src={coverImage.fields.file.url}
-          width={coverImage.fields.file.details.image.width}
-          height={coverImage.fields.file.details.image.height}
-        />
+        {imageFile ? (
+          <ContentfulImage
+            alt={`Cover Image for ${title}`}
+            src={imageFile.url}
+            width={imageFile.details.image.width}
+            height={imageFile.details.image.height}
+          />
+        ) : (
+          <div className='w-full h-64 bg-gray-300 rounded' />
+        )}
       </div>
       <div className='flex justify-between items-center md:hidden mb-6'>
         {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
@@ -28,5 +32,4 @@ const PostHeader = ({ post }) => {
     </>
   )
 }
-
 export default PostHeader

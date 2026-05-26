@@ -156,18 +156,28 @@ const Post = ({ post, recentPosts }) => {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const requestedSlug = normalizeSlug(params?.slug)
 
-  let postResponse = await client.getEntries({
-    content_type: 'post',
-    'fields.slug': requestedSlug,
-    limit: 1
-  })
+  const blogContentTypes = ['post', 'blogPost', 'blog']
+  let matchedPost = null
+  let matchedType = 'post'
 
-  if (!postResponse?.items?.length) {
+  for (const type of blogContentTypes) {
+    const exactResponse = await client.getEntries({
+      content_type: type,
+      'fields.slug': requestedSlug,
+      limit: 1
+    })
+
+    if (exactResponse?.items?.length) {
+      matchedPost = exactResponse.items[0]
+      matchedType = type
+      break
+    }
+
     const fallbackResponse = await client.getEntries({
-      content_type: 'post',
+      content_type: type,
       'fields.slug[match]': requestedSlug,
       limit: 10
     })
@@ -176,17 +186,21 @@ export const getStaticProps = async ({ params }) => {
       (item) => normalizeSlug(item?.fields?.slug) === requestedSlug
     )
 
-    postResponse = matchedItem ? { items: [matchedItem] } : postResponse
+    if (matchedItem) {
+      matchedPost = matchedItem
+      matchedType = type
+      break
+    }
   }
 
   const recentPostsResponse = await client.getEntries({
-    content_type: 'post',
+    content_type: matchedType,
     select: 'fields.title,fields.slug,fields.coverImage,fields.excerpt',
     limit: 5,
     order: '-sys.createdAt'
   })
 
-  if (!postResponse?.items?.length) {
+  if (!matchedPost) {
     return {
       redirect: {
         destination: '/blog',
@@ -197,22 +211,9 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: postResponse?.items?.[0],
+      post: matchedPost,
       recentPosts: recentPostsResponse.items,
-    },
-    revalidate: 60
-  }
-}
-
-export const getStaticPaths = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
-  const paths = response.items.map(item => ({
-    params: { slug: item.fields.slug }
-  }))
-
-  return {
-    paths,
-    fallback: 'blocking'
+    }
   }
 }
 

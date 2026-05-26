@@ -5,7 +5,6 @@ import DateComponent from '../ui/DateComponent'
 
 
 export default function PostCard ({ post }) {
-  if (!post?.fields) return null
   const { title, slug, excerpt, coverImage, author, date } = post.fields
   const imageFile = coverImage?.fields?.file
 
@@ -38,3 +37,4 @@ export default function PostCard ({ post }) {
     </li>
   )
 }
+
