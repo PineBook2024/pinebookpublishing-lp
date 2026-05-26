@@ -197,14 +197,26 @@ export default function BrandHeroFridayUpdate() {
 
       if (!res.ok || data?.success === false) {
         console.error("Lead submission error:", data);
-        alert(data?.message || "Lead submission failed");
+        alert(data?.message || "There was an error submitting your form. Please try again.");
         return;
       }
 
-      router.push("/thankyou-offer");
+      setShowSuccess(true);
+
+      setTimeout(() => {
+        router.push("/thank-you");
+      }, 1500);
+
+      setTimeout(() => {
+        setShowSuccess(false);
+        setEmail("");
+        setFullName("");
+        setPhoneNumber("");
+        setMessage("");
+      }, 3000);
     } catch (error) {
-      console.error("Network Error:", error);
-      alert("Network error. Please try again.");
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
