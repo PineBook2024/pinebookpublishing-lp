@@ -1,99 +1,33 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import useHubspotForm from "/hooks/hubspot";
 
-export default function HomePopupNew() {
+export default function HomePopupJuneteenth() {
   const router = useRouter();
   const pathname = usePathname();
   const { submitMainContactForm } = useHubspotForm();
-
-  const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
 
-  const [userInfo, setUserInfo] = useState({
-    ip: "",
-    city: "",
-    region: "",
-    country: "",
-  });
-
-  useEffect(() => {
-    fetchUserRegion();
-  }, []);
-
-  const fetchUserRegion = async () => {
-    try {
-      const response = await fetch("https://ipwhois.app/json/");
-      const data = await response.json();
-
-      setUserInfo({
-        ip: data.ip || "",
-        city: data.city || "",
-        region: data.region || "",
-        country: data.country || "",
-      });
-    } catch (error) {
-      console.error("Failed to fetch user region:", error);
-    }
-  };
-
-  const sendEmailNotification = async (formData) => {
-    try {
-      const response = await fetch("/api/brand-signup-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          phoneNumber: formData.phoneNumber,
-          message: formData.message,
-          currentPage: window.location.href,
-          referringPage: document.referrer || "Direct visit",
-          userIP: userInfo.ip,
-          userCity: userInfo.city,
-          userRegion: userInfo.region,
-          userCountry: userInfo.country,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (!result.success) {
-        console.error("Email sending failed:", result.message);
-      }
-
-      return result;
-    } catch (error) {
-      console.error("Error sending email:", error);
-      return { success: false, error: error.message };
-    }
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const setters = {
-      fullName: setFullName,
-      email: setEmail,
-      message: setMessage,
-      phoneNumber: setPhoneNumber,
-    };
-
-    const setter = setters[name];
-    if (!setter) return;
+    if (!Object.prototype.hasOwnProperty.call(form, name)) return;
 
     if (name === "phoneNumber") {
       const phoneRegex = /^\d{0,}$/;
       if (phoneRegex.test(value)) {
-        setter(value);
+        setForm((prev) => ({ ...prev, [name]: value }));
         if (value.length > 0 && value.length < 9) {
           setPhoneError("Phone number must be at least 9 digits");
         } else {
@@ -105,41 +39,28 @@ export default function HomePopupNew() {
       return;
     }
 
-    setter(value);
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (phoneNumber.length < 9) {
+    if (form.phoneNumber.length < 9) {
       setPhoneError("Phone number must be at least 9 digits");
       return;
     }
 
     setIsSubmitting(true);
 
-    const formData = {
-      fullName,
-      email,
-      phoneNumber,
-      message,
-    };
-
     try {
-      const [emailResult, hubspotResponse, crmResult] = await Promise.all([
-        sendEmailNotification(formData),
-        submitMainContactForm(fullName, email, phoneNumber, message),
-        fetch("/api/lead-capture", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }).then((r) => r.json()),
-      ]);
+      const hubspotResponse = await submitMainContactForm(
+        form.fullName,
+        form.email,
+        form.phoneNumber,
+        form.message
+      );
 
-      const crmOk = crmResult?.success === true;
-      console.log(crmOk);
-
-      if (emailResult.success && hubspotResponse) {
+      if (hubspotResponse) {
         setShowSuccess(true);
         setTimeout(() => {
           router.push("/thank-you");
@@ -147,27 +68,11 @@ export default function HomePopupNew() {
 
         setTimeout(() => {
           setShowSuccess(false);
-          setEmail("");
-          setFullName("");
-          setPhoneNumber("");
-          setMessage("");
+          setForm({ fullName: "", email: "", phoneNumber: "", message: "" });
         }, 3000);
       } else {
-        if (!emailResult.success) {
-          console.error("Email submission failed:", emailResult.message);
-        }
-        if (!hubspotResponse) {
-          console.error("HubSpot submission failed");
-        }
-
-        if (emailResult.success || hubspotResponse) {
-          setShowSuccess(true);
-          setTimeout(() => {
-            router.push("/thank-you");
-          }, 1500);
-        } else {
-          alert("There was an error submitting your form. Please try again.");
-        }
+        console.error("HubSpot submission failed");
+        alert("There was an error submitting your form. Please try again.");
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -182,293 +87,131 @@ export default function HomePopupNew() {
   return (
     <>
       {isOpen && (
-        <div className="jt-overlay">
-          <div className="jt-modal">
+        <section className="fixed inset-0 z-[99999] flex items-center justify-center overflow-y-auto bg-black/60 p-3 md:p-6">
+          <div className="relative my-auto w-full max-w-[1040px] overflow-hidden rounded-[24px] bg-[#e8e8ee] shadow-2xl">
             <button
               type="button"
-              className="jt-close"
-              aria-label="Close"
               onClick={() => setIsOpen(false)}
+              aria-label="Close modal"
+              className="popup-close-btn absolute top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-[#10163d] text-white transition hover:opacity-90"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
-                strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
 
-            <div className="jt-grid">
-              {/* Image side */}
-              <div className="jt-image">
-                <img src="/brand-img/JuneTeenth.jpg" alt="Juneteenth popup banner" />
-                <div className="jt-image-footer">
-                  <button type="button" className="jt-explore">Explore Now</button>
+            <div className="grid grid-cols-1 md:grid-cols-[479px_1fr]">
+              <div className="relative aspect-[841/1124] w-full bg-[#eef3ee]">
+                <Image
+                  src="/brand-img/JuneTeenth.jpg"
+                  alt="Juneteenth popup banner"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-x-0 bottom-0 flex justify-start bg-gradient-to-t from-black/60 to-transparent p-5 md:p-6">
+                  <button
+                    type="button"
+                    className="inline-flex items-center rounded-md bg-[#0f1438] px-6 py-3 font-poppins text-sm font-semibold uppercase text-white transition hover:bg-[#1b235e]"
+                  >
+                    Explore Now
+                  </button>
                 </div>
               </div>
 
-              {/* Form side */}
-              <div className="jt-form-side">
-                <span className="jt-corner" />
-                <form onSubmit={handleSubmit}>
-                  <h2 className="jt-title">Avail 50% Discount On Publishing This Juneteenth!</h2>
-                  <p className="jt-text">
-                    Have you completed your manuscript and want it published now? On Juneteenth,
-                    get an exclusive 50% discount on all of our book publishing packages.
-                  </p>
+              <div className="relative bg-[#f3f4f8] p-5 md:p-8">
+                <div className="absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-[#f39a1f] to-[#df3369] [clip-path:polygon(100%_0,0_0,100%_100%)]" />
 
-                  <div className="jt-fields">
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-6 text-left">
+                    <h2
+                      className="text-2xl font-extrabold leading-tight text-[#10163d] md:text-[34px]"
+                      style={{
+                        fontFamily: "'Merriweather', serif",
+                        letterSpacing: "0.2px",
+                        textWrap: "balance",
+                      }}
+                    >
+                      Don&apos;t Miss a 20% Discount on Juneteenth!
+                    </h2>
+                    <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
+                      Want to have your manuscript written or polished? Pine Book Writing is offering an exclusive 20% discount this Juneteenth on all of our ghostwriting and editing packages.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
                     <input
                       type="text"
                       name="fullName"
-                      value={fullName}
                       onChange={handleChange}
-                      placeholder="Enter your Name"
+                      value={form.fullName}
                       required
+                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
+                      placeholder="Enter your Name"
                     />
+
                     <input
                       type="text"
                       name="phoneNumber"
-                      value={phoneNumber}
                       onChange={handleChange}
+                      value={form.phoneNumber}
+                      required
+                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
                       placeholder="Enter your Phone"
-                      required
                     />
-                    {phoneError && <p className="jt-error">{phoneError}</p>}
+                    {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
+
                     <input
-                      type="email"
+                      type="text"
                       name="email"
-                      value={email}
                       onChange={handleChange}
+                      value={form.email}
+                      required
+                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
                       placeholder="Enter your Email"
-                      required
                     />
+
                     <textarea
-                      name="message"
-                      rows={3}
-                      value={message}
                       onChange={handleChange}
-                      placeholder="Enter your Message"
+                      value={form.message}
                       required
+                      placeholder="Enter your Message"
+                      name="message"
+                      className="min-h-[88px] w-full resize-none rounded-lg border border-[#ced3ea] bg-white px-4 py-3 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
+                      rows={3}
                     />
+
                     {showSuccess && (
-                      <p className="jt-success">Form submitted Successfully!</p>
+                      <p className="px-1 py-2 text-green-700">Form submitted Successfully!</p>
                     )}
-                    <button type="submit" className="jt-submit" disabled={isSubmitting}>
-                      {isSubmitting ? "Submitting..." : "Activate Your 50% Discount"}
+
+                    <button
+                      className="w-full rounded-lg bg-[#10163d] p-3 font-poppins text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#17205a] disabled:cursor-not-allowed disabled:opacity-50"
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Submitting..." : "Activate Your 20% Discount"}
                     </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       )}
-
       <style jsx>{`
-        .jt-overlay {
-          position: fixed;
-          inset: 0;
-          z-index: 50;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow-y: auto;
-          padding: 24px;
-          background: rgba(0, 0, 0, 0.6);
-        }
-        .jt-modal {
-          position: relative;
-          margin: auto;
-          width: 100%;
-          max-width: 1180px;
-          background: #e8e8ee;
-          border-radius: 24px;
-          overflow: hidden;
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        .jt-close {
-          position: absolute;
-          top: 16px;
+        .popup-close-btn {
           right: 16px;
-          z-index: 20;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 0;
-          border-radius: 9999px;
-          background: #10163d;
-          color: #fff;
-          cursor: pointer;
-          transition: opacity 0.2s;
-        }
-        .jt-close:hover {
-          opacity: 0.9;
-        }
-        .jt-close :global(svg) {
-          width: 20px;
-          height: 20px;
-        }
-
-        .jt-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-
-        /* Image side */
-        .jt-image {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 841 / 1124;
-          background: #eef3ee;
-        }
-        .jt-image :global(img) {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-        }
-        .jt-image-footer {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: flex;
-          justify-content: flex-start;
-          padding: 20px;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-        }
-        .jt-explore {
-          display: inline-flex;
-          align-items: center;
-          padding: 12px 24px;
-          border: 0;
-          border-radius: 6px;
-          background: #0f1438;
-          color: #fff;
-          cursor: pointer;
-          font: 600 14px/1 "Poppins", sans-serif;
-          text-transform: uppercase;
-          transition: background 0.2s;
-        }
-        .jt-explore:hover {
-          background: #1b235e;
-        }
-
-        /* Form side */
-        .jt-form-side {
-          position: relative;
-          background: #f3f4f8;
-          padding: 20px;
-        }
-        .jt-corner {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(to bottom left, #f39a1f, #df3369);
-          clip-path: polygon(100% 0, 0 0, 100% 100%);
-        }
-        .jt-title {
-          margin: 0;
-          color: #10163d;
-          font: 800 28px/1.15 "Merriweather", serif;
-          letter-spacing: 0.2px;
-          text-wrap: balance;
-        }
-        .jt-text {
-          margin: 12px 0 24px;
-          color: #3b4155;
-          font: 400 14px/1.5 "Poppins", sans-serif;
-        }
-
-        .jt-fields {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .jt-fields :global(input),
-        .jt-fields :global(textarea) {
-          width: 100%;
-          box-sizing: border-box;
-          border: 1px solid #ced3ea;
-          border-radius: 8px;
-          background: #fff;
-          color: #0f1535;
-          font: 400 14px "Poppins", sans-serif;
-          outline: none;
-        }
-        .jt-fields :global(input) {
-          height: 48px;
-          padding: 0 16px;
-        }
-        .jt-fields :global(textarea) {
-          min-height: 88px;
-          padding: 12px 16px;
-          resize: none;
-        }
-        .jt-fields :global(input):focus,
-        .jt-fields :global(textarea):focus {
-          border-color: #2c9384;
-        }
-        .jt-error {
-          margin: 0;
-          color: #ef4444;
-          font: 400 13px "Poppins", sans-serif;
-        }
-        .jt-success {
-          margin: 0;
-          padding: 4px 0;
-          color: #15803d;
-          font: 500 14px "Poppins", sans-serif;
-        }
-
-        .jt-submit {
-          width: 100%;
-          padding: 12px;
-          border: 0;
-          border-radius: 8px;
-          background: #10163d;
-          color: #fff;
-          cursor: pointer;
-          font: 600 14px "Poppins", sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 0.4px;
-          transition: background 0.2s;
-        }
-        .jt-submit:hover {
-          background: #17205a;
-        }
-        .jt-submit:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-
-        /* Desktop: two columns, fixed-height image filling the wider panel */
-        @media (min-width: 768px) {
-          .jt-grid {
-            grid-template-columns: 540px 1fr;
-          }
-          .jt-image {
-            aspect-ratio: auto;
-            height: 600px;
-          }
-          .jt-form-side {
-            padding: 32px;
-          }
-          .jt-title {
-            font-size: 34px;
-          }
-          .jt-text {
-            font-size: 15px;
-          }
-          .jt-image-footer {
-            padding: 24px;
-          }
         }
       `}</style>
     </>
