@@ -198,8 +198,8 @@ export default function HomePopupNew() {
             <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
               <div className="relative min-h-[260px] md:min-h-[500px]">
                 <Image
-                  src="/brand-img/01-02.jpg"
-                  alt="Memorial Day popup banner"
+                  src="/brand-img/juneteenth.jpg"
+                  alt="Juneteenth publishing popup banner"
                   fill
                   className="object-cover"
                   priority
@@ -230,10 +230,11 @@ export default function HomePopupNew() {
                         textWrap: "balance",
                       }}
                     >
-                      Memorial Day Special - Get 50% OFF on Your Book Project
+                      Avail 50% Discount On Publishing This Juneteenth!
                     </h2>
                     <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
-                      Have you completed your manuscript and want it published now? On this Memorial Day, get an exclusive 50% discount on all of our book publishing packages.                    </p>
+                      Have you completed your manuscript and want it published now? On Juneteenth, get an exclusive 50% discount on all of our book publishing packages.
+                    </p>
                   </div>
 
                   <div className="space-y-3">
