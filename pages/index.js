@@ -35,6 +35,7 @@ import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
 import PortfolioSlider5 from "./components/PortfolioSlider5";
 import HomeBookSlider from "./components/HomeBookSlider";
 import HomePopupNNew from "../components/HomePopupNNew";
+import BrandVideoShowcase from "./components/BrandVideoShowcase";
 
 const videoClient = [
     {
@@ -132,6 +133,7 @@ export default function Home() {
                 desc="It’s okay to have questions since we understand that your book is close to your heart. Why not just get into a quick discussion?"
                 btntext="Speak to our Consultant"
             />
+            <BrandVideoShowcase />
             <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
