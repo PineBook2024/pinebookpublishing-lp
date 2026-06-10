@@ -198,7 +198,7 @@ export default function HomePopupNew() {
             <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
               <div className="relative min-h-[260px] md:min-h-[500px]">
                 <Image
-                  src="/brand-img/juneteenth.jpg"
+                  src="/brand-img/JuneTeenth.jpg"
                   alt="Juneteenth publishing popup banner"
                   fill
                   className="object-cover"
