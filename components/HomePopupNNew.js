@@ -1,8 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import useHubspotForm from "/hooks/hubspot";
 
 export default function HomePopupNew() {
@@ -184,124 +182,78 @@ export default function HomePopupNew() {
   return (
     <>
       {isOpen && (
-        <section className="fixed inset-0 z-50 flex items-center justify-center p-3 bg-black/60 md:p-6">
-          <div className="relative w-full max-w-6xl overflow-hidden rounded-[24px] bg-[#e8e8ee] shadow-2xl">
+        <div className="jt-overlay">
+          <div className="jt-modal">
             <button
               type="button"
+              className="jt-close"
+              aria-label="Close"
               onClick={() => setIsOpen(false)}
-              aria-label="Close modal"
-              className="absolute right-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-[#10163d] text-white transition hover:opacity-90"
             >
-              ×
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
-              <div className="relative min-h-[260px] md:min-h-[500px]">
-                <Image
-                  src="/brand-img/JuneTeenth.jpg"
-                  alt="Juneteenth publishing popup banner"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 via-black/40 to-transparent md:p-8">
-                  <h3 className="max-w-[420px] font-poppins text-3xl font-bold leading-tight text-white md:text-[56px]">
-                    <span className="popup-typewriter">Get 50% OFF</span>
-                  </h3>
-                  <button
-                    type="button"
-                    className="mt-5 inline-flex items-center rounded-md bg-[#0f1438] px-6 py-3 font-poppins text-sm font-semibold uppercase text-white transition hover:bg-[#1b235e]"
-                  >
-                    Explore Now
-                  </button>
+            <div className="jt-grid">
+              {/* Image side */}
+              <div className="jt-image">
+                <img src="/brand-img/JuneTeenth.jpg" alt="Juneteenth popup banner" />
+                <div className="jt-image-footer">
+                  <button type="button" className="jt-explore">Explore Now</button>
                 </div>
               </div>
 
-              <div className="relative bg-[#f3f4f8] p-5 md:p-8">
-                <div className="absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-[#f39a1f] to-[#df3369] [clip-path:polygon(100%_0,0_0,100%_100%)]" />
-
+              {/* Form side */}
+              <div className="jt-form-side">
+                <span className="jt-corner" />
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-6 text-left">
-                    <h2
-                      className="text-2xl font-extrabold leading-tight text-[#10163d] md:text-[34px]"
-                      style={{
-                        fontFamily: "'Merriweather', serif",
-                        letterSpacing: "0.2px",
-                        textWrap: "balance",
-                      }}
-                    >
-                      Avail 50% Discount On Publishing This Juneteenth!
-                    </h2>
-                    <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
-                      Have you completed your manuscript and want it published now? On Juneteenth, get an exclusive 50% discount on all of our book publishing packages.
-                    </p>
-                  </div>
+                  <h2 className="jt-title">Avail 50% Discount On Publishing This Juneteenth!</h2>
+                  <p className="jt-text">
+                    Have you completed your manuscript and want it published now? On Juneteenth,
+                    get an exclusive 50% discount on all of our book publishing packages.
+                  </p>
 
-                  <div className="space-y-3">
+                  <div className="jt-fields">
                     <input
                       type="text"
                       name="fullName"
-                      onChange={handleChange}
                       value={fullName}
-                      required
-                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
+                      onChange={handleChange}
                       placeholder="Enter your Name"
+                      required
                     />
-
                     <input
                       type="text"
                       name="phoneNumber"
-                      onChange={handleChange}
                       value={phoneNumber}
-                      required
-                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
+                      onChange={handleChange}
                       placeholder="Enter your Phone"
+                      required
                     />
-                    {phoneError && <p className="text-sm text-red-500">{phoneError}</p>}
-
+                    {phoneError && <p className="jt-error">{phoneError}</p>}
                     <input
-                      type="text"
+                      type="email"
                       name="email"
-                      onChange={handleChange}
                       value={email}
-                      required
-                      className="h-12 w-full rounded-lg border border-[#ced3ea] bg-white px-4 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
-                      placeholder="Enter your Email"
-                    />
-
-                    <textarea
                       onChange={handleChange}
-                      value={message}
+                      placeholder="Enter your Email"
                       required
-                      placeholder="Enter your Message"
-                      name="message"
-                      className="min-h-[88px] w-full resize-none rounded-lg border border-[#ced3ea] bg-white px-4 py-3 font-poppins text-sm text-[#0f1535] outline-none focus:border-[#2c9384]"
-                      rows={3}
                     />
-
-                    {/* <div className="flex items-start">
-                      <div className="flex items-center h-5">
-                        <input
-                          id="popup-consent"
-                          type="checkbox"
-                          className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50"
-                          required
-                        />
-                      </div>
-                      <label htmlFor="popup-consent" className="ms-2 text-xs font-medium text-[#3b4155]">
-                        By checking this box, I consent to received text messages related to Follow Up Messages and Appointment Reminders from Pine Book Writing and Publishing. you can reply "STOP" at any time to opt-out. Message and data rates may apply. Message Frequency may vary, text Help to <Link href="tel:(866) 841-7469" className="text-blue-600">(866) 841-7469</Link> for assistance. For more information, please refer to our <Link href="privacy-policy" className="text-blue-600" target="_blank">PRIVACY POLICY</Link> and SMS <Link href="terms-and-conditions" className="text-blue-600" target="_blank"> TERMS and CONDITIONS </Link> on our website.
-                      </label>
-                    </div> */}
-
+                    <textarea
+                      name="message"
+                      rows={3}
+                      value={message}
+                      onChange={handleChange}
+                      placeholder="Enter your Message"
+                      required
+                    />
                     {showSuccess && (
-                      <p className="px-1 py-2 text-green-700">Form submitted Successfully!</p>
+                      <p className="jt-success">Form submitted Successfully!</p>
                     )}
-
-                    <button
-                      className="w-full rounded-lg bg-[#10163d] p-3 font-poppins text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#17205a] disabled:cursor-not-allowed disabled:opacity-50"
-                      type="submit"
-                      disabled={isSubmitting}
-                    >
+                    <button type="submit" className="jt-submit" disabled={isSubmitting}>
                       {isSubmitting ? "Submitting..." : "Activate Your 50% Discount"}
                     </button>
                   </div>
@@ -309,36 +261,213 @@ export default function HomePopupNew() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       )}
+
       <style jsx>{`
-        .popup-typewriter {
-          display: inline-block;
+        .jt-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 50;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow-y: auto;
+          padding: 24px;
+          background: rgba(0, 0, 0, 0.6);
+        }
+        .jt-modal {
+          position: relative;
+          margin: auto;
+          width: 100%;
+          max-width: 1024px;
+          background: #e8e8ee;
+          border-radius: 24px;
           overflow: hidden;
-          white-space: nowrap;
-          border-right: 2px solid #ffffff;
-          width: 0;
-          animation: typing 2.4s steps(11, end) infinite, blink 0.8s step-end infinite;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .jt-close {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          z-index: 20;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border: 0;
+          border-radius: 9999px;
+          background: #10163d;
+          color: #fff;
+          cursor: pointer;
+          transition: opacity 0.2s;
+        }
+        .jt-close:hover {
+          opacity: 0.9;
+        }
+        .jt-close :global(svg) {
+          width: 20px;
+          height: 20px;
         }
 
-        @keyframes typing {
-          0% {
-            width: 0;
-          }
-          45% {
-            width: 11ch;
-          }
-          70% {
-            width: 11ch;
-          }
-          100% {
-            width: 0;
-          }
+        .jt-grid {
+          display: grid;
+          grid-template-columns: 1fr;
         }
 
-        @keyframes blink {
-          50% {
-            border-color: transparent;
+        /* Image side */
+        .jt-image {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 841 / 1124;
+          background: #eef3ee;
+        }
+        .jt-image :global(img) {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .jt-image-footer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: flex-start;
+          padding: 20px;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+        .jt-explore {
+          display: inline-flex;
+          align-items: center;
+          padding: 12px 24px;
+          border: 0;
+          border-radius: 6px;
+          background: #0f1438;
+          color: #fff;
+          cursor: pointer;
+          font: 600 14px/1 "Poppins", sans-serif;
+          text-transform: uppercase;
+          transition: background 0.2s;
+        }
+        .jt-explore:hover {
+          background: #1b235e;
+        }
+
+        /* Form side */
+        .jt-form-side {
+          position: relative;
+          background: #f3f4f8;
+          padding: 20px;
+        }
+        .jt-corner {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(to bottom left, #f39a1f, #df3369);
+          clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+        .jt-title {
+          margin: 0;
+          color: #10163d;
+          font: 800 28px/1.15 "Merriweather", serif;
+          letter-spacing: 0.2px;
+          text-wrap: balance;
+        }
+        .jt-text {
+          margin: 12px 0 24px;
+          color: #3b4155;
+          font: 400 14px/1.5 "Poppins", sans-serif;
+        }
+
+        .jt-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .jt-fields :global(input),
+        .jt-fields :global(textarea) {
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid #ced3ea;
+          border-radius: 8px;
+          background: #fff;
+          color: #0f1535;
+          font: 400 14px "Poppins", sans-serif;
+          outline: none;
+        }
+        .jt-fields :global(input) {
+          height: 48px;
+          padding: 0 16px;
+        }
+        .jt-fields :global(textarea) {
+          min-height: 88px;
+          padding: 12px 16px;
+          resize: none;
+        }
+        .jt-fields :global(input):focus,
+        .jt-fields :global(textarea):focus {
+          border-color: #2c9384;
+        }
+        .jt-error {
+          margin: 0;
+          color: #ef4444;
+          font: 400 13px "Poppins", sans-serif;
+        }
+        .jt-success {
+          margin: 0;
+          padding: 4px 0;
+          color: #15803d;
+          font: 500 14px "Poppins", sans-serif;
+        }
+
+        .jt-submit {
+          width: 100%;
+          padding: 12px;
+          border: 0;
+          border-radius: 8px;
+          background: #10163d;
+          color: #fff;
+          cursor: pointer;
+          font: 600 14px "Poppins", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 0.4px;
+          transition: background 0.2s;
+        }
+        .jt-submit:hover {
+          background: #17205a;
+        }
+        .jt-submit:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
+        /* Desktop: two columns, fixed-height image filling the wider panel */
+        @media (min-width: 768px) {
+          .jt-grid {
+            grid-template-columns: 540px 1fr;
+          }
+          .jt-image {
+            aspect-ratio: auto;
+            height: 600px;
+          }
+          .jt-form-side {
+            padding: 32px;
+          }
+          .jt-title {
+            font-size: 34px;
+          }
+          .jt-text {
+            font-size: 15px;
+          }
+          .jt-image-footer {
+            padding: 24px;
           }
         }
       `}</style>
