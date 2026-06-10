@@ -280,7 +280,7 @@ export default function HomePopupNew() {
           position: relative;
           margin: auto;
           width: 100%;
-          max-width: 1024px;
+          max-width: 1180px;
           background: #e8e8ee;
           border-radius: 24px;
           overflow: hidden;
