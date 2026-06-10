@@ -1,14 +1,12 @@
 import RichText from '../RichText'
 
 const PostBody = ({ post }) => {
-  if (!post?.fields) return null
-  const { content } = post.fields
+  const content = post?.fields?.content
 
   return (
     <div className='mx-auto prose'>
-      <RichText content={content} />
+      {content ? <RichText content={content} /> : <p>Content will be available soon.</p>}
     </div>
   )
 }
-
 export default PostBody

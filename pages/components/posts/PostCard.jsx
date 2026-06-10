@@ -5,13 +5,14 @@ import DateComponent from '../ui/DateComponent'
 
 
 export default function PostCard ({ post }) {
-  if (!post?.fields) return null
-  const { title, slug, excerpt, coverImage, author, date } = post.fields
+  const fields = post?.fields || {}
+  const { title, slug, excerpt, coverImage, date } = fields
   const imageFile = coverImage?.fields?.file
+  const postUrl = slug ? `/blog/${slug}` : '#'
 
   return (
     <li className='rounded-md overflow-hidden shadow-md'>
-      <Link href={`/blog/${slug}`} aria-label={title}>
+      <Link href={postUrl} aria-label={title || 'Blog post'}>
         <div className='mb-2'>
           {imageFile ? (
             <ContentfulImage
@@ -26,11 +27,11 @@ export default function PostCard ({ post }) {
         </div>
         <div className='p-4'>
          
-          <h3 className='text-md mb-1 leading-snug font-bold'>{title}</h3>
+          <h3 className='text-md mb-1 leading-snug font-bold'>{title || 'Untitled Post'}</h3>
           <div className='text-sm mb-1 mt-3 text-gray-400'>
-            <DateComponent dateString={date} />
+            {date ? <DateComponent dateString={date} /> : null}
           </div>
-          <p className="text-base mb-4 line-clamp-3">{excerpt}</p>
+          <p className="text-base mb-4 line-clamp-3">{excerpt || 'No excerpt available.'}</p>
           <span className='text-green-700'>Read More</span>
           {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
         </div>
@@ -38,3 +39,4 @@ export default function PostCard ({ post }) {
     </li>
   )
 }
+
