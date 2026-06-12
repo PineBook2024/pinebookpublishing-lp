@@ -142,10 +142,10 @@ export default function HomePopupJuneteenth() {
                         textWrap: "balance",
                       }}
                     >
-                      Don&apos;t Miss a 20% Discount on Juneteenth!
+                      Avail 50% Discount On Publishing This Juneteenth!
                     </h2>
                     <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
-                      Want to have your manuscript written or polished? Pine Book Writing is offering an exclusive 20% discount this Juneteenth on all of our ghostwriting and editing packages.
+                      Have you completed your manuscript and want it published now? On Juneteenth, get an exclusive 50% discount on all of our book publishing packages.
                     </p>
                   </div>
 
@@ -200,7 +200,7 @@ export default function HomePopupJuneteenth() {
                       type="submit"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Submitting..." : "Activate Your 20% Discount"}
+                      {isSubmitting ? "Submitting..." : "Activate Your 50% Discount"}
                     </button>
                   </div>
                 </form>
