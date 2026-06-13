@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 import { Fragment, useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
+import BrandVideoShowcase from "../components/BrandVideoShowcase";
 import BrandFooterBook from "../components/BrandFooterBook";
 import HeroFormBookOffer, { countryCodes as projectCountryCodes } from "../components/HerformBookOffer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -1393,6 +1394,8 @@ export default function HomePage() {
           </div>
         </div>
       </section> */}
+
+        <BrandVideoShowcase />
 
         {/* <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
         <div className="max-w-6xl mx-auto px-6 text-center">
