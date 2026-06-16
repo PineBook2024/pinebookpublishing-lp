@@ -10,6 +10,8 @@ import BrandProcess from "./components/BrandProcess";
 import BrandAudioPlayer from "./components/BrandAudioPlayer";
 import Link from "next/link";
 import BrandTopBar from "./components/BrandTopBar";
+import BrandVideoShowcase from "./components/BrandVideoShowcase";
+import ExclusiveBookSigningParallax from "./components/ExclusiveBookSigningParallax";
 
 export default function BookMarketing() {
     const [openFAQ, setOpenFAQ] = useState(0);
@@ -153,6 +155,10 @@ export default function BookMarketing() {
                     </div>
                 </div> */}
             </section>
+            <BrandVideoShowcase />
+
+            <ExclusiveBookSigningParallax />
+
             <section className="overflow-hidden" >
                 <div className="brand-choose-us-section ms-auto relative left-0 md:left-52 px-12 md:px-20 mt-20 mb-8  " >
                     <div className="flex items-center flex-col md:flex-row" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">
@@ -184,6 +190,7 @@ export default function BookMarketing() {
                     </div>
                 </div>
             </section>
+
             <section className="brand-testimonials-section">
                 <div className="max-w-screen-xl mx-auto px-4 my-20 relative py-22">
                     <div className="text-center mb-6">
