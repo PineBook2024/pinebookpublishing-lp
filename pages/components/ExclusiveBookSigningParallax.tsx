@@ -80,7 +80,7 @@ export default function ExclusiveBookSigningParallax() {
     return (
         <>
             <section
-                className="py-16 bg-white"
+                className="pt-16 pb-20 md:pb-24 bg-white"
                 data-aos="fade-up"
                 data-aos-duration="1500"
             >
