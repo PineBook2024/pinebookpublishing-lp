@@ -6,7 +6,10 @@ import Link from "next/link";
 import useHubspotForm from "/hooks/hubspot";
 
 export default function HomePopupJuneteenth() {
-  const OFFER_DURATION_SECONDS = (57 * 60 * 60) + (32 * 60) + 25;
+  const getOfferTimeLeft = () => {
+    const offerDeadline = new Date(2026, 5, 19, 23, 59, 59);
+    return Math.max(0, Math.floor((offerDeadline.getTime() - Date.now()) / 1000));
+  };
   const router = useRouter();
   const pathname = usePathname();
   const { submitMainContactForm } = useHubspotForm();
@@ -20,7 +23,7 @@ export default function HomePopupJuneteenth() {
   const [phoneError, setPhoneError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(OFFER_DURATION_SECONDS);
+  const [timeLeft, setTimeLeft] = useState(getOfferTimeLeft);
 
   const timerParts = {
     hours: String(Math.floor(timeLeft / 3600)).padStart(2, "0"),
@@ -40,7 +43,7 @@ export default function HomePopupJuneteenth() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((current) => (current > 0 ? current - 1 : 0));
+      setTimeLeft(getOfferTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
@@ -175,23 +178,25 @@ export default function HomePopupJuneteenth() {
                     </p>
                   </div>
 
-                  <div className="jt-offer-timer" aria-label={`${timerParts.hours} hours ${timerParts.minutes} minutes ${timerParts.seconds} seconds remaining`}>
-                    <p className="jt-offer-title">LIMITED TIME OFFER</p>
-                    <div className="jt-countdown">
-                      {["hours", "minutes", "seconds"].map((part, partIndex) => (
-                        <Fragment key={part}>
-                          <div className="jt-time-group">
-                            {timerParts[part].split("").map((digit, digitIndex) => (
-                              <span className="jt-time-digit" key={`${part}-${digitIndex}`}>
-                                {digit}
-                              </span>
-                            ))}
-                          </div>
-                          {partIndex < 2 && <span className="jt-time-separator">:</span>}
-                        </Fragment>
-                      ))}
+                  {timeLeft > 0 && (
+                    <div className="jt-offer-timer" aria-label={`${timerParts.hours} hours ${timerParts.minutes} minutes ${timerParts.seconds} seconds remaining`}>
+                      <p className="jt-offer-title">LIMITED TIME OFFER</p>
+                      <div className="jt-countdown">
+                        {["hours", "minutes", "seconds"].map((part, partIndex) => (
+                          <Fragment key={part}>
+                            <div className="jt-time-group">
+                              {timerParts[part].split("").map((digit, digitIndex) => (
+                                <span className="jt-time-digit" key={`${part}-${digitIndex}`}>
+                                  {digit}
+                                </span>
+                              ))}
+                            </div>
+                            {partIndex < 2 && <span className="jt-time-separator">:</span>}
+                          </Fragment>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="space-y-3">
                     <input
