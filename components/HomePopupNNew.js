@@ -1,11 +1,12 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useHubspotForm from "/hooks/hubspot";
 
 export default function HomePopupJuneteenth() {
+  const OFFER_DURATION_SECONDS = (57 * 60 * 60) + (32 * 60) + 25;
   const router = useRouter();
   const pathname = usePathname();
   const { submitMainContactForm } = useHubspotForm();
@@ -19,6 +20,13 @@ export default function HomePopupJuneteenth() {
   const [phoneError, setPhoneError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(OFFER_DURATION_SECONDS);
+
+  const timerParts = {
+    hours: String(Math.floor(timeLeft / 3600)).padStart(2, "0"),
+    minutes: String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0"),
+    seconds: String(timeLeft % 60).padStart(2, "0"),
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -29,6 +37,14 @@ export default function HomePopupJuneteenth() {
       };
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((current) => (current > 0 ? current - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -121,7 +137,7 @@ export default function HomePopupJuneteenth() {
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-[479px_1fr]">
-              <div className="relative aspect-[841/1124] w-full bg-[#eef3ee]">
+              <div className="jt-popup-image relative aspect-[841/1124] w-full bg-[#eef3ee]">
                 <Image
                   src="/brand-img/JuneTeenth.jpg"
                   alt="Juneteenth popup banner"
@@ -157,6 +173,24 @@ export default function HomePopupJuneteenth() {
                     <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
                       Have you completed your manuscript and want it published now? On Juneteenth, get an exclusive 50% discount on all of our book publishing packages.
                     </p>
+                  </div>
+
+                  <div className="jt-offer-timer" aria-label={`${timerParts.hours} hours ${timerParts.minutes} minutes ${timerParts.seconds} seconds remaining`}>
+                    <p className="jt-offer-title">LIMITED TIME OFFER</p>
+                    <div className="jt-countdown">
+                      {["hours", "minutes", "seconds"].map((part, partIndex) => (
+                        <Fragment key={part}>
+                          <div className="jt-time-group">
+                            {timerParts[part].split("").map((digit, digitIndex) => (
+                              <span className="jt-time-digit" key={`${part}-${digitIndex}`}>
+                                {digit}
+                              </span>
+                            ))}
+                          </div>
+                          {partIndex < 2 && <span className="jt-time-separator">:</span>}
+                        </Fragment>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="space-y-3">
@@ -222,6 +256,74 @@ export default function HomePopupJuneteenth() {
       <style jsx>{`
         .popup-close-btn {
           right: 16px;
+        }
+        .jt-offer-timer {
+          margin: -6px 0 18px;
+          padding: 14px 12px 12px;
+          border-radius: 12px;
+          background: #10163d;
+          text-align: center;
+        }
+        .jt-offer-title {
+          margin: 0 0 6px;
+          color: #fff;
+          font-family: "Poppins", sans-serif;
+          font-size: 20px;
+          font-weight: 800;
+          line-height: 1;
+        }
+        .jt-countdown {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+        .jt-time-group {
+          display: flex;
+          gap: 3px;
+        }
+        .jt-time-digit {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 23px;
+          height: 38px;
+          overflow: hidden;
+          border-radius: 5px;
+          background: linear-gradient(#ffc331 0 48%, #f1a900 48% 52%, #ffc331 52% 100%);
+          color: #050505;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 28px;
+          font-weight: 900;
+          line-height: 1;
+          box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
+        }
+        .jt-time-digit::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          height: 2px;
+          background: rgba(0, 0, 0, 0.32);
+          transform: translateY(-50%);
+        }
+        .jt-time-separator {
+          color: #fff;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 29px;
+          font-weight: 900;
+          line-height: 1;
+        }
+        :global(.jt-popup-image) {
+          height: 100%;
+        }
+        @media (min-width: 768px) {
+          :global(.jt-popup-image) {
+            aspect-ratio: auto;
+            min-height: 100%;
+          }
         }
       `}</style>
     </>

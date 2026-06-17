@@ -88,6 +88,10 @@ export default function PortfolioSlider1() {
             id: 9,
             src: "/brand-img/Doris.jpg",
         },
+        {
+            id: 10,
+            src: "/brand-img/PB-cover.jpg",
+        },
     ];
 
     return (

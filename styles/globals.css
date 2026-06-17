@@ -742,6 +742,55 @@ footer svg {
   background-color: #1b1e5b;
 }
 
+.package-tabs {
+  display: inline-flex;
+  gap: 10px;
+  padding: 8px;
+  background-color: #f1efef;
+  border: 1px solid #d6d6d6;
+  border-radius: 40px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.package-tabs button {
+  padding: 12px 26px;
+  border-radius: 30px;
+  color: #0d0f38;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+
+.package-tabs button.active,
+.package-tabs button:hover {
+  background-color: #147d6e;
+  color: #fff;
+}
+
+.marketing-packages-wrapper {
+  align-items: stretch;
+}
+
+.marketing-package-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.marketing-packages-content {
+  height: 520px;
+}
+
+.marketing-package-desc {
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.marketing-package-section:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .single-packages {
   background-color: #d6d6d6;
   border-radius: 26px;
@@ -1157,6 +1206,21 @@ footer svg {
 
   .main-banner-vid p {
     font-size: 19px;
+  }
+
+  .package-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .package-tabs button {
+    width: 100%;
+  }
+
+  .marketing-packages-content {
+    height: 420px;
   }
 
   .single-packages .package-badge {
