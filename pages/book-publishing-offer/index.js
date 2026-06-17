@@ -76,7 +76,7 @@ const PortfolioSlider1LP = dynamic(() => import("/components/PortfolioSlider1LP"
 const PortfolioSlider2LP = dynamic(() => import("/components/PortfolioSlider2LP"), {
   ssr: false,
 });
-const PortfolioSlider3LP = dynamic(() => import("/components/PortfolioSlider3"), {
+const PortfolioSlider3LP = dynamic(() => import("/components/PortfolioSlider3LP"), {
   ssr: false,
 });
 
