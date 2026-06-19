@@ -778,7 +778,35 @@ footer svg {
 }
 
 .marketing-packages-content {
-  height: 520px;
+  height: 610px;
+}
+
+.marketing-package-price {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.marketing-package-original-price {
+  color: #5c5c5c;
+  font-size: 18px;
+  text-decoration: line-through;
+}
+
+.marketing-package-sale-price {
+  color: #147d6e;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.single-packages:hover .marketing-package-original-price {
+  color: #5c5c5c;
+}
+
+.single-packages:hover .marketing-package-sale-price {
+  color: #147d6e;
 }
 
 .marketing-package-desc {
@@ -1220,7 +1248,7 @@ footer svg {
   }
 
   .marketing-packages-content {
-    height: 420px;
+    height: 560px;
   }
 
   .single-packages .package-badge {

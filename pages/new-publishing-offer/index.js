@@ -56,6 +56,7 @@ export default function HomePage() {
   const [showPackages2, setShowPackages2] = useState(false);
   const [collapseOpen1, setCollapseOpen1] = useState(false);
   const [collapseOpen2, setCollapseOpen2] = useState(false);
+  const [activePackageTab, setActivePackageTab] = useState('publishing');
   const [projectCountry, setProjectCountry] = useState("US");
   const [projectPhone, setProjectPhone] = useState("");
 
@@ -75,6 +76,53 @@ export default function HomePage() {
     setShowPackages(!showPackages);
     setCollapseOpen1(!collapseOpen1);
   };
+
+  const marketingPackages = [
+    {
+      title: "Rising Author Program",
+      label: "",
+      originalPrice: "$19,999",
+      salePrice: "$12,499",
+      // description: "A premium author marketing package focused on high-visibility promotion, media exposure, sales acceleration, and long-term branding support.",
+      sections: [
+        { heading: "Elite Visibility", items: ["Times Square Promotion", "Literary Exhibition Placement"] },
+        { heading: "Media Exposure", items: ["Author Interviews", "Press Campaigns"] },
+        { heading: "Sales Acceleration", items: ["Amazon Best Seller Campaign"] },
+        { heading: "Long-Term Support", items: ["Dedicated Marketing Strategist", "12 Months Author Branding Support"] },
+        { heading: "Guarantees", items: ["No Royalties Share", "100% Ownership Rights", "100% Satisfaction"] },
+      ],
+    },
+    {
+      title: "Bestselling Author Program",
+      label: "Everything included in the Author Visibility Package, plus:",
+      originalPrice: "$34,999",
+      salePrice: "$24,999",
+      // description: "Everything included in the Author Visibility Package, plus expanded visibility, media exposure, sales acceleration, brand expansion, and long-term author support.",
+      sections: [
+        { heading: "Elite Visibility", items: ["International Book Fair Representation"] },
+        { heading: "Media Exposure", items: ["Podcast Tour Campaign", "Premium Author Interview Placements"] },
+        { heading: "Sales Acceleration", items: ["Advanced Amazon Best Seller Campaigns", "Influencer Marketing Campaign"] },
+        { heading: "Brand Expansion", items: ["Retail Bookstore Placement", "Global Distribution Growth"] },
+        { heading: "Long-Term Support", items: ["Quarterly Performance Reviews", "24 Months Author Branding Support"] },
+        { heading: "Guarantees", items: ["No Royalties Share", "100% Ownership Rights", "100% Satisfaction"] },
+      ],
+    },
+    {
+      title: "Legacy Author Program",
+      label: "Everything included in the Author Influence Package, plus:",
+      originalPrice: "$69,999",
+      salePrice: "$49,999",
+      // description: "Everything included in the Author Influence Package, plus premium visibility, expanded media outreach, sales acceleration, brand expansion, and long-term author branding support.",
+      sections: [
+        { heading: "Elite Visibility", items: ["Premium International Book Fair Representation", "Multi-Event Literary Exhibition Placement"] },
+        { heading: "Media Exposure", items: ["Multi-Podcast Tour Campaign", "National & International Press Outreach"] },
+        { heading: "Sales Acceleration", items: ["Comprehensive Amazon Best Seller Campaigns", "Expanded Influencer Marketing Network", "Reader Outreach Campaigns"] },
+        { heading: "Brand Expansion", items: ["Merchandise Creation & Development", "Expanded Retail Placement Opportunities", "Enhanced Global Distribution Strategy"] },
+        { heading: "Long-Term Support", items: ["Dedicated Marketing Team", "Quarterly Performance Reviews", "36 Months Author Branding Support"] },
+        { heading: "Guarantees", items: ["No Royalties Share", "100% Ownership Rights", "100% Satisfaction"] },
+      ],
+    },
+  ];
 
   const comparisonBasic = [
     {
@@ -1648,447 +1696,510 @@ export default function HomePage() {
             </h2>
             <div className="w-24 h-1 bg-[#fff] mx-auto mt-4 rounded-full"></div>
             <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
+            <div className="package-tabs mt-8">
+              <button
+                className={activePackageTab === 'publishing' ? 'active' : ''}
+                onClick={() => setActivePackageTab('publishing')}
+              >
+                Publishing Packages
+              </button>
+              <button
+                className={activePackageTab === 'marketing' ? 'active' : ''}
+                onClick={() => setActivePackageTab('marketing')}
+              >
+                Marketing Packages
+              </button>
+            </div>
 
 
             {/* Packages */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-              {/* Package 1 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Basic Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Basic Formatting</li>
-                  <li>2 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Kindle</li>
-                  <li>eBook Format</li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share</li>
-                  <li>100% Ownership Rights</li>
-                  <li>100% Satisfaction</li>
-                </ul>
+            {activePackageTab === 'publishing' ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+                  {/* Package 1 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Basic Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Basic Formatting</li>
+                      <li>2 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Kindle</li>
+                      <li>eBook Format</li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share</li>
+                      <li>100% Ownership Rights</li>
+                      <li>100% Satisfaction</li>
+                    </ul>
 
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
 
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Package 2 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Start Up Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Publishing Standard Formatting</li>
+                      <li>3 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Designing your Cover</h4>
+                      <li>Graphic OR Illustrated Design</li>
+                      <li>Cover Layout</li>
+                      <li>Cover Formatting</li>
+                      <li>Front, Back & Spine</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Amazon & Kindle</li>
+                      <li>eBook Format</li>
+                      <li>Paperback Format</li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share</li>
+                      <li>100% Ownership Rights</li>
+                      <li>100% Satisfaction</li>
+                    </ul>
+
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
+
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Package 3 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Standard Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Publishing Standard Formatting</li>
+                      <li>5 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Designing your Cover</h4>
+                      <li>Graphic OR Illustrated Design</li>
+                      <li>Cover Layout</li>
+                      <li>Cover Formatting</li>
+                      <li>Front, Back & Spine</li>
+                      <li>ISBN + Barcode (2X)</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Amazon & Kindle</li>
+                      <li>Available on Barnes & Noble</li>
+                      <li>eBook Format</li>
+                      <li>Paperback Format</li>
+                      <li>Hardcover Format</li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share</li>
+                      <li>100% Ownership Rights</li>
+                      <li>100% Satisfaction</li>
+                    </ul>
+
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
+
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Package 2 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Start Up Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Publishing Standard Formatting</li>
-                  <li>3 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Designing your Cover</h4>
-                  <li>Graphic OR Illustrated Design</li>
-                  <li>Cover Layout</li>
-                  <li>Cover Formatting</li>
-                  <li>Front, Back & Spine</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Amazon & Kindle</li>
-                  <li>eBook Format</li>
-                  <li>Paperback Format</li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share</li>
-                  <li>100% Ownership Rights</li>
-                  <li>100% Satisfaction</li>
-                </ul>
-
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
-
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
+                <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto mt-8">
+                  <div className="container mx-auto m1-h mt-10 text-center">
+                    <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages2}>Comparison
+                      <FontAwesomeIcon
+                        className="ml-2"
+                        icon={collapseOpen2 ? faArrowUp : faArrowDown}
+                        color="#fff"
+                      />
+                    </button>
                   </div>
-                </div>
-              </div>
-
-              {/* Package 3 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Standard Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Publishing Standard Formatting</li>
-                  <li>5 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Designing your Cover</h4>
-                  <li>Graphic OR Illustrated Design</li>
-                  <li>Cover Layout</li>
-                  <li>Cover Formatting</li>
-                  <li>Front, Back & Spine</li>
-                  <li>ISBN + Barcode (2X)</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Amazon & Kindle</li>
-                  <li>Available on Barnes & Noble</li>
-                  <li>eBook Format</li>
-                  <li>Paperback Format</li>
-                  <li>Hardcover Format</li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share</li>
-                  <li>100% Ownership Rights</li>
-                  <li>100% Satisfaction</li>
-                </ul>
-
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
-
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto mt-8">
-              <div className="container mx-auto m1-h mt-10 text-center">
-                <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages2}>Comparison
-                  <FontAwesomeIcon
-                    className="ml-2"
-                    icon={collapseOpen2 ? faArrowUp : faArrowDown}
-                    color="#fff"
-                  />
-                </button>
-              </div>
-              <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
-                <div className="md:w-full w-[500px] responsive-width">
-                  <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
-                    <thead className="chart-header-custom">
-                      <tr>
-                        <th className="mainpage-regular"></th>
-                        <th className="font-poppins"><div className="heading">Basic Package</div></th>
-                        <th className="font-poppins"><div className="heading">Start Up Package</div></th>
-                        <th className="font-poppins"><div className="heading">Standard Package</div></th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-center">
-                      {comparisonBasic.map((group) => (
-                        <Fragment key={group.section}>
-                          <tr className="m-4">
-                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
-                              {group.section}
-                            </th>
+                  <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages2 ? 'expanded' : 'collapsed'}`} ref={contentRef}>
+                    <div className="md:w-full w-[500px] responsive-width">
+                      <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                        <thead className="chart-header-custom">
+                          <tr>
+                            <th className="mainpage-regular"></th>
+                            <th className="font-poppins"><div className="heading">Basic Package</div></th>
+                            <th className="font-poppins"><div className="heading">Start Up Package</div></th>
+                            <th className="font-poppins"><div className="heading">Standard Package</div></th>
                           </tr>
-                          {group.rows.map((row) => (
-                            <tr key={`${group.section}-${row[0]}`}>
-                              <td>{row[0]}</td>
-                              <td>{row[1]}</td>
-                              <td>{row[2]}</td>
-                              <td>{row[3]}</td>
-                            </tr>
+                        </thead>
+                        <tbody className="text-center">
+                          {comparisonBasic.map((group) => (
+                            <Fragment key={group.section}>
+                              <tr className="m-4">
+                                <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                                  {group.section}
+                                </th>
+                              </tr>
+                              {group.rows.map((row) => (
+                                <tr key={`${group.section}-${row[0]}`}>
+                                  <td>{row[0]}</td>
+                                  <td>{row[1]}</td>
+                                  <td>{row[2]}</td>
+                                  <td>{row[3]}</td>
+                                </tr>
+                              ))}
+                            </Fragment>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </section>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
+
+                  {/* Package 4 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Expert Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Publishing Standard Formatting</li>
+                      <li>5 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Designing your Cover</h4>
+                      <li>Graphic OR Illustrated Design</li>
+                      <li>Cover Layout</li>
+                      <li>Cover Formatting</li>
+                      <li>Front, Back & Spine</li>
+                      <li>ISBN + Barcode (2X)</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Amazon & Kindle</li>
+                      <li>Available on Barnes & Noble</li>
+                      <li>Available on Google Books</li>
+                      <li>eBook Format</li>
+                      <li>Paperback Format</li>
+                      <li>Hardcover Format</li>
+                      <h4 className="font-bold text-lg">Online Presence</h4>
+                      <li>3 - 5 Page Authors Website</li>
+                      <li>1 - Year Domain & Hosting</li>
+                      <li>30 - 60 Seconds Book Trailer</li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share</li>
+                      <li>100% Ownership Rights</li>
+                      <li>100% Satisfaction</li>
+                    </ul>
+
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
+
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Package 5 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Premium Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Publishing Standard Formatting</li>
+                      <li>5 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Designing your Cover</h4>
+                      <li>Graphic OR Illustrated Design</li>
+                      <li>Cover Layout</li>
+                      <li>Cover Formatting</li>
+                      <li>Front, Back & Spine</li>
+                      <li>ISBN + Barcode (2X)</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Amazon & Kindle</li>
+                      <li>Available on Barnes & Noble</li>
+                      <li>Available on Google Books</li>
+                      <li>Available on Smashwords</li>
+                      <li>eBook Format</li>
+                      <li>Paperback Format</li>
+                      <li>Hardcover Format</li>
+                      <h4 className="font-bold text-lg">12 Months Brand Marketing</h4>
+                      <li>Logo Design (Complimentary)</li>
+                      <li>3 - 5 Page Authors Website</li>
+                      <li>1 - Year Domain & Hosting</li>
+                      <li>30 - 60 Seconds Book Trailer</li>
+                      <li>Organic Google Marketing</li>
+                      <li>Social Media Marketing (Facebook, Instagram & Twitter)</li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share</li>
+                      <li>100% Ownership Rights</li>
+                      <li>100% Satisfaction</li>
+                    </ul>
+
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
+
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Package 6 */}
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
+                      Enterprise Package
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
+                    </h2>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
+                      <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
+                      <li>Editorial Support</li>
+                      <li>Proofreading</li>
+                      <li>Typesetting</li>
+                      <li>Layout Adjustment</li>
+                      <li>Publishing Standard Formatting</li>
+                      <li>5 Revisions Per Draft</li>
+                      <h4 className="font-bold text-lg">Designing your Cover</h4>
+                      <li>Graphic OR Illustrated Design</li>
+                      <li>Cover Layout</li>
+                      <li>Cover Formatting</li>
+                      <li>Front, Back & Spine</li>
+                      <li>ISBN + Barcode (2X)</li>
+                      <h4 className="font-bold text-lg">Book Publishing</h4>
+                      <li>Account Creation</li>
+                      <li>Account Verification</li>
+                      <li>Account Optimization</li>
+                      <li>Available on Amazon & Kindle</li>
+                      <li>Available on Barnes & Noble</li>
+                      <li>Available on Google Books</li>
+                      <li>Available on Smashwords</li>
+                      <li>Available on Draft2Digital</li>
+                      <li>Available on ACX</li>
+                      <li>eBook Format</li>
+                      <li>Paperback Format</li>
+                      <li>Hardcover Format</li>
+                      <li>Audiobook Format</li>
+                      <h4 className="font-bold text-lg">24 Months Brand Marketing</h4>
+                      <li>Logo Design (Complimentary)</li>
+                      <li>3 - 5 Page Authors Website</li>
+                      <li>2 - Year Domain & Hosting</li>
+                      <li>Organic Google Marketing</li>
+                      <li>Blogs & Article Postings</li>
+                      <li>Press Releases (150+ Platforms)</li>
+                      <li>Social Media Marketing (Facebook, Instagram, Twitter, YouTube, TikTok)
+                      </li>
+                      <h4 className="font-bold text-lg">Guarantees</h4>
+                      <li>No Royalties Share
+                      </li>
+                      <li>100% Ownership Rights
+                      </li>
+                      <li>100% Satisfaction
+                      </li>
+
+                    </ul>
+
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
+
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          📞 Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          💬 Chat With Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto">
+                  <div className="container mx-auto m1-h mt-10 text-center">
+                    <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages}>Comparison
+                      <FontAwesomeIcon
+                        className="ml-2"
+                        icon={collapseOpen1 ? faArrowUp : faArrowDown}
+                        color="#fff"
+                      />
+                    </button>
+                  </div>
+                  <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}>
+                    <div className="md:w-full w-[500px] responsive-width">
+                      <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
+                        <thead className="chart-header-custom">
+                          <tr>
+                            <th className="mainpage-regular"></th>
+                            <th className="font-poppins"><div className="heading">Expert Package</div></th>
+                            <th className="font-poppins"><div className="heading">Premium Package</div></th>
+                            <th className="font-poppins"><div className="heading">Enterprise Package</div></th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-center">
+                          {comparisonAdvanced.map((group) => (
+                            <Fragment key={group.section}>
+                              <tr className="m-4">
+                                <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
+                                  {group.section}
+                                </th>
+                              </tr>
+                              {group.rows.map((row) => (
+                                <tr key={`${group.section}-${row[0]}`}>
+                                  <td>{row[0]}</td>
+                                  <td>{row[1]}</td>
+                                  <td>{row[2]}</td>
+                                  <td>{row[3]}</td>
+                                </tr>
+                              ))}
+                            </Fragment>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </section>
+              </>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+                {marketingPackages.map((item) => (
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500" key={item.title}>
+                    <h3 className="text-xl font-semibold text-[#117d6b] mb-2">
+                      {item.title}
+                    </h3>
+                    <h4 className="text-sm font-semibold text-[#15184c] mb-3">
+                      {item.label}
+                    </h4>
+                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                      <del className="text-red italic">{item.originalPrice}</del> | <span className="text-[#117d6b]">{item.salePrice}</span>
+                    </h2>
+                    <p className="text-gray-700 text-sm text-left font-semibold leading-6 mb-5">
+                      {item.description}
+                    </p>
+                    <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[360px] overflow-y-scroll overflow-x-hidden">
+                      {item.sections.map((section) => (
+                        <Fragment key={section.heading}>
+                          <h4 className="font-bold text-lg text-[#15184c]">{section.heading}</h4>
+                          {section.items.map((feature) => (
+                            <li key={feature}>{feature}</li>
                           ))}
                         </Fragment>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </section>
+                    </ul>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
+                    <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
+                      Start Project
+                    </button>
 
-              {/* Package 4 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Expert Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Publishing Standard Formatting</li>
-                  <li>5 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Designing your Cover</h4>
-                  <li>Graphic OR Illustrated Design</li>
-                  <li>Cover Layout</li>
-                  <li>Cover Formatting</li>
-                  <li>Front, Back & Spine</li>
-                  <li>ISBN + Barcode (2X)</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Amazon & Kindle</li>
-                  <li>Available on Barnes & Noble</li>
-                  <li>Available on Google Books</li>
-                  <li>eBook Format</li>
-                  <li>Paperback Format</li>
-                  <li>Hardcover Format</li>
-                  <h4 className="font-bold text-lg">Online Presence</h4>
-                  <li>3 - 5 Page Authors Website</li>
-                  <li>1 - Year Domain & Hosting</li>
-                  <li>30 - 60 Seconds Book Trailer</li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share</li>
-                  <li>100% Ownership Rights</li>
-                  <li>100% Satisfaction</li>
-                </ul>
-
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
-
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-gray-700">Need more info?</p>
+                      <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
+                        <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
+                          Talk to Us
+                        </a>
+                        <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
+                          Chat With Us
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-
-              {/* Package 5 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Premium Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Publishing Standard Formatting</li>
-                  <li>5 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Designing your Cover</h4>
-                  <li>Graphic OR Illustrated Design</li>
-                  <li>Cover Layout</li>
-                  <li>Cover Formatting</li>
-                  <li>Front, Back & Spine</li>
-                  <li>ISBN + Barcode (2X)</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Amazon & Kindle</li>
-                  <li>Available on Barnes & Noble</li>
-                  <li>Available on Google Books</li>
-                  <li>Available on Smashwords</li>
-                  <li>eBook Format</li>
-                  <li>Paperback Format</li>
-                  <li>Hardcover Format</li>
-                  <h4 className="font-bold text-lg">12 Months Brand Marketing</h4>
-                  <li>Logo Design (Complimentary)</li>
-                  <li>3 - 5 Page Authors Website</li>
-                  <li>1 - Year Domain & Hosting</li>
-                  <li>30 - 60 Seconds Book Trailer</li>
-                  <li>Organic Google Marketing</li>
-                  <li>Social Media Marketing (Facebook, Instagram & Twitter)</li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share</li>
-                  <li>100% Ownership Rights</li>
-                  <li>100% Satisfaction</li>
-                </ul>
-
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
-
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Package 6 */}
-              <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
-                <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
-                  Enterprise Package
-                </h3>
-                <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                  <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
-                </h2>
-                <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
-                  <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
-                  <li>Editorial Support</li>
-                  <li>Proofreading</li>
-                  <li>Typesetting</li>
-                  <li>Layout Adjustment</li>
-                  <li>Publishing Standard Formatting</li>
-                  <li>5 Revisions Per Draft</li>
-                  <h4 className="font-bold text-lg">Designing your Cover</h4>
-                  <li>Graphic OR Illustrated Design</li>
-                  <li>Cover Layout</li>
-                  <li>Cover Formatting</li>
-                  <li>Front, Back & Spine</li>
-                  <li>ISBN + Barcode (2X)</li>
-                  <h4 className="font-bold text-lg">Book Publishing</h4>
-                  <li>Account Creation</li>
-                  <li>Account Verification</li>
-                  <li>Account Optimization</li>
-                  <li>Available on Amazon & Kindle</li>
-                  <li>Available on Barnes & Noble</li>
-                  <li>Available on Google Books</li>
-                  <li>Available on Smashwords</li>
-                  <li>Available on Draft2Digital</li>
-                  <li>Available on ACX</li>
-                  <li>eBook Format</li>
-                  <li>Paperback Format</li>
-                  <li>Hardcover Format</li>
-                  <li>Audiobook Format</li>
-                  <h4 className="font-bold text-lg">24 Months Brand Marketing</h4>
-                  <li>Logo Design (Complimentary)</li>
-                  <li>3 - 5 Page Authors Website</li>
-                  <li>2 - Year Domain & Hosting</li>
-                  <li>Organic Google Marketing</li>
-                  <li>Blogs & Article Postings</li>
-                  <li>Press Releases (150+ Platforms)</li>
-                  <li>Social Media Marketing (Facebook, Instagram, Twitter, YouTube, TikTok)
-                  </li>
-                  <h4 className="font-bold text-lg">Guarantees</h4>
-                  <li>No Royalties Share
-                  </li>
-                  <li>100% Ownership Rights
-                  </li>
-                  <li>100% Satisfaction
-                  </li>
-
-                </ul>
-
-                <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                  Start Project
-                </button>
-
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-gray-700">Need more info?</p>
-                  <div className="flex justify-center gap-6 mt-2 text-[#117d6b] font-medium">
-                    <a href="tel:+1-307-243-1331" className="hover:text-[#15184c] transition">
-                      📞 Talk to Us
-                    </a>
-                    <a href="javascript:;" onClick={handleOpenChat} className="hover:text-[#15184c] transition">
-                      💬 Chat With Us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <section className="table-sec overflow-x-auto max-w-screen-xl mx-auto">
-              <div className="container mx-auto m1-h mt-10 text-center">
-                <button className="compare-now-btn-new mb-10 mt-5" onClick={togglePackages}>Comparison
-                  <FontAwesomeIcon
-                    className="ml-2"
-                    icon={collapseOpen1 ? faArrowUp : faArrowDown}
-                    color="#fff"
-                  />
-                </button>
-              </div>
-              <div className={`container container-compare mx-auto transition-height duration-500 ease-in-out ${showPackages ? 'expanded' : 'collapsed'}`}>
-                <div className="md:w-full w-[500px] responsive-width">
-                  <table className="w-full mb-14 table-auto bundle-comparison-chart table-fixed">
-                    <thead className="chart-header-custom">
-                      <tr>
-                        <th className="mainpage-regular"></th>
-                        <th className="font-poppins"><div className="heading">Expert Package</div></th>
-                        <th className="font-poppins"><div className="heading">Premium Package</div></th>
-                        <th className="font-poppins"><div className="heading">Enterprise Package</div></th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-center">
-                      {comparisonAdvanced.map((group) => (
-                        <Fragment key={group.section}>
-                          <tr className="m-4">
-                            <th className="text-2xl md:text-2xl text-start p-3 font-bold pl-5" colSpan="4" scope="row">
-                              {group.section}
-                            </th>
-                          </tr>
-                          {group.rows.map((row) => (
-                            <tr key={`${group.section}-${row[0]}`}>
-                              <td>{row[0]}</td>
-                              <td>{row[1]}</td>
-                              <td>{row[2]}</td>
-                              <td>{row[3]}</td>
-                            </tr>
-                          ))}
-                        </Fragment>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </section>
+            )}
           </div>
         </section>
 
