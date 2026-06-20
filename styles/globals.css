@@ -775,10 +775,58 @@ footer svg {
 .marketing-package-card {
   display: flex;
   flex-direction: column;
+  overflow: visible;
 }
 
 .marketing-packages-content {
   height: 610px;
+}
+
+.marketing-discount-badge {
+  align-items: center;
+  background: linear-gradient(180deg, #ff5b57 0%, #e2001a 70%, #b30019 100%);
+  border-radius: 28px 28px 42px 42px;
+  box-shadow: 0 14px 22px rgba(191, 0, 26, 0.28);
+  color: #fff;
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  height: 50px;
+  justify-content: center;
+  left: 14px;
+  line-height: 1.1;
+  min-width: 118px;
+  padding: 0 18px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: -37px;
+  z-index: 3;
+}
+
+.marketing-discount-badge::before,
+.marketing-discount-badge::after {
+  border-bottom: 18px solid #bd001d;
+  content: "";
+  position: absolute;
+  top: 18px;
+  z-index: -1;
+}
+
+.marketing-discount-badge::before {
+  border-left: 18px solid transparent;
+  left: -14px;
+}
+
+.marketing-discount-badge::after {
+  border-right: 18px solid transparent;
+  right: -14px;
+}
+
+.marketing-discount-badge-new {
+  left: 18px;
+  top: -18px;
 }
 
 .marketing-package-price {

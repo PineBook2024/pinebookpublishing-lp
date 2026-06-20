@@ -88,6 +88,7 @@ export default function Bundle({ isOpen, onClose, service }) {
             label: "",
             originalPrice: "$19,999",
             salePrice: "$12,499",
+            discount: "37% OFF",
             // description: "A premium author marketing package focused on high-visibility promotion, media exposure, sales acceleration, and long-term branding support.",
             sections: [
                 {
@@ -132,6 +133,7 @@ export default function Bundle({ isOpen, onClose, service }) {
             label: "Everything included in the Author Visibility Package, plus:",
             originalPrice: "$34,999",
             salePrice: "$24,999",
+            discount: "28% OFF",
             // description: "Everything included in the Author Visibility Package, plus expanded visibility, media exposure, sales acceleration, brand expansion, and long-term author support.",
             sections: [
                 {
@@ -183,6 +185,7 @@ export default function Bundle({ isOpen, onClose, service }) {
             label: "Everything included in the Author Influence Package, plus:",
             originalPrice: "$69,999",
             salePrice: "$49,999",
+            discount: "28% OFF",
             // description: "Everything included in the Author Influence Package, plus premium visibility, expanded media outreach, sales acceleration, brand expansion, and long-term author branding support.",
             sections: [
                 {
@@ -1963,6 +1966,7 @@ export default function Bundle({ isOpen, onClose, service }) {
                             <div className="packages-wrapper marketing-packages-wrapper flex flex-col md:flex-row justify-center gap-12">
                                 {marketingPackages.map((item) => (
                                     <div className="single-packages marketing-package-card relative" key={item.title}>
+                                        <span className="marketing-discount-badge">{item.discount}</span>
                                         <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">
                                             {item.title}
                                             <br></br>

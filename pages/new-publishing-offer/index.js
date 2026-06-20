@@ -83,6 +83,7 @@ export default function HomePage() {
       label: "",
       originalPrice: "$19,999",
       salePrice: "$12,499",
+      discount: "37% OFF",
       // description: "A premium author marketing package focused on high-visibility promotion, media exposure, sales acceleration, and long-term branding support.",
       sections: [
         { heading: "Elite Visibility", items: ["Times Square Promotion", "Literary Exhibition Placement"] },
@@ -97,6 +98,7 @@ export default function HomePage() {
       label: "Everything included in the Author Visibility Package, plus:",
       originalPrice: "$34,999",
       salePrice: "$24,999",
+      discount: "28% OFF",
       // description: "Everything included in the Author Visibility Package, plus expanded visibility, media exposure, sales acceleration, brand expansion, and long-term author support.",
       sections: [
         { heading: "Elite Visibility", items: ["International Book Fair Representation"] },
@@ -112,6 +114,7 @@ export default function HomePage() {
       label: "Everything included in the Author Influence Package, plus:",
       originalPrice: "$69,999",
       salePrice: "$49,999",
+      discount: "28% OFF",
       // description: "Everything included in the Author Influence Package, plus premium visibility, expanded media outreach, sales acceleration, brand expansion, and long-term author branding support.",
       sections: [
         { heading: "Elite Visibility", items: ["Premium International Book Fair Representation", "Multi-Event Literary Exhibition Placement"] },
@@ -1695,7 +1698,6 @@ export default function HomePage() {
               Book Publishing Bundles
             </h2>
             <div className="w-24 h-1 bg-[#fff] mx-auto mt-4 rounded-full"></div>
-            <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
             <div className="package-tabs mt-8">
               <button
                 className={activePackageTab === 'publishing' ? 'active' : ''}
@@ -1715,7 +1717,12 @@ export default function HomePage() {
             {/* Packages */}
             {activePackageTab === 'publishing' ? (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+                <div>
+                  <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
+
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
+
                   {/* Package 1 */}
                   <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500">
                     <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
@@ -2157,7 +2164,8 @@ export default function HomePage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
                 {marketingPackages.map((item) => (
-                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500" key={item.title}>
+                  <div className="group bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#15184c] duration-500 relative" key={item.title}>
+                    <span className="marketing-discount-badge marketing-discount-badge-new">{item.discount}</span>
                     <h3 className="text-xl font-semibold text-[#117d6b] mb-2">
                       {item.title}
                     </h3>
