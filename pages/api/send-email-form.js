@@ -35,13 +35,13 @@ export default async function handler(req, res) {
     const manuscriptAttachment =
       manuscriptFile && manuscriptFile.contentBase64
         ? [
-            {
-              filename: manuscriptFile.filename || "manuscript",
-              content: manuscriptFile.contentBase64,
-              encoding: "base64",
-              contentType: manuscriptFile.contentType || "application/octet-stream",
-            },
-          ]
+          {
+            filename: manuscriptFile.filename || "manuscript",
+            content: manuscriptFile.contentBase64,
+            encoding: "base64",
+            contentType: manuscriptFile.contentType || "application/octet-stream",
+          },
+        ]
         : [];
 
     const transporter = nodemailer.createTransport({
