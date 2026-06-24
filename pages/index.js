@@ -34,7 +34,7 @@ import BrandHeroFriday from "./components/BrandHeroFriday";
 import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
 import PortfolioSlider5 from "./components/PortfolioSlider5";
 import HomeBookSlider from "./components/HomeBookSlider";
-import HomePopupNNew from "../components/HomePopupNNew";
+// import HomePopupNNew from "../components/HomePopupNNew";
 import BrandVideoShowcase from "./components/BrandVideoShowcase";
 
 const videoClient = [
@@ -235,7 +235,7 @@ export default function Home() {
             <BrandContact />
             <BrandLogo />
             <BrandFooter />
-            <HomePopupNNew />
+            {/* <HomePopupNNew /> */}
 
             {/* Floating Shop Button */}
             <style jsx global>{`
