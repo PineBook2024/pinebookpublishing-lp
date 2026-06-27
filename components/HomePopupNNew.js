@@ -117,7 +117,7 @@ export default function HomePopupJuneteenth() {
     <>
       {isOpen && (
         <section className="fixed inset-0 z-[99999] flex items-center justify-center overflow-y-auto bg-black/60 p-3 md:p-6">
-          <div className="relative my-auto w-full max-w-[1040px] overflow-hidden rounded-[24px] bg-[#e8e8ee] shadow-2xl">
+          <div className="relative my-auto w-full max-w-[1170px] overflow-hidden rounded-[24px] bg-[#e8e8ee] shadow-2xl">
             <button
               type="button"
               onClick={() => setIsOpen(false)}
@@ -139,23 +139,23 @@ export default function HomePopupJuneteenth() {
               </svg>
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-[479px_1fr]">
+            <div className="grid grid-cols-1 md:grid-cols-[490px_1fr]">
               <div className="jt-popup-image relative aspect-[841/1124] w-full bg-[#eef3ee]">
                 <Image
-                  src="/brand-img/JuneTeenth.jpg"
-                  alt="Juneteenth popup banner"
+                  src="/images/indep.png"
+                  alt="independence day popup banner"
                   fill
                   className="object-cover object-center"
                   priority
                 />
-                <div className="absolute inset-x-0 bottom-0 flex justify-start bg-gradient-to-t from-black/60 to-transparent p-5 md:p-6">
+                {/* <div className="absolute inset-x-0 bottom-0 flex justify-start bg-gradient-to-t from-black/60 to-transparent p-5 md:p-6">
                   <button
                     type="button"
                     className="inline-flex items-center rounded-md bg-[#0f1438] px-6 py-3 font-poppins text-sm font-semibold uppercase text-white transition hover:bg-[#1b235e]"
                   >
                     Explore Now
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="relative bg-[#f3f4f8] p-5 md:p-8">
@@ -164,18 +164,18 @@ export default function HomePopupJuneteenth() {
                 <form onSubmit={handleSubmit}>
                   <div className="mb-6 text-left">
                     <h2
-                      className="text-2xl font-extrabold leading-tight text-[#10163d] md:text-[34px]"
+                      className="text-2xl font-extrabold leading-tight text-[#10163d] md:text-[36px]"
                       style={{
                         fontFamily: "'Merriweather', serif",
                         letterSpacing: "0.2px",
                         textWrap: "balance",
                       }}
                     >
-                      Avail 50% Discount On Publishing This Juneteenth!
+                      Avail 50% Discount on Publishing This Independence Day!
                     </h2>
                     <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
-                      Have you completed your manuscript and want it published now? On Juneteenth, get an exclusive 50% discount on all of our book publishing packages.
-                    </p>
+                      Have you completed your manuscript and are ready to share your story with the world? This Independence Day, enjoy an exclusive 50% discount on all of our book publishing packages and take the next step toward becoming a published author.
+                      <br />Turn your manuscript into a professionally published book for half the cost       </p>
                   </div>
 
                   {timeLeft > 0 && (
