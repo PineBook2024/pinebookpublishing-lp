@@ -142,7 +142,7 @@ export default function HomePopupJuneteenth() {
             <div className="grid grid-cols-1 md:grid-cols-[490px_1fr]">
               <div className="jt-popup-image relative aspect-[841/1124] w-full bg-[#eef3ee]">
                 <Image
-                  src="/images/indep.png"
+                  src="/brand-img/independence-day-banner.jpg"
                   alt="independence day popup banner"
                   fill
                   className="object-cover object-center"
