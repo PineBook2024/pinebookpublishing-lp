@@ -175,7 +175,7 @@ export default function HomePopupJuneteenth() {
                     </h2>
                     <p className="mt-3 font-poppins text-sm leading-6 text-[#3b4155] md:text-[15px]">
                       Have you completed your manuscript and are ready to share your story with the world? This Independence Day, enjoy an exclusive 50% discount on all of our book publishing packages and take the next step toward becoming a published author.
-                      <br />Turn your manuscript into a professionally published book for half the cost       </p>
+                      <br />Turn your manuscript into a professionally published book for half the cost.       </p>
                   </div>
 
                   {timeLeft > 0 && (
