@@ -212,15 +212,15 @@ const videoClient = [
         ProjectManager: "Rex Brown",
         clientname: "Adrea M. Witherspoon"
     },
-    {
-        id: 24,
-        src: "https://www.youtube.com/embed/7FC8oT9eTPs?si=Yg6pZE18GtbexR3T",
-        type: "video/mp4",
-        BookTitle: "Fearless Friendships: Why Adults Struggle to Connect and How to Fix it",
-        Consultant: "Steve Hayes",
-        ProjectManager: "Emily Jones",
-        clientname: "Philip A. Grimes, PhD"
-    },
+    // {
+    //     id: 24,
+    //     src: "https://www.youtube.com/embed/7FC8oT9eTPs?si=Yg6pZE18GtbexR3T",
+    //     type: "video/mp4",
+    //     BookTitle: "Fearless Friendships: Why Adults Struggle to Connect and How to Fix it",
+    //     Consultant: "Steve Hayes",
+    //     ProjectManager: "Emily Jones",
+    //     clientname: "Philip A. Grimes, PhD"
+    // },
     {
         id: 25,
         src: "https://www.youtube.com/embed/rOtE_fGt1p0?si=2-ahTZuT2qyJLthO",
