@@ -200,6 +200,13 @@ export default function PortfolioSlider5() {
             author: 'Rosetta Khalideen ',
             logo1: '/brand-img/Amazon Icon.png',
         },
+        {
+            id: 19,
+            src: "/brand-img/Group-18.webp",
+            title: 'Embracing My Grace Place',
+            author: 'Sederia Grace',
+            logo1: '/brand-img/Amazon Icon.png',
+        },
     ];
 
     return (
