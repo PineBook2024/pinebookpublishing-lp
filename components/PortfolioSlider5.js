@@ -200,6 +200,13 @@ export default function PortfolioSlider5() {
             author: 'Rosetta Khalideen ',
             logo1: '/brand-img/Amazon Icon.png',
         },
+        {
+            id: 19,
+            src: "/brand-img/Group-18.webp",
+            title: 'Embracing My Grace Place',
+            author: 'Sederia Grace',
+            logo1: '/brand-img/Amazon Icon.png',
+        },
     ];
 
     return (
@@ -239,14 +246,14 @@ export default function PortfolioSlider5() {
                                     <img
                                         src={slide.src}
                                         alt={`Slide ${slide.id}`}
-                                         class="object-contain"
+                                        class="object-contain"
                                     />
                                 </div>
                                 <div>
                                     <h4 className="text-size-custom">{slide.title}</h4>
                                     <h4 className="text-size-custom">{slide.author}</h4>
                                     <p className="mt-4 font-bold">Available On:</p>
-                                   
+
                                     <div className="mt-4 cursor-pointer flex gap-4">
                                         {slide.logo1 && (
                                             <img
@@ -279,28 +286,28 @@ export default function PortfolioSlider5() {
                                     </div>
 
                                     <div className="mt-4 cursor-pointer flex gap-4">
-                                         {slide.logo5 && (
+                                        {slide.logo5 && (
                                             <img
                                                 src={slide.logo5}
                                                 alt={`Logo 5`}
                                                 className="w-auto object-contain icon-logo-portfolio"
                                             />
                                         )}
-                                         {slide.logo6 && (
+                                        {slide.logo6 && (
                                             <img
                                                 src={slide.logo6}
                                                 alt={`Logo 6`}
                                                 className="w-auto object-contain icon-logo-portfolio"
                                             />
                                         )}
-                                         {slide.logo7 && (
+                                        {slide.logo7 && (
                                             <img
                                                 src={slide.logo7}
                                                 alt={`Logo 7`}
                                                 className="w-auto object-contain icon-logo-portfolio"
                                             />
                                         )}
-                                         {slide.logo8 && (
+                                        {slide.logo8 && (
                                             <img
                                                 src={slide.logo8}
                                                 alt={`Logo 8`}
