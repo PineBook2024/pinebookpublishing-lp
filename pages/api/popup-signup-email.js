@@ -182,7 +182,7 @@ export default async function handler(req, res) {
     // Send admin notification email
     const adminInfo = await transporter.sendMail({
       from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
-      to: "sales@pinebookpublishing.com",
+      to: ["sales@pinebookpublishing.com", "pinebookpublishing@gmail.com"],
       subject: `🎉 Popup Form Lead - ${fullName || "User"} - ${service || "Service"}`,
       html: adminHtmlContent,
     });

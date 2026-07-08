@@ -167,7 +167,7 @@ export default async function handler(req, res) {
 
       const adminInfo = await transporter.sendMail({
         from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
-        to: "sales@pinebookpublishing.com",
+        to: ["sales@pinebookpublishing.com", "pinebookpublishing@gmail.com"],
         subject: `New Contact Form - ${userName || "User"}`,
         html: adminHtmlContent,
       });
@@ -316,7 +316,7 @@ export default async function handler(req, res) {
 
       const adminInfo = await transporter.sendMail({
         from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
-        to: "sales@pinebookpublishing.com",
+        to: ["sales@pinebookpublishing.com", "pinebookpublishing@gmail.com"],
         subject: `New Sign Up - ${userName || "User"}`,
         html: adminHtmlContent,
       });
