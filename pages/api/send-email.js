@@ -28,8 +28,8 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "pinebookwriting@gmail.com",
-        pass: "owwwkmrznsnddjtm",
+        user: "pinebookpublishing@gmail.com",
+        pass: "oozphiratybepgjn",
       },
     });
 
@@ -214,61 +214,61 @@ export default async function handler(req, res) {
     `;
 
     // Send admin notification email
-   // Send admin email
-const adminInfo = await transporter.sendMail({
-  from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
-  to: "sales@pinebookpublishing.com",
-  subject: `📧 New ${formType || "Contact"} Form - ${name}`,
-  html: adminHtmlContent,
-});
+    // Send admin email
+    const adminInfo = await transporter.sendMail({
+      from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
+      to: "sales@pinebookpublishing.com",
+      subject: `📧 New ${formType || "Contact"} Form - ${name}`,
+      html: adminHtmlContent,
+    });
 
-console.log("✅ Admin email sent:", adminInfo.messageId);
+    console.log("✅ Admin email sent:", adminInfo.messageId);
 
-// Send user email
-const userInfo = await transporter.sendMail({
-  from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
-  to: email,
-  subject: `Thank You for Contacting Pine Book Publishing`,
-  html: userHtmlContent,
-});
+    // Send user email
+    const userInfo = await transporter.sendMail({
+      from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
+      to: email,
+      subject: `Thank You for Contacting Pine Book Publishing`,
+      html: userHtmlContent,
+    });
 
-console.log("✅ User thank you email sent:", userInfo.messageId);
+    console.log("✅ User thank you email sent:", userInfo.messageId);
 
-// 🔁 Send lead to Laravel CRM (MUST be before return)
-try {
-  const leadPayload = {
-    name,
-    email,
-    phone,
-    message: msg || "Website signup form",
-  };
+    // 🔁 Send lead to Laravel CRM (MUST be before return)
+    try {
+      const leadPayload = {
+        name,
+        email,
+        phone,
+        message: msg || "Website signup form",
+      };
 
-  const laravelRes = await fetch(
-    `${process.env.LARAVEL_API_URL}/api/leads/from-website`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(leadPayload),
+      const laravelRes = await fetch(
+        `${process.env.LARAVEL_API_URL}/api/leads/from-website`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+          },
+          body: JSON.stringify(leadPayload),
+        }
+      );
+
+      const laravelText = await laravelRes.text();
+      console.log("📩 Laravel raw response:", laravelText);
+
+    } catch (err) {
+      console.error("⚠️ Laravel lead creation failed:", err.message);
     }
-  );
 
-  const laravelText = await laravelRes.text();
-  console.log("📩 Laravel raw response:", laravelText);
-
-} catch (err) {
-  console.error("⚠️ Laravel lead creation failed:", err.message);
-}
-
-// ✅ NOW return
-return res.status(200).json({
-  success: true,
-  message: "Emails sent successfully",
-  adminMessageId: adminInfo.messageId,
-  userMessageId: userInfo.messageId,
-});
+    // ✅ NOW return
+    return res.status(200).json({
+      success: true,
+      message: "Emails sent successfully",
+      adminMessageId: adminInfo.messageId,
+      userMessageId: userInfo.messageId,
+    });
 
 
   } catch (error) {

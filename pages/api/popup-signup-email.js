@@ -26,8 +26,8 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "pinebookwriting@gmail.com",
-        pass: "owwwkmrznsnddjtm", 
+        user: "pinebookpublishing@gmail.com",
+        pass: "oozphiratybepgjn",
       },
     });
 
