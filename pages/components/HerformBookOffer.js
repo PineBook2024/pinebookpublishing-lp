@@ -262,6 +262,7 @@ export default function HeroFormBookOffer() {
   const [phone, setPhone] = useState("");
   const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
+  const [preferredTime, setPreferredTime] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -324,6 +325,7 @@ export default function HeroFormBookOffer() {
       firstName: setFirstName,
       email: setEmail,
       message: setMessage,
+      preferredTime: setPreferredTime,
       category: setCategory,
       phone: setPhone,
     };
@@ -390,6 +392,7 @@ export default function HeroFormBookOffer() {
           phone: formData.phone,
           category: formData.category,
           message: formData.message,
+          preferredTime: formData.preferredTime,
           countryCode: formData.countryCode,
           currentPage: window.location.href,
           referringPage: document.referrer || 'Direct visit',
@@ -447,20 +450,24 @@ export default function HeroFormBookOffer() {
     setIsSubmitting(true);
 
     const combinedPhoneNumber = `+${selectedCountry.code} ${phone}`;
+    const messageWithPreferredTime = preferredTime
+      ? `${message}\n\nPreferred Call Time: ${preferredTime}`
+      : message;
     const formData = {
       firstName,
       email,
       phone: combinedPhoneNumber,
       category, // CRM me service map ho jayegi
       message,
+      preferredTime,
       countryCode: selectedCountry.countryCode,
     };
 
     try {
       const [emailResult, hubspotResponse, crmResult] = await Promise.allSettled([
         sendEmailNotification(formData),
-        submitMainContactFormLP(firstName, email, combinedPhoneNumber, category, message),
-        submitLeadToCRM(formData),
+        submitMainContactFormLP(firstName, email, combinedPhoneNumber, category, messageWithPreferredTime),
+        submitLeadToCRM({ ...formData, message: messageWithPreferredTime }),
       ]);
 
       const emailOk = emailResult.status === "fulfilled" && emailResult.value?.success;
@@ -489,9 +496,9 @@ export default function HeroFormBookOffer() {
     "Book Editing",
     "Proofreading",
     "Book Formatting",
+    "Book Marketing",
+    "Book Writing",
   ];
-
-
 
   const clientLogos = [
     {
@@ -703,6 +710,18 @@ export default function HeroFormBookOffer() {
                    flex items-start  
                    pointer-events-none"
                       ></div>
+                    </div>
+                    <div className="relative w-full">
+                      <label className="block text-white text-sm font-medium mb-2">
+                        Prefered Meeting Time
+                      </label>
+                      <input
+                        type="datetime-local"
+                        name="preferredTime"
+                        value={preferredTime}
+                        onChange={handleChange}
+                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl bg-white text-[#1f2937] outline-0 focus:border-[#8557f5] focus:ring-2 focus:ring-[#8557f5]/30"
+                      />
                     </div>
                     {showSuccess && (
                       <p className="px-1 py-2 text-green-700">

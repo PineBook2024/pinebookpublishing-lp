@@ -13,6 +13,7 @@ export default async function handler(req, res) {
     phoneNumber,
     category,
     message,
+    preferredTime,
     countryCode,
     referringPage,
     currentPage,
@@ -65,6 +66,10 @@ export default async function handler(req, res) {
                 <tr>
                   <td style="padding:8px 0; font-weight:600;">Message:</td>
                   <td>${message || "N/A"}</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0; font-weight:600;">Prefered Meeting Time:</td>
+                  <td>${preferredTime || "N/A"}</td>
                 </tr>
                 ${userIP ? `
                 <tr>
@@ -131,6 +136,10 @@ export default async function handler(req, res) {
                   <tr>
                     <td style="padding:6px 0; color:#666;">Phone:</td>
                     <td style="padding:6px 0;">${countryCode || "+1"} ${userPhone}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 0; color:#666;">Prefered Meeting Time:</td>
+                    <td style="padding:6px 0;">${preferredTime || "N/A"}</td>
                   </tr>
                 </table>
               </div>
@@ -222,6 +231,10 @@ export default async function handler(req, res) {
                   <td>${message || "N/A"}</td>
                 </tr>
                 <tr>
+                  <td style="padding:8px 0; font-weight:600;">Prefered Meeting Time:</td>
+                  <td>${preferredTime || "N/A"}</td>
+                </tr>
+                <tr>
                   <td style="padding:8px 0; font-weight:600;">IP Address:</td>
                   <td>${userIP}</td>
                 </tr>
@@ -279,6 +292,10 @@ export default async function handler(req, res) {
                   <tr>
                     <td style="padding:6px 0; color:#666;">Phone:</td>
                     <td style="padding:6px 0;">${countryCode || ""} ${userPhone}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 0; color:#666;">Prefered Meeting Time:</td>
+                    <td style="padding:6px 0;">${preferredTime || "N/A"}</td>
                   </tr>
                 </table>
               </div>

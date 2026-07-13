@@ -377,11 +377,10 @@ export default function BrandHeroFridayUpdate() {
                                 ></Image> */}
                 <div className="text-start">
                   <h4 className="font-poppins text-white text-2xl md:text-3xl font-bold christmas-banner-title">
-                    Avail Discount
+                    Get in Touch With Our Team
                   </h4>
                   <h5 className="font-poppins text-white text-sm mb-3 christmas-banner-desc">
-                    Holiday Season Sale: Expert Book Publishing at{" "}
-                    <span className="text-blink">50% Off</span> – <br />
+                    Have any questions about writing, publishing, editing, or marketing for your book? Send us a message, and we'll be happy to help.
                     Your Story Deserves to be Heard!
                   </h5>
                 </div>
