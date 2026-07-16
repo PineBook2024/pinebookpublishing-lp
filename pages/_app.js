@@ -192,24 +192,27 @@ export default function App({ Component, pageProps }) {
 
           <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
           <Script
+            id="google-ads"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16471224604');
               `,
             }}
           />
-          <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973"> </script>
+          <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6ad75b0f-d085-4cae-9a7a-48abeb69b973" strategy="afterInteractive" />
 
           <Script
+            id="reb2b-tracker"
             dangerouslySetInnerHTML={{
               __html: `
               !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/961Y0H4Z2KNG.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("961Y0H4Z2KNG");}();
               `,
             }}
           />
-          <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024"></script>
+          <Script id="vtag-ai-js" src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024" strategy="afterInteractive" />
 
           <Script
+            id="facebook-pixel"
             dangerouslySetInnerHTML={{
               __html: `
                 !function(f,b,e,v,n,t,s)
@@ -226,6 +229,7 @@ export default function App({ Component, pageProps }) {
             }}
           />
           <Script
+            id="apollo-tracker"
             dangerouslySetInnerHTML={{
               __html: `
                 function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -243,8 +247,8 @@ export default function App({ Component, pageProps }) {
               src="https://www.facebook.com/tr?id=1828587994272272&ev=PageView&noscript=1"
             />
           </noscript>
-          <script
-            type="text/javascript"
+          <Script
+            id="microsoft-clarity"
             dangerouslySetInnerHTML={{
               __html: `(function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

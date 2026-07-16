@@ -90,6 +90,7 @@ const PortfolioSlider3LP = dynamic(() => import("/components/PortfolioSlider3LP"
 import BrandFooterBook from "../components/BrandFooterBook";
 import BrandVideoShowcase from "../components/BrandVideoShowcase";
 import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
+import HomeCaseStudiesCarousel from "../components/HomeCaseStudiesCarousel";
 import BrandHeroFriday from "../components/BrandHeroFriday";
 import GoogleTranslate from "../components/GoogleTranslate";
 import CustomLanguageSelector from "../components/CustomLanguageSelector";
@@ -3040,6 +3041,8 @@ export default function Home() {
         <BrandVideoShowcase />
 
         <ExclusiveBookSigningParallax />
+
+        <HomeCaseStudiesCarousel />
 
         <section className="book-publishing-cta-section mx-auto px-6 py-10 md:py-0 relative">
           <div className="container flex items-center flex-col md:flex-row max-w-screen-xl mx-auto">

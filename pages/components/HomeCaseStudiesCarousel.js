@@ -119,7 +119,7 @@ export default function HomeCaseStudiesCarousel() {
 
                 <div className="home-case-view-all-wrap">
                     <Link href="/case-studies" className="home-case-view-all-btn">
-                        View All
+                        View All Case Studies
                     </Link>
                 </div>
             </div>

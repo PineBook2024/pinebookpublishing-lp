@@ -12,6 +12,7 @@ import BrandPrimaryHeader from "./components/BrandPrimaryHeader";
 import BrandPortfolio from "./components/BrandPortfolio";
 import BrandCTA from "./components/BrandCTA";
 import BrandProcess from "./components/BrandProcess";
+import PortfolioVideoTrailersCarousel from "./components/PortfolioVideoTrailersCarousel";
 // import PortfolioSlider1 from "./components/PortfolioSlider1";
 // import PortfolioSlider2 from "./components/PortfolioSlider2";
 // import PortfolioSlider3 from "./components/PortfolioSlider3";
@@ -83,6 +84,7 @@ export default function Portfolio() {
             <PortfolioSlider2 />
             <PortfolioSlider3 />
             <PortfolioSlider5 />
+            <PortfolioVideoTrailersCarousel />
             {/* <BrandPortfolio /> */}
             {/* <BrandProcess /> */}
             {/* <BrandCTA

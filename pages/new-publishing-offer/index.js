@@ -29,6 +29,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import 'glightbox/dist/css/glightbox.min.css';
 import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
+import HomeCaseStudiesCarousel from "../components/HomeCaseStudiesCarousel";
 import PortfolioSlider4 from "../components/PortfolioSlider4";
 import PortfolioSlider1 from "../components/PortfolioSlider1";
 import PortfolioSlider2 from "../components/PortfolioSlider2";
@@ -1496,6 +1497,8 @@ export default function HomePage() {
       </section> */}
 
         <ExclusiveBookSigningParallax />
+
+        <HomeCaseStudiesCarousel />
 
         <section
           className="py-20 bg-[#117d6b] bg-cover bg-center bg-no-repeat text-white relative"
