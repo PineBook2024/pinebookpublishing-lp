@@ -4164,6 +4164,9 @@ a.close-chat:hover {
 }
 
 .portfolio-video-trailers-head {
+  width: min(100%, 72rem);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 26px;
   text-align: left;
 }
