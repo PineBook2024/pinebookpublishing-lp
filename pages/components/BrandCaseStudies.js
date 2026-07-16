@@ -81,9 +81,6 @@ export default function BrandCaseStudies() {
                             >
                                 <span className="case-study-tile-heading">{cs.title}</span>
                                 <span className="case-study-tile-actions">
-                                    <a href={cs.bookLink} target="_blank" rel="noreferrer">
-                                        View Book <span aria-hidden="true">↗</span>
-                                    </a>
                                     <Link href={cs.link}>
                                         View Case Study <span aria-hidden="true">↗</span>
                                     </Link>
