@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 import BrandTopBar from "./components/BrandTopBar";
 import BrandFooter from "./components/BrandFooter";
 import BrandAbout from "./components/BrandAbout";
@@ -29,13 +30,13 @@ import "swiper/css/autoplay";
 import "swiper/css";
 import "swiper/css/navigation";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { Navigation, Pagination } from "swiper";
 import BrandHeroFriday from "./components/BrandHeroFriday";
 import BrandHeroFridayUpdate from "./components/BrandHeroFridayUpdate";
 import PortfolioSlider5 from "./components/PortfolioSlider5";
 import HomeBookSlider from "./components/HomeBookSlider";
 // import HomePopupNNew from "../components/HomePopupNNew";
 import BrandVideoShowcase from "./components/BrandVideoShowcase";
+import HomeCaseStudiesCarousel from "./components/HomeCaseStudiesCarousel";
 
 const videoClient = [
     {
@@ -100,21 +101,16 @@ export default function Home() {
                 <link rel="shortcut icon" href="/images/fav.png" />
                 <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
 
-
-                {/* Google tag Manager Script */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></script>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
+            </Head>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604" strategy="afterInteractive" />
+            <Script id="google-ads-tag" strategy="afterInteractive">
+                {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-                    gtag('config', 'AW-16471224604');`,
-                    }}
-                />
-
-
-            </Head>
+                    gtag('config', 'AW-16471224604');
+                `}
+            </Script>
             <BrandTopBar />
             <BrandNavbar />
             {/* <BrandHero /> */}
@@ -134,6 +130,7 @@ export default function Home() {
                 btntext="Speak to our Consultant"
             />
             <BrandVideoShowcase />
+            <HomeCaseStudiesCarousel />
             <BrandProcess />
             <BrandChooseUs />
             <BrandTestimonial />
@@ -203,8 +200,8 @@ export default function Home() {
                             const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
 
                             return (
-                                <SwiperSlide>
-                                    <div key={videoClient.id} className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                <SwiperSlide key={videoClient.id}>
+                                    <div className="mb-8 max-w-xl mx-auto border p-4 rounded">
                                         <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
 
                                         <div className="py-4">
