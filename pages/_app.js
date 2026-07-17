@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { Poppins } from "next/font/google";
 import Script from "next/script";
 import Head from "next/head";
 import AOS from "aos";
@@ -10,13 +9,6 @@ import HomePopupNew from "./components/HomePopupNew";
 import { CartProvider } from "../context/CartContext";
 import AdminGuard from "../components/AdminGuard";
 // import Loader from "./components/Loader";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["400", "500", "600"],
-});
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -171,7 +163,7 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <CartProvider>
-        <main className={`${poppins.variable}`}>
+        <main>
           {isAdminRoute ? (
             <AdminGuard>
               <Component {...pageProps} />

@@ -35,6 +35,7 @@ import PortfolioSlider1 from "../components/PortfolioSlider1";
 import PortfolioSlider2 from "../components/PortfolioSlider2";
 import PortfolioSlider3 from "../components/PortfolioSlider3";
 import PortfolioSlider5 from "../components/PortfolioSlider5";
+import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailersCarousel";
 import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
@@ -1391,6 +1392,8 @@ export default function HomePage() {
           <PortfolioSlider3 />
           <PortfolioSlider5 />
         </section>
+
+        <PortfolioVideoTrailersCarousel />
 
 
         <section className="bg-[#f9fafb]">

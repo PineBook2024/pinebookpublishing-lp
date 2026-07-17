@@ -91,6 +91,7 @@ import BrandFooterBook from "../components/BrandFooterBook";
 import BrandVideoShowcase from "../components/BrandVideoShowcase";
 import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
 import HomeCaseStudiesCarousel from "../components/HomeCaseStudiesCarousel";
+import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailersCarousel";
 import BrandHeroFriday from "../components/BrandHeroFriday";
 import GoogleTranslate from "../components/GoogleTranslate";
 import CustomLanguageSelector from "../components/CustomLanguageSelector";
@@ -1113,6 +1114,8 @@ export default function Home() {
           <PortfolioSlider1LP />
           <PortfolioSlider2LP />
         </section>
+
+        <PortfolioVideoTrailersCarousel />
 
 
 

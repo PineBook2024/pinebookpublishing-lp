@@ -43,7 +43,9 @@ export const getStaticProps = async () => {
   let posts = []
 
   try {
-    const response = await client.getEntries({ content_type: 'post' })
+    const response = client
+      ? await client.getEntries({ content_type: 'post' })
+      : { items: [] }
     posts = [...(response.items || [])].sort((a, b) => {
       const aDate = new Date(a?.fields?.date || a?.sys?.createdAt || 0).getTime()
       const bDate = new Date(b?.fields?.date || b?.sys?.createdAt || 0).getTime()

@@ -289,6 +289,15 @@ const Post = ({ post, recentPosts }) => {
 }
 
 export const getServerSideProps = async ({ params }) => {
+  if (!client) {
+    return {
+      redirect: {
+        destination: '/blog',
+        permanent: false
+      }
+    }
+  }
+
   const requestedSlug = normalizeSlug(params?.slug)
 
   const blogContentTypes = ['post', 'blogPost', 'blog']
