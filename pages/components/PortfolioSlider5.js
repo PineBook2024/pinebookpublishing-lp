@@ -242,11 +242,11 @@ export default function PortfolioSlider5() {
                     {ImageSlides.map((slide) => (
                         <SwiperSlide key={slide.id}>
                             <div className="relative h-full flex items-center gap-6">
-                                <div>
+                                <div className="portfolio-slider5-image-wrap">
                                     <img
                                         src={slide.src}
                                         alt={`Slide ${slide.id}`}
-                                        class="object-contain"
+                                        className={`portfolio-slider5-image ${slide.id === 19 ? 'portfolio-slider5-image-embracing' : ''}`}
                                     />
                                 </div>
                                 <div>

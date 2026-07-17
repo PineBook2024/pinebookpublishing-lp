@@ -28,7 +28,7 @@ const bookCoverPaths = [
   "/brand-img/new-lp/book-covers/Time & The River 7.jpg",
   "/brand-img/new-lp/book-covers/Unique Moore Part 1- Paperback.jpg",
   "/brand-img/new-lp/book-covers/Zulfi PB.jpg",
-  "/brand-img/PB-cover.jpg",
+  "/brand-img/PB-cover-portrait.jpg",
 ];
 
 const imageSlides = bookCoverPaths.map((src, index) => ({

@@ -90,7 +90,7 @@ export default function PortfolioSlider1() {
         },
         {
             id: 10,
-            src: "/brand-img/PB-cover.jpg",
+            src: "/brand-img/PB-cover-portrait.jpg",
         },
     ];
 
