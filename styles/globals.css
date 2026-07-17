@@ -4171,14 +4171,6 @@ a.close-chat:hover {
   text-align: left;
 }
 
-.portfolio-video-trailers-head h2 {
-  color: #0d0f38;
-  font-family: 'Lucida Bright Regular', serif;
-  font-size: 42px;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
 .portfolio-video-carousel-panel {
   position: relative;
   min-height: 455px;
@@ -4362,10 +4354,6 @@ a.close-chat:hover {
 @media (max-width: 640px) {
   .portfolio-video-trailers-section {
     padding: 36px 0 52px;
-  }
-
-  .portfolio-video-trailers-head h2 {
-    font-size: 32px;
   }
 
   .portfolio-video-carousel-panel {

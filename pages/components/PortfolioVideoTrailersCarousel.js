@@ -47,7 +47,7 @@ export default function PortfolioVideoTrailersCarousel() {
         <section className="portfolio-video-trailers-section">
             <div className="portfolio-video-trailers-inner">
                 <div className="portfolio-video-trailers-head">
-                    <h2>Video Trailers</h2>
+                    <h2 className="text-3xl font-medium mb-10 text-black">Book Video Trailer</h2>
                 </div>
 
                 <div className="portfolio-video-carousel-panel noselect">
