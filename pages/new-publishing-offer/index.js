@@ -39,6 +39,7 @@ import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailers
 import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
+import HomePopupNewLp from "../components/HomePopupNewLp";
 
 export default function HomePage() {
   const handleOpenChat = () => {
@@ -890,7 +891,7 @@ export default function HomePage() {
         />
       </Head>
       <main className="font-sans text-gray-800">
-
+        <HomePopupNewLp />
         <GoogleTranslateWidget />
         {/* ------------------ HEADER ------------------ */}
 
@@ -2233,6 +2234,7 @@ export default function HomePage() {
             {/* Service Boxes */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-16">
               {[
+                { img: "/brand-img/new-lp/3.webp", title: "Book Writing", url: "#" },
                 { img: "/brand-img/new-lp/1.webp", title: "Book Publishing", url: "/book-publishing" },
                 { img: "/brand-img/new-lp/9.webp", title: "Book Editing", url: "/book-editing" },
                 { img: "/brand-img/new-lp/2.webp", title: "Proofreading", url: "/proofreading" },
