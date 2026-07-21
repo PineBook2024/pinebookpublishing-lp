@@ -171,7 +171,7 @@ export default function BrandHeroFridayUpdate() {
       email,
       phoneNumber,
       message,
-      service: "Avail Discount - Holiday Season 50% Off",
+      service: "Avail Discount 50% Off",
       currentPage: typeof window !== "undefined" ? window.location.href : "",
       referringPage:
         typeof document !== "undefined"

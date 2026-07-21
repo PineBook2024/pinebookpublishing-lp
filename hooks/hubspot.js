@@ -185,6 +185,32 @@ const useHubspotForm = () => {
 
   const submitPopupContactFormScreen = async (ful_name, email, phoneNumber, budget, message) => {
     try {
+      const fields = [
+        {
+          name: "ful_name",
+          value: ful_name,
+        },
+        {
+          name: "email",
+          value: email,
+        },
+        {
+          name: "phone",
+          value: phoneNumber,
+        },
+        {
+          name: "message",
+          value: message,
+        },
+      ];
+
+      if (budget) {
+        fields.splice(3, 0, {
+          name: "budget",
+          value: budget,
+        });
+      }
+
       const formResponse = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${contactFormId5}`,
         {
@@ -194,37 +220,22 @@ const useHubspotForm = () => {
           },
           body: JSON.stringify({
             submittedAt: Date.now(),
-            fields: [
-              {
-                name: "ful_name",
-                value: ful_name,
-              },
-              {
-                name: "email",
-                value: email,
-              },
-              {
-                name: "phone",
-                value: phoneNumber,
-              },
-              {
-                name: "budget",
-                value: budget,
-              },
-              {
-                name: "message",
-                value: message,
-              },
-            ],
+            fields,
           }),
         }
       );
 
-      const formDataResponse = await formResponse.json();
+      const formDataResponse = await formResponse.json().catch(() => ({}));
 
-      return formDataResponse.inlineMessage;
+      if (!formResponse.ok) {
+        console.error("HubSpot popup form submission failed:", formDataResponse);
+        return false;
+      }
+
+      return true;
     } catch (error) {
-      console.error(error);
+      console.error("HubSpot popup form request failed:", error);
+      return false;
     }
   };
 

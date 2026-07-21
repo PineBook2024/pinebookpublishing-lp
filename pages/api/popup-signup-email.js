@@ -1,6 +1,44 @@
 // File: /pages/api/send-popup-email.js
 import nodemailer from "nodemailer";
 
+const firstHeaderValue = (value) => {
+  if (Array.isArray(value)) return value[0] || "";
+  return typeof value === "string" ? value.split(",")[0].trim() : "";
+};
+
+const decodeHeaderValue = (value) => {
+  const normalizedValue = firstHeaderValue(value);
+
+  if (!normalizedValue) return "";
+
+  try {
+    return decodeURIComponent(normalizedValue);
+  } catch {
+    return normalizedValue;
+  }
+};
+
+const getRequestVisitorInfo = (req, submittedInfo) => ({
+  ip:
+    submittedInfo.ip ||
+    firstHeaderValue(req.headers["x-forwarded-for"]) ||
+    firstHeaderValue(req.headers["x-real-ip"]) ||
+    req.socket?.remoteAddress ||
+    "",
+  city:
+    submittedInfo.city ||
+    decodeHeaderValue(req.headers["x-vercel-ip-city"]) ||
+    decodeHeaderValue(req.headers["cf-ipcity"]),
+  region:
+    submittedInfo.region ||
+    decodeHeaderValue(req.headers["x-vercel-ip-country-region"]) ||
+    decodeHeaderValue(req.headers["cf-region"]),
+  country:
+    submittedInfo.country ||
+    decodeHeaderValue(req.headers["x-vercel-ip-country"]) ||
+    decodeHeaderValue(req.headers["cf-ipcountry"]),
+});
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
@@ -14,11 +52,23 @@ export default async function handler(req, res) {
     message,
     referringPage,
     currentPage,
-    userIP,
-    userCity,
-    userRegion,
-    userCountry,
+    userIP: submittedUserIP,
+    userCity: submittedUserCity,
+    userRegion: submittedUserRegion,
+    userCountry: submittedUserCountry,
   } = req.body;
+
+  const {
+    ip: userIP,
+    city: userCity,
+    region: userRegion,
+    country: userCountry,
+  } = getRequestVisitorInfo(req, {
+    ip: submittedUserIP,
+    city: submittedUserCity,
+    region: submittedUserRegion,
+    country: submittedUserCountry,
+  });
 
   try {
     const transporter = nodemailer.createTransport({

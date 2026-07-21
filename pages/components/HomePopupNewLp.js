@@ -130,19 +130,54 @@ export default function HomePopupNewLp() {
     setIsSubmitting(true);
 
     try {
-      const response = await submitPopupContactFormScreen(
-        form.fulName,
-        form.email,
-        form.phoneNumber,
-        "",
-        form.message
-      );
+      const [hubspotResult, emailResult] = await Promise.allSettled([
+        submitPopupContactFormScreen(
+          form.fulName,
+          form.email,
+          form.phoneNumber,
+          "",
+          form.message
+        ),
+        fetch("/api/popup-signup-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            fullName: form.fulName,
+            email: form.email,
+            phoneNumber: form.phoneNumber,
+            service: "50% Publishing Discount Popup",
+            message: form.message,
+            referringPage: document.referrer || "Direct visit",
+            currentPage: window.location.href,
+          }),
+        }).then(async (response) => {
+          const data = await response.json().catch(() => ({}));
 
-      if (response) {
+          if (!response.ok || data?.success === false) {
+            throw new Error(data?.message || "SMTP email submission failed");
+          }
+
+          return data;
+        }),
+      ]);
+
+      const hubspotSucceeded =
+        hubspotResult.status === "fulfilled" && Boolean(hubspotResult.value);
+      const emailSucceeded =
+        emailResult.status === "fulfilled" && emailResult.value?.success === true;
+
+      if (hubspotSucceeded && emailSucceeded) {
         setShowSuccess(true);
         setForm(initialForm);
         setTimeout(() => setShowSuccess(false), 4000);
       } else {
+        console.error("Popup submission failed", {
+          hubspot: hubspotResult,
+          email: emailResult,
+        });
         alert("There was an error submitting your form. Please try again.");
       }
     } catch (error) {
