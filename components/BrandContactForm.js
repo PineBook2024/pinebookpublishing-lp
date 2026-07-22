@@ -1,5 +1,6 @@
 import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
@@ -32,12 +33,12 @@ export default function BrandContact() {
         const setter = setters[name];
         if (setter) {
             if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/;
+                const phoneRegex = /^\d{0,15}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
                     setPhoneError("");
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Enter a valid international phone number");
                 }
             } else {
                 setter(value);
@@ -47,8 +48,8 @@ export default function BrandContact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9 || phoneNumber.length > 15) {
+            setPhoneError("Enter a valid international phone number");
             return;
         }
         const response = await submitMainContactForm(
@@ -117,8 +118,7 @@ export default function BrandContact() {
                                     </div>
 
                                     <div className="relative mb-3">
-                                        <input
-                                            type="text"
+                                        <CountryPhoneInput
                                             name="phoneNumber"
                                             onChange={handleChange}
                                             value={phoneNumber}

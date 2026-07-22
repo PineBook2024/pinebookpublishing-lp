@@ -9,6 +9,7 @@ import BrandTestimonial from "/components/BrandTestimonial";
 import BrandVideoShowcase from "../components/BrandVideoShowcase";
 import BrandFooterBook from "../components/BrandFooterBook";
 import HeroFormBookOffer, { countryCodes as projectCountryCodes } from "../components/HerformBookOffer";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faCheckCircle, faYoutube, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation, faThreads } from "@fortawesome/free-solid-svg-icons";
 import Story from "/components/Story";
@@ -2743,8 +2744,7 @@ export default function HomePage() {
 
                     {/* Phone Field */}
                     <div className="mb-4">
-                      <input
-                        type="tel"
+                      <CountryPhoneInput
                         name="phone"
                         placeholder="Enter your Phone No *"
                         pattern="[0-9]{10,15}"
@@ -2884,8 +2884,7 @@ export default function HomePage() {
                         className="w-full rounded-xl border border-slate-300 px-4 py-3 text-black transition focus:border-[#117d6b] focus:outline-none focus:ring-2 focus:ring-[#117d6b]/20"
                       />
                     </div>
-                    <input
-                      type="tel"
+                    <CountryPhoneInput
                       name="phone"
                       placeholder="Phone Number *"
                       pattern="[0-9]{10,15}"

@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 
 const initialForm = {
@@ -273,7 +274,7 @@ export default function HomePopupNewLp() {
               <form className="hnlp-form" onSubmit={handleSubmit}>
                 <div className="hnlp-grid">
                   <input name="fulName" value={form.fulName} onChange={handleChange} placeholder="Your name" required />
-                  <input name="phoneNumber" value={form.phoneNumber} onChange={handleChange} placeholder="Phone number" required />
+                  <CountryPhoneInput name="phoneNumber" value={form.phoneNumber} onChange={handleChange} placeholder="Phone number" required />
                 </div>
 
                 {phoneError && <p className="hnlp-error">{phoneError}</p>}

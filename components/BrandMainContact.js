@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -23,7 +24,7 @@ export default function BrandMainContact() {
 
         if (setters[name]) {
             if (name === "phoneNumber") {
-                const phoneRegex = /^\d{0,10}$/;
+                const phoneRegex = /^\d{0,15}$/;
                 if (phoneRegex.test(value)) {
                     setters[name](value);
                     setPhoneError("");
@@ -38,8 +39,8 @@ export default function BrandMainContact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9 || phoneNumber.length > 15) {
+            setPhoneError("Enter a valid international phone number");
             return;
         }
 
@@ -114,8 +115,7 @@ export default function BrandMainContact() {
                                 </div>
 
                                 <div className="relative mb-3">
-                                    <input
-                                        type="text"
+                                    <CountryPhoneInput
                                         name="phoneNumber"
                                         value={phoneNumber}
                                         onChange={handleChange}

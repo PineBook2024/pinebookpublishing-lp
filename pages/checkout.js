@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
@@ -565,7 +566,7 @@ export default function CheckoutPage() {
                       </div>
                       <div>
                         <label style={styles.label}>Phone Number</label>
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 123-4567" style={styles.input} />
+                        <CountryPhoneInput name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your Phone" style={styles.input} />
                       </div>
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -511,7 +512,7 @@ export default function HomePage() {
                                 <form className="mt-4 space-y-2.5">
                                     <input type="text" placeholder="Your name" className="pbp-input" />
                                     <input type="email" placeholder="Your email address" className="pbp-input" />
-                                    <input type="tel" placeholder="Your phone number" className="pbp-input" />
+                                    <CountryPhoneInput name="phone" placeholder="Your phone number" inputClassName="pbp-input" />
                                     <select className="pbp-input text-[#7e7e7e]">
                                         <option>Select Course</option>
                                         <option>Book Publishing</option>

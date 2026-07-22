@@ -7146,3 +7146,328 @@ iframe.goog-te-banner-frame {
   padding: 11px;
   text-align: left;
 }
+/* Shared country-code phone field */
+.country-phone-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  overflow: hidden;
+  border: 1px solid #d7dde5;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.country-phone-country {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 0 0 62px;
+  gap: 7px;
+  padding: 0 9px;
+  border-right: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.country-phone-country svg {
+  width: 24px;
+  height: 16px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+}
+
+.country-phone-country select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.country-phone-chevron {
+  width: 8px;
+  height: 8px;
+  transform: translateY(-2px) rotate(45deg);
+  border-right: 1.5px solid #475569;
+  border-bottom: 1.5px solid #475569;
+}
+
+.country-phone-code {
+  flex: 0 0 auto;
+  padding: 0 9px;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.country-phone-number {
+  box-sizing: border-box;
+  min-width: 0;
+  height: 50px !important;
+  flex: 1 1 auto;
+  padding: 0 14px 0 0 !important;
+  text-indent: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  background: transparent !important;
+  color: #172033;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: none !important;
+}
+
+.country-phone-number::placeholder {
+  color: #94a3b8;
+  font-size: 13px;
+  opacity: 1;
+}
+
+.country-phone-shell:focus-within {
+  border-color: #117d6b;
+  box-shadow: 0 0 0 3px rgba(17, 125, 107, 0.14), 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.country-phone-shell--compact {
+  height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  border-radius: 6px;
+}
+
+.country-phone-shell--compact .country-phone-input,
+.country-phone-shell--compact .PhoneInputCountry,
+.country-phone-shell--compact .PhoneInputInput {
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+}
+
+.country-phone-shell--compact .country-phone-country {
+  flex-basis: 56px;
+  gap: 6px;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.country-phone-shell--compact .country-phone-country svg {
+  width: 23px;
+  height: 15px;
+}
+
+.country-phone-shell--compact .country-phone-code {
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 13px;
+}
+
+.country-phone-shell--compact .country-phone-number {
+  height: 36px !important;
+  padding-right: 12px !important;
+  font-size: 13px;
+}
+
+.country-phone-shell--compact .country-phone-number::placeholder {
+  font-size: 12px;
+}
+
+.country-phone-shell--compact .PhoneInputCountry {
+  flex-basis: 66px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.country-phone-shell--compact .PhoneInputCountryIcon {
+  width: 24px;
+  height: 16px;
+}
+
+.country-phone-shell--compact .PhoneInputInput {
+  padding-right: 14px !important;
+  padding-left: 14px !important;
+  font-size: 14px;
+}
+
+.country-phone-input {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0;
+  background: #fff;
+  color: #172033;
+  box-shadow: none;
+}
+
+.country-phone-input:focus-within {
+  box-shadow: none;
+}
+
+.country-phone-input .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 76px;
+  box-sizing: border-box;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  align-self: stretch;
+  margin: 0;
+  padding: 0 14px;
+  border-right: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.country-phone-input .PhoneInputCountryIcon {
+  width: 28px;
+  height: 19px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+}
+
+.country-phone-input .PhoneInputCountrySelectArrow {
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-left: 10px;
+  border-color: #334155;
+  opacity: 1;
+}
+
+.country-phone-input .PhoneInputInput {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  padding: 0 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: none !important;
+}
+
+.country-phone-input .PhoneInputInput::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.country-phone-shell + img {
+  display: none !important;
+}
+
+.relative:has(> .country-phone-shell) .text-red-500,
+.relative:has(> .country-phone-shell) .hnlp-error,
+.relative:has(> .country-phone-shell) .jt-error,
+.relative:has(> .country-phone-shell) .lp-field-error {
+  display: block;
+  margin: 6px 2px 0 !important;
+  color: #dc2626 !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .country-phone-input {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    border-radius: 10px;
+  }
+
+  .country-phone-shell {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+  }
+
+  .country-phone-shell--compact {
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+  }
+
+  .country-phone-shell--compact .country-phone-input,
+  .country-phone-shell--compact .PhoneInputCountry,
+  .country-phone-shell--compact .PhoneInputInput {
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+  }
+
+  .country-phone-number {
+    height: 46px !important;
+    font-size: 14px;
+  }
+
+  .country-phone-shell--compact .country-phone-number {
+    height: 36px !important;
+  }
+
+  .country-phone-input .PhoneInputCountry {
+    flex-basis: 68px;
+    padding: 0 11px;
+  }
+
+  .country-phone-input .PhoneInputInput {
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    padding: 0 13px !important;
+    font-size: 14px;
+  }
+
+  .country-phone-input .PhoneInputCountry {
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+  }
+}
+
+.country-phone-input.PhoneInput--disabled {
+  cursor: not-allowed;
+  background: #f1f5f9;
+  opacity: 0.7;
+}
+
+input.connect-form-input,
+input.brand-connect-form-input,
+input.home-connect-form-input {
+  height: 52px;
+  min-height: 52px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+input.connect-form-input,
+input.home-connect-form-input {
+  padding-left: 17px;
+  padding-right: 17px;
+}

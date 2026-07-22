@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 import Head from "next/head";
 import Image from "next/image";
@@ -345,12 +346,11 @@ export default function PublishingLpNew() {
                             <form className="flex justify-center flex-col lg:flex-row new-lp-banner-form gap-4" onSubmit={handleSubmit}>
                                 <div className="relative">
                                     <input
-                                        type="text"
                                         name="firstName"
                                         onChange={handleChange}
                                         value={firstName}
                                         required
-                                        className="pl-4 pr-4 py-2 border rounded-lg w-full text-md text-black"
+                                        inputClassName="text-md text-black"
                                         placeholder="Enter your Name"
                                     />
                                 </div>
@@ -366,8 +366,7 @@ export default function PublishingLpNew() {
                                     />
                                 </div>
                                 <div className="relative flex flex-col">
-                                    <input
-                                        type="text"
+                                    <CountryPhoneInput
                                         name="phone"
                                         onChange={handleChange}
                                         value={phone}
@@ -987,12 +986,11 @@ export default function PublishingLpNew() {
                                 <form className="flex justify-center flex-col new-lp-banner-form gap-4" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-0 lg:mb-4">
                                         <input
-                                            type="text"
                                             name="firstName"
                                             onChange={handleChange}
                                             value={firstName}
                                             required
-                                            className="pl-4 pr-4 py-2 border rounded-lg w-full text-md text-black"
+                                            inputClassName="text-md text-black"
                                             placeholder="Enter your Name"
                                         />
                                         <input
@@ -1006,8 +1004,7 @@ export default function PublishingLpNew() {
                                         />
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                        <input
-                                            type="text"
+                                        <CountryPhoneInput
                                             name="phone"
                                             onChange={handleChange}
                                             value={phone}

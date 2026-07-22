@@ -3,6 +3,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import {
   BookOpen,
   User,
@@ -434,14 +435,13 @@ export default function Register() {
                     <span style={iconWrapStyle}>
                       <Phone size={16} />
                     </span>
-                    <input
+                    <CountryPhoneInput
                       name="phone"
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 000-0000"
                       className="pb-auth-input"
                       style={inputStyle}
-                      type="text"
                     />
                   </div>
                 </div>

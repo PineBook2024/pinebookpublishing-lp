@@ -1,5 +1,6 @@
 import useHubspotForm from "/hooks/hubspot";
 import React, { useState, useEffect } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
@@ -144,7 +145,6 @@ export default function BrandHero() {
                             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                                 <div className="relative">
                                     <input
-                                        type="text"
                                         name="username"
                                         onChange={handleChange}
                                         value={username}

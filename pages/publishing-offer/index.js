@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 import Head from "next/head";
 import Image from "next/image";
@@ -316,8 +317,7 @@ export default function Lp() {
                                     />
                                 </div>
                                 <div className="relative flex flex-col">
-                                    <input
-                                        type="text"
+                                    <CountryPhoneInput
                                         name="phone"
                                         onChange={handleChange}
                                         value={phone}

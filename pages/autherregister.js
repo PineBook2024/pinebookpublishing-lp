@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -204,7 +205,7 @@ export default function AuthorRegister() {
                   <input type="email" name="email" required value={formData.email} onChange={handleChange} style={inputBase} placeholder="you@example.com" />
                 </Field>
                 <Field label="Phone" icon={Phone}>
-                  <input type="text" name="phone" value={formData.phone} onChange={handleChange} style={inputBase} placeholder="+1 (555) 000-0000" />
+                  <CountryPhoneInput name="phone" value={formData.phone} onChange={handleChange} style={inputBase} placeholder="Enter your Phone" />
                 </Field>
               </div>
               <Field label="Website" icon={Globe}>

@@ -3,6 +3,7 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import useHubspotForm from "/hooks/hubspot";
@@ -114,8 +115,7 @@ export default function HomePopup() {
                                         </div>
 
                                         <div className="relative mb-3">
-                                            <input
-                                                type="text"
+                                            <CountryPhoneInput
                                                 name="phoneNumber"
                                                 onChange={handleChange}
                                                 value={phoneNumber}

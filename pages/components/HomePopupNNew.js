@@ -1,6 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 
 export default function HomePopupNNew() {
@@ -120,7 +121,7 @@ export default function HomePopupNNew() {
 
                   <div className="jt-fields">
                     <input type="text" name="fullName" value={fullName} onChange={handleChange} placeholder="Enter your Name" required />
-                    <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChange} placeholder="Enter your Phone" required />
+                    <CountryPhoneInput name="phoneNumber" value={phoneNumber} onChange={handleChange} placeholder="Enter your Phone" required />
                     {phoneError && <p className="jt-error">{phoneError}</p>}
                     <input type="email" name="email" value={email} onChange={handleChange} placeholder="Enter your Email" required />
                     <textarea name="message" rows={3} value={message} onChange={handleChange} placeholder="Enter your Message" required />

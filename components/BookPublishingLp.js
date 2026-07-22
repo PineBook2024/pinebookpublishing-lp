@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -143,8 +144,7 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
                       </div>
 
                       <div className="relative flex flex-col mb-3">
-                        <input
-                          type="text"
+                        <CountryPhoneInput
                           name="phoneNumber"
                           onChange={handleChange}
                           value={phoneNumber}

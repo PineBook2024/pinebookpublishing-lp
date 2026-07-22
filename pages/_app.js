@@ -5,6 +5,7 @@ import Script from "next/script";
 import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "react-phone-number-input/style.css";
 import HomePopupNew from "./components/HomePopupNew";
 import { CartProvider } from "../context/CartContext";
 import AdminGuard from "../components/AdminGuard";

@@ -1,5 +1,6 @@
 import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
@@ -255,8 +256,7 @@ export default function BrandMainContact() {
                                 </div>
 
                                 <div className="relative mb-3">
-                                    <input
-                                        type="text"
+                                    <CountryPhoneInput
                                         name="phoneNumber"
                                         onChange={handleChange}
                                         value={phoneNumber}

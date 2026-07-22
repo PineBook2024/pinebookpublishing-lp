@@ -1,5 +1,6 @@
 // import useHubspotForm from "/hooks/hubspot";
 import React, { useState, useRef, useEffect } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -393,7 +394,6 @@ export default function BrandHeroFridayUpdate() {
                       <div className="grid gap-3 md:grid-cols-2 w-full">
                         <div className="relative w-full">
                           <input
-                            type="text"
                             name="fullName"
                             onChange={handleChange}
                             value={fullName}
@@ -403,12 +403,12 @@ export default function BrandHeroFridayUpdate() {
                           />
                         </div>
                         <div className="relative w-full">
-                          <input
-                            type="text"
+                          <CountryPhoneInput
                             onChange={handleChange}
                             value={phoneNumber}
                             name="phoneNumber"
                             required
+                            wrapperClassName="country-phone-shell--compact"
                             className="pl-4 pr-4 py-2 border rounded-md w-full text-sm shadow-xl"
                             placeholder="Enter your Phone"
                           />

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 
 import { useEffect, useState } from "react";
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import axios from "axios";
 import ApexCharts from "apexcharts";
 
@@ -1299,7 +1300,7 @@ export default function Shop() {
               <div className="w-full">
                 <div className="form-group mb-6.1">
                   <label className="mb-2.5 inline-block">Phone*</label>
-                  <input name="dzName" required className="w-full py-4 px-5 h-13.5 outline-none rounded-xl border border-black bg-white duration-500 focus:bg-light" />
+                  <CountryPhoneInput name="phone" required />
                 </div>
               </div>
               <div className="w-full">

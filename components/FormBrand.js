@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -323,7 +324,6 @@ export default function BrandHeroFridayUpdate() {
                       <div className="grid gap-3 md:grid-cols-2 w-full">
                         <div className="relative w-full">
                           <input
-                            type="text"
                             name="fullName"
                             onChange={handleChange}
                             value={fullName}
@@ -334,8 +334,7 @@ export default function BrandHeroFridayUpdate() {
                         </div>
 
                         <div className="relative w-full">
-                          <input
-                            type="text"
+                          <CountryPhoneInput
                             onChange={handleChange}
                             value={phoneNumber}
                             name="phoneNumber"

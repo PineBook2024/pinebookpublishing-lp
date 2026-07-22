@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 
 const initialForm = {
@@ -187,8 +188,7 @@ export default function HomePopupNewLp() {
                     required
                     placeholder="Your name"
                   />
-                  <input
-                    type="tel"
+                  <CountryPhoneInput
                     name="phoneNumber"
                     value={form.phoneNumber}
                     onChange={handleChange}

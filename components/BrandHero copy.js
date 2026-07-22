@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
@@ -110,8 +111,7 @@ export default function BrandHero() {
                                     <Image src="/brand-img/user-icon.png" width={14} height={14} className="absolute left-0 ml-4 top-3" alt="User Icon" />
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="text"
+                                    <CountryPhoneInput
                                         name="phoneNumber"
                                         onChange={handleChange}
                                         value={phoneNumber}

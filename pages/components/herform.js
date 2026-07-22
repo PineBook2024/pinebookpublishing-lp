@@ -1,5 +1,6 @@
 import useHubspotForm from "/hooks/hubspot";
 import React, { useState, useEffect } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
@@ -184,7 +185,6 @@ export default function HeroForm() {
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div className="relative">
                 <input
-                  type="text"
                   name="firstName"
                   onChange={handleChange}
                   value={firstName}
@@ -194,8 +194,7 @@ export default function HeroForm() {
                 />
               </div>
               <div className="relative">
-                <input
-                  type="text"
+                <CountryPhoneInput
                   onChange={handleChange}
                   value={phone}
                   name="phone"

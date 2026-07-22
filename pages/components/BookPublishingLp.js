@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import useHubspotForm from "/hooks/hubspot";
@@ -105,19 +106,17 @@ function BookPublishingLp({ isOpen, setIsOpen }) {
                                         <div className="flex gap-4">
                                             <div className="relative mb-3">
                                                 <input
-                                                    type="text"
                                                     name="email"
                                                     onChange={handleChange}
                                                     value={email}
                                                     required
-                                                    className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input font-poppins"
+                                                    inputClassName="home-connect-form-input font-poppins"
                                                     placeholder="Email Address *"
                                                 />
                                                 <Image src={"/brand-img/email-icon.png"} width={16} height={16} className="absolute left-0 top-4 ml-3" />
                                             </div>
                                             <div className="relative mb-3 flex flex-col">
-                                                <input
-                                                    type="text"
+                                                <CountryPhoneInput
                                                     name="phoneNumber"
                                                     onChange={handleChange}
                                                     value={phoneNumber}

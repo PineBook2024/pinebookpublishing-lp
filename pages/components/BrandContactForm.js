@@ -1,5 +1,6 @@
 // import useHubspotForm from "/hooks/hubspot";
 import React, { useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faUser, faPhone, faEnvelope, faPen } from "@fortawesome/free-solid-svg-icons";
@@ -241,13 +242,12 @@ export default function BrandContact() {
                                     </div>
 
                                     <div className="relative mb-3">
-                                        <input
-                                            type="text"
+                                        <CountryPhoneInput
                                             name="phoneNumber"
                                             onChange={handleChange}
                                             value={phoneNumber}
                                             required
-                                            className="w-full py-2 pl-4 pr-4 border rounded-lg shadow-xl brand-connect-form-input"
+                                            inputClassName="brand-connect-form-input"
                                             placeholder="Enter your Number"
                                         />
                                         <Image src={"/brand-img/phone-icon.png"} width={16} height={16} className="absolute left-0 ml-4 top-4" />

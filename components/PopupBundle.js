@@ -3,6 +3,7 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import useHubspotForm from "/hooks/hubspot";
@@ -46,12 +47,12 @@ export default function PopupBundle({ isOpen, onClose, service }) {
         const setter = setters[name];
         if (setter) {
             if (name === 'phoneNumber') {
-                const phoneRegex = /^\d{0,10}$/;
+                const phoneRegex = /^\d{0,15}$/;
                 if (phoneRegex.test(value)) {
                     setter(value);
                     setPhoneError("");
                 } else {
-                    setPhoneError("Phone number must be exactly 10 digits");
+                    setPhoneError("Enter a valid international phone number");
                 }
             } else {
                 setter(value);
@@ -61,8 +62,8 @@ export default function PopupBundle({ isOpen, onClose, service }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (phoneNumber.length !== 10) {
-            setPhoneError("Phone number must be exactly 10 digits");
+        if (phoneNumber.length < 9 || phoneNumber.length > 15) {
+            setPhoneError("Enter a valid international phone number");
             return;
         }
         const response = await submitPopupContactForm(
@@ -136,8 +137,7 @@ export default function PopupBundle({ isOpen, onClose, service }) {
                                         </div>
 
                                         <div className="relative mb-3">
-                                            <input
-                                                type="text"
+                                            <CountryPhoneInput
                                                 name="phoneNumber"
                                                 onChange={handleChange}
                                                 value={phoneNumber}

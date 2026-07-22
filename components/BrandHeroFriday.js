@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -126,7 +127,7 @@ export default function BrandHeroFriday() {
                                 <div className="relative w-full col-span-2">
                                     <form className="flex flex-col items-start justify-start gap-4" onSubmit={handleSubmit}>
                                         <input type="text" name="fullName" value={fullName} onChange={handleChange} placeholder="Enter your Name" required className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl" />
-                                        <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChange} placeholder="Enter your Phone" required className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl" />
+                                        <CountryPhoneInput name="phoneNumber" value={phoneNumber} onChange={handleChange} placeholder="Enter your Phone" required inputClassName="text-sm" />
                                         {phoneError && <p className="mt-1 text-sm text-red-500">{phoneError}</p>}
                                         <input type="text" name="email" value={email} onChange={handleChange} placeholder="Enter your Email" required className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl" />
                                         <textarea name="message" rows={3} value={message} onChange={handleChange} placeholder="Enter your Message" required className="w-full py-2 pl-4 pr-4 text-sm border shadow-xl rounded-xl"></textarea>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import "swiper/css/effect-coverflow";
 import Header from "./components/header";
 import Hero from "./components/hero";
@@ -844,8 +845,7 @@ export default function Home() {
                 </div>
 
                 <div className="relative mb-3">
-                  <input
-                    type="text"
+                  <CountryPhoneInput
                     name="phoneNumber"
                     onChange={handleChange}
                     value={phoneNumber}

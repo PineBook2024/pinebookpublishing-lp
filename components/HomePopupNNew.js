@@ -1,6 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
+import CountryPhoneInput from "./CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import useHubspotForm from "/hooks/hubspot";
@@ -209,8 +210,7 @@ export default function HomePopupJuneteenth() {
                       placeholder="Enter your Name"
                     />
 
-                    <input
-                      type="text"
+                    <CountryPhoneInput
                       name="phoneNumber"
                       onChange={handleChange}
                       value={form.phoneNumber}

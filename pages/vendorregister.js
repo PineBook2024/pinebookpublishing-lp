@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CountryPhoneInput from "../components/CountryPhoneInput";
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -231,7 +232,7 @@ export default function VendorRegister() {
               </Field>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="two-col">
                 <Field label="Phone" icon={Phone}>
-                  <input type="text" name="phone" value={formData.phone} onChange={handleChange} style={inputBase} placeholder="+1 (555) 000-0000" />
+                  <CountryPhoneInput name="phone" value={formData.phone} onChange={handleChange} style={inputBase} placeholder="Enter your Phone" />
                 </Field>
                 <Field label="Website" icon={Globe}>
                   <input type="text" name="website_url" value={formData.website_url} onChange={handleChange} style={inputBase} placeholder="https://" />
