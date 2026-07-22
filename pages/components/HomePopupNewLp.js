@@ -1232,35 +1232,69 @@ export default function HomePopupNewLp() {
         }
 
         @media (max-width: 900px) {
+          .hnlp-overlay {
+            align-items: flex-start !important;
+            padding: 10px !important;
+          }
+
           .hnlp-modal {
-            grid-template-columns: 1fr;
+            display: block;
+            width: min(560px, 100%);
+            max-height: calc(100vh - 20px);
+            max-height: calc(100dvh - 20px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-radius: 16px;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .hnlp-close {
+            position: sticky;
+            display: block;
+            right: auto;
+            top: 12px;
+            width: 36px;
+            height: 36px;
+            margin: 12px 12px -48px auto;
+          }
+
+          .hnlp-close span {
+            left: 9px;
+            top: 17px;
           }
 
           .hnlp-visual {
-            min-height: 330px;
-            padding: 24px;
+            min-height: 238px;
+            overflow: hidden;
+            padding: 18px 20px;
+          }
+
+          .hnlp-pill {
+            padding: 7px 12px;
+            font-size: 10px;
           }
 
           .hnlp-books {
-            width: 270px;
-            height: 210px;
+            width: 238px;
+            height: 176px;
             left: 50%;
-            top: 56%;
+            top: 59%;
             margin: 0;
             transform: translate(-50%, -50%);
           }
 
           .hnlp-book {
-            width: 136px;
-            height: 200px;
+            width: 122px;
+            height: 170px;
           }
 
           .hnlp-book-a {
-            left: 0;
+            left: 8px;
           }
 
           .hnlp-book-b {
-            right: 0;
+            right: 8px;
           }
 
           .hnlp-book-c {
@@ -1268,22 +1302,32 @@ export default function HomePopupNewLp() {
           }
 
           .hnlp-badge {
-            right: 22px;
-            top: calc(56% + 54px);
-            width: 92px;
-            height: 92px;
+            right: max(18px, calc(50% - 142px));
+            top: 130px;
+            width: 78px;
+            height: 78px;
+            border-width: 4px;
           }
 
           .hnlp-badge strong {
-            font-size: 32px;
+            font-size: 27px;
+          }
+
+          .hnlp-badge small {
+            font-size: 10px;
           }
 
           .hnlp-content {
-            padding: 28px 20px 24px;
+            overflow: visible;
+            padding: 24px 20px 20px;
+          }
+
+          .hnlp-content h2 {
+            margin-right: 0;
           }
 
           .hnlp-countdown-row {
-            gap: 5px;
+            gap: 4px;
           }
 
           .hnlp-time-box {
@@ -1310,25 +1354,166 @@ export default function HomePopupNewLp() {
         }
 
         @media (max-width: 560px) {
+          .hnlp-overlay {
+            padding: 6px !important;
+          }
+
+          .hnlp-modal {
+            max-height: calc(100vh - 12px);
+            max-height: calc(100dvh - 12px);
+            border-radius: 13px;
+          }
+
+          .hnlp-close {
+            top: 9px;
+            width: 34px;
+            height: 34px;
+            margin: 9px 9px -43px auto;
+          }
+
+          .hnlp-close span {
+            left: 8px;
+            top: 16px;
+          }
+
+          .hnlp-visual {
+            display: none;
+          }
+
+          .hnlp-pill {
+            max-width: calc(100% - 48px);
+            padding: 6px 10px;
+            font-size: 9px;
+            letter-spacing: 1px;
+          }
+
+          .hnlp-books {
+            top: 60%;
+            width: 205px;
+            height: 148px;
+          }
+
+          .hnlp-book {
+            width: 105px;
+            height: 145px;
+            border-radius: 6px 10px 10px 6px;
+          }
+
+          .hnlp-book-a {
+            left: 6px;
+            transform: rotate(-9deg) translateY(15px);
+          }
+
+          .hnlp-book-b {
+            right: 6px;
+            transform: rotate(7deg) translateY(12px);
+          }
+
+          .hnlp-badge {
+            right: max(10px, calc(50% - 124px));
+            top: 116px;
+            width: 66px;
+            height: 66px;
+            border-width: 3px;
+          }
+
+          .hnlp-badge strong {
+            font-size: 23px;
+          }
+
+          .hnlp-badge small {
+            font-size: 9px;
+          }
+
+          .hnlp-content {
+            padding: 48px 14px 15px;
+          }
+
+          .hnlp-eyebrow {
+            font-size: 10px;
+            letter-spacing: 1.4px;
+          }
+
           .hnlp-grid {
             grid-template-columns: 1fr;
+            gap: 9px;
           }
 
           .hnlp-content h2 {
-            font-size: 28px;
+            margin: 7px 0 8px;
+            font-size: 23px;
+            line-height: 1.12;
+          }
+
+          .hnlp-copy {
+            margin-bottom: 12px;
+            font-size: 12px !important;
+            line-height: 1.55;
           }
 
           .hnlp-countdown {
-            padding: 12px 9px;
+            margin-bottom: 12px;
+            padding: 10px 7px 11px;
+            border-radius: 11px;
+          }
+
+          .hnlp-countdown-label {
+            margin-bottom: 7px;
+            font-size: 10px;
+            letter-spacing: 1.4px;
+          }
+
+          .hnlp-countdown-row {
+            gap: 3px;
           }
 
           .hnlp-time-box {
-            min-width: 46px;
-            padding: 7px 4px 6px;
+            min-width: 42px;
+            padding: 6px 3px 5px;
+            border-radius: 7px;
           }
 
           .hnlp-time-box strong {
-            font-size: 18px;
+            font-size: 17px;
+          }
+
+          .hnlp-time-box > span {
+            font-size: 8px;
+            letter-spacing: 0.5px;
+          }
+
+          .hnlp-time-colon {
+            font-size: 16px;
+          }
+
+          .hnlp-form {
+            gap: 9px;
+          }
+
+          .hnlp-form input,
+          .hnlp-form select {
+            height: 44px;
+            padding: 0 12px;
+          }
+
+          .hnlp-form input,
+          .hnlp-form select,
+          .hnlp-form textarea {
+            border-radius: 8px;
+            font-size: 13px;
+          }
+
+          .hnlp-form textarea {
+            min-height: 76px;
+            padding: 11px 12px;
+          }
+
+          .hnlp-form button {
+            min-height: 48px;
+            border-radius: 8px;
+            padding: 9px 12px;
+            font-size: 12px;
+            line-height: 1.3;
           }
 
           :global(.hnlp-digit-window) {
@@ -1343,6 +1528,56 @@ export default function HomePopupNewLp() {
           :global(.hnlp-digit) {
             height: 19px;
             flex-basis: 19px;
+          }
+
+          .hnlp-tab {
+            left: 9px;
+            right: 9px;
+            bottom: 10px;
+            width: fit-content;
+            max-width: calc(100vw - 18px);
+            gap: 7px;
+            border-radius: 14px;
+            padding: 7px 10px 7px 7px;
+          }
+
+          .hnlp-tab-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            font-size: 16px;
+          }
+
+          .hnlp-tab-copy {
+            min-width: 0;
+            gap: 4px;
+          }
+
+          .hnlp-tab-copy small {
+            font-size: 8px;
+            letter-spacing: 1px;
+          }
+
+          .hnlp-tab-time-box {
+            min-width: 28px;
+            height: 28px;
+            border-radius: 6px;
+          }
+
+          .hnlp-tab-time-box strong {
+            font-size: 12px;
+          }
+
+          .hnlp-tab-time-box em {
+            font-size: 6px;
+          }
+
+          .hnlp-tab-book {
+            left: 22px;
+            top: -46px;
+            width: 58px;
+            height: 41px;
+            transform: rotate(-8deg) scale(0.88);
           }
         }
       `}</style>
