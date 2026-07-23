@@ -225,11 +225,12 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
                                     <div className="py-5">
                                         <div className="relative mb-3">
                                             <input
+                                                type="text"
                                                 name="fulName"
                                                 onChange={handleChange}
                                                 value={fulName}
                                                 required
-                                                inputClassName="home-connect-form-input"
+                                                className="pl-4 pr-4 py-2 border rounded-lg w-full home-connect-form-input"
                                                 placeholder="Enter your Name"
                                             />
                                         </div>
