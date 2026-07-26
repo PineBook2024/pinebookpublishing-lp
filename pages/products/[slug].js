@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com";
 
 export default function ProductDetailPage() {
   const router = useRouter();

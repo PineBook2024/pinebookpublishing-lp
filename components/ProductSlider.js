@@ -8,7 +8,7 @@ import { useCart } from "../context/StoreContext";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com";
 
 export default function ProductSlider() {
   const [products, setProducts] = useState([]);

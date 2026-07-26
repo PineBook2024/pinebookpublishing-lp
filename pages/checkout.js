@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { loadStripe } from "@stripe/stripe-js";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com/api";
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 const GUEST_KEY = "pinebook_cart_guest";

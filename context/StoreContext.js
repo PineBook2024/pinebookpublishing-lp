@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const StoreContext = createContext();
 
 // StoreContext.js
-const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com/api";
 
 export const StoreProvider = ({ children }) => {
   const [cart, setCart] = useState([]);

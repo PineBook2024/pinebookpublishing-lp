@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com";
 const GUEST_KEY = "pinebook_cart_guest";
 
 const getKey = () => {

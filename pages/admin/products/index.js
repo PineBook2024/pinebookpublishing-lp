@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://pinebookbackend.pinedigitalhub.com/api';
-const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL || 'http://localhost:8000/storage';
+const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL || 'https://pinebookbackend.pinedigitalhub.com/storage';
 
 // ===== ICONS (same as admin dashboard) =====
 const Icons = {

@@ -7,7 +7,7 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://pinebookbackend.pinedigitalhub.com";
 
 // Static images from your original design (fallback)
 const DEFAULT_IMAGES = [
