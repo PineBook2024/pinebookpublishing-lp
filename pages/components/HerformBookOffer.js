@@ -711,18 +711,6 @@ export default function HeroFormBookOffer() {
                    pointer-events-none"
                       ></div>
                     </div>
-                    <div className="relative w-full">
-                      <label className="block text-white text-sm font-medium mb-2">
-                        Prefered Meeting Time
-                      </label>
-                      <input
-                        type="datetime-local"
-                        name="preferredTime"
-                        value={preferredTime}
-                        onChange={handleChange}
-                        className="pl-4 pr-4 py-2 border rounded-xl w-full text-sm shadow-xl bg-white text-[#1f2937] outline-0 focus:border-[#8557f5] focus:ring-2 focus:ring-[#8557f5]/30"
-                      />
-                    </div>
                     {showSuccess && (
                       <p className="px-1 py-2 text-green-700">
                         Form submitted Successfully!
