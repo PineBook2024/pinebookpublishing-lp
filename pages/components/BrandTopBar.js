@@ -9,9 +9,9 @@ export default function BrandTopBar() {
 
     return (
         <>
-            <div className="nav-top-bar text-center py-2 mt-3">
+            <div className="nav-top-bar text-center">
                 {/* <h3 className="text-white font-poppins text-md md:text-xl font-thin"><b>From Manuscript to Marketplace: We Make It Happen for YOU.</b></h3> */}
-                <div className="max-w-screen-xl flex md:flex-row flex-col justify-center md:justify-end gap-0 lg:gap-6 mx-auto items-center">
+                <div className="nav-top-bar-inner flex md:flex-row flex-col justify-center md:justify-end mx-auto items-center">
                     <Link
                         href="tel:8887867135"
                         className="text-white text-sm hover:text-white font-poppins flex justify-center items-center font-bold"

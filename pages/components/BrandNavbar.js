@@ -100,14 +100,14 @@ export default function BrandNavbar() {
             {/* Apne nav items */}
             {/* <div id="google_translate_element" style={{ display: "inline-block" }}></div> */}
 
-            <header id="navbar" className="bg-transparent flex justify-between items-center p-4 z-10">
-                <div className='max-w-screen-xl flex justify-between items-center mx-auto w-full mx-auto'>
-                    <div>
+            <header id="navbar" className="brand-navbar bg-transparent z-50">
+                <div className="brand-navbar-inner">
+                    <div className="brand-navbar-logo-slot">
                         <Link href="/" className="text-xl font-bold text-white">
-                            <Image src={'/brand-img/logo.png'} className='nav-logo' width={240} height={80} alt="brand logo" loading="lazy" />
+                            <Image src={'/brand-img/logo.png'} className="nav-logo" width={310} height={104} alt="Pine Book Publishing" priority />
                         </Link>
                     </div>
-                    <div className="md:hidden">
+                    <div className="brand-navbar-toggle md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
@@ -122,13 +122,13 @@ export default function BrandNavbar() {
                             </svg>
                         </button>
                     </div>
-                    <nav className={`${isOpen ? 'block' : 'hidden'} fixed flex flex-col bg-gray-900 text-center items-center py-8 space-y-6 font-semibold w-full top-16 bottom-0 left-0 right-0 overflow-y-auto z-40 md:top-0 md:bottom-auto md:left-auto md:right-auto md:h-auto md:overflow-visible md:z-auto md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
-                        <ul className="md:flex items-center space-x-4">
+                    <nav className={`${isOpen ? 'block' : 'hidden'} brand-navbar-menu fixed flex flex-col bg-gray-900 text-center items-center py-8 space-y-6 font-semibold w-full top-16 bottom-0 left-0 right-0 overflow-y-auto z-40 md:top-0 md:bottom-auto md:left-auto md:right-auto md:h-auto md:overflow-visible md:z-auto md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:mt-0 md:py-0 md:w-auto md:block`}>
+                        <ul className="brand-navbar-list md:flex items-center">
                             <li className='mb-3 md:mb-0'><Link href="/" onClick={(e) => { e.preventDefault(); window.location.href = "/"; }} className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }} className="text-white hover:text-gray-300">About Us</Link></li>
                             {/* <li className='mb-3 md:mb-0'><Link href="/services" onClick={(e) => { e.preventDefault(); window.location.href = "/services"; }} className="text-white hover:text-gray-300">Services</Link></li> */}
                             <li
-                                class="mb-3 md:mb-0"
+                                className="services-nav-item mb-3 md:mb-0"
                                 // onMouseEnter={openServiceDropdown}
                                 // onMouseLeave={closeServiceDropdown}
                                 onClick={toggleServiceDropdown}

@@ -5661,6 +5661,168 @@ iframe.goog-te-banner-frame {
   }
 }
 
+/* Pine Book Publishing header */
+.nav-top-bar {
+  top: 0;
+  left: 0;
+  height: 44px;
+  padding: 12px 24px 0;
+  margin: 0;
+}
+
+.nav-top-bar-inner {
+  width: min(100%, 1872px);
+  gap: clamp(18px, 2.2vw, 42px);
+}
+
+.nav-top-bar-inner a {
+  font-size: clamp(14px, 1.05vw, 20px);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+header#navbar.brand-navbar {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.brand-navbar-inner {
+  width: min(100%, 1872px);
+  min-height: 116px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 76px);
+}
+
+.brand-navbar-logo-slot {
+  flex: 0 0 clamp(280px, 20vw, 385px);
+}
+
+.brand-navbar-logo-slot .nav-logo {
+  width: clamp(270px, 18.2vw, 350px);
+  height: auto;
+}
+
+.brand-navbar-menu {
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+.brand-navbar-list {
+  width: 100%;
+  justify-content: flex-end;
+  gap: clamp(13px, 1.25vw, 25px);
+  margin: 0 !important;
+}
+
+.brand-navbar-list > li {
+  margin-left: 0 !important;
+}
+
+.brand-navbar-list > li > a,
+.brand-navbar-list .services-nav-item > div > a {
+  font-size: clamp(15px, 1.15vw, 22px);
+  line-height: 1.1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-navbar-list .brand-nav-btn {
+  min-width: clamp(190px, 13.2vw, 252px);
+  min-height: 48px;
+  padding: 12px 24px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header#navbar.brand-navbar.fixed-top {
+  top: 0;
+  padding: 4px 24px !important;
+}
+
+header#navbar.brand-navbar.fixed-top .brand-navbar-inner {
+  min-height: 70px;
+}
+
+@media (min-width: 768px) and (max-width: 1350px) {
+  .brand-navbar-inner {
+    gap: 18px;
+  }
+
+  .brand-navbar-logo-slot {
+    flex-basis: 215px;
+  }
+
+  .brand-navbar-logo-slot .nav-logo {
+    width: 205px;
+  }
+
+  .brand-navbar-list {
+    gap: 10px;
+  }
+
+  .brand-navbar-list > li > a,
+  .brand-navbar-list .services-nav-item > div > a {
+    font-size: 13px;
+  }
+
+  .brand-navbar-list .brand-nav-btn {
+    min-width: 150px;
+    min-height: 40px;
+    padding: 9px 14px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-top-bar {
+    display: none;
+  }
+
+  header#navbar.brand-navbar {
+    top: 0;
+    padding: 10px 18px;
+  }
+
+  .brand-navbar-inner {
+    min-height: 64px;
+    justify-content: space-between;
+  }
+
+  .brand-navbar-logo-slot {
+    flex-basis: auto;
+  }
+
+  .brand-navbar-logo-slot .nav-logo {
+    width: 165px;
+  }
+
+  .brand-navbar-toggle {
+    position: relative;
+    z-index: 52;
+  }
+
+  .brand-navbar-menu {
+    top: 84px;
+    padding-bottom: 40px;
+  }
+
+  .brand-navbar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .brand-navbar-list > li > a,
+  .brand-navbar-list .services-nav-item > div > a {
+    font-size: 17px;
+  }
+}
+
 .brand-case-studies-section {
   background: #fff;
   padding: 42px 0 58px;
