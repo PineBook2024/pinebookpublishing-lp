@@ -44,6 +44,21 @@ export default function BrandNavbar() {
     };
 
     useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('mobile-nav-open');
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.classList.remove('mobile-nav-open');
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.classList.remove('mobile-nav-open');
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
+    useEffect(() => {
         const handleScroll = () => {
             const navbar = document.getElementById('navbar');
             if (navbar) {
@@ -107,7 +122,7 @@ export default function BrandNavbar() {
                             </svg>
                         </button>
                     </div>
-                    <nav className={`${isOpen ? 'block' : 'hidden'} absolute flex flex-col bg-gray-900 text-center items-center self-end py-8 mt-2 space-y-6 font-semibold w-full mb-8 top-16 md:top-0 right-0 left-0 md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
+                    <nav className={`${isOpen ? 'block' : 'hidden'} fixed flex flex-col bg-gray-900 text-center items-center py-8 space-y-6 font-semibold w-full top-16 bottom-0 left-0 right-0 overflow-y-auto z-40 md:top-0 md:bottom-auto md:left-auto md:right-auto md:h-auto md:overflow-visible md:z-auto md:space-y-0 md:flex md:flex-row md:relative md:bg-transparent md:space-x-4 md:mt-0 md:py-0 md:w-auto md:block`}>
                         <ul className="md:flex items-center space-x-4">
                             <li className='mb-3 md:mb-0'><Link href="/" onClick={(e) => { e.preventDefault(); window.location.href = "/"; }} className="text-white hover:text-gray-300">Home</Link></li>
                             <li className='mb-3 md:mb-0'><Link href="/about" onClick={(e) => { e.preventDefault(); window.location.href = "/about"; }} className="text-white hover:text-gray-300">About Us</Link></li>
