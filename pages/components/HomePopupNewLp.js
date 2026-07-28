@@ -48,12 +48,12 @@ function AnimatedTimeValue({ value }) {
   );
 }
 
-export default function HomePopupNewLp() {
+export default function HomePopupNewLp({ openOnLoad = true } = {}) {
   const { submitPopupContactFormScreen } = useHubspotForm();
   const [offerState, setOfferState] = useState(getWeeklyOfferState);
   const [form, setForm] = useState(initialForm);
-  const [isOpen, setIsOpen] = useState(() => getWeeklyOfferState().isActive);
-  const [showTab, setShowTab] = useState(false);
+  const [isOpen, setIsOpen] = useState(() => openOnLoad && getWeeklyOfferState().isActive);
+  const [showTab, setShowTab] = useState(() => !openOnLoad && getWeeklyOfferState().isActive);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
@@ -75,8 +75,8 @@ export default function HomePopupNewLp() {
         setIsOpen(false);
         setShowTab(false);
       } else if (!previousActiveRef.current) {
-        setIsOpen(true);
-        setShowTab(false);
+        setIsOpen(openOnLoad);
+        setShowTab(!openOnLoad);
       }
 
       previousActiveRef.current = nextOfferState.isActive;
@@ -86,7 +86,7 @@ export default function HomePopupNewLp() {
     const timer = setInterval(updateOffer, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [openOnLoad]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -294,7 +294,7 @@ export default function HomePopupNewLp() {
                 )}
 
                 <button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Submitting..." : "Claim My 50% Publishing Discount"}
+                  Claim My 50% Publishing Discount
                 </button>
               </form>
             </div>

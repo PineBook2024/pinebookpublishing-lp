@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import "glightbox/dist/css/glightbox.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -80,8 +81,10 @@ function CoverRow({ slides, rtl = false }) {
           <div className="h-full overflow-hidden bg-[#0e1b3f] w-full">
             <a
               href={slide.src}
-              className="portfolio1-glightbox block h-full w-full h-full"
+              className="portfolio1-glightbox block h-full w-full cursor-pointer"
               data-gallery="portfolio1-covers"
+              data-type="image"
+              data-glightbox={`title: Book cover ${slide.id}`}
             >
               <Image
                 src={slide.src}

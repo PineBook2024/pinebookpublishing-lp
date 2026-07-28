@@ -721,7 +721,7 @@ export default function HeroFormBookOffer() {
                       type="submit"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit'}
+                      Submit
                     </button>
                   </form>
                 </div>

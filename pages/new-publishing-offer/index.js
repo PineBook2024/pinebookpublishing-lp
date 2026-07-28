@@ -892,7 +892,7 @@ export default function HomePage() {
         />
       </Head>
       <main className="font-sans text-gray-800">
-        <HomePopupNewLp />
+        <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
         {/* ------------------ HEADER ------------------ */}
 
@@ -2520,7 +2520,7 @@ export default function HomePage() {
                   disabled={isSubmitting}
                   className="bg-white w-full text-[#117d6b] font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                  Submit
                 </button>
               </form>
             </div>
@@ -2790,7 +2790,7 @@ export default function HomePage() {
                       disabled={isSubmitting}
                       className="w-full bg-[#117d6b] text-white font-semibold py-3 rounded-[999px] hover:bg-[#159372] transition disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isSubmitting ? 'Submitting...' : 'Consult a Publishing Expert'}
+                      Consult a Publishing Expert
                     </button>
 
                   </form>
@@ -2906,7 +2906,7 @@ export default function HomePage() {
                       className="view-posts-btn modal-submit-btn"
                     >
                       <span className="btn-text">
-                        {isSubmitting ? 'Submitting...' : 'Consult a Publishing Expert'}
+                        Consult a Publishing Expert
                       </span>
                       <span className="btn-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

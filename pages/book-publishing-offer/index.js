@@ -600,7 +600,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        <HomePopupNewLp />
+        <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
 
         {/* <Header /> */}
@@ -3155,7 +3155,7 @@ export default function Home() {
                     </p>
                   )}
                   <button className="p-4 w-full bg-green-500 uppercase text-white rounded submit-btn mb-10" type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                    Submit
                   </button>
                 </form>
               </div>

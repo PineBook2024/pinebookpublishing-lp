@@ -299,7 +299,7 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
                                             type="submit"
                                             disabled={isSubmitting}
                                         >
-                                            {isSubmitting ? 'Submitting...' : 'Submit'}
+                                            Submit
                                         </button>
                                     </div>
                                 </form>

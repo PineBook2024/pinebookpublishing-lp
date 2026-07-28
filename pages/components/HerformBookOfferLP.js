@@ -758,7 +758,7 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
                       type="submit"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit'}
+                      Submit
                     </button>
                   </form>
                 </div>
