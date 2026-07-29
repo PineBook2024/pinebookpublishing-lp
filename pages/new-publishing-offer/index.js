@@ -2,6 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  nodeRef,
+  rounded,
+} from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { Fragment, useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
@@ -42,11 +51,22 @@ import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
 import HomePopupNewLp from "../components/HomePopupNewLp";
 
+const animatedBookOfferCounters = new Set();
 export default function HomePage() {
   const handleOpenChat = () => {
     window.zE && window.zE('webWidget', 'open');
   };
-
+const offerNavLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Packages", href: "#packages" },
+  { label: "Process", href: "#process" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Contact", href: "#contact" },
+];
   const counterRef = useRef(null);
   const contentRef = useRef(null);
   const swiperRef = useRef();
@@ -63,7 +83,78 @@ export default function HomePage() {
   const [activePackageTab, setActivePackageTab] = useState('publishing');
   const [projectCountry, setProjectCountry] = useState("US");
   const [projectPhone, setProjectPhone] = useState("");
+const [offerNavOpen, setOfferNavOpen] = useState(false);
 
+  const handleOfferNavClick = (event, href) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+    setOfferNavOpen(false);
+
+    const section = document.querySelector(href);
+    if (!section) return;
+
+    const headerOffset = 165;
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
+  };
+
+    function Counter({ from, to, val, className = "font-poppins text-black" }) {
+        const counterKey = `${to}${val}`;
+        const hasAnimatedBefore = animatedBookOfferCounters.has(counterKey);
+        const [count, setCount] = useState(hasAnimatedBefore ? to : from);
+        const nodeRef = useRef(null);
+        const inView = useInView(nodeRef, { once: true });
+        const isAnimating = useRef(false);
+    
+        useEffect(() => {
+          if (hasAnimatedBefore) {
+            setCount(to);
+            return;
+          }
+    
+          if (inView && !isAnimating.current) {
+            let frameId;
+            const duration = 2400;
+            const startTime = performance.now();
+            const change = to - from;
+            isAnimating.current = true;
+    
+            const tick = (now) => {
+              const elapsed = Math.min((now - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - elapsed, 3);
+    
+              setCount(Math.round(from + change * eased));
+    
+              if (elapsed < 1) {
+                frameId = requestAnimationFrame(tick);
+              } else {
+                setCount(to);
+                animatedBookOfferCounters.add(counterKey);
+                isAnimating.current = false;
+              }
+            };
+    
+            setCount(from);
+            frameId = requestAnimationFrame(tick);
+    
+            return () => {
+              cancelAnimationFrame(frameId);
+              isAnimating.current = false;
+            };
+          }
+        }, [counterKey, from, hasAnimatedBefore, inView, to]);
+    
+        return (
+          <span className={className} ref={nodeRef}>
+            {count}{val}
+          </span>
+        );
+      }
   const swiperRef2 = useRef(null);
   const lightboxRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('Published Books');
@@ -891,32 +982,48 @@ export default function HomePage() {
           }}
         />
       </Head>
-      <main className="font-sans text-gray-800">
+      <main id="home" className="font-sans text-gray-800">
         <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
         {/* ------------------ HEADER ------------------ */}
 
-        <header className="absolute top-0 left-0 right-0 container mx-auto py-2 width-container z-50 w-full lg:max-w-6xl bg-transparent">
-          <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
-            <div className="head-logo">
-              <Link className="text-center" href="/new-publishing-offer">
-                <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
-              </Link>
-            </div>
-
-            <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
-              <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
-                <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
-              </button>
-
-              <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
-                <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
-              </button>
-
-              <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
-                <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
-              </button>
+         <header className="book-offer-header">
+          <div className="book-offer-topbar">
+            <div className="book-offer-topbar__inner">
+              <Link href="tel:8887867135">(888) 786-7135</Link>
+              <Link href="mailto:support@pinebookpublishing.com">support@pinebookpublishing.com</Link>
+              <button type="button" onClick={handleOpenChat}>Talk to an Expert</button>
               <LanguageSelectorDropdown />
+            </div>
+          </div>
+
+          <div className="book-offer-navbar">
+            <div className="book-offer-navbar__inner">
+              <Link className="book-offer-navbar__logo" href="/book-publishing-offer" aria-label="Pine Book Publishing">
+                <Image alt="Pine Book Publishing" src="/brand-img/logo.png" width={330} height={120} priority />
+              </Link>
+
+              <button
+                type="button"
+                className="book-offer-navbar__toggle"
+                onClick={() => setOfferNavOpen((open) => !open)}
+                aria-label="Toggle navigation"
+                aria-expanded={offerNavOpen}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <nav className={`book-offer-navbar__menu ${offerNavOpen ? "is-open" : ""}`}>
+                <ul>
+                  {offerNavLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={(event) => handleOfferNavClick(event, item.href)}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </header>
@@ -976,8 +1083,51 @@ export default function HomePage() {
           </div>
           {/* </AnimateFade> */}
         </section>
-
-        <section className="about pt-14 overflow-hidden">
+        <section className="book-offer-stats">
+          <div className="book-offer-stats__grid">
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={250} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                #1 NEW YORK TIMES
+                <br />
+                BESTSELLERS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={400} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                NATIONAL
+                <br />
+                BESTSELLERS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={25000} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                PUBLISHED
+                <br />
+                BOOKS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={2} val={"MIL"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                BOOKS
+                <br />
+                SOLD
+              </span>
+            </div>
+          </div>
+        </section>
+        <section id="about" className="about pt-14 overflow-hidden">
           <div className="container mx-auto px-5 md:px-0 w-full lg:max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
               {/* <AnimateFade type={"top"}> */}
@@ -1270,7 +1420,7 @@ export default function HomePage() {
           {/* <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" /> */}
         </div>
 
-        <section className="bg-[#f5f5f5] pt-10">
+        <section id="portfolio" className="bg-[#f5f5f5] pt-10">
           <PortfolioSlider4 />
           <PortfolioSlider1 />
           <PortfolioSlider2 />
@@ -1281,7 +1431,7 @@ export default function HomePage() {
         <PortfolioVideoTrailersCarousel />
 
 
-        <section className="bg-[#f9fafb]">
+        <section id="testimonials" className="bg-[#f9fafb]">
           <BrandTestimonial />
         </section>
 
@@ -1386,7 +1536,9 @@ export default function HomePage() {
 
         <ExclusiveBookSigningParallax />
 
-        <HomeCaseStudiesCarousel />
+        <div id="case-studies">
+          <HomeCaseStudiesCarousel />
+        </div>
 
         <section
           className="py-20 bg-[#117d6b] bg-cover bg-center bg-no-repeat text-white relative"
@@ -1461,7 +1613,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1500">
+        <section id="process" class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1500">
           <div class="max-w-6xl mx-auto px-6 text-center">
             {/* <!-- Heading --> */}
             <div class="mb-12">
@@ -1578,7 +1730,7 @@ export default function HomePage() {
         </section>
 
 
-        <section style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
+        <section id="packages" style={{ backgroundImage: "url('/brand-img/new-lp/pack-bg.png')" }}
           className="py-20 bg-gray-50"
           data-aos="fade-up"
           data-aos-duration="1500"
@@ -2104,6 +2256,7 @@ export default function HomePage() {
 
 
         <section
+          id="services"
           className="my-20"
           data-aos="fade-up"
           data-aos-duration="1500"
@@ -2550,6 +2703,7 @@ export default function HomePage() {
 
 
         <section
+          id="contact"
           className="py-20 bg-[#f9f9f9] bg-cover"
         // style={{ backgroundImage: "url('/brand-img/new-lp/footer.webp')" }}
         >
