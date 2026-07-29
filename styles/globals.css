@@ -4237,6 +4237,415 @@ a.close-chat:hover {
   background-color: #054F44;
 }
 
+.book-offer-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+}
+
+#home,
+#about,
+#testimonials,
+#packages,
+#portfolio,
+#case-studies,
+#contact {
+  scroll-margin-top: 170px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.book-offer-topbar {
+  
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.book-offer-topbar__inner {
+  width: min(85%, 1540px);
+  min-height: 34px;
+  margin: 0 auto;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.book-offer-topbar__inner a,
+.book-offer-topbar__inner button {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  background: #1a8273;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.book-offer-topbar__inner button {
+  border: 0;
+  cursor: pointer;
+}
+
+.book-offer-topbar__inner a:hover,
+.book-offer-topbar__inner button:hover {
+  color: #d7eef2;
+}
+
+.book-offer-navbar {
+  position: relative;
+  overflow: visible;
+}
+
+.book-offer-navbar__inner {
+  width: min(85%, 1540px);
+  min-height: 126px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.book-offer-navbar__logo {
+  flex: 0 0 clamp(220px, 22vw, 350px);
+  display: flex;
+  align-items: center;
+}
+
+.book-offer-navbar__logo img {
+  width: clamp(220px, 15vw, 270px);
+  height: auto;
+}
+
+.book-offer-navbar__menu {
+  flex: 1 1 auto;
+}
+
+.book-offer-navbar__menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(15px, 1.25vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.book-offer-navbar__menu a,
+.book-offer-navbar__services > button {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 1.18vw, 20px);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}
+
+.book-offer-navbar__menu a:hover,
+.book-offer-navbar__services > button:hover {
+  color: #d7eef2;
+}
+
+.book-offer-navbar__services {
+  position: relative;
+}
+
+.book-offer-navbar__services > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.book-offer-navbar__services > button span {
+  font-family: Arial, sans-serif;
+  font-size: .72em;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+.book-offer-navbar__dropdown {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  min-width: 230px;
+  padding: 12px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .22);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 8px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+
+.book-offer-navbar__dropdown a {
+  display: block;
+  padding: 10px 12px;
+  color: #0d0f38;
+  font-family: var(--font-poppins), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.book-offer-navbar__dropdown a:hover {
+  color: #075b7f;
+  background: rgba(7, 91, 127, .08);
+}
+
+.book-offer-navbar__services:hover .book-offer-navbar__dropdown,
+.book-offer-navbar__services.is-open .book-offer-navbar__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.book-offer-navbar__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .06);
+}
+
+.book-offer-navbar__toggle span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+}
+
+@media (max-width: 1280px) {
+  .book-offer-navbar__inner {
+    gap: 18px;
+  }
+
+  .book-offer-navbar__logo {
+    flex-basis: 215px;
+  }
+
+  .book-offer-navbar__logo img {
+    width: 205px;
+  }
+
+  .book-offer-navbar__menu ul {
+    gap: 12px;
+  }
+
+  .book-offer-navbar__menu a,
+  .book-offer-navbar__services > button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .book-offer-topbar__inner {
+    min-height: 46px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 8px 14px;
+  }
+
+  .book-offer-topbar__inner a,
+  .book-offer-topbar__inner button {
+    font-size: 13px;
+  }
+
+  .book-offer-navbar__inner {
+    min-height: 92px;
+  }
+
+  .book-offer-navbar__toggle {
+    display: inline-flex;
+  }
+
+  .book-offer-navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: #070d25;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding: 18px 20px 24px;
+  }
+
+  .book-offer-navbar__menu.is-open {
+    display: block;
+  }
+
+  .book-offer-navbar__menu ul {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .book-offer-navbar__menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  .book-offer-navbar__menu a,
+  .book-offer-navbar__services > button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    font-size: 18px;
+  }
+
+  .book-offer-navbar__dropdown {
+    position: static;
+    min-width: 0;
+    padding: 0 0 10px 14px;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+
+  .book-offer-navbar__services.is-open .book-offer-navbar__dropdown {
+    display: block;
+  }
+
+  .book-offer-navbar__dropdown a {
+    color: rgba(255, 255, 255, .82);
+    background: transparent;
+    padding: 9px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .book-offer-topbar__inner {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .book-offer-navbar__inner {
+    width: min(100% - 24px, 420px);
+  }
+
+  .book-offer-navbar__logo {
+    flex-basis: auto;
+  }
+
+  .book-offer-navbar__logo img {
+    width: 190px;
+  }
+}
+
+.book-offer-stats {
+  position: relative;
+  overflow: hidden;
+  background-color: #0d0f38;
+  padding: 50px 0;
+}
+
+.book-offer-stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  pointer-events: none;
+}
+
+.book-offer-stats__grid {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 48px, 1600px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 34px;
+  text-align: center;
+}
+
+.book-offer-stats__item strong span{
+  display: block;
+  color: #fff;
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.book-offer-stats__count {
+  display: inline-block !important;
+  min-width: 6ch;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  text-align: center;
+  will-change: contents;
+}
+
+.book-offer-stats__item span {
+  display: block;
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.18;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .book-offer-stats {
+    padding: 40px 0;
+  }
+
+  .book-offer-stats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 42px;
+  }
+
+  .book-offer-stats__item strong {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .book-offer-stats {
+    padding: 30px 0;
+  }
+
+  .book-offer-stats__grid {
+    width: min(100% - 28px, 420px);
+    gap: 34px 18px;
+  }
+
+  .book-offer-stats__item strong {
+    font-size: 38px;
+  }
+
+  .book-offer-stats__item span {
+    font-size: 15px;
+  }
+}
+
 .portfolio-video-trailers-section {
   background: #fff;
   padding: 48px 0 70px;

@@ -54,6 +54,17 @@ import PopupBundleBookPublish from "../components/PopupBundleBookPublish";
 import BrandFooter from "../components/BrandFooter";
 // import PortfolioSlider1 from "../components/PortfolioSlider1";
 
+const animatedBookOfferCounters = new Set();
+
+const offerNavLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Packages", href: "#packages" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Contact", href: "#contact" },
+];
 
 const PortfolioSlider1 = dynamic(() => import("/components/PortfolioSlider1"), {
   ssr: false,
@@ -121,6 +132,7 @@ export default function Home() {
   const [collapseOpen1, setCollapseOpen1] = useState(false);
   const [collapseOpen2, setCollapseOpen2] = useState(false);
   const [activePackageTab, setActivePackageTab] = useState('publishing');
+  const [offerNavOpen, setOfferNavOpen] = useState(false);
 
   const contentRef = useRef(null);
 
@@ -452,28 +464,79 @@ export default function Home() {
     },
   };
 
-  function Counter({ from, to, val }) {
-    const count = useMotionValue(from);
-    const rounded = useTransform(count, (latest) => {
-      return Math.round(latest) + val;
-    });
+  function Counter({ from, to, val, className = "font-poppins text-black" }) {
+    const counterKey = `${to}${val}`;
+    const hasAnimatedBefore = animatedBookOfferCounters.has(counterKey);
+    const [count, setCount] = useState(hasAnimatedBefore ? to : from);
     const nodeRef = useRef(null);
-    const inView = useInView(nodeRef);
+    const inView = useInView(nodeRef, { once: true });
+    const isAnimating = useRef(false);
 
     useEffect(() => {
-      if (inView) {
-        animate(count, to, { duration: 2 });
+      if (hasAnimatedBefore) {
+        setCount(to);
+        return;
       }
-    }, [count, inView, to]);
+
+      if (inView && !isAnimating.current) {
+        let frameId;
+        const duration = 2400;
+        const startTime = performance.now();
+        const change = to - from;
+        isAnimating.current = true;
+
+        const tick = (now) => {
+          const elapsed = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - elapsed, 3);
+
+          setCount(Math.round(from + change * eased));
+
+          if (elapsed < 1) {
+            frameId = requestAnimationFrame(tick);
+          } else {
+            setCount(to);
+            animatedBookOfferCounters.add(counterKey);
+            isAnimating.current = false;
+          }
+        };
+
+        setCount(from);
+        frameId = requestAnimationFrame(tick);
+
+        return () => {
+          cancelAnimationFrame(frameId);
+          isAnimating.current = false;
+        };
+      }
+    }, [counterKey, from, hasAnimatedBefore, inView, to]);
+
     return (
-      <motion.p className="font-poppins text-black" ref={nodeRef}>
-        {rounded}
-      </motion.p>
+      <span className={className} ref={nodeRef}>
+        {count}{val}
+      </span>
     );
   }
 
   const handleOpenChat = () => {
     window.zE && window.zE('webWidget', 'open');
+  };
+
+  const handleOfferNavClick = (event, href) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+    setOfferNavOpen(false);
+
+    const section = document.querySelector(href);
+    if (!section) return;
+
+    const headerOffset = 165;
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
   };
 
   const marketingPackages = [
@@ -599,32 +662,48 @@ export default function Home() {
           }}
         />
       </Head>
-      <main>
+      <main id="home">
         <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
 
         {/* <Header /> */}
-        <header className="container mx-auto py-2 width-container z-10">
-          <div className="flex items-center justify-between px-2 flex-wrap md:justify-strat">
-            <div className="head-logo">
-              <Link className="text-center" href="/book-publishing-offer">
-                <Image alt="LOGO" src={'/brand-img/logo.png'} width={200} height={80} loading="lazy" />
-              </Link>
-            </div>
-
-            <div className="flex items-center justify-end flex-col md:flex-row gap-3 flex-col-reverse">
-              <button className=" btn-a items-center bg-gray-800 md:py-2 py-4 mr-2 px-3 focus:outline-none hover:bg-gray-700">
-                <Link className="" href={'tel:8887867135'}>(888) 786-7135</Link>
-              </button>
-
-              <button className=" hidden btn-a items-center bg-gray-800 mr-2 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700 md:block">
-                <Link className="" href={'mailto:support@pinebookpublishing.com'}>support@pinebookpublishing.com</Link>
-              </button>
-
-              <button className="btn-a items-center bg-gray-800 md:py-2 py-4 px-3 focus:outline-none hover:bg-gray-700" onClick={handleOpenChat}>
-                <Link className="" href={'javascript:;'}>Talk to an Expert</Link>
-              </button>
+        <header className="book-offer-header">
+          <div className="book-offer-topbar">
+            <div className="book-offer-topbar__inner">
+              <Link href="tel:8887867135">(888) 786-7135</Link>
+              <Link href="mailto:support@pinebookpublishing.com">support@pinebookpublishing.com</Link>
+              <button type="button" onClick={handleOpenChat}>Talk to an Expert</button>
               <LanguageSelectorDropdown />
+            </div>
+          </div>
+
+          <div className="book-offer-navbar">
+            <div className="book-offer-navbar__inner">
+              <Link className="book-offer-navbar__logo" href="/book-publishing-offer" aria-label="Pine Book Publishing">
+                <Image alt="Pine Book Publishing" src="/brand-img/logo.png" width={330} height={120} priority />
+              </Link>
+
+              <button
+                type="button"
+                className="book-offer-navbar__toggle"
+                onClick={() => setOfferNavOpen((open) => !open)}
+                aria-label="Toggle navigation"
+                aria-expanded={offerNavOpen}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <nav className={`book-offer-navbar__menu ${offerNavOpen ? "is-open" : ""}`}>
+                <ul>
+                  {offerNavLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={(event) => handleOfferNavClick(event, item.href)}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </header>
@@ -676,7 +755,52 @@ export default function Home() {
         </section>
 
 
-        <section className="about pt-14 overflow-hidden">
+        <section className="book-offer-stats">
+          <div className="book-offer-stats__grid">
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={250} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                #1 NEW YORK TIMES
+                <br />
+                BESTSELLERS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={400} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                NATIONAL
+                <br />
+                BESTSELLERS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={25000} val={"+"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                PUBLISHED
+                <br />
+                BOOKS
+              </span>
+            </div>
+            <div className="book-offer-stats__item">
+              <strong>
+                <Counter from={0} to={2} val={"MIL"} className="book-offer-stats__count" />
+              </strong>
+              <span>
+                BOOKS
+                <br />
+                SOLD
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="about pt-14 overflow-hidden">
           <div className="container mx-auto px-5 md:px-0 w-100 lg:w-5/6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center">
               {/* <AnimateFade type={"top"}> */}
@@ -995,7 +1119,7 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        <section className="portfolio-book-publishing-offer-bg">
+        <section id="portfolio" className="portfolio-book-publishing-offer-bg">
           <PortfolioSlider3LP />
           <PortfolioSlider1LP />
           <PortfolioSlider2LP />
@@ -1094,7 +1218,7 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="package pb-5 pt-12">
+        <section id="packages" className="package pb-5 pt-12">
           <div className="container mx-auto max-w-screen-xl">
             <div className="grid items-center grid-cols-1 text-center m1-h">
               <h3 className="text-3xl font-poppins md:text-4xl font-bold">
@@ -2925,13 +3049,17 @@ export default function Home() {
 
         </section>
 
-        <Story />
+        <div id="testimonials">
+          <Story />
+        </div>
 
         <BrandVideoShowcase />
 
         <ExclusiveBookSigningParallax />
 
-        <HomeCaseStudiesCarousel />
+        <div id="case-studies">
+          <HomeCaseStudiesCarousel />
+        </div>
 
         <section className="book-publishing-cta-section mx-auto px-6 py-10 md:py-0 relative">
           <div className="container flex items-center flex-col md:flex-row max-w-screen-xl mx-auto">
@@ -2953,7 +3081,7 @@ export default function Home() {
 
         <Faq />
 
-        <section className="btm-form overflow-hidden width-container">
+        <section id="contact" className="btm-form overflow-hidden width-container">
           <div className="container mx-auto px-8 md:px-20">
             <div className="form-mid-wrap pt-4 bg-gray-200 connect-form-border mb-12">
               <div className="flex flex-col md:flex-row items-end">
