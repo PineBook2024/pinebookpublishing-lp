@@ -545,24 +545,28 @@ export default function HomePage() {
                             Sell Your Book With
                         </h2>
 
-                        <div className="mt-8 overflow-hidden">
+                        <div className="brand-marquee mt-8 overflow-hidden">
                             <div className="brand-track">
-                                {[...brandItems, ...brandItems].map((item, idx) => (
-                                    <div key={`brand-${idx}`} className="flex h-[52px] min-w-[200px] items-center justify-center">
-                                        {item.type === "bam" ? (
-                                            <div className="text-center leading-none">
-                                                <div className="text-[54px] font-[800] tracking-[-1px] text-[#23459b]">BAM!</div>
-                                                <div className="mt-[1px] text-[18px] font-[700] tracking-[0.1em] text-[#23306f]">BOOKS-A-MILLION</div>
+                                {[0, 1, 2].map((group) => (
+                                    <div key={`brand-group-${group}`} className="brand-set">
+                                        {brandItems.map((item, idx) => (
+                                            <div key={`brand-${group}-${idx}`} className="flex h-[52px] min-w-[200px] items-center justify-center">
+                                                {item.type === "bam" ? (
+                                                    <div className="text-center leading-none">
+                                                        <div className="text-[54px] font-[800] tracking-[-1px] text-[#23459b]">BAM!</div>
+                                                        <div className="mt-[1px] text-[18px] font-[700] tracking-[0.1em] text-[#23306f]">BOOKS-A-MILLION</div>
+                                                    </div>
+                                                ) : (
+                                                    <Image
+                                                        src={item.src}
+                                                        alt={item.alt}
+                                                        width={item.width}
+                                                        height={item.height}
+                                                        className="h-auto w-auto max-h-[42px] object-contain"
+                                                    />
+                                                )}
                                             </div>
-                                        ) : (
-                                            <Image
-                                                src={item.src}
-                                                alt={item.alt}
-                                                width={item.width}
-                                                height={item.height}
-                                                className="h-auto w-auto max-h-[42px] object-contain"
-                                            />
-                                        )}
+                                        ))}
                                     </div>
                                 ))}
                             </div>
@@ -1086,16 +1090,26 @@ export default function HomePage() {
         .brand-track {
           display: flex;
           align-items: center;
-          gap: 12px;
           width: max-content;
-          animation: brandScroll 22s linear infinite;
+          animation: brandScroll 26s linear infinite;
+          will-change: transform;
+        }
+        .brand-set {
+          display: flex;
+          align-items: center;
+          gap: 32px;
+          flex: 0 0 auto;
+          padding-right: 32px;
+        }
+        .brand-marquee:hover .brand-track {
+          animation-play-state: paused;
         }
         @keyframes brandScroll {
           from {
             transform: translateX(0);
           }
           to {
-            transform: translateX(-50%);
+            transform: translateX(calc(-100% / 3));
           }
         }
         .about-overlay-left {

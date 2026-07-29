@@ -475,6 +475,56 @@ video#background-video {
   text-align: -webkit-center;
 }
 
+.offer-logo-marquee {
+  overflow: hidden;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.offer-logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: offerLogoMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.offer-logo-set {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  flex: 0 0 auto;
+  padding-right: 56px;
+}
+
+.offer-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 72px;
+}
+
+.offer-logo-item img {
+  max-height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.offer-logo-marquee:hover .offer-logo-track {
+  animation-play-state: paused;
+}
+
+@keyframes offerLogoMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
 /* .copyright-sec {
   background-color: #141414;
 } */
