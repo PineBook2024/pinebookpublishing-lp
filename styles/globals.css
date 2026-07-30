@@ -635,7 +635,7 @@ footer .footer-line:before {
   position: absolute;
   left: 16px;
   /* top: 32px; */
-  margin-top: 28px;
+  margin-top: 38px;
 }
 
 .book-sell-text h3 {
@@ -4234,7 +4234,7 @@ a.close-chat:hover {
 }
 
 .portfolio-book-publishing-offer-bg {
-  background-color: #054F44;
+  background-color: #fff;
 }
 
 .book-offer-header {
@@ -4562,7 +4562,7 @@ html {
   position: relative;
   overflow: hidden;
   background-color: #0d0f38;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
 .book-offer-stats::before {
@@ -4588,10 +4588,10 @@ html {
 .book-offer-stats__item strong span{
   display: block;
   color: #fff;
-  font-size: 50px;
+  font-size: 35px;
   line-height: 1;
-  font-weight: 800;
-  margin-bottom: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .book-offer-stats__count {
@@ -4608,7 +4608,7 @@ html {
 .book-offer-stats__item span {
   display: block;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.18;
   font-weight: 400;
   text-transform: uppercase;
@@ -4616,7 +4616,7 @@ html {
 
 @media (max-width: 991px) {
   .book-offer-stats {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .book-offer-stats__grid {
@@ -4640,7 +4640,7 @@ html {
   }
 
   .book-offer-stats__item strong {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .book-offer-stats__item span {
@@ -8087,4 +8087,12 @@ input.connect-form-input,
 input.home-connect-form-input {
   padding-left: 17px;
   padding-right: 17px;
+}
+@media (min-width:1023px) and (max-width:1199px){
+  .brand-main-banner-video {
+  height: 100vh;
+}
+.brand-hero-section{
+  padding-top: 11rem;
+}
 }

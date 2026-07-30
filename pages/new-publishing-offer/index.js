@@ -1097,7 +1097,7 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
             </div>
             <div className="book-offer-stats__item">
               <strong>
-                <Counter from={0} to={400} val={"+"} className="book-offer-stats__count" />
+                <Counter from={0} to={200} val={"+"} className="book-offer-stats__count" />
               </strong>
               <span>
                 NATIONAL
@@ -1107,7 +1107,7 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
             </div>
             <div className="book-offer-stats__item">
               <strong>
-                <Counter from={0} to={25000} val={"+"} className="book-offer-stats__count" />
+                <Counter from={0} to={10000} val={"+"} className="book-offer-stats__count" />
               </strong>
               <span>
                 PUBLISHED
