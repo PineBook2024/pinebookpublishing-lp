@@ -4786,9 +4786,6 @@ html {
 }
 
 .portfolio-video-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
   width: 44px;
   height: 44px;
   display: inline-flex;
@@ -4796,24 +4793,27 @@ html {
   justify-content: center;
   color: #228291;
   background: #fff;
+  border: 0;
   border-radius: 50%;
   box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
-  transform: translateY(-50%);
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
 
 .portfolio-video-carousel-arrow:hover {
   color: #fff;
   background: #228291;
-  transform: translateY(-50%) scale(1.08);
+  transform: scale(1.08);
 }
 
-.portfolio-video-carousel-arrow-left {
+.portfolio-video-carousel-controls {
+  position: absolute;
+  bottom: 25px;
   left: 28px;
-}
-
-.portfolio-video-carousel-arrow-right {
   right: 28px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .portfolio-video-trailers-rule {
@@ -4837,13 +4837,6 @@ html {
     transform-origin: top center;
   }
 
-  .portfolio-video-carousel-arrow-left {
-    left: 28px;
-  }
-
-  .portfolio-video-carousel-arrow-right {
-    right: 28px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -4862,15 +4855,9 @@ html {
     top: 66px;
   }
 
-  .portfolio-video-carousel-arrow {
-    top: 52%;
-  }
-
-  .portfolio-video-carousel-arrow-left {
+  .portfolio-video-carousel-controls {
+    bottom: 18px;
     left: 16px;
-  }
-
-  .portfolio-video-carousel-arrow-right {
     right: 16px;
   }
 }

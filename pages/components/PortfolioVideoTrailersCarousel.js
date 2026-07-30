@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const videoTrailers = [
@@ -15,24 +15,60 @@ const videoTrailers = [
 ];
 
 const getEmbedUrl = (id) =>
-    `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1&playsinline=1`;
+    `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
 
 const getThumbUrl = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 
+const loadYouTubePlayerApi = () => {
+    if (window.YT?.Player) return Promise.resolve(window.YT);
+
+    return new Promise((resolve) => {
+        const previousReadyHandler = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = () => {
+            previousReadyHandler?.();
+            resolve(window.YT);
+        };
+
+        if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+            const script = document.createElement("script");
+            script.src = "https://www.youtube.com/iframe_api";
+            document.head.appendChild(script);
+        }
+    });
+};
+
 export default function PortfolioVideoTrailersCarousel() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const activeIframeRef = useRef(null);
+    const playerRef = useRef(null);
     const wrap = (value) => (value + videoTrailers.length) % videoTrailers.length;
 
     const moveLeft = () => setActiveIndex((index) => wrap(index - 1));
     const moveRight = () => setActiveIndex((index) => wrap(index + 1));
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setActiveIndex((index) => wrap(index + 1));
-        }, 9000);
+        let cancelled = false;
 
-        return () => clearInterval(timer);
-    }, []);
+        loadYouTubePlayerApi().then((YT) => {
+            if (cancelled || !activeIframeRef.current) return;
+
+            playerRef.current = new YT.Player(activeIframeRef.current, {
+                events: {
+                    onStateChange: (event) => {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            setActiveIndex((index) => wrap(index + 1));
+                        }
+                    },
+                },
+            });
+        });
+
+        return () => {
+            cancelled = true;
+            playerRef.current?.destroy?.();
+            playerRef.current = null;
+        };
+    }, [activeIndex]);
 
     const visibleVideos = [-2, -1, 0, 1, 2].map((level) => {
         const index = wrap(activeIndex + level);
@@ -51,15 +87,6 @@ export default function PortfolioVideoTrailersCarousel() {
                 </div>
 
                 <div className="portfolio-video-carousel-panel noselect">
-                    <button
-                        type="button"
-                        className="portfolio-video-carousel-arrow portfolio-video-carousel-arrow-left"
-                        onClick={moveLeft}
-                        aria-label="Previous trailer"
-                    >
-                        <ChevronLeft size={24} strokeWidth={3} />
-                    </button>
-
                     <div className="portfolio-video-carousel-stage">
                         {visibleVideos.map((video) => {
                             const levelClass = video.level < 0 ? `level-negative-${Math.abs(video.level)}` : `level-${video.level}`;
@@ -73,6 +100,7 @@ export default function PortfolioVideoTrailersCarousel() {
                                 >
                                     {isActive ? (
                                         <iframe
+                                            ref={activeIframeRef}
                                             src={getEmbedUrl(video.id)}
                                             title="Active book trailer"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -89,14 +117,24 @@ export default function PortfolioVideoTrailersCarousel() {
                         })}
                     </div>
 
-                    <button
-                        type="button"
-                        className="portfolio-video-carousel-arrow portfolio-video-carousel-arrow-right"
-                        onClick={moveRight}
-                        aria-label="Next trailer"
-                    >
-                        <ChevronRight size={24} strokeWidth={3} />
-                    </button>
+                    <div className="portfolio-video-carousel-controls">
+                        <button
+                            type="button"
+                            className="portfolio-video-carousel-arrow"
+                            onClick={moveLeft}
+                            aria-label="Previous trailer"
+                        >
+                            <ChevronLeft size={24} strokeWidth={3} />
+                        </button>
+                        <button
+                            type="button"
+                            className="portfolio-video-carousel-arrow"
+                            onClick={moveRight}
+                            aria-label="Next trailer"
+                        >
+                            <ChevronRight size={24} strokeWidth={3} />
+                        </button>
+                    </div>
                 </div>
 
                 <hr className="portfolio-video-trailers-rule" />
