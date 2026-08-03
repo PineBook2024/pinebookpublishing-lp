@@ -4263,7 +4263,7 @@ html {
 }
 
 .book-offer-topbar {
-  
+
   border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
@@ -4288,8 +4288,8 @@ html {
   line-height: 1;
   white-space: nowrap;
   background: #1a8273;
-    padding: 10px 15px;
-    border-radius: 50px;
+  padding: 10px 15px;
+  border-radius: 50px;
 }
 
 .book-offer-topbar__inner button {
@@ -4344,7 +4344,7 @@ html {
 }
 
 .book-offer-navbar__menu a,
-.book-offer-navbar__services > button {
+.book-offer-navbar__services>button {
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(16px, 1.18vw, 20px);
@@ -4356,7 +4356,7 @@ html {
 }
 
 .book-offer-navbar__menu a:hover,
-.book-offer-navbar__services > button:hover {
+.book-offer-navbar__services>button:hover {
   color: #d7eef2;
 }
 
@@ -4364,7 +4364,7 @@ html {
   position: relative;
 }
 
-.book-offer-navbar__services > button {
+.book-offer-navbar__services>button {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -4374,7 +4374,7 @@ html {
   cursor: pointer;
 }
 
-.book-offer-navbar__services > button span {
+.book-offer-navbar__services>button span {
   font-family: Arial, sans-serif;
   font-size: .72em;
   line-height: 1;
@@ -4460,7 +4460,7 @@ html {
   }
 
   .book-offer-navbar__menu a,
-  .book-offer-navbar__services > button {
+  .book-offer-navbar__services>button {
     font-size: 15px;
   }
 }
@@ -4529,7 +4529,7 @@ html {
   }
 
   .book-offer-navbar__menu a,
-  .book-offer-navbar__services > button {
+  .book-offer-navbar__services>button {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -4561,6 +4561,31 @@ html {
 }
 
 @media (max-width: 575px) {
+  .book-publishing-offer-page .main-banner-vid {
+    height: auto !important;
+    min-height: 0 !important;
+    align-items: flex-start !important;
+    padding-top: 25px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .book-publishing-offer-page video#vide {
+    height: 100% !important;
+    min-height: 680px;
+  }
+
+  .book-publishing-offer-page .brand-hero-section {
+    padding-top: 0 !important;
+  }
+
+  .book-publishing-offer-page .tablet-margin-banner {
+    margin-top: 0 !important;
+  }
+
+  .book-publishing-offer-page .brand-hero-section>.grid {
+    padding-top: 0 !important;
+  }
+
   .book-offer-hero-actions {
     display: flex !important;
     flex-direction: row !important;
@@ -4649,7 +4674,7 @@ html {
   }
 
   .book-offer-navbar__menu a,
-  .book-offer-navbar__services > button {
+  .book-offer-navbar__services>button {
     padding: 12px 0;
     font-size: 16px;
     line-height: 1.15;
@@ -4678,7 +4703,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  
+
   pointer-events: none;
 }
 
@@ -4694,7 +4719,7 @@ html {
   text-align: center;
 }
 
-.book-offer-stats__item strong span{
+.book-offer-stats__item strong span {
   display: block;
   color: #fff;
   font-size: 35px;
@@ -4950,24 +4975,64 @@ html {
 
 @media (max-width: 640px) {
   .portfolio-video-trailers-section {
-    padding: 36px 0 52px;
+    padding: 36px 0 44px;
+  }
+
+  .portfolio-video-trailers-inner {
+    width: min(100% - 32px, 420px);
+  }
+
+  .portfolio-video-trailers-head h2 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 1.2;
   }
 
   .portfolio-video-carousel-panel {
-    min-height: 285px;
+    min-height: 0;
+    padding: 18px 14px 64px;
+    border-radius: 14px;
   }
 
   .portfolio-video-carousel-stage {
-    width: 1460px;
+    width: 100%;
     max-width: none;
-    transform: scale(.25);
-    top: 66px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    top: 0;
+    transform: none;
+  }
+
+  .portfolio-video-carousel-item {
+    display: none;
+  }
+
+  .portfolio-video-carousel-item.level-0 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    transform: none;
+  }
+
+  .portfolio-video-carousel-item.level-0 iframe {
+    position: relative;
+    z-index: 1;
   }
 
   .portfolio-video-carousel-controls {
-    bottom: 18px;
-    left: 16px;
-    right: 16px;
+    top: 50%;
+    bottom: auto;
+    left: 26px;
+    right: 26px;
+    transform: translateY(-50%);
+  }
+
+  .portfolio-video-carousel-arrow {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -6147,15 +6212,15 @@ iframe.goog-te-banner-frame {
   margin-left: 0 !important;
 }
 
-.case-studies-listing-page header#navbar .brand-navbar-list > li,
-.case-study-detail-page header#navbar .brand-navbar-list > li {
+.case-studies-listing-page header#navbar .brand-navbar-list>li,
+.case-study-detail-page header#navbar .brand-navbar-list>li {
   margin-left: 0 !important;
 }
 
-.case-studies-listing-page header#navbar .brand-navbar-list > li > a,
-.case-studies-listing-page header#navbar .services-nav-item > div > a,
-.case-study-detail-page header#navbar .brand-navbar-list > li > a,
-.case-study-detail-page header#navbar .services-nav-item > div > a {
+.case-studies-listing-page header#navbar .brand-navbar-list>li>a,
+.case-studies-listing-page header#navbar .services-nav-item>div>a,
+.case-study-detail-page header#navbar .brand-navbar-list>li>a,
+.case-study-detail-page header#navbar .services-nav-item>div>a {
   font-size: clamp(15px, 0.92vw, 18px);
   line-height: 1.12;
   white-space: nowrap;
@@ -6184,6 +6249,7 @@ iframe.goog-te-banner-frame {
 }
 
 @media (min-width: 768px) and (max-width: 1180px) {
+
   .case-studies-listing-page header#navbar .logo,
   .case-study-detail-page header#navbar .logo {
     width: 210px;
@@ -6199,10 +6265,10 @@ iframe.goog-te-banner-frame {
     gap: 12px;
   }
 
-  .case-studies-listing-page header#navbar .brand-navbar-list > li > a,
-  .case-studies-listing-page header#navbar .services-nav-item > div > a,
-  .case-study-detail-page header#navbar .brand-navbar-list > li > a,
-  .case-study-detail-page header#navbar .services-nav-item > div > a {
+  .case-studies-listing-page header#navbar .brand-navbar-list>li>a,
+  .case-studies-listing-page header#navbar .services-nav-item>div>a,
+  .case-study-detail-page header#navbar .brand-navbar-list>li>a,
+  .case-study-detail-page header#navbar .services-nav-item>div>a {
     font-size: 16px;
   }
 
@@ -6276,12 +6342,12 @@ header#navbar.brand-navbar {
   margin: 0 !important;
 }
 
-.brand-navbar-list > li {
+.brand-navbar-list>li {
   margin-left: 0 !important;
 }
 
-.brand-navbar-list > li > a,
-.brand-navbar-list .services-nav-item > div > a {
+.brand-navbar-list>li>a,
+.brand-navbar-list .services-nav-item>div>a {
   font-size: clamp(15px, 1.15vw, 22px);
   line-height: 1.1;
   font-weight: 700;
@@ -6323,8 +6389,8 @@ header#navbar.brand-navbar.fixed-top .brand-navbar-inner {
     gap: 10px;
   }
 
-  .brand-navbar-list > li > a,
-  .brand-navbar-list .services-nav-item > div > a {
+  .brand-navbar-list>li>a,
+  .brand-navbar-list .services-nav-item>div>a {
     font-size: 13px;
   }
 
@@ -6374,8 +6440,8 @@ header#navbar.brand-navbar.fixed-top .brand-navbar-inner {
     gap: 14px;
   }
 
-  .brand-navbar-list > li > a,
-  .brand-navbar-list .services-nav-item > div > a {
+  .brand-navbar-list>li>a,
+  .brand-navbar-list .services-nav-item>div>a {
     font-size: 17px;
   }
 }
@@ -7870,6 +7936,7 @@ header#navbar.brand-navbar.fixed-top .brand-navbar-inner {
   padding: 11px;
   text-align: left;
 }
+
 /* Shared country-code phone field */
 .country-phone-shell {
   position: relative;
@@ -8104,7 +8171,7 @@ header#navbar.brand-navbar.fixed-top .brand-navbar-inner {
   opacity: 1;
 }
 
-.country-phone-shell + img {
+.country-phone-shell+img {
   display: none !important;
 }
 
@@ -8197,11 +8264,13 @@ input.home-connect-form-input {
   padding-left: 17px;
   padding-right: 17px;
 }
-@media (min-width:1023px) and (max-width:1199px){
+
+@media (min-width:1023px) and (max-width:1199px) {
   .brand-main-banner-video {
-  height: 100vh;
-}
-.brand-hero-section{
-  padding-top: 11rem;
-}
+    height: 100vh;
+  }
+
+  .brand-hero-section {
+    padding-top: 11rem;
+  }
 }

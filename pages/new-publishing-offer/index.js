@@ -55,17 +55,17 @@ export default function HomePage() {
   const handleOpenChat = () => {
     window.zE && window.zE('webWidget', 'open');
   };
-const offerNavLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Packages", href: "#packages" },
-  { label: "Process", href: "#process" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Contact", href: "#contact" },
-];
+  const offerNavLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About Us", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Packages", href: "#packages" },
+    { label: "Process", href: "#process" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Case Studies", href: "#case-studies" },
+    { label: "Contact", href: "#contact" },
+  ];
   const counterRef = useRef(null);
   const contentRef = useRef(null);
   const swiperRef = useRef();
@@ -82,7 +82,7 @@ const offerNavLinks = [
   const [activePackageTab, setActivePackageTab] = useState('publishing');
   const [projectCountry, setProjectCountry] = useState("US");
   const [projectPhone, setProjectPhone] = useState("");
-const [offerNavOpen, setOfferNavOpen] = useState(false);
+  const [offerNavOpen, setOfferNavOpen] = useState(false);
 
   const handleOfferNavClick = (event, href) => {
     if (!href.startsWith("#")) return;
@@ -102,58 +102,58 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
     });
   };
 
-    function Counter({ from, to, val, className = "font-poppins text-black" }) {
-        const counterKey = `${to}${val}`;
-        const hasAnimatedBefore = animatedBookOfferCounters.has(counterKey);
-        const [count, setCount] = useState(hasAnimatedBefore ? to : from);
-        const nodeRef = useRef(null);
-        const inView = useInView(nodeRef, { once: true });
-        const isAnimating = useRef(false);
-    
-        useEffect(() => {
-          if (hasAnimatedBefore) {
-            setCount(to);
-            return;
-          }
-    
-          if (inView && !isAnimating.current) {
-            let frameId;
-            const duration = 2400;
-            const startTime = performance.now();
-            const change = to - from;
-            isAnimating.current = true;
-    
-            const tick = (now) => {
-              const elapsed = Math.min((now - startTime) / duration, 1);
-              const eased = 1 - Math.pow(1 - elapsed, 3);
-    
-              setCount(Math.round(from + change * eased));
-    
-              if (elapsed < 1) {
-                frameId = requestAnimationFrame(tick);
-              } else {
-                setCount(to);
-                animatedBookOfferCounters.add(counterKey);
-                isAnimating.current = false;
-              }
-            };
-    
-            setCount(from);
-            frameId = requestAnimationFrame(tick);
-    
-            return () => {
-              cancelAnimationFrame(frameId);
-              isAnimating.current = false;
-            };
-          }
-        }, [counterKey, from, hasAnimatedBefore, inView, to]);
-    
-        return (
-          <span className={className} ref={nodeRef}>
-            {count}{val}
-          </span>
-        );
+  function Counter({ from, to, val, className = "font-poppins text-black" }) {
+    const counterKey = `${to}${val}`;
+    const hasAnimatedBefore = animatedBookOfferCounters.has(counterKey);
+    const [count, setCount] = useState(hasAnimatedBefore ? to : from);
+    const nodeRef = useRef(null);
+    const inView = useInView(nodeRef, { once: true });
+    const isAnimating = useRef(false);
+
+    useEffect(() => {
+      if (hasAnimatedBefore) {
+        setCount(to);
+        return;
       }
+
+      if (inView && !isAnimating.current) {
+        let frameId;
+        const duration = 2400;
+        const startTime = performance.now();
+        const change = to - from;
+        isAnimating.current = true;
+
+        const tick = (now) => {
+          const elapsed = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - elapsed, 3);
+
+          setCount(Math.round(from + change * eased));
+
+          if (elapsed < 1) {
+            frameId = requestAnimationFrame(tick);
+          } else {
+            setCount(to);
+            animatedBookOfferCounters.add(counterKey);
+            isAnimating.current = false;
+          }
+        };
+
+        setCount(from);
+        frameId = requestAnimationFrame(tick);
+
+        return () => {
+          cancelAnimationFrame(frameId);
+          isAnimating.current = false;
+        };
+      }
+    }, [counterKey, from, hasAnimatedBefore, inView, to]);
+
+    return (
+      <span className={className} ref={nodeRef}>
+        {count}{val}
+      </span>
+    );
+  }
   const swiperRef2 = useRef(null);
   const lightboxRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('Published Books');
@@ -985,7 +985,7 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
         <GoogleTranslateWidget />
         {/* ------------------ HEADER ------------------ */}
 
-         <header className="book-offer-header">
+        <header className="book-offer-header">
           <div className="book-offer-topbar">
             <div className="book-offer-topbar__inner">
               <Link href="tel:8887867135">(888) 786-7135</Link>
@@ -2334,7 +2334,7 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
                 here to help transform your vision into a masterpiece.
               </p>
 
-              <ul className="grid grid-cols-2 gap-2 text-sm">
+              <ul className="grid grid-cols-2 gap-2 text-sm text-left">
                 {[
                   "Book Publishing",
                   "Book Editing",

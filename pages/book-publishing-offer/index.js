@@ -661,7 +661,7 @@ export default function Home() {
           }}
         />
       </Head>
-      <main id="home">
+      <main id="home" className="book-publishing-offer-page">
         <GoogleTranslateWidget />
 
         {/* <Header /> */}
