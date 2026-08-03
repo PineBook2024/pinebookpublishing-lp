@@ -111,6 +111,7 @@ export default function Home() {
                     gtag('config', 'AW-16471224604');
                 `}
             </Script>
+            <main className="home-page">
             <BrandTopBar />
             <BrandNavbar />
             {/* <BrandHero /> */}
@@ -233,6 +234,7 @@ export default function Home() {
             <BrandLogo />
             <BrandFooter />
             {/* <HomePopupNNew /> */}
+            </main>
 
             {/* Floating Shop Button */}
             <style jsx global>{`

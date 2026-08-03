@@ -4561,6 +4561,31 @@ html {
 }
 
 @media (max-width: 575px) {
+  .home-page .brand-main-banner-video {
+    height: auto !important;
+    min-height: 0 !important;
+    align-items: flex-start !important;
+    padding-top: 25px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .home-page video#brandVideo {
+    height: 100% !important;
+    min-height: 680px;
+  }
+
+  /* .home-page .brand-hero-section {
+    padding-top: 0 !important;
+  } */
+
+  .home-page .tablet-margin-banner {
+    margin-top: 0 !important;
+  }
+
+  .home-page .brand-hero-section>.grid {
+    padding-top: 0 !important;
+  }
+
   .book-publishing-offer-page .main-banner-vid {
     height: auto !important;
     min-height: 0 !important;
