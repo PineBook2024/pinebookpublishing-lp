@@ -109,7 +109,6 @@ import GoogleTranslate from "../components/GoogleTranslate";
 import CustomLanguageSelector from "../components/CustomLanguageSelector";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
-import HomePopupNewLp from "../components/HomePopupNewLp";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -663,7 +662,6 @@ export default function Home() {
         />
       </Head>
       <main id="home">
-        <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
 
         {/* <Header /> */}

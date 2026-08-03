@@ -49,7 +49,6 @@ import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailers
 import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
-import HomePopupNewLp from "../components/HomePopupNewLp";
 
 const animatedBookOfferCounters = new Set();
 export default function HomePage() {
@@ -983,7 +982,6 @@ const [offerNavOpen, setOfferNavOpen] = useState(false);
         />
       </Head>
       <main id="home" className="font-sans text-gray-800">
-        <HomePopupNewLp openOnLoad={false} />
         <GoogleTranslateWidget />
         {/* ------------------ HEADER ------------------ */}
 
