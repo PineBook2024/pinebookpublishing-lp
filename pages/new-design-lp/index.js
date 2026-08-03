@@ -548,10 +548,7 @@ export default function HomePage() {
             <div className="brand-marquee mt-8 overflow-hidden">
               <div className="brand-track">
                 {[0, 1, 2].map((group) => (
-                  <di
-
-
-                    v key={`brand-group-${group}`} className="brand-set">
+                  <div key={`brand-group-${group}`} className="brand-set">
                     {brandItems.map((item, idx) => (
                       <div key={`brand-${group}-${idx}`} className="flex h-[52px] min-w-[200px] items-center justify-center">
                         {item.type === "bam" ? (
@@ -1006,8 +1003,8 @@ export default function HomePage() {
                       });
                     }}
                     className={`package-btn mt-6 h-[44px] w-full rounded-[8px] text-[28px] font-[600] transition ${pkg.primary
-                        ? "bg-[#3d4cff] text-white hover:bg-[#3342ef]"
-                        : "border border-[#d4d8e2] bg-white text-[#252a35]"
+                      ? "bg-[#3d4cff] text-white hover:bg-[#3342ef]"
+                      : "border border-[#d4d8e2] bg-white text-[#252a35]"
                       }`}
                   >
                     Get started
