@@ -253,12 +253,18 @@ export default function LanguageSelectorDropdown() {
 
         /* Mobile responsive */
         @media (max-width: 768px) {
+          .language-selector-container {
+            width: 100%;
+          }
+
           .dropdown-menu {
             min-width: 250px;
             max-height: 350px;
           }
           
           .language-button {
+            width: 100%;
+            justify-content: center;
             padding: 6px 12px;
           }
           

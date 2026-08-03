@@ -21,38 +21,38 @@ export default function HomePage() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
-            gsap.from(".about-anim-title", {
-                y: 26,
-                opacity: 0,
-                duration: 0.75,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".about-anim-title",
-                    start: "top 82%",
-                },
-            });
+      gsap.from(".about-anim-title", {
+        y: 26,
+        opacity: 0,
+        duration: 0.75,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about-anim-title",
+          start: "top 82%",
+        },
+      });
 
-            gsap.from(".about-anim-text", {
-                y: 24,
-                opacity: 0,
-                duration: 0.75,
-                delay: 0.1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".about-anim-text",
-                    start: "top 84%",
-                },
-            });
+      gsap.from(".about-anim-text", {
+        y: 24,
+        opacity: 0,
+        duration: 0.75,
+        delay: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about-anim-text",
+          start: "top 84%",
+        },
+      });
 
       gsap.from(".about-card-anim", {
         y: 42,
         opacity: 0,
-                duration: 0.85,
-                ease: "power3.out",
-                stagger: 0.18,
-                scrollTrigger: {
-                    trigger: ".about-cards-wrap",
-                    start: "top 83%",
+        duration: 0.85,
+        ease: "power3.out",
+        stagger: 0.18,
+        scrollTrigger: {
+          trigger: ".about-cards-wrap",
+          start: "top 83%",
         },
       });
 
@@ -240,49 +240,49 @@ export default function HomePage() {
     return () => ctx.revert();
   }, []);
 
-    const brandItems = [
-        { src: "/brand-img/google books icon.png", alt: "Google Books", width: 116, height: 40 },
-        { src: "/brand-img/amazon-icon.png", alt: "Amazon", width: 148, height: 44 },
-        { src: "/brand-img/kobo.png", alt: "Kobo", width: 110, height: 40 },
-        { type: "bam" },
-        { src: "/brand-img/Hardcover%20lulu.png", alt: "Lulu", width: 132, height: 44 },
-        { src: "/images/Draft2digital.png", alt: "Draft2Digital", width: 184, height: 36 },
-    ];
+  const brandItems = [
+    { src: "/brand-img/google books icon.png", alt: "Google Books", width: 116, height: 40 },
+    { src: "/brand-img/amazon-icon.png", alt: "Amazon", width: 148, height: 44 },
+    { src: "/brand-img/kobo.png", alt: "Kobo", width: 110, height: 40 },
+    { type: "bam" },
+    { src: "/brand-img/Hardcover%20lulu.png", alt: "Lulu", width: 132, height: 44 },
+    { src: "/images/Draft2digital.png", alt: "Draft2Digital", width: 184, height: 36 },
+  ];
 
-    const publishedBooks = [
-        { title: "Simple Way Of Piece Life", author: "Armor Ramsey", cover: "/brand-img/new-lp/book-covers/PAPERBACK_2.jpg" },
-        { title: "Great Travel At Desert", author: "Sanchit Howdy", cover: "/brand-img/new-lp/book-covers/PAPERBACK-4.jpg" },
-        { title: "The Lady Beauty Scarlett", author: "Arthur Doyle", cover: "/brand-img/new-lp/book-covers/PAPERBACK_6.000x9.jpg" },
-        { title: "Once Upon A Time", author: "Klien Marry", cover: "/brand-img/new-lp/book-covers/Stewart BC 8.jpg" },
-        { title: "Silent Fear", author: "Chhavyvann So", cover: "/brand-img/new-lp/book-covers/Chhavyvann So 2-01.jpg" },
-        { title: "River of Time", author: "Rosetta Khalideen", cover: "/brand-img/new-lp/book-covers/Time & The River 7.jpg" },
-        { title: "Unique Moore", author: "Unique Moore", cover: "/brand-img/new-lp/book-covers/Unique Moore Part 1- Paperback.jpg" },
-        { title: "Christopher Allen", author: "Christopher Allen", cover: "/brand-img/new-lp/book-covers/Christopher Allen PB.jpg" },
-    ];
+  const publishedBooks = [
+    { title: "Simple Way Of Piece Life", author: "Armor Ramsey", cover: "/brand-img/new-lp/book-covers/PAPERBACK_2.jpg" },
+    { title: "Great Travel At Desert", author: "Sanchit Howdy", cover: "/brand-img/new-lp/book-covers/PAPERBACK-4.jpg" },
+    { title: "The Lady Beauty Scarlett", author: "Arthur Doyle", cover: "/brand-img/new-lp/book-covers/PAPERBACK_6.000x9.jpg" },
+    { title: "Once Upon A Time", author: "Klien Marry", cover: "/brand-img/new-lp/book-covers/Stewart BC 8.jpg" },
+    { title: "Silent Fear", author: "Chhavyvann So", cover: "/brand-img/new-lp/book-covers/Chhavyvann So 2-01.jpg" },
+    { title: "River of Time", author: "Rosetta Khalideen", cover: "/brand-img/new-lp/book-covers/Time & The River 7.jpg" },
+    { title: "Unique Moore", author: "Unique Moore", cover: "/brand-img/new-lp/book-covers/Unique Moore Part 1- Paperback.jpg" },
+    { title: "Christopher Allen", author: "Christopher Allen", cover: "/brand-img/new-lp/book-covers/Christopher Allen PB.jpg" },
+  ];
 
-    const comingSoonBooks = [
-        { title: "Winds Of Future", author: "Elyan James", cover: "/brand-img/coming-soon-book1.png" },
-        { title: "Desert Memory", author: "Lina Porter", cover: "/brand-img/coming-soon-book2.png" },
-        { title: "Broken Compass", author: "Tyler Hope", cover: "/brand-img/coming-soon-book3.png" },
-        { title: "House of Silence", author: "Mila Cooper", cover: "/brand-img/coming-soon-book4.png" },
-        { title: "Hidden Oath", author: "Shawn Miller", cover: "/brand-img/coming-soon-book5.png" },
-        { title: "Kingdom Dust", author: "Amir Stone", cover: "/brand-img/coming-soon-book6.png" },
-        { title: "Misty Dawn", author: "Holly Craig", cover: "/brand-img/coming-soon-book7.png" },
-        { title: "Northern Flame", author: "Ariana Cole", cover: "/brand-img/coming-soon-book8.png" },
-    ];
+  const comingSoonBooks = [
+    { title: "Winds Of Future", author: "Elyan James", cover: "/brand-img/coming-soon-book1.png" },
+    { title: "Desert Memory", author: "Lina Porter", cover: "/brand-img/coming-soon-book2.png" },
+    { title: "Broken Compass", author: "Tyler Hope", cover: "/brand-img/coming-soon-book3.png" },
+    { title: "House of Silence", author: "Mila Cooper", cover: "/brand-img/coming-soon-book4.png" },
+    { title: "Hidden Oath", author: "Shawn Miller", cover: "/brand-img/coming-soon-book5.png" },
+    { title: "Kingdom Dust", author: "Amir Stone", cover: "/brand-img/coming-soon-book6.png" },
+    { title: "Misty Dawn", author: "Holly Craig", cover: "/brand-img/coming-soon-book7.png" },
+    { title: "Northern Flame", author: "Ariana Cole", cover: "/brand-img/coming-soon-book8.png" },
+  ];
 
-    const currentBooks = activeBookTab === "published"
-        ? [...publishedBooks, ...publishedBooks]
-        : [...comingSoonBooks, ...comingSoonBooks];
-    const totalBookPages = Math.ceil(currentBooks.length / 4);
-    const visibleBooks = currentBooks.slice(bookPage * 4, bookPage * 4 + 4);
+  const currentBooks = activeBookTab === "published"
+    ? [...publishedBooks, ...publishedBooks]
+    : [...comingSoonBooks, ...comingSoonBooks];
+  const totalBookPages = Math.ceil(currentBooks.length / 4);
+  const visibleBooks = currentBooks.slice(bookPage * 4, bookPage * 4 + 4);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setBookPage((prev) => (prev + 1) % totalBookPages);
-        }, 3500);
-        return () => clearInterval(interval);
-    }, [totalBookPages]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBookPage((prev) => (prev + 1) % totalBookPages);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [totalBookPages]);
 
   useEffect(() => {
     setBookPage(0);
@@ -437,272 +437,277 @@ export default function HomePage() {
     return () => clearInterval(p);
   }, [processSlides.length]);
 
-    return (
-        <>
-            <Head>
-                <title>Pine Book Publishing | Book Publishing Offer</title>
-                <meta
-                    name="description"
-                    content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
-                />
-                <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
-                <link rel="shortcut icon" href="/images/fav.png" />
-                <meta name="robots" content="noindex" />
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>Pine Book Publishing | Book Publishing Offer</title>
+        <meta
+          name="description"
+          content="Hire Professional Book Publishing company. At Pine Book Publishing, we provide to comprehensive book publishing services. Your Trusted Book Writing Partners In The USA And Canada."
+        />
+        <meta name="google-site-verification" content="v2pKJGIZnMWCWw2QC5nuRPYT5gvDQlUtT0lZYFIhHYo" />
+        <link rel="shortcut icon" href="/images/fav.png" />
+        <meta name="robots" content="noindex" />
+      </Head>
 
       <main ref={pageAnimRef} className="font-sans">
-                <section className="hero-anim pbp-hero relative overflow-hidden text-white">
-                    <div className="pbp-overlay" />
-                    <div className="pbp-glow" />
-                    <div className="relative z-[2] mx-auto max-w-[1240px] px-4 md:px-8 pt-7 md:pt-8 pb-24 md:pb-36">
-                        <header className="flex flex-wrap items-center justify-between gap-6">
-                            <Link href="/" className="inline-flex items-center">
-                                <Image
-                                    src="/brand-img/logo_.png"
-                                    alt="Pine Book Publishing"
-                                    width={228}
-                                    height={80}
-                                    className="h-auto w-[175px] md:w-[228px]"
-                                />
-                            </Link>
+        <section className="hero-anim pbp-hero relative overflow-hidden text-white">
+          <div className="pbp-overlay" />
+          <div className="pbp-glow" />
+          <div className="relative z-[2] mx-auto max-w-[1240px] px-4 md:px-8 pt-7 md:pt-8 pb-24 md:pb-36">
+            <header className="flex flex-wrap items-center justify-between gap-6">
+              <Link href="/" className="inline-flex items-center">
+                <Image
+                  src="/brand-img/logo_.png"
+                  alt="Pine Book Publishing"
+                  width={228}
+                  height={80}
+                  className="h-auto w-[175px] md:w-[228px]"
+                />
+              </Link>
 
-                            <div className="flex flex-wrap items-center gap-4 md:gap-7 text-[14px] leading-none text-[#e8fffb]">
-                                <a href="tel:+18887867315" className="hover:text-white transition-colors">(888) 786-7135</a>
-                                <a href="mailto:support@pinebookpublishing.com" className="hover:text-white transition-colors">support@pinebookpublishing.com</a>
-                                <button type="button" className="hover:text-white transition-colors">Talk To An Expert</button>
-                                <button type="button" className="h-[40px] min-w-[145px] rounded-full bg-[#3cc7b6]" aria-label="Get Started" />
-                            </div>
-                        </header>
+              <div className="flex flex-wrap items-center gap-4 md:gap-7 text-[14px] leading-none text-[#e8fffb]">
+                <a href="tel:+18887867315" className="hover:text-white transition-colors">(888) 786-7135</a>
+                <a href="mailto:support@pinebookpublishing.com" className="hover:text-white transition-colors">support@pinebookpublishing.com</a>
+                <button type="button" className="hover:text-white transition-colors">Talk To An Expert</button>
+                <button type="button" className="h-[40px] min-w-[145px] rounded-full bg-[#3cc7b6]" aria-label="Get Started" />
+              </div>
+            </header>
 
-                        <div className="mt-12 md:mt-14 grid items-start gap-12 lg:grid-cols-[1fr_380px]">
-                            <div className="max-w-[630px]">
-                                <p className="text-[36px] leading-[1.1] text-[#74f0b0]">#1 Self <span className="text-white">Publishing Company</span></p>
-                                <h1 className="mt-3 text-[58px] md:text-[56px] leading-[1.06] font-[800] tracking-[-0.2px] uppercase">
-                                    Do You Have A
-                                    <br />
-                                    Manuscript Ready To
-                                    <br />
-                                    Be <span className="text-[#78f2b6]">Published?</span>
-                                </h1>
-                                <p className="mt-5 max-w-[610px] text-[33px] leading-[1.45] text-[#d5efea]">
-                                    Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.
-                                </p>
+            <div className="mt-12 md:mt-14 grid items-start gap-12 lg:grid-cols-[1fr_380px]">
+              <div className="max-w-[630px]">
+                <p className="text-[36px] leading-[1.1] text-[#74f0b0]">#1 Self <span className="text-white">Publishing Company</span></p>
+                <h1 className="mt-3 text-[58px] md:text-[56px] leading-[1.06] font-[800] tracking-[-0.2px] uppercase">
+                  Do You Have A
+                  <br />
+                  Manuscript Ready To
+                  <br />
+                  Be <span className="text-[#78f2b6]">Published?</span>
+                </h1>
+                <p className="mt-5 max-w-[610px] text-[33px] leading-[1.45] text-[#d5efea]">
+                  Pine Book Publishing has made it much easier to self-publish a book, with hands-on support from the first word to the final cover. Our process involves Proofreading, Editing, Formatting, Book Cover Design, Publishing, and print-on-demand through a vast network of global outlets.
+                </p>
 
-                                <div className="mt-9 flex items-center gap-5">
-                                    <button type="button" className="h-[52px] min-w-[148px] rounded-full bg-[#41c8b7]" />
-                                    <button
-                                        type="button"
-                                        className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white text-[#2b9b90]"
-                                        aria-label="Play"
-                                    >
-                                        <span className="ml-[2px] inline-block h-0 w-0 border-y-[9px] border-y-transparent border-l-[14px] border-l-[#2b9b90]" />
-                                    </button>
-                                    <span className="text-[33px] text-[#e9fffb]">Live Chat</span>
-                                </div>
-                            </div>
+                <div className="mt-9 flex items-center gap-5">
+                  <button type="button" className="h-[52px] min-w-[148px] rounded-full bg-[#41c8b7]" />
+                  <button
+                    type="button"
+                    className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white text-[#2b9b90]"
+                    aria-label="Play"
+                  >
+                    <span className="ml-[2px] inline-block h-0 w-0 border-y-[9px] border-y-transparent border-l-[14px] border-l-[#2b9b90]" />
+                  </button>
+                  <span className="text-[33px] text-[#e9fffb]">Live Chat</span>
+                </div>
+              </div>
 
-                            <div className="mx-auto mt-2 w-full max-w-[380px] rounded-[4px] bg-white p-4 text-[#3b3b3b] shadow-[0_18px_40px_rgba(0,0,0,0.23)]">
-                                <h3 className="text-[34px] leading-none font-[700] text-[#0f7e73]">Avail Discount</h3>
-                                <p className="mt-2 text-[19px] leading-[1.3] text-[#4c4c4c]">
-                                    Expert Book Publishing at <span className="font-semibold text-[#2e9f8c]">50% Off</span> -
-                                    <br />
-                                    Your Story Deserves to be Heard!
-                                </p>
+              <div className="mx-auto mt-2 w-full max-w-[380px] rounded-[4px] bg-white p-4 text-[#3b3b3b] shadow-[0_18px_40px_rgba(0,0,0,0.23)]">
+                <h3 className="text-[34px] leading-none font-[700] text-[#0f7e73]">Avail Discount</h3>
+                <p className="mt-2 text-[19px] leading-[1.3] text-[#4c4c4c]">
+                  Expert Book Publishing at <span className="font-semibold text-[#2e9f8c]">50% Off</span> -
+                  <br />
+                  Your Story Deserves to be Heard!
+                </p>
 
-                                <form className="mt-4 space-y-2.5">
-                                    <input type="text" placeholder="Your name" className="pbp-input" />
-                                    <input type="email" placeholder="Your email address" className="pbp-input" />
-                                    <CountryPhoneInput name="phone" placeholder="Your phone number" inputClassName="pbp-input" />
-                                    <select className="pbp-input text-[#7e7e7e]">
-                                        <option>Select Course</option>
-                                        <option>Book Publishing</option>
-                                        <option>Book Editing</option>
-                                        <option>Book Marketing</option>
-                                    </select>
-                                    <button type="button" className="rounded-[3px] bg-[#0f7e73] px-4 py-2 text-[11px] font-semibold text-white">
-                                        Get In Touch +
-                                    </button>
-                                </form>
+                <form className="mt-4 space-y-2.5">
+                  <input type="text" placeholder="Your name" className="pbp-input" />
+                  <input type="email" placeholder="Your email address" className="pbp-input" />
+                  <CountryPhoneInput name="phone" placeholder="Your phone number" inputClassName="pbp-input" />
+                  <select className="pbp-input text-[#7e7e7e]">
+                    <option>Select Course</option>
+                    <option>Book Publishing</option>
+                    <option>Book Editing</option>
+                    <option>Book Marketing</option>
+                  </select>
+                  <button type="button" className="rounded-[3px] bg-[#0f7e73] px-4 py-2 text-[11px] font-semibold text-white">
+                    Get In Touch +
+                  </button>
+                </form>
 
-                                <div className="mt-4 border-t border-[#e9e9e9] pt-3">
-                                    <h4 className="text-[34px] leading-none font-[700] text-[#117d6b]">Our Credibility</h4>
-                                    <div className="mt-3 flex flex-wrap gap-2">
-                                        <span className="rounded bg-[#f0f3f7] px-2 py-1 text-[10px] font-semibold text-[#2f4057]">Partner</span>
-                                        <span className="rounded bg-[#e9f4ff] px-2 py-1 text-[10px] font-semibold text-[#245f9a]">BBB A+</span>
-                                        <span className="rounded bg-[#edfdf6] px-2 py-1 text-[10px] font-semibold text-[#008a5d]">Trustpilot</span>
-                                        <span className="rounded bg-[#111] px-2 py-1 text-[10px] font-semibold text-white">Clutch</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div className="mt-4 border-t border-[#e9e9e9] pt-3">
+                  <h4 className="text-[34px] leading-none font-[700] text-[#117d6b]">Our Credibility</h4>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="rounded bg-[#f0f3f7] px-2 py-1 text-[10px] font-semibold text-[#2f4057]">Partner</span>
+                    <span className="rounded bg-[#e9f4ff] px-2 py-1 text-[10px] font-semibold text-[#245f9a]">BBB A+</span>
+                    <span className="rounded bg-[#edfdf6] px-2 py-1 text-[10px] font-semibold text-[#008a5d]">Trustpilot</span>
+                    <span className="rounded bg-[#111] px-2 py-1 text-[10px] font-semibold text-white">Clutch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="pbp-curve" />
+        </section>
+
+        <section className="brand-anim bg-[#f3f3f3] py-10 md:py-12">
+          <div className="mx-auto max-w-[1240px] px-4 md:px-8">
+            <h2 className="text-center text-[52px] font-[700] leading-none text-[#1c7b6f]">
+              Sell Your Book With
+            </h2>
+
+            <div className="brand-marquee mt-8 overflow-hidden">
+              <div className="brand-track">
+                {[0, 1, 2].map((group) => (
+                  <di
+
+
+                    v key={`brand-group-${group}`} className="brand-set">
+                    {brandItems.map((item, idx) => (
+                      <div key={`brand-${group}-${idx}`} className="flex h-[52px] min-w-[200px] items-center justify-center">
+                        {item.type === "bam" ? (
+                          <div className="text-center leading-none">
+                            <div className="text-[54px] font-[800] tracking-[-1px] text-[#23459b]">BAM!</div>
+                            <div className="mt-[1px] text-[18px] font-[700] tracking-[0.1em] text-[#23306f]">BOOKS-A-MILLION</div>
+                          </div>
+
+
+                        ) : (
+                          <Image
+                            src={item.src}
+                            alt={item.alt}
+                            width={item.width}
+                            height={item.height}
+                            className="h-auto w-auto max-h-[42px] object-contain"
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section ref={aboutSectionRef} className="bg-[#f3f3f3] pb-12 md:pb-16">
+          <div className="mx-auto max-w-[1240px] px-4 md:px-8">
+            <h3 className="about-anim-title text-center text-[52px] font-[700] leading-none text-[#1e2c6b]">
+              <span className="text-[#1f8d7f]">About</span> Pine Book Publishing
+            </h3>
+            <p className="about-anim-text mx-auto mt-8 max-w-[1140px] text-center text-[18px] leading-[1.6] text-[#667084]">
+              Pine Book Publishing has been helping new to seasoned writers for years with the mission of providing quality writing,
+              editing, and publishing services worldwide, with the mission of providing quality editing and publishing services for authors
+              worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct
+              from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their
+              ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission
+              of providing authors with the best book publishing experience.
+              <br />
+              We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book
+              to the moment your book is known to the world.
+            </p>
+
+            <div className="about-cards-wrap mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
+              <div className="about-card-anim group relative overflow-hidden rounded-[16px]">
+                <Image
+                  src="/brand-img/about-img-1.webp"
+                  alt="Talk To An Expert"
+                  width={581}
+                  height={443}
+                  className="h-[250px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                />
+                <div className="about-overlay-left absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <h4 className="text-[23px] font-[700] leading-none text-white">Talk To An Expert</h4>
+                  <button type="button" className="about-outline-btn mt-6">Make A Call Now!</button>
+                </div>
+              </div>
+
+              <div className="about-card-anim group relative overflow-hidden rounded-[16px]">
+                <Image
+                  src="/brand-img/about-img-2.webp"
+                  alt="24/7 support"
+                  width={581}
+                  height={443}
+                  className="h-[250px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                />
+                <div className="about-overlay-right absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <h4 className="text-[23px] font-[700] leading-none text-white">24/7 support</h4>
+                  <button type="button" className="about-solid-btn mt-6">(888) 20786-7135</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="story-anim bg-[#f3f3f3] pb-14 md:pb-16">
+          <div className="slider-shell mx-auto max-w-[1240px] px-0 md:px-0">
+            <div className="story-track">
+              {[
+                { icon: "/brand-img/new-lp/ser-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-2.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-3.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+              ].concat([
+                { icon: "/brand-img/new-lp/ser-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-2.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+                { icon: "/brand-img/new-lp/test-3.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
+              ]).map((card, idx) => (
+                <article key={`story-${idx}`} className="story-card">
+                  <div className="flex items-center gap-3">
+                    <Image src={card.icon} alt={card.name} width={34} height={34} className="h-[34px] w-[34px] rounded-[4px] object-cover" />
+                    <div>
+                      <h4 className="text-[16px] leading-none font-[600] text-[#4f5358]">{card.name}</h4>
+                      <p className="mt-1 text-[13px] leading-none text-[#7f848c]">{card.tag}</p>
                     </div>
-                    <div className="pbp-curve" />
-                </section>
-
-                <section className="brand-anim bg-[#f3f3f3] py-10 md:py-12">
-                    <div className="mx-auto max-w-[1240px] px-4 md:px-8">
-                        <h2 className="text-center text-[52px] font-[700] leading-none text-[#1c7b6f]">
-                            Sell Your Book With
-                        </h2>
-
-                        <div className="brand-marquee mt-8 overflow-hidden">
-                            <div className="brand-track">
-                                {[0, 1, 2].map((group) => (
-                                    <div key={`brand-group-${group}`} className="brand-set">
-                                        {brandItems.map((item, idx) => (
-                                            <div key={`brand-${group}-${idx}`} className="flex h-[52px] min-w-[200px] items-center justify-center">
-                                                {item.type === "bam" ? (
-                                                    <div className="text-center leading-none">
-                                                        <div className="text-[54px] font-[800] tracking-[-1px] text-[#23459b]">BAM!</div>
-                                                        <div className="mt-[1px] text-[18px] font-[700] tracking-[0.1em] text-[#23306f]">BOOKS-A-MILLION</div>
-                                                    </div>
-                                                ) : (
-                                                    <Image
-                                                        src={item.src}
-                                                        alt={item.alt}
-                                                        width={item.width}
-                                                        height={item.height}
-                                                        className="h-auto w-auto max-h-[42px] object-contain"
-                                                    />
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section ref={aboutSectionRef} className="bg-[#f3f3f3] pb-12 md:pb-16">
-                    <div className="mx-auto max-w-[1240px] px-4 md:px-8">
-                        <h3 className="about-anim-title text-center text-[52px] font-[700] leading-none text-[#1e2c6b]">
-                            <span className="text-[#1f8d7f]">About</span> Pine Book Publishing
-                        </h3>
-                        <p className="about-anim-text mx-auto mt-8 max-w-[1140px] text-center text-[18px] leading-[1.6] text-[#667084]">
-                            Pine Book Publishing has been helping new to seasoned writers for years with the mission of providing quality writing,
-                            editing, and publishing services worldwide, with the mission of providing quality editing and publishing services for authors
-                            worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct
-                            from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their
-                            ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission
-                            of providing authors with the best book publishing experience.
-                            <br />
-                            We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book
-                            to the moment your book is known to the world.
-                        </p>
-
-                        <div className="about-cards-wrap mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
-                            <div className="about-card-anim group relative overflow-hidden rounded-[16px]">
-                                <Image
-                                    src="/brand-img/about-img-1.webp"
-                                    alt="Talk To An Expert"
-                                    width={581}
-                                    height={443}
-                                    className="h-[250px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                                />
-                                <div className="about-overlay-left absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                                    <h4 className="text-[23px] font-[700] leading-none text-white">Talk To An Expert</h4>
-                                    <button type="button" className="about-outline-btn mt-6">Make A Call Now!</button>
-                                </div>
-                            </div>
-
-                            <div className="about-card-anim group relative overflow-hidden rounded-[16px]">
-                                <Image
-                                    src="/brand-img/about-img-2.webp"
-                                    alt="24/7 support"
-                                    width={581}
-                                    height={443}
-                                    className="h-[250px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                                />
-                                <div className="about-overlay-right absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                                    <h4 className="text-[23px] font-[700] leading-none text-white">24/7 support</h4>
-                                    <button type="button" className="about-solid-btn mt-6">(888) 20786-7135</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="story-anim bg-[#f3f3f3] pb-14 md:pb-16">
-                    <div className="slider-shell mx-auto max-w-[1240px] px-0 md:px-0">
-                        <div className="story-track">
-                            {[
-                                { icon: "/brand-img/new-lp/ser-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-2.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-3.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                            ].concat([
-                                { icon: "/brand-img/new-lp/ser-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-1.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-2.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                                { icon: "/brand-img/new-lp/test-3.webp", name: "Lorem Ipsum", tag: "@loremip_", body: "Journey through the lives and experiences of others." },
-                            ]).map((card, idx) => (
-                                <article key={`story-${idx}`} className="story-card">
-                                    <div className="flex items-center gap-3">
-                                        <Image src={card.icon} alt={card.name} width={34} height={34} className="h-[34px] w-[34px] rounded-[4px] object-cover" />
-                                        <div>
-                                            <h4 className="text-[16px] leading-none font-[600] text-[#4f5358]">{card.name}</h4>
-                                            <p className="mt-1 text-[13px] leading-none text-[#7f848c]">{card.tag}</p>
-                                        </div>
-                                    </div>
-                                    <p className="mt-7 max-w-[330px] text-[40px] leading-[1.25] font-[500] text-[#4e5257]">{card.body}</p>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                  </div>
+                  <p className="mt-7 max-w-[330px] text-[40px] leading-[1.25] font-[500] text-[#4e5257]">{card.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="bg-[#f3f3f3] pb-16 md:pb-20">
           <div className="mx-auto max-w-[1240px] px-4 md:px-8">
             <div className="books-anim-head mx-auto flex w-fit rounded-full border border-[#d8d8d8] bg-white p-[3px]">
-                            <button
-                                type="button"
-                                onClick={() => setActiveBookTab("published")}
-                                className={`book-tab-btn ${activeBookTab === "published" ? "book-tab-active" : ""}`}
-                            >
-                                Published Book
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => setActiveBookTab("coming")}
-                                className={`book-tab-btn ${activeBookTab === "coming" ? "book-tab-active" : ""}`}
-                            >
-                                Coming Soon
-                            </button>
-                        </div>
+              <button
+                type="button"
+                onClick={() => setActiveBookTab("published")}
+                className={`book-tab-btn ${activeBookTab === "published" ? "book-tab-active" : ""}`}
+              >
+                Published Book
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveBookTab("coming")}
+                className={`book-tab-btn ${activeBookTab === "coming" ? "book-tab-active" : ""}`}
+              >
+                Coming Soon
+              </button>
+            </div>
 
             <div className="books-anim-grid mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-                            {visibleBooks.map((book, idx) => (
-                                <article key={`${activeBookTab}-${bookPage}-${idx}`} className="book-card">
-                                    <div className="book-cover-wrap">
-                                        <Image
-                                            src={book.cover}
-                                            alt={book.title}
-                                            width={230}
-                                            height={320}
-                                            className="book-cover-img"
-                                        />
-                                    </div>
-                                    <h4 className="mt-6 text-center text-[20px] leading-[1.2] font-[700] text-[#2c8b80]">{book.title}</h4>
-                                    <p className="mt-2 text-center text-[16px] leading-none text-[#5e6470]">{book.author}</p>
-                                </article>
-                            ))}
-                        </div>
+              {visibleBooks.map((book, idx) => (
+                <article key={`${activeBookTab}-${bookPage}-${idx}`} className="book-card">
+                  <div className="book-cover-wrap">
+                    <Image
+                      src={book.cover}
+                      alt={book.title}
+                      width={230}
+                      height={320}
+                      className="book-cover-img"
+                    />
+                  </div>
+                  <h4 className="mt-6 text-center text-[20px] leading-[1.2] font-[700] text-[#2c8b80]">{book.title}</h4>
+                  <p className="mt-2 text-center text-[16px] leading-none text-[#5e6470]">{book.author}</p>
+                </article>
+              ))}
+            </div>
 
-                        <div className="mt-8 border-t border-[#7ab6ae]" />
-                        <div className="mt-6 flex items-center justify-center gap-5">
-                            {Array.from({ length: totalBookPages }).map((_, idx) => (
-                                <button
-                                    key={`dot-${idx}`}
-                                    type="button"
-                                    onClick={() => setBookPage(idx)}
-                                    className={`book-dot ${idx === bookPage ? "book-dot-active" : ""}`}
-                                    aria-label={`Go to slide ${idx + 1}`}
-                                >
-                                    <span className="book-dot-progress" />
-                                </button>
-                            ))}
-                        </div>
+            <div className="mt-8 border-t border-[#7ab6ae]" />
+            <div className="mt-6 flex items-center justify-center gap-5">
+              {Array.from({ length: totalBookPages }).map((_, idx) => (
+                <button
+                  key={`dot-${idx}`}
+                  type="button"
+                  onClick={() => setBookPage(idx)}
+                  className={`book-dot ${idx === bookPage ? "book-dot-active" : ""}`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                >
+                  <span className="book-dot-progress" />
+                </button>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -1000,11 +1005,10 @@ export default function HomePage() {
                         ease: "power2.out",
                       });
                     }}
-                    className={`package-btn mt-6 h-[44px] w-full rounded-[8px] text-[28px] font-[600] transition ${
-                      pkg.primary
+                    className={`package-btn mt-6 h-[44px] w-full rounded-[8px] text-[28px] font-[600] transition ${pkg.primary
                         ? "bg-[#3d4cff] text-white hover:bg-[#3342ef]"
                         : "border border-[#d4d8e2] bg-white text-[#252a35]"
-                    }`}
+                      }`}
                   >
                     Get started
                   </button>
@@ -1040,7 +1044,7 @@ export default function HomePage() {
         </section>
       </main>
 
-            <style jsx>{`
+      <style jsx>{`
         .pbp-hero {
           background: radial-gradient(1100px 620px at 52% 78%, #084539 0%, #0f7165 30%, #267e73 61%, #2a8378 100%);
         }
@@ -1513,6 +1517,6 @@ export default function HomePage() {
           transform: translateY(-2px);
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 }

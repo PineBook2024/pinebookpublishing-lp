@@ -579,12 +579,12 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center mt-6">
+            <div className="book-offer-hero-actions flex flex-col sm:flex-row flex-wrap gap-4 pt-4 content-center mt-6">
               {/* Button 1 */}
               <button
                 onClick={() => onOpenModal?.()}
                 type="button"
-                className="bg-[#fff] text-[#15184c] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-[#15184c] hover:text-white"
+                className="book-offer-hero-action bg-[#fff] text-[#15184c] font-semibold px-6 py-3 rounded-full flex items-center gap-2 duration-300 hover:bg-[#15184c] hover:text-white"
               >
                 Publish Your Book Now
                 <svg
@@ -605,7 +605,7 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
               <button
                 type="button"
                 onClick={handleOpenChat}
-                className="bg-[#fff] text-[#15184c] font-semibold px-6 py-3 rounded-full flex items-center gap-2  duration-300 hover:bg-[#15184c] hover:text-white"
+                className="book-offer-hero-action bg-[#fff] text-[#15184c] font-semibold px-6 py-3 rounded-full flex items-center gap-2 duration-300 hover:bg-[#15184c] hover:text-white"
               >
                 Live Chat
               </button>
