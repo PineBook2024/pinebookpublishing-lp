@@ -1967,9 +1967,9 @@ export default function HomePage() {
                     <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
                       Expert Package
                     </h3>
-                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                    {/* <h2 className="text-3xl font-bold text-[#15184c] mb-5">
                       <del className="text-red italic">$7,000</del> | <span className="text-[#117d6b]">$3,499 USD</span>
-                    </h2>
+                    </h2> */}
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
                       <li>Editorial Support</li>
@@ -2005,7 +2005,7 @@ export default function HomePage() {
                     </ul>
 
                     <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                      Start Project
+                      Get a Quote
                     </button>
 
                     <div className="mt-6 text-sm">
@@ -2026,9 +2026,9 @@ export default function HomePage() {
                     <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
                       Premium Package
                     </h3>
-                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                    {/* <h2 className="text-3xl font-bold text-[#15184c] mb-5">
                       <del className="text-red italic">$15,000</del> | <span className="text-[#117d6b]">$7,499 USD</span>
-                    </h2>
+                    </h2> */}
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
                       <li>Editorial Support</li>
@@ -2068,7 +2068,7 @@ export default function HomePage() {
                     </ul>
 
                     <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                      Start Project
+                      Get a Quote
                     </button>
 
                     <div className="mt-6 text-sm">
@@ -2089,9 +2089,9 @@ export default function HomePage() {
                     <h3 className="text-xl font-semibold text-[#117d6b] mb-3">
                       Enterprise Package
                     </h3>
-                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                    {/* <h2 className="text-3xl font-bold text-[#15184c] mb-5">
                       <del className="text-red italic">$25,000</del> | <span className="text-[#117d6b]">$12,499 USD</span>
-                    </h2>
+                    </h2> */}
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
                       <li>Editorial Support</li>
@@ -2140,7 +2140,7 @@ export default function HomePage() {
                     </ul>
 
                     <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                      Start Project
+                      Get a Quote
                     </button>
 
                     <div className="mt-6 text-sm">
@@ -2213,9 +2213,9 @@ export default function HomePage() {
                     <h4 className="text-sm font-semibold text-[#15184c] mb-3">
                       {item.label}
                     </h4>
-                    <h2 className="text-3xl font-bold text-[#15184c] mb-5">
+                    {/* <h2 className="text-3xl font-bold text-[#15184c] mb-5">
                       <del className="text-red italic">{item.originalPrice}</del> | <span className="text-[#117d6b]">{item.salePrice}</span>
-                    </h2>
+                    </h2> */}
                     <p className="text-gray-700 text-sm text-left font-semibold leading-6 mb-5">
                       {item.description}
                     </p>
@@ -2231,7 +2231,7 @@ export default function HomePage() {
                     </ul>
 
                     <button onClick={() => setIsOpen(true)} className="w-full py-3 bg-[#15184c] text-[#fff] font-semibold rounded-full duration-300 hover:bg-[#117d6b] hover:text-[#fff]">
-                      Start Project
+                      Get a Quote
                     </button>
 
                     <div className="mt-6 text-sm">

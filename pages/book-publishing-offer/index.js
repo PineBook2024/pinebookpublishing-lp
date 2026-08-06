@@ -807,8 +807,9 @@ export default function Home() {
                   About<span>Pine Book Publishing</span>
                 </h3>
                 <p className="pt-3">
-                  Pine Book Publishing was founded on February 22, 2023, with the mission of providing quality editing and publishing services for authors worldwide. Our founders understood that many authors need support in editing and publishing their works to make them distinct from the rest in the crowded marketplace. They had a vision of creating a company that would help these authors bring their ideas to life and turn them into successful books. That was when Pine Book Publishing was officially established with a mission of providing authors with the best book publishing experience.<br></br>
-                  We have a qualified team of professionals who will work hand in hand with you from the moment you decide to publish your book to the moment your book is known to the world.
+                  At Pine Book Publishing, we know that many authors have great stories but often need the right support to get them ready for readers. That's why we're here. Our goal is to make publishing easier by offering professional editing, publishing, and marketing services that help every book stand out in a competitive market. We believe every author deserves a smooth publishing experience and a team they can trust.
+<br></br>
+From the day you decide to publish until your book reaches readers around the world, our experienced professionals work closely with you, offering guidance, honest support, and the attention your book deserves every step of the way.
                 </p>
                 <div className="flex gap-6">
                   <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
@@ -1933,10 +1934,10 @@ export default function Home() {
                   <div className="packages-wrapper flex flex-col md:flex-row justify-center gap-12 mt-0">
                     <div className="single-packages relative">
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Expert Package
-                        <br></br>
+                        {/* <br></br>
                         <div className="flex justify-center">
                           <button className="tag-50-per-off"><del className="text-red italic">$7,000</del> | <span className="blink_me">$3,499 USD</span></button>
-                        </div>
+                        </div> */}
                       </h4>
                       {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
@@ -2080,7 +2081,7 @@ export default function Home() {
                       </div>
                       <div className="text-center">
                         <button className="package-get-started-btn text-md mt-5" onClick={() => openModal('Expert')}>
-                          START PROJECT
+                          Get a Quote
                         </button>
                       </div>
 
@@ -2099,10 +2100,10 @@ export default function Home() {
                     <div className="single-packages relative">
                       <Image src={"/images/badge.png"} className="package-badge" width={80} height={80}></Image>
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Premium Package
-                        <br></br>
+                        {/* <br></br>
                         <div className="flex justify-center">
                           <button className="tag-50-per-off"><del className="text-red italic">$15,000</del> | <span className="blink_me">$7,499 USD</span></button>
-                        </div>
+                        </div> */}
                       </h4>
                       {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
@@ -2267,7 +2268,7 @@ export default function Home() {
                       </div>
                       <div className="text-center">
                         <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Premium')}>
-                          START PROJECT
+                          Get a Quote
                         </button>
                       </div>
                       <div className="single-packages-footer flex  w-100 justify-center">
@@ -2284,10 +2285,10 @@ export default function Home() {
                     </div>
                     <div className="single-packages relative">
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Enterprise Package
-                        <br></br>
+                        {/* <br></br>
                         <div className="flex justify-center">
                           <button className="tag-50-per-off"><del className="text-red italic">$25,000</del> | <span className="blink_me">$12,499 USD</span></button>
-                        </div>
+                        </div> */}
                       </h4>
                       {/* <div className="flex justify-center">
                     <button className="tag-50-per-off">GRAB IT NOW: <span className="blink_me">50% OFF</span></button>
@@ -2472,7 +2473,7 @@ export default function Home() {
                       </div>
                       <div className="text-center">
                         <button className="package-get-started-btn text-md mt-8" onClick={() => openModal('Enterprise')}>
-                          START PROJECT
+                          Get a Quote
                         </button>
                       </div>
 
@@ -2957,12 +2958,12 @@ export default function Home() {
                       <span className="marketing-discount-badge">{item.discount}</span>
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">
                         {item.title}
-                        <br></br>
+                        {/* <br></br>
 
                         <div className="marketing-package-price pt-2">
                           <span className="marketing-package-original-price">{item.originalPrice}</span>
                           <span className="marketing-package-sale-price">{item.salePrice}</span>
-                        </div>
+                        </div> */}
                       </h4>
                       <div className="single-packages-content marketing-packages-content mb-5 px-10">
                         <span>{item.label}</span>
