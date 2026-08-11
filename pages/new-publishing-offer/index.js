@@ -1759,7 +1759,7 @@ export default function HomePage() {
             {activePackageTab === 'publishing' ? (
               <>
                 <div>
-                  <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
+                  <h4 class="text-xl font-poppins md:text-xl font-bold mt-4 text-white">Limited Time Offer - Save <span class="blink_me fw-bold text-2xl">30%</span> On Book Publishing Services</h4>
 
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-4">
@@ -1770,7 +1770,7 @@ export default function HomePage() {
                       Basic Package
                     </h3>
                     <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                      <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$349 USD</span>
+                      <del className="text-red italic">$700</del> | <span className="text-[#117d6b]">$490 USD</span>
                     </h2>
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1815,7 +1815,7 @@ export default function HomePage() {
                       Start Up Package
                     </h3>
                     <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                      <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$999 USD</span>
+                      <del className="text-red italic">$2,000</del> | <span className="text-[#117d6b]">$1400 USD</span>
                     </h2>
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>
@@ -1866,7 +1866,7 @@ export default function HomePage() {
                       Standard Package
                     </h3>
                     <h2 className="text-3xl font-bold text-[#15184c] mb-5">
-                      <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$1,499 USD</span>
+                      <del className="text-red italic">$3,000</del> | <span className="text-[#117d6b]">$2,100 USD</span>
                     </h2>
                     <ul className="text-gray-600 text-sm text-left space-y-2 mb-8 h-[300px] overflow-y-scroll overflow-x-hidden">
                       <h4 className="font-bold text-lg">Preparing Your Manuscript</h4>

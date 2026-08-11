@@ -633,7 +633,7 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
                 </h4>
                 <h5 className="font-poppins text-white text-lg mb-3 christmas-banner-desc">
                   Exclusive Offer: Expert Book Publishing at{" "}
-                  <span className="text-blink">50% Off</span> – <br />
+                  <span className="text-blink">30% Off</span> – <br />
                   Your Story Deserves to be Heard!
                 </h5>
               </div>
