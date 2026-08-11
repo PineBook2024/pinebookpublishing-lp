@@ -808,8 +808,8 @@ export default function Home() {
                 </h3>
                 <p className="pt-3">
                   At Pine Book Publishing, we know that many authors have great stories but often need the right support to get them ready for readers. That's why we're here. Our goal is to make publishing easier by offering professional editing, publishing, and marketing services that help every book stand out in a competitive market. We believe every author deserves a smooth publishing experience and a team they can trust.
-<br></br>
-From the day you decide to publish until your book reaches readers around the world, our experienced professionals work closely with you, offering guidance, honest support, and the attention your book deserves every step of the way.
+                  <br></br>
+                  From the day you decide to publish until your book reaches readers around the world, our experienced professionals work closely with you, offering guidance, honest support, and the attention your book deserves every step of the way.
                 </p>
                 <div className="flex gap-6">
                   <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
@@ -1292,7 +1292,7 @@ From the day you decide to publish until your book reaches readers around the wo
         {activePackageTab === 'publishing' ? (
           <>
             <section className="bg-white pt-5 pb-5">
-              <h4 className="text-xl font-poppins md:text-xl font-bold mb-4 text-center">Limited Time Offer - Save <span className="blink_me fw-bold text-2xl">50%</span> On Book Publishing Services</h4>
+              <h4 className="text-xl font-poppins md:text-xl font-bold mb-4 text-center">Limited Time Offer - Save <span className="blink_me fw-bold text-2xl">30%</span> On Book Publishing Services</h4>
 
               <div className="width-container">
                 <div className="container mx-auto">
@@ -1303,7 +1303,7 @@ From the day you decide to publish until your book reaches readers around the wo
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Basic Package
                         <br></br>
                         <div className="flex justify-center">
-                          <button className="tag-50-per-off"><del className="text-red italic">$700</del> | <span className="blink_me">$349 USD</span></button>
+                          <button className="tag-50-per-off"><del className="text-red italic">$700</del> | <span className="blink_me">$490 USD</span></button>
                         </div>
                       </h4>
                       <div className="single-packages-content mb-5 px-10">
@@ -1395,7 +1395,7 @@ From the day you decide to publish until your book reaches readers around the wo
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Start Up Package
                         <br></br>
                         <div className="flex justify-center">
-                          <button className="tag-50-per-off"><del className="text-red italic">$2,000</del> | <span className="blink_me">$999 USD</span></button>
+                          <button className="tag-50-per-off"><del className="text-red italic">$2,000</del> | <span className="blink_me">$1400 USD</span></button>
                         </div>
                       </h4>
                       {/* <div className="flex justify-center">
@@ -1516,7 +1516,7 @@ From the day you decide to publish until your book reaches readers around the wo
                       <h4 className="text-2xl font-poppins mb-6 text-center pt-4 pb-4 hover-top-vector relative">Standard Package
                         <br></br>
                         <div className="flex justify-center">
-                          <button className="tag-50-per-off"><del className="text-red italic">$3,000</del> | <span className="blink_me">$1,499 USD</span></button>
+                          <button className="tag-50-per-off"><del className="text-red italic">$3,000</del> | <span className="blink_me">$2,100 USD</span></button>
                         </div>
                       </h4>
                       {/* <div className="flex justify-center">
