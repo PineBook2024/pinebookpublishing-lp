@@ -381,21 +381,21 @@ export default function BrandMainContact() {
                         <h4 className="text-black text-xl font-poppins">Client Success Strategist</h4>
                         <p className="text-black font-bold text-xl">ryan@pinebookwriting.com</p>
                     </div>
-                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                    {/* <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Marcus Ryan.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Marcus Ryan</h3>
                         <h4 className="text-black text-xl font-poppins">Senior Marketing Strategists</h4>
                         <p className="text-black font-bold text-xl">marcusryan@pinebookpublishing.com</p>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="flex justify-around flex-col md:flex-row">
-                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                    {/* <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Bradley Lucas.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Bradley Lucas</h3>
                         <h4 className="text-black text-xl font-poppins">Consultant Manager Writing & Publishing</h4>
                         <p className="text-black font-bold text-xl">bradleylucas@pinebookpublishing.com</p>
-                    </div>
+                    </div> */}
                     <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Jenson Walker.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jenson Walker</h3>
