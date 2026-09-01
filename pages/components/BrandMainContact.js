@@ -342,6 +342,18 @@ export default function BrandMainContact() {
                         <p className="text-black font-bold text-xl">steve@pinebookwriting.com</p>
                         {/* <p className="text-black leading-20 font-bold text-xl md:text-4xl uppercase">289-809-6209</p> */}
                     </div>
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/Jenson Walker.webp"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jenson Walker</h3>
+                        <h4 className="text-black text-xl font-poppins">Senior Consultant Writing & Publishing</h4>
+                        <p className="text-black font-bold text-xl">jensonwalker@pinebookwriting.com</p>
+                    </div>
+                    <div className="brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
+                        <Image src={"/brand-img/Ryan Peter.webp"} width={210} height={200} className="mb-5" />
+                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Ryan Peters</h3>
+                        <h4 className="text-black text-xl font-poppins">Client Success Strategist</h4>
+                        <p className="text-black font-bold text-xl">ryan@pinebookwriting.com</p>
+                    </div>
                 </div>
 
                 <div className="flex justify-around flex-col md:flex-row">
@@ -375,12 +387,7 @@ export default function BrandMainContact() {
                         <h4 className="text-black text-xl font-poppins">Project Manager</h4>
                         <p className="text-black font-bold text-xl">haileycarter@pinebookwriting.com</p>
                     </div> */}
-                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
-                        <Image src={"/brand-img/Ryan Peter.webp"} width={210} height={200} className="mb-5" />
-                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Ryan Peters</h3>
-                        <h4 className="text-black text-xl font-poppins">Client Success Strategist</h4>
-                        <p className="text-black font-bold text-xl">ryan@pinebookwriting.com</p>
-                    </div>
+
                     {/* <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
                         <Image src={"/brand-img/Marcus Ryan.webp"} width={210} height={200} className="mb-5" />
                         <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Marcus Ryan</h3>
@@ -396,12 +403,7 @@ export default function BrandMainContact() {
                         <h4 className="text-black text-xl font-poppins">Consultant Manager Writing & Publishing</h4>
                         <p className="text-black font-bold text-xl">bradleylucas@pinebookpublishing.com</p>
                     </div> */}
-                    <div className="w-1/2 brand-meet-team-container text-center flex justify-center flex-col items-center mt-5">
-                        <Image src={"/brand-img/Jenson Walker.webp"} width={210} height={200} className="mb-5" />
-                        <h3 className="text-black leading-20 text-3xl md:text-3xl font-poppins uppercase">Jenson Walker</h3>
-                        <h4 className="text-black text-xl font-poppins">Senior Consultant Writing & Publishing</h4>
-                        <p className="text-black font-bold text-xl">jensonwalker@pinebookwriting.com</p>
-                    </div>
+
                 </div>
             </section>
         </>
