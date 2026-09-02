@@ -87,7 +87,7 @@ export default async function handler(req, res) {
         <div style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
           <div style="background:#0d0f38; color:#ffffff; padding:16px 24px; border-radius:8px 8px 0 0;">
             <h2 style="margin:0;">🎉 New Popup Form Submission - ${fullName || "User"}</h2>
-            <p style="margin:8px 0 0 0; font-size:14px; opacity:0.9;">50% Discount Offer Inquiry</p>
+            <p style="margin:8px 0 0 0; font-size:14px; opacity:0.9;">30% Discount Offer Inquiry</p>
           </div>
           <div style="padding:24px; color:#333333;">
             <p style="margin-bottom:16px; font-size:15px;">You have received a new inquiry from the popup discount form. Details are below:</p>
@@ -140,7 +140,7 @@ export default async function handler(req, res) {
             
             <div style="margin-top:20px; padding:16px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:4px;">
               <p style="margin:0; color:#856404; font-size:14px;">
-                <strong>⚡ Discount Offer Lead:</strong> This customer showed interest in the 50% discount offer.
+                <strong>⚡ Discount Offer Lead:</strong> This customer showed interest in the 30% discount offer.
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default async function handler(req, res) {
 
             <div style="background:#fff3cd; padding:20px; border-radius:8px; margin:24px 0; border-left:4px solid #ffc107;">
               <p style="margin:0; color:#856404; font-size:15px; line-height:1.6;">
-                <strong>🎁 Special Offer:</strong> Your 50% discount is waiting! Our publishing experts will contact you soon to help you take advantage of this limited-time offer.
+                <strong>🎁 Special Offer:</strong> Your 30% discount is waiting! Our publishing experts will contact you soon to help you take advantage of this limited-time offer.
               </p>
             </div>
 
@@ -243,7 +243,7 @@ export default async function handler(req, res) {
     const userInfo = await transporter.sendMail({
       from: `"Pine Book Publishing" <sales@pinebookpublishing.com>`,
       to: email,
-      subject: `🎉 Your 50% Discount is Reserved - Pine Book Publishing`,
+      subject: `🎉 Your 30% Discount is Reserved - Pine Book Publishing`,
       html: userHtmlContent,
     });
 

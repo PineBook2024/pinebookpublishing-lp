@@ -155,7 +155,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             fullName: form.fulName,
             email: form.email,
             phoneNumber: form.phoneNumber,
-            service: "50% Publishing Discount Popup",
+            service: "30% Publishing Discount",
             message: form.message,
             referringPage: document.referrer || "Direct visit",
             currentPage: window.location.href,
