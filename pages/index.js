@@ -37,6 +37,7 @@ import HomeBookSlider from "./components/HomeBookSlider";
 // import HomePopupNNew from "../components/HomePopupNNew";
 import BrandVideoShowcase from "./components/BrandVideoShowcase";
 import HomeCaseStudiesCarousel from "./components/HomeCaseStudiesCarousel";
+import HomePopupNewLp from "./components/HomePopupNewLp";
 
 const videoClient = [
     {
@@ -112,77 +113,78 @@ export default function Home() {
                 `}
             </Script>
             <main className="home-page">
-            <BrandTopBar />
-            <BrandNavbar />
-            {/* <BrandHero /> */}
-            {/* <BrandHeroFriday /> */}
-            <BrandBannerVideo Component={BrandHeroFridayUpdate} />
-            {/* <BrandBannerVideo Component={BrandHeroFriday} /> */}
-            <BrandBannerLogo />
-            <BrandAbout
-                subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published hundreds of books since our inception on 22nd February 2023. Our experts have 10-15 years of experience and are masters in their fields, even though we haven't been in the market long. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
-                subdescthree=""
-            />
-            <HomeBookSlider />
-            <BrandServices />
-            <BrandCTA
-                title="Do You Have Concerns? "
-                desc="It’s okay to have questions since we understand that your book is close to your heart. Why not just get into a quick discussion?"
-                btntext="Speak to our Consultant"
-            />
-            <BrandVideoShowcase />
-            <HomeCaseStudiesCarousel />
-            <BrandProcess />
-            <BrandChooseUs />
-            <BrandTestimonial />
-            <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative overflow-hidden'>
-                <div className="container mx-auto text-center m1-h mb-10 ">
-                    <h3 className="mb-4 text-white text-2xl md:text-4xl font-poppins  font-bold">
-                        VIDEOS TESTIMONIALS
-                    </h3>
-                    {/* <p className="text-black">
+                <BrandTopBar />
+                <BrandNavbar />
+                {/* <BrandHero /> */}
+                {/* <BrandHeroFriday /> */}
+                <HomePopupNewLp />
+                <BrandBannerVideo Component={BrandHeroFridayUpdate} />
+                {/* <BrandBannerVideo Component={BrandHeroFriday} /> */}
+                <BrandBannerLogo />
+                <BrandAbout
+                    subdesctwo="Don’t feel overwhelmed; Pine Book Publishing is here to help you meet your publishing needs. We have self-published hundreds of books since our inception on 22nd February 2023. Our experts have 10-15 years of experience and are masters in their fields, even though we haven't been in the market long. We know the difficulties faced by authors worldwide and understand how frustrating the writing journey can be! So, we are here to fill this gap and simplify the entire editing and publishing process, offering customized solutions specifically to your needs and requirements."
+                    subdescthree=""
+                />
+                <HomeBookSlider />
+                <BrandServices />
+                <BrandCTA
+                    title="Do You Have Concerns? "
+                    desc="It’s okay to have questions since we understand that your book is close to your heart. Why not just get into a quick discussion?"
+                    btntext="Speak to our Consultant"
+                />
+                <BrandVideoShowcase />
+                <HomeCaseStudiesCarousel />
+                <BrandProcess />
+                <BrandChooseUs />
+                <BrandTestimonial />
+                <section className='sec-test max-w-screen-xl mx-auto pb-20 pt-0 relative overflow-hidden'>
+                    <div className="container mx-auto text-center m1-h mb-10 ">
+                        <h3 className="mb-4 text-white text-2xl md:text-4xl font-poppins  font-bold">
+                            VIDEOS TESTIMONIALS
+                        </h3>
+                        {/* <p className="text-black">
                         Explore our Success Stories to see how Pine Book Publishing has
                         empowered authors <br></br> in their self-publishing journey and stands out
                         among self-book publishers.
                     </p> */}
-                </div>
-                {/* Custom Previous Button */}
-                <div className="flex justify-end gap-4">
-                    <div
-                        className=" top-1/2 -left-10 transform -translate-y-1/2  portfoilio-slider4-icon prev cursor-pointer"
-                        onClick={() => swiperRef2.current?.slidePrev()}
-                    >
-                        <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
                     </div>
-                    {/* Custom Next Button */}
-                    <div
-                        className=" top-1/2 -right-10 transform -translate-y-1/2  portfoilio-slider4-icon next cursor-pointer"
-                        onClick={() => swiperRef2.current?.slideNext()}
-                    >
-                        <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+                    {/* Custom Previous Button */}
+                    <div className="flex justify-end gap-4">
+                        <div
+                            className=" top-1/2 -left-10 transform -translate-y-1/2  portfoilio-slider4-icon prev cursor-pointer"
+                            onClick={() => swiperRef2.current?.slidePrev()}
+                        >
+                            <FontAwesomeIcon icon={faArrowLeft} color="#000" width={18} />
+                        </div>
+                        {/* Custom Next Button */}
+                        <div
+                            className=" top-1/2 -right-10 transform -translate-y-1/2  portfoilio-slider4-icon next cursor-pointer"
+                            onClick={() => swiperRef2.current?.slideNext()}
+                        >
+                            <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
+                        </div>
                     </div>
-                </div>
 
-                {/* Swiper Slider */}
-                <Swiper
-                    spaceBetween={30}
-                    slidesPerView={3}
-                    loop={true}
-                    onSwiper={(swiper) => (swiperRef2.current = swiper)}
-                    className="mySwiper"
-                    breakpoints={{
-                        "@0.00": {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                        },
-                        "@1.00": {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                        },
-                    }}
-                >
-                    <div className='testimonials-wrap grid grid-cols-1 md:grid-cols-3 gap-10'>
-                        {/* {videoClient.map((videoClient) => (
+                    {/* Swiper Slider */}
+                    <Swiper
+                        spaceBetween={30}
+                        slidesPerView={3}
+                        loop={true}
+                        onSwiper={(swiper) => (swiperRef2.current = swiper)}
+                        className="mySwiper"
+                        breakpoints={{
+                            "@0.00": {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            "@1.00": {
+                                slidesPerView: 3,
+                                spaceBetween: 10,
+                            },
+                        }}
+                    >
+                        <div className='testimonials-wrap grid grid-cols-1 md:grid-cols-3 gap-10'>
+                            {/* {videoClient.map((videoClient) => (
                             <SwiperSlide>
                                 <Link href={videoClient.src} className="glightbox block">
                                     <div className='' key={videoClient.id}>
@@ -195,45 +197,45 @@ export default function Home() {
                                 </Link>
                             </SwiperSlide>
                         ))} */}
-                        {videoClient.map((videoClient) => {
-                            // Extract YouTube video ID from the URL
-                            const videoUrl = new URL(videoClient.src);
-                            const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
+                            {videoClient.map((videoClient) => {
+                                // Extract YouTube video ID from the URL
+                                const videoUrl = new URL(videoClient.src);
+                                const videoId = videoUrl.pathname.split('/embed/')[1].split('?')[0];
 
-                            return (
-                                <SwiperSlide key={videoClient.id}>
-                                    <div className="mb-8 max-w-xl mx-auto border p-4 rounded">
-                                        <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
+                                return (
+                                    <SwiperSlide key={videoClient.id}>
+                                        <div className="mb-8 max-w-xl mx-auto border p-4 rounded">
+                                            <h2 className="font-bold text-xl text-black mb-2">{videoClient.clientname}</h2>
 
-                                        <div className="py-4">
-                                            <LazyYouTube videoId={videoId} />
+                                            <div className="py-4">
+                                                <LazyYouTube videoId={videoId} />
+                                            </div>
+                                            <h4 className="text-black">
+                                                <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
+                                            </h4>
+                                            <h4 className="text-black">
+                                                <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
+                                            </h4>
+                                            <h4 className="text-black">
+                                                <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
+                                            </h4>
                                         </div>
-                                        <h4 className="text-black">
-                                            <span className="font-bold leading-normal">Book Title:</span> {videoClient.BookTitle}
-                                        </h4>
-                                        <h4 className="text-black">
-                                            <span className="font-bold leading-normal">Consultant:</span> {videoClient.Consultant}
-                                        </h4>
-                                        <h4 className="text-black">
-                                            <span className="font-bold leading-normal">Project Manager:</span> {videoClient.ProjectManager}
-                                        </h4>
-                                    </div>
-                                </SwiperSlide>
-                            );
-                        })}
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </div>
+                    </Swiper>
+
+                    <div className="text-center mt-14">
+                        <Link href="/testimonials" className="brand-about-btn font-poppins">VIEW MORE TESTIMONIALS</Link>
                     </div>
-                </Swiper>
+                </section>
 
-                <div className="text-center mt-14">
-                    <Link href="/testimonials" className="brand-about-btn font-poppins">VIEW MORE TESTIMONIALS</Link>
-                </div>
-            </section>
-
-            <BrandFaqs />
-            <BrandContact />
-            <BrandLogo />
-            <BrandFooter />
-            {/* <HomePopupNNew /> */}
+                <BrandFaqs />
+                <BrandContact />
+                <BrandLogo />
+                <BrandFooter />
+                {/* <HomePopupNNew /> */}
             </main>
 
             {/* Floating Shop Button */}

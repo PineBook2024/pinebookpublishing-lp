@@ -13,19 +13,25 @@ const initialForm = {
 
 const getWeeklyOfferState = () => {
   const now = new Date();
-  const day = now.getDay();
-  const isActive = day >= 1 && day <= 5;
-  const offerEnd = new Date(now);
-  offerEnd.setDate(now.getDate() + (5 - day));
-  offerEnd.setHours(23, 59, 59, 999);
+
+  // Labour Day offer ends on September 7, 2026 at 11:59:59 PM
+  const offerEnd = new Date("2026-09-07T23:59:59");
+
+  const isActive = now.getTime() <= offerEnd.getTime();
 
   return {
     isActive,
-    secondsLeft: isActive ? Math.max(0, Math.floor((offerEnd.getTime() - now.getTime()) / 1000)) : 0,
+    secondsLeft: isActive
+      ? Math.max(
+        0,
+        Math.floor((offerEnd.getTime() - now.getTime()) / 1000)
+      )
+      : 0,
   };
 };
 
-const formatTimePart = (value) => String(value).padStart(2, "0");
+const formatTimePart = (value) =>
+  String(value).padStart(2, "0");
 
 function AnimatedTimeValue({ value }) {
   return (
@@ -217,36 +223,21 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
               <span />
             </button>
 
-            <div className="hnlp-visual">
-              <div className="hnlp-visual-motion" aria-hidden="true">
-                <span className="hnlp-orbit hnlp-orbit-one" />
-                <span className="hnlp-orbit hnlp-orbit-two" />
-                <span className="hnlp-line hnlp-line-one" />
-                <span className="hnlp-line hnlp-line-two" />
-                <span className="hnlp-line hnlp-line-three" />
-                <span className="hnlp-spark hnlp-spark-one" />
-                <span className="hnlp-spark hnlp-spark-two" />
-                <span className="hnlp-spark hnlp-spark-three" />
-              </div>
-              <span className="hnlp-pill">Limited Time Offer</span>
-              <div className="hnlp-books" aria-hidden="true">
-                <img className="hnlp-book hnlp-book-a" src="/brand-img/book1.webp" alt="" />
-                <img className="hnlp-book hnlp-book-b" src="/brand-img/book2.webp" alt="" />
-                <img className="hnlp-book hnlp-book-c" src="/brand-img/independence-day-banner.jpg" alt="" />
-              </div>
-              <div className="hnlp-badge">
-                <small>Save</small>
-                <strong>50%</strong>
+            <div className="jt-image">
+              <img src="/images/LABOR-DAY-POP.png" alt="Juneteenth popup banner" style={{ height: "100%" }} height={"100%"} />
+              <div className="jt-image-footer">
               </div>
             </div>
 
             <div className="hnlp-content">
               <span className="hnlp-eyebrow">Avail Discount</span>
-              <h2 id="hnlp-title">Avail 50% Discount on Publishing This Independence Day!
+              <h2 id="hnlp-title">Avail 30% Discount on Publishing This Labor Day
+
               </h2>
               <p className="hnlp-copy">
-                Have you completed your manuscript and are ready to share your story with the world? This Independence Day, enjoy an exclusive <span className="hnlp-copy-highlight">50%</span> discount on all of our book publishing packages and take the next step toward becoming a published author.
-                Turn your manuscript into a professionally published book for half the cost.
+                Finished your manuscript and ready to share it with the world? This Labor Day, save <span className="hnlp-copy-highlight">30%</span> on all our book publishing packages and take the next step toward becoming a published author. Let our team transform your manuscript into a professionally published book that is ready to reach readers.
+
+
               </p>
 
               <div className="hnlp-countdown" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
@@ -294,7 +285,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
                 )}
 
                 <button type="submit" disabled={isSubmitting}>
-                  Claim My 50% Publishing Discount
+                  Claim My 30% Publishing Discount
                 </button>
               </form>
             </div>
@@ -315,7 +306,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             <span className="hnlp-tab-flag" />
             <span className="hnlp-tab-firework" />
           </span>
-          <span className="hnlp-tab-badge">50%</span>
+          <span className="hnlp-tab-badge">30%</span>
           <span className="hnlp-tab-copy">
             <small>Limited Offer</small>
             <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
