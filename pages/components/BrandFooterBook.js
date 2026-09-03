@@ -317,7 +317,7 @@ export default function BrandFooterBook() {
                     <div className="container text-center mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-white w-full md:text-center text-sm sm:text-left">
                             Copyright © 2026
-                            Powered by <span className="powered-by-text"><Link href="https://www.pinebookwriting.com/" target="_blank">Pine Book Writing Inc.</Link></span>
+                            Powered by <span className="powered-by-text"><Link href="#">Pine Book Writing Inc.</Link></span>
                         </p>
                     </div>
                 </div>
