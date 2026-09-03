@@ -224,7 +224,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             </button>
 
             <div className="jt-image">
-              <img src="/images/LABOR-DAY-POP.png" alt="Juneteenth popup banner" style={{ height: "100%" }} height={"100%"} />
+              <img src="/images/LABOR-DAY.png" alt="Juneteenth popup banner" style={{ height: "100%" }} height={"100%"} />
               <div className="jt-image-footer">
               </div>
             </div>
