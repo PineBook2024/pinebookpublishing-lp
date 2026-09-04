@@ -4,6 +4,7 @@ import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import Script from "next/script";
 
 import "swiper/css/effect-coverflow";
 import Header from "../components/header";
@@ -1119,39 +1120,49 @@ export default function Home() {
               `,
           }}
         />
-        <Script id="microsoft-uet" strategy="afterInteractive">
+        <Script id="microsoft-uet" strategy="beforeInteractive">
           {`
-            (function(w, d, t, u, o) {
-              w[u] = w[u] || [];
-              o.ts = (new Date).getTime();
+          window.uetq = window.uetq || [];
 
-              var n = d.createElement(t);
-              n.src = "https://bat.bing.net/bat.js?ti=" + o.ti +
-                ("uetq" != u ? "&q=" + u : "");
+          window.uetq.push('consent', 'default', {
+            'ad_storage': 'denied'
+          });
 
-              n.async = 1;
+          (function(w,d,t,u,o)
+          {
+            w[u]=w[u]||[];
+            o.ts=(new Date).getTime();
 
-              n.onload = n.onreadystatechange = function() {
-                var s = this.readyState;
+            var n=d.createElement(t);
 
-                if (!s || s === "loaded" || s === "complete") {
-                  o.q = w[u];
-                  w[u] = new UET(o);
-                  w[u].push("pageLoad");
+            n.src="https://bat.bing.net/bat.js?ti="+o.ti+
+              ("uetq"!=u ? "&q="+u : "");
 
-                  n.onload = n.onreadystatechange = null;
-                }
-              };
+            n.async=1;
 
-              var i = d.getElementsByTagName(t)[0];
-              i.parentNode.insertBefore(n, i);
+            n.onload=n.onreadystatechange=function()
+            {
+              var s=this.readyState;
 
-            })(window, document, "script", "uetq", {
-              ti: "97267008",
-              enableAutoSpaTracking: true
-            });
-          `}
+              if (!s || s==="loaded" || s==="complete")
+              {
+                o.q=w[u];
+                w[u]=new UET(o);
+                w[u].push("pageLoad");
+                n.onload=n.onreadystatechange=null;
+              }
+            };
+
+            var i=d.getElementsByTagName(t)[0];
+            i.parentNode.insertBefore(n,i);
+
+          })(window, document, "script", "uetq", {
+            ti: "97267008",
+            enableAutoSpaTracking: true
+          });
+        `}
         </Script>
+
       </Head>
       <main id="home" className="book-publishing-offer-page">
         <GoogleTranslateWidget />
