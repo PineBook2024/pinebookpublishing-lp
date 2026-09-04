@@ -183,6 +183,55 @@ export default function App({ Component, pageProps }) {
             `}
           </Script>
 
+          {/* Microsoft Advertising UET */}
+          <Script id="microsoft-uet" strategy="beforeInteractive">
+            {`
+          (function(w,d,t,u,o)
+          {
+            w[u]=w[u]||[];
+            o.ts=(new Date).getTime();
+
+            var n=d.createElement(t);
+
+            n.src="https://bat.bing.net/bat.js?ti="+o.ti+
+              ("uetq"!=u ? "&q="+u : "");
+
+            n.async=1;
+
+            n.onload=n.onreadystatechange=function()
+            {
+              var s=this.readyState;
+
+              if (!s || s==="loaded" || s==="complete")
+              {
+                o.q=w[u];
+                w[u]=new UET(o);
+                w[u].push("pageLoad");
+                n.onload=n.onreadystatechange=null;
+              }
+            };
+
+            var i=d.getElementsByTagName(t)[0];
+            i.parentNode.insertBefore(n,i);
+
+          })(window, document, "script", "uetq", {
+            ti: "97267008",
+            enableAutoSpaTracking: true
+          });
+        `}
+          </Script>
+
+          {/* Microsoft Consent Mode - Default Denied */}
+          <Script id="microsoft-consent-default" strategy="beforeInteractive">
+            {`
+          window.uetq = window.uetq || [];
+
+          window.uetq.push('consent', 'default', {
+            'ad_storage': 'denied'
+          });
+        `}
+          </Script>
+
           <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16471224604"></Script>
           <Script
             id="google-ads"
