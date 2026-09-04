@@ -183,9 +183,14 @@ export default function App({ Component, pageProps }) {
             `}
           </Script>
 
-          {/* Microsoft Advertising UET */}
           <Script id="microsoft-uet" strategy="beforeInteractive">
             {`
+          window.uetq = window.uetq || [];
+
+          window.uetq.push('consent', 'default', {
+            'ad_storage': 'denied'
+          });
+
           (function(w,d,t,u,o)
           {
             w[u]=w[u]||[];
@@ -217,17 +222,6 @@ export default function App({ Component, pageProps }) {
           })(window, document, "script", "uetq", {
             ti: "97267008",
             enableAutoSpaTracking: true
-          });
-        `}
-          </Script>
-
-          {/* Microsoft Consent Mode - Default Denied */}
-          <Script id="microsoft-consent-default" strategy="beforeInteractive">
-            {`
-          window.uetq = window.uetq || [];
-
-          window.uetq.push('consent', 'default', {
-            'ad_storage': 'denied'
           });
         `}
           </Script>
