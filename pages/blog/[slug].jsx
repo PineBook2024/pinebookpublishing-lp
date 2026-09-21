@@ -151,6 +151,9 @@ const Post = ({ post, recentPosts }) => {
   const blogShareTitle = post?.fields?.metaTitle || post?.fields?.title || 'Pine Book Publishing Blog'
   const blogShareDescription =
     post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'
+  const blogKeyPhrase = typeof post?.fields?.keyPhrase === 'string'
+    ? post.fields.keyPhrase.trim()
+    : ''
   const blogCoverImage = post?.fields?.coverImage?.fields?.file?.url
   const blogShareImage = blogCoverImage
     ? `https:${blogCoverImage}`
@@ -167,6 +170,9 @@ const Post = ({ post, recentPosts }) => {
           content={blogShareDescription}
         />
         <link rel="canonical" href={blogShareUrl} key="canonical" />
+        {blogKeyPhrase && (
+          <meta name="keywords" content={blogKeyPhrase} key="keywords" />
+        )}
         <meta property="og:type" content="article" key="og:type" />
         <meta property="og:title" content={blogShareTitle} key="og:title" />
         <meta property="og:description" content={blogShareDescription} key="og:description" />
