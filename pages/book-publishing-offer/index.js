@@ -4,6 +4,8 @@ import CountryPhoneInput from "../../components/CountryPhoneInput";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import HomePopupNewLp from "../components/HomePopupNewLp";
+// import HalloweenScrollPumpkin from "../components/HalloweenScrollPumpkin";
 import Script from "next/script";
 
 import "swiper/css/effect-coverflow";
@@ -1101,6 +1103,8 @@ export default function Home() {
 
   return (
     <>
+      <HomePopupNewLp />
+      {/* <HalloweenScrollPumpkin /> */}
       <Head>
         <title>Book Publishing Services | Pine Book Publishing</title>
         <meta

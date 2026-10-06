@@ -14,10 +14,11 @@ const initialForm = {
 const getWeeklyOfferState = () => {
   const now = new Date();
 
-  // Labour Day offer ends on September 7, 2026 at 11:59:59 PM
-  const offerEnd = new Date("2026-09-07T23:59:59");
+  // Offer runs October 6 through October 31, 2026 (Pakistan time).
+  const offerStart = new Date("2026-10-06T00:00:00+05:00");
+  const offerEnd = new Date("2026-11-01T00:00:00+05:00");
 
-  const isActive = now.getTime() <= offerEnd.getTime();
+  const isActive = now.getTime() >= offerStart.getTime() && now.getTime() < offerEnd.getTime();
 
   return {
     isActive,
@@ -224,18 +225,19 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             </button>
 
             <div className="jt-image">
-              <img src="/images/LABOR-DAY.png" alt="Juneteenth popup banner" style={{ height: "100%" }} height={"100%"} />
+              <img src="/images/HALLOWEENPOPUP.jpg" alt="halloween popup banner" style={{ height: "100%" }} height={"100%"} />
               <div className="jt-image-footer">
               </div>
             </div>
 
             <div className="hnlp-content">
-              <span className="hnlp-eyebrow">Avail Discount</span>
-              <h2 id="hnlp-title">Avail 30% Discount on Publishing This Labor Day
+              <span className="hnlp-eyebrow">HALLOWEEN SPECIAL</span>
+              <h2 id="hnlp-title">Get 30% Off Publishing This Halloween
 
               </h2>
               <p className="hnlp-copy">
-                Finished your manuscript and ready to share it with the world? This Labor Day, save <span className="hnlp-copy-highlight">30%</span> on all our book publishing packages and take the next step toward becoming a published author. Let our team transform your manuscript into a professionally published book that is ready to reach readers.
+                Have a completed manuscript ready for the next step? This Halloween, save 
+                <span className="hnlp-copy-highlight"> 30% </span>                 on our book publishing services and get professional support to prepare, publish, and bring your book to readers.
 
 
               </p>
@@ -297,18 +299,27 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         <button
           type="button"
           className="hnlp-tab"
+          aria-label="Open Halloween offer: 30% off book publishing"
           onClick={() => {
             setShowTab(false);
             setIsOpen(true);
           }}
         >
-          <span className="hnlp-tab-book" aria-hidden="true">
-            <span className="hnlp-tab-flag" />
-            <span className="hnlp-tab-firework" />
+          <span className="hnlp-tab-pumpkin" aria-hidden="true">
+            <svg viewBox="0 0 120 78" fill="none">
+              <path d="M14 18 4 8 21 12 27 5 32 15 49 11 39 22 27 19Z" fill="#392047" />
+              <path d="m89 13 5-10 5 7 16-2-9 10-9-2-9 7-5-11Z" fill="#392047" />
+              <path d="M61 24c-3-9 0-15 7-18l5 6c-7 1-8 6-7 13" fill="#749545" />
+              <ellipse cx="60" cy="48" rx="35" ry="26" fill="#ff791c" />
+              <ellipse cx="47" cy="48" rx="17" ry="25" fill="#ff922e" />
+              <ellipse cx="73" cy="48" rx="17" ry="25" fill="#ed5d10" />
+              <ellipse cx="60" cy="48" rx="16" ry="26" fill="#ffab42" />
+              <path d="m43 43 11-8 2 13Zm24-8 11 8-13 5ZM57 52l4-7 4 7ZM41 55l11 5 4-4 5 5 5-5 5 4 9-5c-4 15-31 17-39 0Z" fill="#291535" />
+            </svg>
           </span>
           <span className="hnlp-tab-badge">30%</span>
           <span className="hnlp-tab-copy">
-            <small>Limited Offer</small>
+            <small>Halloween Offer</small>
             <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
               {[
                 ["days", "D"],
@@ -351,7 +362,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           height: 38px;
           border: 0;
           border-radius: 50%;
-          background: #10163d;
+          background: #fc4a02;
           cursor: pointer;
         }
 
@@ -379,9 +390,9 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           overflow: visible;
           padding: 34px;
           background:
-            radial-gradient(circle at 24% 18%, rgba(242, 181, 65, 0.24), transparent 28%),
+            radial-gradient(circle at 24% 18%, rgba(255, 133, 35, 0.24), transparent 28%),
             radial-gradient(circle at 78% 74%, rgba(78, 154, 142, 0.2), transparent 26%),
-            linear-gradient(145deg, #10163d, #223053 58%, #182042);
+            linear-gradient(145deg, #291535, #223053 58%, #182042);
           color: #fff;
         }
 
@@ -408,7 +419,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
 
         .hnlp-orbit {
           position: absolute;
-          border: 1px solid rgba(242, 181, 65, 0.18);
+          border: 1px solid rgba(255, 133, 35, 0.18);
           border-radius: 50%;
           opacity: 0.8;
           transform: rotate(-18deg);
@@ -475,7 +486,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           inset: 0;
           margin: auto;
           border-radius: 999px;
-          background: #f2b541;
+          background: #ff9c35;
         }
 
         .hnlp-spark::before {
@@ -558,11 +569,11 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           justify-content: center;
           border: 5px solid #fff;
           border-radius: 50%;
-          background: #f2b541;
-          color: #10163d;
+          background: #ff9c35;
+          color: #291535;
           animation: hnlpBlink 1s ease-in-out infinite;
           box-shadow:
-            0 0 0 10px rgba(242, 181, 65, 0.22),
+            0 0 0 10px rgba(255, 133, 35, 0.22),
             0 18px 36px rgba(0, 0, 0, 0.28);
         }
 
@@ -585,11 +596,11 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         .hnlp-content {
           overflow-y: auto;
           padding: 46px 42px 38px;
-          background: linear-gradient(180deg, #fff 0%, #f6f7fb 100%);
+          background: linear-gradient(160deg, #fffaf3 0%, #fff2e6 100%);
         }
 
         .hnlp-eyebrow {
-          color: #2f7d70;
+          color: #fc4a02;
           font: 800 12px "Poppins", sans-serif;
           letter-spacing: 1.8px;
           text-transform: uppercase;
@@ -597,7 +608,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
 
         .hnlp-content h2 {
           margin: 10px 36px 12px 0;
-          color: #10163d;
+          color: #291535;
           font: 900 clamp(30px, 30px, 30px) / 1.08 "Merriweather", serif;
         }
 
@@ -610,27 +621,27 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         .hnlp-copy-highlight {
           display: inline-block;
           border-radius: 4px;
-          background: #315bc8;
+          background: #71368a;
           color: #fff;
           font-weight: 800;
           line-height: 1.2;
           padding: 1px 5px 2px;
-          animation: hnlpTextBlink 900ms ease-in-out infinite;
+          animation: none;
         }
 
         .hnlp-countdown {
           margin: 0 0 18px;
-          border: 1px solid rgba(16, 22, 61, 0.1);
+          border: 1px solid rgba(41, 21, 53, 0.1);
           border-radius: 14px;
-          background: #10163d;
+          background: #fe730e;
           padding: 13px 14px 14px;
-          box-shadow: 0 14px 28px rgba(16, 22, 61, 0.16);
+          box-shadow: 0 14px 28px rgba(41, 21, 53, 0.16);
         }
 
         .hnlp-countdown-label {
           display: block;
           margin-bottom: 8px;
-          color: #f2b541;
+          color: #fff;
           font: 800 12px "Poppins", sans-serif;
           letter-spacing: 1.8px;
           text-align: center;
@@ -653,12 +664,12 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           border-radius: 9px;
           background: linear-gradient(180deg, #ffffff 0%, #eef1f8 100%);
           padding: 8px 6px 7px;
-          box-shadow: inset 0 -2px 0 rgba(16, 22, 61, 0.08);
+          box-shadow: inset 0 -2px 0 rgba(41, 21, 53, 0.08);
         }
 
         .hnlp-time-box strong {
           display: block;
-          color: #10163d;
+          color: #291535;
           font: 900 24px/1 "Poppins", sans-serif;
           font-variant-numeric: tabular-nums;
         }
@@ -729,7 +740,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         }
 
         .hnlp-time-colon {
-          color: #f2b541;
+          color: #ff9c35;
           font: 900 22px/1 "Poppins", sans-serif;
         }
 
@@ -752,7 +763,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           border: 1px solid #d9deea;
           border-radius: 10px;
           background: #fff;
-          color: #10163d;
+          color: #291535;
           font: 400 14px "Poppins", sans-serif;
           outline: none;
         }
@@ -773,7 +784,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           min-height: 52px;
           border: 0;
           border-radius: 10px;
-          background: linear-gradient(135deg, #10163d, #263072);
+          background: linear-gradient(135deg, #e95b0c, #be3d09);
           color: #fff;
           cursor: pointer;
           font: 800 14px "Poppins", sans-serif;
@@ -844,156 +855,41 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           border-radius: 18px;
           background:
             linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 38%),
-            linear-gradient(135deg, #10163d 0%, #18225b 55%, #263072 100%);
+            linear-gradient(135deg, #291535 0%, #3c1d50 55%, #522860 100%);
           color: #fff;
           cursor: pointer;
           padding: 9px 16px 9px 9px;
-          animation: hnlpTabBlink 1s ease-in-out infinite;
+          animation: none;
           box-shadow:
-            0 0 0 6px rgba(242, 181, 65, 0.16),
-            0 18px 42px rgba(16, 22, 61, 0.38);
+            0 0 0 6px rgba(255, 133, 35, 0.16),
+            0 18px 42px rgba(41, 21, 53, 0.38);
         }
 
-        .hnlp-tab-book {
+        .hnlp-tab-pumpkin {
           position: absolute;
-          left: 28px;
-          top: -54px;
-          z-index: 3;
-          display: block;
-          width: 68px;
-          height: 48px;
-          overflow: visible;
-          background:
-            radial-gradient(circle at 18px 14px, #ffffff 0 1px, transparent 2px),
-            radial-gradient(circle at 27px 10px, #ffffff 0 1px, transparent 2px),
-            radial-gradient(circle at 25px 21px, #ffffff 0 1px, transparent 2px),
-            linear-gradient(135deg, #263072 0 35%, transparent 35%),
-            linear-gradient(90deg, #fff8e8 0 47%, #e6d4aa 47% 53%, #fff8e8 53% 100%);
-          border: 2px solid rgba(16, 22, 61, 0.9);
-          border-radius: 6px 10px 8px 6px;
-          box-shadow:
-            inset 0 -5px 0 rgba(242, 181, 65, 0.35),
-            0 10px 18px rgba(16, 22, 61, 0.22);
-          transform: rotate(-8deg);
-          transform-origin: bottom center;
-        }
-
-        .hnlp-tab-flag {
-          position: absolute;
-          right: -26px;
-          top: 2px;
-          z-index: -1;
-          width: 46px;
-          height: 28px;
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.9);
-          border-radius: 2px 9px 9px 2px;
-          background:
-            repeating-linear-gradient(
-              180deg,
-              #bf2132 0 2.15px,
-              #ffffff 2.15px 4.3px
-            );
-          box-shadow: -3px 0 0 #263072, 0 7px 12px rgba(16, 22, 61, 0.18);
-          transform: rotate(13deg);
-          transform-origin: left center;
-          animation: hnlpFlagWave 1.8s ease-in-out infinite;
-        }
-
-        .hnlp-tab-flag::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 20px;
-          height: 15px;
-          background:
-            radial-gradient(circle, #fff 0 0.8px, transparent 1px) 2px 2px / 6px 5px,
-            radial-gradient(circle, #fff 0 0.8px, transparent 1px) 5px 4.5px / 6px 5px,
-            #263072;
-        }
-
-        .hnlp-tab-flag::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent 42%, rgba(16, 22, 61, 0.12));
+          left: 14px;
+          top: -67px;
+          width: 112px;
+          height: 73px;
           pointer-events: none;
+          filter: drop-shadow(0 6px 6px rgba(37, 15, 46, 0.24));
         }
 
-        .hnlp-tab-firework {
-          position: absolute;
-          left: -15px;
-          top: -10px;
-          width: 18px;
-          height: 18px;
-          opacity: 0.95;
-          animation: hnlpMiniFirework 2s ease-in-out infinite;
+        .hnlp-tab-pumpkin svg {
+          display: block;
+          width: 100%;
+          height: 100%;
         }
-
-        .hnlp-tab-firework::before,
-        .hnlp-tab-firework::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          margin: auto;
-          border-radius: 999px;
-          background: #f2b541;
-          box-shadow:
-            0 -10px 0 #f2b541,
-            0 10px 0 #f2b541,
-            10px 0 0 #c92a3a,
-            -10px 0 0 #c92a3a;
-        }
-
-        .hnlp-tab-firework::before {
-          width: 3px;
-          height: 3px;
-        }
-
-        .hnlp-tab-firework::after {
-          width: 3px;
-          height: 3px;
-          transform: rotate(45deg);
-        }
-
-        .hnlp-tab-book::before,
-        .hnlp-tab-book::after {
-          content: "";
-          position: absolute;
-          top: 5px;
-          left: 33px;
-          width: 28px;
-          height: 35px;
-          border: 1px solid rgba(16, 22, 61, 0.38);
-          border-left: 0;
-          border-radius: 0 8px 7px 0;
-          background:
-            linear-gradient(90deg, rgba(230, 212, 170, 0.75), rgba(255, 248, 232, 0.98) 22%, #fffdfa 100%);
-          box-shadow: 2px 3px 7px rgba(16, 22, 61, 0.16);
-          transform-origin: left center;
-          will-change: transform, opacity;
-        }
-
-        .hnlp-tab-book::before {
-          animation: hnlpPageFlip 2.4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
-        }
-
-        .hnlp-tab-book::after {
-          animation: hnlpPageFlip 2.4s cubic-bezier(0.45, 0, 0.2, 1) 0.7s infinite;
-          opacity: 0.78;
-        }
-
-        .hnlp-tab::before {
-          content: "";
-          position: absolute;
-          inset: -60% auto -60% -40%;
-          z-index: 0;
-          width: 60%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-          transform: rotate(18deg);
-          animation: hnlpTabShimmer 2.8s ease-in-out infinite;
-        }
+        // .hnlp-tab::before {
+        //   content: "";
+        //   position: absolute;
+        //   inset: -60% auto -60% -40%;
+        //   z-index: 0;
+        //   width: 60%;
+        //   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+        //   transform: rotate(18deg);
+        //   animation: hnlpTabShimmer 2.8s ease-in-out infinite;
+        // }
 
         .hnlp-tab-badge {
           position: relative;
@@ -1005,10 +901,10 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           justify-content: center;
           border: 2px solid rgba(255, 255, 255, 0.9);
           border-radius: 15px;
-          background: linear-gradient(180deg, #ffd56c 0%, #f2b541 100%);
-          color: #10163d;
+          background: linear-gradient(180deg, #ffb653 0%, #ff9c35 100%);
+          color: #291535;
           font: 900 19px "Poppins", sans-serif;
-          box-shadow: inset 0 -3px 0 rgba(16, 22, 61, 0.12);
+          box-shadow: inset 0 -3px 0 rgba(41, 21, 53, 0.12);
         }
 
         .hnlp-tab-copy {
@@ -1022,7 +918,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         }
 
         .hnlp-tab-copy small {
-          color: #f2b541;
+          color: #ff9c35;
           font: 800 10px/1 "Poppins", sans-serif;
           letter-spacing: 1.3px;
           text-transform: uppercase;
@@ -1043,11 +939,11 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
           justify-content: center;
           border-radius: 7px;
           background: linear-gradient(180deg, #ffffff 0%, #eef1f8 100%);
-          box-shadow: inset 0 -2px 0 rgba(16, 22, 61, 0.1);
+          box-shadow: inset 0 -2px 0 rgba(41, 21, 53, 0.1);
         }
 
         .hnlp-tab-time-box strong {
-          color: #10163d;
+          color: #291535;
           font: 900 14px/1 "Poppins", sans-serif;
           font-variant-numeric: tabular-nums;
           letter-spacing: 0;
@@ -1063,17 +959,34 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         }
 
         .hnlp-tab-time-colon {
-          color: #f2b541;
+          color: #ff9c35;
           font: 900 13px/1 "Poppins", sans-serif;
         }
 
+        .hnlp-tab { border-color: #ff9c35; }
+        .hnlp-tab-badge { border-color: #ffd4a0; }
+        .hnlp-modal { border: 1px solid rgba(255, 156, 53, 0.45); }
+        .hnlp-countdown { background: linear-gradient(135deg, #291535, #522860); }
+        .hnlp-form button:hover:not(:disabled) { filter: brightness(1.08); }
+        .hnlp-tab:focus-visible, .hnlp-close:focus-visible, .hnlp-form button:focus-visible {
+          outline: 3px solid #ff9c35;
+          outline-offset: 4px;
+        }
+        .hnlp-form input:focus, .hnlp-form textarea:focus {
+          border-color: #e95b0c;
+          box-shadow: 0 0 0 3px rgba(233, 91, 12, 0.12);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hnlp-tab::before { animation: none; }
+          :global(.hnlp-digit-track) { transition: none; }
+        }
         @keyframes hnlpBlink {
           0%,
           100% {
             transform: scale(1);
             filter: brightness(1);
             box-shadow:
-              0 0 0 10px rgba(242, 181, 65, 0.18),
+              0 0 0 10px rgba(255, 133, 35, 0.18),
               0 18px 36px rgba(0, 0, 0, 0.28);
           }
 
@@ -1081,7 +994,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             transform: scale(1.08);
             filter: brightness(1.08);
             box-shadow:
-              0 0 0 16px rgba(242, 181, 65, 0.08),
+              0 0 0 16px rgba(255, 133, 35, 0.08),
               0 24px 46px rgba(0, 0, 0, 0.36);
           }
         }
@@ -1213,13 +1126,13 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
         @keyframes hnlpTextBlink {
           0%,
           100% {
-            background: #315bc8;
-            box-shadow: 0 0 0 rgba(49, 91, 200, 0);
+            background: #fe730e;
+            box-shadow: 0 0 0 rgb(200 84 49 / 16%);
           }
 
           50% {
-            background: #10163d;
-            box-shadow: 0 0 0 4px rgba(49, 91, 200, 0.18);
+            background: #c65d02;
+            box-shadow: 0 0 0 4px rgb(200 84 49 / 18%);
           }
         }
 
@@ -1564,13 +1477,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
             font-size: 6px;
           }
 
-          .hnlp-tab-book {
-            left: 22px;
-            top: -46px;
-            width: 58px;
-            height: 41px;
-            transform: rotate(-8deg) scale(0.88);
-          }
+          .hnlp-tab-pumpkin { left: 10px; top: -57px; width: 94px; height: 62px; }
         }
       `}</style>
     </>

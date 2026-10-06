@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import HomePopupNewLp from "../components/HomePopupNewLp";
 import {
   animate,
   motion,
@@ -961,6 +962,7 @@ export default function HomePage() {
 
   return (
     <>
+      <HomePopupNewLp />
       <Head>
         <title>Pine Book Publishing | Book Publishing Offer</title>
         <meta
@@ -1027,13 +1029,19 @@ export default function HomePage() {
         </header>
 
         {/* ------------------ HERO SECTION ------------------ */}
-        <section className="relative z-0 bg-[#0a2c24] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <section className="relative z-0 w-full bg-[#07101d] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <Image
-              src="/images/hero-bg.webp"
-              alt="Hero Background"
+              src="/brand-img/halloween-banner.png"
+              alt=""
               fill
-              className="object-cover opacity-30"
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(90deg, rgba(3, 8, 18, 0.72), rgba(3, 8, 18, 0.45))" }}
             />
           </div>
           <div className="relative z-10 w-full lg:max-w-6xl">

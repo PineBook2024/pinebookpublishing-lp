@@ -3,8 +3,17 @@ import Link from 'next/link';
 
 // Object
 const videoClient = [
-    {
+            {
         id: 1,
+        src: "https://www.youtube.com/embed/vxy-UEV8kSc?si=z_gX5wta9BbmgQYG",
+        type: "video/mp4",
+        BookTitle: "The Heroes Are Dead: Crimson Spear",
+        Consultant: "Jenson Walker",
+        ProjectManager: "Ryan Peters",
+        clientname: "Jared Chontow"
+    },
+    {
+        id: 2,
         src: "https://www.youtube.com/embed/xUTyiqPY6Oo",
         type: "video/mp4",
         BookTitle: "Love And Laughter",
@@ -14,7 +23,7 @@ const videoClient = [
     },
 
     {
-        id: 2,
+        id: 3,
         src: "https://www.youtube.com/embed/QMirTma0Wf4",
         type: "video/mp4",
         BookTitle: "Rising 2 B’Come",
@@ -23,7 +32,7 @@ const videoClient = [
         clientname: "Stacey L. Joiner"
     },
     {
-        id: 3,
+        id: 4,
         src: "https://www.youtube.com/embed/Tv3_r0EMVH4",
         type: "video/mp4",
         BookTitle: "Stewart, BC History",
@@ -32,7 +41,7 @@ const videoClient = [
         clientname: "Robert A. Eckess"
     },
     {
-        id: 4,
+        id: 5,
         src: "https://www.youtube.com/embed/fX2J8iMy4z4",
         type: "video/mp4",
         BookTitle: "Free Yourself From Pain",
@@ -41,7 +50,7 @@ const videoClient = [
         clientname: "Lesvi Ferrel"
     },
     {
-        id: 5,
+        id: 6,
         src: "https://www.youtube.com/embed/gWW43Tfa8gA",
         type: "video/mp4",
         BookTitle: "The 2023 Elections in Nigeria: Actors, Intrigues, and Winners",
@@ -50,7 +59,7 @@ const videoClient = [
         clientname: "Edward Agbai"
     },
     {
-        id: 6,
+        id: 7,
         src: "https://www.youtube.com/embed/6T96-bq6_g8",
         type: "video/mp4",
         BookTitle: "Thorns are More Deadly",
@@ -59,7 +68,7 @@ const videoClient = [
         clientname: "Katie Loftis"
     },
     {
-        id: 7,
+        id: 8,
         src: "https://www.youtube.com/embed/pPa-W6unmv0",
         type: "video/mp4",
         BookTitle: "Who will Love me?",
@@ -68,7 +77,7 @@ const videoClient = [
         clientname: "John B. Micheal"
     },
     {
-        id: 8,
+        id: 9,
         src: "https://www.youtube.com/embed/7X_BkleuUsA",
         type: "video/mp4",
         BookTitle: " I am a BOY | i am a GIRL",
@@ -77,7 +86,7 @@ const videoClient = [
         clientname: "Pamela Harry"
     },
     {
-        id: 9,
+        id: 10,
         src: "https://www.youtube.com/embed/mGLHZO-DjRg",
         type: "video/mp4",
         BookTitle: "The Well of Hopes: Bloodlines",
@@ -86,7 +95,7 @@ const videoClient = [
         clientname: "Angel Raices"
     },
     {
-        id: 10,
+        id: 11,
         src: "https://www.youtube.com/embed/P91rheXIDzk",
         type: "video/mp4",
         BookTitle: "Fate: The Alpha King and HisFate: The Alpha King and His Unexpected Mate",
@@ -95,7 +104,7 @@ const videoClient = [
         clientname: "Ashlee Griffin"
     },
     {
-        id: 11,
+        id: 12,
         src: "https://www.youtube.com/embed/IsRZv2mR4u0",
         type: "video/mp4",
         BookTitle: "Vetting the Book of Enoch",
@@ -104,7 +113,7 @@ const videoClient = [
         clientname: "Christopher Allen"
     },
     {
-        id: 12,
+        id: 13,
         src: "https://www.youtube.com/embed/Jwr-u5HQ9Fg?si=PEZvbrKNR1Y0xUH4",
         type: "video/mp4",
         BookTitle: "There's no middle ground, You will either RUN TO or RUN FROM this book",
@@ -114,7 +123,7 @@ const videoClient = [
 
     },
     {
-        id: 13,
+        id: 14,
         src: "https://www.youtube.com/embed/p3dCJ_KdqHk?si=il3lcE_7bLVJDGmp",
         type: "video/mp4",
         BookTitle: "Ellas's Songs",
@@ -123,7 +132,7 @@ const videoClient = [
         clientname: "David Van Fleet"
     },
     {
-        id: 14,
+        id: 15,
         src: "https://www.youtube.com/embed/VsO2MhLTZPk",
         type: "video/mp4",
         BookTitle: "Go Ask Sabrina",
@@ -132,7 +141,7 @@ const videoClient = [
         clientname: "Sabrina Biamby"
     },
     {
-        id: 15,
+        id: 16,
         src: "https://www.youtube-nocookie.com/embed/_a6emmDhe7c?si=X8tc5K20NopJcxLV",
         type: "video/mp4",
         BookTitle: "The Other Side (Part 1 & Part 2)",
@@ -141,7 +150,7 @@ const videoClient = [
         clientname: "Unique Moore"
     },
     {
-        id: 16,
+        id: 17,
         src: "https://www.youtube-nocookie.com/embed/Sae1noZeLvg",
         type: "video/mp4",
         BookTitle: "Orthomolecular biohacking: From Pauling to Panfili",
@@ -150,7 +159,7 @@ const videoClient = [
         clientname: "Adolfo Professor Pamphili"
     },
     {
-        id: 17,
+        id: 18,
         src: "https://www.youtube-nocookie.com/embed/FJgKVI-sAIo",
         type: "video/mp4",
         BookTitle: "Shin Misaki: Future Dark Ages of World War IV",
@@ -159,7 +168,7 @@ const videoClient = [
         clientname: " Theodore A Anderson"
     },
     {
-        id: 18,
+        id: 19,
         src: "https://www.youtube-nocookie.com/embed/S0F5k_mP9no ",
         type: "video/mp4",
         BookTitle: "The Tale Of A Phantom Trail",
@@ -168,7 +177,7 @@ const videoClient = [
         clientname: "Phyllis McGillivary"
     },
     {
-        id: 19,
+        id: 20,
         src: "https://www.youtube-nocookie.com/embed/_muLcViAkZI",
         type: "video/mp4",
         BookTitle: "Forbidden: The Definitive Edition",
@@ -177,7 +186,7 @@ const videoClient = [
         clientname: "Tanna Marie Angers"
     },
     {
-        id: 20,
+        id: 21,
         src: "https://www.youtube-nocookie.com/embed/fKner3oan7Q",
         type: "video/mp4",
         BookTitle: "From Where Lions Speak",
@@ -186,7 +195,7 @@ const videoClient = [
         clientname: "Douglas P Andonian"
     },
     {
-        id: 21,
+        id: 22,
         src: "https://www.youtube-nocookie.com/embed/77grNmvBBXU",
         type: "video/mp4",
         BookTitle: "Hebrew And Greek Insights Eight Biblical Words Explained",
@@ -195,7 +204,7 @@ const videoClient = [
         clientname: "Lezlie Ann Watson"
     },
     {
-        id: 22,
+        id: 23,
         src: "https://www.youtube.com/embed/jBQ1vIbK2zQ?si=DdvEu-V0Q_rG_FgS",
         type: "video/mp4",
         BookTitle: "Das Trevas Para Luz",
@@ -204,7 +213,7 @@ const videoClient = [
         clientname: "Miguel De Oliveira"
     },
     {
-        id: 23,
+        id: 24,
         src: "https://www.youtube.com/embed/DEzkPXPfYRk?si=V7HdYP-l7XBwq6Yl",
         type: "video/mp4",
         BookTitle: "Remembering Dad: The First Year",
@@ -221,6 +230,7 @@ const videoClient = [
     //     ProjectManager: "Emily Jones",
     //     clientname: "Philip A. Grimes, PhD"
     // },
+
     {
         id: 25,
         src: "https://www.youtube.com/embed/rOtE_fGt1p0?si=2-ahTZuT2qyJLthO",
@@ -230,6 +240,7 @@ const videoClient = [
         ProjectManager: "Emily Jones",
         clientname: "Vernell T. Walton"
     },
+
 ]
 const BrandTesti = () => {
     return (
