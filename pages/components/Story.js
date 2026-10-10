@@ -7,16 +7,16 @@ import {
     Pagination,
     Navigation,
     EffectCoverflow,
-  } from "swiper/modules";
-  import "swiper/css";
-  import "swiper/css/navigation";
-  import "swiper/css/pagination";
-  import "swiper/css/autoplay";
-  import { A11y } from "swiper/modules";
-  import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
-  import { library } from "@fortawesome/fontawesome-svg-core";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import { Swiper, SwiperSlide } from "swiper/react";
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { A11y } from "swiper/modules";
+import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Story() {
     const swiperRef2 = useRef(null);
@@ -58,7 +58,7 @@ export default function Story() {
                         Our Success Stories
                     </h3>
                     <p className="text-white">
-                    Explore our Success Stories to see how Pine Book Publishing has empowered<br></br> authors in their self-publishing journey and stand out in the industry.
+                        Explore our Success Stories to see how Pine Book Publishing has empowered<br></br> authors in their self-publishing journey and stand out in the industry.
                     </p>
                 </div>
 

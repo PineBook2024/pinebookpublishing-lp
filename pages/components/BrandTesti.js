@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 // Object
 const videoClient = [
-            {
+    {
+        id: 26,
+        src: "https://www.youtube.com/embed/K77H8XpFhto?si=FgnhHSJai3xkHKlH", // Add Rod Lowe's video link here.
+        type: "video/mp4",
+        BookTitle: "My 2 Cents",
+        Consultant: "Ryan Peters",
+        ProjectManager: "Rex Brown",
+        clientname: "Rod Lowe"
+    },
+    {
         id: 1,
         src: "https://www.youtube.com/embed/vxy-UEV8kSc?si=z_gX5wta9BbmgQYG",
         type: "video/mp4",
