@@ -50,6 +50,7 @@ import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailers
 import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
+import GlobalAuthorSection from "@/components/GlobalAuthorSection";
 
 const animatedBookOfferCounters = new Set();
 export default function HomePage() {
@@ -1347,6 +1348,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <GlobalAuthorSection />
 
         {/* ------------------ PORTFOLIO SECTION ------------------ */}
 
