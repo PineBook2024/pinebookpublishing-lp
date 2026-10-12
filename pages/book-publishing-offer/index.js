@@ -117,6 +117,7 @@ import GoogleTranslate from "../components/GoogleTranslate";
 import CustomLanguageSelector from "../components/CustomLanguageSelector";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
+import GlobalAuthorSection from "@/components/GlobalAuthorSection";
 
 const HeavyComponent = dynamic(() => import('../components/hero'), {
   loading: () => <p>Loading...</p>,
@@ -1520,6 +1521,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <GlobalAuthorSection />
 
         <div className="w-full max-w-6xl mx-auto py-8 relative home-book-cover">
           {/* <div class="max-w-6xl mx-auto px-6"><h2 class="text-3xl font-bold mb-2 text-center">Our Portfolio</h2><p class="text-center text-gray-600 mb-8">A few of the bestselling books we’ve proudly published for our amazing authors.</p></div> */}

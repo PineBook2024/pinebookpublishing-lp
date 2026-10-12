@@ -38,6 +38,7 @@ import HomeBookSlider from "./components/HomeBookSlider";
 import BrandVideoShowcase from "./components/BrandVideoShowcase";
 import HomeCaseStudiesCarousel from "./components/HomeCaseStudiesCarousel";
 import HomePopupNewLp from "./components/HomePopupNewLp";
+// import GlobalAuthorSection from "../components/GlobalAuthorSection";
 
 const videoClient = [
     {
@@ -231,6 +232,7 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* <GlobalAuthorSection /> */}
                 <BrandFaqs />
                 <BrandContact />
                 <BrandLogo />
