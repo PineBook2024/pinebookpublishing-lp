@@ -4,7 +4,7 @@ import Image from "next/image";
 import { faArrowRight, faArrowLeft, faPlusCircle, faCheckCircle, faMinusCircle, faPhone, faEnvelope, faLocationArrow, faLocation, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube, faThreads } from "@fortawesome/free-brands-svg-icons";
+import { faTiktok, faFacebook, faInstagram, faLinkedin, faTwitter, faXTwitter, faYoutube, faThreads } from "@fortawesome/free-brands-svg-icons";
 import WhatsAppChat from "./WhatsAppChat";
 
 export default function BrandFooterBook() {
@@ -248,6 +248,9 @@ export default function BrandFooterBook() {
                             </h4>
                             <p className="text-white mb-5">211 E 43rd St, 7th Floor, Suite #424, New York City, NY 10017</p>
                             <div>
+                                <Link href="https://www.tiktok.com/@pinebookwriting?_r=1&_t=ZS-9AVQrIG1uxI" target="_blank" rel="noopener noreferrer" aria-label="Pine Book Publishing on TikTok">
+                                    <FontAwesomeIcon icon={faTiktok} className="me-3" />
+                                </Link>
                                 <Link href="https://www.facebook.com/pinebookwriting0" target="_blank">
                                     <FontAwesomeIcon icon={faFacebook} className="me-3" />
                                 </Link>
