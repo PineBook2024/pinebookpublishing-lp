@@ -11,7 +11,7 @@ const videoClient = [
         Consultant: "Jake Calloway",
         ProjectManager: "Rex Brown",
         clientname: "Terri J' O Black"
-    }
+    },
     {
         id: 26,
         src: "https://www.youtube.com/embed/K77H8XpFhto?si=FgnhHSJai3xkHKlH", // Add Rod Lowe's video link here.
