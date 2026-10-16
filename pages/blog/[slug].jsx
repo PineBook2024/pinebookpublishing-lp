@@ -9,6 +9,7 @@ import Head from "next/head";
 import Skeleton from '../components/ui/Skeleton'
 import ContentfulImage from '../components/ui/ContentfulImage'
 import { client } from '../../lib/contentful/client'
+import { getBlogCanonicalUrl } from '../../lib/blog-canonical'
 import { useRouter } from 'next/router'
 import BrandFooter from '../components/BrandFooter';
 import DateComponent from '../components/ui/DateComponent';
@@ -148,6 +149,7 @@ const Post = ({ post, recentPosts }) => {
   const blogAudioText = getBlogAudioText(post)
   const blogSlug = post?.fields?.slug || ''
   const blogShareUrl = `https://pinebookpublishing.com/blog/${blogSlug}`
+  const canonicalUrl = getBlogCanonicalUrl(post?.fields)
   const blogShareTitle = post?.fields?.metaTitle || post?.fields?.title || 'Pine Book Publishing Blog'
   const blogShareDescription =
     post?.fields?.metaDescription || post?.fields?.excerpt || 'Read this blog post'
@@ -169,7 +171,7 @@ const Post = ({ post, recentPosts }) => {
           name="description"
           content={blogShareDescription}
         />
-        <link rel="canonical" href={blogShareUrl} key="canonical" />
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
         {blogKeyPhrase && (
           <meta name="keywords" content={blogKeyPhrase} key="keywords" />
         )}
