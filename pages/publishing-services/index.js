@@ -119,7 +119,7 @@ export default function PublishingLpNew() {
     targetDate.setDate(targetDate.getDate() + 2);
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const [activeIndex, setActiveIndex] = useState(0);

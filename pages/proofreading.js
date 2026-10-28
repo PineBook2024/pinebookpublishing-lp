@@ -19,7 +19,7 @@ export default function Proofreading() {
     };
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const faqData = [

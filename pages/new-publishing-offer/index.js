@@ -55,7 +55,7 @@ import GlobalAuthorSection from "@/components/GlobalAuthorSection";
 const animatedBookOfferCounters = new Set();
 export default function HomePage() {
   const handleOpenChat = () => {
-    window.zE && window.zE('webWidget', 'open');
+    window.LiveChatWidget && window.LiveChatWidget.call("maximize");
   };
   const offerNavLinks = [
     { label: "Home", href: "#home" },

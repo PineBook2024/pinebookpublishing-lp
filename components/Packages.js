@@ -23,7 +23,7 @@ export default function Packages({ isOpen, onClose, service }) {
 
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
 

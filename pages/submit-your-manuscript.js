@@ -33,7 +33,7 @@ import LanguageSelectorDropdown from "./components/LanguageSelectorDropdown";
 
 export default function HomePage() {
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const counterRef = useRef(null);

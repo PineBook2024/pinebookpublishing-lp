@@ -5,7 +5,7 @@ import BrandAudioPlayer from "./BrandAudioPlayer";
 
 export default function BrandChooseUs() {
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     return (

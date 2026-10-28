@@ -21,7 +21,7 @@ export default function BookMarketing() {
     };
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const faqData = [

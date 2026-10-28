@@ -18,7 +18,7 @@ export default function TypeSetting() {
         setOpenFAQ(openFAQ === index ? null : index);
     };
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const faqData = [

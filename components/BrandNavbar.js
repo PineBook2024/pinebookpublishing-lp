@@ -73,7 +73,7 @@ export default function BrandNavbar() {
     }, [dropdownRef]);
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     return (

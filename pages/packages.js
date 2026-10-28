@@ -79,7 +79,7 @@ export default function Bundle({ isOpen, onClose, service }) {
     };
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const marketingPackages = [

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BrandCTA(props) {
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     return (

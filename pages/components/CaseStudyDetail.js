@@ -48,8 +48,8 @@ function CsScrollVideo({ src, title }) {
 
 export default function CaseStudyDetail({ data }) {
     const handleOpenChat = () => {
-        if (typeof window !== "undefined" && window.zE) {
-            window.zE("webWidget", "open");
+        if (typeof window !== "undefined" && window.LiveChatWidget) {
+            window.LiveChatWidget.call("maximize");
         }
     };
 

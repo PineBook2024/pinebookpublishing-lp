@@ -75,7 +75,7 @@ export default function Lp() {
     targetDate.setDate(targetDate.getDate() + 2);
 
     const handleOpenChat = () => {
-        window.zE && window.zE('webWidget', 'open');
+        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
     };
 
     const handleChange = (e) => {

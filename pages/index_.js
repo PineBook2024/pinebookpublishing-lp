@@ -152,7 +152,7 @@ export default function Home() {
   // Open Chat Click
 
   const handleOpenChat = () => {
-    window.zE && window.zE('webWidget', 'open');
+    window.LiveChatWidget && window.LiveChatWidget.call("maximize");
   };
 
 
