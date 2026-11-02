@@ -63,6 +63,42 @@ export default function PortfolioSlider4() {
             id: 4,
             src: "/brand-img/Editing Portfolio 4.png",
         },
+        {
+            id: 5,
+            src: "/brand-img/BF-01.png",
+        },
+        {
+            id: 6,
+            src: "/brand-img/BF-02.png",
+        },
+        {
+            id: 7,
+            src: "/brand-img/BF-03.png",
+        },
+        {
+            id: 8,
+            src: "/brand-img/BF-04.png",
+        },
+        {
+            id: 9,
+            src: "/brand-img/BF-05.png",
+        },
+        {
+            id: 10,
+            src: "/brand-img/BF-06.png",
+        },
+        {
+            id: 11,
+            src: "/brand-img/BF-07.png",
+        },
+        {
+            id: 12,
+            src: "/brand-img/BF-08.png",
+        },
+        {
+            id: 13,
+            src: "/brand-img/BF-09.png",
+        },
 
     ];
 
