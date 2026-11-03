@@ -92,7 +92,7 @@ export default function BrandNavbar() {
     }, [dropdownRef]);
 
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
     return (

@@ -5,7 +5,7 @@ import BrandAudioPlayer from "./BrandAudioPlayer";
 
 export default function BrandChooseUs() {
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
     return (

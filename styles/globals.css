@@ -3040,6 +3040,8 @@ video#brandVideo {
 
 
 .responsive-back-to-top {
+  left: 28px !important;
+  right: auto !important;
   animation: waveBtn 2s infinite;
 }
 

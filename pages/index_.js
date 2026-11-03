@@ -152,7 +152,7 @@ export default function Home() {
   // Open Chat Click
 
   const handleOpenChat = () => {
-    window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+    window.Tawk_API?.maximize?.();
   };
 
 

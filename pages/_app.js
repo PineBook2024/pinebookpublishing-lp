@@ -222,20 +222,19 @@ export default function App({ Component, pageProps }) {
               `,
             }}
           />
-          <Script id="text-chat" strategy="afterInteractive">
+          <Script id="tawk-chat" strategy="afterInteractive">
             {`
-              window.__lc = window.__lc || {};
-              window.__lc.organizationId = "986439a4-127f-48b2-a45e-b717c6f3d5c2";
-              window.__lc.integration_name = "manual_onboarding";
-              window.__lc.product_name = "text";
-              ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/6aea4363b6c8e63c35b558e6/1k6hhefhr';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+              })();
             `}
           </Script>
-          <noscript>
-            <a href="https://www.text.com/chat-with-ai-agent/986439a4-127f-48b2-a45e-b717c6f3d5c2/" rel="nofollow">Chat with AI Agent</a>
-            {", powered by "}
-            <a href="https://www.text.com/" rel="noopener nofollow" target="_blank">Text</a>
-          </noscript>
 
           <Script
             id="reb2b-tracker"

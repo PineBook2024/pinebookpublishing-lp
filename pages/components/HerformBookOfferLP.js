@@ -270,7 +270,7 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleOpenChat = () => {
-    window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+    window.Tawk_API?.maximize?.();
   };
 
   // Get user location info

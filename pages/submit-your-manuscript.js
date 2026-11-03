@@ -33,7 +33,7 @@ import LanguageSelectorDropdown from "./components/LanguageSelectorDropdown";
 
 export default function HomePage() {
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
     const counterRef = useRef(null);

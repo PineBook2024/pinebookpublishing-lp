@@ -21,7 +21,7 @@ export default function Chart() {
     };
 
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
 

@@ -20,7 +20,7 @@ export default function BookFormatting() {
         setOpenFAQ(openFAQ === index ? null : index);
     };
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
     const faqData = [

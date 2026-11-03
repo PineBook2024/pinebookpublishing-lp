@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Header() {
 
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
     return (
         <header className="container mx-auto py-2 width-container">

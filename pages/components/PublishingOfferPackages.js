@@ -24,7 +24,7 @@ export default function PublishingOfferPackages({ isOpen, onClose, service }) {
 
 
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
 

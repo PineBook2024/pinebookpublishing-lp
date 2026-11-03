@@ -75,7 +75,7 @@ export default function Lp() {
     targetDate.setDate(targetDate.getDate() + 2);
 
     const handleOpenChat = () => {
-        window.LiveChatWidget && window.LiveChatWidget.call("maximize");
+        window.Tawk_API?.maximize?.();
     };
 
     const handleChange = (e) => {
