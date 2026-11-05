@@ -1074,14 +1074,16 @@ export default function HomePage() {
         {/* ------------------ HERO SECTION ------------------ */}
         <section className="relative z-0 w-full bg-[#07101d] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <Image
-              src="/brand-img/halloween-banner.png"
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            >
+              <source src="/brand-img/Thanksgiving-video.mp4" type="video/mp4" />
+            </video>
             <div
               className="absolute inset-0"
               style={{ background: "linear-gradient(90deg, rgba(3, 8, 18, 0.72), rgba(3, 8, 18, 0.45))" }}

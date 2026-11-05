@@ -1257,7 +1257,7 @@ export default function Home() {
         </header>
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
-        <HeavyComponent Component={HeroFormBookOffer} />
+        <HeavyComponent Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4" />
         {/* <HeroFormBookOffer /> */}
         <PopupBundleBookPublish isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
 
