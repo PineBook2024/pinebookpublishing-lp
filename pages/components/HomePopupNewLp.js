@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
+import Head from "next/head";
 import CountryPhoneInput from "../../components/CountryPhoneInput";
 import useHubspotForm from "/hooks/hubspot";
 
@@ -11,14 +12,14 @@ const initialForm = {
   message: "",
 };
 
-const getWeeklyOfferState = () => {
+const getWeeklyOfferState = (respectSchedule = true) => {
   const now = new Date();
 
-  // Offer runs October 6 through October 31, 2026 (Pakistan time).
-  const offerStart = new Date("2026-10-06T00:00:00+05:00");
-  const offerEnd = new Date("2026-11-01T00:00:00+05:00");
+  // November 3–26, 2026, inclusive (America/Los_Angeles, PST).
+  const offerStart = new Date("2026-11-03T00:00:00-08:00");
+  const offerEnd = new Date("2026-11-27T00:00:00-08:00");
 
-  const isActive = now.getTime() >= offerStart.getTime() && now.getTime() < offerEnd.getTime();
+  const isActive = !respectSchedule || (now.getTime() >= offerStart.getTime() && now.getTime() < offerEnd.getTime());
 
   return {
     isActive,
@@ -34,36 +35,17 @@ const getWeeklyOfferState = () => {
 const formatTimePart = (value) =>
   String(value).padStart(2, "0");
 
-function AnimatedTimeValue({ value }) {
-  return (
-    <span className="hnlp-digit-group" aria-label={value}>
-      {value.split("").map((digit, index) => (
-        <span className="hnlp-digit-window" aria-hidden="true" key={index}>
-          <span
-            className="hnlp-digit-track"
-            style={{ transform: `translateY(-${Number(digit) * 10}%)` }}
-          >
-            {["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].map((number) => (
-              <span className="hnlp-digit" key={number}>
-                {number}
-              </span>
-            ))}
-          </span>
-        </span>
-      ))}
-    </span>
-  );
-}
-
-export default function HomePopupNewLp({ openOnLoad = true } = {}) {
+export default function HomePopupNewLp({ openOnLoad = true, respectSchedule = true } = {}) {
   const { submitPopupContactFormScreen } = useHubspotForm();
-  const [offerState, setOfferState] = useState(getWeeklyOfferState);
+  const [offerState, setOfferState] = useState(() => getWeeklyOfferState(respectSchedule));
   const [form, setForm] = useState(initialForm);
-  const [isOpen, setIsOpen] = useState(() => openOnLoad && getWeeklyOfferState().isActive);
-  const [showTab, setShowTab] = useState(() => !openOnLoad && getWeeklyOfferState().isActive);
+  const [isOpen, setIsOpen] = useState(() => openOnLoad && getWeeklyOfferState(respectSchedule).isActive);
+  const [showTab, setShowTab] = useState(() => !openOnLoad && getWeeklyOfferState(respectSchedule).isActive);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [artworkReady, setArtworkReady] = useState(false);
+  const [artworkSrc, setArtworkSrc] = useState("/brand-img/THANKSGIVING.png");
   const previousActiveRef = useRef(offerState.isActive);
 
   const timeParts = {
@@ -75,7 +57,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
 
   useEffect(() => {
     const updateOffer = () => {
-      const nextOfferState = getWeeklyOfferState();
+      const nextOfferState = getWeeklyOfferState(respectSchedule);
       setOfferState(nextOfferState);
 
       if (!nextOfferState.isActive) {
@@ -93,10 +75,37 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
     const timer = setInterval(updateOffer, 1000);
 
     return () => clearInterval(timer);
-  }, [openOnLoad]);
+  }, [openOnLoad, respectSchedule]);
 
   useEffect(() => {
-    if (!isOpen) return undefined;
+    if (!offerState.isActive) return undefined;
+
+    let cancelled = false;
+    const artwork = new Image();
+    artwork.fetchPriority = "high";
+    artwork.onload = async () => {
+      try {
+        await artwork.decode();
+        if (!cancelled) setArtworkReady(true);
+      } catch {
+        // Keep the form hidden until the fallback artwork is ready too.
+        if (!cancelled) setArtworkSrc("/brand-img/THANKSGIVING.png");
+      }
+    };
+    artwork.onerror = () => {
+      if (!cancelled) setArtworkSrc("/brand-img/THANKSGIVING.png");
+    };
+    artwork.src = artworkSrc;
+
+    return () => {
+      cancelled = true;
+      artwork.onload = null;
+      artwork.onerror = null;
+    };
+  }, [offerState.isActive, artworkSrc]);
+
+  useEffect(() => {
+    if (!isOpen || !artworkReady) return undefined;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -104,7 +113,7 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [isOpen]);
+  }, [isOpen, artworkReady]);
 
   const handleClose = () => {
     if (!offerState.isActive) return;
@@ -200,1284 +209,154 @@ export default function HomePopupNewLp({ openOnLoad = true } = {}) {
 
   return (
     <>
-      {isOpen && (
-        <section
-          className="hnlp-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="hnlp-title"
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 2147483647,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflowY: "auto",
-            padding: "18px",
-            background: "rgba(6, 10, 28, 0.82)",
-          }}
-        >
+      <Head>
+        <link key="thanksgiving-popup-artwork" rel="preload" as="image" href={artworkSrc} fetchPriority="high" />
+      </Head>
+      {isOpen && artworkReady && (
+        <section className="hnlp-overlay" role="dialog" aria-modal="true" aria-labelledby="hnlp-title">
           <div className="hnlp-modal">
-            <button type="button" className="hnlp-close" onClick={handleClose} aria-label="Close popup">
-              <span />
-              <span />
-            </button>
-
-            <div className="jt-image">
-              <img src="/images/HALLOWEENPOPUP.jpg" alt="halloween popup banner" style={{ height: "100%" }} height={"100%"} />
-              <div className="jt-image-footer">
+            <div className="hnlp-form-column">
+            <div className="hnlp-content">
+              <h2 id="hnlp-title">Got a Book Waiting to Be Published? Save 30% on This <span className="hnlp-title-highlight">Thanksgiving!</span></h2>
+              <p className="hnlp-copy">If publishing your book has been on your to-do list for a while, here's a little reason to get back to it. We're offering <strong>30% OFF</strong> our book publishing services this Thanksgiving. Whether your manuscript is finished or just needs a few things sorted out, we're here to help you with the publishing process.</p>
+            <div className="hnlp-countdown" role="timer" aria-live="off" aria-label={`Offer ends November 26 at 11:59 PM Pacific time. ${timeParts.days} days, ${timeParts.hours} hours, ${timeParts.minutes} minutes, ${timeParts.seconds} seconds remaining.`}>
+              <span className="hnlp-countdown-label">OFFER ENDS</span>
+              <div className="hnlp-countdown-digits">
+                {[["days", "Days"], ["hours", "Hours"], ["minutes", "Mins"], ["seconds", "Secs"]].map(([key, label], index) => (
+                  <Fragment key={key}>
+                    {index > 0 && <span className="hnlp-countdown-colon" aria-hidden="true">:</span>}
+                    <span className="hnlp-countdown-unit"><strong>{timeParts[key]}</strong><small>{label}</small></span>
+                  </Fragment>
+                ))}
               </div>
             </div>
-
-            <div className="hnlp-content">
-              <span className="hnlp-eyebrow">HALLOWEEN SPECIAL</span>
-              <h2 id="hnlp-title">Get 30% Off Publishing This Halloween
-
-              </h2>
-              <p className="hnlp-copy">
-                Have a completed manuscript ready for the next step? This Halloween, save 
-                <span className="hnlp-copy-highlight"> 30% </span>                 on our book publishing services and get professional support to prepare, publish, and bring your book to readers.
-
-
-              </p>
-
-              <div className="hnlp-countdown" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
-                <span className="hnlp-countdown-label">Offer Ends In</span>
-                <div className="hnlp-countdown-row">
-                  {[
-                    ["days", "Days"],
-                    ["hours", "Hrs"],
-                    ["minutes", "Min"],
-                    ["seconds", "Sec"],
-                  ].map(([key, label], index) => (
-                    <Fragment key={key}>
-                      <div className="hnlp-time-box">
-                        <strong>
-                          <AnimatedTimeValue value={timeParts[key]} />
-                        </strong>
-                        <span>{label}</span>
-                      </div>
-                      {index < 3 && <span className="hnlp-time-colon">:</span>}
-                    </Fragment>
-                  ))}
-                </div>
-              </div>
-
               <form className="hnlp-form" onSubmit={handleSubmit}>
-                <div className="hnlp-grid">
-                  <input name="fulName" value={form.fulName} onChange={handleChange} placeholder="Your name" required />
-                  <CountryPhoneInput name="phoneNumber" value={form.phoneNumber} onChange={handleChange} placeholder="Phone number" required />
+                <label className="hnlp-field">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4" /><path d="M3 22v-2a9 7 0 0 1 18 0v2Z" /></svg>
+                  <input aria-label="Full Name" name="fulName" value={form.fulName} onChange={handleChange} placeholder="Full Name*" required />
+                </label>
+                <label className="hnlp-field">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="1" /><path d="m2 5 10 8L22 5" /></svg>
+                  <input aria-label="Email Address" type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email Address*" required />
+                </label>
+                <div className="hnlp-phone">
+                  <CountryPhoneInput aria-label="Phone Number" name="phoneNumber" value={form.phoneNumber} onChange={handleChange} placeholder="Phone Number" required />
+                  {phoneError && <p className="hnlp-error" role="alert">{phoneError}</p>}
                 </div>
-
-                {phoneError && <p className="hnlp-error">{phoneError}</p>}
-
-                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email address" required />
-
-                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your book" rows={3} required />
-
+                <label className="hnlp-field hnlp-message">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C9 2 5 2 2 4v17c3-2 7-2 10 0 3-2 7-2 10 0V4c-3-2-7-2-10 1Zm0 0v16" /></svg>
+                  <textarea aria-label="Manuscript / Project Details" name="message" value={form.message} onChange={handleChange} placeholder="Manuscript / Project Details*" rows={3} required />
+                </label>
+                <button className="hnlp-submit" type="submit" disabled={isSubmitting}>CLAIM MY 30% DISCOUNT <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7M3 12h13" /></svg></button>
                 {showSuccess && (
-                  <div className="hnlp-success" role="status" aria-live="polite">
-                    <span>✓</span>
-                    <div>
-                      <strong>Thank you!</strong>
-                      <p>Your request has been submitted successfully.</p>
-                    </div>
-                  </div>
+                  <div className="hnlp-success" role="status" aria-live="polite"><strong>Thank you!</strong> Your request has been submitted successfully.</div>
                 )}
-
-                <button type="submit" disabled={isSubmitting}>
-                  Claim My 30% Publishing Discount
-                </button>
               </form>
             </div>
+            </div>
+            <div className="hnlp-art"><img src={artworkSrc} width="468" height="666" alt="Thanksgiving special: get 30% off publishing" fetchPriority="high" /></div>
+            <button type="button" className="hnlp-close" onClick={handleClose} aria-label="Close popup"><span /><span /></button>
           </div>
+          <button type="button" className="hnlp-mobile-close" onClick={handleClose} aria-label="Close popup">×</button>
         </section>
       )}
-
       {showTab && !isOpen && (
-        <button
-          type="button"
-          className="hnlp-tab"
-          aria-label="Open Halloween offer: 30% off book publishing"
-          onClick={() => {
-            setShowTab(false);
-            setIsOpen(true);
-          }}
-        >
-          <span className="hnlp-tab-pumpkin" aria-hidden="true">
-            <svg viewBox="0 0 120 78" fill="none">
-              <path d="M14 18 4 8 21 12 27 5 32 15 49 11 39 22 27 19Z" fill="#392047" />
-              <path d="m89 13 5-10 5 7 16-2-9 10-9-2-9 7-5-11Z" fill="#392047" />
-              <path d="M61 24c-3-9 0-15 7-18l5 6c-7 1-8 6-7 13" fill="#749545" />
-              <ellipse cx="60" cy="48" rx="35" ry="26" fill="#ff791c" />
-              <ellipse cx="47" cy="48" rx="17" ry="25" fill="#ff922e" />
-              <ellipse cx="73" cy="48" rx="17" ry="25" fill="#ed5d10" />
-              <ellipse cx="60" cy="48" rx="16" ry="26" fill="#ffab42" />
-              <path d="m43 43 11-8 2 13Zm24-8 11 8-13 5ZM57 52l4-7 4 7ZM41 55l11 5 4-4 5 5 5-5 5 4 9-5c-4 15-31 17-39 0Z" fill="#291535" />
-            </svg>
-          </span>
-          <span className="hnlp-tab-badge">30%</span>
-          <span className="hnlp-tab-copy">
-            <small>Halloween Offer</small>
-            <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
-              {[
-                ["days", "D"],
-                ["hours", "H"],
-                ["minutes", "M"],
-                ["seconds", "S"],
-              ].map(([key, label], index) => (
-                <Fragment key={key}>
-                  <span className="hnlp-tab-time-box">
-                    <strong>{timeParts[key]}</strong>
-                    <em>{label}</em>
-                  </span>
-                  {index < 3 && <span className="hnlp-tab-time-colon">:</span>}
-                </Fragment>
-              ))}
-            </span>
-          </span>
+        <button type="button" className="hnlp-tab" aria-label="Open Thanksgiving offer: 30% off book publishing" onClick={() => { setShowTab(false); setIsOpen(true); }}>
+          <span className="hnlp-tab-badge">30%<small>OFF</small></span>
+          <span><strong>Thanksgiving Offer</strong>{offerState.secondsLeft > 0 && <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
+            {[["days", "D"], ["hours", "H"], ["minutes", "M"], ["seconds", "S"]].map(([key, label], index) => (
+              <Fragment key={key}>{index > 0 && <span>:</span>}<span>{timeParts[key]}<small>{label}</small></span></Fragment>
+            ))}
+          </span>}</span>
         </button>
       )}
-
       <style jsx>{`
-        .hnlp-modal {
-          position: relative;
-          display: grid;
-          grid-template-columns: 0.92fr 1.08fr;
-          width: min(1040px, 100%);
-          max-height: calc(100vh - 36px);
-          overflow: hidden;
-          border-radius: 22px;
-          background: #fff;
-          box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
-        }
-
-        .hnlp-close {
-          position: absolute;
-          right: 16px;
-          top: 16px;
-          z-index: 3;
-          width: 38px;
-          height: 38px;
-          border: 0;
-          border-radius: 50%;
-          background: #fc4a02;
-          cursor: pointer;
-        }
-
-        .hnlp-close span {
-          position: absolute;
-          left: 10px;
-          top: 18px;
-          width: 18px;
-          height: 2px;
-          border-radius: 99px;
-          background: #fff;
-        }
-
-        .hnlp-close span:first-child {
-          transform: rotate(45deg);
-        }
-
-        .hnlp-close span:last-child {
-          transform: rotate(-45deg);
-        }
-
-        .hnlp-visual {
-          position: relative;
-          min-height: 520px;
-          overflow: visible;
-          padding: 34px;
-          background:
-            radial-gradient(circle at 24% 18%, rgba(255, 133, 35, 0.24), transparent 28%),
-            radial-gradient(circle at 78% 74%, rgba(78, 154, 142, 0.2), transparent 26%),
-            linear-gradient(145deg, #291535, #223053 58%, #182042);
-          color: #fff;
-        }
-
-        .hnlp-pill {
-          position: relative;
-          z-index: 2;
-          display: inline-flex;
-          border: 1px solid rgba(255, 255, 255, 0.34);
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.12);
-          padding: 8px 14px;
-          font: 700 12px "Poppins", sans-serif;
-          letter-spacing: 1.4px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-visual-motion {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          overflow: hidden;
-          pointer-events: none;
-        }
-
-        .hnlp-orbit {
-          position: absolute;
-          border: 1px solid rgba(255, 133, 35, 0.18);
-          border-radius: 50%;
-          opacity: 0.8;
-          transform: rotate(-18deg);
-        }
-
-        .hnlp-orbit-one {
-          left: 44px;
-          top: 116px;
-          width: 350px;
-          height: 190px;
-          animation: hnlpFloatOrbit 9s ease-in-out infinite;
-        }
-
-        .hnlp-orbit-two {
-          right: -72px;
-          top: 188px;
-          width: 250px;
-          height: 138px;
-          border-color: rgba(255, 255, 255, 0.16);
-          animation: hnlpFloatOrbit 10s ease-in-out 1.3s infinite reverse;
-        }
-
-        .hnlp-line {
-          position: absolute;
-          height: 2px;
-          border-radius: 999px;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
-          opacity: 0;
-          animation: hnlpDriftLine 5.4s ease-in-out infinite;
-        }
-
-        .hnlp-line-one {
-          left: -70px;
-          top: 158px;
-          width: 170px;
-        }
-
-        .hnlp-line-two {
-          right: -64px;
-          top: 280px;
-          width: 150px;
-          animation-delay: 1.4s;
-        }
-
-        .hnlp-line-three {
-          left: 48px;
-          bottom: 98px;
-          width: 130px;
-          animation-delay: 2.6s;
-        }
-
-        .hnlp-spark {
-          position: absolute;
-          width: 9px;
-          height: 9px;
-          opacity: 0.85;
-          animation: hnlpSparkle 2.8s ease-in-out infinite;
-        }
-
-        .hnlp-spark::before,
-        .hnlp-spark::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          margin: auto;
-          border-radius: 999px;
-          background: #ff9c35;
-        }
-
-        .hnlp-spark::before {
-          width: 2px;
-          height: 9px;
-        }
-
-        .hnlp-spark::after {
-          width: 9px;
-          height: 2px;
-        }
-
-        .hnlp-spark-one {
-          left: 74px;
-          top: 100px;
-        }
-
-        .hnlp-spark-two {
-          right: 82px;
-          top: 122px;
-          animation-delay: 0.9s;
-        }
-
-        .hnlp-spark-three {
-          left: 88px;
-          bottom: 126px;
-          animation-delay: 1.8s;
-        }
-
-        .hnlp-books {
-          position: absolute;
-          left: 50%;
-          top: 52%;
-          z-index: 2;
-          width: 360px;
-          height: 335px;
-          margin: 0;
-          transform: translate(-50%, -50%);
-        }
-
-        .hnlp-book {
-          position: absolute;
-          top: 0;
-          width: 210px;
-          height: 310px;
-          border-radius: 9px 15px 15px 9px;
-          object-fit: cover;
-          object-position: center;
-          box-shadow: 0 24px 50px rgba(0, 0, 0, 0.34);
-        }
-
-        .hnlp-book-a {
-          left: 16px;
-          z-index: 1;
-          transform: rotate(-10deg) translateY(24px);
-        }
-
-        .hnlp-book-b {
-          right: 16px;
-          z-index: 2;
-          transform: rotate(8deg) translateY(18px);
-        }
-
-        .hnlp-book-c {
-          left: 50%;
-          z-index: 3;
-          transform: translateX(-50%) rotate(-2deg);
-        }
-
-        .hnlp-badge {
-          position: absolute;
-          right: 34px;
-          top: calc(52% + 86px);
-          z-index: 4;
-          display: flex;
-          width: 116px;
-          height: 116px;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border: 5px solid #fff;
-          border-radius: 50%;
-          background: #ff9c35;
-          color: #291535;
-          animation: hnlpBlink 1s ease-in-out infinite;
-          box-shadow:
-            0 0 0 10px rgba(255, 133, 35, 0.22),
-            0 18px 36px rgba(0, 0, 0, 0.28);
-        }
-
-        .hnlp-badge small {
-          font: 800 13px "Poppins", sans-serif;
-          text-transform: uppercase;
-        }
-
-        .hnlp-badge strong {
-          font: 900 40px/0.95 "Poppins", sans-serif;
-        }
-
-        .hnlp-visual p {
-          max-width: 340px;
-          margin: 18px 0 0;
-          color: rgba(255, 255, 255, 0.86);
-          font: 400 13px/1.7 "Poppins", sans-serif;
-        }
-
-        .hnlp-content {
-          overflow-y: auto;
-          padding: 46px 42px 38px;
-          background: linear-gradient(160deg, #fffaf3 0%, #fff2e6 100%);
-        }
-
-        .hnlp-eyebrow {
-          color: #fc4a02;
-          font: 800 12px "Poppins", sans-serif;
-          letter-spacing: 1.8px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-content h2 {
-          margin: 10px 36px 12px 0;
-          color: #291535;
-          font: 900 clamp(30px, 30px, 30px) / 1.08 "Merriweather", serif;
-        }
-
-        .hnlp-copy {
-          margin: 0 0 16px;
-          color: #51596d;
-          font-size: 14px !important;
-        }
-
-        .hnlp-copy-highlight {
-          display: inline-block;
-          border-radius: 4px;
-          background: #71368a;
-          color: #fff;
-          font-weight: 800;
-          line-height: 1.2;
-          padding: 1px 5px 2px;
-          animation: none;
-        }
-
-        .hnlp-countdown {
-          margin: 0 0 18px;
-          border: 1px solid rgba(41, 21, 53, 0.1);
-          border-radius: 14px;
-          background: #fe730e;
-          padding: 13px 14px 14px;
-          box-shadow: 0 14px 28px rgba(41, 21, 53, 0.16);
-        }
-
-        .hnlp-countdown-label {
-          display: block;
-          margin-bottom: 8px;
-          color: #fff;
-          font: 800 12px "Poppins", sans-serif;
-          letter-spacing: 1.8px;
-          text-align: center;
-          text-transform: uppercase;
-        }
-
-        .hnlp-countdown-row {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 7px;
-        }
-
-        .hnlp-time-box {
-          display: flex;
-          min-width: 58px;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border-radius: 9px;
-          background: linear-gradient(180deg, #ffffff 0%, #eef1f8 100%);
-          padding: 8px 6px 7px;
-          box-shadow: inset 0 -2px 0 rgba(41, 21, 53, 0.08);
-        }
-
-        .hnlp-time-box strong {
-          display: block;
-          color: #291535;
-          font: 900 24px/1 "Poppins", sans-serif;
-          font-variant-numeric: tabular-nums;
-        }
-
-        :global(.hnlp-digit-group) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1px;
-        }
-
-        :global(.hnlp-digit-window) {
-          position: relative;
-          display: inline-block;
-          width: 16px;
-          height: 25px;
-          overflow: hidden;
-          border-radius: 5px;
-          background: linear-gradient(85deg, #FFC107, #edb34a);
-        }
-
-        :global(.hnlp-digit-window)::before,
-        :global(.hnlp-digit-window)::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          z-index: 2;
-          height: 7px;
-          pointer-events: none;
-        }
-
-        :global(.hnlp-digit-window)::before {
-          top: 0;
-          background: linear-gradient(180deg, rgba(238, 241, 248, 0.95), rgba(238, 241, 248, 0));
-        }
-
-        :global(.hnlp-digit-window)::after {
-          bottom: 0;
-          background: linear-gradient(0deg, rgba(238, 241, 248, 0.95), rgba(238, 241, 248, 0));
-        }
-
-        :global(.hnlp-digit-track) {
-          display: flex;
-          flex-direction: column;
-          height: 250px;
-          transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
-          will-change: transform;
-        }
-
-        :global(.hnlp-digit) {
-          display: flex;
-          height: 25px;
-          flex: 0 0 25px;
-          align-items: center;
-          justify-content: center;
-          color: #000;
-          font: inherit;
-          letter-spacing: 0;
-        }
-
-        .hnlp-time-box > span {
-          margin-top: 4px;
-          color: #566077;
-          font: 800 10px/1 "Poppins", sans-serif;
-          letter-spacing: 0.8px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-time-colon {
-          color: #ff9c35;
-          font: 900 22px/1 "Poppins", sans-serif;
-        }
-
-        .hnlp-form {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .hnlp-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 12px;
-        }
-
-        .hnlp-form input,
-        .hnlp-form select,
-        .hnlp-form textarea {
-          width: 100%;
-          border: 1px solid #d9deea;
-          border-radius: 10px;
-          background: #fff;
-          color: #291535;
-          font: 400 14px "Poppins", sans-serif;
-          outline: none;
-        }
-
-        .hnlp-form input,
-        .hnlp-form select {
-          height: 48px;
-          padding: 0 14px;
-        }
-
-        .hnlp-form textarea {
-          min-height: 94px;
-          resize: none;
-          padding: 13px 14px;
-        }
-
-        .hnlp-form button {
-          min-height: 52px;
-          border: 0;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #e95b0c, #be3d09);
-          color: #fff;
-          cursor: pointer;
-          font: 800 14px "Poppins", sans-serif;
-          letter-spacing: 0.4px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-form button:disabled {
-          cursor: not-allowed;
-          opacity: 0.65;
-        }
-
-        .hnlp-error {
-          margin: -4px 2px 0;
-          color: #d12f2f;
-          font: 400 13px "Poppins", sans-serif;
-        }
-
-        .hnlp-success {
-          display: flex;
-          align-items: flex-start;
-          gap: 10px;
-          margin: 0;
-          border: 1px solid rgba(35, 135, 87, 0.22);
-          border-radius: 10px;
-          background: linear-gradient(180deg, #effaf4 0%, #e7f7ee 100%);
-          color: #176c43;
-          padding: 10px 12px;
-          box-shadow: 0 10px 22px rgba(35, 135, 87, 0.12);
-          animation: hnlpToastIn 240ms ease-out;
-        }
-
-        .hnlp-success > span {
-          display: inline-flex;
-          width: 22px;
-          height: 22px;
-          flex: 0 0 22px;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          background: #238757;
-          color: #fff;
-          font: 900 13px/1 "Poppins", sans-serif;
-        }
-
-        .hnlp-success strong {
-          display: block;
-          margin-bottom: 2px;
-          font: 800 13px/1.15 "Poppins", sans-serif;
-        }
-
-        .hnlp-success p {
-          margin: 0;
-          color: #2c7553;
-          font: 400 12px/1.35 "Poppins", sans-serif;
-        }
-
-        .hnlp-tab {
-          position: fixed;
-          left: 18px;
-          bottom: 18px;
-          z-index: 2147483647;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          overflow: visible;
-          border: 1px solid rgba(255, 255, 255, 0.16);
-          border-radius: 18px;
-          background:
-            linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 38%),
-            linear-gradient(135deg, #291535 0%, #3c1d50 55%, #522860 100%);
-          color: #fff;
-          cursor: pointer;
-          padding: 9px 16px 9px 9px;
-          animation: none;
-          box-shadow:
-            0 0 0 6px rgba(255, 133, 35, 0.16),
-            0 18px 42px rgba(41, 21, 53, 0.38);
-        }
-
-        .hnlp-tab-pumpkin {
-          position: absolute;
-          left: 14px;
-          top: -67px;
-          width: 112px;
-          height: 73px;
-          pointer-events: none;
-          filter: drop-shadow(0 6px 6px rgba(37, 15, 46, 0.24));
-        }
-
-        .hnlp-tab-pumpkin svg {
-          display: block;
-          width: 100%;
-          height: 100%;
-        }
-        // .hnlp-tab::before {
-        //   content: "";
-        //   position: absolute;
-        //   inset: -60% auto -60% -40%;
-        //   z-index: 0;
-        //   width: 60%;
-        //   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-        //   transform: rotate(18deg);
-        //   animation: hnlpTabShimmer 2.8s ease-in-out infinite;
-        // }
-
-        .hnlp-tab-badge {
-          position: relative;
-          z-index: 1;
-          display: inline-flex;
-          width: 54px;
-          height: 54px;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid rgba(255, 255, 255, 0.9);
-          border-radius: 15px;
-          background: linear-gradient(180deg, #ffb653 0%, #ff9c35 100%);
-          color: #291535;
-          font: 900 19px "Poppins", sans-serif;
-          box-shadow: inset 0 -3px 0 rgba(41, 21, 53, 0.12);
-        }
-
-        .hnlp-tab-copy {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          min-width: 178px;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 5px;
-        }
-
-        .hnlp-tab-copy small {
-          color: #ff9c35;
-          font: 800 10px/1 "Poppins", sans-serif;
-          letter-spacing: 1.3px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-tab-timer {
-          display: flex;
-          align-items: center;
-          gap: 3px;
-        }
-
-        .hnlp-tab-time-box {
-          display: inline-flex;
-          min-width: 33px;
-          height: 31px;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border-radius: 7px;
-          background: linear-gradient(180deg, #ffffff 0%, #eef1f8 100%);
-          box-shadow: inset 0 -2px 0 rgba(41, 21, 53, 0.1);
-        }
-
-        .hnlp-tab-time-box strong {
-          color: #291535;
-          font: 900 14px/1 "Poppins", sans-serif;
-          font-variant-numeric: tabular-nums;
-          letter-spacing: 0;
-        }
-
-        .hnlp-tab-time-box em {
-          margin-top: 2px;
-          color: #566077;
-          font: 900 7px/1 "Poppins", sans-serif;
-          font-style: normal;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-        }
-
-        .hnlp-tab-time-colon {
-          color: #ff9c35;
-          font: 900 13px/1 "Poppins", sans-serif;
-        }
-
-        .hnlp-tab { border-color: #ff9c35; }
-        .hnlp-tab-badge { border-color: #ffd4a0; }
-        .hnlp-modal { border: 1px solid rgba(255, 156, 53, 0.45); }
-        .hnlp-countdown { background: linear-gradient(135deg, #291535, #522860); }
-        .hnlp-form button:hover:not(:disabled) { filter: brightness(1.08); }
-        .hnlp-tab:focus-visible, .hnlp-close:focus-visible, .hnlp-form button:focus-visible {
-          outline: 3px solid #ff9c35;
-          outline-offset: 4px;
-        }
-        .hnlp-form input:focus, .hnlp-form textarea:focus {
-          border-color: #e95b0c;
-          box-shadow: 0 0 0 3px rgba(233, 91, 12, 0.12);
+        .hnlp-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; background: rgba(7, 16, 29, .72); backdrop-filter: blur(7px); }
+        .hnlp-modal { position: relative; isolation: isolate; container-type: inline-size; display: grid; grid-template-columns: 1.1fr 1fr; width: min(1100px, 100%); margin: auto; border-radius: 24px; background: #dcfff2; box-shadow: 0 22px 70px #07101d66; }
+        .hnlp-form-column { min-width: 0; padding: 28px; background: linear-gradient(135deg, #126b60, #1e5958); border-radius: 24px 0 0 24px; }
+        .hnlp-art { display: flex; align-items: center; min-width: 0; overflow: hidden; border-radius: 0 24px 24px 0; }
+        .hnlp-art img { display: block; width: 100%; height: auto; }
+        .hnlp-countdown { position: relative; margin: 0 0 20px; padding: 12px; border-radius: 10px; background: #ffffff; text-align: center; color: #000000; }
+        .hnlp-countdown-label { display: block; margin-bottom: .35cqw; font: 700 .8cqw/1.2 Arial, sans-serif; letter-spacing: .12em; }
+        .hnlp-countdown-digits { display: flex; align-items: center; justify-content: center; gap: .6cqw; }
+        .hnlp-countdown-unit { display: flex; flex-direction: column; align-items: center; min-width: 3.5cqw; padding: .3cqw .5cqw; border: 1px solid #299081; border-radius: .5cqw; background: #ffffff; box-shadow: 0 2px 6px #0f113d22; }
+        .hnlp-countdown-unit strong { color: #000000; font: 700 1.8cqw/1.05 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+        .hnlp-countdown-unit small { margin-top: .15cqw; color: #000000; font: 700 .6cqw/1.2 Arial, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+        .hnlp-countdown-colon { font: 700 1.7cqw/1 monospace; }
+        .hnlp-content { position: relative; color: #ffffff; text-align: center; }
+        .hnlp-content h2 { margin: 0 0 1cqw; font: 400 2.5cqw/1.12 Georgia, 'Times New Roman', serif; letter-spacing: -.03cqw; color: #ffffff; text-wrap: balance; }
+        .hnlp-title-highlight { padding: 0 .15em; border-radius: .12em; background: linear-gradient(115deg, #299081, #1a8273 40%, #147d6e 85%); color: #ffffff; white-space: nowrap; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+        .hnlp-copy { margin: 0 0 1.3cqw; color: #edf7f4; font: 400 1.1cqw/1.5 Arial, sans-serif; }
+        .hnlp-copy strong { display: inline-block; padding: 2px 6px; border-radius: 4px; background: #ffe18a; color: #10163d; font-weight: 800; animation: hnlp-discount-blink 1.2s ease-in-out infinite; }
+        @keyframes hnlp-discount-blink {
+          0%, 100% { background: #ffe18a; color: #10163d; box-shadow: 0 0 0 transparent; }
+          50% { background: #ffffff; color: #126b60; box-shadow: 0 0 10px #ffe18a99; }
         }
         @media (prefers-reduced-motion: reduce) {
-          .hnlp-tab::before { animation: none; }
-          :global(.hnlp-digit-track) { transition: none; }
+          .hnlp-copy strong { animation: none; }
         }
-        @keyframes hnlpBlink {
-          0%,
-          100% {
-            transform: scale(1);
-            filter: brightness(1);
-            box-shadow:
-              0 0 0 10px rgba(255, 133, 35, 0.18),
-              0 18px 36px rgba(0, 0, 0, 0.28);
-          }
-
-          50% {
-            transform: scale(1.08);
-            filter: brightness(1.08);
-            box-shadow:
-              0 0 0 16px rgba(255, 133, 35, 0.08),
-              0 24px 46px rgba(0, 0, 0, 0.36);
-          }
-        }
-
-        @keyframes hnlpFloatOrbit {
-          0%,
-          100% {
-            transform: translate3d(0, 0, 0) rotate(-18deg) scale(1);
-          }
-
-          50% {
-            transform: translate3d(10px, -12px, 0) rotate(-14deg) scale(1.03);
-          }
-        }
-
-        @keyframes hnlpDriftLine {
-          0% {
-            opacity: 0;
-            transform: translateX(-26px);
-          }
-
-          28%,
-          62% {
-            opacity: 0.72;
-          }
-
-          100% {
-            opacity: 0;
-            transform: translateX(78px);
-          }
-        }
-
-        @keyframes hnlpSparkle {
-          0%,
-          100% {
-            opacity: 0.2;
-            transform: scale(0.72) rotate(0deg);
-          }
-
-          50% {
-            opacity: 0.95;
-            transform: scale(1.18) rotate(45deg);
-          }
-        }
-
-        @keyframes hnlpTabBlink {
-          0%,
-          100% {
-            transform: translateY(0) scale(1);
-            filter: brightness(1);
-          }
-
-          50% {
-            transform: translateY(-2px) scale(1.04);
-            filter: brightness(1.12);
-          }
-        }
-
-        @keyframes hnlpTabShimmer {
-          0%,
-          58% {
-            left: -45%;
-          }
-
-          100% {
-            left: 130%;
-          }
-        }
-
-        @keyframes hnlpPageFlip {
-          0%,
-          18% {
-            opacity: 0;
-            transform: perspective(120px) rotateY(0deg) skewY(0deg);
-          }
-
-          28% {
-            opacity: 1;
-          }
-
-          58% {
-            opacity: 1;
-            transform: perspective(120px) rotateY(-142deg) skewY(-2deg);
-          }
-
-          78%,
-          100% {
-            opacity: 0;
-            transform: perspective(120px) rotateY(-176deg) skewY(-2deg);
-          }
-        }
-
-        @keyframes hnlpFlagWave {
-          0%,
-          100% {
-            transform: rotate(13deg) skewY(0deg);
-          }
-
-          50% {
-            transform: rotate(16deg) skewY(-5deg);
-          }
-        }
-
-        @keyframes hnlpMiniFirework {
-          0%,
-          100% {
-            opacity: 0.45;
-            transform: scale(0.72) rotate(0deg);
-          }
-
-          50% {
-            opacity: 1;
-            transform: scale(1.05) rotate(45deg);
-          }
-        }
-
-        @keyframes hnlpToastIn {
-          0% {
-            opacity: 0;
-            transform: translateY(8px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes hnlpTextBlink {
-          0%,
-          100% {
-            background: #fe730e;
-            box-shadow: 0 0 0 rgb(200 84 49 / 16%);
-          }
-
-          50% {
-            background: #c65d02;
-            box-shadow: 0 0 0 4px rgb(200 84 49 / 18%);
-          }
-        }
-
-        @media (max-width: 900px) {
-          .hnlp-overlay {
-            align-items: flex-start !important;
-            padding: 10px !important;
-          }
-
-          .hnlp-modal {
-            display: block;
-            width: min(560px, 100%);
-            max-height: calc(100vh - 20px);
-            max-height: calc(100dvh - 20px);
-            overflow-x: hidden;
-            overflow-y: auto;
-            border-radius: 16px;
-            overscroll-behavior: contain;
-            -webkit-overflow-scrolling: touch;
-          }
-
-          .hnlp-close {
-            position: sticky;
-            display: block;
-            right: auto;
-            top: 12px;
-            width: 36px;
-            height: 36px;
-            margin: 12px 12px -48px auto;
-          }
-
-          .hnlp-close span {
-            left: 9px;
-            top: 17px;
-          }
-
-          .hnlp-visual {
-            min-height: 238px;
-            overflow: hidden;
-            padding: 18px 20px;
-          }
-
-          .hnlp-pill {
-            padding: 7px 12px;
-            font-size: 10px;
-          }
-
-          .hnlp-books {
-            width: 238px;
-            height: 176px;
-            left: 50%;
-            top: 59%;
-            margin: 0;
-            transform: translate(-50%, -50%);
-          }
-
-          .hnlp-book {
-            width: 122px;
-            height: 170px;
-          }
-
-          .hnlp-book-a {
-            left: 8px;
-          }
-
-          .hnlp-book-b {
-            right: 8px;
-          }
-
-          .hnlp-book-c {
-            left: 50%;
-          }
-
-          .hnlp-badge {
-            right: max(18px, calc(50% - 142px));
-            top: 130px;
-            width: 78px;
-            height: 78px;
-            border-width: 4px;
-          }
-
-          .hnlp-badge strong {
-            font-size: 27px;
-          }
-
-          .hnlp-badge small {
-            font-size: 10px;
-          }
-
-          .hnlp-content {
-            overflow: visible;
-            padding: 24px 20px 20px;
-          }
-
-          .hnlp-content h2 {
-            margin-right: 0;
-          }
-
-          .hnlp-countdown-row {
-            gap: 4px;
-          }
-
-          .hnlp-time-box {
-            min-width: 50px;
-          }
-
-          .hnlp-time-box strong {
-            font-size: 20px;
-          }
-
-          :global(.hnlp-digit-window) {
-            width: 14px;
-            height: 21px;
-          }
-
-          :global(.hnlp-digit-track) {
-            height: 210px;
-          }
-
-          :global(.hnlp-digit) {
-            height: 21px;
-            flex-basis: 21px;
-          }
-        }
-
-        @media (max-width: 560px) {
-          .hnlp-overlay {
-            padding: 6px !important;
-          }
-
-          .hnlp-modal {
-            max-height: calc(100vh - 12px);
-            max-height: calc(100dvh - 12px);
-            border-radius: 13px;
-          }
-
-          .hnlp-close {
-            top: 9px;
-            width: 34px;
-            height: 34px;
-            margin: 9px 9px -43px auto;
-          }
-
-          .hnlp-close span {
-            left: 8px;
-            top: 16px;
-          }
-
-          .hnlp-visual {
-            display: none;
-          }
-
-          .hnlp-pill {
-            max-width: calc(100% - 48px);
-            padding: 6px 10px;
-            font-size: 9px;
-            letter-spacing: 1px;
-          }
-
-          .hnlp-books {
-            top: 60%;
-            width: 205px;
-            height: 148px;
-          }
-
-          .hnlp-book {
-            width: 105px;
-            height: 145px;
-            border-radius: 6px 10px 10px 6px;
-          }
-
-          .hnlp-book-a {
-            left: 6px;
-            transform: rotate(-9deg) translateY(15px);
-          }
-
-          .hnlp-book-b {
-            right: 6px;
-            transform: rotate(7deg) translateY(12px);
-          }
-
-          .hnlp-badge {
-            right: max(10px, calc(50% - 124px));
-            top: 116px;
-            width: 66px;
-            height: 66px;
-            border-width: 3px;
-          }
-
-          .hnlp-badge strong {
-            font-size: 23px;
-          }
-
-          .hnlp-badge small {
-            font-size: 9px;
-          }
-
-          .hnlp-content {
-            padding: 48px 14px 15px;
-          }
-
-          .hnlp-eyebrow {
-            font-size: 10px;
-            letter-spacing: 1.4px;
-          }
-
-          .hnlp-grid {
-            grid-template-columns: 1fr;
-            gap: 9px;
-          }
-
-          .hnlp-content h2 {
-            margin: 7px 0 8px;
-            font-size: 23px;
-            line-height: 1.12;
-          }
-
-          .hnlp-copy {
-            margin-bottom: 12px;
-            font-size: 12px !important;
-            line-height: 1.55;
-          }
-
-          .hnlp-countdown {
-            margin-bottom: 12px;
-            padding: 10px 7px 11px;
-            border-radius: 11px;
-          }
-
-          .hnlp-countdown-label {
-            margin-bottom: 7px;
-            font-size: 10px;
-            letter-spacing: 1.4px;
-          }
-
-          .hnlp-countdown-row {
-            gap: 3px;
-          }
-
-          .hnlp-time-box {
-            min-width: 42px;
-            padding: 6px 3px 5px;
-            border-radius: 7px;
-          }
-
-          .hnlp-time-box strong {
-            font-size: 17px;
-          }
-
-          .hnlp-time-box > span {
-            font-size: 8px;
-            letter-spacing: 0.5px;
-          }
-
-          .hnlp-time-colon {
-            font-size: 16px;
-          }
-
-          .hnlp-form {
-            gap: 9px;
-          }
-
-          .hnlp-form input,
-          .hnlp-form select {
-            height: 44px;
-            padding: 0 12px;
-          }
-
-          .hnlp-form input,
-          .hnlp-form select,
-          .hnlp-form textarea {
-            border-radius: 8px;
-            font-size: 13px;
-          }
-
-          .hnlp-form textarea {
-            min-height: 76px;
-            padding: 11px 12px;
-          }
-
-          .hnlp-form button {
-            min-height: 48px;
-            border-radius: 8px;
-            padding: 9px 12px;
-            font-size: 12px;
-            line-height: 1.3;
-          }
-
-          :global(.hnlp-digit-window) {
-            width: 13px;
-            height: 19px;
-          }
-
-          :global(.hnlp-digit-track) {
-            height: 190px;
-          }
-
-          :global(.hnlp-digit) {
-            height: 19px;
-            flex-basis: 19px;
-          }
-
-          .hnlp-tab {
-            left: 9px;
-            right: 9px;
-            bottom: 10px;
-            width: fit-content;
-            max-width: calc(100vw - 18px);
-            gap: 7px;
-            border-radius: 14px;
-            padding: 7px 10px 7px 7px;
-          }
-
-          .hnlp-tab-badge {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            font-size: 16px;
-          }
-
-          .hnlp-tab-copy {
-            min-width: 0;
-            gap: 4px;
-          }
-
-          .hnlp-tab-copy small {
-            font-size: 8px;
-            letter-spacing: 1px;
-          }
-
-          .hnlp-tab-time-box {
-            min-width: 28px;
-            height: 28px;
-            border-radius: 6px;
-          }
-
-          .hnlp-tab-time-box strong {
-            font-size: 12px;
-          }
-
-          .hnlp-tab-time-box em {
-            font-size: 6px;
-          }
-
-          .hnlp-tab-pumpkin { left: 10px; top: -57px; width: 94px; height: 62px; }
+        .hnlp-form { display: flex; flex-direction: column; gap: .85cqw; }
+        .hnlp-field { display: flex; align-items: center; gap: 1.5cqw; width: 100%; height: 3.9cqw; margin: 0; padding: 0 1.75cqw; border: 1px solid #fff; border-radius: 1cqw; background: linear-gradient(115deg, #f7f7f7, #f4f4f4); box-shadow: 0 5px 10px #0f113d18; box-sizing: border-box; }
+        .hnlp-field svg { flex: 0 0 2.2cqw; width: 2.2cqw; height: 2.2cqw; fill: none; stroke: #585858; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+        .hnlp-field input, .hnlp-field textarea { width: 100%; min-width: 0; height: 100%; padding: 0; border: 0; outline: 0; border-radius: 0; background: transparent; color: #444; font: 400 1.55cqw/1.4 Arial, sans-serif; box-shadow: none; }
+        .hnlp-field input::placeholder, .hnlp-field textarea::placeholder { font-size: 1.2cqw; opacity: 1; color: #555; }
+        .hnlp-field:focus-within, .hnlp-phone:focus-within { outline: 3px solid #63b5a7; outline-offset: 2px; }
+        .hnlp-message { height: 10cqw; padding-top: 1cqw; padding-bottom: .5cqw; align-items: flex-start; }
+        .hnlp-message textarea { resize: vertical; min-height: 100%; max-height: 10cqw; }
+        .hnlp-phone { position: relative; border-radius: 1cqw; }
+        .hnlp-phone :global(.country-phone-shell) { height: 3.9cqw !important; min-height: 3.9cqw !important; max-height: 3.9cqw !important; border: 1px solid #fff; border-radius: 1cqw; background: #f5f5f5; box-shadow: 0 5px 10px #0f113d18; }
+        .hnlp-phone :global(.country-phone-country) { flex-basis: 4.6cqw; padding: 0 .7cqw; gap: .4cqw; background: transparent; border-color: #ddd; }
+        .hnlp-phone :global(.country-phone-country svg) { width: 1.6cqw; height: 1.1cqw; }
+        .hnlp-phone :global(.country-phone-code) { padding: 0 .6cqw; font: 400 1.3cqw Arial, sans-serif; color: #555; }
+        .hnlp-phone :global(.country-phone-number) { height: 100% !important; font: 400 1.55cqw Arial, sans-serif; color: #444; }
+        .hnlp-phone :global(.country-phone-number::placeholder) { font-size: 1.2cqw; color: #555; }
+        .hnlp-error { position: absolute; z-index: 2; top: 100%; left: 0; margin: 0; padding: 3px 7px; border-radius: 4px; background: #fff1e7; color: #9b1b0e; font: 12px/1.3 Arial, sans-serif; }
+        .hnlp-submit { display: flex; justify-content: center; align-items: center; gap: .65cqw; margin: .35cqw -.35cqw 0; min-height: 4.7cqw; border: .13cqw solid #63b5a7; border-radius: 1.35cqw; background: linear-gradient(115deg, #299081, #1a8273 40%, #147d6e 85%); box-shadow: inset 0 2px 2px #59ac9d, 0 7px 14px #07101d44; color: #ffffff; font: 700 2.08cqw/1 Arial, sans-serif; cursor: pointer; }
+        .hnlp-submit svg { flex: 0 0 auto; width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .hnlp-submit:hover { filter: brightness(1.06); }
+        .hnlp-submit:disabled { opacity: .65; cursor: wait; }
+        .hnlp-success { position: static; margin-top: 4px; padding: 12px; border: 1px solid #63b5a7; border-radius: 8px; background: #edf7f4; color: #0f113d; font: 14px/1.4 Arial, sans-serif; box-shadow: 0 4px 18px #0f113d44; }
+        .hnlp-close { position: absolute; right: -.1%; top: -1.2%; z-index: 5; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 3px 7px #0f113d33; cursor: pointer; }
+        .hnlp-close span { position: absolute; left: 27%; top: 48%; width: 46%; height: 2px; border-radius: 2px; background: #121212; transform: rotate(45deg); }
+        .hnlp-close span:last-child { transform: rotate(-45deg); }
+        .hnlp-mobile-close { display: none; }
+        button:focus-visible { outline: 3px solid #63b5a7; outline-offset: 4px; }
+        .hnlp-tab { position: fixed; bottom: 20px; left: 20px; z-index: 2147483646; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; border: 2px solid #63b5a7; border-radius: 16px; background: linear-gradient(135deg, #147d6e, #0f113d); color: #ffffff; box-shadow: 0 8px 28px #07101d44; cursor: pointer; font: 14px Arial, sans-serif; text-align: left; }
+        .hnlp-tab-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 10px; background: linear-gradient(135deg, #299081, #147d6e); color: #ffffff; font-size: 22px; font-weight: 800; }
+        .hnlp-tab-badge small { font-size: 11px; }
+        .hnlp-tab-timer { display: flex; align-items: center; gap: 7px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+        .hnlp-tab-timer small { margin-left: 2px; font-size: 9px; }
+        @media (max-width: 700px) {
+          .hnlp-overlay { padding: 16px 12px; align-items: flex-start; }
+          .hnlp-modal { width: min(460px, 100%); grid-template-columns: 1fr; border-radius: 22px; overflow: hidden; }
+          .hnlp-form-column { padding: 28px 20px 24px; border-radius: 0; }
+          .hnlp-art { border-radius: 0; }
+          .hnlp-countdown-label { font-size: 10px; margin-bottom: 5px; }
+          .hnlp-countdown-digits { gap: 6px; }
+          .hnlp-countdown-unit { min-width: 42px; padding: 4px 7px; border-radius: 5px; }
+          .hnlp-countdown-unit strong { font-size: 22px; }
+          .hnlp-countdown-unit small { font-size: 8px; }
+          .hnlp-countdown-colon { font-size: 18px; }
+          .hnlp-content h2 { margin-bottom: 16px; font-size: 8.8cqw; letter-spacing: -.1cqw; }
+          .hnlp-copy { margin-bottom: 22px; font-size: 3.8cqw; }
+          .hnlp-form { gap: 12px; }
+          .hnlp-field { height: 54px; padding: 0 14px; gap: 12px; border-radius: 10px; }
+          .hnlp-field svg { flex-basis: 24px; width: 24px; height: 24px; }
+          .hnlp-field input, .hnlp-field textarea { font-size: 16px; }
+          .hnlp-message { height: 150px; padding-top: 14px; padding-bottom: 8px; }
+          .hnlp-message textarea { max-height: 180px; }
+          .hnlp-phone, .hnlp-phone :global(.country-phone-shell) { border-radius: 10px; }
+          .hnlp-phone :global(.country-phone-shell) { height: 54px !important; min-height: 54px !important; max-height: 54px !important; }
+          .hnlp-phone :global(.country-phone-country) { flex-basis: 48px; padding: 0 6px; gap: 5px; }
+          .hnlp-phone :global(.country-phone-country svg) { width: 22px; height: 15px; }
+          .hnlp-phone :global(.country-phone-code) { padding: 0 6px; font-size: 14px; }
+          .hnlp-phone :global(.country-phone-number) { font-size: 16px; }
+          .hnlp-field input::placeholder, .hnlp-field textarea::placeholder, .hnlp-phone :global(.country-phone-number::placeholder) { font-size: 13px; }
+          .hnlp-submit { margin: 4px 0 0; min-height: 57px; gap: 7px; border-width: 1px; border-radius: 13px; font-size: 4.25cqw; }
+          .hnlp-leaves { display: none; }
+          .hnlp-close { display: none; }
+          .hnlp-mobile-close { display: block; position: fixed; z-index: 6; right: max(18px, calc((100vw - 460px) / 2 + 8px)); top: 16px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #fff; color: #111; font: 36px/1 Arial, sans-serif; box-shadow: 0 3px 7px #0f113d33; cursor: pointer; }
+          .hnlp-tab { bottom: 12px; left: 12px; }
         }
       `}</style>
     </>
