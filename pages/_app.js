@@ -222,19 +222,18 @@ export default function App({ Component, pageProps }) {
               `,
             }}
           />
-          <Script id="tawk-chat" strategy="afterInteractive">
+          <Script id="zoho-salesiq-init" strategy="afterInteractive">
             {`
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-              (function(){
-                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                s1.async=true;
-                s1.src='https://embed.tawk.to/6aea4363b6c8e63c35b558e6/1k6hhefhr';
-                s1.charset='UTF-8';
-                s1.setAttribute('crossorigin','*');
-                s0.parentNode.insertBefore(s1,s0);
-              })();
+              window.$zoho=window.$zoho || {};
+              $zoho.salesiq=$zoho.salesiq||{ready:function(){}};
             `}
           </Script>
+          <Script
+            id="zsiqscript"
+            src="https://salesiq.zohopublic.com/widget?wc=siqbd2efc989c2066a4e9c5a1d1fc2a2e5aa947de2ffdfc7fef65f0b82ad608ba33"
+            strategy="afterInteractive"
+            defer
+          />
 
           <Script
             id="reb2b-tracker"
