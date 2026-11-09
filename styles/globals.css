@@ -3042,7 +3042,12 @@ video#brandVideo {
 .responsive-back-to-top {
   left: 28px !important;
   right: auto !important;
+  z-index: 1000;
   animation: waveBtn 2s infinite;
+}
+
+body:has(.hnlp-tab) .responsive-back-to-top {
+  bottom: 120px !important;
 }
 
 @keyframes waveBtn {

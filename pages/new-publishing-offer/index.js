@@ -3025,7 +3025,7 @@ export default function HomePage() {
               height: '40px',
               width: '40px',
               textAlign: 'center',
-              backgroundColor: '#00',
+              backgroundColor: '#fff',
               color: '#000',
               borderRadius: '50%',
               border: 'none',
