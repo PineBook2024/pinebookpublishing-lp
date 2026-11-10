@@ -13,6 +13,8 @@ import AdminGuard from "../components/AdminGuard";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const isPublishingOffer = ["/book-publishing-offer", "/new-publishing-offer"].includes(router.pathname);
+  const backgroundScriptStrategy = isPublishingOffer ? "lazyOnload" : "afterInteractive";
   const isAdminRoute =
     router.pathname.startsWith("/admin/") || router.pathname === "/admin";
 
@@ -222,28 +224,17 @@ export default function App({ Component, pageProps }) {
               `,
             }}
           />
-          <Script id="zoho-salesiq-init" strategy="afterInteractive">
-            {`
-              window.$zoho=window.$zoho || {};
-              $zoho.salesiq=$zoho.salesiq||{ready:function(){}};
-            `}
-          </Script>
-          <Script
-            id="zsiqscript"
-            src="https://salesiq.zohopublic.com/widget?wc=siqbd2efc989c2066a4e9c5a1d1fc2a2e5aa947de2ffdfc7fef65f0b82ad608ba33"
-            strategy="afterInteractive"
-            defer
-          />
 
           <Script
             id="reb2b-tracker"
+            strategy={backgroundScriptStrategy}
             dangerouslySetInnerHTML={{
               __html: `
               !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/961Y0H4Z2KNG.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("961Y0H4Z2KNG");}();
               `,
             }}
           />
-          <Script id="vtag-ai-js" src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024" strategy="afterInteractive" />
+          <Script id="vtag-ai-js" src="https://r2.leadsy.ai/tag.js" data-pid="16nA6yS1gNDvBUeVX" data-version="062024" strategy={backgroundScriptStrategy} />
 
           <Script
             id="facebook-pixel"
@@ -264,6 +255,7 @@ export default function App({ Component, pageProps }) {
           />
           <Script
             id="apollo-tracker"
+            strategy={backgroundScriptStrategy}
             dangerouslySetInnerHTML={{
               __html: `
                 function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -283,6 +275,7 @@ export default function App({ Component, pageProps }) {
           </noscript>
           <Script
             id="microsoft-clarity"
+            strategy={backgroundScriptStrategy}
             dangerouslySetInnerHTML={{
               __html: `(function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

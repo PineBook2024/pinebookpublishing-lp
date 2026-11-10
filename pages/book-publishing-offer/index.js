@@ -108,20 +108,17 @@ const offerNavLinks = [
 // import PortfolioSlider2LP from "../components/PortfolioSlider2LP";
 // import PortfolioSlider3LP from "../components/PortfolioSlider3LP";
 import BrandFooterBook from "../components/BrandFooterBook";
-import BrandVideoShowcase from "../components/BrandVideoShowcase";
+import DeferredSection from "../../components/DeferredSection";
+const BrandVideoShowcase = dynamic(() => import("../components/BrandVideoShowcase"), { ssr: false });
 import ExclusiveBookSigningParallax from "../components/ExclusiveBookSigningParallax";
 import HomeCaseStudiesCarousel from "../components/HomeCaseStudiesCarousel";
-import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailersCarousel";
+const PortfolioVideoTrailersCarousel = dynamic(() => import("../components/PortfolioVideoTrailersCarousel"), { ssr: false });
 import BrandHeroFriday from "../components/BrandHeroFriday";
 import GoogleTranslate from "../components/GoogleTranslate";
 import CustomLanguageSelector from "../components/CustomLanguageSelector";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
 import GlobalAuthorSection from "@/components/GlobalAuthorSection";
-
-const HeavyComponent = dynamic(() => import('../components/hero'), {
-  loading: () => <p>Loading...</p>,
-});
 
 const GLightbox = dynamic(
   () => import('glightbox').then((glightboxModule) => glightboxModule.default),
@@ -1257,7 +1254,7 @@ export default function Home() {
         </header>
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
-        <HeavyComponent Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4" />
+        <Hero Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4" />
         {/* <HeroFormBookOffer /> */}
         <PopupBundleBookPublish isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
 
@@ -1619,7 +1616,7 @@ export default function Home() {
                       data-gallery="portfolio-books"
                       data-glightbox={`title: ${book.title}; description: ${book.author || ""}`}
                     >
-                      <img src={book.src} alt={`Book ${book.id}`} className="object-contain" />
+                      <Image src={book.src} alt={`Book ${book.id}`} width={260} height={380} sizes="(max-width: 700px) 45vw, 260px" className="object-contain" />
                     </a>
                     <div className="content">
                       <h4 className="text-size-custom">{book.title}</h4>
@@ -1753,7 +1750,7 @@ export default function Home() {
           <PortfolioSlider5 />
         </section>
 
-        <PortfolioVideoTrailersCarousel />
+        <DeferredSection><PortfolioVideoTrailersCarousel /></DeferredSection>
 
 
 
@@ -3666,7 +3663,7 @@ export default function Home() {
                 {processItems.map((item, index) => (
                   <SwiperSlide key={index}>
                     <div className='process-item-mob'>
-                      <img src={item.icon} height={40} width={40} alt="icon" />
+                      <img loading="lazy" decoding="async" src={item.icon} height={40} width={40} alt="icon" />
                       <h3 className="text-black text-2xl mt-3">{item.text}</h3>
                     </div>
                   </SwiperSlide>
@@ -3681,7 +3678,7 @@ export default function Home() {
           <Story />
         </div>
 
-        <BrandVideoShowcase />
+        <DeferredSection><BrandVideoShowcase /></DeferredSection>
 
         <ExclusiveBookSigningParallax />
 

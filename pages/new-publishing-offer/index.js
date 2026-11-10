@@ -16,7 +16,7 @@ import Marquee from "react-fast-marquee";
 import { Fragment, useRef, useState, useEffect } from "react";
 import CountUp from "react-countup";
 import BrandTestimonial from "/components/BrandTestimonial";
-import BrandVideoShowcase from "../components/BrandVideoShowcase";
+import DeferredSection from "../../components/DeferredSection";
 import BrandFooterBook from "../components/BrandFooterBook";
 import HeroFormBookOffer, { countryCodes as projectCountryCodes } from "../components/HerformBookOffer";
 import CountryPhoneInput from "../../components/CountryPhoneInput";
@@ -46,7 +46,8 @@ import PortfolioSlider1 from "../components/PortfolioSlider1";
 import PortfolioSlider2 from "../components/PortfolioSlider2";
 import PortfolioSlider3 from "../components/PortfolioSlider3";
 import PortfolioSlider5 from "../components/PortfolioSlider5";
-import PortfolioVideoTrailersCarousel from "../components/PortfolioVideoTrailersCarousel";
+const PortfolioVideoTrailersCarousel = dynamic(() => import("../components/PortfolioVideoTrailersCarousel"), { ssr: false });
+const BrandVideoShowcase = dynamic(() => import("../components/BrandVideoShowcase"), { ssr: false });
 import HeroFormBookOfferLP from "../components/HerformBookOfferLP";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
@@ -1451,7 +1452,7 @@ export default function HomePage() {
                       data-gallery="portfolio-books"
                       data-glightbox={`title: ${book.title}; description: ${book.author || ""}`}
                     >
-                      <img src={book.src} alt={`Book ${book.id}`} className="object-contain" />
+                      <Image src={book.src} alt={`Book ${book.id}`} width={260} height={380} sizes="(max-width: 700px) 45vw, 260px" className="object-contain" />
                     </a>
                     <div className="content">
                       <h4 className="text-size-custom">{book.title}</h4>
@@ -1481,7 +1482,7 @@ export default function HomePage() {
           <PortfolioSlider5 />
         </section>
 
-        <PortfolioVideoTrailersCarousel />
+        <DeferredSection><PortfolioVideoTrailersCarousel /></DeferredSection>
 
 
         <section id="testimonials" className="bg-[#f9fafb]">
@@ -1538,7 +1539,7 @@ export default function HomePage() {
         </div>
       </section> */}
 
-        <BrandVideoShowcase />
+        <DeferredSection><BrandVideoShowcase /></DeferredSection>
 
         {/* <section className="py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
         <div className="max-w-6xl mx-auto px-6 text-center">
@@ -1685,7 +1686,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 1
                 </h2>
-                <img src={"/images/Editing.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Editing.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Editing
                 </h6>
@@ -1698,7 +1699,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 2
                 </h2>
-                <img src={"/images/Proofreading.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Proofreading.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Proofreading
                 </h6>
@@ -1711,7 +1712,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 3
                 </h2>
-                <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
 
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   TypeSetting
@@ -1725,7 +1726,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 4
                 </h2>
-                <img src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Typesetting & Layout adjustment.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Layout Adjustment
                 </h6>
@@ -1737,7 +1738,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 5
                 </h2>
-                <img src={"/images/Formatting.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Formatting.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Formatting
                 </h6>
@@ -1749,7 +1750,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 6
                 </h2>
-                <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Cover Designing
                 </h6>
@@ -1761,7 +1762,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 7
                 </h2>
-                <img src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Cover Design.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Cover Adjustment
                 </h6>
@@ -1773,7 +1774,7 @@ export default function HomePage() {
                 <h2 class="mb-20 text-2xl font-bold text-[#15184c] mb-2 transition-colors duration-300 group-hover:text-[#117d6b]">
                   Step 8
                 </h2>
-                <img src={"/images/Publishing.png"} alt="logo" className="mx-auto" width={50} height={50} />
+                <img loading="lazy" decoding="async" src={"/images/Publishing.png"} alt="logo" className="mx-auto" width={50} height={50} />
                 <h6 class="text-lg font-semibold text-[#117d6b] mb-2">
                   Publishing
                 </h6>
@@ -2515,7 +2516,7 @@ export default function HomePage() {
                               </option>
                             ))}
                           </select>
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={selectedProjectCountry.flag}
                             alt={`Flag of ${selectedProjectCountry.name}`}
                             className="flag-img w-6 h-4 ml-2"
@@ -2786,7 +2787,7 @@ export default function HomePage() {
                 {/* Optional book strip behind text, like the covers in the screenshot */}
                 <div className="relative mt-10 hidden md:block">
                   <div className="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-r from-[#8fd3c8] to-[#fef4d6]" />
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/brand-img/new-lp/strips.webp"
                     alt="Book covers"
                     className="relative z-[1] max-w-full h-auto"

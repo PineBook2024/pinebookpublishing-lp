@@ -265,8 +265,8 @@ export default function HeroFormBookOfferLP({ onOpenModal }) {
   const [preferredTime, setPreferredTime] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [phoneError, setPhoneError] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [selectedCountry, setSelectedCountry] = useState(() => countryCodes.find((country) => country.countryCode === "CA"));
+  const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleOpenChat = () => {

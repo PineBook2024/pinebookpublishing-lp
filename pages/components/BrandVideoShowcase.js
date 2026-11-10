@@ -52,7 +52,7 @@ export default function BrandVideoShowcase() {
                         controls
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                     >
                         <source src="/brand-img/videos/video-board-1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
@@ -64,7 +64,7 @@ export default function BrandVideoShowcase() {
                         controls
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                     >
                         <source src="/brand-img/videos/video-board-2.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
