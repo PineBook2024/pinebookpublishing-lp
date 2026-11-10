@@ -225,6 +225,15 @@ export default function App({ Component, pageProps }) {
             }}
           />
 
+          <Script id="zoho-salesiq-init" strategy="afterInteractive">
+            {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+          </Script>
+          <Script
+            id="zsiqscript"
+            src="https://salesiq.zohopublic.com/widget?wc=siqbd2efc989c2066a4e9c5a1d1fc2a2e5aa947de2ffdfc7fef65f0b82ad608ba33"
+            strategy="afterInteractive"
+          />
+
           <Script
             id="reb2b-tracker"
             strategy={backgroundScriptStrategy}
