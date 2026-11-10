@@ -326,6 +326,10 @@ export default function HomePopupNewLp({ openOnLoad = true, respectSchedule = tr
         .hnlp-tab-badge small { font-size: 11px; }
         .hnlp-tab-timer { display: flex; align-items: center; gap: 7px; margin-top: 6px; font-variant-numeric: tabular-nums; }
         .hnlp-tab-timer small { margin-left: 2px; font-size: 9px; }
+        @media (min-width: 701px) {
+          /* Scale the entire popup with the available laptop viewport height. */
+          .hnlp-modal { width: min(1100px, 100%, calc(125vh - 80px)); width: min(1100px, 100%, calc(125dvh - 80px)); }
+        }
         @media (max-width: 700px) {
           .hnlp-overlay { padding: 16px 12px; align-items: flex-start; }
           .hnlp-modal { width: min(460px, 100%); grid-template-columns: 1fr; border-radius: 22px; overflow: hidden; }
