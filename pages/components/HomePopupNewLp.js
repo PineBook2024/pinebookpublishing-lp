@@ -35,7 +35,9 @@ const getWeeklyOfferState = (respectSchedule = true) => {
 const formatTimePart = (value) =>
   String(value).padStart(2, "0");
 
-export default function HomePopupNewLp({ openOnLoad = true, respectSchedule = true } = {}) {
+export default function HomePopupNewLp({ respectSchedule = true } = {}) {
+  // Keep the offer visible as a banner while the popup is temporarily disabled.
+  const openOnLoad = false;
   const { submitPopupContactFormScreen } = useHubspotForm();
   const [offerState, setOfferState] = useState(() => getWeeklyOfferState(respectSchedule));
   const [form, setForm] = useState(initialForm);
@@ -261,14 +263,14 @@ export default function HomePopupNewLp({ openOnLoad = true, respectSchedule = tr
         </section>
       )}
       {showTab && !isOpen && (
-        <button type="button" className="hnlp-tab" aria-label="Open Thanksgiving offer: 30% off book publishing" onClick={() => { setShowTab(false); setIsOpen(true); }}>
+        <div className="hnlp-tab" aria-label="Thanksgiving offer: 30% off book publishing">
           <span className="hnlp-tab-badge">30%<small>OFF</small></span>
           <span><strong>Thanksgiving Offer</strong>{offerState.secondsLeft > 0 && <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
             {[["days", "D"], ["hours", "H"], ["minutes", "M"], ["seconds", "S"]].map(([key, label], index) => (
               <Fragment key={key}>{index > 0 && <span>:</span>}<span>{timeParts[key]}<small>{label}</small></span></Fragment>
             ))}
           </span>}</span>
-        </button>
+        </div>
       )}
       <style jsx>{`
         .hnlp-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; background: rgba(7, 16, 29, .72); backdrop-filter: blur(7px); }
@@ -321,7 +323,7 @@ export default function HomePopupNewLp({ openOnLoad = true, respectSchedule = tr
         .hnlp-close span:last-child { transform: rotate(-45deg); }
         .hnlp-mobile-close { display: none; }
         button:focus-visible { outline: 3px solid #63b5a7; outline-offset: 4px; }
-        .hnlp-tab { position: fixed; bottom: 20px; left: 20px; z-index: 2147483646; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; border: 2px solid #63b5a7; border-radius: 16px; background: linear-gradient(135deg, #147d6e, #0f113d); color: #ffffff; box-shadow: 0 8px 28px #07101d44; cursor: pointer; font: 14px Arial, sans-serif; text-align: left; }
+        .hnlp-tab { position: fixed; bottom: 20px; left: 20px; z-index: 2147483646; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; border: 2px solid #63b5a7; border-radius: 16px; background: linear-gradient(135deg, #147d6e, #0f113d); color: #ffffff; box-shadow: 0 8px 28px #07101d44; font: 14px Arial, sans-serif; text-align: left; }
         .hnlp-tab-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 10px; background: linear-gradient(135deg, #299081, #147d6e); color: #ffffff; font-size: 22px; font-weight: 800; }
         .hnlp-tab-badge small { font-size: 11px; }
         .hnlp-tab-timer { display: flex; align-items: center; gap: 7px; margin-top: 6px; font-variant-numeric: tabular-nums; }
