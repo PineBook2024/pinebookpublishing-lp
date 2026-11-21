@@ -151,6 +151,13 @@
     background: #2e8375;
 }
 
+.leftActions {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
 .expertButton.whiteButton {
     background: #fff;
     color: #206b60;

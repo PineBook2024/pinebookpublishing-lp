@@ -194,13 +194,6 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
             {isOpen && (
                 <section className="btm-form dark-form-bg flex-col md:flex-row fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center w-auto">
                     <div className="home-popup-modal-wrapper relative my-20">
-                        <Image
-                            className="text-center form-off-badge"
-                            src={"/images/form-badge.png"}
-                            width={130}
-                            height={130}
-                            loading="lazy"
-                        ></Image>
                         <div className="form-mid-wrap bg-gray-200 connect-form-border mb-12 relative transparent-connect-form-border">
                             <div className="flex flex-col md:flex-row items-center justify-start gap-10 relative mx-0 md:mx-10 px-3">
                                 <button type="button" onClick={onClose} className="home-close-btn-modal ml-4 bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">
@@ -219,7 +212,7 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
                                 <form className="popup-form-wrapper" onSubmit={handleSubmit}>
                                     <div className="text-center">
                                         <h2 className="font-poppins text-white text-2xl mt-2">Avail Discount</h2>
-                                        <p className="font-poppins text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">50% Off</span> – Your Story Deserves to be Heard!</p>
+                                        <p className="font-poppins text-white text-2xl">Exclusive Offer: Expert Book Publishing at <span className="text-blink">30% Off</span> – Your Story Deserves to be Heard!</p>
                                     </div>
 
                                     <div className="py-5">

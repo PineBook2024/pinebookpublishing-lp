@@ -254,7 +254,7 @@ export const countryCodes = [
 
 
 
-export default function HeroFormBookOffer() {
+export default function HeroFormBookOffer({ children }) {
   const { submitMainContactFormLP } = useHubspotForm();
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -573,6 +573,7 @@ export default function HeroFormBookOffer() {
                 </Link>
               ))}
             </div>
+            {children}
           </div>
           <div>
             <div className="px-4 py-3 w-full rounded-2xl px-8 py-8 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border-gray-100 relative">

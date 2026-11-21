@@ -1,4 +1,4 @@
-export default function Hero({ Component = null, videoSrc = "/brand-img/brand-vid-new.mp4" }) {
+export default function Hero({ Component = null, videoSrc = "/brand-img/brand-vid-new.mp4", children }) {
   return (
     <section className="main-banner-vid flex items-center justify-center gap-4 py-14 h-full" style={{ position: "relative", isolation: "isolate", overflow: "hidden", backgroundImage: "none" }}>
       <video
@@ -17,7 +17,7 @@ export default function Hero({ Component = null, videoSrc = "/brand-img/brand-vi
 
       </video>
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none", background: "linear-gradient(90deg, rgba(3, 8, 18, 0.72), rgba(3, 8, 18, 0.45))" }} />
-        {Component ? <Component /> : ''}
+        {Component ? <Component>{children}</Component> : ''}
     </section>
   );
 }

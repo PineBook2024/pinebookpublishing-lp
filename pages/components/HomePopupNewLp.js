@@ -269,16 +269,18 @@ export default function HomePopupNewLp({ respectSchedule = true, openRequest = 0
         </section>
       )}
       {showTab && !isOpen && (
-        <div className="hnlp-tab" aria-label="Thanksgiving offer: 30% off book publishing">
+        <button type="button" className="hnlp-tab" aria-label="Open Thanksgiving offer: 30% off book publishing" aria-haspopup="dialog" onClick={() => { setIsOpen(true); setShowTab(false); }}>
           <span className="hnlp-tab-badge">30%<small>OFF</small></span>
           <span><strong>Thanksgiving Offer</strong>{offerState.secondsLeft > 0 && <span className="hnlp-tab-timer" aria-label={`Offer ends in ${timeParts.days} days ${timeParts.hours} hours ${timeParts.minutes} minutes ${timeParts.seconds} seconds`}>
             {[["days", "D"], ["hours", "H"], ["minutes", "M"], ["seconds", "S"]].map(([key, label], index) => (
               <Fragment key={key}>{index > 0 && <span>:</span>}<span>{timeParts[key]}<small>{label}</small></span></Fragment>
             ))}
           </span>}</span>
-        </div>
+        </button>
       )}
       <style jsx>{`
+        .hnlp-tab { cursor: pointer; }
+        .hnlp-tab:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
         .hnlp-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; background: rgba(7, 16, 29, .72); backdrop-filter: blur(7px); }
         .hnlp-modal { position: relative; isolation: isolate; container-type: inline-size; display: grid; grid-template-columns: 1.1fr 1fr; width: min(1100px, 100%); margin: auto; border-radius: 24px; background: #dcfff2; box-shadow: 0 22px 70px #07101d66; }
         .hnlp-form-column { min-width: 0; padding: 28px; background: linear-gradient(135deg, #126b60, #1e5958); border-radius: 24px 0 0 24px; }

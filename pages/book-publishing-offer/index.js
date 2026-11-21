@@ -119,7 +119,7 @@ import CustomLanguageSelector from "../components/CustomLanguageSelector";
 import GoogleTranslateWidget from "../components/GoogleTranslateWidget";
 import LanguageSelectorDropdown from "../components/LanguageSelectorDropdown";
 import GlobalAuthorSection from "@/components/GlobalAuthorSection";
-import OfferActionButtons from "@/components/OfferActionButtons";
+import OfferActionButtons, { openExpertChat } from "@/components/OfferActionButtons";
 
 const GLightbox = dynamic(
   () => import('glightbox').then((glightboxModule) => glightboxModule.default),
@@ -162,6 +162,8 @@ export default function Home() {
     setSelectedService(service);
     setModalOpen(true);
   };
+
+  const openQuotePopup = () => openModal('Book Publishing');
 
   const closeModal = () => {
     setModalOpen(false);
@@ -1022,7 +1024,7 @@ export default function Home() {
   }
 
   const handleOpenChat = () => {
-    window.zE && window.zE('webWidget', 'open');
+    openExpertChat();
   };
 
   const handleOfferNavClick = (event, href) => {
@@ -1218,7 +1220,7 @@ export default function Home() {
         <header className="book-offer-header">
           <div className="book-offer-topbar">
             <div className="book-offer-topbar__inner">
-              <Link href="tel:8887867135">(888) 786-7135</Link>
+              <Link href="tel:8887867135">Call Now</Link>
               <Link href="mailto:support@pinebookpublishing.com">support@pinebookpublishing.com</Link>
               <button type="button" onClick={handleOpenChat}>Talk to an Expert</button>
               <LanguageSelectorDropdown />
@@ -1257,7 +1259,9 @@ export default function Home() {
         </header>
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
-        <Hero Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4" />
+        <Hero Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4">
+          <OfferActionButtons label="Sign up Today" alignLeft onTalkToExpert={openThanksgivingOffer} />
+        </Hero>
         {/* <HeroFormBookOffer /> */}
         <PopupBundleBookPublish isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
 
@@ -1361,9 +1365,10 @@ export default function Home() {
                   <br></br>
                   From the day you decide to publish until your book reaches readers around the world, our experienced professionals work closely with you, offering guidance, honest support, and the attention your book deserves every step of the way.
                 </p>
-                <div className="flex gap-6">
-                  <button className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Get a Quote</Link></button>
-                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
+                <div className="flex flex-wrap gap-6">
+                  <button type="button" className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={openQuotePopup}>Get a Quote</button>
+                  <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:8887867135">Call Now</Link></button>
+                  <button type="button" className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}>Talk to an Expert</button>
                 </div>
                 {/* <div className="flex justify-start items-center mt-8 gap-2 md:gap-x-8 client-logo-sec about-logos-sec">
                   {clientLogos.map((logo, index) => (
@@ -1563,7 +1568,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <GlobalAuthorSection onTalkToExpert={openThanksgivingOffer} />
+        <GlobalAuthorSection onTalkToExpert={openQuotePopup} />
 
         <section id="packages" className="package pb-5 pt-12">
           <div className="container mx-auto max-w-screen-xl">
@@ -3427,7 +3432,7 @@ export default function Home() {
           >
             <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
           </div>
-          <OfferActionButtons onTalkToExpert={openThanksgivingOffer} />
+          <OfferActionButtons onTalkToExpert={openQuotePopup} />
           {/* <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" /> */}
         </div>
 
@@ -3536,15 +3541,15 @@ export default function Home() {
           </div>
         </section> */}
         <section id="portfolio" className="bg-[#f5f5f5] pt-10">
-          <PortfolioSlider4><OfferActionButtons onTalkToExpert={openThanksgivingOffer} /></PortfolioSlider4>
+          <PortfolioSlider4><OfferActionButtons onTalkToExpert={openQuotePopup} /></PortfolioSlider4>
           <PortfolioSlider1 />
           <PortfolioSlider2 />
           <PortfolioSlider3 />
-          <PortfolioSlider5><OfferActionButtons onTalkToExpert={openThanksgivingOffer} /></PortfolioSlider5>
+          <PortfolioSlider5><OfferActionButtons onTalkToExpert={openQuotePopup} /></PortfolioSlider5>
         </section>
 
         <DeferredSection>
-          <PortfolioVideoTrailersCarousel><OfferActionButtons onTalkToExpert={openThanksgivingOffer} /></PortfolioVideoTrailersCarousel>
+          <PortfolioVideoTrailersCarousel><OfferActionButtons onTalkToExpert={openQuotePopup} /></PortfolioVideoTrailersCarousel>
         </DeferredSection>
 
 
@@ -3680,16 +3685,16 @@ export default function Home() {
             </div>
           </div>
 
-          <OfferActionButtons onTalkToExpert={openThanksgivingOffer} />
+          <OfferActionButtons onTalkToExpert={openQuotePopup} />
         </section>
 
         <div id="testimonials">
-          <Story><OfferActionButtons onTalkToExpert={openThanksgivingOffer} onGreen /></Story>
+          <Story><OfferActionButtons onTalkToExpert={openQuotePopup} onGreen /></Story>
         </div>
 
         <DeferredSection><BrandVideoShowcase /></DeferredSection>
 
-        <ExclusiveBookSigningParallax><OfferActionButtons onTalkToExpert={openThanksgivingOffer} /></ExclusiveBookSigningParallax>
+        <ExclusiveBookSigningParallax><OfferActionButtons onTalkToExpert={openQuotePopup} /></ExclusiveBookSigningParallax>
 
         <div id="case-studies">
           <HomeCaseStudiesCarousel />
@@ -3705,9 +3710,10 @@ export default function Home() {
               </h2>
               <p className="text-white mt-7">Ready to share your fascinating story with your potential audience? Contact Pine Book Publishing and get a free quote now!
               </p>
-              <div className="flex gap-6">
-                <button className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}><Link href={'javascript:;'}>Talk to an Expert</Link></button>
-                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:(888) 786-7135">(888) 786-7135</Link></button>
+              <div className="flex flex-wrap gap-6">
+                <button type="button" className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={openQuotePopup}>Get a Quote</button>
+                <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:8887867135">Call Now</Link></button>
+                <button type="button" className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}>Talk to an Expert</button>
               </div>
             </div>
           </div>

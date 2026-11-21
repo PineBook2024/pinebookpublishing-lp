@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, ChartNoAxesColumnIncreasing, FileSearch, PenTool } from "lucide-react";
 import styles from "./GlobalAuthorSection.module.css";
+import { openExpertChat } from "./OfferActionButtons";
 
 const services = [
     { title: "Book Editing", description: "Refine your manuscript with expert editorial guidance.", href: "/book-editing", Icon: PenTool },
@@ -37,7 +38,8 @@ export default function GlobalAuthorSection({ videoSrc = "/brand-img/Global-Auth
                     <p className={styles.description}>We work with authors from different countries and continents, helping them bring their books to life. Wherever you are, we're here to support your writing or publishing needs.</p>
                     {onTalkToExpert && <div className={styles.actions}>
                         <button type="button" className={styles.expertButton} onClick={onTalkToExpert}>Get a Quote</button>
-                        <a className={styles.phoneButton} href="tel:8887867135">(888) 786-7135</a>
+                        <a className={styles.phoneButton} href="tel:8887867135">Call Now</a>
+                        <button type="button" className={styles.expertButton} onClick={openExpertChat}>Talk to an Expert</button>
                     </div>}
                     {/* <div className={styles.services}>
                         {services.map(({ title, description, href, Icon }, index) => <Link className={styles.card} href={href} key={title}>
