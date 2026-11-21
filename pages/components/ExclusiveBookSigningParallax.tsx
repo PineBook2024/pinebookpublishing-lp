@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import type { ReactNode } from "react"
 import {
     motion,
     MotionValue,
@@ -60,7 +61,7 @@ function EventCard({ src, alt, label, className = "" }: EventCardProps) {
     )
 }
 
-export default function ExclusiveBookSigningParallax() {
+export default function ExclusiveBookSigningParallax({ children }: { children?: ReactNode }) {
     const { scrollYProgress } = useScroll()
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -105,6 +106,7 @@ export default function ExclusiveBookSigningParallax() {
                             />
                         ))}
                     </div>
+                    {children}
                 </div>
             </section>
         </>

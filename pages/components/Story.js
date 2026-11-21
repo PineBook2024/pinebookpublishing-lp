@@ -18,7 +18,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Story() {
+export default function Story({ children }) {
     const swiperRef2 = useRef(null);
 
     const videoSlides = [
@@ -110,6 +110,7 @@ export default function Story() {
                         </div>
                     </div>
                 </section>
+                {children}
             </section>
         </>
     );

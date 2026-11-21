@@ -35,7 +35,7 @@ const getWeeklyOfferState = (respectSchedule = true) => {
 const formatTimePart = (value) =>
   String(value).padStart(2, "0");
 
-export default function HomePopupNewLp({ respectSchedule = true } = {}) {
+export default function HomePopupNewLp({ respectSchedule = true, openRequest = 0 } = {}) {
   // Keep the offer visible as a banner while the popup is temporarily disabled.
   const openOnLoad = false;
   const { submitPopupContactFormScreen } = useHubspotForm();
@@ -49,6 +49,12 @@ export default function HomePopupNewLp({ respectSchedule = true } = {}) {
   const [artworkReady, setArtworkReady] = useState(false);
   const [artworkSrc, setArtworkSrc] = useState("/brand-img/THANKSGIVING.png");
   const previousActiveRef = useRef(offerState.isActive);
+
+  useEffect(() => {
+    if (!openRequest || !getWeeklyOfferState(respectSchedule).isActive) return;
+    setIsOpen(true);
+    setShowTab(false);
+  }, [openRequest, respectSchedule]);
 
   const timeParts = {
     days: formatTimePart(Math.floor(offerState.secondsLeft / 86400)),

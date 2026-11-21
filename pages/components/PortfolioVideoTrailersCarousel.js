@@ -37,7 +37,7 @@ const loadYouTubePlayerApi = () => {
     });
 };
 
-export default function PortfolioVideoTrailersCarousel() {
+export default function PortfolioVideoTrailersCarousel({ children }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const activeIframeRef = useRef(null);
     const playerRef = useRef(null);
@@ -137,7 +137,7 @@ export default function PortfolioVideoTrailersCarousel() {
                     </div>
                 </div>
 
-                <hr className="portfolio-video-trailers-rule" />
+                {children || <hr className="portfolio-video-trailers-rule" />}
             </div>
         </section>
     );

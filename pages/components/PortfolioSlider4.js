@@ -23,7 +23,7 @@ const GLightbox = dynamic(
     { ssr: false }
 );
 
-export default function PortfolioSlider4() {
+export default function PortfolioSlider4({ children }) {
     const swiperRef2 = useRef(null);
     const lightboxRef = useRef(null);
 
@@ -155,7 +155,7 @@ export default function PortfolioSlider4() {
                 >
                     <FontAwesomeIcon icon={faArrowRight} color="#000" width={18} />
                 </div>
-                <hr class="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" />
+                {children || <hr className="h-[2px] bg-gray-100 dark:bg-gray-600 mt-10 border-none" />}
             </div>
         </>
     );
