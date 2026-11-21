@@ -1260,7 +1260,7 @@ export default function Home() {
         {/* <HomePopup /> */}
         {/* <Hero  /> */}
         <Hero Component={HeroFormBookOffer} videoSrc="/brand-img/Thanksgiving-video.mp4">
-          <OfferActionButtons label="Sign up Today" alignLeft onTalkToExpert={openThanksgivingOffer} />
+          <OfferActionButtons label="Sign up Today" alignLeft onTalkToExpert={openQuotePopup} />
         </Hero>
         {/* <HeroFormBookOffer /> */}
         <PopupBundleBookPublish isOpen={isModalOpen} onClose={closeModal} service={selectedService} />
