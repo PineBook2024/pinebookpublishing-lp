@@ -4,12 +4,14 @@ import flags from "react-phone-number-input/flags";
 import labels from "react-phone-number-input/locale/en";
 
 const digitsOnly = (value = "") => String(value).replace(/\D/g, "");
+const noPreferredCountries = [];
 
 export default function CountryPhoneInput({
   name = "phone",
   value,
   onChange,
   defaultCountry = "CA",
+  preferredCountries = noPreferredCountries,
   placeholder = "Enter your Phone",
   className = "",
   inputClassName = "",
@@ -28,8 +30,12 @@ export default function CountryPhoneInput({
     ? internationalDigits.slice(callingCode.length)
     : internationalDigits;
   const countryOptions = useMemo(
-    () => getCountries().sort((a, b) => labels[a].localeCompare(labels[b])),
-    [],
+    () => {
+      const countries = getCountries().sort((a, b) => labels[a].localeCompare(labels[b]));
+      const preferred = [...new Set(preferredCountries)].filter((code) => countries.includes(code));
+      return [...preferred, ...countries.filter((code) => !preferred.includes(code))];
+    },
+    [preferredCountries],
   );
   const Flag = flags[country];
 

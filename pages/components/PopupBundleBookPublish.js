@@ -230,6 +230,7 @@ export default function PopupBundleBookPublish({ isOpen, onClose, service }) {
 
                                         <div className="relative mb-3">
                                             <CountryPhoneInput
+                                                preferredCountries={["US", "GB", "CA"]}
                                                 name="phoneNumber"
                                                 onChange={handleChange}
                                                 value={phoneNumber}
