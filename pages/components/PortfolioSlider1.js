@@ -30,6 +30,13 @@ const bookCoverPaths = [
   "/brand-img/new-lp/book-covers/Unique Moore Part 1- Paperback.jpg",
   "/brand-img/new-lp/book-covers/Zulfi PB.jpg",
   "/brand-img/PB-cover-portrait.jpg",
+  "/brand-img/new-lp/book-covers/new-book-covers/1.jpg",
+  ...Array.from({ length: 98 }, (_, index) => {
+    const imageNumber = index + 2;
+    const extension = { 14: "png", 33: "webp" }[imageNumber] || "jpg";
+
+    return `/brand-img/new-lp/book-covers/new-book-covers/${imageNumber}.${extension}`;
+  }),
 ];
 
 const imageSlides = bookCoverPaths.map((src, index) => ({
@@ -57,7 +64,6 @@ const baseSliderSettings = {
   variableWidth: false,
   slidesToShow: 5,
   slidesToScroll: 1,
-  lazyLoad: "ondemand",
   responsive: [
     {
       breakpoint: 1024,
