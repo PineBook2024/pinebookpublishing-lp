@@ -20,7 +20,7 @@ export function openExpertChat() {
 
 export default function OfferActionButtons({ onTalkToExpert, onGreen = false, label = "Get a Quote", alignLeft = false, allGreen = false }) {
     return (
-        <div className={`${styles.sectionActions} ${alignLeft ? styles.leftActions : ""}`}>
+        <div className={`offer-section-actions ${styles.sectionActions} ${alignLeft ? styles.leftActions : ""}`}>
             <button type="button" className={`${styles.expertButton} ${onGreen ? styles.whiteButton : ""}`} onClick={onTalkToExpert}>{label}</button>
             <a className={allGreen ? styles.expertButton : styles.phoneButton} href="tel:8887867135">Call Now</a>
             <button type="button" className={`${styles.expertButton} ${onGreen ? styles.whiteButton : ""}`} onClick={openExpertChat}>Talk to an Expert</button>

@@ -36,7 +36,7 @@ export default function GlobalAuthorSection({ videoSrc = "/brand-img/Global-Auth
                     <div className={styles.eyebrow}><BookOpen aria-hidden="true" /><span>Pine Book Publishing</span></div>
                     <h2 className={styles.heading}>Our Work Reaches Authors <span>Around the World<svg viewBox="0 0 500 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 15C116 1 423 1 487 9Q507 12 488 18" /></svg></span></h2>
                     <p className={styles.description}>We work with authors from different countries and continents, helping them bring their books to life. Wherever you are, we're here to support your writing or publishing needs.</p>
-                    {onTalkToExpert && <div className={styles.actions}>
+                    {onTalkToExpert && <div className={`offer-section-actions ${styles.actions}`}>
                         <button type="button" className={styles.expertButton} onClick={onTalkToExpert}>Get a Quote</button>
                         <a className={styles.phoneButton} href="tel:8887867135">Call Now</a>
                         <button type="button" className={styles.expertButton} onClick={openExpertChat}>Talk to an Expert</button>

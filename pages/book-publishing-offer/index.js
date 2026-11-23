@@ -139,6 +139,31 @@ export default function Home() {
   const [collapseOpen2, setCollapseOpen2] = useState(false);
   const [activePackageTab, setActivePackageTab] = useState('publishing');
   const [offerNavOpen, setOfferNavOpen] = useState(false);
+  const [offerHeaderScrolled, setOfferHeaderScrolled] = useState(false);
+  const offerNavbarSlotRef = useRef(null);
+  const offerNavbarRef = useRef(null);
+
+  useEffect(() => {
+    const slot = offerNavbarSlotRef.current;
+    const navbar = offerNavbarRef.current;
+    if (!slot || !navbar) return;
+    const updateHeader = () => {
+      setOfferHeaderScrolled(slot.getBoundingClientRect().top <= 0);
+    };
+    const observer = new ResizeObserver(() => {
+      slot.style.height = `${navbar.offsetHeight}px`;
+      updateHeader();
+    });
+    observer.observe(navbar);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("resize", updateHeader);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateHeader);
+      window.removeEventListener("resize", updateHeader);
+    };
+  }, []);
   const [thanksgivingOpenRequest, setThanksgivingOpenRequest] = useState(0);
   const openThanksgivingOffer = () => setThanksgivingOpenRequest((request) => request + 1);
 
@@ -1217,7 +1242,7 @@ export default function Home() {
         <GoogleTranslateWidget />
 
         {/* <Header /> */}
-        <header className="book-offer-header">
+        <header className={`book-offer-header${offerHeaderScrolled ? " is-scrolled" : ""}`}>
           <div className="book-offer-topbar">
             <div className="book-offer-topbar__inner">
               <Link href="tel:8887867135">Call Now</Link>
@@ -1227,7 +1252,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="book-offer-navbar">
+          <div ref={offerNavbarSlotRef}>
+          <div ref={offerNavbarRef} className="book-offer-navbar">
             <div className="book-offer-navbar__inner">
               <Link className="book-offer-navbar__logo" href="/book-publishing-offer" aria-label="Pine Book Publishing">
                 <Image alt="Pine Book Publishing" src="/brand-img/logo.png" width={330} height={120} priority />
@@ -1255,6 +1281,7 @@ export default function Home() {
                 </ul>
               </nav>
             </div>
+          </div>
           </div>
         </header>
         {/* <HomePopup /> */}
@@ -1365,7 +1392,7 @@ export default function Home() {
                   <br></br>
                   From the day you decide to publish until your book reaches readers around the world, our experienced professionals work closely with you, offering guidance, honest support, and the attention your book deserves every step of the way.
                 </p>
-                <div className="flex flex-wrap gap-6">
+                <div className="offer-section-actions flex flex-wrap gap-6">
                   <button type="button" className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={openQuotePopup}>Get a Quote</button>
                   <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:8887867135">Call Now</Link></button>
                   <button type="button" className="book-publishing-cta-btn-3 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}>Talk to an Expert</button>
@@ -3710,7 +3737,7 @@ export default function Home() {
               </h2>
               <p className="text-white mt-7">Ready to share your fascinating story with your potential audience? Contact Pine Book Publishing and get a free quote now!
               </p>
-              <div className="flex flex-wrap gap-6">
+              <div className="offer-section-actions flex flex-wrap gap-6">
                 <button type="button" className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={openQuotePopup}>Get a Quote</button>
                 <button className="book-publishing-cta-btn-2 shadow-xl mt-10 cursor-pointer bg-white"><Link href="tel:8887867135">Call Now</Link></button>
                 <button type="button" className="book-publishing-cta-btn-1 shadow-xl mt-10 cursor-pointer bg-white" onClick={handleOpenChat}>Talk to an Expert</button>
